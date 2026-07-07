@@ -5,12 +5,26 @@ const { MongoClient } = require('mongodb')
 const fs = require('fs')
 const log = require('../log.js')
 
-const latsDb = JSON.parse(fs.readFileSync('./assets/lats.json'))
-const lngsDb = JSON.parse(fs.readFileSync('./assets/lngs.json'))
+// Generated coordinate data (gitignored); tolerate absence so the server boots.
+let latsDb = []
+let lngsDb = []
+try {
+	latsDb = JSON.parse(fs.readFileSync('./assets/lats.json'))
+	lngsDb = JSON.parse(fs.readFileSync('./assets/lngs.json'))
+} catch {}
 
 const url = `${process.env.MONGODB_SCHEME}${process.env.MONGODB_USER}:${process.env.MONGODB_PWD}@${process.env.MONGODB_URL}/${process.env.MONGODB_DB}?retryWrites=true&w=majority${process.env.MONGODB_URL_PARAMS}`
-log('Connecting to MongoDB')
-const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true })
+// Only construct the client when Mongo is actually configured; otherwise the URL
+// is `undefined...` and the MongoClient constructor throws at load, taking the
+// whole server down. Leaving `client` undefined lets the server boot and serve
+// everything except /v1/blocks (which needs the DB).
+let client
+if (process.env.MONGODB_SCHEME) {
+	log('Connecting to MongoDB')
+	client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true })
+} else {
+	log('MONGODB_* env not set — /v1/blocks generation disabled (server still boots)')
+}
 
 const { v4: uuidv4 } = require('uuid')
 
@@ -41,10 +55,16 @@ const toExport = version => {
 			) && offsets instanceof Array
 		) {
 
-			await client.connect()
-			const session = client.startSession();
-
-			const blockDb = await client.db(process.env.MONGODB_DB).collection('blocks')
+			// No-DB dev mode: with no Mongo configured we still run the pure tile
+			// generation below (getMapAt falls back to assets/gmap.png), so the map
+			// renders offline. The DB-only helpers (sync/lock/save) no-op.
+			let session
+			let blockDb
+			if (client) {
+				await client.connect()
+				session = client.startSession()
+				blockDb = await client.db(process.env.MONGODB_DB).collection('blocks')
+			}
 
 			const state = {
 				blocks: {
@@ -200,6 +220,7 @@ const toExport = version => {
 	}
 
 	const syncBlocks = async state => {
+		if (!client) return
 		const blockDb = await client.db(process.env.MONGODB_DB).collection('blocks')
 
 		const proms = []
@@ -257,6 +278,7 @@ const toExport = version => {
 	}
 
 	const blockWriteUnlock = async state => {
+		if (!client) return
 		await new Promise(async resolve => {
 			const saveAndUnlockInterval = setInterval(async () => {
 				if (!transactions.current) {
@@ -304,6 +326,7 @@ const toExport = version => {
 	}
 
 	const blockWriteLock = async state => {
+		if (!client) return
 
 		await new Promise(async resolve => {
 			const blockWriteLockInterval = setInterval(async () => {
@@ -348,6 +371,7 @@ const toExport = version => {
 	}
 
 	const saveAllBlocks = async state => {
+		if (!client) return
 		const blocks = [...state.blocks.generate, ...state.blocks.edges]
 		const saveStartTime = Date.now()
 
