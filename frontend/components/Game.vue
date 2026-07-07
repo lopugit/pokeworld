@@ -30,15 +30,12 @@
     >
       <div>
         <div
-          class="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4"
+          ref="gameboy"
+          class="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
+          :style="{ width: boardWidth + 'px' }"
         >
-          <div
-            class="flex flex-row overflow-scroll"
-            :style="{
-              maxWidth: (game.canvasWidth * game.scale) + 'px'
-            }"
-          >
-            <canvas ref="pwg" class="bg-black rounded-lg" :width="(game.canvasWidth * game.scale)+'px'" :height="(game.canvasHeight*game.scale)+'px'" />
+          <div class="flex flex-row justify-center w-full board-screen">
+            <canvas ref="pwg" class="screen-canvas bg-black rounded-lg" :width="(game.canvasWidth * game.scale)+'px'" :height="(game.canvasHeight*game.scale)+'px'" />
             <canvas v-if="game.showLayer1" ref="layer1" class="bg-black ml-8 rounded-lg" :width="(game.canvasWidth * game.scale)+'px'" :height="(game.canvasHeight*game.scale)+'px'" />
             <canvas v-if="game.showLayerGmap" ref="gmap" class="bg-black ml-8 rounded-lg" :width="(game.canvasWidth * game.scale)+'px'" :height="(game.canvasHeight*game.scale)+'px'" />
           </div>
@@ -76,6 +73,12 @@
               </div>
             </div>
           </div>
+          <div
+            class="board-resize-handle"
+            title="Drag to resize the Game Boy"
+            @mousedown="startBoardResize"
+            @touchstart="startBoardResize"
+          />
         </div>
       </div>
       <div v-if="game.debug" class="flex flex-col md:px-12">
@@ -170,6 +173,8 @@ export default {
       images: [],
       blockDb: {},
       tileDb: {},
+      boardWidth: 520,
+      boardResize: { active: false },
       tileHistoryDb: {},
       queries: {},
       locationError: false,
@@ -306,6 +311,7 @@ export default {
     }
   },
   async mounted() {
+    this.restoreBoardWidth()
     await this.getLocation()
     await this.initializeGame()
     await this.initializeMap()
@@ -496,6 +502,23 @@ export default {
       window.location.reload()
     },
     getLocation() {
+      // Dev override: a geocode chosen from the floating DevKit widget takes
+      // precedence over the browser's geolocation (useful when the browser
+      // can't grant location, e.g. in a preview/dev environment).
+      try {
+        const devRaw = window.localStorage.getItem('devGeocode')
+        if (devRaw) {
+          const dev = JSON.parse(devRaw)
+          if (dev && typeof dev.latitude === 'number' && typeof dev.longitude === 'number') {
+            this.game.coords.latitude = dev.latitude
+            this.game.coords.longitude = dev.longitude
+            return Promise.resolve({ latitude: dev.latitude, longitude: dev.longitude })
+          }
+        }
+      } catch (err) {
+        console.warn('Invalid devGeocode in localStorage', err)
+      }
+
       if (navigator.geolocation) {
         return new Promise((resolve) => {
           navigator.geolocation.getCurrentPosition((position) => {
@@ -543,6 +566,44 @@ export default {
         this.game.columns = 1
         this.game.scale = (window.innerWidth / (this.game.canvasWidth)) * 0.91
       }
+    },
+    restoreBoardWidth() {
+      try {
+        const saved = parseFloat(window.localStorage.getItem('boardWidth'))
+        if (saved > 0) {
+          this.boardWidth = Math.max(280, Math.min(saved, window.innerWidth - 24))
+        }
+      } catch (err) { /* ignore */ }
+    },
+    startBoardResize(e) {
+      const point = e.touches ? e.touches[0] : e
+      const rendered = this.$refs.gameboy ? this.$refs.gameboy.offsetWidth : this.boardWidth
+      this.boardResize = { active: true, startX: point.clientX, originWidth: rendered }
+      window.addEventListener('mousemove', this.onBoardResize)
+      window.addEventListener('mouseup', this.endBoardResize)
+      window.addEventListener('touchmove', this.onBoardResize, { passive: false })
+      window.addEventListener('touchend', this.endBoardResize)
+      if (e.cancelable) e.preventDefault()
+    },
+    onBoardResize(e) {
+      if (!this.boardResize.active) return
+      const point = e.touches ? e.touches[0] : e
+      const dx = point.clientX - this.boardResize.startX
+      // The Game Boy is centre-aligned, so growing the width moves each edge by
+      // half — double the delta so the corner handle tracks the cursor.
+      const next = this.boardResize.originWidth + (dx * 2)
+      this.boardWidth = Math.max(280, Math.min(next, window.innerWidth - 24))
+      if (e.cancelable) e.preventDefault()
+    },
+    endBoardResize() {
+      this.boardResize.active = false
+      window.removeEventListener('mousemove', this.onBoardResize)
+      window.removeEventListener('mouseup', this.endBoardResize)
+      window.removeEventListener('touchmove', this.onBoardResize)
+      window.removeEventListener('touchend', this.endBoardResize)
+      try {
+        window.localStorage.setItem('boardWidth', String(Math.round(this.boardWidth)))
+      } catch (err) { /* ignore */ }
     },
     zoom(zoom) {
       if (zoom === 'in' && this.game.zoom > 0.75) {
@@ -1082,6 +1143,38 @@ export default {
       left:0%;
     }
   }
+}
+
+.gameboy {
+  box-sizing: border-box;
+}
+
+.board-screen {
+  overflow-x: auto;
+}
+
+.screen-canvas {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.board-resize-handle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  border-right: 3px solid #7f8792;
+  border-bottom: 3px solid #7f8792;
+  border-bottom-right-radius: 7px;
+  opacity: 0.65;
+  touch-action: none;
+}
+.board-resize-handle:hover {
+  opacity: 1;
 }
 
 .start-select {

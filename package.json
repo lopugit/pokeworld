@@ -1,0 +1,15 @@
+{
+  "name": "pokeworld",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pokeworld dev orchestration — worktree-aware PM2 flow for the api + frontend stack (see scripts/worktree-ports.cjs).",
+  "scripts": {
+    "pms": "node scripts/dev-pm2.cjs start",
+    "pms-stop": "node scripts/dev-pm2.cjs stop",
+    "ports": "node scripts/worktree-ports.cjs",
+    "ports:all": "node scripts/dev-pm2.cjs list",
+    "api": "cd api && PORT=3847 node modules/index.js",
+    "frontend": "cd frontend && NODE_OPTIONS=--openssl-legacy-provider API=http://localhost:3847/v1 PORT=3000 yarn dev"
+  },
+  "license": "ISC"
+}

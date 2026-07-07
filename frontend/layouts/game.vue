@@ -6,5 +6,6 @@
         <nuxt />
       </div>
     </div>
+    <DevKit />
   </div>
 </template>
