@@ -1,0 +1,40 @@
+{
+	"configurations": [
+		{
+			"name": "Launch runGenerateMap",
+			"program": "${workspaceFolder}/node/tests/runGenerateMap.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Launch runGenerateCoordinatesGrid",
+			"program": "${workspaceFolder}/node/tests/runGenerateCoordinatesGrid.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Launch API Tests",
+			"program": "${workspaceFolder}/node/tests/apiTests.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Launch API",
+			"program": "${workspaceFolder}/node/index.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		}
+	]
+}
