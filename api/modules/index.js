@@ -21,20 +21,32 @@ app.get('/', (req, res) => {
 })
 
 app.get('/v1/blocks', async (req, res) => {
-	const resp = await apis.v1Blocks(req)
-	log('Done v1 blocks')
-	if (resp) {
-		res.status(resp.status).send(resp.send)
-	} else {
-		res.status(400).send('Something went wrong')
+	try {
+		const resp = await apis.v1Blocks(req)
+		log('Done v1 blocks')
+		if (resp) {
+			res.status(resp.status).send(resp.send)
+		} else {
+			res.status(400).send('Something went wrong')
+		}
+	} catch (err) {
+		// Never let an endpoint rejection become an unhandled rejection — Node
+		// 15+ crashes the whole process on those.
+		log('v1Blocks handler error:', err && err.message)
+		res.status(500).send('Something went wrong')
 	}
 })
 app.get('/v1/blockLatLng', async (req, res) => {
-	const resp = await apis.v1BlockLatLng(req)
-	if (resp) {
-		res.status(resp.status).send(resp.send)
-	} else {
-		res.status(400).send('Something went wrong')
+	try {
+		const resp = await apis.v1BlockLatLng(req)
+		if (resp) {
+			res.status(resp.status).send(resp.send)
+		} else {
+			res.status(400).send('Something went wrong')
+		}
+	} catch (err) {
+		log('v1BlockLatLng handler error:', err && err.message)
+		res.status(500).send('Something went wrong')
 	}
 })
 

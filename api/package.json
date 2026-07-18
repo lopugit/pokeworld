@@ -36,7 +36,7 @@
     "mongodb": "^4.3.0",
     "osmtogeojson": "^3.0.0-beta.4",
     "pug": "^3.0.2",
-    "sharp": "^0.30.0",
+    "sharp": "^0.33.5",
     "throttled-queue": "^2.1.2",
     "uuid": "^9.0.0"
   },
@@ -55,5 +55,11 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "pnpm": {
+    "//": "sharp ships prebuilt @img/* binaries; skip its install script so it never tries to compile against a globally-installed libvips (node-gyp fails on Python 3.12+ which removed distutils).",
+    "neverBuiltDependencies": [
+      "sharp"
+    ]
   }
 }

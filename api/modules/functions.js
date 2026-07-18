@@ -264,6 +264,11 @@ async function saveMapAt(x, y, lat, lng, path, zoom) {
 }
 
 async function getMapAt(lat, lng, zoom = 20) {
+	// No Google key: skip the doomed request and use the bundled 512x512 fallback
+	// map so tile generation works fully offline (dev).
+	if (!process.env.GOOGLE_API_KEY) {
+		return fs.readFileSync('./assets/gmap.png')
+	}
 	const response = await axios.get('https://maps.googleapis.com/maps/api/staticmap', {
 		params: {
 			center: `${lat},${lng}`,
