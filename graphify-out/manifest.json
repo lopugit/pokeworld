@@ -240,9 +240,9 @@
     "semantic_hash": "5378c9ab694ff21193559fa53d7f17d6"
   },
   "app/tests/map-source.test.ts": {
-    "mtime": 1784386828.342483,
-    "ast_hash": "2b4418fc7737679f50c4d411c96b32ee",
-    "semantic_hash": "2b4418fc7737679f50c4d411c96b32ee"
+    "mtime": 1784393777.6803446,
+    "ast_hash": "e745afa731edd8b551704f3ee70b3a45",
+    "semantic_hash": "e745afa731edd8b551704f3ee70b3a45"
   },
   "app/tsconfig.json": {
     "mtime": 1784379073.8899143,
@@ -287,7 +287,7 @@
   "app/README.md": {
     "mtime": 1784393323.8378913,
     "ast_hash": "df11bc5f1794b9cf8897ac695c4728e4",
-    "semantic_hash": ""
+    "semantic_hash": "df11bc5f1794b9cf8897ac695c4728e4"
   },
   "app/TODO-fallback-map-regeneration.md": {
     "mtime": 1784379351.541113,
@@ -1087,17 +1087,17 @@
   "docs/qa/dense-world-mobile.png": {
     "mtime": 1784393469.478641,
     "ast_hash": "b60a59090119f6a3191ad58d2954574c",
-    "semantic_hash": ""
+    "semantic_hash": "b60a59090119f6a3191ad58d2954574c"
   },
   "docs/qa/trainer-party-desktop.png": {
     "mtime": 1784393370.3054416,
     "ast_hash": "f58a5f780e2b322ee4f29acdffeb574b",
-    "semantic_hash": ""
+    "semantic_hash": "f58a5f780e2b322ee4f29acdffeb574b"
   },
   "docs/qa/trainer-pc-mobile.png": {
     "mtime": 1784393450.8010044,
     "ast_hash": "2c4f745223a2ef1165960165680cae84",
-    "semantic_hash": ""
+    "semantic_hash": "2c4f745223a2ef1165960165680cae84"
   },
   "app/src/components/game-ui/BadgesPanel.tsx": {
     "mtime": 1784393195.8995173,
@@ -1147,6 +1147,11 @@
   "app/DESIGN-emerald-game-systems.md": {
     "mtime": 1784393317.6829472,
     "ast_hash": "47ddd9f522bca9093b66a7cfd5f544eb",
-    "semantic_hash": ""
+    "semantic_hash": "47ddd9f522bca9093b66a7cfd5f544eb"
+  },
+  "app/tests/map-benchmark.test.ts": {
+    "mtime": 1784393777.680005,
+    "ast_hash": "091ba90e2480695844c4478fbac903d7",
+    "semantic_hash": "091ba90e2480695844c4478fbac903d7"
   }
 }

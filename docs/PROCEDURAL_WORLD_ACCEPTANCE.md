@@ -1,5 +1,9 @@
 # Procedural Emerald world acceptance
 
+Status: Complete
+
+Last reviewed: 2026-07-19
+
 This checklist is the stop condition for the ten-minute Pokeworld improvement loop. A checked item
 has automated coverage or current native-Chrome evidence in `docs/qa/`.
 
@@ -20,9 +24,37 @@ has automated coverage or current native-Chrome evidence in `docs/qa/`.
 - [x] Desktop and mobile layouts have no horizontal overflow, clipping, or application-origin
   console warnings/errors.
 
+## Required verification
+
+```bash
+pnpm --dir app check
+pnpm --dir app benchmark:map
+pnpm --dir app map:generate -- 946579 488585 --regenerate
+```
+
+The automated suite includes explicit Google/fallback provenance checks, output-equivalent pipeline
+benchmarking, route connectivity and thickness properties, deterministic grammar coverage, spawn
+safety, exact Emerald tile crops, client/server seed parity, collision, ledges, hidden items, and
+trainer-system transitions. The forced live generation must report `google-static-maps`, not the
+offline fallback, before this ledger remains complete.
+
 ## Current visual evidence
 
 - `qa/dense-world-desktop.png`
 - `qa/dense-world-mobile.png`
 - `qa/trainer-party-desktop.png`
 - `qa/trainer-pc-mobile.png`
+
+The screenshots are repository artifacts so each automated loop and pull-request reviewer can
+compare the accepted desktop and mobile result with later changes.
+
+## Latest verification
+
+- `pnpm --dir app check`: 14 test files / 76 tests, typecheck, Vercel build, static shell, Workflow
+  manifest, queue privacy, and maximum-duration checks passed.
+- `pnpm --dir app benchmark:map`: 262,144 pixels produced 256 output-equivalent tiles; optimized
+  median 4.91 ms versus legacy median 44.51 ms (9.06× in this run).
+- Forced local Workflow `wrun_01KXV1CCY0F428X5DE2SC7A94S`: one real Google Static Maps block,
+  256 tiles, `fallbackGenerated: false`, current tile version `2.2.0000`.
+- Native Chrome: desktop and 390×844 mobile maps, full-page bounds, Start menu, party lead, Bag,
+  badge progress, Box 1 transfers, Save dialog, and application-origin console were verified.
