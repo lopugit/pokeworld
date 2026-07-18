@@ -1,16 +1,16 @@
 # Graph Report - pokeworld-canvas-zoom-artifacts  (2026-07-19)
 
 ## Corpus Check
-- 62 files · ~95,875 words
+- 63 files · ~95,996 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 451 nodes · 535 edges · 113 communities (24 shown, 89 thin omitted)
+- 451 nodes · 517 edges · 115 communities (25 shown, 90 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 16 edges (avg confidence: 0.66)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `65229f38`
+- Built from commit: `ed690821`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,8 +27,10 @@
 - [[_COMMUNITY_pm2.mjs|pm2.mjs]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
+- [[_COMMUNITY_scripts|scripts]]
 - [[_COMMUNITY_coordinates.ts|coordinates.ts]]
 - [[_COMMUNITY_generate-map.mjs|generate-map.mjs]]
+- [[_COMMUNITY_persisted-state.ts|persisted-state.ts]]
 - [[_COMMUNITY_vercel.json|vercel.json]]
 - [[_COMMUNITY_Pokémon World HTML Shell|Pokémon World HTML Shell]]
 - [[_COMMUNITY_Generated 16 by 16 Block Tiles|Generated 16 by 16 Block Tiles]]
@@ -131,11 +133,11 @@
 3. `scripts` - 13 edges
 4. `compilerOptions` - 9 edges
 5. `start()` - 8 edges
-6. `loadThings()` - 7 edges
-7. `saveThing()` - 7 edges
-8. `stop()` - 6 edges
-9. `parseMapJobInput()` - 6 edges
-10. `log()` - 6 edges
+6. `stop()` - 6 edges
+7. `parseMapJobInput()` - 6 edges
+8. `log()` - 6 edges
+9. `jsonResponse()` - 6 edges
+10. `errorResponse()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Google Map Source Image` --conceptually_related_to--> `Google Static Maps Colour Source`  [INFERRED]
@@ -161,27 +163,23 @@
 - **Road Tile Set** — app_public_tiles_road_1_image, app_public_tiles_road_2_image, app_public_tiles_road_3_image, app_public_tiles_road_4_image, app_public_tiles_road_5_image, app_public_tiles_road_6_image, app_public_tiles_road_7_image, app_public_tiles_road_8_image, app_public_tiles_road_9_image [INFERRED 0.95]
 - **Sand Tile Set** — app_public_tiles_sand_1_image, app_public_tiles_sand_2_image, app_public_tiles_sand_3_image [INFERRED 0.95]
 
-## Communities (113 total, 89 thin omitted)
+## Communities (115 total, 90 thin omitted)
 
 ### Community 0 - "functions.ts"
 Cohesion: 0.07
 Nodes (33): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+25 more)
 
-### Community 1 - "Game"
-Cohesion: 0.10
-Nodes (6): Game, isFiniteNumber(), emptyState(), loadThings(), saveThing(), ThingsState
-
 ### Community 2 - "Game.tsx"
-Cohesion: 0.14
-Nodes (17): MapBlock, MapTile, defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState (+9 more)
+Cohesion: 0.21
+Nodes (10): defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState, StoredImage, mapOffsetLimitForZoom() (+2 more)
 
 ### Community 3 - "types.ts"
-Cohesion: 0.11
-Nodes (24): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+16 more)
+Cohesion: 0.09
+Nodes (30): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+22 more)
 
 ### Community 4 - "package.json"
-Cohesion: 0.06
-Nodes (33): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+25 more)
+Cohesion: 0.10
+Nodes (20): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+12 more)
 
 ### Community 5 - "GamePage.tsx"
 Cohesion: 0.13
@@ -211,6 +209,10 @@ Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugi
 Cohesion: 0.15
 Nodes (13): devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node, @types/react (+5 more)
 
+### Community 12 - "scripts"
+Cohesion: 0.15
+Nodes (13): scripts, build, build:vercel, check, dev, map:generate, pms, pms-stop (+5 more)
+
 ### Community 13 - "coordinates.ts"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
@@ -218,6 +220,10 @@ Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJEC
 ### Community 14 - "generate-map.mjs"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
+
+### Community 15 - "persisted-state.ts"
+Cohesion: 0.60
+Nodes (4): emptyState(), loadThings(), saveThing(), ThingsState
 
 ### Community 16 - "vercel.json"
 Cohesion: 0.40
@@ -244,24 +250,24 @@ Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
 ## Knowledge Gaps
-- **236 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+231 more)
+- **237 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+232 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **89 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **90 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `Game` to `Game.tsx`, `GamePage.tsx`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `Game.tsx` to `types.ts`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _237 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `scripts` connect `scripts` to `package.json`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
+  _238 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `functions.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.06980392156862746 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
-  _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._
-- **Should `Game.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10756302521008404 - nodes in this community are weakly interconnected._
 - **Should `types.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.1091753774680604 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08897959183673469 - nodes in this community are weakly interconnected._

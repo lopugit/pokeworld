@@ -763,5 +763,10 @@
     "mtime": 1784385329.3817642,
     "ast_hash": "a631144c9b8e31b159105bdeceb07498",
     "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260718_144919_is_this_artifacting_normal__please_fix_it_and_add.md": {
+    "mtime": 1784386159.0838473,
+    "ast_hash": "e23080ff8127e664630395dd9f3971b9",
+    "semantic_hash": ""
   }
 }
