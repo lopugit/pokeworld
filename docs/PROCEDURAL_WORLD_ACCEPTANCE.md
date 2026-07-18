@@ -1,68 +1,89 @@
-# Procedural Emerald world acceptance
+# Procedural World Acceptance
 
-Status: Complete
+Status: In Progress
 
 Last reviewed: 2026-07-19
 
-This checklist is the stop condition for the ten-minute Pokeworld improvement loop. A checked item
-has automated coverage or current native-Chrome evidence in `docs/qa/`.
+This ledger is the completion source of truth for the deterministic Emerald-style
+world work on `codex/dense-pokemon-worlds`. Set `Status: Complete` only after every
+gate below is backed by current automated and native Chrome evidence.
 
-- [x] Real Google Static Maps colour data remains the semantic source for water, roads, buildings,
-  and ground.
-- [x] Roads are cardinal, squared, connected, and no more than three tiles thick.
-- [x] Large empty ground regions are replaced with coherent trees, long grass, flowers, shrubs,
-  boulders, ledges, signs, caves, houses, and authored clearings.
-- [x] Forests can contain deterministic natural secret paths and invisible hidden-item grass tiles.
-- [x] Six biomes, eight structure templates, six detail palettes, and three route treatments provide
-  864 deterministic world recipes, with biome-weighted structures and details rather than uniform
-  combinations.
-- [x] The player's central landing area is walkable and connected to an intentional route; adjacent
-  blocks derive matching boundary portals from their shared global coordinates.
-- [x] Water-isolated landings receive one-tile deterministic bridges whose edge portals match the
-  neighboring block, without widening ordinary roads.
-- [x] Every shipped terrain/object tile is an exact crop of the repository's original Pokémon
-  Emerald exterior tileset; party and PC creatures use Emerald-version sprites.
-- [x] Party, items, badges, and PC deposit/withdraw interactions persist locally and work with
-  keyboard and Game Boy controls.
-- [x] Unit, type, Vercel-output, real-Google-pipeline, desktop-Chrome, and mobile-Chrome checks pass.
-- [x] Desktop and mobile layouts have no horizontal overflow, clipping, or application-origin
-  console warnings/errors.
-
-## Required verification
+## Required commands
 
 ```bash
-pnpm --dir app check
+pnpm --dir app typecheck
+pnpm --dir app test
 pnpm --dir app benchmark:map
 pnpm --dir app map:generate -- 946579 488585 --regenerate
+pnpm --dir app build:vercel
+pnpm --dir app exec node scripts/verify-vercel-output.mjs
 ```
 
-The automated suite includes explicit Google/fallback provenance checks, output-equivalent pipeline
-benchmarking, route connectivity and thickness properties, deterministic grammar coverage, spawn
-safety, exact Emerald tile crops, client/server seed parity, collision, ledges, hidden items, and
-trainer-system transitions. The forced live generation must report `google-static-maps`, not the
-offline fallback, before this ledger remains complete.
+## Automated gates
 
-## Current visual evidence
+- [x] Orthogonal terrain edges are normalized.
+- [x] Every connected path and road is cardinally connected and no wider than three tiles.
+- [x] Deterministic replay and cross-block continuity hold for global coordinates.
+- [x] Property tests measure at least 500 distinct weighted grammar combinations.
+- [x] Ordinary ground has no large unintentional plain region.
+- [x] Spawn is safe and has access to a connected walkable route; water bridges derive
+  matching edge portals from neighboring blocks' shared global coordinates.
+- [x] Real Google colour data remains the semantic source for water, roads, buildings, and ground.
+- [x] Google Static Maps success and fallback paths carry distinct provenance.
+- [x] The map-pipeline benchmark executes and checks output equivalence.
+- [x] Forest grammar includes deterministic natural secret trails and hidden-item pockets.
+- [x] Every shipped terrain/object tile is an exact crop of the repository's supplied Emerald tileset.
+- [x] Party, items, badges, PC storage, collision, ledges, and interaction rules have unit tests.
+- [x] Persisted trainer saves migrate stale non-Emerald sprite references to supplied Emerald assets.
+- [x] All required commands pass together on the final commit.
 
-- `qa/dense-world-desktop.png`
-- `qa/dense-world-mobile.png`
-- `qa/trainer-party-desktop.png`
-- `qa/trainer-pc-mobile.png`
+## Native Chrome gates
 
-The screenshots are repository artifacts so each automated loop and pull-request reviewer can
-compare the accepted desktop and mobile result with later changes.
+- [x] Melbourne desktop and mobile maps are dense and coherent.
+- [x] Sydney Harbour desktop and mobile maps preserve shoreline terrain and a safe spawn.
+- [x] Alpine desktop and mobile maps preserve elevation/biome character and a safe spawn.
+- [x] Full-page scrolling has no clipping, overlap, or horizontal overflow.
+- [x] Menus, movement, regeneration, persistence, and PC flows respond correctly.
+- [x] No missing assets, framework overlay, or app-origin console errors are present.
+- [x] Screenshots are saved outside the repository for the final accepted commit.
+
+Final native Chrome screenshots saved outside the repository:
+
+- `/tmp/pokeworld-melbourne-desktop-20260719.png`
+- `/tmp/pokeworld-melbourne-mobile-20260719.png`
+- `/tmp/pokeworld-sydney-harbour-desktop-final-20260719.png`
+- `/tmp/pokeworld-sydney-harbour-mobile-20260719.png`
+- `/tmp/pokeworld-alpine-desktop-20260719.png`
+- `/tmp/pokeworld-alpine-mobile-20260719.png`
+
+Earlier accepted visual baselines remain in `docs/qa/` for pull-request comparison; the
+current final-commit screenshots above remain outside the repository as required by this run.
+
+## Delivery gates
+
+- [ ] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
+- [ ] `codex/dense-pokemon-worlds` is pushed.
+- [ ] One ready-for-review pull request is open and current.
 
 ## Latest verification
 
-- `pnpm --dir app check`: 15 test files / 84 tests, typecheck, Vercel build, static shell, Workflow
-  manifest, queue privacy, and maximum-duration checks passed.
-- `pnpm --dir app benchmark:map`: 262,144 pixels produced 256 output-equivalent tiles; optimized
-  median 4.37 ms versus legacy median 39.80 ms (9.12× in this run).
-- Forced local Workflow `wrun_01KXV49Z69SSZ6Q5RZXCC60Z2P`: one real Google Static Maps block,
-  256 tiles, `fallbackGenerated: false`, current tile version `2.3.0001`; the selected recipe was
-  `wild-route/secret-grove/route-garden/signed` and populated all 256 tiles with terrain or detail,
-  including a tree grove, secret trail, hidden item, ledges, signs, houses, and long-grass fields.
-- Native Chrome: desktop and 390×844 mobile maps, full-page bounds, Start menu, party lead, Bag,
-  badge progress, Box 1 transfers, Save dialog, exact sprite loading, and application-origin console
-  were verified. Chrome exposed and confirmed the fix for stale saves that referenced non-Emerald
-  trainer sprites.
+2026-07-19 automation slice:
+
+- `pnpm --dir app check` passed with 15 test files and 84 tests, including property
+  coverage for orthogonal edges, route width and connectivity, deterministic replay,
+  global-coordinate seams, plain-ground bounds, and safe land and all-water spawns.
+- Weighted biome rules sampled at least 500 distinct deterministic compositions while
+  reusing only the existing Emerald-era asset corpus.
+- The Vercel static shell and routing/output verifier passed on the integrated branch.
+- Forced local Workflow `wrun_01KXV4RFY3QH722P0E8Z6500SV` completed one real Google
+  Static Maps block with 256 tiles, `mapSource: google-static-maps`,
+  `fallbackGenerated: false`, tile version `2.3.0001`, and a populated
+  `wild-route/secret-grove/route-garden/signed` profile from 864 deterministic recipes.
+- The map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
+  the optimized path measured 10.10x faster than the legacy path.
+- Native Chrome desktop and mobile QA passed at Melbourne, Sydney Harbour, and Victorian
+  alpine coordinates with full-page scrolling, persisted party/items/badges/PC flows,
+  regeneration and movement. The Sydney run verified a deterministic one-tile bridge from
+  an otherwise isolated shoreline spawn. There were no missing assets, horizontal overflow,
+  framework overlays, or app-origin console warnings/errors; stale trainer saves were also
+  verified to resolve to supplied Emerald-version sprites.
