@@ -5,6 +5,18 @@
 - Branch previews: automatic Vercel Git previews for every branch in
   [`lopugit/pokeworld`](https://github.com/lopugit/pokeworld)
 
+## Verified migration preview
+
+- Stable branch alias:
+  [pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app](https://pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app)
+- Verified deployment (2026-07-18):
+  [pokeworld-3zqmpxlg1-lopugits-projects.vercel.app](https://pokeworld-3zqmpxlg1-lopugits-projects.vercel.app)
+
+The project-level SSO deployment gate is disabled so preview aliases are publicly testable. The
+verified deployment served `/`, `/index.html`, `/game`, both hashed Vite assets, and `/api/health`.
+A one-block map job was also started through `/api/map-jobs` and reached `completed` through
+Vercel Workflow's managed queue before returning the generated block and its 256 tile records.
+
 Preview deployments set `POKEWORLD_OFFLINE_MAP=true`, so durable Workflow runs can be exercised
 without writing to the production MongoDB or calling Google Static Maps. Production has the
 MongoDB and Google variables configured as sensitive Vercel environment values and sets offline

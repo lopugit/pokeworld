@@ -62,12 +62,12 @@
   "server/routes/v1/blockLatLng.get.ts": {
     "mtime": 1784382770.9956322,
     "ast_hash": "f6be2ab88063ac6e1ccd5231e3ed5fd3",
-    "semantic_hash": ""
+    "semantic_hash": "f6be2ab88063ac6e1ccd5231e3ed5fd3"
   },
   "server/routes/v1/blocks.get.ts": {
     "mtime": 1784382770.9959443,
     "ast_hash": "fb575af6fb53dc4ec525097be1d15456",
-    "semantic_hash": ""
+    "semantic_hash": "fb575af6fb53dc4ec525097be1d15456"
   },
   "server/services/map/coordinates.ts": {
     "mtime": 1784378676.5343485,
