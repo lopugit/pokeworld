@@ -1,71 +1,109 @@
-# Pokeworld
+# Pokémon World
 
-Two apps:
+Pokémon World is now one full-stack application:
 
-- **`api/`** — Express API (entry `modules/index.js`, reads `PORT`). Package manager: **pnpm** (`npm` is aliased to pnpm locally).
-- **`frontend/`** — Nuxt 2 app. Package manager: **yarn** (a `yarn.lock` is committed and is the source of truth).
+- **React 19 + React Router** in non-framework mode for the original UI and Game Boy experience.
+- **Vite 8** for the browser build and local HMR.
+- **Nitro 3** for API routes, static delivery, and the Vercel build output.
+- **Vercel Workflow** for durable, retryable map generation.
+- **MongoDB** for production block/tile persistence and **Google Static Maps** for real colour data.
 
-## Local dev — worktree-aware PM2 flow
+There are no separate `frontend/` and `api/` packages or proxy ports anymore. The React app,
+Nitro routes, and local Workflow runtime all share port **3847**.
 
-Adapted from [thingtime#36](https://github.com/lopugit/thingtime/pull/36). One command starts
-both apps under PM2 with deterministic, per-checkout ports and timestamped app names, so the
-main checkout and any number of linked git worktrees can run side by side without colliding.
-
-Run these from the **repo root**:
-
-| Command | What it does |
-| --- | --- |
-| `npm run pms` | Start/restart this checkout's stack (api + frontend). Deletes any prior app sharing the stable base name, then starts a freshly time-stamped one — **restarts never orphan a process**. This is the blessed lifecycle command. |
-| `npm run pms-stop` | Remove this checkout's api + frontend PM2 apps (matches the stable base, any timestamp). |
-| `npm run ports` | Print this checkout's derived ports and app names. |
-| `npm run ports:all` | List every pokeworld dev app PM2 knows about across worktrees, with kind, status, port, start time, and cwd. |
-
-> **Do not** use a raw `pm2 start`/`pm2 restart` on the ecosystem files: the app name carries a
-> clock-time suffix that is re-stamped on each start, so a raw restart spawns a duplicate instead
-> of replacing in place. Always go through `npm run pms`.
-
-### Ports & names
-
-- **Main checkout:** frontend `3000`, api `3847`; PM2 apps `pokeworld-frontend` / `pokeworld-api`.
-- **Linked worktree:** a deterministic port pair in `13000–18990` (FNV-1a hash of the worktree
-  directory name, frontend = base, api = base+1); PM2 apps
-  `pw-wt-<worktree>-frontend-<port>` / `pw-wt-<worktree>-api-<port>`.
-- Every app name additionally carries a clock-time suffix (e.g. `-1005am`) showing when it was
-  last started. The port embedded in the *name* is always the deterministic derived port (the
-  stable identity used for cleanup).
-- Overrides: `PW_FRONTEND_PORT` / `PW_API_PORT` change the bound ports but not the name/base, so
-  start/stop still match and never orphan.
-- The frontend is automatically pointed at this checkout's api via `API=http://localhost:<apiPort>/v1`.
-
-Start another checkout's stack from here (name/ports derived from that checkout):
+## Install and run
 
 ```sh
-node scripts/dev-pm2.cjs start --cwd /path/to/other/pokeworld
+pnpm install
+cp .env.example .env
+pnpm dev
 ```
 
-Single source of truth for all of the above: [`scripts/worktree-ports.cjs`](scripts/worktree-ports.cjs)
-(consumed by both `ecosystem.config.cjs` files and [`scripts/dev-pm2.cjs`](scripts/dev-pm2.cjs)).
+- Local: [http://localhost:3847](http://localhost:3847)
+- Tailscale Funnel: [https://lopus-macbook-pro-2.tail9606f9.ts.net:3847/](https://lopus-macbook-pro-2.tail9606f9.ts.net:3847/)
 
-## Install
+The development server binds only to `127.0.0.1`; Tailscale proxies the public listener into that
+loopback port. The exact Funnel hostname is allowlisted in `vite.config.ts`.
+
+For the persistent local process:
 
 ```sh
-# api  (pnpm — `npm` is aliased to pnpm)
-cd api && npm i
-
-# frontend  (yarn; --ignore-engines is needed for the committed @nuxt/kit RC on Node 18+)
-cd frontend && yarn install --ignore-engines
+pnpm pms
+pnpm pms-stop
 ```
 
-Notes:
+PM2 runs one deterministic process named `pokeworld-nitro-react-3847` with auto-restart disabled.
+The lifecycle script removes only this checkout's old Pokeworld entries, verifies the port, health,
+process count, and stable restart counter, then saves the healthy PM2 state.
 
-- **api / sharp:** `sharp` is pinned to a prebuilt-binary version and `package.json`'s `pnpm.neverBuiltDependencies`
-  skips its install script, so nothing compiles against a globally-installed libvips (node-gyp
-  fails on Python 3.12+, which removed `distutils`).
-- **frontend:** installing with pnpm/npm resolves incompatible newer transitive deps (webpack 5,
-  a newer `@nuxt/kit`) that break Nuxt 2 — use yarn so the committed `yarn.lock` is honored.
+## How Workflow works locally
 
-### api runtime config (`api/.env`)
+Nitro does **not** launch a map-generator child process. The `workflow/vite` plugin installs the
+Local World into the same Nitro/Vite dev server. A request to `/api/map-jobs` creates a durable run;
+the Local World queues each `"use step"` map block and invokes it through a separate HTTP request to
+the same server. Run state is stored in `.workflow-data/`, so the API follows the same
+workflow/step boundary used on Vercel.
 
-`PORT` is injected by the PM2 flow. For real block generation the api also needs `MONGODB_*` and
-`GOOGLE_API_KEY`; without them the server still boots and `/v1/blocks` returns `503` while
-`/v1/blockLatLng` returns "No block found".
+The local queue is in-memory, while completed run data is filesystem-backed. Restarting the dev
+server clears pending queue work, but completed/local run records remain inspectable. The optional
+Workflow dashboard is a separate observer process:
+
+```sh
+pnpm workflow:web
+pnpm workflow:inspect
+```
+
+On Vercel, the Vercel World supplies managed queues, durable state, retries, and step functions.
+Each block is a separate private, queue-triggered Node.js function with `maxDuration: "max"`, and
+independent blocks are scheduled concurrently. A workflow can therefore outlive the original
+browser/API invocation and resume after retries or deployments.
+
+Official references: [Workflow with Nitro](https://useworkflow.dev/docs/getting-started/nitro),
+[Local World](https://useworkflow.dev/docs/worlds/local), and
+[Vercel World](https://useworkflow.dev/docs/worlds/vercel).
+
+## Map generation
+
+The browser requests nearby blocks through `GET /api/blocks`. Cached MongoDB blocks return
+immediately; missing or stale blocks queue `generateMapWorkflow` and the browser polls the run.
+
+You can enqueue the same durable path from the terminal while the app is running:
+
+```sh
+pnpm map:generate -- 946647 488524
+pnpm map:generate -- 946647 488524 --radius 2 --regenerate
+```
+
+`--radius 2` requests the maximum 25 blocks. In offline development,
+`POKEWORLD_OFFLINE_MAP=true` avoids MongoDB and Google and uses a deterministic fallback image.
+Production blocks record `mapSource`, `fallbackGenerated`, and `mapGeneratedAt`, allowing a later
+request to repair fallback-derived MongoDB data when Google Static Maps is available.
+
+### API routes
+
+- `GET /api/health`
+- `GET /api/block-lat-lng?lat=...&lng=...`
+- `GET /api/blocks?blockX=...&blockY=...&offsets=...`
+- `POST /api/map-jobs`
+- `GET /api/map-jobs/:runId`
+- Legacy-compatible aliases: `/v1/blockLatLng` and `/v1/blocks`
+
+## Verification and deployment
+
+```sh
+pnpm typecheck
+pnpm test
+pnpm build:vercel
+pnpm check
+```
+
+`build:vercel` uses the Nitro Vercel preset and then proves that:
+
+- `.vercel/output/static/index.html` contains the React root and Vite asset;
+- filesystem/static routing precedes the Nitro fallback;
+- the Node.js server function was emitted;
+- the Workflow manifest contains the map workflow and its durable per-block step;
+- the step function is private-queue triggered and uses Vercel's maximum function duration.
+
+The linked [Vercel project](https://vercel.com/lopugits-projects/pokeworld) builds every Git branch.
+See [VERCEL_DEPLOYMENTS.md](./VERCEL_DEPLOYMENTS.md) for deployment and environment details.

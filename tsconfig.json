@@ -1,0 +1,28 @@
+{
+  "extends": "nitro/tsconfig",
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@server/*": ["./server/*"]
+    },
+    "plugins": [
+      {
+        "name": "workflow"
+      }
+    ],
+    "strict": true,
+    "types": ["node", "vite/client"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "server/**/*.ts",
+    "workflows/**/*.ts",
+    "tests/**/*.ts",
+    "vite.config.ts"
+  ]
+}

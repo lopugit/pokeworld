@@ -1,16 +1,15 @@
-# Graph Report - pokeworld  (2026-07-18)
+# Graph Report - .  (2026-07-18)
 
 ## Corpus Check
-- 53 files · ~36,327,522 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 413 nodes · 347 edges · 125 communities (32 shown, 93 thin omitted)
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.61)
+- 434 nodes · 487 edges · 113 communities (25 shown, 88 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `02337a56`
+- Built from commit: `42e5aa33`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,9 +29,11 @@
 - [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
 - [[_COMMUNITY_things.js|things.js]]
+- [[_COMMUNITY_LoginRegister.vue|LoginRegister.vue]]
 - [[_COMMUNITY_Nuxt.js Framework|Nuxt.js Framework]]
 - [[_COMMUNITY_Walking Character Spritesheet|Walking Character Spritesheet]]
 - [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
+- [[_COMMUNITY_Banner.vue|Banner.vue]]
 - [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
 - [[_COMMUNITY_tailwind.config.js|tailwind.config.js]]
 - [[_COMMUNITY_Grass Terrain Sprite|Grass Terrain Sprite]]
@@ -45,14 +46,26 @@
 - [[_COMMUNITY_Sand Terrain Sprite 7|Sand Terrain Sprite 7]]
 - [[_COMMUNITY_Sand Terrain Sprite 8|Sand Terrain Sprite 8]]
 - [[_COMMUNITY_Sand Terrain Sprite 9|Sand Terrain Sprite 9]]
+- [[_COMMUNITY_.eslintrc.js|.eslintrc.js]]
+- [[_COMMUNITY_maptest.ecosystem.config.js|maptest.ecosystem.config.js]]
 - [[_COMMUNITY_Pokeworld Second Test Image|Pokeworld Second Test Image]]
 - [[_COMMUNITY_Pokeworld Test Image|Pokeworld Test Image]]
+- [[_COMMUNITY_Nav.vue|Nav.vue]]
+- [[_COMMUNITY_NuxtLogo.vue|NuxtLogo.vue]]
+- [[_COMMUNITY_.eslintrc.js|.eslintrc.js]]
+- [[_COMMUNITY_default.vue|default.vue]]
+- [[_COMMUNITY_game.vue|game.vue]]
+- [[_COMMUNITY_nuxt.config.js|nuxt.config.js]]
+- [[_COMMUNITY_game.vue|game.vue]]
+- [[_COMMUNITY_index.vue|index.vue]]
+- [[_COMMUNITY_persistedState.client.js|persistedState.client.js]]
 - [[_COMMUNITY_192×192 Android Chrome App Icon|192×192 Android Chrome App Icon]]
 - [[_COMMUNITY_512×512 Android Chrome App Icon|512×512 Android Chrome App Icon]]
 - [[_COMMUNITY_Apple Touch App Icon|Apple Touch App Icon]]
 - [[_COMMUNITY_16×16 Website Favicon|16×16 Website Favicon]]
 - [[_COMMUNITY_32×32 Website Favicon|32×32 Website Favicon]]
 - [[_COMMUNITY_Walking Character Sprite|Walking Character Sprite]]
+- [[_COMMUNITY_sw.js|sw.js]]
 - [[_COMMUNITY_Tile Artwork|Tile Artwork]]
 - [[_COMMUNITY_Big Tree Tile 10|Big Tree Tile 10]]
 - [[_COMMUNITY_Big Tree Tile 1|Big Tree Tile 1]]
@@ -108,159 +121,146 @@
 - [[_COMMUNITY_Room Interiors Tileset|Room Interiors Tileset]]
 - [[_COMMUNITY_Sand Tile 1|Sand Tile 1]]
 - [[_COMMUNITY_Sand Terrain Tile 2|Sand Terrain Tile 2]]
-- [[_COMMUNITY_Sand Terrain Tile 3|Sand Terrain Tile 3]]
-- [[_COMMUNITY_Sand Terrain Tile 4|Sand Terrain Tile 4]]
-- [[_COMMUNITY_Sand Terrain Tile 5|Sand Terrain Tile 5]]
-- [[_COMMUNITY_Sand Terrain Tile 6|Sand Terrain Tile 6]]
-- [[_COMMUNITY_Sand Terrain Tile 7|Sand Terrain Tile 7]]
-- [[_COMMUNITY_Sand Terrain Tile 8|Sand Terrain Tile 8]]
-- [[_COMMUNITY_Sand Terrain Tile 9|Sand Terrain Tile 9]]
-- [[_COMMUNITY_Shrub Terrain Tile|Shrub Terrain Tile]]
-- [[_COMMUNITY_Tree Terrain Tile|Tree Terrain Tile]]
-- [[_COMMUNITY_Nuxt 2 Frontend|Nuxt 2 Frontend]]
-- [[_COMMUNITY_Nuxt 2 Documentation|Nuxt 2 Documentation]]
-- [[_COMMUNITY_Nuxt.js Framework|Nuxt.js Framework]]
-- [[_COMMUNITY_Vuex Store|Vuex Store]]
-- [[_COMMUNITY_Nuxt.js Vuex Store Documentation|Nuxt.js Vuex Store Documentation]]
-- [[_COMMUNITY_Worktree-Aware PM2 Development Flow|Worktree-Aware PM2 Development Flow]]
-- [[_COMMUNITY_API Runtime Configuration|API Runtime Configuration]]
-- [[_COMMUNITY_Thingtime Pull Request 36|Thingtime Pull Request 36]]
-- [[_COMMUNITY_Worktree Port Derivation|Worktree Port Derivation]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `scripts` - 8 edges
-2. `getBlocks()` - 8 edges
-3. `scripts` - 8 edges
-4. `Special Directories` - 8 edges
-5. `scripts` - 7 edges
-6. `generateMap()` - 6 edges
-7. `mounted()` - 6 edges
-8. `generateCoordinatesGrid()` - 5 edges
-9. `getTile()` - 5 edges
-10. `updatePlayerBlock()` - 4 edges
+1. `Game` - 35 edges
+2. `scripts` - 13 edges
+3. `Pokémon World` - 10 edges
+4. `compilerOptions` - 9 edges
+5. `start()` - 8 edges
+6. `Pokémon World Application Shell` - 7 edges
+7. `stop()` - 6 edges
+8. `log()` - 6 edges
+9. `Vercel Workflow` - 6 edges
+10. `generateMapBlock()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Google Map Image` --conceptually_related_to--> `Express API`  [INFERRED]
-  api/assets/gmap.png → README.md
-- `Frontend Banner Artwork` --conceptually_related_to--> `Nuxt 2 Frontend`  [INFERRED]
-  frontend/static/bannerPic1.png → README.md
-- `Pokeworld Application Icon` --conceptually_related_to--> `Nuxt 2 Frontend`  [INFERRED]
-  frontend/static/icon.png → README.md
-- `Loading Animation` --conceptually_related_to--> `Nuxt 2 Frontend`  [INFERRED]
-  frontend/static/loading.gif → README.md
-- `Lopu Designs Branding Image` --conceptually_related_to--> `Nuxt 2 Frontend`  [INFERRED]
-  frontend/static/lopudesigns.jpeg → README.md
+- `Fallback Map Regeneration Repair` --references--> `Google Map Source Image`  [INFERRED]
+  TODO-fallback-map-regeneration.md → map-assets/gmap.png
+- `Pokémon World Application Shell` --conceptually_related_to--> `Pokémon World Android Chrome Icon 192x192`  [INFERRED]
+  index.html → public/icons/android-chrome-192x192.png
+- `Pokémon World Application Shell` --conceptually_related_to--> `Pokémon World Android Chrome Icon 512x512`  [INFERRED]
+  index.html → public/icons/android-chrome-512x512.png
+- `Pokémon World Banner Artwork` --conceptually_related_to--> `Pokémon World Application Shell`  [INFERRED]
+  public/bannerPic1.png → index.html
+- `Pokémon World Loading Animation` --conceptually_related_to--> `Pokémon World Application Shell`  [INFERRED]
+  public/loading.gif → index.html
 
 ## Import Cycles
-- 1-file cycle: `api/modules/tests/osmtogeojson.js -> api/modules/tests/osmtogeojson.js`
+- None detected.
 
 ## Hyperedges (group relationships)
-- **Pond Tile Set** — frontend_static_tiles_pond_24_image, frontend_static_tiles_pond_25_image, frontend_static_tiles_pond_3_image, frontend_static_tiles_pond_4_image, frontend_static_tiles_pond_5_image, frontend_static_tiles_pond_6_image, frontend_static_tiles_pond_7_image, frontend_static_tiles_pond_8_image, frontend_static_tiles_pond_9_image [INFERRED 0.95]
-- **Road Tile Set** — frontend_static_tiles_road_1_image, frontend_static_tiles_road_2_image, frontend_static_tiles_road_3_image, frontend_static_tiles_road_4_image, frontend_static_tiles_road_5_image, frontend_static_tiles_road_6_image, frontend_static_tiles_road_7_image, frontend_static_tiles_road_8_image, frontend_static_tiles_road_9_image [INFERRED 0.95]
-- **Frontend Application Icon Set** — frontend_static_icons_android_chrome_192x192_image, frontend_static_icons_android_chrome_512x512_image, frontend_static_icons_apple_touch_icon_image, frontend_static_icons_favicon_16x16_image, frontend_static_icons_favicon_32x32_image [EXTRACTED 1.00]
-- **Big Tree Tile Set** — frontend_static_tiles_big_tree_1_image, frontend_static_tiles_big_tree_2_image, frontend_static_tiles_big_tree_3_image, frontend_static_tiles_big_tree_4_image, frontend_static_tiles_big_tree_5_image, frontend_static_tiles_big_tree_6_image, frontend_static_tiles_big_tree_7_image, frontend_static_tiles_big_tree_8_image, frontend_static_tiles_big_tree_9_image, frontend_static_tiles_big_tree_10_image [EXTRACTED 1.00]
-- **Path Tile Set** — frontend_static_tiles_path_1_path_tile, frontend_static_tiles_path_2_path_tile, frontend_static_tiles_path_3_path_tile, frontend_static_tiles_path_4_path_tile, frontend_static_tiles_path_5_path_tile, frontend_static_tiles_path_6_path_tile, frontend_static_tiles_path_7_path_tile, frontend_static_tiles_path_8_path_tile, frontend_static_tiles_path_9_path_tile [INFERRED 0.99]
-- **Pond Tile Set** — frontend_static_tiles_pond_1_pond_tile, frontend_static_tiles_pond_2_pond_tile, frontend_static_tiles_pond_20_pond_tile, frontend_static_tiles_pond_21_pond_tile, frontend_static_tiles_pond_22_pond_tile, frontend_static_tiles_pond_23_pond_tile [INFERRED 0.99]
-- **Terrain and Decoration Tile Set** — frontend_static_tiles_flower_3_flower_tile, frontend_static_tiles_grass_2_grass_tile, frontend_static_tiles_grass_dirt_2_grass_dirt_tile, frontend_static_tiles_grass_grass_tile, frontend_static_tiles_images_tile_image [INFERRED 0.80]
-- **Sand Terrain Tile Variants** — frontend_static_tiles_sand_2_sand_tile, frontend_static_tiles_sand_3_sand_tile, frontend_static_tiles_sand_4_sand_tile, frontend_static_tiles_sand_5_sand_tile, frontend_static_tiles_sand_6_sand_tile, frontend_static_tiles_sand_7_sand_tile, frontend_static_tiles_sand_8_sand_tile, frontend_static_tiles_sand_9_sand_tile [INFERRED 0.95]
-- **Terrain Tile Asset Set** — frontend_static_tiles_sand_2_sand_tile, frontend_static_tiles_sand_3_sand_tile, frontend_static_tiles_sand_4_sand_tile, frontend_static_tiles_sand_5_sand_tile, frontend_static_tiles_sand_6_sand_tile, frontend_static_tiles_sand_7_sand_tile, frontend_static_tiles_sand_8_sand_tile, frontend_static_tiles_sand_9_sand_tile, frontend_static_tiles_shrub_1_shrub_tile, frontend_static_tiles_tree_1_tree_tile [INFERRED 0.90]
-- **Pokeworld Application Stack** — readme_pokeworld, readme_api, readme_frontend, readme_pm2_flow [EXTRACTED 1.00]
-- **Terrain Sprite Collection** — api_assets_sprites_grass_image, api_assets_sprites_sand_1_image, api_assets_sprites_sand_2_image, api_assets_sprites_sand_3_image, api_assets_sprites_sand_4_image, api_assets_sprites_sand_5_image, api_assets_sprites_sand_6_image, api_assets_sprites_sand_7_image, api_assets_sprites_sand_8_image, api_assets_sprites_sand_9_image [INFERRED 0.95]
-- **Pokémon World Visual Assets** — api_assets_gmap_image, api_assets_sprites_grass_image, api_assets_tilesets_game_boy_advance_pokemon_emerald_exterior_tileset_image, api_assets_tilesets_char_walk_1_image, api_assets_tilesets_emerald_character_male_image [INFERRED 0.85]
+- **Fallback Map Regeneration Solution** — graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration [EXTRACTED 0.98]
+- **Full-Stack Application Architecture** — readme_react_19, readme_react_router, readme_vite_8, readme_nitro_3 [EXTRACTED 1.00]
+- **Durable Map Generation Flow** — readme_blocks_api, readme_map_jobs_api, readme_generate_map_workflow, readme_map_job_status_api [EXTRACTED 0.98]
+- **Map Persistence and Colour Sources** — readme_generate_map_workflow, readme_mongodb, readme_google_static_maps, readme_offline_map_mode [EXTRACTED 0.95]
+- **Fallback-Derived Block Repair Flow** — todo_fallback_map_regeneration_stale_fallback_detection, todo_fallback_map_regeneration_map_provenance, todo_fallback_map_regeneration_lazy_regeneration, todo_fallback_map_regeneration_admin_sweep [EXTRACTED 0.98]
+- **Pokémon World Map and Character Visual Assets** — map_assets_gmap_image, map_assets_sprites_grass_image, map_assets_sprites_sand_1_image, map_assets_sprites_sand_2_image, map_assets_sprites_sand_3_image, map_assets_sprites_sand_4_image, map_assets_sprites_sand_5_image, map_assets_sprites_sand_6_image, map_assets_sprites_sand_7_image, map_assets_sprites_sand_8_image, map_assets_sprites_sand_9_image, map_assets_tilesets_game_boy_advance_pokemon_emerald_exterior_tileset_image, map_assets_tilesets_char_walk_1_image, map_assets_tilesets_emerald_character_male_image [INFERRED 0.90]
+- **Pond Terrain Tile Set** — public_tiles_pond_3_image, public_tiles_pond_4_image, public_tiles_pond_5_image, public_tiles_pond_6_image, public_tiles_pond_7_image, public_tiles_pond_8_image, public_tiles_pond_9_image [INFERRED 0.95]
+- **Road Terrain Tile Set** — public_tiles_road_1_image, public_tiles_road_2_image, public_tiles_road_3_image, public_tiles_road_4_image, public_tiles_road_5_image, public_tiles_road_6_image, public_tiles_road_7_image, public_tiles_road_8_image, public_tiles_road_9_image [INFERRED 0.95]
+- **Sand Terrain Tile Set** — public_tiles_sand_1_image, public_tiles_sand_2_image, public_tiles_sand_3_image [INFERRED 0.95]
+- **Terrain Tile Image Set** — public_tiles_grass_dirt_2_image, public_tiles_grass_image, public_tiles_images_image, public_tiles_path_1_image, public_tiles_path_2_image, public_tiles_path_3_image, public_tiles_path_4_image, public_tiles_path_5_image, public_tiles_path_6_image, public_tiles_path_7_image, public_tiles_path_8_image, public_tiles_path_9_image, public_tiles_pond_1_image, public_tiles_pond_2_image, public_tiles_pond_20_image, public_tiles_pond_21_image, public_tiles_pond_22_image, public_tiles_pond_23_image, public_tiles_pond_24_image, public_tiles_pond_25_image [INFERRED 0.95]
+- **Large Tree Tile Variant Set** — public_tiles_big_tree_1_big_tree_tile_1, public_tiles_big_tree_2_big_tree_tile_2, public_tiles_big_tree_3_big_tree_tile_3, public_tiles_big_tree_4_big_tree_tile_4, public_tiles_big_tree_5_big_tree_tile_5, public_tiles_big_tree_6_big_tree_tile_6, public_tiles_big_tree_7_big_tree_tile_7, public_tiles_big_tree_8_big_tree_tile_8, public_tiles_big_tree_9_big_tree_tile_9, public_tiles_big_tree_10_big_tree_tile_10 [INFERRED 0.98]
+- **Flower Tile Variant Set** — public_tiles_flower_1_flower_tile_1, public_tiles_flower_2_flower_tile_2, public_tiles_flower_3_flower_tile_3 [INFERRED 0.98]
+- **Website Icon Set** — public_icons_apple_touch_icon_apple_touch_icon, public_icons_favicon_16x16_favicon_16x16, public_icons_favicon_32x32_favicon_32x32 [INFERRED 0.98]
 
-## Communities (125 total, 93 thin omitted)
+## Communities (113 total, 88 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (25): action(), blockShouldRender(), centreMap(), convertY(), 'game.regenerate'(), 'game.zoom'(), getBlocks(), getLocation() (+17 more)
+Cohesion: 0.08
+Nodes (29): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+21 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.10
-Nodes (28): axios, fs, generateCoordinatesGrid(), generateMap(), generateOutputs(), { get }, getMapAt(), getTile() (+20 more)
-
-### Community 2 - "package.json"
-Cohesion: 0.06
-Nodes (35): author, bugs, url, description, devDependencies, eslint, eslint-config-prettier, eslint-config-xo (+27 more)
+Cohesion: 0.09
+Nodes (28): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), finiteInteger() (+20 more)
 
 ### Community 3 - "blocks.js"
-Cohesion: 0.15
-Nodes (11): fs, functions, imageToRgbaMatrix, latsDb, lngsDb, log, mods, { MongoClient } (+3 more)
+Cohesion: 0.07
+Nodes (33): blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback Map Regeneration Query, Fallback Map Regeneration Repair, Lazy Durable Workflow Regeneration, Legacy Fallback Fingerprint Detection, Stale Fallback Block Detection, TODO-fallback-map-regeneration.md (+25 more)
 
 ### Community 4 - "dependencies"
-Cohesion: 0.09
-Nodes (22): fs, json, osmtogeojson, xml, dependencies, axios, bcrypt, body-parser (+14 more)
+Cohesion: 0.10
+Nodes (20): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+12 more)
 
 ### Community 5 - "index.js"
-Cohesion: 0.10
-Nodes (10): functions, functions, flowers, grass, patherize, ponds, roads, functions (+2 more)
+Cohesion: 0.13
+Nodes (12): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+4 more)
 
 ### Community 6 - "devDependencies"
-Cohesion: 0.22
-Nodes (9): devDependencies, @babel/eslint-parser, eslint, eslint-plugin-nuxt, eslint-plugin-vue, @nuxtjs/eslint-config, @nuxtjs/eslint-module, @nuxtjs/tailwindcss (+1 more)
+Cohesion: 0.12
+Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
-Cohesion: 0.33
-Nodes (6): Map Tile Mosaic HTML, Tile Set 946647 488525, Tile Set 946647 488526, Google Map Image, Pokémon Emerald Exterior Tileset, Express API
+Cohesion: 0.32
+Nodes (14): apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2(), removeOwned() (+6 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.17
-Nodes (7): beforeDestroy(), clampToViewport(), endDrag(), mounted(), onDrag(), PRESETS, removeDragListeners()
+Cohesion: 0.14
+Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
 ### Community 9 - "dependencies"
-Cohesion: 0.08
-Nodes (24): dependencies, core-js, lodash, lodash-es, nuxt, @nuxtjs/axios, @nuxtjs/pwa, sass (+16 more)
+Cohesion: 0.15
+Nodes (13): devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node, @types/react (+5 more)
 
 ### Community 10 - "scripts"
-Cohesion: 0.14
-Nodes (13): description, license, name, private, scripts, api, frontend, pms (+5 more)
+Cohesion: 0.15
+Nodes (13): scripts, build, build:vercel, check, dev, map:generate, pms, pms-stop (+5 more)
 
 ### Community 11 - "apis.js"
-Cohesion: 0.10
-Nodes (17): fs, getLatFromLat(), getLngFromLng(), latsMap, lngsMap, v1BlockLatLng(), v1Blocks, apis (+9 more)
+Cohesion: 0.27
+Nodes (5): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock(), generateMapWorkflow()
 
 ### Community 12 - "devDependencies"
-Cohesion: 0.18
-Nodes (10): `assets`, Build Setup, `components`, `layouts`, `pages`, `plugins`, pokeworld-frontend, Special Directories (+2 more)
+Cohesion: 0.25
+Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
 ### Community 13 - "compilerOptions"
-Cohesion: 0.33
-Nodes (5): compilerOptions, baseUrl, paths, exclude, ~/*
+Cohesion: 0.22
+Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
 ### Community 14 - "things.js"
-Cohesion: 0.40
-Nodes (3): actions, getters, mutations
+Cohesion: 0.32
+Nodes (8): Pokémon World Application Shell, Pokémon World Banner Artwork, Pokémon World App Icon, Pokémon World Android Chrome Icon 192x192, Pokémon World Android Chrome Icon 512x512, Pokémon World Loading Animation, Web App Manifest, Client Application Entry
+
+### Community 15 - "LoginRegister.vue"
+Cohesion: 0.25
+Nodes (7): defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState, StoredImage
+
+### Community 16 - "Nuxt.js Framework"
+Cohesion: 0.38
+Nodes (7): Generated Map Tile Grid, Google Map Source Image, Rate-Limited Administrative Fallback Sweep, Fallback Map Regeneration Repair, Lazy Durable Block Regeneration, Map Generation Provenance, Stale Fallback Block Detection
+
+### Community 17 - "Walking Character Spritesheet"
+Cohesion: 0.60
+Nodes (4): emptyState(), loadThings(), saveThing(), ThingsState
 
 ### Community 18 - "ecosystem.config.js"
-Cohesion: 0.29
-Nodes (4): { pm2AppConfig }, api, frontend, { pm2AppConfig }
-
-### Community 20 - "ecosystem.config.js"
-Cohesion: 0.33
-Nodes (5): api runtime config (`api/.env`), Install, Local dev — worktree-aware PM2 flow, Pokeworld, Ports & names
-
-### Community 116 - "Nuxt 2 Frontend"
 Cohesion: 0.40
-Nodes (5): Frontend Banner Artwork, Pokeworld Application Icon, Loading Animation, Lopu Designs Branding Image, Nuxt 2 Frontend
+Nodes (4): buildCommand, framework, installCommand, $schema
+
+### Community 19 - "Banner.vue"
+Cohesion: 0.50
+Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **258 isolated node(s):** `name`, `version`, `private`, `description`, `postinstall` (+253 more)
+- **220 isolated node(s):** `CORE_ASSETS`, `minLatitudeProjected`, `createLegacyBlocksHandler`, `MapSource`, `MapTile` (+215 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **93 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **88 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `package.json`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _258 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Game` connect `package.json` to `index.js`, `LoginRegister.vue`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `scripts` connect `scripts` to `dependencies`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `dependencies` to `dependencies`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **What connects `CORE_ASSETS`, `minLatitudeProjected`, `createLegacyBlocksHandler` to the rest of the system?**
+  _220 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.07317073170731707 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0797979797979798 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09659090909090909 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09080841638981174 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
-- **Should `dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
-- **Should `index.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10756302521008404 - nodes in this community are weakly interconnected._
