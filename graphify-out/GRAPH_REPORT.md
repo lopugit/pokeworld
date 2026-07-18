@@ -1,16 +1,15 @@
-# Graph Report - pokeworld  (2026-07-19)
+# Graph Report - .  (2026-07-19)
 
 ## Corpus Check
-- 66 files · ~36,327,203 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 471 nodes · 524 edges · 139 communities (26 shown, 113 thin omitted)
+- 454 nodes · 524 edges · 122 communities (26 shown, 96 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 15 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `65229f38`
+- Built from commit: `df810e11`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,15 +29,11 @@
 - [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
 - [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
-- [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
 - [[_COMMUNITY_vercel.json|vercel.json]]
-- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_Generated 16 by 16 Block Tiles|Generated 16 by 16 Block Tiles]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
 - [[_COMMUNITY_Sand Terrain Sprite 1|Sand Terrain Sprite 1]]
-- [[_COMMUNITY_Sand Terrain Sprite 2|Sand Terrain Sprite 2]]
-- [[_COMMUNITY_Sand Terrain Sprite 3|Sand Terrain Sprite 3]]
 - [[_COMMUNITY_Sand Terrain Sprite 4|Sand Terrain Sprite 4]]
 - [[_COMMUNITY_Sand Terrain Sprite 5|Sand Terrain Sprite 5]]
 - [[_COMMUNITY_Sand Terrain Sprite 6|Sand Terrain Sprite 6]]
@@ -137,19 +132,6 @@
 - [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
 - [[_COMMUNITY_map-source.ts|map-source.ts]]
 - [[_COMMUNITY_Q Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitudelongitude, including visual Chrome QA|Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA]]
-- [[_COMMUNITY_lopugitpokeworld GitHub Repository|lopugit/pokeworld GitHub Repository]]
-- [[_COMMUNITY_apihealth|/api/health]]
-- [[_COMMUNITY_apimap-jobs|/api/map-jobs]]
-- [[_COMMUNITY_MongoDB|MongoDB]]
-- [[_COMMUNITY_Nitro Fallback|Nitro Fallback]]
-- [[_COMMUNITY_POKEWORLD_OFFLINE_MAP|POKEWORLD_OFFLINE_MAP]]
-- [[_COMMUNITY_React Static Shell|React Static Shell]]
-- [[_COMMUNITY_Stable Migration Preview Alias|Stable Migration Preview Alias]]
-- [[_COMMUNITY_Vercel Build Process|Vercel Build Process]]
-- [[_COMMUNITY_lopugits-projectspokeworld Vercel Project|lopugits-projects/pokeworld Vercel Project]]
-- [[_COMMUNITY_Vercel Workflow Managed Queue|Vercel Workflow Managed Queue]]
-- [[_COMMUNITY_app.vercelignore|app/.vercelignore]]
-- [[_COMMUNITY_Verified App-Root Deployment|Verified App-Root Deployment]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 35 edges
@@ -190,7 +172,7 @@
 - **Road Tile Set** — app_public_tiles_road_1_image, app_public_tiles_road_2_image, app_public_tiles_road_3_image, app_public_tiles_road_4_image, app_public_tiles_road_5_image, app_public_tiles_road_6_image, app_public_tiles_road_7_image, app_public_tiles_road_8_image, app_public_tiles_road_9_image [INFERRED 0.95]
 - **Sand Tile Set** — app_public_tiles_sand_1_image, app_public_tiles_sand_2_image, app_public_tiles_sand_3_image [INFERRED 0.95]
 
-## Communities (139 total, 113 thin omitted)
+## Communities (122 total, 96 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.08
@@ -281,21 +263,21 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA, Source Nodes
 
 ## Knowledge Gaps
-- **261 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+256 more)
+- **244 isolated node(s):** `Verified migration preview`, `Build`, `name`, `version`, `private` (+239 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **113 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **96 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `functions.js` to `package.json`, `index.js`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `MapBlock` connect `package.json` to `dependencies`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Why does `scripts` connect `scripts` to `blocks.js`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _262 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **What connects `Verified migration preview`, `Build`, `name` to the rest of the system?**
+  _245 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.0797979797979798 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
