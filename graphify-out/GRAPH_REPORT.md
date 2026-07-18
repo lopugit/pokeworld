@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 789 nodes · 1177 edges · 158 communities (36 shown, 122 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.75)
+- 784 nodes · 1161 edges · 161 communities (39 shown, 122 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4b768341`
+- Built from commit: `b4479f7b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -152,21 +152,24 @@
 - [[_COMMUNITY_React, Nitro, Vite and Workflow Runtime|React, Nitro, Vite and Workflow Runtime]]
 - [[_COMMUNITY_MongoDB Map Block Persistence|MongoDB Map Block Persistence]]
 - [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
-- [[_COMMUNITY_Community 139|Community 139]]
-- [[_COMMUNITY_Community 140|Community 140]]
-- [[_COMMUNITY_Community 141|Community 141]]
-- [[_COMMUNITY_Community 142|Community 142]]
-- [[_COMMUNITY_Community 143|Community 143]]
-- [[_COMMUNITY_Community 144|Community 144]]
-- [[_COMMUNITY_Community 145|Community 145]]
-- [[_COMMUNITY_Community 146|Community 146]]
-- [[_COMMUNITY_Community 147|Community 147]]
-- [[_COMMUNITY_Community 148|Community 148]]
-- [[_COMMUNITY_Community 149|Community 149]]
-- [[_COMMUNITY_Community 150|Community 150]]
-- [[_COMMUNITY_Community 151|Community 151]]
-- [[_COMMUNITY_Community 154|Community 154]]
-- [[_COMMUNITY_Community 157|Community 157]]
+- [[_COMMUNITY_Room Interiors Tile Sheet|Room Interiors Tile Sheet]]
+- [[_COMMUNITY_Pokémon Emerald Route Sign Tile|Pokémon Emerald Route Sign Tile]]
+- [[_COMMUNITY_Sand Tile 1|Sand Tile 1]]
+- [[_COMMUNITY_Sand Tile 2|Sand Tile 2]]
+- [[_COMMUNITY_Sand Tile 3|Sand Tile 3]]
+- [[_COMMUNITY_Sand Terrain Tile 4|Sand Terrain Tile 4]]
+- [[_COMMUNITY_Sand Terrain Tile 5|Sand Terrain Tile 5]]
+- [[_COMMUNITY_Sand Terrain Tile 6|Sand Terrain Tile 6]]
+- [[_COMMUNITY_Sand Terrain Tile 7|Sand Terrain Tile 7]]
+- [[_COMMUNITY_Sand Terrain Tile 8|Sand Terrain Tile 8]]
+- [[_COMMUNITY_Sand Terrain Tile 9|Sand Terrain Tile 9]]
+- [[_COMMUNITY_Shrub Vegetation Tile|Shrub Vegetation Tile]]
+- [[_COMMUNITY_Tree Vegetation Tile|Tree Vegetation Tile]]
+- [[_COMMUNITY_Fallback Map Regeneration and Repair|Fallback Map Regeneration and Repair]]
+- [[_COMMUNITY_pnpm Workspace Configuration|pnpm Workspace Configuration]]
+- [[_COMMUNITY_Emerald game systems — design & cross-agent contract|Emerald game systems — design & cross-agent contract]]
+- [[_COMMUNITY_map-source.ts|map-source.ts]]
+- [[_COMMUNITY_Pokeworld Vercel Deployments|Pokeworld Vercel Deployments]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 45 edges
@@ -174,15 +177,13 @@
 3. `scripts` - 14 edges
 4. `scripts` - 14 edges
 5. `hashUnit()` - 12 edges
-6. `tileKey()` - 11 edges
-7. `normalizeRoutes()` - 11 edges
-8. `interactionFor()` - 11 edges
-9. `TrainerState` - 11 edges
+6. `interactionFor()` - 11 edges
+7. `TrainerState` - 11 edges
+8. `tileKey()` - 11 edges
+9. `normalizeRoutes()` - 11 edges
 10. `sourceY()` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Dense Emerald-Style World Mobile UI Screenshot` --references--> `MapTile Feature Protocol`  [AMBIGUOUS]
-  docs/qa/dense-world-mobile.png → app/DESIGN-emerald-game-systems.md
 - `Map Generation` --conceptually_related_to--> `Mountain Terrain Tile`  [INFERRED]
   graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md → app/public/tiles/mountain-9.png
 - `Map Generation` --conceptually_related_to--> `Pond Center Terrain Tile 1`  [INFERRED]
@@ -191,6 +192,8 @@
   graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md → app/public/tiles/pond-center-2.png
 - `Map Generation` --conceptually_related_to--> `Pond Center Terrain Tile 3`  [INFERRED]
   graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md → app/public/tiles/pond-center-3.png
+- `Map Generation` --conceptually_related_to--> `Pond Center Terrain Tile 4`  [INFERRED]
+  graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md → app/public/tiles/pond-center-4.png
 
 ## Import Cycles
 - None detected.
@@ -201,15 +204,15 @@
 - **Trainer Menu Panel System** — app_design_emerald_game_systems_start_menu, app_design_emerald_game_systems_party_panel, app_design_emerald_game_systems_bag_panel, app_design_emerald_game_systems_badges_panel, app_design_emerald_game_systems_pc_panel, app_design_emerald_game_systems_trainer_state [EXTRACTED 1.00]
 - **Durable Emerald World Generation Flow** — app_readme_generate_map_workflow, app_readme_emerald_world_grammar, app_design_emerald_game_systems_server_world_generation, app_design_emerald_game_systems_map_tile_feature_protocol [INFERRED 0.90]
 
-## Communities (158 total, 122 thin omitted)
+## Communities (161 total, 122 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.05
-Nodes (63): defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage (+55 more)
+Cohesion: 0.08
+Nodes (44): GameComponentState, BADGE_TONES, BadgesPanelProps, BagPanelProps, POCKETS, PanelFrame(), PanelFrameProps, PartyPanelProps (+36 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.07
-Nodes (37): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+29 more)
+Cohesion: 0.08
+Nodes (33): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+25 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.04
@@ -220,16 +223,16 @@ Cohesion: 0.16
 Nodes (34): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), coarseNoise() (+26 more)
 
 ### Community 5 - "index.js"
-Cohesion: 0.12
-Nodes (28): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedLookup, directionDelta, FIELD_ITEM_TABLE, FieldItem (+20 more)
+Cohesion: 0.07
+Nodes (47): defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage, BadgesPanel() (+39 more)
 
 ### Community 6 - "devDependencies"
 Cohesion: 0.10
 Nodes (21): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+13 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
-Cohesion: 0.09
-Nodes (31): BadgesPanel, BagPanel, Client Game Systems, DialogBox, Emerald Game Systems Design and Cross-Agent Contract, Game UI Layer, hashUnit, MapTile Feature Protocol (+23 more)
+Cohesion: 0.17
+Nodes (12): API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Verification and deployment, Gameplay Persistence Acceptance Criteria (+4 more)
 
 ### Community 8 - "DevKit.vue"
 Cohesion: 0.12
@@ -244,8 +247,8 @@ Cohesion: 0.24
 Nodes (16): getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng(), createSolidPngWithRgba() (+8 more)
 
 ### Community 11 - "apis.js"
-Cohesion: 0.18
-Nodes (16): buildGoogleStaticMapUrl(), generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour() (+8 more)
+Cohesion: 0.19
+Nodes (16): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+8 more)
 
 ### Community 12 - "devDependencies"
 Cohesion: 0.15
@@ -272,8 +275,8 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
 ### Community 18 - "Generated 16 by 16 Block Tiles"
-Cohesion: 0.23
-Nodes (9): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, log(), imageToRgbaMatrix() (+1 more)
+Cohesion: 0.24
+Nodes (8): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, imageToRgbaMatrix(), summarizeTerrain()
 
 ### Community 19 - "finalize-static-shell.mjs"
 Cohesion: 0.18
@@ -327,29 +330,37 @@ Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Gras
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-## Ambiguous Edges - Review These
-- `MapTile Feature Protocol` → `Dense Emerald-Style World Mobile UI Screenshot`  [AMBIGUOUS]
-  docs/qa/dense-world-mobile.png · relation: references
+### Community 158 - "Emerald game systems — design & cross-agent contract"
+Cohesion: 0.22
+Nodes (8): Detail-density accounting (toward 500–1000), Division of labour, Emerald game systems — design & cross-agent contract, Iteration roadmap (loop), Movement rules (client), Tile feature protocol (server → client), Trainer state (client), UI systems
+
+### Community 159 - "map-source.ts"
+Cohesion: 0.43
+Nodes (5): buildGoogleStaticMapUrl(), canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
+
+### Community 160 - "Pokeworld Vercel Deployments"
+Cohesion: 0.50
+Nodes (4): Verified Managed Workflow Run, Vercel Build Output, Pokeworld Vercel Deployments, Verified Migration Preview
 
 ## Knowledge Gaps
-- **332 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+327 more)
+- **342 isolated node(s):** `Division of labour`, `Tile feature protocol (server → client)`, `Movement rules (client)`, `Trainer state (client)`, `UI systems` (+337 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **122 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `MapTile Feature Protocol` and `Dense Emerald-Style World Mobile UI Screenshot`?**
-  _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
-- **Why does `Game` connect `blocks.js` to `Game.vue`, `index.js`, `devDependencies`?**
+- **Why does `Game` connect `blocks.js` to `index.js`, `devDependencies`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Why does `TerrainKind` connect `functions.js` to `DevKit.vue`, `devDependencies`, `blocks.get.ts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `rgbaToTileColourData()` connect `scripts` to `Generated 16 by 16 Block Tiles`, `finalize-static-shell.mjs`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _333 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Division of labour`, `Tile feature protocol (server → client)`, `Movement rules (client)` to the rest of the system?**
+  _343 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.052947052947052944 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07878787878787878 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07401129943502825 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08215488215488216 - nodes in this community are weakly interconnected._
+- **Should `package.json` be split into smaller, more focused modules?**
+  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._

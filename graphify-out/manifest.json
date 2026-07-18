@@ -285,8 +285,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/README.md": {
-    "mtime": 1784392569.7433338,
-    "ast_hash": "7ca35eca8c6c4be6276f2e71b2d97f8e",
+    "mtime": 1784393323.8378913,
+    "ast_hash": "df11bc5f1794b9cf8897ac695c4728e4",
     "semantic_hash": ""
   },
   "app/TODO-fallback-map-regeneration.md": {
@@ -1085,18 +1085,18 @@
     "semantic_hash": "c8104c1ae906203e6572a8af71b96c1e"
   },
   "docs/qa/dense-world-mobile.png": {
-    "mtime": 1784392486.382961,
-    "ast_hash": "a8236052477646411a1db23b4dfcb50a",
+    "mtime": 1784393469.478641,
+    "ast_hash": "b60a59090119f6a3191ad58d2954574c",
     "semantic_hash": ""
   },
   "docs/qa/trainer-party-desktop.png": {
-    "mtime": 1784392375.6128933,
-    "ast_hash": "32c145f305c7d94674b7e76fed4910f4",
+    "mtime": 1784393370.3054416,
+    "ast_hash": "f58a5f780e2b322ee4f29acdffeb574b",
     "semantic_hash": ""
   },
   "docs/qa/trainer-pc-mobile.png": {
-    "mtime": 1784392501.229815,
-    "ast_hash": "fd7420f9bd853b9989aa401e5ec3d066",
+    "mtime": 1784393450.8010044,
+    "ast_hash": "2c4f745223a2ef1165960165680cae84",
     "semantic_hash": ""
   },
   "app/src/components/game-ui/BadgesPanel.tsx": {
@@ -1143,5 +1143,10 @@
     "mtime": 1784393295.3279016,
     "ast_hash": "f8ed1e307f8690e993a591be30c26bf6",
     "semantic_hash": "f8ed1e307f8690e993a591be30c26bf6"
+  },
+  "app/DESIGN-emerald-game-systems.md": {
+    "mtime": 1784393317.6829472,
+    "ast_hash": "47ddd9f522bca9093b66a7cfd5f544eb",
+    "semantic_hash": ""
   }
 }
