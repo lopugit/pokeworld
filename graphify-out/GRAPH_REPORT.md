@@ -4,36 +4,44 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 454 nodes · 524 edges · 122 communities (26 shown, 96 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 15 edges (avg confidence: 0.65)
+- 540 nodes · 626 edges · 152 communities (29 shown, 123 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `df810e11`
+- Built from commit: `00b74f96`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Game.vue|Game.vue]]
-- [[_COMMUNITY_functions.js|functions.js]]
-- [[_COMMUNITY_package.json|package.json]]
-- [[_COMMUNITY_blocks.js|blocks.js]]
-- [[_COMMUNITY_dependencies|dependencies]]
-- [[_COMMUNITY_index.js|index.js]]
-- [[_COMMUNITY_devDependencies|devDependencies]]
-- [[_COMMUNITY_Nuxt 2 Frontend|Nuxt 2 Frontend]]
-- [[_COMMUNITY_DevKit.vue|DevKit.vue]]
-- [[_COMMUNITY_dependencies|dependencies]]
+- [[_COMMUNITY_functions.ts|functions.ts]]
+- [[_COMMUNITY_Game|Game]]
+- [[_COMMUNITY_terrain-classifier.ts|terrain-classifier.ts]]
 - [[_COMMUNITY_scripts|scripts]]
-- [[_COMMUNITY_apis.js|apis.js]]
-- [[_COMMUNITY_devDependencies|devDependencies]]
+- [[_COMMUNITY_types.ts|types.ts]]
+- [[_COMMUNITY_DevKit.tsx|DevKit.tsx]]
+- [[_COMMUNITY_scripts|scripts]]
+- [[_COMMUNITY_verify-vercel-output.mjs|verify-vercel-output.mjs]]
+- [[_COMMUNITY_pm2.mjs|pm2.mjs]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
-- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
+- [[_COMMUNITY_terrain-life.ts|terrain-life.ts]]
+- [[_COMMUNITY_coordinates.ts|coordinates.ts]]
+- [[_COMMUNITY_Pokémon World application|Pokémon World application]]
+- [[_COMMUNITY_generate-map.mjs|generate-map.mjs]]
+- [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
+- [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_vercel.json|vercel.json]]
+- [[_COMMUNITY_extract-terrain-tiles.mjs|extract-terrain-tiles.mjs]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Pokémon World HTML Shell|Pokémon World HTML Shell]]
 - [[_COMMUNITY_Generated 16 by 16 Block Tiles|Generated 16 by 16 Block Tiles]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
-- [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Google Map Source Image|Google Map Source Image]]
+- [[_COMMUNITY_sw.js|sw.js]]
 - [[_COMMUNITY_Sand Terrain Sprite 1|Sand Terrain Sprite 1]]
+- [[_COMMUNITY_Sand Terrain Sprite 3|Sand Terrain Sprite 3]]
 - [[_COMMUNITY_Sand Terrain Sprite 4|Sand Terrain Sprite 4]]
 - [[_COMMUNITY_Sand Terrain Sprite 5|Sand Terrain Sprite 5]]
 - [[_COMMUNITY_Sand Terrain Sprite 6|Sand Terrain Sprite 6]]
@@ -113,37 +121,58 @@
 - [[_COMMUNITY_Sand Terrain Tile 9|Sand Terrain Tile 9]]
 - [[_COMMUNITY_Shrub Vegetation Tile|Shrub Vegetation Tile]]
 - [[_COMMUNITY_Tree Vegetation Tile|Tree Vegetation Tile]]
-- [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
-- [[_COMMUNITY_vite-env.d.ts|vite-env.d.ts]]
-- [[_COMMUNITY_vite.config.ts|vite.config.ts]]
-- [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
-- [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
-- [[_COMMUNITY_Pokémon World Application|Pokémon World Application]]
 - [[_COMMUNITY_Durable Map Generation Workflow|Durable Map Generation Workflow]]
 - [[_COMMUNITY_React, Nitro, Vite and Workflow Runtime|React, Nitro, Vite and Workflow Runtime]]
-- [[_COMMUNITY_Pokeworld Vercel Deployment|Pokeworld Vercel Deployment]]
+- [[_COMMUNITY_MongoDB Map Block Persistence|MongoDB Map Block Persistence]]
+- [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
+- [[_COMMUNITY_vite-env.d.ts|vite-env.d.ts]]
+- [[_COMMUNITY_Fallback Map Regeneration and Repair|Fallback Map Regeneration and Repair]]
+- [[_COMMUNITY_vite.config.ts|vite.config.ts]]
+- [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
+- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
+- [[_COMMUNITY_Nitro Cache Bypass for Stale Fallback Blocks|Nitro Cache Bypass for Stale Fallback Blocks]]
 - [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
 - [[_COMMUNITY_Fallback Map Regeneration Repair|Fallback Map Regeneration Repair]]
 - [[_COMMUNITY_Lazy Durable Workflow Regeneration|Lazy Durable Workflow Regeneration]]
 - [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
 - [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
 - [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
-- [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
-- [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
-- [[_COMMUNITY_map-source.ts|map-source.ts]]
-- [[_COMMUNITY_Q Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitudelongitude, including visual Chrome QA|Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA]]
+- [[_COMMUNITY_Community 124|Community 124]]
+- [[_COMMUNITY_Community 125|Community 125]]
+- [[_COMMUNITY_Community 126|Community 126]]
+- [[_COMMUNITY_Community 127|Community 127]]
+- [[_COMMUNITY_Community 128|Community 128]]
+- [[_COMMUNITY_Community 129|Community 129]]
+- [[_COMMUNITY_Community 130|Community 130]]
+- [[_COMMUNITY_Community 131|Community 131]]
+- [[_COMMUNITY_Community 132|Community 132]]
+- [[_COMMUNITY_Community 133|Community 133]]
+- [[_COMMUNITY_Community 134|Community 134]]
+- [[_COMMUNITY_Community 135|Community 135]]
+- [[_COMMUNITY_Community 136|Community 136]]
+- [[_COMMUNITY_Community 137|Community 137]]
+- [[_COMMUNITY_Community 138|Community 138]]
+- [[_COMMUNITY_Community 141|Community 141]]
+- [[_COMMUNITY_Community 144|Community 144]]
+- [[_COMMUNITY_Community 145|Community 145]]
+- [[_COMMUNITY_Community 146|Community 146]]
+- [[_COMMUNITY_Community 147|Community 147]]
+- [[_COMMUNITY_Community 148|Community 148]]
+- [[_COMMUNITY_Community 149|Community 149]]
+- [[_COMMUNITY_Community 150|Community 150]]
+- [[_COMMUNITY_Community 151|Community 151]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 35 edges
 2. `scripts` - 13 edges
 3. `scripts` - 13 edges
 4. `compilerOptions` - 9 edges
-5. `start()` - 8 edges
-6. `loadThings()` - 7 edges
-7. `saveThing()` - 7 edges
-8. `stop()` - 6 edges
-9. `parseMapJobInput()` - 6 edges
-10. `log()` - 6 edges
+5. `loadThings()` - 9 edges
+6. `start()` - 8 edges
+7. `addLife()` - 8 edges
+8. `saveThing()` - 8 edges
+9. `terrainLife()` - 7 edges
+10. `MapBlock` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `pnpm Workspace Configuration` --references--> `Pokémon World application`  [EXTRACTED]
@@ -161,9 +190,10 @@
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Verified Migration Deployment** — app_vercel_deployments_vercel_project, app_vercel_deployments_stable_branch_alias, app_vercel_deployments_verified_app_root_deployment [EXTRACTED 1.00]
-- **Offline Preview Map Workflow** — app_vercel_deployments_map_job, app_vercel_deployments_map_jobs_api, app_vercel_deployments_vercel_workflow, app_vercel_deployments_offline_map_mode [EXTRACTED 0.95]
-- **Vercel Build Validation** — app_vercel_deployments_vercel_build, app_vercel_deployments_build_output_api, app_vercel_deployments_react_shell, app_vercel_deployments_nitro_fallback [EXTRACTED 1.00]
+- **Terrain Tile Image Set** — app_public_tiles_mountain_9_image, app_public_tiles_pond_center_1_image, app_public_tiles_pond_center_2_image, app_public_tiles_pond_center_3_image, app_public_tiles_pond_center_4_image, app_public_tiles_rock_1_image [INFERRED 0.95]
+- **Red House Tile Set** — app_public_tiles_house_red_1_house_red_tile, app_public_tiles_house_red_2_house_red_tile, app_public_tiles_house_red_3_house_red_tile, app_public_tiles_house_red_4_house_red_tile, app_public_tiles_house_red_5_house_red_tile, app_public_tiles_house_red_6_house_red_tile, app_public_tiles_house_red_7_house_red_tile, app_public_tiles_house_red_8_house_red_tile, app_public_tiles_house_red_9_house_red_tile, app_public_tiles_house_red_10_house_red_tile, app_public_tiles_house_red_11_house_red_tile, app_public_tiles_house_red_12_house_red_tile [INFERRED 0.95]
+- **Mountain Tile Set** — app_public_tiles_mountain_1_mountain_tile, app_public_tiles_mountain_2_mountain_tile, app_public_tiles_mountain_3_mountain_tile, app_public_tiles_mountain_4_mountain_tile, app_public_tiles_mountain_5_mountain_tile, app_public_tiles_mountain_6_mountain_tile, app_public_tiles_mountain_7_mountain_tile, app_public_tiles_mountain_8_mountain_tile [INFERRED 0.95]
+- **Verified Vercel Delivery Flow** — app_vercel_deployments_pokeworld_github_repository, app_vercel_deployments_vercel_build, app_vercel_deployments_pokeworld_vercel_project, app_vercel_deployments_verified_migration_preview, app_vercel_deployments_vercel_workflow_map_job [EXTRACTED 0.90]
 - **Pokémon World Full-Stack Application** — app_readme_full_stack_runtime, app_readme_durable_map_generation, app_readme_map_block_persistence, app_readme_google_static_maps [EXTRACTED 0.98]
 - **Fallback-Derived Map Block Repair Flow** — app_todo_fallback_map_regeneration_fallback_repair, app_readme_durable_map_generation, app_readme_map_block_persistence, app_readme_google_static_maps [EXTRACTED 0.98]
 - **Fallback Map Regeneration Solution** — graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration [EXTRACTED 0.98]
@@ -172,115 +202,123 @@
 - **Road Tile Set** — app_public_tiles_road_1_image, app_public_tiles_road_2_image, app_public_tiles_road_3_image, app_public_tiles_road_4_image, app_public_tiles_road_5_image, app_public_tiles_road_6_image, app_public_tiles_road_7_image, app_public_tiles_road_8_image, app_public_tiles_road_9_image [INFERRED 0.95]
 - **Sand Tile Set** — app_public_tiles_sand_1_image, app_public_tiles_sand_2_image, app_public_tiles_sand_3_image [INFERRED 0.95]
 
-## Communities (122 total, 96 thin omitted)
+## Communities (152 total, 123 thin omitted)
 
-### Community 0 - "Game.vue"
-Cohesion: 0.08
-Nodes (29): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+21 more)
+### Community 0 - "functions.ts"
+Cohesion: 0.07
+Nodes (20): MapOffset, defaultCoordinates, Game, GameComponentState, GameSettings, isFiniteNumber(), MapView, MoveAction (+12 more)
 
-### Community 1 - "functions.js"
-Cohesion: 0.10
-Nodes (6): Game, isFiniteNumber(), emptyState(), loadThings(), saveThing(), ThingsState
-
-### Community 2 - "package.json"
-Cohesion: 0.17
-Nodes (14): MapBlock, MapTile, defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState (+6 more)
-
-### Community 3 - "blocks.js"
+### Community 1 - "Game"
 Cohesion: 0.06
 Nodes (33): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+25 more)
 
-### Community 4 - "dependencies"
-Cohesion: 0.11
-Nodes (24): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+16 more)
+### Community 2 - "terrain-classifier.ts"
+Cohesion: 0.09
+Nodes (21): buildGoogleStaticMapUrl(), generateCoordinatesGrid(), generateMap(), generateOutputs(), getFallbackMap(), getMapAt(), getMapAtWithSource(), getTile() (+13 more)
 
-### Community 5 - "index.js"
+### Community 3 - "scripts"
+Cohesion: 0.14
+Nodes (17): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock(), TerrainKind, MapBlock, MapGenerationResult, MapGenerationStepResult (+9 more)
+
+### Community 4 - "types.ts"
+Cohesion: 0.11
+Nodes (21): latsDb, lngsDb, toExport(), transactionOptions, transactions, CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng() (+13 more)
+
+### Community 5 - "DevKit.tsx"
+Cohesion: 0.19
+Nodes (22): addLife(), blockTiles(), buildingComponents(), findHouseAnchor(), footprintAt(), getAutotileIndex(), getOffsetTile(), getTile() (+14 more)
+
+### Community 6 - "scripts"
+Cohesion: 0.17
+Nodes (14): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), parseMapJobInput(), parseOffset() (+6 more)
+
+### Community 7 - "verify-vercel-output.mjs"
 Cohesion: 0.13
 Nodes (12): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+4 more)
 
-### Community 6 - "devDependencies"
+### Community 8 - "pm2.mjs"
 Cohesion: 0.10
 Nodes (20): description, engines, node, name, packageManager, private, scripts, build (+12 more)
 
-### Community 7 - "Nuxt 2 Frontend"
+### Community 9 - "compilerOptions"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
-### Community 8 - "DevKit.vue"
+### Community 10 - "terrain-life.ts"
 Cohesion: 0.29
 Nodes (15): appRoot, apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2() (+7 more)
 
-### Community 9 - "dependencies"
+### Community 11 - "coordinates.ts"
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
-### Community 10 - "scripts"
+### Community 12 - "Pokémon World application"
 Cohesion: 0.15
-Nodes (13): scripts, build, build:vercel, check, dev, map:generate, pms, pms-stop (+5 more)
+Nodes (13): devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node, @types/react (+5 more)
 
-### Community 11 - "apis.js"
+### Community 13 - "generate-map.mjs"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
-### Community 12 - "devDependencies"
-Cohesion: 0.14
-Nodes (11): API routes, How Workflow works locally, Install and run, Map generation, Pokémon World application, Verification and deployment, Build, Vercel deployments (+3 more)
+### Community 14 - "TODO: fallback map regeneration"
+Cohesion: 0.20
+Nodes (8): API routes, How Workflow works locally, Install and run, Map generation, Pokémon World application, Verification and deployment, pnpm Workspace Configuration, Pokeworld workspace
 
-### Community 13 - "compilerOptions"
+### Community 15 - "devDependencies"
+Cohesion: 0.25
+Nodes (7): appDir, crop(), outputDir, scriptDir, source, sourcePath, writeGrid()
+
+### Community 16 - "vercel.json"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 14 - "blocks.get.ts"
+### Community 17 - "extract-terrain-tiles.mjs"
 Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
-### Community 16 - "vercel.json"
+### Community 18 - "Community 18"
+Cohesion: 0.40
+Nodes (6): Pokeworld GitHub Repository, Pokeworld Vercel Project, Vercel Build, Vercel Deployments, Vercel Workflow Map Job, Verified Migration Preview
+
+### Community 19 - "Pokémon World HTML Shell"
+Cohesion: 0.70
+Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
+
+### Community 21 - "finalize-static-shell.mjs"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
-### Community 18 - "Generated 16 by 16 Block Tiles"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?, Source Nodes
-
-### Community 19 - "finalize-static-shell.mjs"
+### Community 22 - "Community 22"
 Cohesion: 0.67
 Nodes (4): Pokémon World HTML Shell, Pokémon World Application Icon, Android Chrome Application Icon 192x192, Android Chrome Application Icon 512x512
 
-### Community 20 - "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+### Community 23 - "Community 23"
 Cohesion: 0.50
 Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Grass Terrain Sprite, Pokémon Emerald Exterior Tileset
 
-### Community 21 - "Sand Terrain Sprite 1"
+### Community 24 - "Google Map Source Image"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-### Community 124 - "map-source.ts"
-Cohesion: 0.53
-Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
-
-### Community 125 - "Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA, Source Nodes
-
 ## Knowledge Gaps
-- **244 isolated node(s):** `Verified migration preview`, `Build`, `name`, `version`, `private` (+239 more)
+- **277 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+272 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **96 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **123 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `functions.js` to `package.json`, `index.js`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `package.json` to `dependencies`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
-- **Why does `scripts` connect `scripts` to `blocks.js`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **What connects `Verified migration preview`, `Build`, `name` to the rest of the system?**
-  _245 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.0797979797979798 - nodes in this community are weakly interconnected._
-- **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._
-- **Should `blocks.js` be split into smaller, more focused modules?**
+- **Why does `Game` connect `functions.ts` to `verify-vercel-output.mjs`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+- **Why does `MapBlock` connect `scripts` to `functions.ts`, `scripts`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `MapTile` connect `scripts` to `functions.ts`, `DevKit.tsx`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **What connects `name`, `version`, `private` to the rest of the system?**
+  _278 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `functions.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.06836055656382335 - nodes in this community are weakly interconnected._
+- **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
+- **Should `terrain-classifier.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
