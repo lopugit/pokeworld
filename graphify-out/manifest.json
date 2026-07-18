@@ -90,9 +90,9 @@
     "semantic_hash": "3ff8163e95d5f692ec46af954fb8859b"
   },
   "app/server/services/map/generate.ts": {
-    "mtime": 1784394803.312754,
-    "ast_hash": "bade22be76dd43942e0ea0afe9b86035",
-    "semantic_hash": "bade22be76dd43942e0ea0afe9b86035"
+    "mtime": 1784395622.569431,
+    "ast_hash": "201f4db8a5b61db73aac0b358b14eba4",
+    "semantic_hash": "201f4db8a5b61db73aac0b358b14eba4"
   },
   "app/server/services/map/input.ts": {
     "mtime": 1784378676.5341718,
@@ -760,9 +760,9 @@
     "semantic_hash": "a51774153f5d1dae31e0c5c403b0b905"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1784394678.0339475,
-    "ast_hash": "fa3f8991bfc874c151def918a5fed093",
-    "semantic_hash": "fa3f8991bfc874c151def918a5fed093"
+    "mtime": 1784395608.6811135,
+    "ast_hash": "c1283406a72a750e2eaed49f6544feb0",
+    "semantic_hash": "c1283406a72a750e2eaed49f6544feb0"
   },
   "app/server/services/map/terrain-classifier.ts": {
     "mtime": 1784391645.5566788,
@@ -1075,9 +1075,9 @@
     "semantic_hash": "d62e361a101b2d69619f4524ac8a6894"
   },
   "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
-    "mtime": 1784395343.3047373,
-    "ast_hash": "f057ed1b61263991d44f93a65d05b82a",
-    "semantic_hash": "f057ed1b61263991d44f93a65d05b82a"
+    "mtime": 1784395676.5074446,
+    "ast_hash": "8d17f963fb0a4ad6e112c7d5d6234a7b",
+    "semantic_hash": ""
   },
   "docs/qa/dense-world-desktop.png": {
     "mtime": 1784394996.3356688,
@@ -1155,8 +1155,8 @@
     "semantic_hash": "091ba90e2480695844c4478fbac903d7"
   },
   "app/tests/procedural-world-properties.test.ts": {
-    "mtime": 1784394678.034339,
-    "ast_hash": "89459c576b3c4f993604aed1b5867296",
-    "semantic_hash": "89459c576b3c4f993604aed1b5867296"
+    "mtime": 1784395608.681364,
+    "ast_hash": "bc70c57c0982efc8eaff9abee0844df4",
+    "semantic_hash": "bc70c57c0982efc8eaff9abee0844df4"
   }
 }
