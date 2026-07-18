@@ -158,9 +158,9 @@ const resolveDevContext = (dir = __dirname, opts = {}) => {
 const apiUrl = (context) => `http://localhost:${context.ports.api}/v1`;
 
 // The full PM2 app definition for one side of the stack, shared by that side's
-// ecosystem.config.js and by dev-pm2.cjs so there is one source of truth for
+// ecosystem.config.cjs and by dev-pm2.cjs so there is one source of truth for
 // how each dev app is launched. `kind` is 'api' or 'frontend'; `projectDir` is
-// that package's directory (the __dirname of its ecosystem.config.js).
+// that package's directory (the __dirname of its ecosystem.config.cjs).
 const pm2AppConfig = (kind, projectDir, opts = {}) => {
   const context = resolveDevContext(projectDir, opts);
 

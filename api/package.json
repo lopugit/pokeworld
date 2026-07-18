@@ -5,8 +5,8 @@
   "main": "modules/index.js",
   "scripts": {
     "dev.dev": "npm run stop.dev && npm run start.dev",
-    "stop.dev": "pm2 delete ecosystem.config.js",
-    "start.dev": "pm2 start ecosystem.config.js",
+    "stop.dev": "pm2 delete ecosystem.config.cjs",
+    "start.dev": "pm2 start ecosystem.config.cjs",
     "start": "node modules/index.js",
     "log.dev": "pm2 log pokeworld-api",
     "test": "echo \"Error: no test specified\" && exit 1"

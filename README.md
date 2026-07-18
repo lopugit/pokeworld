@@ -44,7 +44,7 @@ node scripts/dev-pm2.cjs start --cwd /path/to/other/pokeworld
 ```
 
 Single source of truth for all of the above: [`scripts/worktree-ports.cjs`](scripts/worktree-ports.cjs)
-(consumed by both `ecosystem.config.js` files and [`scripts/dev-pm2.cjs`](scripts/dev-pm2.cjs)).
+(consumed by both `ecosystem.config.cjs` files and [`scripts/dev-pm2.cjs`](scripts/dev-pm2.cjs)).
 
 ## Install
 

@@ -10,7 +10,7 @@
 //
 // start/stop match on each app's stable base name, so re-stamping the
 // clock-time suffix on each start never leaves an orphaned previous process.
-// start launches each side through its own ecosystem.config.js (so the very
+// start launches each side through its own ecosystem.config.cjs (so the very
 // files in api/ and frontend/ are what PM2 runs), after first deleting any
 // prior app sharing that stable base. --cwd targets any checkout's repo root;
 // names/ports derive from that checkout, so it works even for checkouts that
@@ -109,7 +109,7 @@ const deleteApps = (apps) => {
 const resolveRepoRoot = (cwd) => (cwd ? path.resolve(cwd) : path.resolve(__dirname, '..'));
 
 const sideDir = (repoRoot, side) => path.join(repoRoot, side.subdir);
-const ecosystemPath = (dir) => path.join(dir, 'ecosystem.config.js');
+const ecosystemPath = (dir) => path.join(dir, 'ecosystem.config.cjs');
 
 const start = (repoRoot) => {
   let apps;
@@ -129,7 +129,7 @@ const start = (repoRoot) => {
     const ecosystem = ecosystemPath(dir);
 
     if (!existsSync(ecosystem)) {
-      process.stderr.write(`[pms] skipping ${side.kind}: no ecosystem.config.js at ${ecosystem}\n`);
+      process.stderr.write(`[pms] skipping ${side.kind}: no ecosystem.config.cjs at ${ecosystem}\n`);
       continue;
     }
 
@@ -149,7 +149,7 @@ const start = (repoRoot) => {
     process.stdout.write(
       `[pms] starting ${context.names[side.kind]} on port ${context.ports[side.kind]} (cwd ${dir})\n`
     );
-    // Start through the side's own ecosystem.config.js so PM2 uses exactly that
+    // Start through the side's own ecosystem.config.cjs so PM2 uses exactly that
     // file; it re-evaluates the config (fresh clock suffix) on each start.
     pm2(['start', ecosystem], { stdio: 'inherit' });
   }
