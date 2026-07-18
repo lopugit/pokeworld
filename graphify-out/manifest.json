@@ -165,9 +165,9 @@
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1784393754.9161155,
-    "ast_hash": "c1adad07d52ec5e24ec8369899749b33",
-    "semantic_hash": "c1adad07d52ec5e24ec8369899749b33"
+    "mtime": 1784395579.3231742,
+    "ast_hash": "c1283406a72a750e2eaed49f6544feb0",
+    "semantic_hash": "c1283406a72a750e2eaed49f6544feb0"
   },
   "app/server/services/map/legacy/png.ts": {
     "mtime": 1784393754.916237,
@@ -195,9 +195,9 @@
     "semantic_hash": "0fbb6ef47b4ec1082118acb036807ce9"
   },
   "app/server/services/map/world-grammar.ts": {
-    "mtime": 1784393754.9168072,
-    "ast_hash": "f1ecc69bfe4afa6389deff768509c23f",
-    "semantic_hash": "f1ecc69bfe4afa6389deff768509c23f"
+    "mtime": 1784394256.0028074,
+    "ast_hash": "71400cd523261ddb3b22427b74d01059",
+    "semantic_hash": "71400cd523261ddb3b22427b74d01059"
   },
   "app/server/utils/http.ts": {
     "mtime": 1784393754.91695,
@@ -380,9 +380,9 @@
     "semantic_hash": "c3b74db0a7af86a0ad90040a071f4bdb"
   },
   "app/tests/world-grammar.test.ts": {
-    "mtime": 1784393754.921442,
-    "ast_hash": "5437daaa1dad48c774cb9a7defa5db64",
-    "semantic_hash": "5437daaa1dad48c774cb9a7defa5db64"
+    "mtime": 1784394256.0037773,
+    "ast_hash": "d9ebe207a7eb9616bf09a6f87f84f570",
+    "semantic_hash": "d9ebe207a7eb9616bf09a6f87f84f570"
   },
   "app/tsconfig.json": {
     "mtime": 1784393754.9215546,
@@ -455,9 +455,9 @@
     "semantic_hash": "157c9d51eacb2ba0acc2848dced82cd0"
   },
   "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
-    "mtime": 1784393840.3911552,
-    "ast_hash": "b44824ce4d3fe18d67a23c0f91f3fdfa",
-    "semantic_hash": "b44824ce4d3fe18d67a23c0f91f3fdfa"
+    "mtime": 1784395522.7237458,
+    "ast_hash": "9d0534d3ecd5ec9e6fb44f3268a8aa7b",
+    "semantic_hash": ""
   },
   "pnpm-workspace.yaml": {
     "mtime": 1784393754.925532,
@@ -1123,5 +1123,10 @@
     "mtime": 1784393754.923268,
     "ast_hash": "2c4f745223a2ef1165960165680cae84",
     "semantic_hash": "2c4f745223a2ef1165960165680cae84"
+  },
+  "app/tests/procedural-world-properties.test.ts": {
+    "mtime": 1784395579.3235304,
+    "ast_hash": "bc70c57c0982efc8eaff9abee0844df4",
+    "semantic_hash": "bc70c57c0982efc8eaff9abee0844df4"
   }
 }
