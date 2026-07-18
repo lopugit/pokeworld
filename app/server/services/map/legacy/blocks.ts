@@ -8,6 +8,7 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import log from './log'
 import * as mapSource from './map-source'
+import { classifyTerrainPng, summarizeTerrain } from '../terrain-classifier'
 import { v4 as uuidv4 } from 'uuid'
 import { imageToRgbaMatrix } from './png'
 
@@ -494,6 +495,10 @@ const toExport = version => {
 		block.mapSource = mapResult.source
 		block.fallbackGenerated = mapResult.source === mapSource.MAP_SOURCE_FALLBACK
 		block.mapGeneratedAt = Date.now()
+		const terrainData = classifyTerrainPng(googleMap, {
+			fallback: mapResult.source === mapSource.MAP_SOURCE_FALLBACK,
+		})
+		block.terrainSummary = summarizeTerrain(terrainData)
 
 		const colourDataRaw = imageToRgbaMatrix(googleMap)
 
@@ -554,6 +559,9 @@ const toExport = version => {
 					mapX: (block.x * 512) + (offsetX * 32),
 					mapY: (block.y * 512) + ((15 - offsetY) * 32),
 					colourData: colourData[offsetX + ',' + offsetY],
+					terrain: terrainData[offsetY][offsetX].terrain,
+					terrainConfidence: terrainData[offsetY][offsetX].confidence,
+					terrainCoverage: terrainData[offsetY][offsetX].coverage,
 				}
 				block.tiles.push(tile)
 				stats.count++

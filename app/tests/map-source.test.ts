@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import * as mapSource from "../server/services/map/legacy/map-source";
+import { buildGoogleStaticMapUrl } from "../server/services/map/legacy/functions";
 
 describe("fallback map provenance", () => {
   it("recognizes legacy Mongo blocks by their bundled fallback image", () => {
@@ -48,5 +49,14 @@ describe("fallback map provenance", () => {
 
   it("treats blank API keys as unavailable", () => {
     expect(mapSource.canUseGoogleStaticMaps({ GOOGLE_API_KEY: "   " })).toBe(false);
+  });
+
+  it("requests a semantic png32 map without the flattening legacy map id", () => {
+    const url = buildGoogleStaticMapUrl(-37.85921, 144.98228, 20, "test-key");
+    expect(url.searchParams.get("size")).toBe("640x640");
+    expect(url.searchParams.get("scale")).toBe("2");
+    expect(url.searchParams.get("format")).toBe("png32");
+    expect(url.searchParams.has("map_id")).toBe(false);
+    expect(url.searchParams.getAll("style").length).toBeGreaterThanOrEqual(8);
   });
 });

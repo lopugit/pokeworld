@@ -1,7 +1,8 @@
 import { Component, createRef } from "react";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
-import { loadThings, saveThing } from "../lib/persisted-state";
+import { prioritizeInitialMapOffsets } from "../lib/map-load";
+import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import "../styles/game.scss";
 
 const tileSize = 32;
@@ -49,6 +50,7 @@ interface MapView {
   blockY: number;
   lat: number | null;
   lng: number | null;
+  locationKey?: string;
   tileCount?: number;
   blocks?: string[];
 }
@@ -65,6 +67,7 @@ interface PlayerState {
   lat?: number;
   lng?: number;
   latlng?: string;
+  locationKey?: string;
   lastAction?: number;
   queuedAction?: MoveAction;
 }
@@ -250,14 +253,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   private async initializeMap() {
     const stored = loadThings().map as Partial<MapView>;
+    const activeLocationKey = locationKey(
+      this.state.game.coords.latitude as number,
+      this.state.game.coords.longitude as number,
+    );
     let map: MapView;
     if (
+      stored.locationKey === activeLocationKey &&
       isFiniteNumber(stored.x) &&
       isFiniteNumber(stored.y) &&
       isFiniteNumber(stored.blockX) &&
       isFiniteNumber(stored.blockY)
     ) {
-      map = { ...this.state.map, ...stored, initialized: true };
+      map = { ...this.state.map, ...stored, initialized: true, locationKey: activeLocationKey };
     } else {
       const controller = new AbortController();
       this.abortControllers.add(controller);
@@ -274,6 +282,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           blockY: block.y,
           x: block.x * this.state.game.blockWidth,
           y: block.y * this.state.game.blockHeight,
+          locationKey: activeLocationKey,
         };
       } finally {
         this.abortControllers.delete(controller);
@@ -285,17 +294,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   private async initializePlayer() {
     const stored = loadThings().player as Partial<PlayerState>;
+    const restoreStoredPlayer = stored.locationKey === this.state.map.locationKey;
     const player = {
       ...this.state.player,
       x:
-        isFiniteNumber(stored.x) && isFiniteNumber(stored.y)
+        restoreStoredPlayer && isFiniteNumber(stored.x) && isFiniteNumber(stored.y)
           ? stored.x
           : this.state.map.x + (this.state.game.blockCount / 2) * this.state.game.tileSize,
       y:
-        isFiniteNumber(stored.x) && isFiniteNumber(stored.y)
+        restoreStoredPlayer && isFiniteNumber(stored.x) && isFiniteNumber(stored.y)
           ? stored.y
           : this.state.map.y + (this.state.game.blockCount / 2) * this.state.game.tileSize,
       initialized: true,
+      locationKey: this.state.map.locationKey,
     };
     const updated = this.withUpdatedPlayerBlock(player);
     await this.setStateAsync({ player: updated });
@@ -508,10 +519,14 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const offsetsToQuery = offsets.filter(([x, y]) => {
       const key = `${player.blockX + x},${player.blockY + y}`;
       if (!game.regenerate && this.queries[key]) return false;
-      this.queries[key] = "pending";
       return true;
     });
     if (!offsetsToQuery.length) return;
+
+    const requestedOffsets = prioritizeInitialMapOffsets(offsetsToQuery, game.anyLoaded);
+    for (const [x, y] of requestedOffsets) {
+      this.queries[`${player.blockX + x},${player.blockY + y}`] = "pending";
+    }
 
     const controller = new AbortController();
     this.abortControllers.add(controller);
@@ -520,19 +535,20 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         {
           blockX: player.blockX,
           blockY: player.blockY,
-          offsets: offsetsToQuery,
+          offsets: requestedOffsets,
           regenerate: game.regenerate,
         },
         controller.signal,
       );
       this.processBlocks(blocks);
-      for (const [x, y] of offsetsToQuery) this.queries[`${player.blockX + x},${player.blockY + y}`] = "complete";
+      for (const [x, y] of requestedOffsets) this.queries[`${player.blockX + x},${player.blockY + y}`] = "complete";
       if (this.loadedTimer) window.clearTimeout(this.loadedTimer);
       this.loadedTimer = window.setTimeout(() => this.setGame({ anyLoaded: true }), 500);
       this.setState(({ revision }) => ({ revision: revision + 1, loadError: "" }));
+      if (requestedOffsets.length < offsetsToQuery.length) void this.getBlocks();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
-      for (const [x, y] of offsetsToQuery) delete this.queries[`${player.blockX + x},${player.blockY + y}`];
+      for (const [x, y] of requestedOffsets) delete this.queries[`${player.blockX + x},${player.blockY + y}`];
       this.setState({ loadError: error instanceof Error ? error.message : "Map generation failed" });
     } finally {
       this.abortControllers.delete(controller);
@@ -543,16 +559,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     for (const block of blocks) {
       block.mapX ??= block.x * blockSize;
       block.mapY ??= block.y * blockSize;
-      const blockKey = block.uuid || `${block.x},${block.y}`;
+      const blockKey = `${block.x},${block.y}`;
       const current = this.blockDb[blockKey];
       if (!current || !current.updated || !block.updated || current.updated < block.updated) this.blockDb[blockKey] = block;
 
       for (const tile of block.tiles || []) {
         if (!tile) continue;
-        const currentTile = this.tileDb[tile.uuid];
-        if (!currentTile || !currentTile.updated || !tile.updated || currentTile.updated < tile.updated) this.tileDb[tile.uuid] = tile;
-        this.tileHistoryDb[tile.uuid] ||= [];
-        this.tileHistoryDb[tile.uuid].push(tile);
+        const tileCoordinateKey = `${tile.mapX},${tile.mapY}`;
+        const currentTile = this.tileDb[tileCoordinateKey];
+        if (!currentTile || !currentTile.updated || !tile.updated || currentTile.updated < tile.updated) {
+          this.tileDb[tileCoordinateKey] = tile;
+        }
+        this.tileHistoryDb[tileCoordinateKey] ||= [];
+        this.tileHistoryDb[tileCoordinateKey].push(tile);
       }
     }
     this.storeTileData();
@@ -599,6 +618,22 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     if (!canvasContext) return;
 
     const { game, map, player } = this.state;
+    this.loadImage("grass", "/tiles/grass.png");
+    const grassBackground = this.storedImages.get("grass");
+    for (const context of [canvasContext, layerContext, gmapContext]) {
+      if (!context) continue;
+      context.imageSmoothingEnabled = false;
+      context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+      context.fillStyle = "#70c0a0";
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+      if (context !== gmapContext && grassBackground?.loaded) {
+        const pattern = context.createPattern(grassBackground.element, "repeat");
+        if (pattern) {
+          context.fillStyle = pattern;
+          context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        }
+      }
+    }
     map.tileCount = 0;
     map.blocks = [];
     for (const tile of Object.values(this.tileDb)) {
@@ -608,24 +643,25 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       map.tileCount += 1;
       const x = tile.mapX - map.x;
       const y = tile.mapY - map.y;
-      const width = game.tileSize * game.scale * game.zoomScale;
-      const height = game.tileSize * game.scale * game.zoomScale;
-      const drawX = x * game.scale * game.zoomScale;
+      const width = game.tileSize * game.zoomScale;
+      const height = game.tileSize * game.zoomScale;
+      const drawX = x * game.zoomScale;
       const drawY = this.convertY(y, height);
       const base = tile.img ? this.storedImages.get(tile.img) : undefined;
       if (base?.loaded && layerContext) layerContext.drawImage(base.element, drawX, drawY, width, height);
       const top = tile.img2 ? this.storedImages.get(tile.img2) : undefined;
       if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
+      else if (base?.loaded) canvasContext.drawImage(base.element, drawX, drawY, width, height);
     }
 
     for (const block of Object.values(this.blockDb)) {
       if (!this.blockShouldRender(block) || !block.googleMap || !gmapContext) continue;
       const image = this.storedImages.get(block.googleMap);
       if (!image?.loaded) continue;
-      const x = (Number(block.mapX) - map.x) * game.scale * game.zoomScale;
+      const x = (Number(block.mapX) - map.x) * game.zoomScale;
       const y = Number(block.mapY) - map.y;
-      const width = game.blockSize * game.scale * game.zoomScale;
-      const height = game.blockSize * game.scale * game.zoomScale;
+      const width = game.blockSize * game.zoomScale;
+      const height = game.blockSize * game.zoomScale;
       gmapContext.drawImage(image.element, x, this.convertY(y, height), width, height);
     }
 
@@ -634,9 +670,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     if (character?.loaded) {
       const x = player.x - map.x;
       const y = player.y - map.y;
-      const drawX = (x + 2) * game.scale * game.zoomScale;
-      const width = 28 * game.scale * game.zoomScale;
-      const height = 42 * game.scale * game.zoomScale;
+      const drawX = (x + 2) * game.zoomScale;
+      const width = 28 * game.zoomScale;
+      const height = 42 * game.zoomScale;
       const drawY = this.convertY(y, height);
       canvasContext.drawImage(character.element, drawX, drawY, width, height);
       gmapContext?.drawImage(character.element, drawX, drawY, width, height);
@@ -661,7 +697,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   private convertY(y: number, scaledHeight: number) {
     const { game } = this.state;
-    return (game.canvasHeight * game.zoom - y) * game.scale * game.zoomScale - scaledHeight;
+    return (game.canvasHeight * game.zoom - y) * game.zoomScale - scaledHeight;
   }
 
   private resetGame = () => {
@@ -735,25 +771,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                 <canvas
                   ref={this.canvasRef}
                   className="screen-canvas bg-black rounded-lg"
-                  width={game.canvasWidth * game.scale}
-                  height={game.canvasHeight * game.scale}
+                  width={game.canvasWidth}
+                  height={game.canvasHeight}
                 />
-                {game.showLayer1 ? (
-                  <canvas
-                    ref={this.layer1Ref}
-                    className="screen-canvas bg-black ml-8 rounded-lg"
-                    width={game.canvasWidth * game.scale}
-                    height={game.canvasHeight * game.scale}
-                  />
-                ) : null}
-                {game.showLayerGmap ? (
-                  <canvas
-                    ref={this.gmapRef}
-                    className="screen-canvas bg-black ml-8 rounded-lg"
-                    width={game.canvasWidth * game.scale}
-                    height={game.canvasHeight * game.scale}
-                  />
-                ) : null}
               </div>
               <div className="w-full pt-10 md:pt-14 pb-12">
                 <div className="controls flex flex-row">
@@ -814,6 +834,32 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                 </button>
                 <button type="button" className={`${debugButton} mr-0`} onClick={this.resetGame}>Reset</button>
               </div>
+              {game.showLayer1 || game.showLayerGmap ? (
+                <div className="debug-layer-grid" aria-label="Map rendering layers">
+                  {game.showLayer1 ? (
+                    <figure className="debug-layer-card">
+                      <figcaption>Base terrain tiles</figcaption>
+                      <canvas
+                        ref={this.layer1Ref}
+                        className="debug-layer-canvas"
+                        width={game.canvasWidth}
+                        height={game.canvasHeight}
+                      />
+                    </figure>
+                  ) : null}
+                  {game.showLayerGmap ? (
+                    <figure className="debug-layer-card">
+                      <figcaption>Google Static Maps source</figcaption>
+                      <canvas
+                        ref={this.gmapRef}
+                        className="debug-layer-canvas"
+                        width={game.canvasWidth}
+                        height={game.canvasHeight}
+                      />
+                    </figure>
+                  ) : null}
+                </div>
+              ) : null}
               {game.tileBrowser ? (
                 <div>
                   <div className="flex flex-row pb-4">
@@ -847,7 +893,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   <div className="flex flex-col">
                     <div>{browserTile ? "Current" : "None Found"} {game.tileBrowserX} {game.tileBrowserY}</div>
                     <pre className="whitespace-pre-wrap">{JSON.stringify(browserTile, null, 2)}</pre>
-                    {(browserTile ? this.tileHistoryDb[browserTile.uuid] : [])?.map((tile, index) => (
+                    {(browserTile ? this.tileHistoryDb[`${browserTile.mapX},${browserTile.mapY}`] : [])?.map((tile, index) => (
                       <div key={`${tile.uuid}-${index}`}>
                         <div>Tile History {index}</div>
                         <pre className="whitespace-pre-wrap">{JSON.stringify(tile, null, 2)}</pre>

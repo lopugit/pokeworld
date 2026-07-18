@@ -1,3 +1,5 @@
+import type { TerrainKind } from "./terrain-classifier";
+
 export type MapOffset = readonly [number, number];
 export type MapSource = "fallback" | "google-static-maps";
 
@@ -19,6 +21,11 @@ export interface MapTile {
   img?: string;
   img2?: string;
   image?: string;
+  terrain?: TerrainKind;
+  terrainConfidence?: number;
+  terrainCoverage?: Partial<Record<TerrainKind, number>>;
+  feature?: string;
+  solid?: boolean;
   updated?: number;
   version?: string;
   [key: string]: unknown;
@@ -36,6 +43,7 @@ export interface MapBlock {
   mapSource?: MapSource;
   fallbackGenerated?: boolean;
   mapGeneratedAt?: number;
+  terrainSummary?: Partial<Record<TerrainKind, number>>;
   tiles: MapTile[];
   updated?: number;
   [key: string]: unknown;

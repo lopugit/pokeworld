@@ -115,10 +115,51 @@
 }
 
 .gameboy { box-sizing: border-box; }
-.board-screen { overflow-x: auto; }
+.board-screen { overflow: hidden; }
 .screen-canvas {
+  display: block;
+  flex: 0 0 100%;
+  min-width: 0;
   width: 100%;
   height: auto;
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.debug-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 18px;
+  width: min(1040px, calc(100vw - 24px));
+  margin: 12px auto 24px;
+}
+
+.debug-layer-card {
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid rgba(31, 41, 55, .14);
+  border-radius: 12px;
+  background: #eef1f3;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, .12);
+
+  figcaption {
+    padding: 0 2px 8px;
+    color: #303640;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+}
+
+.debug-layer-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: #70c0a0;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }

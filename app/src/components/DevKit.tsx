@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { clearLocationBoundState } from "../lib/persisted-state";
 import "../styles/devkit.css";
 
 const PRESETS = [
   { label: "My location (Melbourne)", latitude: -37.859210163186276, longitude: 144.98227557143792 },
   { label: "App default fallback", latitude: -37.87569351417865, longitude: 145.00569971273293 },
   { label: "Sydney", latitude: -33.856784, longitude: 151.215297 },
+  { label: "Sydney Harbour shoreline", latitude: -33.856784, longitude: 151.216 },
+  { label: "Victorian alpine terrain", latitude: -36.732, longitude: 146.9597 },
   { label: "San Francisco", latitude: 37.774929, longitude: -122.419418 },
   { label: "London", latitude: 51.507351, longitude: -0.127758 },
   { label: "Tokyo", latitude: 35.681236, longitude: 139.767125 },
@@ -94,6 +97,7 @@ export function DevKit() {
     Math.abs(active.longitude - preset.longitude) < 1e-9;
 
   const select = (preset: Coordinates) => {
+    clearLocationBoundState();
     window.localStorage.setItem("devGeocode", JSON.stringify(preset));
     window.localStorage.removeItem("continueWithoutLocation");
     window.location.reload();
@@ -135,6 +139,7 @@ export function DevKit() {
               type="button"
               className="devkit-reset"
               onClick={() => {
+                clearLocationBoundState();
                 window.localStorage.removeItem("devGeocode");
                 window.localStorage.removeItem("continueWithoutLocation");
                 window.location.reload();

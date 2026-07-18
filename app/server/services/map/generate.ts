@@ -9,7 +9,19 @@ const createLegacyBlocksHandler = createLegacyBlocksHandlerUntyped as (
   status: number;
 }>;
 
-const blocksHandler = createLegacyBlocksHandler("2.0.0001");
+// Bump when terrain semantics or sprite stitching changes so stored blocks are rebuilt.
+export const MAP_BLOCK_VERSION = "2.1.0002";
+
+const blocksHandler = createLegacyBlocksHandler(MAP_BLOCK_VERSION);
+
+export function isCurrentMapBlock(block: {
+  tiles?: Array<{ version?: string }>;
+}): boolean {
+  return (
+    block.tiles?.length === 16 * 16 &&
+    block.tiles.every((tile) => tile.version === MAP_BLOCK_VERSION)
+  );
+}
 
 export async function generateMapBlock(input: {
   x: number;

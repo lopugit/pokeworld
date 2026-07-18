@@ -2,6 +2,7 @@ import { defineEventHandler, getQuery } from "nitro/h3";
 import { start } from "workflow/api";
 import { generateMapWorkflow } from "../../../workflows/map-generation";
 import { coordinatesForInput, parseMapJobInput } from "../../services/map/input";
+import { isCurrentMapBlock } from "../../services/map/generate";
 import { shouldRegenerateFallbackBlock } from "../../services/map/legacy/map-source";
 import { getStoredBlocks } from "../../services/map/mongo";
 import { errorResponse, jsonResponse } from "../../utils/http";
@@ -29,7 +30,13 @@ export default defineEventHandler(async (event) => {
       const hasStaleFallback = cached?.some((block) =>
         shouldRegenerateFallbackBlock(block),
       );
-      if (cached && cached.length === requested.length && !hasStaleFallback) {
+      const hasStaleVersion = cached?.some((block) => !isCurrentMapBlock(block));
+      if (
+        cached &&
+        cached.length === requested.length &&
+        !hasStaleFallback &&
+        !hasStaleVersion
+      ) {
         return jsonResponse({ blocks: cached, status: "completed" });
       }
     }

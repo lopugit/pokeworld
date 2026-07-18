@@ -4,9 +4,11 @@ import 'dotenv/config'
 import * as nodePath from 'node:path'
 import throttledQueue from 'throttled-queue'
 import { MongoClient } from 'mongodb'
+import { PNG } from 'pngjs'
 import log from './log'
 import * as mapSource from './map-source'
 import { createSolidPng, cropPng } from './png'
+import { GOOGLE_STATIC_MAP_STYLES, centeredCropRect } from '../terrain-classifier'
 
 let fallbackMapPromise
 const getFallbackMap = () => {
@@ -290,6 +292,22 @@ async function getMapAt(lat, lng, zoom = 20) {
 	return result.image
 }
 
+function buildGoogleStaticMapUrl(lat, lng, zoom = 20, apiKey = process.env.GOOGLE_API_KEY) {
+	const url = new URL('https://maps.googleapis.com/maps/api/staticmap')
+	const params = new URLSearchParams({
+		center: `${lat},${lng}`,
+		zoom: String(zoom),
+		scale: '2',
+		size: '640x640',
+		format: 'png32',
+		key: apiKey,
+		maptype: 'roadmap',
+	})
+	for (const style of GOOGLE_STATIC_MAP_STYLES) params.append('style', style)
+	url.search = params.toString()
+	return url
+}
+
 async function getMapAtWithSource(lat, lng, zoom = 20) {
 	// No Google key: skip the doomed request and use the bundled 512x512 fallback
 	// map so tile generation works fully offline (dev).
@@ -299,22 +317,14 @@ async function getMapAtWithSource(lat, lng, zoom = 20) {
 			source: mapSource.MAP_SOURCE_FALLBACK,
 		}
 	}
-	const url = new URL('https://maps.googleapis.com/maps/api/staticmap')
-	url.search = new URLSearchParams({
-		center: `${lat},${lng}`,
-		zoom: String(zoom),
-		scale: '2',
-		size: '640x640',
-		key: process.env.GOOGLE_API_KEY,
-		maptype: 'roadmap',
-		map_id: '9bfcc2fdf1e48fe2',
-	}).toString()
+	const url = buildGoogleStaticMapUrl(lat, lng, zoom)
 
 	try {
 		const response = await fetch(url, { signal: AbortSignal.timeout(30_000) })
 		if (!response.ok) throw new Error(`Google Static Maps returned ${response.status}`)
 		const image = Buffer.from(await response.arrayBuffer())
-		const croppedImage = cropPng(image, { left: 64, top: 64, width: 512, height: 512 })
+		const decoded = PNG.sync.read(image)
+		const croppedImage = cropPng(image, centeredCropRect(decoded.width, decoded.height))
 
 		return {
 			image: croppedImage,
@@ -498,4 +508,4 @@ const getTileSprite2 = (x, y, tileCache, grass) => {
 	return grass ? 'grass' : 'undefined'
 }
 
-export { generateCoordinatesGrid, generateMap, getMapAt, getMapAtWithSource, getTileOffsetColour, getTileOffsetSprite, getTileOffsetSprite2, getTileOffset, getTile, getTileColour, getTileSprite, getTileSprite2 }
+export { buildGoogleStaticMapUrl, generateCoordinatesGrid, generateMap, getMapAt, getMapAtWithSource, getTileOffsetColour, getTileOffsetSprite, getTileOffsetSprite2, getTileOffset, getTile, getTileColour, getTileSprite, getTileSprite2 }
