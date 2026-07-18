@@ -190,9 +190,9 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1784391406.60269,
-    "ast_hash": "98dd4fd9215dcb275439835d2cd12085",
-    "semantic_hash": "98dd4fd9215dcb275439835d2cd12085"
+    "mtime": 1784393147.9107842,
+    "ast_hash": "63f800889dbcfe81784d841cf093ed1f",
+    "semantic_hash": "63f800889dbcfe81784d841cf093ed1f"
   },
   "app/src/components/Nav.tsx": {
     "mtime": 1784378811.4225652,
@@ -297,7 +297,7 @@
   "app/VERCEL_DEPLOYMENTS.md": {
     "mtime": 1784389446.8172188,
     "ast_hash": "d64a36c6b59ab72c6da059e3a626c58e",
-    "semantic_hash": ""
+    "semantic_hash": "d64a36c6b59ab72c6da059e3a626c58e"
   },
   "app/index.html": {
     "mtime": 1784378344.7982473,
@@ -974,15 +974,10 @@
     "ast_hash": "f1ecc69bfe4afa6389deff768509c23f",
     "semantic_hash": "f1ecc69bfe4afa6389deff768509c23f"
   },
-  "app/src/components/EmeraldMenu.tsx": {
-    "mtime": 1784391548.941663,
-    "ast_hash": "3c82a6c8721f922df34d48886412f7a3",
-    "semantic_hash": "3c82a6c8721f922df34d48886412f7a3"
-  },
   "app/src/lib/trainer-state.ts": {
-    "mtime": 1784392158.770717,
-    "ast_hash": "2f56fbfc1dc0d4c34abdfcf759011156",
-    "semantic_hash": "2f56fbfc1dc0d4c34abdfcf759011156"
+    "mtime": 1784393306.2118263,
+    "ast_hash": "938091fce79fe3733019a48721115e11",
+    "semantic_hash": "938091fce79fe3733019a48721115e11"
   },
   "app/tests/terrain-layout.test.ts": {
     "mtime": 1784391958.1263485,
@@ -990,9 +985,9 @@
     "semantic_hash": "7bffb8df9d070eb63efb24d7ed5b09d4"
   },
   "app/tests/trainer-state.test.ts": {
-    "mtime": 1784392158.7710435,
-    "ast_hash": "21c4c794ffb4aeae76b855602561c7d1",
-    "semantic_hash": "21c4c794ffb4aeae76b855602561c7d1"
+    "mtime": 1784393286.9715276,
+    "ast_hash": "c3b74db0a7af86a0ad90040a071f4bdb",
+    "semantic_hash": "c3b74db0a7af86a0ad90040a071f4bdb"
   },
   "app/tests/world-grammar.test.ts": {
     "mtime": 1784391348.3166063,
@@ -1012,82 +1007,82 @@
   "app/public/sprites/pokemon/emerald-mudkip.png": {
     "mtime": 1784391488.5327244,
     "ast_hash": "d5a9a7d61bd2b06ecde11091c06f1c13",
-    "semantic_hash": ""
+    "semantic_hash": "d5a9a7d61bd2b06ecde11091c06f1c13"
   },
   "app/public/sprites/pokemon/emerald-ralts.png": {
     "mtime": 1784391489.3021863,
     "ast_hash": "4ff461992a5aa26fbc549f698abb3567",
-    "semantic_hash": ""
+    "semantic_hash": "4ff461992a5aa26fbc549f698abb3567"
   },
   "app/public/sprites/pokemon/emerald-torchic.png": {
     "mtime": 1784391488.2762623,
     "ast_hash": "7e1c0c488578e18053b13bad24cb93c0",
-    "semantic_hash": ""
+    "semantic_hash": "7e1c0c488578e18053b13bad24cb93c0"
   },
   "app/public/sprites/pokemon/emerald-treecko.png": {
     "mtime": 1784391488.0444791,
     "ast_hash": "ee59ada9778f6f348a4679767acf1981",
-    "semantic_hash": ""
+    "semantic_hash": "ee59ada9778f6f348a4679767acf1981"
   },
   "app/public/sprites/pokemon/emerald-wingull.png": {
     "mtime": 1784391489.0495093,
     "ast_hash": "7a58df35db04333397336d8b5209b69e",
-    "semantic_hash": ""
+    "semantic_hash": "7a58df35db04333397336d8b5209b69e"
   },
   "app/public/sprites/pokemon/emerald-zigzagoon.png": {
     "mtime": 1784391488.7863405,
     "ast_hash": "c77034efad394276f060b0602f20d1d7",
-    "semantic_hash": ""
+    "semantic_hash": "c77034efad394276f060b0602f20d1d7"
   },
   "app/public/tiles/cave-1.png": {
     "mtime": 1784390971.222787,
     "ast_hash": "1f14298da5583d8d958839938c97a812",
-    "semantic_hash": ""
+    "semantic_hash": "1f14298da5583d8d958839938c97a812"
   },
   "app/public/tiles/cave-2.png": {
     "mtime": 1784390971.2576168,
     "ast_hash": "bd135e55d8d0a2edc3fe6fcf729dae05",
-    "semantic_hash": ""
+    "semantic_hash": "bd135e55d8d0a2edc3fe6fcf729dae05"
   },
   "app/public/tiles/cave-3.png": {
     "mtime": 1784390971.2946448,
     "ast_hash": "d06a004b41495ddfac198e4612f499f6",
-    "semantic_hash": ""
+    "semantic_hash": "d06a004b41495ddfac198e4612f499f6"
   },
   "app/public/tiles/cave-4.png": {
     "mtime": 1784390971.3216417,
     "ast_hash": "f39638f2a66b64bbe9402bf0c15c8f1c",
-    "semantic_hash": ""
+    "semantic_hash": "f39638f2a66b64bbe9402bf0c15c8f1c"
   },
   "app/public/tiles/ledge-left-1.png": {
     "mtime": 1784391063.9572356,
     "ast_hash": "29009b9288a8f345f86bb213ad71ed53",
-    "semantic_hash": ""
+    "semantic_hash": "29009b9288a8f345f86bb213ad71ed53"
   },
   "app/public/tiles/ledge-middle-1.png": {
     "mtime": 1784391063.9764042,
     "ast_hash": "915733dc85c5ea2d2c3c57ae5df6ff62",
-    "semantic_hash": ""
+    "semantic_hash": "915733dc85c5ea2d2c3c57ae5df6ff62"
   },
   "app/public/tiles/ledge-right-1.png": {
     "mtime": 1784391063.9928124,
     "ast_hash": "67843c995750d7e9b292f1c36c2ffc8a",
-    "semantic_hash": ""
+    "semantic_hash": "67843c995750d7e9b292f1c36c2ffc8a"
   },
   "app/public/tiles/route-sign-1.png": {
     "mtime": 1784390971.143345,
     "ast_hash": "d62e361a101b2d69619f4524ac8a6894",
-    "semantic_hash": ""
+    "semantic_hash": "d62e361a101b2d69619f4524ac8a6894"
   },
   "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
     "mtime": 1784392569.7436059,
     "ast_hash": "287d47e8f5930a3e443f7a9089dd6436",
-    "semantic_hash": ""
+    "semantic_hash": "287d47e8f5930a3e443f7a9089dd6436"
   },
   "docs/qa/dense-world-desktop.png": {
-    "mtime": 1784392452.0303354,
+    "mtime": 1784393509.9811141,
     "ast_hash": "c8104c1ae906203e6572a8af71b96c1e",
-    "semantic_hash": ""
+    "semantic_hash": "c8104c1ae906203e6572a8af71b96c1e"
   },
   "docs/qa/dense-world-mobile.png": {
     "mtime": 1784392486.382961,
@@ -1103,5 +1098,50 @@
     "mtime": 1784392501.229815,
     "ast_hash": "fd7420f9bd853b9989aa401e5ec3d066",
     "semantic_hash": ""
+  },
+  "app/src/components/game-ui/BadgesPanel.tsx": {
+    "mtime": 1784393195.8995173,
+    "ast_hash": "4c4e85d9fe100b0f37c406a3af77e1d5",
+    "semantic_hash": "4c4e85d9fe100b0f37c406a3af77e1d5"
+  },
+  "app/src/components/game-ui/BagPanel.tsx": {
+    "mtime": 1784393184.2456434,
+    "ast_hash": "894862f4656fc59c7f5a3972df6a67a7",
+    "semantic_hash": "894862f4656fc59c7f5a3972df6a67a7"
+  },
+  "app/src/components/game-ui/DialogBox.tsx": {
+    "mtime": 1784392955.0685863,
+    "ast_hash": "fbab8238c349741bb973362668e2efc3",
+    "semantic_hash": "fbab8238c349741bb973362668e2efc3"
+  },
+  "app/src/components/game-ui/PanelFrame.tsx": {
+    "mtime": 1784393214.0252998,
+    "ast_hash": "37d2a1a14ae8ff4c5108ba81a431fa44",
+    "semantic_hash": "37d2a1a14ae8ff4c5108ba81a431fa44"
+  },
+  "app/src/components/game-ui/PartyPanel.tsx": {
+    "mtime": 1784393167.155712,
+    "ast_hash": "11ff22a2fc020b6551e3f7a8d9e7dd5e",
+    "semantic_hash": "11ff22a2fc020b6551e3f7a8d9e7dd5e"
+  },
+  "app/src/components/game-ui/PcPanel.tsx": {
+    "mtime": 1784393209.9592338,
+    "ast_hash": "a9e8e9d39aa1ed4ffc1085b8007f2435",
+    "semantic_hash": "a9e8e9d39aa1ed4ffc1085b8007f2435"
+  },
+  "app/src/components/game-ui/StartMenu.tsx": {
+    "mtime": 1784392955.0702372,
+    "ast_hash": "f0f9fb041230834e1cee50dfc2950da7",
+    "semantic_hash": "f0f9fb041230834e1cee50dfc2950da7"
+  },
+  "app/src/lib/game-rules.ts": {
+    "mtime": 1784393154.0516284,
+    "ast_hash": "25ad5d8febfdbe962dc42cbda11e4a08",
+    "semantic_hash": "25ad5d8febfdbe962dc42cbda11e4a08"
+  },
+  "app/tests/game-rules.test.ts": {
+    "mtime": 1784393295.3279016,
+    "ast_hash": "f8ed1e307f8690e993a591be30c26bf6",
+    "semantic_hash": "f8ed1e307f8690e993a591be30c26bf6"
   }
 }

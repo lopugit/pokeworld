@@ -1,12 +1,34 @@
 import { Component, createRef } from "react";
-import { EmeraldMenu } from "./EmeraldMenu";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
 import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
 import { prioritizeInitialMapOffsets } from "../lib/map-load";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
-import { createDefaultTrainerState, normalizeTrainerState, type TrainerState } from "../lib/trainer-state";
+import {
+  actionDirection,
+  directionDelta,
+  fieldItemFor,
+  interactionFor,
+  isFieldItemTile,
+  resolveMove,
+  tileCoordKey,
+  type Direction,
+} from "../lib/game-rules";
+import {
+  collectFieldItem,
+  hasCollected,
+  loadTrainer,
+  saveTrainer,
+  type TrainerState,
+} from "../lib/trainer-state";
+import { DialogBox } from "./game-ui/DialogBox";
+import { MENU_ITEMS, StartMenu, type MenuItemId } from "./game-ui/StartMenu";
+import { PartyPanel } from "./game-ui/PartyPanel";
+import { BagPanel } from "./game-ui/BagPanel";
+import { BadgesPanel } from "./game-ui/BadgesPanel";
+import { PcPanel } from "./game-ui/PcPanel";
 import "../styles/game.scss";
+import "../styles/game-ui.css";
 
 const tileSize = 32;
 const blockSize = 512;
@@ -74,6 +96,16 @@ interface PlayerState {
   locationKey?: string;
   lastAction?: number;
   queuedAction?: MoveAction;
+  facing?: Direction;
+}
+
+type PanelId = "party" | "bag" | "badges" | "pc";
+
+interface UiState {
+  menuOpen: boolean;
+  menuIndex: number;
+  panel: PanelId | null;
+  dialog: { pages: string[]; advance: number } | null;
 }
 
 interface GameComponentState {
@@ -83,9 +115,9 @@ interface GameComponentState {
   loadError: string;
   map: MapView;
   player: PlayerState;
-  trainer: TrainerState;
-  menuOpen: boolean;
   revision: number;
+  ui: UiState;
+  trainer: TrainerState;
 }
 
 interface StoredImage {
@@ -101,8 +133,6 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     locationError: false,
     loadError: "",
     revision: 0,
-    menuOpen: false,
-    trainer: createDefaultTrainerState(),
     map: {
       initialized: false,
       width: blockCount - 1,
@@ -150,7 +180,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       blockY: 0,
       x: 0,
       y: 0,
+      facing: "down",
     },
+    ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null },
+    trainer: loadTrainer(),
   };
 
   private readonly canvasRef = createRef<HTMLCanvasElement>();
@@ -242,8 +275,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private async initializeGame(coords: { latitude: number; longitude: number }) {
-    const things = loadThings();
-    const stored = things.game as Partial<GameSettings>;
+    const stored = loadThings().game as Partial<GameSettings>;
     const game: GameSettings = {
       ...this.state.game,
       ...stored,
@@ -254,10 +286,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       coords,
     };
     game.zoomScale = game.canvasWidth / (game.canvasWidth * game.zoom);
-    const trainer = normalizeTrainerState(things.trainer);
-    await this.setStateAsync({ game, trainer });
+    await this.setStateAsync({ game });
     saveThing("game", game);
-    saveThing("trainer", trainer);
     this.resizeGame();
     window.addEventListener("resize", this.resizeGame);
     this.resizeInterval = window.setInterval(this.resizeGame, 1000);
@@ -346,31 +376,172 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private onKeydown = (event: KeyboardEvent) => {
-    if (event.key === "Enter" || event.key.toLowerCase() === "m") {
-      event.preventDefault();
-      this.toggleMenu();
-      return;
-    }
-    if (event.key === "Escape" && this.state.menuOpen) {
-      event.preventDefault();
-      this.setState({ menuOpen: false });
-      return;
-    }
-    if (this.state.menuOpen) return;
-    const keys: Record<string, MoveAction> = {
+    const moveKeys: Record<string, MoveAction> = {
       ArrowRight: "moveRight",
       ArrowLeft: "moveLeft",
       ArrowDown: "moveDown",
       ArrowUp: "moveUp",
     };
-    const action = keys[event.key];
-    if (!action) return;
-    event.preventDefault();
-    this.action(action);
+    const { ui } = this.state;
+    const key = event.key;
+    const isA = key === "z" || key === "Z" || key === " " || key === "Enter";
+    const isB = key === "x" || key === "X" || key === "Escape" || key === "Backspace";
+
+    if (ui.dialog) {
+      if (isA || isB || moveKeys[key]) {
+        event.preventDefault();
+        this.advanceDialog();
+      }
+      return;
+    }
+
+    if (ui.panel) {
+      if (isB) {
+        event.preventDefault();
+        this.setUi({ panel: null, menuOpen: true });
+      }
+      return;
+    }
+
+    if (ui.menuOpen) {
+      if (key === "ArrowUp" || key === "ArrowDown") {
+        event.preventDefault();
+        const count = MENU_ITEMS.length;
+        const delta = key === "ArrowUp" ? count - 1 : 1;
+        this.setUi({ menuIndex: (ui.menuIndex + delta) % count });
+      } else if (isA) {
+        event.preventDefault();
+        this.selectMenuItem(MENU_ITEMS[ui.menuIndex].id);
+      } else if (isB) {
+        event.preventDefault();
+        this.setUi({ menuOpen: false });
+      }
+      return;
+    }
+
+    if (key === "m" || key === "M") {
+      event.preventDefault();
+      this.toggleMenu();
+      return;
+    }
+
+    const action = moveKeys[key];
+    if (action) {
+      event.preventDefault();
+      this.action(action);
+      return;
+    }
+    if (key === "Enter") {
+      event.preventDefault();
+      this.toggleMenu();
+      return;
+    }
+    if (key === "z" || key === "Z" || key === " ") {
+      event.preventDefault();
+      this.interact();
+    }
+  };
+
+  private setUi = (patch: Partial<UiState>) => {
+    this.setState(({ ui }) => ({ ui: { ...ui, ...patch } }));
+  };
+
+  private setTrainer = (trainer: TrainerState) => {
+    this.setState({ trainer });
+    saveTrainer(trainer);
+  };
+
+  private toggleMenu = () => {
+    if (this.state.ui.dialog || this.state.ui.panel) return;
+    this.setUi({ menuOpen: !this.state.ui.menuOpen, menuIndex: 0 });
+  };
+
+  private openDialog = (pages: string[]) => {
+    this.setUi({ dialog: { pages, advance: 0 }, menuOpen: false });
+  };
+
+  private advanceDialog = () => {
+    const { dialog } = this.state.ui;
+    if (!dialog) return;
+    this.setUi({ dialog: { ...dialog, advance: dialog.advance + 1 } });
+  };
+
+  private closeDialog = () => this.setUi({ dialog: null });
+
+  private selectMenuItem = (id: MenuItemId) => {
+    if (id === "party" || id === "bag" || id === "badges" || id === "pc") {
+      this.setUi({ menuOpen: false, panel: id });
+      return;
+    }
+    if (id === "save") {
+      saveTrainer(this.state.trainer);
+      saveThing("player", this.state.player);
+      saveThing("map", this.state.map);
+      this.openDialog([`${this.state.trainer.name} saved the game!`]);
+      return;
+    }
+    this.setUi({ menuOpen: false });
+  };
+
+  private pressA = () => {
+    const { ui } = this.state;
+    if (ui.dialog) {
+      this.advanceDialog();
+      return;
+    }
+    if (ui.menuOpen) {
+      this.selectMenuItem(MENU_ITEMS[ui.menuIndex].id);
+      return;
+    }
+    if (!ui.panel) this.interact();
+  };
+
+  private pressB = () => {
+    const { ui } = this.state;
+    if (ui.dialog) {
+      this.advanceDialog();
+      return;
+    }
+    if (ui.panel) {
+      this.setUi({ panel: null, menuOpen: true });
+      return;
+    }
+    if (ui.menuOpen) this.setUi({ menuOpen: false });
+  };
+
+  private interact = () => {
+    const { player, game, trainer } = this.state;
+    const facing = player.facing ?? "down";
+    const { dx, dy } = directionDelta[facing];
+    const targetX = player.x + dx * game.tileSize;
+    const targetY = player.y + dy * game.tileSize;
+    const tile = this.tileDb[`${targetX},${targetY}`];
+    const collected = (coordKey: string) => hasCollected(trainer, coordKey);
+    const interaction = interactionFor(tile, collected);
+    if (interaction.type === "item" && tile) {
+      const coordKey = tileCoordKey(tile.mapX, tile.mapY);
+      const item = fieldItemFor(
+        tile.mapX,
+        tile.mapY,
+        tile.feature === "hidden-item" || tile.hiddenItem === "pokeball"
+          ? "poke-ball"
+          : undefined,
+      );
+      const nextTrainer = collectFieldItem(trainer, coordKey, item);
+      if (nextTrainer) {
+        this.setState({ trainer: nextTrainer }, () => saveTrainer(nextTrainer));
+        this.openDialog([
+          `${trainer.name} found a ${item.name}!`,
+          `${trainer.name} put the ${item.name}\nin the BAG.`,
+        ]);
+      }
+      return;
+    }
+    if (interaction.pages?.length) this.openDialog(interaction.pages);
   };
 
   private action = (action: MoveAction) => {
-    if (this.state.menuOpen) return;
+    if (this.state.ui.dialog || this.state.ui.menuOpen || this.state.ui.panel) return;
     const now = Date.now();
     if (this.state.player.lastAction && now - this.state.player.lastAction < 300) {
       if (!this.state.player.queuedAction) {
@@ -380,26 +551,47 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     }
 
     const game = this.state.game;
-    const player = { ...this.state.player, lastAction: now, queuedAction: undefined };
+    const player = { ...this.state.player, lastAction: now, queuedAction: undefined, facing: actionDirection[action] };
     const map = { ...this.state.map };
     const distance = game.tileSize * (game.zoomMode ? 8 : 1);
 
-    if (action === "moveRight") {
-      const cutoff = map.x + game.canvasWidth * game.zoom - game.playerXBoundaryOffset;
-      if (player.x >= cutoff) map.x += distance;
-      player.x += distance;
-    } else if (action === "moveLeft") {
-      const cutoff = map.x + game.playerXBoundaryOffset;
-      if (player.x < cutoff) map.x -= distance;
-      player.x -= distance;
-    } else if (action === "moveUp") {
-      const cutoff = map.y + game.canvasHeight * game.zoom - game.playerYBoundaryOffset;
-      if (player.y >= cutoff) map.y += distance;
-      player.y += distance;
-    } else {
-      const cutoff = map.y + game.playerYBoundaryOffset;
-      if (player.y < cutoff) map.y -= distance;
-      player.y -= distance;
+    // Debug zoomMode strides 8 tiles and bypasses collision; normal movement
+    // resolves against tile solidity and one-way ledges.
+    let steps = 1;
+    if (!game.zoomMode) {
+      const resolution = resolveMove(
+        (x, y) => this.tileDb[`${x},${y}`],
+        player.x,
+        player.y,
+        action,
+        game.tileSize,
+        (coordKey) => hasCollected(this.state.trainer, coordKey),
+      );
+      if (resolution.kind === "blocked") {
+        this.setState({ player }, () => saveThing("player", player));
+        return;
+      }
+      steps = resolution.kind === "jump" ? 2 : 1;
+    }
+
+    for (let step = 0; step < steps; step += 1) {
+      if (action === "moveRight") {
+        const cutoff = map.x + game.canvasWidth * game.zoom - game.playerXBoundaryOffset;
+        if (player.x >= cutoff) map.x += distance;
+        player.x += distance;
+      } else if (action === "moveLeft") {
+        const cutoff = map.x + game.playerXBoundaryOffset;
+        if (player.x < cutoff) map.x -= distance;
+        player.x -= distance;
+      } else if (action === "moveUp") {
+        const cutoff = map.y + game.canvasHeight * game.zoom - game.playerYBoundaryOffset;
+        if (player.y >= cutoff) map.y += distance;
+        player.y += distance;
+      } else {
+        const cutoff = map.y + game.playerYBoundaryOffset;
+        if (player.y < cutoff) map.y -= distance;
+        player.y -= distance;
+      }
     }
 
     const previousBlock = `${player.blockX},${player.blockY}`;
@@ -484,18 +676,6 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         callback?.();
       },
     );
-  };
-
-  private toggleMenu = () => {
-    this.setState(({ menuOpen, player }) => ({
-      menuOpen: !menuOpen,
-      player: { ...player, queuedAction: undefined },
-    }));
-  };
-
-  private setTrainer = (trainer: TrainerState) => {
-    this.setState({ trainer });
-    saveThing("trainer", trainer);
   };
 
   private zoom = (direction: "in" | "out") => {
@@ -689,7 +869,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         canvasContext.drawImage(base.element, drawX, drawY, width, height);
         layerContext?.drawImage(base.element, drawX, drawY, width, height);
       }
-      const top = tile.img2 ? this.storedImages.get(tile.img2) : undefined;
+      const overlayHidden =
+        isFieldItemTile(tile) && hasCollected(this.state.trainer, tileCoordKey(tile.mapX, tile.mapY));
+      const top = !overlayHidden && tile.img2 ? this.storedImages.get(tile.img2) : undefined;
       if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
     }
 
@@ -751,7 +933,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   override render() {
-    const { game, map, player, menuOpen, trainer } = this.state;
+    const { game, map, player } = this.state;
     if (this.state.locationError) {
       return (
         <div className="w-full flex flex-col items-center justify-center pb-12">
@@ -795,6 +977,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
     const debugButton = "py-2 px-8 mr-4 mb-4 bg-grass text-white cursor-pointer";
     const browserTile = this.tileBrowserTile;
+    const { ui, trainer } = this.state;
     return (
       <div className="w-full flex flex-col items-center justify-center pb-12">
         <div
@@ -806,16 +989,58 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
               style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
             >
-              <div className="flex flex-row justify-center w-full board-screen">
+              <div className="flex flex-row justify-center w-full board-screen relative">
                 <canvas
                   ref={this.canvasRef}
                   className="screen-canvas bg-black rounded-lg"
                   width={game.canvasWidth}
                   height={game.canvasHeight}
                 />
-                {menuOpen ? (
-                  <EmeraldMenu trainer={trainer} onChange={this.setTrainer} onClose={() => this.setState({ menuOpen: false })} />
-                ) : null}
+                <div className="game-ui-layer">
+                  {ui.menuOpen ? (
+                    <StartMenu
+                      selectedIndex={ui.menuIndex}
+                      onSelect={this.selectMenuItem}
+                      onHighlight={(index) => this.setUi({ menuIndex: index })}
+                    />
+                  ) : null}
+                  {ui.panel === "party" ? (
+                    <PartyPanel
+                      trainer={trainer}
+                      onChange={this.setTrainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.panel === "bag" ? (
+                    <BagPanel
+                      trainer={trainer}
+                      onChange={this.setTrainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.panel === "badges" ? (
+                    <BadgesPanel
+                      trainer={trainer}
+                      onChange={this.setTrainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.panel === "pc" ? (
+                    <PcPanel
+                      trainer={trainer}
+                      onChange={this.setTrainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.dialog ? (
+                    <DialogBox
+                      pages={ui.dialog.pages}
+                      advance={ui.dialog.advance}
+                      onRequestAdvance={this.advanceDialog}
+                      onDone={this.closeDialog}
+                    />
+                  ) : null}
+                </div>
               </div>
               <div className="w-full pt-10 md:pt-14 pb-12">
                 <div className="controls flex flex-row">
@@ -827,8 +1052,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                     <div className="middle" />
                   </div>
                   <div className="ml-auto a-b mr-4 md:mr-12">
-                    <button type="button" className="b" aria-label="Close menu" onClick={() => this.setState({ menuOpen: false })}>B</button>
-                    <button type="button" className="a" aria-label="Open menu" onClick={() => this.setState({ menuOpen: true })}>A</button>
+                    <button type="button" className="b" aria-label="Back or close" onClick={this.pressB}>B</button>
+                    <button type="button" className="a" aria-label="Interact or confirm" onClick={this.pressA}>A</button>
                   </div>
                 </div>
                 <div className="pt-12 md:pt-20" />
@@ -836,7 +1061,15 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   <button type="button" className="select" onClick={() => this.zoom("out")}>-</button>
                   <button type="button" className="select" onClick={() => this.zoom("in")}>+</button>
                   <button type="button" className="select" onClick={() => this.setGame({ debug: !game.debug })}>SELECT</button>
-                  <button type="button" className="start" aria-pressed={menuOpen} onClick={this.toggleMenu}>START</button>
+                  <button
+                    type="button"
+                    className="start"
+                    aria-label="Toggle Start menu"
+                    aria-pressed={ui.menuOpen}
+                    onClick={this.toggleMenu}
+                  >
+                    START
+                  </button>
                 </div>
               </div>
               <div

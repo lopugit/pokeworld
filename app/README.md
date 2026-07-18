@@ -96,9 +96,9 @@ All shipped map and Pokémon art is cropped from the repository's original Game 
 Emerald exterior sheet or the corresponding Emerald-version Pokémon sprites. The generator does not
 ship AI-created or stylistically approximate replacement art.
 
-Press `START`, `A`, `Enter`, or `M` to open the trainer menu. It includes the six-slot party, item
-pocket, Hoenn badge case, and Box 1 PC deposit/withdraw flow, with state persisted alongside the
-existing game state.
+Press `START`, `Enter`, or `M` to open the trainer menu. `A` / `Z` / `Space` confirms or interacts,
+while `B` / `X` / `Escape` backs out. The menu includes the six-slot party, item pocket, Hoenn badge
+case, and Box 1 PC deposit/withdraw flow, with trainer progress persisted independently of location.
 
 ### API routes
 
