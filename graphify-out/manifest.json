@@ -1093,5 +1093,35 @@
     "mtime": 1784393754.9125667,
     "ast_hash": "b7eb1bf22edddae5aae961cf317979c7",
     "semantic_hash": "b7eb1bf22edddae5aae961cf317979c7"
+  },
+  "app/README.md": {
+    "mtime": 1784396074.3568382,
+    "ast_hash": "80fa35504c37e72db86570aba71690c5",
+    "semantic_hash": "80fa35504c37e72db86570aba71690c5"
+  },
+  "app/VERCEL_DEPLOYMENTS.md": {
+    "mtime": 1784396074.357041,
+    "ast_hash": "6627f8606217e93664e19adb2e1463c9",
+    "semantic_hash": "6627f8606217e93664e19adb2e1463c9"
+  },
+  "docs/qa/dense-world-desktop.png": {
+    "mtime": 1784396074.3584385,
+    "ast_hash": "c6d70bf3d9a410b7a5fa6e16e9714f8b",
+    "semantic_hash": "c6d70bf3d9a410b7a5fa6e16e9714f8b"
+  },
+  "docs/qa/dense-world-mobile.png": {
+    "mtime": 1784396074.3587434,
+    "ast_hash": "53920ff5646c2c87e177d2618cadbd96",
+    "semantic_hash": "53920ff5646c2c87e177d2618cadbd96"
+  },
+  "docs/qa/trainer-party-desktop.png": {
+    "mtime": 1784396074.3590403,
+    "ast_hash": "d6ce3d2e2cd9de9e0fd74ceea58d40b0",
+    "semantic_hash": "d6ce3d2e2cd9de9e0fd74ceea58d40b0"
+  },
+  "docs/qa/trainer-pc-mobile.png": {
+    "mtime": 1784396074.3592846,
+    "ast_hash": "12e25b145ed7ca6086520d024f34999f",
+    "semantic_hash": "12e25b145ed7ca6086520d024f34999f"
   }
 }

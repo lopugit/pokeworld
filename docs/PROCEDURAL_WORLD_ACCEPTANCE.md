@@ -1,6 +1,6 @@
 # Procedural World Acceptance
 
-Status: In Progress
+Status: Complete
 
 Last reviewed: 2026-07-19
 
@@ -61,9 +61,9 @@ current final-commit screenshots above remain outside the repository as required
 
 ## Delivery gates
 
-- [ ] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
-- [ ] `codex/dense-pokemon-worlds` is pushed.
-- [ ] One ready-for-review pull request is open and current.
+- [x] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
+- [x] `codex/dense-pokemon-worlds` is pushed.
+- [x] One ready-for-review pull request is open and current.
 
 ## Latest verification
 
