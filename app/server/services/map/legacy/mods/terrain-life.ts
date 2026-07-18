@@ -94,6 +94,95 @@ const blockTiles = (state, block) => {
 	return tiles
 }
 
+const SPAWN_ROUTE_TERRAINS = new Set(['grass', 'natural', 'sand', 'road', 'path'])
+
+const setTerrain = (tile, terrain) => {
+	tile.terrain = terrain
+	tile.terrainConfidence = 1
+	tile.terrainCoverage = {
+		grass: 0,
+		natural: 0,
+		mountain: 0,
+		water: 0,
+		road: 0,
+		path: 0,
+		building: 0,
+		sand: 0,
+		[terrain]: 1,
+	}
+}
+
+const findSpawnPath = (byGrid, starts, goals) => {
+	const queue = [...starts]
+	const parents = new Map(starts.map(([x, y]) => [tileKey(x, y), null]))
+	let destination = null
+	while (queue.length && !destination) {
+		const [x, y] = queue.shift()
+		const key = tileKey(x, y)
+		if (goals.has(key)) {
+			destination = key
+			break
+		}
+		for (const [dx, dy] of [[0, -1], [1, 0], [0, 1], [-1, 0]]) {
+			const nextX = x + dx
+			const nextY = y + dy
+			const nextKey = tileKey(nextX, nextY)
+			const tile = byGrid.get(nextKey)
+			if (!tile || parents.has(nextKey) || !SPAWN_ROUTE_TERRAINS.has(terrainOf(tile))) continue
+			parents.set(nextKey, key)
+			queue.push([nextX, nextY])
+		}
+	}
+	if (!destination) return []
+	const path = []
+	for (let cursor = destination; cursor; cursor = parents.get(cursor)) {
+		path.push(cursor)
+	}
+	return path.reverse()
+}
+
+const carveSpawnPath = (byGrid, path) => {
+	for (const key of path) {
+		const tile = byGrid.get(key)
+		if (tile && !['road', 'path'].includes(terrainOf(tile))) setTerrain(tile, 'path')
+	}
+}
+
+const sharedPortal = (x, y, salt) => 1 + Math.floor(hashUnit(x, y, salt) * (BLOCK_TILES - 2))
+
+const ensureSpawnRoute = (tiles, block) => {
+	const byGrid = new Map(tiles.map(tile => [tileKey(tile.x, sourceY(tile)), tile]))
+	const landing = tiles.filter(isCentralLanding)
+	for (const tile of landing) setTerrain(tile, 'grass')
+	const starts = landing.map(tile => [tile.x, sourceY(tile)])
+	const existingRoute = new Set(
+		tiles
+			.filter(tile => ['road', 'path'].includes(terrainOf(tile)))
+			.map(tile => tileKey(tile.x, sourceY(tile))),
+	)
+	if (existingRoute.size) {
+		const path = findSpawnPath(byGrid, starts, existingRoute)
+		if (path.length) {
+			carveSpawnPath(byGrid, path)
+			return
+		}
+	}
+
+	const portals = [
+		[BLOCK_TILES - 1, sharedPortal(block.x + 1, block.y, 'vertical-portal')],
+		[0, sharedPortal(block.x, block.y, 'vertical-portal')],
+		[sharedPortal(block.x, block.y + 1, 'horizontal-portal'), 0],
+		[sharedPortal(block.x, block.y, 'horizontal-portal'), BLOCK_TILES - 1],
+	]
+	for (const [x, y] of portals) {
+		const goal = tileKey(x, y)
+		const tile = byGrid.get(goal)
+		if (!tile || !SPAWN_ROUTE_TERRAINS.has(terrainOf(tile))) continue
+		const path = findSpawnPath(byGrid, starts, new Set([goal]))
+		if (path.length) carveSpawnPath(byGrid, path)
+	}
+}
+
 const resetBaseSprites = (tiles, version, updated) => {
 	for (const tile of tiles) {
 		const terrain = terrainOf(tile)
@@ -625,6 +714,7 @@ const terrainLife = (state, block) => {
 	const tiles = blockTiles(state, block)
 	if (!tiles.length) return
 	const updated = Date.now()
+	ensureSpawnRoute(tiles, block)
 	resetBaseSprites(tiles, state.version, updated)
 	stitchSurfaces(state, tiles)
 	const terrainCounts = tiles.reduce((counts, tile) => {

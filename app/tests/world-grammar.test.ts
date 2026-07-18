@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  BIOME_RULES,
   BIOME_PRESETS,
   DETAIL_PALETTES,
   ROUTE_TREATMENTS,
@@ -18,6 +19,17 @@ describe("procedural Hoenn world grammar", () => {
         DETAIL_PALETTES.length *
         ROUTE_TREATMENTS.length,
     );
+    for (const biome of BIOME_PRESETS) {
+      const rules = BIOME_RULES[biome.id];
+      expect(rules.structureWeights).toHaveLength(STRUCTURE_PRESETS.length);
+      expect(rules.detailWeights).toHaveLength(DETAIL_PALETTES.length);
+      expect(rules.routeWeights).toHaveLength(ROUTE_TREATMENTS.length);
+      expect([
+        ...rules.structureWeights,
+        ...rules.detailWeights,
+        ...rules.routeWeights,
+      ].every((weight) => weight > 0)).toBe(true);
+    }
   });
 
   it("keeps every structure bounded and gives secrets a traversable floor", () => {
@@ -76,5 +88,26 @@ describe("procedural Hoenn world grammar", () => {
     expect(new Set(profiles.map((profile) => profile.secretPattern))).toHaveLength(
       SECRET_PATH_PATTERNS.length,
     );
+  });
+
+  it("measures at least 500 distinct terrain-driven deterministic compositions", () => {
+    const terrainContexts = [
+      { grass: 256 },
+      { natural: 120, grass: 136 },
+      { mountain: 64, natural: 64, grass: 128 },
+      { water: 80, grass: 176 },
+      { building: 40, grass: 216 },
+      { grass: 240, path: 16 },
+    ] as const;
+    const recipes = new Set<string>();
+    for (const terrain of terrainContexts) {
+      for (let y = -96; y < 96; y += 1) {
+        for (let x = -96; x < 96; x += 1) {
+          recipes.add(selectWorldProfile(x, y, terrain).recipeId);
+        }
+      }
+    }
+    expect(recipes.size).toBeGreaterThanOrEqual(500);
+    expect(recipes.size).toBeLessThanOrEqual(WORLD_RECIPE_COUNT);
   });
 });
