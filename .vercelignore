@@ -14,12 +14,12 @@ coverage/
 dist/
 
 # Development-only generated/project maps; Vercel builds the runtime from source.
-graphify-out/
-map-assets/
+/graphify-out/
+/map-assets/
 
 # Leftover artifacts from the pre-migration split packages.
-api/
-frontend/
+/api/
+/frontend/
 
 # Local logs and platform metadata
 *.log

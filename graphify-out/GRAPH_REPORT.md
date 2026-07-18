@@ -1,16 +1,15 @@
-# Graph Report - pokeworld  (2026-07-18)
+# Graph Report - .  (2026-07-18)
 
 ## Corpus Check
-- 59 files · ~95,320 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 345 nodes · 485 edges · 50 communities (23 shown, 27 thin omitted)
+- 345 nodes · 487 edges · 49 communities (22 shown, 27 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `10e701ab`
+- Built from commit: `1ca28bdc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -26,6 +25,7 @@
 - [[_COMMUNITY_DevKit.vue|DevKit.vue]]
 - [[_COMMUNITY_dependencies|dependencies]]
 - [[_COMMUNITY_scripts|scripts]]
+- [[_COMMUNITY_apis.js|apis.js]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
 - [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
@@ -102,7 +102,7 @@
 - **Flower Tile Variant Set** — public_tiles_flower_1_flower_tile_1, public_tiles_flower_2_flower_tile_2, public_tiles_flower_3_flower_tile_3 [INFERRED 0.98]
 - **Website Icon Set** — public_icons_apple_touch_icon_apple_touch_icon, public_icons_favicon_16x16_favicon_16x16, public_icons_favicon_32x32_favicon_32x32 [INFERRED 0.98]
 
-## Communities (50 total, 27 thin omitted)
+## Communities (49 total, 27 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.08
@@ -117,8 +117,8 @@ Cohesion: 0.10
 Nodes (6): Game, isFiniteNumber(), emptyState(), loadThings(), saveThing(), ThingsState
 
 ### Community 3 - "blocks.js"
-Cohesion: 0.06
-Nodes (33): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+25 more)
+Cohesion: 0.10
+Nodes (20): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+12 more)
 
 ### Community 4 - "dependencies"
 Cohesion: 0.13
@@ -133,7 +133,7 @@ Cohesion: 0.32
 Nodes (14): apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2(), removeOwned() (+6 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.17
+Cohesion: 0.15
 Nodes (14): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), parseMapJobInput(), parseOffset() (+6 more)
 
 ### Community 9 - "dependencies"
@@ -143,6 +143,10 @@ Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugi
 ### Community 10 - "scripts"
 Cohesion: 0.15
 Nodes (13): devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node, @types/react (+5 more)
+
+### Community 11 - "apis.js"
+Cohesion: 0.15
+Nodes (13): scripts, build, build:vercel, check, dev, map:generate, pms, pms-stop (+5 more)
 
 ### Community 12 - "devDependencies"
 Cohesion: 0.25
@@ -181,7 +185,9 @@ Nodes (4): Answer, Outcome, Q: Can we add a TODO-${task}.md to document the Mong
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `package.json` to `functions.js`, `dependencies`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+  _High betweenness centrality (0.080) - this node is a cross-community bridge._
+- **Why does `scripts` connect `apis.js` to `blocks.js`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
   _147 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
@@ -191,6 +197,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._
 - **Should `blocks.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
-- **Should `dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
