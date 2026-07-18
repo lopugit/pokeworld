@@ -39,6 +39,22 @@ const recipeHash = (x: number, y: number, salt: string): number => {
 const choose = <T>(values: readonly T[], x: number, y: number, salt: string): T =>
   values[Math.min(values.length - 1, Math.floor(recipeHash(x, y, salt) * values.length))];
 
+const chooseWeighted = <T>(
+  values: readonly T[],
+  weights: readonly number[],
+  x: number,
+  y: number,
+  salt: string,
+): T => {
+  const total = weights.reduce((sum, weight) => sum + weight, 0);
+  let remaining = recipeHash(x, y, salt) * total;
+  for (let index = 0; index < values.length; index += 1) {
+    remaining -= weights[index] ?? 0;
+    if (remaining < 0) return values[index];
+  }
+  return values[values.length - 1];
+};
+
 export const BIOME_PRESETS = [
   { id: "emerald-meadow", forestThreshold: 0.79, detailBias: 0.02 },
   { id: "petal-woodland", forestThreshold: 0.5, detailBias: 0.08 },
@@ -133,6 +149,39 @@ export const STRUCTURE_PRESETS: readonly StructurePreset[] = [
 
 export const SECRET_PATH_PATTERNS = ["hook", "elbow", "switchback", "notch", "spiral-pocket"] as const;
 
+export const BIOME_RULES = {
+  "emerald-meadow": {
+    structureWeights: [4, 3, 4, 3, 2, 4, 1, 1],
+    detailWeights: [4, 3, 2, 1, 4, 3],
+    routeWeights: [3, 2, 1],
+  },
+  "petal-woodland": {
+    structureWeights: [2, 4, 2, 2, 4, 2, 2, 5],
+    detailWeights: [3, 4, 5, 2, 2, 3],
+    routeWeights: [1, 4, 2],
+  },
+  "granite-highland": {
+    structureWeights: [5, 1, 1, 4, 1, 1, 5, 2],
+    detailWeights: [1, 2, 2, 5, 1, 3],
+    routeWeights: [1, 2, 5],
+  },
+  "tidal-green": {
+    structureWeights: [3, 2, 3, 1, 2, 4, 1, 2],
+    detailWeights: [4, 2, 2, 1, 5, 3],
+    routeWeights: [4, 2, 1],
+  },
+  "village-green": {
+    structureWeights: [2, 3, 5, 4, 3, 4, 1, 1],
+    detailWeights: [4, 2, 1, 1, 5, 3],
+    routeWeights: [5, 3, 1],
+  },
+  "wild-route": {
+    structureWeights: [3, 3, 2, 3, 3, 2, 3, 4],
+    detailWeights: [2, 4, 4, 3, 2, 4],
+    routeWeights: [2, 3, 4],
+  },
+} as const;
+
 // The stable, authored grammar deliberately exposes 864 recipe combinations.
 // Coordinate noise and the five path shapes add local variation without making
 // the acceptance number depend on random samples.
@@ -169,9 +218,28 @@ export function selectWorldProfile(
   terrainCounts: TerrainCounts,
 ): WorldProfile {
   const biome = selectBiome(blockX, blockY, terrainCounts);
-  const structure = choose(STRUCTURE_PRESETS, blockX, blockY, "structure");
-  const detailPalette = choose(DETAIL_PALETTES, blockX, blockY, "details");
-  const routeTreatment = choose(ROUTE_TREATMENTS, blockX, blockY, "route-treatment");
+  const rules = BIOME_RULES[biome.id];
+  const structure = chooseWeighted(
+    STRUCTURE_PRESETS,
+    rules.structureWeights,
+    blockX,
+    blockY,
+    "structure",
+  );
+  const detailPalette = chooseWeighted(
+    DETAIL_PALETTES,
+    rules.detailWeights,
+    blockX,
+    blockY,
+    "details",
+  );
+  const routeTreatment = chooseWeighted(
+    ROUTE_TREATMENTS,
+    rules.routeWeights,
+    blockX,
+    blockY,
+    "route-treatment",
+  );
   const secretPattern = choose(SECRET_PATH_PATTERNS, blockX, blockY, "secret-path");
   return {
     biome,
