@@ -1,0 +1,344 @@
+/* Emerald-style in-game UI. The overlay layer sits inside .board-screen and
+   scales with the resizable Game Boy via container-query units. */
+
+.board-screen {
+  container-type: inline-size;
+}
+
+.game-ui-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: "Pokemon Classic", monospace;
+  color: #303030;
+  z-index: 10;
+}
+
+.game-ui-layer > * {
+  pointer-events: auto;
+}
+
+/* ---------- Dialog box ---------- */
+
+.pkmn-dialog {
+  position: absolute;
+  left: 2.5cqw;
+  right: 2.5cqw;
+  bottom: 2.5cqw;
+  min-height: 21cqw;
+  background: #f8f8f0;
+  border: 0.9cqw solid #385088;
+  box-shadow: inset 0 0 0 0.5cqw #a8b8e8, 0 0.6cqw 0 rgba(0, 0, 0, 0.35);
+  border-radius: 1.4cqw;
+  padding: 2.6cqw 3cqw;
+  font-size: 3.4cqw;
+  line-height: 1.65;
+  text-align: left;
+  white-space: pre-line;
+  cursor: pointer;
+}
+
+.pkmn-dialog-text {
+  display: block;
+}
+
+.pkmn-dialog-arrow {
+  position: absolute;
+  right: 2.6cqw;
+  bottom: 1.4cqw;
+  color: #c04040;
+  font-size: 3cqw;
+  animation: pkmn-arrow-bounce 0.6s steps(2, end) infinite;
+}
+
+@keyframes pkmn-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.8cqw); }
+}
+
+/* ---------- Start menu ---------- */
+
+.pkmn-menu {
+  position: absolute;
+  top: 2.5cqw;
+  right: 2.5cqw;
+  min-width: 34cqw;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f0;
+  border: 0.9cqw solid #385088;
+  box-shadow: inset 0 0 0 0.5cqw #a8b8e8, 0 0.6cqw 0 rgba(0, 0, 0, 0.35);
+  border-radius: 1.4cqw;
+  padding: 1.6cqw 0;
+}
+
+.pkmn-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  padding: 1.3cqw 2.4cqw 1.3cqw 1.6cqw;
+  font-family: inherit;
+  font-size: 3.2cqw;
+  text-align: left;
+  color: #303030;
+  cursor: pointer;
+}
+
+.pkmn-menu-item.selected {
+  color: #c04040;
+}
+
+.pkmn-menu-cursor {
+  width: 3cqw;
+  color: #c04040;
+}
+
+/* ---------- Panels ---------- */
+
+.pkmn-panel {
+  position: absolute;
+  inset: 4cqw;
+  display: flex;
+  flex-direction: column;
+  background: #f0f8f0;
+  border: 0.9cqw solid #385088;
+  box-shadow: inset 0 0 0 0.5cqw #a8b8e8, 0 0.8cqw 0 rgba(0, 0, 0, 0.4);
+  border-radius: 1.6cqw;
+  overflow: hidden;
+}
+
+.pkmn-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #48a8a0, #2a7a74);
+  color: #f8f8f0;
+  text-shadow: 0.3cqw 0.3cqw 0 rgba(0, 0, 0, 0.4);
+  font-size: 3.6cqw;
+  padding: 1.8cqw 2.6cqw;
+}
+
+.pkmn-panel-close {
+  font-family: inherit;
+  font-size: 3.2cqw;
+  color: #f8f8f0;
+  cursor: pointer;
+  padding: 0.4cqw 1cqw;
+}
+
+.pkmn-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2.4cqw;
+  font-size: 3cqw;
+}
+
+.pkmn-panel-footer {
+  border-top: 0.5cqw solid #a8b8e8;
+  background: #f8f8f0;
+  padding: 1.6cqw 2.6cqw;
+  font-size: 2.6cqw;
+  min-height: 8cqw;
+}
+
+.pkmn-panel-empty {
+  padding: 4cqw 2cqw;
+  text-align: center;
+  color: #707880;
+  font-size: 3cqw;
+}
+
+/* ---------- Party ---------- */
+
+.pkmn-party-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+}
+
+.pkmn-party-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "ball name level"
+    "ball bar hp"
+    "ball types types";
+  align-items: center;
+  column-gap: 2cqw;
+  row-gap: 0.8cqw;
+  background: #f8f8f0;
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  padding: 1.8cqw 2.2cqw;
+}
+
+.pkmn-ball-icon {
+  grid-area: ball;
+  width: 5cqw;
+  height: 5cqw;
+  border-radius: 50%;
+  border: 0.5cqw solid #303030;
+  background: linear-gradient(180deg, #e83838 0 46%, #303030 46% 54%, #f8f8f0 54% 100%);
+  position: relative;
+}
+
+.pkmn-ball-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.4cqw;
+  height: 1.4cqw;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #f8f8f0;
+  border: 0.35cqw solid #303030;
+}
+
+.pkmn-party-name {
+  grid-area: name;
+  font-size: 3.2cqw;
+}
+
+.pkmn-party-level {
+  grid-area: level;
+  font-size: 2.8cqw;
+  color: #506890;
+}
+
+.pkmn-hp-bar {
+  grid-area: bar;
+  height: 2cqw;
+  border: 0.4cqw solid #303030;
+  border-radius: 1cqw;
+  background: #d8d8d0;
+  overflow: hidden;
+}
+
+.pkmn-hp-fill {
+  display: block;
+  height: 100%;
+}
+
+.pkmn-hp-fill.high { background: #58d080; }
+.pkmn-hp-fill.mid { background: #f8d030; }
+.pkmn-hp-fill.low { background: #e83838; }
+
+.pkmn-party-hp {
+  grid-area: hp;
+  font-size: 2.6cqw;
+}
+
+.pkmn-party-types {
+  grid-area: types;
+  font-size: 2.4cqw;
+  color: #2a7a74;
+}
+
+/* ---------- Bag ---------- */
+
+.pkmn-bag-tabs {
+  display: flex;
+  gap: 1.2cqw;
+  margin-bottom: 2cqw;
+}
+
+.pkmn-bag-tab {
+  font-family: inherit;
+  font-size: 2.6cqw;
+  padding: 1cqw 1.8cqw;
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 1cqw;
+  background: #f8f8f0;
+  color: #506890;
+  cursor: pointer;
+}
+
+.pkmn-bag-tab.active {
+  background: #48a8a0;
+  border-color: #2a7a74;
+  color: #f8f8f0;
+}
+
+.pkmn-bag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1cqw;
+}
+
+.pkmn-bag-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 3cqw;
+  padding: 1.4cqw 2cqw;
+  border-radius: 1cqw;
+  border: 0.4cqw solid transparent;
+  color: #303030;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pkmn-bag-item.selected {
+  border-color: #c04040;
+  background: #fff4f0;
+}
+
+.pkmn-bag-qty {
+  color: #506890;
+}
+
+.pkmn-bag-description {
+  white-space: pre-line;
+}
+
+/* ---------- Badges ---------- */
+
+.pkmn-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4cqw;
+  padding: 1cqw;
+}
+
+.pkmn-badge-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2cqw;
+  opacity: 0.55;
+}
+
+.pkmn-badge-slot.earned {
+  opacity: 1;
+}
+
+.pkmn-badge-shape {
+  width: 8cqw;
+  height: 8cqw;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  box-shadow: inset 0 0 0 0.6cqw rgba(255, 255, 255, 0.35);
+}
+
+.pkmn-badge-slot:nth-child(2n) .pkmn-badge-shape {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.pkmn-badge-slot:nth-child(3n) .pkmn-badge-shape {
+  clip-path: circle(46%);
+}
+
+.pkmn-badge-name {
+  font-size: 2.2cqw;
+  text-align: center;
+}
+
+/* ---------- PC ---------- */
+
+.pkmn-pc-section {
+  font-size: 2.8cqw;
+  color: #506890;
+  margin-bottom: 1.6cqw;
+}
