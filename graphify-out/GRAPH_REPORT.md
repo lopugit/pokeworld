@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-18)
+# Graph Report - pokeworld  (2026-07-18)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 53 files · ~36,327,512 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 412 nodes · 346 edges · 125 communities (32 shown, 93 thin omitted)
+- 412 nodes · 344 edges · 128 communities (32 shown, 96 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.61)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6882045e`
+- Built from commit: `ba8dcf75`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -125,6 +126,9 @@
 - [[_COMMUNITY_API Runtime Configuration|API Runtime Configuration]]
 - [[_COMMUNITY_Thingtime Pull Request 36|Thingtime Pull Request 36]]
 - [[_COMMUNITY_Worktree Port Derivation|Worktree Port Derivation]]
+- [[_COMMUNITY_scripts|scripts]]
+- [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
+- [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `getBlocks()` - 8 edges
@@ -167,7 +171,7 @@
 - **Terrain Sprite Collection** — api_assets_sprites_grass_image, api_assets_sprites_sand_1_image, api_assets_sprites_sand_2_image, api_assets_sprites_sand_3_image, api_assets_sprites_sand_4_image, api_assets_sprites_sand_5_image, api_assets_sprites_sand_6_image, api_assets_sprites_sand_7_image, api_assets_sprites_sand_8_image, api_assets_sprites_sand_9_image [INFERRED 0.95]
 - **Pokémon World Visual Assets** — api_assets_gmap_image, api_assets_sprites_grass_image, api_assets_tilesets_game_boy_advance_pokemon_emerald_exterior_tileset_image, api_assets_tilesets_char_walk_1_image, api_assets_tilesets_emerald_character_male_image [INFERRED 0.85]
 
-## Communities (125 total, 93 thin omitted)
+## Communities (128 total, 96 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.07
@@ -178,8 +182,8 @@ Cohesion: 0.10
 Nodes (28): axios, fs, generateCoordinatesGrid(), generateMap(), generateOutputs(), { get }, getMapAt(), getTile() (+20 more)
 
 ### Community 2 - "package.json"
-Cohesion: 0.06
-Nodes (35): author, bugs, url, description, devDependencies, eslint, eslint-config-prettier, eslint-config-xo (+27 more)
+Cohesion: 0.07
+Nodes (28): author, bugs, url, description, devDependencies, eslint, eslint-config-prettier, eslint-config-xo (+20 more)
 
 ### Community 3 - "blocks.js"
 Cohesion: 0.15
@@ -229,10 +233,6 @@ Nodes (5): compilerOptions, baseUrl, paths, exclude, ~/*
 Cohesion: 0.40
 Nodes (3): actions, getters, mutations
 
-### Community 18 - "ecosystem.config.js"
-Cohesion: 0.29
-Nodes (4): { pm2AppConfig }, api, frontend, { pm2AppConfig }
-
 ### Community 20 - "ecosystem.config.js"
 Cohesion: 0.33
 Nodes (5): api runtime config (`api/.env`), Install, Local dev — worktree-aware PM2 flow, Pokeworld, Ports & names
@@ -241,25 +241,29 @@ Nodes (5): api runtime config (`api/.env`), Install, Local dev — worktree-awar
 Cohesion: 0.40
 Nodes (5): Frontend Banner Artwork, Pokeworld Application Icon, Loading Animation, Lopu Designs Branding Image, Nuxt 2 Frontend
 
+### Community 125 - "scripts"
+Cohesion: 0.29
+Nodes (7): scripts, dev.dev, log.dev, start, start.dev, stop.dev, test
+
 ## Knowledge Gaps
-- **257 isolated node(s):** `{ pm2AppConfig }`, `fs`, `latsMap`, `lngsMap`, `v1Blocks` (+252 more)
+- **257 isolated node(s):** `api`, `frontend`, `{ pm2AppConfig }`, `fs`, `latsMap` (+252 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **93 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **96 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `{ pm2AppConfig }`, `fs`, `latsMap` to the rest of the system?**
+- **Why does `scripts` connect `scripts` to `package.json`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **What connects `api`, `frontend`, `{ pm2AppConfig }` to the rest of the system?**
   _257 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.07317073170731707 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
   _Cohesion score 0.09659090909090909 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
-- **Should `index.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
