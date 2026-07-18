@@ -1,0 +1,25 @@
+# Dependencies, build output, and local Workflow compiler state
+/node_modules/
+/.output/
+/.vercel/
+/coverage/
+/dist/
+/.swc/
+/.workflow-data/
+
+# Local secrets
+/.env
+/.env.*
+!/.env.example
+
+# Generated coordinate indexes (hundreds of MB; optional local accelerator)
+/map-assets/lats.json
+/map-assets/latsMap.json
+/map-assets/lngs.json
+/map-assets/lngsMap.json
+/map-assets/db/tiles/
+/map-assets/db/lats/
+
+# Platform/editor state
+.DS_Store
+*.log

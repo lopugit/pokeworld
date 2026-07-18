@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Pokemon Classic";
+  src: url("/Pokemon-Classic.woff2") format("woff2"), url("/Pokemon-Classic.woff") format("woff");
+  font-display: swap;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #b2f594;
+  color: #181818;
+}
+
+button,
+input {
+  font: inherit;
+}

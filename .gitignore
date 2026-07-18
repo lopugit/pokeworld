@@ -1,0 +1,31 @@
+# Graphify machine-local caches and regenerable working files
+graphify-out/.graphify_*
+graphify-out/.rebuild.lock
+graphify-out/cache/
+graphify-out/20*/
+
+# Dependencies and build products
+node_modules/
+dist/
+.output/
+.vercel/
+coverage/
+
+# Local durable-workflow state
+.workflow-data/
+
+# Local secrets and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Graphify scratch files
+graphify-out/.vocab.txt
+graphify-out/memory/
+graphify-out/reflections/
+
+# Platform/editor state
+.DS_Store
+*.swp
+.swc/

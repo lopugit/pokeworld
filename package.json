@@ -1,15 +1,25 @@
 {
-  "name": "pokeworld",
-  "version": "1.0.0",
+  "name": "pokeworld-workspace",
+  "version": "2.0.0",
   "private": true,
-  "description": "Pokeworld dev orchestration — worktree-aware PM2 flow for the api + frontend stack (see scripts/worktree-ports.cjs).",
-  "scripts": {
-    "pms": "node scripts/dev-pm2.cjs start",
-    "pms-stop": "node scripts/dev-pm2.cjs stop",
-    "ports": "node scripts/worktree-ports.cjs",
-    "ports:all": "node scripts/dev-pm2.cjs list",
-    "api": "cd api && PORT=3847 node modules/index.js",
-    "frontend": "cd frontend && NODE_OPTIONS=--openssl-legacy-provider API=http://localhost:3847/v1 PORT=3000 yarn dev"
+  "description": "Pokeworld workspace containing the unified web application and room for future packages.",
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
-  "license": "ISC"
+  "scripts": {
+    "dev": "pnpm --dir app dev",
+    "build": "pnpm --dir app build",
+    "build:vercel": "pnpm --dir app build:vercel",
+    "preview": "pnpm --dir app preview",
+    "typecheck": "pnpm --dir app typecheck",
+    "test": "pnpm --dir app test",
+    "check": "pnpm --dir app check",
+    "pms": "pnpm --dir app pms",
+    "pms-stop": "pnpm --dir app pms-stop",
+    "workflow:inspect": "pnpm --dir app workflow:inspect",
+    "workflow:web": "pnpm --dir app workflow:web",
+    "map:generate": "pnpm --dir app map:generate",
+    "benchmark:map": "pnpm --dir app benchmark:map"
+  }
 }
