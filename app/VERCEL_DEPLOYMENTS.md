@@ -4,6 +4,7 @@
 - Production: assigned from the `main` branch after this migration is merged
 - Branch previews: automatic Vercel Git previews for every branch in
   [`lopugit/pokeworld`](https://github.com/lopugit/pokeworld)
+- Root Directory: `app`
 
 ## Verified migration preview
 
@@ -26,9 +27,9 @@ mode to false.
 
 - Install: `pnpm install --frozen-lockfile`
 - Build: `pnpm build:vercel`
-- Output: `.vercel/output` (Build Output API)
+- Output from the repository root: `app/.vercel/output` (Build Output API)
 
 The build verification requires a React shell in static output, filesystem routing before the Nitro
 fallback, and emitted Node.js functions. Vercel Workflow uses the managed Vercel World automatically
-in preview and production deployments. `.vercelignore` keeps local secrets, generated coordinate
-indexes, Workflow history, Graphify output, and local build artifacts out of source uploads.
+in preview and production deployments. `app/.vercelignore` keeps local secrets, generated
+coordinate indexes, Workflow history, and local build artifacts out of source uploads.

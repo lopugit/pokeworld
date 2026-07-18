@@ -4,17 +4,25 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const ecosystem = path.join(root, "ecosystem.config.cjs");
+const appRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const workspaceRoot = path.resolve(appRoot, "..");
+const ecosystem = path.join(appRoot, "ecosystem.config.cjs");
 const port = 3847;
 const name = `pokeworld-nitro-react-${port}`;
 const pm2Binary = process.platform === "win32" ? "pm2.cmd" : "pm2";
 const legacyNames = /^pokeworld-(?:api|frontend)(?:-\d{3,4}(?:am|pm))?$/;
-const ownedDirectories = new Set([root, path.join(root, "api"), path.join(root, "frontend")]);
+const ownedDirectories = new Set([
+  appRoot,
+  workspaceRoot,
+  path.join(appRoot, "api"),
+  path.join(appRoot, "frontend"),
+  path.join(workspaceRoot, "api"),
+  path.join(workspaceRoot, "frontend"),
+]);
 
 function pm2(args, options = {}) {
   return execFileSync(pm2Binary, args, {
-    cwd: root,
+    cwd: appRoot,
     encoding: "utf8",
     maxBuffer: 64 * 1024 * 1024,
     stdio: ["ignore", "pipe", "pipe"],

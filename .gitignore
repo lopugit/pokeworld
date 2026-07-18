@@ -19,14 +19,6 @@ coverage/
 !.env.example
 *.log
 
-# Generated coordinate indexes (hundreds of MB; optional local accelerator)
-map-assets/lats.json
-map-assets/latsMap.json
-map-assets/lngs.json
-map-assets/lngsMap.json
-map-assets/db/tiles/
-map-assets/db/lats/
-
 # Graphify scratch files
 graphify-out/.vocab.txt
 graphify-out/memory/
@@ -35,4 +27,4 @@ graphify-out/reflections/
 # Platform/editor state
 .DS_Store
 *.swp
-/.swc
+.swc/

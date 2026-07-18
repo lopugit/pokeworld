@@ -30,5 +30,11 @@ export default defineConfig({
     host: "127.0.0.1",
     port: 3847,
     strictPort: true,
+    watch: {
+      // A production Workflow build emits JavaScript containing "use workflow"
+      // into .vercel/. Without these exclusions, the live dev plugin mistakes
+      // those generated files for edited source and rebuilds itself in a loop.
+      ignored: ["**/.vercel/**", "**/.output/**", "**/.swc/**", "**/coverage/**"],
+    },
   },
 });
