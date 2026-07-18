@@ -6,12 +6,18 @@ import throttledQueue from 'throttled-queue'
 import { MongoClient } from 'mongodb'
 import log from './log'
 import * as mapSource from './map-source'
-import { createSolidPng, cropPng } from './png'
+import {
+	createSolidPngWithRgba,
+	cropPngWithRgba,
+	cropRgba,
+	decodePng,
+	encodePng,
+} from './png'
 
 let fallbackMapPromise
 const getFallbackMap = () => {
 	if (!fallbackMapPromise) {
-		fallbackMapPromise = Promise.resolve(createSolidPng(512, 512, {
+		fallbackMapPromise = Promise.resolve(createSolidPngWithRgba(512, 512, {
 			r: 112,
 			g: 192,
 			b: 160,
@@ -263,17 +269,18 @@ function formatCoord(coord) {
 
 async function saveMapAt(x, y, lat, lng, path, zoom) {
 	const image = await getMapAt(lat, lng, zoom)
+	const rgba = decodePng(image)
 
 	const promises = []
 
 	for (let offsetX = 0; offsetX < 512 / 32; offsetX++) {
 		for (let offsetY = 0; offsetY < 512 / 32; offsetY++) {
-			const tile = cropPng(image, {
+			const tile = encodePng(cropRgba(rgba, {
 				left: offsetX * 32,
 				top: offsetY * 32,
 				width: 32,
 				height: 32,
-			})
+			}))
 			promises.push(fs.promises.writeFile(`${path}/${x}_${y}-tile-${offsetX}_${offsetY}.png`, tile))
 		}
 	}
@@ -294,8 +301,9 @@ async function getMapAtWithSource(lat, lng, zoom = 20) {
 	// No Google key: skip the doomed request and use the bundled 512x512 fallback
 	// map so tile generation works fully offline (dev).
 	if (!mapSource.canUseGoogleStaticMaps()) {
+		const fallback = await getFallbackMap()
 		return {
-			image: await getFallbackMap(),
+			...fallback,
 			source: mapSource.MAP_SOURCE_FALLBACK,
 		}
 	}
@@ -314,16 +322,17 @@ async function getMapAtWithSource(lat, lng, zoom = 20) {
 		const response = await fetch(url, { signal: AbortSignal.timeout(30_000) })
 		if (!response.ok) throw new Error(`Google Static Maps returned ${response.status}`)
 		const image = Buffer.from(await response.arrayBuffer())
-		const croppedImage = cropPng(image, { left: 64, top: 64, width: 512, height: 512 })
+		const cropped = cropPngWithRgba(image, { left: 64, top: 64, width: 512, height: 512 })
 
 		return {
-			image: croppedImage,
+			...cropped,
 			source: mapSource.MAP_SOURCE_GOOGLE,
 		}
 	} catch (error) {
 		console.error('Error fetching image data; using bundled fallback', error.message)
+		const fallback = await getFallbackMap()
 		return {
-			image: await getFallbackMap(),
+			...fallback,
 			source: mapSource.MAP_SOURCE_FALLBACK,
 		}
 	}
