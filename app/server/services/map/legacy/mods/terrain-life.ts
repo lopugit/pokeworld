@@ -95,6 +95,7 @@ const blockTiles = (state, block) => {
 }
 
 const SPAWN_ROUTE_TERRAINS = new Set(['grass', 'natural', 'sand', 'road', 'path'])
+const SPAWN_BRIDGE_TERRAINS = new Set([...SPAWN_ROUTE_TERRAINS, 'water'])
 
 const setTerrain = (tile, terrain) => {
 	tile.terrain = terrain
@@ -112,7 +113,7 @@ const setTerrain = (tile, terrain) => {
 	}
 }
 
-const findSpawnPath = (byGrid, starts, goals) => {
+const findSpawnPath = (byGrid, starts, goals, allowedTerrains = SPAWN_ROUTE_TERRAINS) => {
 	const queue = [...starts]
 	const parents = new Map(starts.map(([x, y]) => [tileKey(x, y), null]))
 	let destination = null
@@ -128,7 +129,7 @@ const findSpawnPath = (byGrid, starts, goals) => {
 			const nextY = y + dy
 			const nextKey = tileKey(nextX, nextY)
 			const tile = byGrid.get(nextKey)
-			if (!tile || parents.has(nextKey) || !SPAWN_ROUTE_TERRAINS.has(terrainOf(tile))) continue
+			if (!tile || parents.has(nextKey) || !allowedTerrains.has(terrainOf(tile))) continue
 			parents.set(nextKey, key)
 			queue.push([nextX, nextY])
 		}
@@ -149,6 +150,13 @@ const carveSpawnPath = (byGrid, path) => {
 }
 
 const sharedPortal = (x, y, salt) => 1 + Math.floor(hashUnit(x, y, salt) * (BLOCK_TILES - 2))
+const waterBridgeSide = (x, y) => Math.floor(hashUnit(x, y, 'spawn-bridge-side') * 4)
+const WATER_BRIDGE_NEIGHBOURS = [
+	[1, 0, 1],
+	[-1, 0, 0],
+	[0, 1, 3],
+	[0, -1, 2],
+]
 
 const ensureSpawnRoute = (tiles, block) => {
 	const byGrid = new Map(tiles.map(tile => [tileKey(tile.x, sourceY(tile)), tile]))
@@ -167,6 +175,21 @@ const ensureSpawnRoute = (tiles, block) => {
 			return
 		}
 	}
+	const waterCount = tiles.filter(tile => terrainOf(tile) === 'water').length
+	if (waterCount) {
+		const land = new Set(
+			tiles
+				.filter(tile => !isCentralLanding(tile) && ['grass', 'natural', 'sand'].includes(terrainOf(tile)))
+				.map(tile => tileKey(tile.x, sourceY(tile))),
+		)
+		if (land.size) {
+			const bridge = findSpawnPath(byGrid, starts, land, SPAWN_BRIDGE_TERRAINS)
+			if (bridge.length) {
+				carveSpawnPath(byGrid, bridge)
+				return
+			}
+		}
+	}
 
 	const portals = [
 		[BLOCK_TILES - 1, sharedPortal(block.x + 1, block.y, 'vertical-portal')],
@@ -174,11 +197,19 @@ const ensureSpawnRoute = (tiles, block) => {
 		[sharedPortal(block.x, block.y + 1, 'horizontal-portal'), 0],
 		[sharedPortal(block.x, block.y, 'horizontal-portal'), BLOCK_TILES - 1],
 	]
-	for (const [x, y] of portals) {
+	const selectedPortals = waterCount
+		? portals.filter((portal, index) => {
+			const [dx, dy, neighbourSide] = WATER_BRIDGE_NEIGHBOURS[index]
+			return waterBridgeSide(block.x, block.y) === index ||
+				waterBridgeSide(block.x + dx, block.y + dy) === neighbourSide
+		})
+		: portals
+	for (const [x, y] of selectedPortals) {
 		const goal = tileKey(x, y)
 		const tile = byGrid.get(goal)
-		if (!tile || !SPAWN_ROUTE_TERRAINS.has(terrainOf(tile))) continue
-		const path = findSpawnPath(byGrid, starts, new Set([goal]))
+		const allowed = waterCount ? SPAWN_BRIDGE_TERRAINS : SPAWN_ROUTE_TERRAINS
+		if (!tile || !allowed.has(terrainOf(tile))) continue
+		const path = findSpawnPath(byGrid, starts, new Set([goal]), allowed)
 		if (path.length) carveSpawnPath(byGrid, path)
 	}
 }
