@@ -1,9 +1,11 @@
 import { Component, createRef } from "react";
+import { EmeraldMenu } from "./EmeraldMenu";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
 import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
 import { prioritizeInitialMapOffsets } from "../lib/map-load";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
+import { createDefaultTrainerState, normalizeTrainerState, type TrainerState } from "../lib/trainer-state";
 import "../styles/game.scss";
 
 const tileSize = 32;
@@ -81,6 +83,8 @@ interface GameComponentState {
   loadError: string;
   map: MapView;
   player: PlayerState;
+  trainer: TrainerState;
+  menuOpen: boolean;
   revision: number;
 }
 
@@ -97,6 +101,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     locationError: false,
     loadError: "",
     revision: 0,
+    menuOpen: false,
+    trainer: createDefaultTrainerState(),
     map: {
       initialized: false,
       width: blockCount - 1,
@@ -236,7 +242,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private async initializeGame(coords: { latitude: number; longitude: number }) {
-    const stored = loadThings().game as Partial<GameSettings>;
+    const things = loadThings();
+    const stored = things.game as Partial<GameSettings>;
     const game: GameSettings = {
       ...this.state.game,
       ...stored,
@@ -247,8 +254,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       coords,
     };
     game.zoomScale = game.canvasWidth / (game.canvasWidth * game.zoom);
-    await this.setStateAsync({ game });
+    const trainer = normalizeTrainerState(things.trainer);
+    await this.setStateAsync({ game, trainer });
     saveThing("game", game);
+    saveThing("trainer", trainer);
     this.resizeGame();
     window.addEventListener("resize", this.resizeGame);
     this.resizeInterval = window.setInterval(this.resizeGame, 1000);
@@ -337,6 +346,17 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private onKeydown = (event: KeyboardEvent) => {
+    if (event.key === "Enter" || event.key.toLowerCase() === "m") {
+      event.preventDefault();
+      this.toggleMenu();
+      return;
+    }
+    if (event.key === "Escape" && this.state.menuOpen) {
+      event.preventDefault();
+      this.setState({ menuOpen: false });
+      return;
+    }
+    if (this.state.menuOpen) return;
     const keys: Record<string, MoveAction> = {
       ArrowRight: "moveRight",
       ArrowLeft: "moveLeft",
@@ -350,6 +370,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private action = (action: MoveAction) => {
+    if (this.state.menuOpen) return;
     const now = Date.now();
     if (this.state.player.lastAction && now - this.state.player.lastAction < 300) {
       if (!this.state.player.queuedAction) {
@@ -463,6 +484,18 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         callback?.();
       },
     );
+  };
+
+  private toggleMenu = () => {
+    this.setState(({ menuOpen, player }) => ({
+      menuOpen: !menuOpen,
+      player: { ...player, queuedAction: undefined },
+    }));
+  };
+
+  private setTrainer = (trainer: TrainerState) => {
+    this.setState({ trainer });
+    saveThing("trainer", trainer);
   };
 
   private zoom = (direction: "in" | "out") => {
@@ -718,7 +751,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   override render() {
-    const { game, map, player } = this.state;
+    const { game, map, player, menuOpen, trainer } = this.state;
     if (this.state.locationError) {
       return (
         <div className="w-full flex flex-col items-center justify-center pb-12">
@@ -780,6 +813,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   width={game.canvasWidth}
                   height={game.canvasHeight}
                 />
+                {menuOpen ? (
+                  <EmeraldMenu trainer={trainer} onChange={this.setTrainer} onClose={() => this.setState({ menuOpen: false })} />
+                ) : null}
               </div>
               <div className="w-full pt-10 md:pt-14 pb-12">
                 <div className="controls flex flex-row">
@@ -791,8 +827,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                     <div className="middle" />
                   </div>
                   <div className="ml-auto a-b mr-4 md:mr-12">
-                    <div className="b">B</div>
-                    <div className="a">A</div>
+                    <button type="button" className="b" aria-label="Close menu" onClick={() => this.setState({ menuOpen: false })}>B</button>
+                    <button type="button" className="a" aria-label="Open menu" onClick={() => this.setState({ menuOpen: true })}>A</button>
                   </div>
                 </div>
                 <div className="pt-12 md:pt-20" />
@@ -800,7 +836,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   <button type="button" className="select" onClick={() => this.zoom("out")}>-</button>
                   <button type="button" className="select" onClick={() => this.zoom("in")}>+</button>
                   <button type="button" className="select" onClick={() => this.setGame({ debug: !game.debug })}>SELECT</button>
-                  <button type="button" className="start">START</button>
+                  <button type="button" className="start" aria-pressed={menuOpen} onClick={this.toggleMenu}>START</button>
                 </div>
               </div>
               <div

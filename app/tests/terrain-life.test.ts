@@ -1,4 +1,5 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { PNG } from "pngjs";
 import { describe, expect, it } from "vitest";
 import type { MapTile } from "../server/services/map/types";
 import terrainLife, {
@@ -47,6 +48,60 @@ function makeState() {
     block: { x: 0, y: 0, tiles },
     state: { version: "test", tiles: { cache } },
   };
+}
+
+function makeUniformState(
+  terrain: MapTile["terrain"] = "grass",
+  blockX = 0,
+  blockY = 0,
+) {
+  const cache: Record<string, Record<string, unknown>> = {};
+  const tiles: MapTile[] = [];
+  for (let x = 0; x < 16; x += 1) {
+    for (let sourceY = 0; sourceY < 16; sourceY += 1) {
+      const tile = {
+        uuid: `${blockX}-${blockY}-${x}-${sourceY}`,
+        blockX,
+        blockY,
+        mapX: blockX * 512 + x * 32,
+        mapY: blockY * 512 + (15 - sourceY) * 32,
+        x,
+        y: 15 - sourceY,
+        terrain,
+      };
+      cache[`${tile.mapX},${tile.mapY}`] = tile;
+      tiles.push(tile);
+    }
+  }
+  return {
+    block: { x: blockX, y: blockY, tiles },
+    state: { version: "test", tiles: { cache } },
+  };
+}
+
+function expectExactEmeraldCrop(name: string, sourceX: number, sourceY: number) {
+  const source = PNG.sync.read(
+    readFileSync(
+      new URL(
+        "../map-assets/tilesets/Game Boy Advance - Pokemon Emerald - Exterior Tileset.png",
+        import.meta.url,
+      ),
+    ),
+  );
+  const tile = PNG.sync.read(
+    readFileSync(new URL(`../public/tiles/${name}.png`, import.meta.url)),
+  );
+  expect(tile.width).toBe(16);
+  expect(tile.height).toBe(16);
+  for (let y = 0; y < 16; y += 1) {
+    for (let x = 0; x < 16; x += 1) {
+      const sourceOffset = ((sourceY + y) * source.width + sourceX + x) * 4;
+      const tileOffset = (y * tile.width + x) * 4;
+      expect(tile.data.subarray(tileOffset, tileOffset + 4)).toEqual(
+        source.data.subarray(sourceOffset, sourceOffset + 4),
+      );
+    }
+  }
 }
 
 describe("terrain sprite stitching", () => {
@@ -114,5 +169,74 @@ describe("terrain sprite stitching", () => {
         expect(existsSync(new URL(`../public/tiles/${sprite}.png`, import.meta.url))).toBe(true);
       }
     }
+  });
+
+  it("fills open ground with deterministic structures while protecting the spawn landing", () => {
+    const first = makeUniformState("grass", 11, -7);
+    const second = makeUniformState("grass", 11, -7);
+    terrainLife.run(first.state, first.block);
+    terrainLife.run(second.state, second.block);
+
+    const firstBlock = first.block as typeof first.block & {
+      worldProfile: { recipeCount: number };
+      featureSummary: Record<string, number>;
+    };
+    const secondBlock = second.block as typeof second.block & {
+      worldProfile: { recipeCount: number };
+      featureSummary: Record<string, number>;
+    };
+
+    expect(firstBlock.worldProfile.recipeCount).toBe(864);
+    expect(firstBlock.worldProfile).toEqual(secondBlock.worldProfile);
+    expect(firstBlock.featureSummary).toEqual(secondBlock.featureSummary);
+    expect(
+      first.block.tiles.map((tile) => [tile.feature, tile.img, tile.img2, tile.solid]),
+    ).toEqual(
+      second.block.tiles.map((tile) => [tile.feature, tile.img, tile.img2, tile.solid]),
+    );
+
+    const decorated = first.block.tiles.filter(
+      (tile) => !["short-grass-pocket", "grass"].includes(String(tile.feature)),
+    );
+    expect(decorated.length).toBeGreaterThanOrEqual(160);
+    expect(
+      first.block.tiles
+        .filter((tile) => tile.x >= 6 && tile.x <= 9 && tile.y >= 6 && tile.y <= 9)
+        .every((tile) => tile.solid !== true),
+    ).toBe(true);
+  });
+
+  it("creates invisible hidden items inside authored clearings and tree paths", () => {
+    let generated:
+      | ReturnType<typeof makeUniformState>
+      | undefined;
+    for (let blockX = -32; blockX <= 32 && !generated; blockX += 1) {
+      const candidate = makeUniformState("grass", blockX, 19);
+      terrainLife.run(candidate.state, candidate.block);
+      if (candidate.block.tiles.some((tile) => tile.feature === "hidden-item")) {
+        generated = candidate;
+      }
+    }
+    expect(generated).toBeDefined();
+    const hidden = generated!.block.tiles.find((tile) => tile.feature === "hidden-item");
+    expect(hidden?.hiddenItem).toBe("pokeball");
+    expect(hidden?.img2).toBe("grass");
+    expect(hidden?.solid).toBe(false);
+    expect(
+      generated!.block.tiles.some((tile) =>
+        String(tile.feature).match(/(?:secret-trail|secret-clearing|grove-path|orchard-path)/),
+      ),
+    ).toBe(true);
+  });
+
+  it("ships only exact crops from the local Emerald exterior tileset", () => {
+    expectExactEmeraldCrop("route-sign-1", 48, 0);
+    expectExactEmeraldCrop("cave-1", 96, 304);
+    expectExactEmeraldCrop("cave-2", 112, 304);
+    expectExactEmeraldCrop("cave-3", 96, 320);
+    expectExactEmeraldCrop("cave-4", 112, 320);
+    expectExactEmeraldCrop("ledge-left-1", 768, 64);
+    expectExactEmeraldCrop("ledge-middle-1", 784, 64);
+    expectExactEmeraldCrop("ledge-right-1", 800, 64);
   });
 });
