@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 86 files · ~36,346,887 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 683 nodes · 947 edges · 136 communities (29 shown, 107 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 52 edges (avg confidence: 0.75)
+- 664 nodes · 918 edges · 139 communities (31 shown, 108 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.64)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d0c7dee0`
+- Built from commit: `2879e4d3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -146,6 +147,9 @@
 - [[_COMMUNITY_Sand Terrain Tile 6|Sand Terrain Tile 6]]
 - [[_COMMUNITY_Sand Terrain Tile 9|Sand Terrain Tile 9]]
 - [[_COMMUNITY_Durable Map Generation Workflow|Durable Map Generation Workflow]]
+- [[_COMMUNITY_React, Nitro, Vite and Workflow Runtime|React, Nitro, Vite and Workflow Runtime]]
+- [[_COMMUNITY_MongoDB Map Block Persistence|MongoDB Map Block Persistence]]
+- [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 37 edges
@@ -157,7 +161,7 @@
 7. `normalizeRoutes()` - 11 edges
 8. `sourceY()` - 10 edges
 9. `Map Generation` - 10 edges
-10. `Emerald World Grammar` - 10 edges
+10. `terrainOf()` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Mountain Terrain Tile Sprite` --conceptually_related_to--> `Map Generation`  [INFERRED]
@@ -184,19 +188,19 @@
 - **Procedural World Desktop and Mobile Visual Evidence** — docs_procedural_world_acceptance_visual_qa_criteria, docs_qa_dense_world_desktop_dense_world_desktop_ui, docs_qa_dense_world_mobile_dense_world_mobile_ui, docs_qa_trainer_party_desktop_trainer_party_desktop_ui, docs_qa_trainer_pc_mobile_trainer_pc_mobile_ui [EXTRACTED 1.00]
 - **Terrain Tile Asset Set** — app_public_tiles_mountain_9_image, app_public_tiles_pond_center_1_image, app_public_tiles_pond_center_2_image, app_public_tiles_pond_center_3_image, app_public_tiles_pond_center_4_image, app_public_tiles_rock_1_image [INFERRED 0.95]
 
-## Communities (136 total, 107 thin omitted)
+## Communities (139 total, 108 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.05
-Nodes (44): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source, buildGoogleStaticMapUrl() (+36 more)
+Cohesion: 0.07
+Nodes (34): buildGoogleStaticMapUrl(), generateCoordinatesGrid(), generateMap(), generateOutputs(), getFallbackMap(), getMapAt(), getMapAtWithSource(), getTile() (+26 more)
 
 ### Community 1 - "functions.js"
 Cohesion: 0.06
-Nodes (47): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, centeredCropRect(), CLASSIFICATION_PRIORITY (+39 more)
+Nodes (44): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, CLASSIFICATION_PRIORITY, classifyCounts() (+36 more)
 
 ### Community 2 - "package.json"
-Cohesion: 0.08
-Nodes (31): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+23 more)
+Cohesion: 0.07
+Nodes (37): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+29 more)
 
 ### Community 3 - "blocks.js"
 Cohesion: 0.04
@@ -211,8 +215,8 @@ Cohesion: 0.15
 Nodes (34): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), coarseNoise() (+26 more)
 
 ### Community 6 - "devDependencies"
-Cohesion: 0.07
-Nodes (34): Pokémon Emerald Mudkip Sprite, Pokémon Emerald Ralts Sprite, Pokémon Emerald Torchic Sprite, Pokémon Emerald Treecko Sprite, Pokémon Emerald Wingull Sprite, Pokémon Emerald Zigzagoon Sprite, Pokémon Emerald Cave Tile 1, Pokémon Emerald Cave Tile 2 (+26 more)
+Cohesion: 0.50
+Nodes (4): Verified Managed Workflow Run, Vercel Build Output, Pokeworld Vercel Deployments, Verified Migration Preview
 
 ### Community 7 - "Nuxt 2 Frontend"
 Cohesion: 0.12
@@ -286,25 +290,33 @@ Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Gras
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
+### Community 136 - "React, Nitro, Vite and Workflow Runtime"
+Cohesion: 0.18
+Nodes (7): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source
+
+### Community 137 - "MongoDB Map Block Persistence"
+Cohesion: 0.25
+Nodes (7): API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Verification and deployment
+
 ## Knowledge Gaps
-- **305 isolated node(s):** `CORE_ASSETS`, `source`, `reference`, `optimized`, `legacySamples` (+300 more)
+- **298 isolated node(s):** `Install and run`, `How Workflow works locally`, `Emerald world grammar`, `API routes`, `Verification and deployment` (+293 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **107 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **108 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TerrainKind` connect `functions.js` to `package.json`, `apis.js`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `TerrainKind` connect `package.json` to `functions.js`, `apis.js`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `Game` connect `dependencies` to `dependencies`, `Nuxt 2 Frontend`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `CORE_ASSETS`, `source`, `reference` to the rest of the system?**
-  _306 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **What connects `Install and run`, `How Workflow works locally`, `Emerald world grammar` to the rest of the system?**
+  _299 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.052917232021709636 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07390648567119155 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.05727644652250146 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05974025974025974 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.08127721335268505 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07062146892655367 - nodes in this community are weakly interconnected._
 - **Should `blocks.js` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
