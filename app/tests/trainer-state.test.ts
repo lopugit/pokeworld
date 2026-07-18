@@ -54,6 +54,39 @@ describe("trainer state", () => {
     expect(migrated.bag.items[0].quantity).toBe(2);
   });
 
+  it("repairs stale saves so trainer panels only render shipped Emerald sprites", () => {
+    const repaired = normalizeTrainer({
+      ...defaultTrainer(),
+      party: [
+        {
+          id: "old-partner",
+          species: "FIELD PARTNER",
+          level: 12,
+          hp: 38,
+          maxHp: 38,
+          types: ["NORMAL"],
+          status: "healthy",
+          sprite: "char-walk-1",
+        },
+        {
+          id: "mudkip",
+          species: "MUDKIP",
+          level: 10,
+          hp: 35,
+          maxHp: 35,
+          types: ["WATER"],
+          status: "healthy",
+          sprite: "not-a-shipped-sprite",
+        },
+      ],
+    });
+
+    expect(repaired.party.map((member) => member.sprite)).toEqual([
+      "emerald-zigzagoon",
+      "emerald-mudkip",
+    ]);
+  });
+
   it("heals once and does not consume an item when it has no effect", () => {
     const initial = defaultTrainer();
     initial.party[0] = { ...initial.party[0], hp: 9 };

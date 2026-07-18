@@ -70,6 +70,8 @@ const speciesSprites: Record<string, string> = {
   RALTS: "emerald-ralts",
 };
 
+const emeraldSprites = new Set(Object.values(speciesSprites));
+
 const speciesTypes: Record<string, string[]> = {
   TREECKO: ["GRASS"],
   TORCHIC: ["FIRE"],
@@ -148,6 +150,7 @@ const normalizeMember = (value: unknown): PartyMember | null => {
   const rawSpecies = typeof value.species === "string" ? value.species : value.name;
   if (typeof rawSpecies !== "string" || typeof value.id !== "string") return null;
   const species = rawSpecies.toUpperCase();
+  const storedSprite = typeof value.sprite === "string" ? value.sprite : "";
   const maxHp = typeof value.maxHp === "number" && value.maxHp > 0 ? value.maxHp : Number(value.hp);
   if (!Number.isFinite(maxHp) || maxHp <= 0) return null;
   const hp = typeof value.hp === "number" ? Math.max(0, Math.min(value.hp, maxHp)) : maxHp;
@@ -162,10 +165,11 @@ const normalizeMember = (value: unknown): PartyMember | null => {
       ? value.types.filter((type): type is string => typeof type === "string")
       : speciesTypes[species] ?? ["NORMAL"],
     status: value.status === "poisoned" ? "poisoned" : "healthy",
-    sprite:
-      typeof value.sprite === "string"
-        ? value.sprite
-        : speciesSprites[species] ?? "emerald-zigzagoon",
+    // Older saves could contain player sprites or arbitrary paths. Only retain
+    // the exact Emerald-version creature sprites that ship with this build.
+    sprite: emeraldSprites.has(storedSprite)
+      ? storedSprite
+      : speciesSprites[species] ?? "emerald-zigzagoon",
   };
 };
 

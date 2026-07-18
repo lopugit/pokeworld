@@ -26,13 +26,15 @@ pnpm --dir app exec node scripts/verify-vercel-output.mjs
 - [x] Deterministic replay and cross-block continuity hold for global coordinates.
 - [x] Property tests measure at least 500 distinct weighted grammar combinations.
 - [x] Ordinary ground has no large unintentional plain region.
-- [x] Spawn is safe and has access to a connected walkable route.
+- [x] Spawn is safe and has access to a connected walkable route; water bridges derive
+  matching edge portals from neighboring blocks' shared global coordinates.
 - [x] Real Google colour data remains the semantic source for water, roads, buildings, and ground.
 - [x] Google Static Maps success and fallback paths carry distinct provenance.
 - [x] The map-pipeline benchmark executes and checks output equivalence.
 - [x] Forest grammar includes deterministic natural secret trails and hidden-item pockets.
 - [x] Every shipped terrain/object tile is an exact crop of the repository's supplied Emerald tileset.
 - [x] Party, items, badges, PC storage, collision, ledges, and interaction rules have unit tests.
+- [x] Persisted trainer saves migrate stale non-Emerald sprite references to supplied Emerald assets.
 - [x] All required commands pass together on the final commit.
 
 ## Native Chrome gates
@@ -67,19 +69,21 @@ current final-commit screenshots above remain outside the repository as required
 
 2026-07-19 automation slice:
 
-- `pnpm --dir app check` passed with 15 test files and 83 tests, including property
+- `pnpm --dir app check` passed with 15 test files and 84 tests, including property
   coverage for orthogonal edges, route width and connectivity, deterministic replay,
   global-coordinate seams, plain-ground bounds, and safe land and all-water spawns.
 - Weighted biome rules sampled at least 500 distinct deterministic compositions while
   reusing only the existing Emerald-era asset corpus.
 - The Vercel static shell and routing/output verifier passed on the integrated branch.
-- Forced local Workflow `wrun_01KXV4HTK2ARGTX7G22PT5Q628` completed one real Google
+- Forced local Workflow `wrun_01KXV4RFY3QH722P0E8Z6500SV` completed one real Google
   Static Maps block with 256 tiles, `mapSource: google-static-maps`,
-  `fallbackGenerated: false`, and an 864-recipe deterministic world profile.
+  `fallbackGenerated: false`, tile version `2.3.0001`, and a populated
+  `wild-route/secret-grove/route-garden/signed` profile from 864 deterministic recipes.
 - The map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
-  the optimized path measured 9.44x faster than the legacy path.
+  the optimized path measured 10.10x faster than the legacy path.
 - Native Chrome desktop and mobile QA passed at Melbourne, Sydney Harbour, and Victorian
   alpine coordinates with full-page scrolling, persisted party/items/badges/PC flows,
   regeneration and movement. The Sydney run verified a deterministic one-tile bridge from
   an otherwise isolated shoreline spawn. There were no missing assets, horizontal overflow,
-  framework overlays, or app-origin console warnings/errors.
+  framework overlays, or app-origin console warnings/errors; stale trainer saves were also
+  verified to resolve to supplied Emerald-version sprites.
