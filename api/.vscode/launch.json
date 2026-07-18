@@ -29,7 +29,7 @@
 		},
 		{
 			"name": "Launch API",
-			"program": "${workspaceFolder}/node/index.js",
+			"program": "${workspaceFolder}/modules/index.js",
 			"request": "launch",
 			"skipFiles": [
 				"<node_internals>/**"

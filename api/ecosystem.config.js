@@ -2,7 +2,7 @@ module.exports = {
 	apps: [
 		{
 			name: 'pokeworld-api',
-			script: 'node/index.js',
+			script: 'modules/index.js',
 			watch: ['.', './node'],
 			autorestart: false,
 			/* eslint-disable camelcase */
