@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 859 nodes · 1249 edges · 163 communities (36 shown, 127 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 38 edges (avg confidence: 0.72)
+- 861 nodes · 1250 edges · 163 communities (36 shown, 127 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 35 edges (avg confidence: 0.7)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `27e9fc8e`
+- Built from commit: `cff83093`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -205,10 +205,10 @@
 - **Deterministic Procedural World Connectivity** — docs_procedural_world_acceptance_procedural_world_generation, docs_procedural_world_acceptance_boundary_portals, docs_procedural_world_acceptance_water_isolation_bridges [EXTRACTED 0.95]
 - **Acceptance Verification Suite** — docs_procedural_world_acceptance_app_check, docs_procedural_world_acceptance_map_benchmark, docs_procedural_world_acceptance_live_map_generation, docs_procedural_world_acceptance_native_chrome_verification [EXTRACTED 1.00]
 - **Desktop and Mobile Visual Acceptance Artifacts** — docs_procedural_world_acceptance_dense_world_desktop, docs_procedural_world_acceptance_dense_world_mobile, docs_procedural_world_acceptance_trainer_party_desktop, docs_procedural_world_acceptance_trainer_pc_mobile [EXTRACTED 1.00]
+- **Verified Dense-World Deployment Flow** — app_vercel_deployments_pr_7, app_vercel_deployments_commit_5188647, app_vercel_deployments_final_dense_world_preview, app_vercel_deployments_stable_dense_world_alias [EXTRACTED 1.00]
+- **Offline Workflow Map Generation** — app_vercel_deployments_final_dense_world_preview, app_vercel_deployments_offline_map_mode, app_vercel_deployments_map_jobs_api, app_vercel_deployments_vercel_workflow [EXTRACTED 0.98]
+- **Vercel Build and Runtime Verification** — app_vercel_deployments_vercel_build, app_vercel_deployments_build_output_api, app_vercel_deployments_api_health, app_vercel_deployments_pokeworld_vercel_project [INFERRED 0.85]
 - **Pokémon World Full-Stack Runtime** — app_readme_full_stack_runtime, app_readme_local_workflow_runtime, app_readme_api_routes, app_readme_vercel_deployment [EXTRACTED 0.95]
-- **Verified Pokeworld Preview Deployments** — app_vercel_deployments_dense_world_preview, app_vercel_deployments_stable_branch_alias, app_vercel_deployments_verified_app_root_deployment, app_vercel_deployments_pokeworld_vercel_project [EXTRACTED 0.98]
-- **Offline Preview Data Isolation** — app_vercel_deployments_offline_map_mode, app_vercel_deployments_mongodb, app_vercel_deployments_google_static_maps [EXTRACTED 1.00]
-- **Vercel Build Delivery Stack** — app_vercel_deployments_vercel_build, app_vercel_deployments_react_static_shell, app_vercel_deployments_nitro_fallback, app_vercel_deployments_vercel_workflow [EXTRACTED 0.96]
 
 ## Communities (163 total, 127 thin omitted)
 
@@ -217,20 +217,20 @@ Cohesion: 0.06
 Nodes (41): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source, buildGoogleStaticMapUrl() (+33 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.07
-Nodes (49): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+41 more)
+Cohesion: 0.05
+Nodes (49): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, canUseGoogleStaticMaps(), getBase64ImageSha256() (+41 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.07
-Nodes (37): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+29 more)
+Nodes (46): GameComponentState, BADGE_TONES, BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame(), PanelFrameProps (+38 more)
 
 ### Community 3 - "blocks.js"
-Cohesion: 0.06
-Nodes (45): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, imageToRgbaMatrix(), CLASSIFICATION_PRIORITY (+37 more)
+Cohesion: 0.08
+Nodes (33): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+25 more)
 
 ### Community 4 - "dependencies"
-Cohesion: 0.08
-Nodes (43): defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage, DialogBox() (+35 more)
+Cohesion: 0.07
+Nodes (46): defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage, BadgesPanel() (+38 more)
 
 ### Community 5 - "index.js"
 Cohesion: 0.04
@@ -285,80 +285,80 @@ Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
 ### Community 19 - "finalize-static-shell.mjs"
-Cohesion: 0.20
-Nodes (11): Dense Procedural World PR 7 Preview, Map Jobs API, Nitro Fallback, lopugit/pokeworld GitHub Repository, lopugits-projects/pokeworld Vercel Project, React Static Shell, Stable Branch Alias, Vercel Build Output API Build (+3 more)
-
-### Community 20 - "Pokémon World application"
 Cohesion: 0.25
 Nodes (7): appDir, crop(), outputDir, scriptDir, source, sourcePath, writeGrid()
 
-### Community 21 - "Sand Terrain Sprite 1"
+### Community 20 - "Pokémon World application"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 22 - "generate-map.mjs"
+### Community 21 - "Sand Terrain Sprite 1"
 Cohesion: 0.43
 Nodes (8): Pokémon World API Routes, Deterministic Emerald World Grammar, Full-Stack React, Nitro, Vite, and Workflow Runtime, Local Durable Map Workflow Runtime, Map Generation Pipeline, Pokémon World Application, Persistent Trainer, Party, Item, Badge, and PC System, Nitro and Vercel Deployment Output
 
+### Community 22 - "generate-map.mjs"
+Cohesion: 0.25
+Nodes (8): Health API, Vercel Build Output API, Commit 5188647, Final Dense Procedural World Preview, Map Jobs API, Pull Request 7, Vercel Build Process, Vercel Workflow Managed Queue
+
 ### Community 23 - "Vercel Build Process"
+Cohesion: 0.25
+Nodes (8): Verified App-Root Deployment, Automatic Branch Preview Deployments, Main Branch Production Deployment, Offline Map Mode, lopugit/pokeworld GitHub Repository, Pokeworld Vercel Project, MongoDB and Google Production Persistence, Stable Dense-World Branch Alias
+
+### Community 24 - "Sand Terrain Sprite 4"
 Cohesion: 0.25
 Nodes (8): blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback Map Regeneration Query, Fallback Map Regeneration Repair, Lazy Durable Workflow Regeneration, Legacy Fallback Fingerprint Detection, Stale Fallback Block Detection, TODO-fallback-map-regeneration.md
 
-### Community 24 - "Sand Terrain Sprite 4"
+### Community 25 - "Sand Terrain Sprite 5"
 Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
-### Community 25 - "Sand Terrain Sprite 5"
+### Community 26 - "Sand Terrain Sprite 6"
 Cohesion: 0.60
 Nodes (3): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection
 
-### Community 26 - "Sand Terrain Sprite 6"
+### Community 27 - "Sand Terrain Sprite 7"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
-### Community 27 - "Sand Terrain Sprite 7"
+### Community 28 - "Sand Terrain Sprite 8"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?, Source Nodes
 
-### Community 28 - "Sand Terrain Sprite 8"
+### Community 29 - "Sand Terrain Sprite 9"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA, Source Nodes
 
-### Community 29 - "Sand Terrain Sprite 9"
+### Community 30 - "Character Walking Animation Tileset"
 Cohesion: 0.67
 Nodes (4): Pokémon World HTML Shell, Pokémon World Application Icon, Android Chrome Application Icon 192x192, Android Chrome Application Icon 512x512
 
-### Community 30 - "Character Walking Animation Tileset"
+### Community 31 - "Pokémon Emerald Male Character Tileset"
 Cohesion: 0.50
 Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Grass Terrain Sprite, Pokémon Emerald Exterior Tileset
 
-### Community 31 - "Pokémon Emerald Male Character Tileset"
+### Community 32 - "Pokémon World Banner Graphic"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-### Community 32 - "Pokémon World Banner Graphic"
-Cohesion: 0.67
-Nodes (3): Google Static Maps, MongoDB, POKEWORLD_OFFLINE_MAP Mode
-
 ## Knowledge Gaps
-- **370 isolated node(s):** `TrainerItemKind`, `Badge`, `HOENN_BADGES`, `LEGACY_TRAINER_STORAGE_KEYS`, `speciesSprites` (+365 more)
+- **371 isolated node(s):** `TrainerItemKind`, `Badge`, `HOENN_BADGES`, `LEGACY_TRAINER_STORAGE_KEYS`, `speciesSprites` (+366 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **127 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `Nuxt 2 Frontend` to `DevKit.vue`, `functions.js`, `dependencies`?**
+- **Why does `Game` connect `Nuxt 2 Frontend` to `DevKit.vue`, `dependencies`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `rgbaToTileColourData()` connect `Game.vue` to `blocks.js`?**
+- **Why does `rgbaToTileColourData()` connect `Game.vue` to `functions.js`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `TerrainKind` connect `package.json` to `blocks.js`?**
+- **Why does `TerrainKind` connect `blocks.js` to `functions.js`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **What connects `TrainerItemKind`, `Badge`, `HOENN_BADGES` to the rest of the system?**
-  _371 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _372 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.06101190476190476 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.06721311475409836 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05499735589635114 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.07062146892655367 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07456140350877193 - nodes in this community are weakly interconnected._

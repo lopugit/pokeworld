@@ -45,6 +45,48 @@
         "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md"
       },
       {
+        "id": "verified_dense_world_deployment_flow",
+        "label": "Verified Dense-World Deployment Flow",
+        "nodes": [
+          "app_vercel_deployments_pr_7",
+          "app_vercel_deployments_commit_5188647",
+          "app_vercel_deployments_final_dense_world_preview",
+          "app_vercel_deployments_stable_dense_world_alias"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "app/VERCEL_DEPLOYMENTS.md"
+      },
+      {
+        "id": "offline_workflow_map_generation",
+        "label": "Offline Workflow Map Generation",
+        "nodes": [
+          "app_vercel_deployments_final_dense_world_preview",
+          "app_vercel_deployments_offline_map_mode",
+          "app_vercel_deployments_map_jobs_api",
+          "app_vercel_deployments_vercel_workflow"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.98,
+        "source_file": "app/VERCEL_DEPLOYMENTS.md"
+      },
+      {
+        "id": "vercel_build_and_runtime_verification",
+        "label": "Vercel Build and Runtime Verification",
+        "nodes": [
+          "app_vercel_deployments_vercel_build",
+          "app_vercel_deployments_build_output_api",
+          "app_vercel_deployments_api_health",
+          "app_vercel_deployments_pokeworld_vercel_project"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "app/VERCEL_DEPLOYMENTS.md"
+      },
+      {
         "id": "pokemon_world_full_stack_runtime",
         "label": "Pok\u00e9mon World Full-Stack Runtime",
         "nodes": [
@@ -57,47 +99,6 @@
         "confidence": "EXTRACTED",
         "confidence_score": 0.95,
         "source_file": "app/README.md"
-      },
-      {
-        "id": "verified_pokeworld_deployments",
-        "label": "Verified Pokeworld Preview Deployments",
-        "nodes": [
-          "app_vercel_deployments_dense_world_preview",
-          "app_vercel_deployments_stable_branch_alias",
-          "app_vercel_deployments_verified_app_root_deployment",
-          "app_vercel_deployments_pokeworld_vercel_project"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.98,
-        "source_file": "app/VERCEL_DEPLOYMENTS.md"
-      },
-      {
-        "id": "offline_preview_data_isolation",
-        "label": "Offline Preview Data Isolation",
-        "nodes": [
-          "app_vercel_deployments_offline_map_mode",
-          "app_vercel_deployments_mongodb",
-          "app_vercel_deployments_google_static_maps"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "app/VERCEL_DEPLOYMENTS.md"
-      },
-      {
-        "id": "vercel_build_delivery_stack",
-        "label": "Vercel Build Delivery Stack",
-        "nodes": [
-          "app_vercel_deployments_vercel_build",
-          "app_vercel_deployments_react_static_shell",
-          "app_vercel_deployments_nitro_fallback",
-          "app_vercel_deployments_vercel_workflow"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.96,
-        "source_file": "app/VERCEL_DEPLOYMENTS.md"
       }
     ]
   },
@@ -108,9 +109,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "trainer-state.ts",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state"
     },
     {
@@ -119,9 +120,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "pocketname",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_pocketname"
     },
     {
@@ -130,9 +131,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "traineritemkind",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_traineritemkind"
     },
     {
@@ -141,9 +142,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "partymember",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_partymember"
     },
     {
@@ -152,9 +153,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "bagitem",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_bagitem"
     },
     {
@@ -163,9 +164,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "badge",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_badge"
     },
     {
@@ -174,9 +175,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "trainerstate",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_trainerstate"
     },
     {
@@ -185,9 +186,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "trainertransition",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_trainertransition"
     },
     {
@@ -196,9 +197,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "hoenn_badges",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_hoenn_badges"
     },
     {
@@ -207,9 +208,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "legacy_trainer_storage_keys",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_legacy_trainer_storage_keys"
     },
     {
@@ -218,9 +219,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "speciessprites",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_speciessprites"
     },
     {
@@ -229,9 +230,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "emeraldsprites",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_emeraldsprites"
     },
     {
@@ -240,9 +241,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "speciestypes",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_speciestypes"
     },
     {
@@ -251,9 +252,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L108",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "defaulttrainer()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_defaulttrainer"
     },
     {
@@ -262,9 +263,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L139",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "isrecord()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_isrecord"
     },
     {
@@ -273,9 +274,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L142",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "itemkindfor()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_itemkindfor"
     },
     {
@@ -284,9 +285,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L148",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizemember()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizemember"
     },
     {
@@ -295,9 +296,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizeitem()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizeitem"
     },
     {
@@ -306,9 +307,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L191",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizeitems()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizeitems"
     },
     {
@@ -317,9 +318,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L199",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizemembers()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizemembers"
     },
     {
@@ -328,9 +329,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L209",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizebadges()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizebadges"
     },
     {
@@ -339,9 +340,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L220",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizecollecteditems()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizecollecteditems"
     },
     {
@@ -350,9 +351,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L227",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "normalizetrainer()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_normalizetrainer"
     },
     {
@@ -361,9 +362,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L270",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "additemtobag()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_additemtobag"
     },
     {
@@ -372,9 +373,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L290",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "hascollected()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_hascollected"
     },
     {
@@ -383,9 +384,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L293",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "collectfielditem()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_collectfielditem"
     },
     {
@@ -394,9 +395,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L306",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "transition()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_transition"
     },
     {
@@ -405,9 +406,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L312",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "usebagitem()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_usebagitem"
     },
     {
@@ -416,9 +417,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L350",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "setleadpartymember()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_setleadpartymember"
     },
     {
@@ -427,9 +428,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L360",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "togglebadge()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_togglebadge"
     },
     {
@@ -438,9 +439,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L373",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "depositpartymember()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_depositpartymember"
     },
     {
@@ -449,9 +450,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L388",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "withdrawpartymember()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_withdrawpartymember"
     },
     {
@@ -460,9 +461,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L403",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "storagelike",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_storagelike"
     },
     {
@@ -471,9 +472,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L404",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": ".getitem()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_storagelike_getitem"
     },
     {
@@ -482,9 +483,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L405",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": ".setitem()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_storagelike_setitem"
     },
     {
@@ -493,9 +494,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L408",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "defaultstorage()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_defaultstorage"
     },
     {
@@ -504,9 +505,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L411",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "readjson()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_readjson"
     },
     {
@@ -515,9 +516,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L421",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "loadtrainer()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_loadtrainer"
     },
     {
@@ -526,9 +527,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L441",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "savetrainer()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_lib_trainer_state_savetrainer"
     },
     {
@@ -537,9 +538,9 @@
       "source_file": "app/tests/trainer-state.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "trainer-state.test.ts",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_tests_trainer_state_test"
     },
     {
@@ -548,9 +549,9 @@
       "source_file": "app/tests/trainer-state.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "fielditem",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_tests_trainer_state_test_fielditem"
     },
     {
@@ -680,9 +681,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "gamecomponentstate",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_gamecomponentstate"
     },
     {
@@ -845,9 +846,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L449",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": ".settrainer()",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_src_components_game_game_settrainer"
     },
     {
@@ -1197,9 +1198,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "badgespanel.tsx",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_badgespanel"
     },
     {
@@ -1208,9 +1209,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "badge_tones",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_badgespanel_badge_tones"
     },
     {
@@ -1219,9 +1220,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "badgespanelprops",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_badgespanel_badgespanelprops"
     },
     {
@@ -1230,9 +1231,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 1,
+      "community": 4,
       "norm_label": "badgespanel()",
-      "community_name": "functions.js",
+      "community_name": "dependencies",
       "id": "app_src_components_game_ui_badgespanel_badgespanel"
     },
     {
@@ -1241,9 +1242,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "bagpanel.tsx",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_bagpanel"
     },
     {
@@ -1252,9 +1253,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "pockets",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_bagpanel_pockets"
     },
     {
@@ -1263,9 +1264,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "bagpanelprops",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_bagpanel_bagpanelprops"
     },
     {
@@ -1274,9 +1275,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "bagpanel()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_bagpanel_bagpanel"
     },
     {
@@ -1318,9 +1319,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "panelframe.tsx",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_panelframe"
     },
     {
@@ -1329,9 +1330,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "panelframeprops",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_panelframe_panelframeprops"
     },
     {
@@ -1340,9 +1341,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "panelframe()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_panelframe_panelframe"
     },
     {
@@ -1351,9 +1352,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "partypanel.tsx",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_partypanel"
     },
     {
@@ -1362,9 +1363,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "partypanelprops",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_partypanel_partypanelprops"
     },
     {
@@ -1373,9 +1374,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
+      "community": 4,
       "norm_label": "partypanel()",
-      "community_name": "functions.js",
+      "community_name": "dependencies",
       "id": "app_src_components_game_ui_partypanel_partypanel"
     },
     {
@@ -1384,9 +1385,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "pcpanel.tsx",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_pcpanel"
     },
     {
@@ -1395,9 +1396,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "pcpanelprops",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_pcpanel_pcpanelprops"
     },
     {
@@ -1406,9 +1407,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "memberbutton()",
-      "community_name": "functions.js",
+      "community_name": "package.json",
       "id": "app_src_components_game_ui_pcpanel_memberbutton"
     },
     {
@@ -1417,9 +1418,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
+      "community": 4,
       "norm_label": "pcpanel()",
-      "community_name": "functions.js",
+      "community_name": "dependencies",
       "id": "app_src_components_game_ui_pcpanel_pcpanel"
     },
     {
@@ -2385,9 +2386,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "blocks.ts",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks"
     },
     {
@@ -2396,9 +2397,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "sortedmods",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_sortedmods"
     },
     {
@@ -2407,9 +2408,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "coordinatekey()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_coordinatekey"
     },
     {
@@ -2418,9 +2419,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "latsdb",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_latsdb"
     },
     {
@@ -2429,9 +2430,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "lngsdb",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_lngsdb"
     },
     {
@@ -2440,9 +2441,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "transactions",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_transactions"
     },
     {
@@ -2451,9 +2452,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "transactionoptions",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_transactionoptions"
     },
     {
@@ -2462,9 +2463,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "toexport()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_blocks_toexport"
     },
     {
@@ -2473,9 +2474,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain-classifier.ts",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier"
     },
     {
@@ -2484,9 +2485,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "terrainkind",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_terrain_classifier_terrainkind"
     },
     {
@@ -2495,9 +2496,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "rgbaimage",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_rgbaimage"
     },
     {
@@ -2506,9 +2507,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrainsample",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_terrainsample"
     },
     {
@@ -2517,9 +2518,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "pixelkind",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_pixelkind"
     },
     {
@@ -2528,9 +2529,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "rgb",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_rgb"
     },
     {
@@ -2539,9 +2540,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "google_static_map_styles",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_google_static_map_styles"
     },
     {
@@ -2550,9 +2551,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "pixel_palette",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_pixel_palette"
     },
     {
@@ -2561,9 +2562,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain_kinds",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_terrain_kinds"
     },
     {
@@ -2572,9 +2573,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "minimum_coverage",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_minimum_coverage"
     },
     {
@@ -2583,9 +2584,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "classification_priority",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_classification_priority"
     },
     {
@@ -2594,9 +2595,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "roundcoverage()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_roundcoverage"
     },
     {
@@ -2605,9 +2606,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "emptycoverage()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_emptycoverage"
     },
     {
@@ -2616,9 +2617,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "nearestpixelkind()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_nearestpixelkind"
     },
     {
@@ -2627,9 +2628,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L112",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "classifycounts()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_classifycounts"
     },
     {
@@ -2638,9 +2639,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "classifyterraintiles()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_classifyterraintiles"
     },
     {
@@ -2649,9 +2650,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L187",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "classifyterrainpng()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_classifyterrainpng"
     },
     {
@@ -2660,9 +2661,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L195",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "summarizeterrain()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
     },
     {
@@ -2682,9 +2683,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain-layout.ts",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout"
     },
     {
@@ -2693,9 +2694,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "mask",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_mask"
     },
     {
@@ -2704,9 +2705,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "route_terrains",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_route_terrains"
     },
     {
@@ -2715,9 +2716,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "cardinal_offsets",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_cardinal_offsets"
     },
     {
@@ -2726,9 +2727,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "clonesamples()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_clonesamples"
     },
     {
@@ -2737,9 +2738,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "replacement()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_replacement"
     },
     {
@@ -2748,9 +2749,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "inbounds()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_inbounds"
     },
     {
@@ -2759,9 +2760,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "emptymask()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_emptymask"
     },
     {
@@ -2770,9 +2771,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "squaresemanticedges()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_squaresemanticedges"
     },
     {
@@ -2781,9 +2782,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "neighbourvalues()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_neighbourvalues"
     },
     {
@@ -2792,9 +2793,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "transitioncount()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_transitioncount"
     },
     {
@@ -2803,9 +2804,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L90",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "thinroutemask()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_thinroutemask"
     },
     {
@@ -2814,9 +2815,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L120",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "routecomponents()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_routecomponents"
     },
     {
@@ -2825,9 +2826,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L150",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "preservecomponents()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_preservecomponents"
     },
     {
@@ -2836,9 +2837,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L164",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "connectportaltoskeleton()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_connectportaltoskeleton"
     },
     {
@@ -2847,9 +2848,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L200",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "runcenters()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_runcenters"
     },
     {
@@ -2858,9 +2859,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L212",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "preserveboundaryportals()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_preserveboundaryportals"
     },
     {
@@ -2869,9 +2870,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L229",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "orthogonalizeskeleton()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_orthogonalizeskeleton"
     },
     {
@@ -2880,9 +2881,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L259",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "nearestroutekind()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_nearestroutekind"
     },
     {
@@ -2891,9 +2892,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L275",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "bestnonrouteterrain()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_bestnonrouteterrain"
     },
     {
@@ -2902,9 +2903,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L280",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "normalizeroutes()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_normalizeroutes"
     },
     {
@@ -2913,9 +2914,9 @@
       "source_file": "app/server/services/map/terrain-layout.ts",
       "source_location": "L323",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "normalizeterrainlayout()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_terrain_layout_normalizeterrainlayout"
     },
     {
@@ -3045,9 +3046,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain-layout.test.ts",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test"
     },
     {
@@ -3056,9 +3057,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain_kinds",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test_terrain_kinds"
     },
     {
@@ -3067,9 +3068,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "sample()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test_sample"
     },
     {
@@ -3078,9 +3079,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "grid()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test_grid"
     },
     {
@@ -3089,9 +3090,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "isroute()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test_isroute"
     },
     {
@@ -3100,9 +3101,9 @@
       "source_file": "app/tests/terrain-layout.test.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "largestsolidroutesquare()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_layout_test_largestsolidroutesquare"
     },
     {
@@ -3309,9 +3310,9 @@
       "source_file": "app/scripts/finalize-static-shell.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "norm_label": "finalize-static-shell.mjs",
-      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
+      "community_name": "Pok\u00e9mon World Banner Graphic",
       "id": "app_scripts_finalize_static_shell"
     },
     {
@@ -3320,9 +3321,9 @@
       "source_file": "app/scripts/finalize-static-shell.mjs",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "norm_label": "root",
-      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
+      "community_name": "Pok\u00e9mon World Banner Graphic",
       "id": "app_scripts_finalize_static_shell_root"
     },
     {
@@ -3331,9 +3332,9 @@
       "source_file": "app/scripts/finalize-static-shell.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "norm_label": "transformedshell",
-      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
+      "community_name": "Pok\u00e9mon World Banner Graphic",
       "id": "app_scripts_finalize_static_shell_transformedshell"
     },
     {
@@ -3342,9 +3343,9 @@
       "source_file": "app/scripts/finalize-static-shell.mjs",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "norm_label": "target",
-      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
+      "community_name": "Pok\u00e9mon World Banner Graphic",
       "id": "app_scripts_finalize_static_shell_target"
     },
     {
@@ -3353,9 +3354,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "extract-terrain-tiles.mjs",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles"
     },
     {
@@ -3364,9 +3365,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "scriptdir",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_scriptdir"
     },
     {
@@ -3375,9 +3376,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "appdir",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_appdir"
     },
     {
@@ -3386,9 +3387,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "sourcepath",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_sourcepath"
     },
     {
@@ -3397,9 +3398,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "outputdir",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_outputdir"
     },
     {
@@ -3408,9 +3409,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "source",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_source"
     },
     {
@@ -3419,9 +3420,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "crop()",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_crop"
     },
     {
@@ -3430,9 +3431,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "writegrid()",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_writegrid"
     },
     {
@@ -3441,9 +3442,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "writewatervariants()",
-      "community_name": "Pok\u00e9mon World application",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_map_extract_terrain_tiles_writewatervariants"
     },
     {
@@ -3452,9 +3453,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "generate-map.mjs",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map"
     },
     {
@@ -3463,9 +3464,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "args",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_args"
     },
     {
@@ -3474,9 +3475,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "regenerate",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_regenerate"
     },
     {
@@ -3485,9 +3486,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "radiusflag",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_radiusflag"
     },
     {
@@ -3496,9 +3497,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "positional",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_positional"
     },
     {
@@ -3507,9 +3508,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "blockx",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_blockx"
     },
     {
@@ -3518,9 +3519,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "blocky",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_blocky"
     },
     {
@@ -3529,9 +3530,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "offsets",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_offsets"
     },
     {
@@ -3540,9 +3541,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "baseurl",
-      "community_name": "Sand Terrain Sprite 1",
+      "community_name": "Pok\u00e9mon World application",
       "id": "app_scripts_map_generate_map_baseurl"
     },
     {
@@ -3914,9 +3915,9 @@
       "source_file": "app/server/routes/api/block-lat-lng.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "block-lat-lng.get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_block_lat_lng_get"
     },
     {
@@ -3925,9 +3926,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blocks.get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_blocks_get"
     },
     {
@@ -3936,9 +3937,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "queryoffsets()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_blocks_get_queryoffsets"
     },
     {
@@ -3947,9 +3948,9 @@
       "source_file": "app/server/routes/api/health.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "health.get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_health_get"
     },
     {
@@ -3958,9 +3959,9 @@
       "source_file": "app/server/routes/api/map-jobs.post.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-jobs.post.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_map_jobs_post"
     },
     {
@@ -3969,9 +3970,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "[runid].get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_api_map_jobs_runid_get"
     },
     {
@@ -3991,9 +3992,9 @@
       "source_file": "app/server/routes/v1/blockLatLng.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blocklatlng.get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_v1_blocklatlng_get"
     },
     {
@@ -4002,9 +4003,9 @@
       "source_file": "app/server/routes/v1/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blocks.get.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_routes_v1_blocks_get"
     },
     {
@@ -4013,9 +4014,9 @@
       "source_file": "app/server/services/map/coordinates.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "coordinates.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_coordinates"
     },
     {
@@ -4024,9 +4025,9 @@
       "source_file": "app/server/services/map/coordinates.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "toradians()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_coordinates_toradians"
     },
     {
@@ -4035,9 +4036,9 @@
       "source_file": "app/server/services/map/coordinates.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "projectlatitude()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_coordinates_projectlatitude"
     },
     {
@@ -4046,9 +4047,9 @@
       "source_file": "app/server/services/map/coordinates.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "minlatitudeprojected",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_coordinates_minlatitudeprojected"
     },
     {
@@ -4057,9 +4058,9 @@
       "source_file": "app/server/services/map/coordinates.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blockforcoordinates()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_coordinates_blockforcoordinates"
     },
     {
@@ -4068,9 +4069,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "input.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_input"
     },
     {
@@ -4079,9 +4080,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "finiteinteger()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_input_finiteinteger"
     },
     {
@@ -4090,9 +4091,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parseoffset()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_input_parseoffset"
     },
     {
@@ -4101,9 +4102,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parsemapjobinput()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_input_parsemapjobinput"
     },
     {
@@ -4112,9 +4113,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "coordinatesforinput()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_input_coordinatesforinput"
     },
     {
@@ -4508,9 +4509,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "map-source.ts",
-      "community_name": "package.json",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_map_source"
     },
     {
@@ -4519,9 +4520,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "canusegooglestaticmaps()",
-      "community_name": "package.json",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_map_source_canusegooglestaticmaps"
     },
     {
@@ -4530,9 +4531,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "getbase64imagesha256()",
-      "community_name": "package.json",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_map_source_getbase64imagesha256"
     },
     {
@@ -4541,9 +4542,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "isfallbackgeneratedblock()",
-      "community_name": "package.json",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_map_source_isfallbackgeneratedblock"
     },
     {
@@ -4552,9 +4553,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "shouldregeneratefallbackblock()",
-      "community_name": "package.json",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_map_source_shouldregeneratefallbackblock"
     },
     {
@@ -4816,9 +4817,9 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mongo.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_mongo"
     },
     {
@@ -4827,9 +4828,9 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mongouri()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_mongo_mongouri"
     },
     {
@@ -4838,9 +4839,9 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "ismongoconfigured()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_mongo_ismongoconfigured"
     },
     {
@@ -4849,9 +4850,9 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blockscollection()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_mongo_blockscollection"
     },
     {
@@ -4860,9 +4861,9 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "getstoredblocks()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_mongo_getstoredblocks"
     },
     {
@@ -4871,9 +4872,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "types.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types"
     },
     {
@@ -4882,9 +4883,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapoffset",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapoffset"
     },
     {
@@ -4893,9 +4894,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapsource",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapsource"
     },
     {
@@ -4904,9 +4905,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapjobinput",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapjobinput"
     },
     {
@@ -4915,9 +4916,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "maptile",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_maptile"
     },
     {
@@ -4926,9 +4927,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapblock",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapblock"
     },
     {
@@ -4937,9 +4938,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapgenerationstepresult",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapgenerationstepresult"
     },
     {
@@ -4948,9 +4949,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "mapgenerationresult",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_services_map_types_mapgenerationresult"
     },
     {
@@ -4959,9 +4960,9 @@
       "source_file": "app/server/utils/http.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "http.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_utils_http"
     },
     {
@@ -4970,9 +4971,9 @@
       "source_file": "app/server/utils/http.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "jsonresponse()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_utils_http_jsonresponse"
     },
     {
@@ -4981,9 +4982,9 @@
       "source_file": "app/server/utils/http.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "errorresponse()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_server_utils_http_errorresponse"
     },
     {
@@ -5179,9 +5180,9 @@
       "source_file": "app/src/lib/game-zoom.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "norm_label": "game-zoom.ts",
-      "community_name": "Sand Terrain Sprite 5",
+      "community_name": "Sand Terrain Sprite 6",
       "id": "app_src_lib_game_zoom"
     },
     {
@@ -5190,9 +5191,9 @@
       "source_file": "app/src/lib/game-zoom.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "norm_label": "zoomdirection",
-      "community_name": "Sand Terrain Sprite 5",
+      "community_name": "Sand Terrain Sprite 6",
       "id": "app_src_lib_game_zoom_zoomdirection"
     },
     {
@@ -5201,9 +5202,9 @@
       "source_file": "app/src/lib/game-zoom.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "norm_label": "nextzoomvalue()",
-      "community_name": "Sand Terrain Sprite 5",
+      "community_name": "Sand Terrain Sprite 6",
       "id": "app_src_lib_game_zoom_nextzoomvalue"
     },
     {
@@ -5212,9 +5213,9 @@
       "source_file": "app/src/lib/game-zoom.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "norm_label": "mapoffsetlimitforzoom()",
-      "community_name": "Sand Terrain Sprite 5",
+      "community_name": "Sand Terrain Sprite 6",
       "id": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
     },
     {
@@ -5223,9 +5224,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-api.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api"
     },
     {
@@ -5234,9 +5235,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blocksresponse",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api_blocksresponse"
     },
     {
@@ -5245,9 +5246,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "abortabledelay()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api_abortabledelay"
     },
     {
@@ -5256,9 +5257,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "responsejson()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api_responsejson"
     },
     {
@@ -5267,9 +5268,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "getmapblocks()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api_getmapblocks"
     },
     {
@@ -5278,9 +5279,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "getblockforcoordinates()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_api_getblockforcoordinates"
     },
     {
@@ -5289,9 +5290,9 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-load.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_load"
     },
     {
@@ -5300,9 +5301,9 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "prioritizeinitialmapoffsets()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_src_lib_map_load_prioritizeinitialmapoffsets"
     },
     {
@@ -5366,9 +5367,9 @@
       "source_file": "app/tests/game-zoom.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "norm_label": "game-zoom.test.ts",
-      "community_name": "Sand Terrain Sprite 5",
+      "community_name": "Sand Terrain Sprite 6",
       "id": "app_tests_game_zoom_test"
     },
     {
@@ -5377,9 +5378,9 @@
       "source_file": "app/tests/map-generation.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-generation.test.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_tests_map_generation_test"
     },
     {
@@ -5388,9 +5389,9 @@
       "source_file": "app/tests/map-input.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-input.test.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_tests_map_input_test"
     },
     {
@@ -5399,9 +5400,9 @@
       "source_file": "app/tests/map-load.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "map-load.test.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_tests_map_load_test"
     },
     {
@@ -5454,9 +5455,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "terrain-classifier.test.ts",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_classifier_test"
     },
     {
@@ -5465,9 +5466,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "colours",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_classifier_test_colours"
     },
     {
@@ -5476,9 +5477,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "stripedimage()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_tests_terrain_classifier_test_stripedimage"
     },
     {
@@ -5641,9 +5642,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "norm_label": "vercel.json",
-      "community_name": "Sand Terrain Sprite 6",
+      "community_name": "Sand Terrain Sprite 7",
       "id": "app_vercel"
     },
     {
@@ -5652,9 +5653,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "norm_label": "$schema",
-      "community_name": "Sand Terrain Sprite 6",
+      "community_name": "Sand Terrain Sprite 7",
       "id": "app_vercel_schema"
     },
     {
@@ -5663,9 +5664,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "norm_label": "framework",
-      "community_name": "Sand Terrain Sprite 6",
+      "community_name": "Sand Terrain Sprite 7",
       "id": "app_vercel_framework"
     },
     {
@@ -5674,9 +5675,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "norm_label": "installcommand",
-      "community_name": "Sand Terrain Sprite 6",
+      "community_name": "Sand Terrain Sprite 7",
       "id": "app_vercel_installcommand"
     },
     {
@@ -5685,9 +5686,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "norm_label": "buildcommand",
-      "community_name": "Sand Terrain Sprite 6",
+      "community_name": "Sand Terrain Sprite 7",
       "id": "app_vercel_buildcommand"
     },
     {
@@ -5718,9 +5719,9 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "index.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_workflows_map_generation_index"
     },
     {
@@ -5729,9 +5730,9 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "generatemapworkflow()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_workflows_map_generation_index_generatemapworkflow"
     },
     {
@@ -5740,9 +5741,9 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "steps.ts",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_workflows_map_generation_steps"
     },
     {
@@ -5751,9 +5752,9 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "generatemapblockstep()",
-      "community_name": "package.json",
+      "community_name": "blocks.js",
       "id": "app_workflows_map_generation_steps_generatemapblockstep"
     },
     {
@@ -6026,9 +6027,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "todo-fallback-map-regeneration.md",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration"
     },
     {
@@ -6037,9 +6038,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "todo: fallback map regeneration",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration_todo_fallback_map_regeneration"
     },
     {
@@ -6048,9 +6049,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "problem",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration_problem"
     },
     {
@@ -6059,9 +6060,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "implemented behavior",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration_implemented_behavior"
     },
     {
@@ -6070,9 +6071,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "operational note",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration_operational_note"
     },
     {
@@ -6081,9 +6082,9 @@
       "source_file": "app/TODO-fallback-map-regeneration.md",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "remaining follow-up",
-      "community_name": "Sand Terrain Sprite 4",
+      "community_name": "Sand Terrain Sprite 5",
       "id": "app_todo_fallback_map_regeneration_remaining_follow_up"
     },
     {
@@ -6109,9 +6110,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 29,
+      "community": 30,
       "norm_label": "pokemon world html shell",
-      "community_name": "Sand Terrain Sprite 9",
+      "community_name": "Character Walking Animation Tileset",
       "id": "app_index_html_document"
     },
     {
@@ -6123,9 +6124,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 30,
+      "community": 31,
       "norm_label": "generated map tile preview grid",
-      "community_name": "Character Walking Animation Tileset",
+      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
       "id": "app_map_assets_db_index_tile_preview"
     },
     {
@@ -6137,9 +6138,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 30,
+      "community": 31,
       "norm_label": "generated 16 by 16 block tiles",
-      "community_name": "Character Walking Animation Tileset",
+      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
       "id": "app_map_assets_db_index_generated_tiles"
     },
     {
@@ -6179,9 +6180,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 30,
+      "community": 31,
       "norm_label": "grass terrain sprite",
-      "community_name": "Character Walking Animation Tileset",
+      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
       "id": "app_map_assets_sprites_grass_grass_sprite"
     },
     {
@@ -6319,9 +6320,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 30,
+      "community": 31,
       "norm_label": "pokemon emerald exterior tileset",
-      "community_name": "Character Walking Animation Tileset",
+      "community_name": "Pok\u00e9mon Emerald Male Character Tileset",
       "id": "app_map_assets_tilesets_game_boy_advance_pokemon_emerald_exterior_tileset_exterior_tileset"
     },
     {
@@ -6375,9 +6376,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 29,
+      "community": 30,
       "norm_label": "pokemon world application icon",
-      "community_name": "Sand Terrain Sprite 9",
+      "community_name": "Character Walking Animation Tileset",
       "id": "app_public_icon_application_icon"
     },
     {
@@ -6389,9 +6390,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 29,
+      "community": 30,
       "norm_label": "android chrome application icon 192x192",
-      "community_name": "Sand Terrain Sprite 9",
+      "community_name": "Character Walking Animation Tileset",
       "id": "app_public_icons_android_chrome_192x192_android_icon_192"
     },
     {
@@ -6403,9 +6404,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 29,
+      "community": 30,
       "norm_label": "android chrome application icon 512x512",
-      "community_name": "Sand Terrain Sprite 9",
+      "community_name": "Character Walking Animation Tileset",
       "id": "app_public_icons_android_chrome_512x512_android_icon_512"
     },
     {
@@ -7397,9 +7398,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "fallback map regeneration query",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query"
     },
     {
@@ -7411,9 +7412,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "fallback map regeneration repair",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_repair"
     },
     {
@@ -7425,9 +7426,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "stale fallback block detection",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection"
     },
     {
@@ -7439,9 +7440,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "blocks.get.ts",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get"
     },
     {
@@ -7453,9 +7454,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "legacy fallback fingerprint detection",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint"
     },
     {
@@ -7467,9 +7468,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "nitro cache bypass for stale fallback blocks",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass"
     },
     {
@@ -7481,9 +7482,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "lazy durable workflow regeneration",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration"
     },
     {
@@ -7495,9 +7496,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 23,
+      "community": 24,
       "norm_label": "todo-fallback-map-regeneration.md",
-      "community_name": "Vercel Build Process",
+      "community_name": "Sand Terrain Sprite 4",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_todo_document"
     },
     {
@@ -7982,9 +7983,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 3,
+      "community": 1,
       "norm_label": "imagetorgbamatrix()",
-      "community_name": "blocks.js",
+      "community_name": "functions.js",
       "id": "app_server_services_map_legacy_png_imagetorgbamatrix"
     },
     {
@@ -7993,9 +7994,9 @@
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "community_name": "Sand Terrain Sprite 7",
+      "community_name": "Sand Terrain Sprite 8",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo"
     },
     {
@@ -8004,9 +8005,9 @@
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "q: can we add a todo-${task}.md to document the mongodb fallback-generated block problem and implement automatic regeneration?",
-      "community_name": "Sand Terrain Sprite 7",
+      "community_name": "Sand Terrain Sprite 8",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration"
     },
     {
@@ -8015,9 +8016,9 @@
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "answer",
-      "community_name": "Sand Terrain Sprite 7",
+      "community_name": "Sand Terrain Sprite 8",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_answer"
     },
     {
@@ -8026,9 +8027,9 @@
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "outcome",
-      "community_name": "Sand Terrain Sprite 7",
+      "community_name": "Sand Terrain Sprite 8",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_outcome"
     },
     {
@@ -8037,9 +8038,9 @@
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "source nodes",
-      "community_name": "Sand Terrain Sprite 7",
+      "community_name": "Sand Terrain Sprite 8",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_source_nodes"
     },
     {
@@ -8048,9 +8049,9 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "norm_label": "query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
-      "community_name": "Sand Terrain Sprite 8",
+      "community_name": "Sand Terrain Sprite 9",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl"
     },
     {
@@ -8059,9 +8060,9 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "norm_label": "q: verify the real google static maps to pokemon world generation pipeline for user and mock latitude/longitude, including visual chrome qa",
-      "community_name": "Sand Terrain Sprite 8",
+      "community_name": "Sand Terrain Sprite 9",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_q_verify_the_real_google_static_maps_to_pokemon_world_generation_pipeline_for_user_and_mock_latitude_longitude_including_visual_chrome_qa"
     },
     {
@@ -8070,9 +8071,9 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "norm_label": "answer",
-      "community_name": "Sand Terrain Sprite 8",
+      "community_name": "Sand Terrain Sprite 9",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_answer"
     },
     {
@@ -8081,9 +8082,9 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "norm_label": "outcome",
-      "community_name": "Sand Terrain Sprite 8",
+      "community_name": "Sand Terrain Sprite 9",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_outcome"
     },
     {
@@ -8092,9 +8093,9 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "norm_label": "source nodes",
-      "community_name": "Sand Terrain Sprite 8",
+      "community_name": "Sand Terrain Sprite 9",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_source_nodes"
     },
     {
@@ -8979,202 +8980,6 @@
       "id": "app_tests_world_grammar_test"
     },
     {
-      "label": "Vercel Deployments",
-      "file_type": "document",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "vercel deployments",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_vercel_deployments"
-    },
-    {
-      "label": "lopugits-projects/pokeworld Vercel Project",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://vercel.com/lopugits-projects/pokeworld",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "lopugits-projects/pokeworld vercel project",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "label": "lopugit/pokeworld GitHub Repository",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://github.com/lopugit/pokeworld",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "lopugit/pokeworld github repository",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_pokeworld_github_repository"
-    },
-    {
-      "label": "Dense Procedural World PR 7 Preview",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-iewue50xu-lopugits-projects.vercel.app",
-      "captured_at": "2026-07-19",
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "dense procedural world pr 7 preview",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_dense_world_preview"
-    },
-    {
-      "label": "Stable Branch Alias",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "stable branch alias",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_stable_branch_alias"
-    },
-    {
-      "label": "Verified App-Root Deployment",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-f0vewe7wm-lopugits-projects.vercel.app",
-      "captured_at": "2026-07-19",
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "verified app-root deployment",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_verified_app_root_deployment"
-    },
-    {
-      "label": "Vercel Workflow Managed Queue",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "vercel workflow managed queue",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_vercel_workflow"
-    },
-    {
-      "label": "Map Jobs API",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "map jobs api",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_map_jobs_api"
-    },
-    {
-      "label": "POKEWORLD_OFFLINE_MAP Mode",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 32,
-      "norm_label": "pokeworld_offline_map mode",
-      "community_name": "Pok\u00e9mon World Banner Graphic",
-      "id": "app_vercel_deployments_offline_map_mode"
-    },
-    {
-      "label": "MongoDB",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 32,
-      "norm_label": "mongodb",
-      "community_name": "Pok\u00e9mon World Banner Graphic",
-      "id": "app_vercel_deployments_mongodb"
-    },
-    {
-      "label": "Google Static Maps",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 32,
-      "norm_label": "google static maps",
-      "community_name": "Pok\u00e9mon World Banner Graphic",
-      "id": "app_vercel_deployments_google_static_maps"
-    },
-    {
-      "label": "Vercel Build Output API Build",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "vercel build output api build",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_vercel_build"
-    },
-    {
-      "label": "React Static Shell",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "react static shell",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_react_static_shell"
-    },
-    {
-      "label": "Nitro Fallback",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 19,
-      "norm_label": "nitro fallback",
-      "community_name": "finalize-static-shell.mjs",
-      "id": "app_vercel_deployments_nitro_fallback"
-    },
-    {
       "label": "Pok\u00e9mon World Application",
       "file_type": "document",
       "source_file": "app/README.md",
@@ -9183,9 +8988,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "pokemon world application",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_pokemon_world_application"
     },
     {
@@ -9197,9 +9002,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "full-stack react, nitro, vite, and workflow runtime",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_full_stack_runtime"
     },
     {
@@ -9211,9 +9016,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "local durable map workflow runtime",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_local_workflow_runtime"
     },
     {
@@ -9225,9 +9030,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "map generation pipeline",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_map_generation_pipeline"
     },
     {
@@ -9239,9 +9044,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "deterministic emerald world grammar",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_emerald_world_grammar"
     },
     {
@@ -9253,9 +9058,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "persistent trainer, party, item, badge, and pc system",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_trainer_system"
     },
     {
@@ -9267,9 +9072,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "pokemon world api routes",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_api_routes"
     },
     {
@@ -9281,9 +9086,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 21,
       "norm_label": "nitro and vercel deployment output",
-      "community_name": "generate-map.mjs",
+      "community_name": "Sand Terrain Sprite 1",
       "id": "app_readme_vercel_deployment"
     },
     {
@@ -9292,10 +9097,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "generate.ts",
-      "id": "app_server_services_map_generate",
-      "community_name": "package.json"
+      "community_name": "blocks.js",
+      "id": "app_server_services_map_generate"
     },
     {
       "label": "createLegacyBlocksHandler",
@@ -9303,10 +9108,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "createlegacyblockshandler",
-      "id": "app_server_services_map_generate_createlegacyblockshandler",
-      "community_name": "package.json"
+      "community_name": "blocks.js",
+      "id": "app_server_services_map_generate_createlegacyblockshandler"
     },
     {
       "label": "blocksHandler",
@@ -9314,10 +9119,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "blockshandler",
-      "id": "app_server_services_map_generate_blockshandler",
-      "community_name": "package.json"
+      "community_name": "blocks.js",
+      "id": "app_server_services_map_generate_blockshandler"
     },
     {
       "label": "isCurrentMapBlock()",
@@ -9325,10 +9130,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "iscurrentmapblock()",
-      "id": "app_server_services_map_generate_iscurrentmapblock",
-      "community_name": "package.json"
+      "community_name": "blocks.js",
+      "id": "app_server_services_map_generate_iscurrentmapblock"
     },
     {
       "label": "generateMapBlock()",
@@ -9336,10 +9141,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "generatemapblock()",
-      "id": "app_server_services_map_generate_generatemapblock",
-      "community_name": "package.json"
+      "community_name": "blocks.js",
+      "id": "app_server_services_map_generate_generatemapblock"
     },
     {
       "label": "terrain-life.ts",
@@ -9349,8 +9154,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "terrain-life.ts",
-      "id": "app_server_services_map_legacy_mods_terrain_life",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life"
     },
     {
       "label": "tileKey()",
@@ -9360,8 +9165,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "tilekey()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "label": "sourceY()",
@@ -9371,8 +9176,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "sourcey()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "label": "hashUnit()",
@@ -9382,8 +9187,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "hashunit()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "label": "lerp()",
@@ -9393,8 +9198,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "lerp()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_lerp",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_lerp"
     },
     {
       "label": "smoothstep()",
@@ -9404,8 +9209,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "smoothstep()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_smoothstep",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_smoothstep"
     },
     {
       "label": "coarseNoise()",
@@ -9415,8 +9220,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "coarsenoise()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_coarsenoise"
     },
     {
       "label": "getAutotileIndex()",
@@ -9426,8 +9231,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "getautotileindex()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
     },
     {
       "label": "getWaterTileName()",
@@ -9437,8 +9242,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "getwatertilename()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getwatertilename"
     },
     {
       "label": "terrainOf()",
@@ -9448,8 +9253,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "terrainof()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "label": "isWalkableGround()",
@@ -9459,8 +9264,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "iswalkableground()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_iswalkableground",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_iswalkableground"
     },
     {
       "label": "isGreen()",
@@ -9470,8 +9275,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "isgreen()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "label": "getTile()",
@@ -9481,8 +9286,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "gettile()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_gettile"
     },
     {
       "label": "getOffsetTile()",
@@ -9492,8 +9297,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "getoffsettile()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "label": "sameTerrainAt()",
@@ -9503,8 +9308,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "sameterrainat()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sameterrainat"
     },
     {
       "label": "neighbourTerrain()",
@@ -9514,8 +9319,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "neighbourterrain()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain"
     },
     {
       "label": "blockTiles()",
@@ -9525,8 +9330,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "blocktiles()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_blocktiles",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_blocktiles"
     },
     {
       "label": "SPAWN_ROUTE_TERRAINS",
@@ -9536,8 +9341,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "spawn_route_terrains",
-      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains"
     },
     {
       "label": "SPAWN_BRIDGE_TERRAINS",
@@ -9547,8 +9352,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "spawn_bridge_terrains",
-      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains"
     },
     {
       "label": "setTerrain()",
@@ -9558,8 +9363,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "setterrain()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_setterrain"
     },
     {
       "label": "findSpawnPath()",
@@ -9569,8 +9374,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "findspawnpath()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_findspawnpath"
     },
     {
       "label": "carveSpawnPath()",
@@ -9580,8 +9385,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "carvespawnpath()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath"
     },
     {
       "label": "sharedPortal()",
@@ -9591,8 +9396,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "sharedportal()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sharedportal",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sharedportal"
     },
     {
       "label": "waterBridgeSide()",
@@ -9602,8 +9407,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "waterbridgeside()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside"
     },
     {
       "label": "WATER_BRIDGE_NEIGHBOURS",
@@ -9613,8 +9418,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "water_bridge_neighbours",
-      "id": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours"
     },
     {
       "label": "ensureSpawnRoute()",
@@ -9624,8 +9429,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "ensurespawnroute()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute"
     },
     {
       "label": "resetBaseSprites()",
@@ -9635,8 +9440,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "resetbasesprites()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites"
     },
     {
       "label": "stitchSurfaces()",
@@ -9646,8 +9451,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchsurfaces()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces"
     },
     {
       "label": "buildingComponents()",
@@ -9657,8 +9462,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "buildingcomponents()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents"
     },
     {
       "label": "footprintAt()",
@@ -9668,8 +9473,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "footprintat()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "label": "findHouseAnchor()",
@@ -9679,8 +9484,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "findhouseanchor()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_findhouseanchor",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_findhouseanchor"
     },
     {
       "label": "stitchHouses()",
@@ -9690,8 +9495,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchhouses()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchhouses"
     },
     {
       "label": "stitchMountains()",
@@ -9701,8 +9506,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchmountains()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchmountains"
     },
     {
       "label": "isCentralLanding()",
@@ -9712,8 +9517,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "iscentrallanding()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "label": "buildReservedGround()",
@@ -9723,8 +9528,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "buildreservedground()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_buildreservedground"
     },
     {
       "label": "stitchCave()",
@@ -9734,8 +9539,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchcave()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchcave"
     },
     {
       "label": "addLine()",
@@ -9745,8 +9550,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "addline()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addline",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addline"
     },
     {
       "label": "stitchSecretGrove()",
@@ -9756,8 +9561,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchsecretgrove()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove"
     },
     {
       "label": "stitchLedges()",
@@ -9767,8 +9572,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchledges()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchledges"
     },
     {
       "label": "addSigns()",
@@ -9778,8 +9583,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "addsigns()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addsigns"
     },
     {
       "label": "stitchWorldStructure()",
@@ -9789,8 +9594,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "stitchworldstructure()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure"
     },
     {
       "label": "addForestClusters()",
@@ -9800,8 +9605,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "addforestclusters()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addforestclusters"
     },
     {
       "label": "addLife()",
@@ -9811,8 +9616,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "addlife()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addlife"
     },
     {
       "label": "terrainLife()",
@@ -9822,8 +9627,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "terrainlife()",
-      "id": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "community_name": "devDependencies"
+      "community_name": "devDependencies",
+      "id": "app_server_services_map_legacy_mods_terrain_life_terrainlife"
     },
     {
       "label": "procedural-world-properties.test.ts",
@@ -9833,8 +9638,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "procedural-world-properties.test.ts",
-      "id": "app_tests_procedural_world_properties_test",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test"
     },
     {
       "label": "TERRAIN_KINDS",
@@ -9844,8 +9649,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "terrain_kinds",
-      "id": "app_tests_procedural_world_properties_test_terrain_kinds",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_terrain_kinds"
     },
     {
       "label": "CARDINAL",
@@ -9855,8 +9660,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "cardinal",
-      "id": "app_tests_procedural_world_properties_test_cardinal",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_cardinal"
     },
     {
       "label": "sample()",
@@ -9866,8 +9671,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "sample()",
-      "id": "app_tests_procedural_world_properties_test_sample",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_sample"
     },
     {
       "label": "grid()",
@@ -9877,8 +9682,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "grid()",
-      "id": "app_tests_procedural_world_properties_test_grid",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_grid"
     },
     {
       "label": "isRoute()",
@@ -9888,8 +9693,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "isroute()",
-      "id": "app_tests_procedural_world_properties_test_isroute",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_isroute"
     },
     {
       "label": "routeCoordinates()",
@@ -9899,8 +9704,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "routecoordinates()",
-      "id": "app_tests_procedural_world_properties_test_routecoordinates",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_routecoordinates"
     },
     {
       "label": "cardinalComponents()",
@@ -9910,8 +9715,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "cardinalcomponents()",
-      "id": "app_tests_procedural_world_properties_test_cardinalcomponents",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_cardinalcomponents"
     },
     {
       "label": "largestSolidRouteSquare()",
@@ -9921,8 +9726,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "largestsolidroutesquare()",
-      "id": "app_tests_procedural_world_properties_test_largestsolidroutesquare",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_largestsolidroutesquare"
     },
     {
       "label": "broadWalk()",
@@ -9932,8 +9737,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "broadwalk()",
-      "id": "app_tests_procedural_world_properties_test_broadwalk",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_broadwalk"
     },
     {
       "label": "makeUniformState()",
@@ -9943,8 +9748,8 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "makeuniformstate()",
-      "id": "app_tests_procedural_world_properties_test_makeuniformstate",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_makeuniformstate"
     },
     {
       "label": "sourceY()",
@@ -9954,8 +9759,64 @@
       "_origin": "ast",
       "community": 17,
       "norm_label": "sourcey()",
-      "id": "app_tests_procedural_world_properties_test_sourcey",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "app_tests_procedural_world_properties_test_sourcey"
+    },
+    {
+      "label": "Dense World Desktop Screenshot",
+      "file_type": "image",
+      "source_file": "docs/qa/dense-world-desktop.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 12,
+      "norm_label": "dense world desktop screenshot",
+      "community_name": "devDependencies",
+      "id": "docs_procedural_world_acceptance_dense_world_desktop"
+    },
+    {
+      "label": "Dense World Mobile Screenshot",
+      "file_type": "image",
+      "source_file": "docs/qa/dense-world-mobile.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 12,
+      "norm_label": "dense world mobile screenshot",
+      "community_name": "devDependencies",
+      "id": "docs_procedural_world_acceptance_dense_world_mobile"
+    },
+    {
+      "label": "Trainer Party Desktop Screenshot",
+      "file_type": "image",
+      "source_file": "docs/qa/trainer-party-desktop.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 12,
+      "norm_label": "trainer party desktop screenshot",
+      "community_name": "devDependencies",
+      "id": "docs_procedural_world_acceptance_trainer_party_desktop"
+    },
+    {
+      "label": "Trainer PC Mobile Screenshot",
+      "file_type": "image",
+      "source_file": "docs/qa/trainer-pc-mobile.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 12,
+      "norm_label": "trainer pc mobile screenshot",
+      "community_name": "devDependencies",
+      "id": "docs_procedural_world_acceptance_trainer_pc_mobile"
     },
     {
       "label": "Procedural Emerald World Acceptance Checklist",
@@ -10140,62 +10001,6 @@
       "community_name": "devDependencies"
     },
     {
-      "label": "Dense World Desktop Screenshot",
-      "file_type": "image",
-      "source_file": "docs/qa/dense-world-desktop.png",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 12,
-      "norm_label": "dense world desktop screenshot",
-      "id": "docs_procedural_world_acceptance_dense_world_desktop",
-      "community_name": "devDependencies"
-    },
-    {
-      "label": "Dense World Mobile Screenshot",
-      "file_type": "image",
-      "source_file": "docs/qa/dense-world-mobile.png",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 12,
-      "norm_label": "dense world mobile screenshot",
-      "id": "docs_procedural_world_acceptance_dense_world_mobile",
-      "community_name": "devDependencies"
-    },
-    {
-      "label": "Trainer Party Desktop Screenshot",
-      "file_type": "image",
-      "source_file": "docs/qa/trainer-party-desktop.png",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 12,
-      "norm_label": "trainer party desktop screenshot",
-      "id": "docs_procedural_world_acceptance_trainer_party_desktop",
-      "community_name": "devDependencies"
-    },
-    {
-      "label": "Trainer PC Mobile Screenshot",
-      "file_type": "image",
-      "source_file": "docs/qa/trainer-pc-mobile.png",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 12,
-      "norm_label": "trainer pc mobile screenshot",
-      "id": "docs_procedural_world_acceptance_trainer_pc_mobile",
-      "community_name": "devDependencies"
-    },
-    {
       "label": "Workflow Run wrun_01KXV49Z69SSZ6Q5RZXCC60Z2P",
       "file_type": "concept",
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
@@ -10222,6 +10027,230 @@
       "norm_label": "native chrome desktop and mobile verification",
       "id": "docs_procedural_world_acceptance_native_chrome_verification",
       "community_name": "devDependencies"
+    },
+    {
+      "label": "Pokeworld Vercel Project",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": "https://vercel.com/lopugits-projects/pokeworld",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "pokeworld vercel project",
+      "id": "app_vercel_deployments_pokeworld_vercel_project",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "lopugit/pokeworld GitHub Repository",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": "https://github.com/lopugit/pokeworld",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "lopugit/pokeworld github repository",
+      "id": "app_vercel_deployments_pokeworld_github_repository",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Main Branch Production Deployment",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "main branch production deployment",
+      "id": "app_vercel_deployments_main_production_deployment",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Automatic Branch Preview Deployments",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "automatic branch preview deployments",
+      "id": "app_vercel_deployments_branch_preview_deployments",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Final Dense Procedural World Preview",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": "https://pokeworld-it1tq88z9-lopugits-projects.vercel.app",
+      "captured_at": "2026-07-19",
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "final dense procedural world preview",
+      "id": "app_vercel_deployments_final_dense_world_preview",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Stable Dense-World Branch Alias",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": "https://pokeworld-git-codex-dense-pokemon-worlds-lopugits-projects.vercel.app",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "stable dense-world branch alias",
+      "id": "app_vercel_deployments_stable_dense_world_alias",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Verified App-Root Deployment",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": "https://pokeworld-f0vewe7wm-lopugits-projects.vercel.app",
+      "captured_at": "2026-07-19",
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "verified app-root deployment",
+      "id": "app_vercel_deployments_app_root_deployment",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Commit 5188647",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-07-19",
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "commit 5188647",
+      "id": "app_vercel_deployments_commit_5188647",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Pull Request 7",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "pull request 7",
+      "id": "app_vercel_deployments_pr_7",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Vercel Workflow Managed Queue",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "vercel workflow managed queue",
+      "id": "app_vercel_deployments_vercel_workflow",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Map Jobs API",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "map jobs api",
+      "id": "app_vercel_deployments_map_jobs_api",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Health API",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "health api",
+      "id": "app_vercel_deployments_api_health",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Offline Map Mode",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "offline map mode",
+      "id": "app_vercel_deployments_offline_map_mode",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "MongoDB and Google Production Persistence",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "mongodb and google production persistence",
+      "id": "app_vercel_deployments_production_persistence",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Vercel Build Process",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "vercel build process",
+      "id": "app_vercel_deployments_vercel_build",
+      "community_name": "generate-map.mjs"
+    },
+    {
+      "label": "Vercel Build Output API",
+      "file_type": "concept",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "vercel build output api",
+      "id": "app_vercel_deployments_build_output_api",
+      "community_name": "generate-map.mjs"
     }
   ],
   "links": [
@@ -21203,136 +21232,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_deployments",
-      "target": "app_vercel_deployments_pokeworld_github_repository"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_deployments",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_dense_world_preview",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_pokeworld_vercel_project",
-      "target": "app_vercel_deployments_pokeworld_github_repository"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_stable_branch_alias",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_verified_app_root_deployment",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.92,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_dense_world_preview",
-      "target": "app_vercel_deployments_map_jobs_api"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_map_jobs_api",
-      "target": "app_vercel_deployments_vercel_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_vercel_workflow"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_offline_map_mode",
-      "target": "app_vercel_deployments_google_static_maps"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_offline_map_mode",
-      "target": "app_vercel_deployments_mongodb"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_nitro_fallback"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_react_static_shell"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "app/README.md",
       "source_location": null,
       "weight": 1.0,
@@ -23104,6 +23003,46 @@
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
       "source_location": null,
       "weight": 1.0,
+      "source": "docs_procedural_world_acceptance_visual_evidence",
+      "target": "docs_procedural_world_acceptance_dense_world_desktop"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_procedural_world_acceptance_visual_evidence",
+      "target": "docs_procedural_world_acceptance_dense_world_mobile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_procedural_world_acceptance_visual_evidence",
+      "target": "docs_procedural_world_acceptance_trainer_party_desktop"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_procedural_world_acceptance_visual_evidence",
+      "target": "docs_procedural_world_acceptance_trainer_pc_mobile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": null,
+      "weight": 1.0,
       "source": "docs_procedural_world_acceptance_acceptance_checklist",
       "target": "docs_procedural_world_acceptance_emerald_tiles_and_sprites"
     },
@@ -23271,41 +23210,141 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_visual_evidence",
-      "target": "docs_procedural_world_acceptance_dense_world_desktop"
+      "source": "app_vercel_deployments_app_root_deployment",
+      "target": "app_vercel_deployments_pokeworld_vercel_project"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_visual_evidence",
-      "target": "docs_procedural_world_acceptance_dense_world_mobile"
+      "source": "app_vercel_deployments_main_production_deployment",
+      "target": "app_vercel_deployments_pokeworld_vercel_project"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_visual_evidence",
-      "target": "docs_procedural_world_acceptance_trainer_party_desktop"
+      "source": "app_vercel_deployments_pokeworld_vercel_project",
+      "target": "app_vercel_deployments_pokeworld_github_repository"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_visual_evidence",
-      "target": "docs_procedural_world_acceptance_trainer_pc_mobile"
+      "source": "app_vercel_deployments_branch_preview_deployments",
+      "target": "app_vercel_deployments_pokeworld_github_repository"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_branch_preview_deployments",
+      "target": "app_vercel_deployments_offline_map_mode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_stable_dense_world_alias",
+      "target": "app_vercel_deployments_branch_preview_deployments"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_final_dense_world_preview",
+      "target": "app_vercel_deployments_api_health"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_final_dense_world_preview",
+      "target": "app_vercel_deployments_commit_5188647"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_final_dense_world_preview",
+      "target": "app_vercel_deployments_map_jobs_api"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_commit_5188647",
+      "target": "app_vercel_deployments_pr_7"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_map_jobs_api",
+      "target": "app_vercel_deployments_vercel_workflow"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_vercel_build",
+      "target": "app_vercel_deployments_vercel_workflow"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_offline_map_mode",
+      "target": "app_vercel_deployments_production_persistence"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "app_vercel_deployments_vercel_build",
+      "target": "app_vercel_deployments_build_output_api"
     }
   ],
   "hyperedges": [
@@ -23351,6 +23390,48 @@
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md"
     },
     {
+      "id": "verified_dense_world_deployment_flow",
+      "label": "Verified Dense-World Deployment Flow",
+      "nodes": [
+        "app_vercel_deployments_pr_7",
+        "app_vercel_deployments_commit_5188647",
+        "app_vercel_deployments_final_dense_world_preview",
+        "app_vercel_deployments_stable_dense_world_alias"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md"
+    },
+    {
+      "id": "offline_workflow_map_generation",
+      "label": "Offline Workflow Map Generation",
+      "nodes": [
+        "app_vercel_deployments_final_dense_world_preview",
+        "app_vercel_deployments_offline_map_mode",
+        "app_vercel_deployments_map_jobs_api",
+        "app_vercel_deployments_vercel_workflow"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md"
+    },
+    {
+      "id": "vercel_build_and_runtime_verification",
+      "label": "Vercel Build and Runtime Verification",
+      "nodes": [
+        "app_vercel_deployments_vercel_build",
+        "app_vercel_deployments_build_output_api",
+        "app_vercel_deployments_api_health",
+        "app_vercel_deployments_pokeworld_vercel_project"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "app/VERCEL_DEPLOYMENTS.md"
+    },
+    {
       "id": "pokemon_world_full_stack_runtime",
       "label": "Pok\u00e9mon World Full-Stack Runtime",
       "nodes": [
@@ -23363,48 +23444,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 0.95,
       "source_file": "app/README.md"
-    },
-    {
-      "id": "verified_pokeworld_deployments",
-      "label": "Verified Pokeworld Preview Deployments",
-      "nodes": [
-        "app_vercel_deployments_dense_world_preview",
-        "app_vercel_deployments_stable_branch_alias",
-        "app_vercel_deployments_verified_app_root_deployment",
-        "app_vercel_deployments_pokeworld_vercel_project"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md"
-    },
-    {
-      "id": "offline_preview_data_isolation",
-      "label": "Offline Preview Data Isolation",
-      "nodes": [
-        "app_vercel_deployments_offline_map_mode",
-        "app_vercel_deployments_mongodb",
-        "app_vercel_deployments_google_static_maps"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md"
-    },
-    {
-      "id": "vercel_build_delivery_stack",
-      "label": "Vercel Build Delivery Stack",
-      "nodes": [
-        "app_vercel_deployments_vercel_build",
-        "app_vercel_deployments_react_static_shell",
-        "app_vercel_deployments_nitro_fallback",
-        "app_vercel_deployments_vercel_workflow"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.96,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md"
     }
   ],
-  "built_at_commit": "27e9fc8efd894edb79aee77bfbdfe65052baf35a"
+  "built_at_commit": "cff830931a659060601737cebbc381b7c91efa89"
 }

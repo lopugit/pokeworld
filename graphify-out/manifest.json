@@ -295,9 +295,9 @@
     "semantic_hash": "30e44bf692b9dd1feb61caef628e3781"
   },
   "app/VERCEL_DEPLOYMENTS.md": {
-    "mtime": 1784394239.7134326,
-    "ast_hash": "74c00fa1b78158b1bf3eff97b495b1b8",
-    "semantic_hash": "74c00fa1b78158b1bf3eff97b495b1b8"
+    "mtime": 1784395915.5519195,
+    "ast_hash": "6627f8606217e93664e19adb2e1463c9",
+    "semantic_hash": ""
   },
   "app/index.html": {
     "mtime": 1784378344.7982473,
@@ -1077,7 +1077,7 @@
   "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
     "mtime": 1784395676.5074446,
     "ast_hash": "8d17f963fb0a4ad6e112c7d5d6234a7b",
-    "semantic_hash": ""
+    "semantic_hash": "8d17f963fb0a4ad6e112c7d5d6234a7b"
   },
   "docs/qa/dense-world-desktop.png": {
     "mtime": 1784394996.3356688,
