@@ -7,50 +7,130 @@ const assertCrop = (source, left, top, width, height) => {
 	}
 }
 
-const createSolidPng = (width, height, { r, g, b, alpha = 255 }) => {
-	const image = new PNG({ width, height })
-	for (let index = 0; index < image.data.length; index += 4) {
-		image.data[index] = r
-		image.data[index + 1] = g
-		image.data[index + 2] = b
-		image.data[index + 3] = alpha
+const asBuffer = data => Buffer.isBuffer(data)
+	? data
+	: Buffer.from(data.buffer, data.byteOffset, data.byteLength)
+
+const decodePng = input => {
+	const image = PNG.sync.read(input)
+	return {
+		width: image.width,
+		height: image.height,
+		data: image.data,
 	}
-	return PNG.sync.write(image)
 }
 
-const cropPng = (input, { left, top, width, height }) => {
-	const source = PNG.sync.read(input)
+const encodePng = image => PNG.sync.write({
+	width: image.width,
+	height: image.height,
+	data: asBuffer(image.data),
+})
+
+const cropRgba = (source, { left, top, width, height }) => {
 	assertCrop(source, left, top, width, height)
 
-	const output = new PNG({ width, height })
+	const sourceData = asBuffer(source.data)
+	const outputData = Buffer.allocUnsafe(width * height * 4)
 	for (let y = 0; y < height; y++) {
 		const sourceStart = ((top + y) * source.width + left) * 4
 		const outputStart = y * width * 4
-		source.data.copy(output.data, outputStart, sourceStart, sourceStart + width * 4)
+		sourceData.copy(outputData, outputStart, sourceStart, sourceStart + width * 4)
 	}
 
-	return PNG.sync.write(output)
+	return { width, height, data: outputData }
 }
 
-const imageToRgbaMatrix = input => {
-	const image = PNG.sync.read(input)
-	const matrix = new Array(image.height)
+const cropPngWithRgba = (input, crop) => {
+	const rgba = cropRgba(decodePng(input), crop)
+	return {
+		image: encodePng(rgba),
+		rgba,
+	}
+}
 
-	for (let y = 0; y < image.height; y++) {
-		const row = new Array(image.width)
-		for (let x = 0; x < image.width; x++) {
-			const index = (y * image.width + x) * 4
-			row[x] = [
-				image.data[index],
-				image.data[index + 1],
-				image.data[index + 2],
-				image.data[index + 3],
-			]
+const cropPng = (input, crop) => cropPngWithRgba(input, crop).image
+
+const createSolidRgba = (width, height, { r, g, b, alpha = 255 }) => {
+	const data = Buffer.allocUnsafe(width * height * 4)
+	for (let index = 0; index < data.length; index += 4) {
+		data[index] = r
+		data[index + 1] = g
+		data[index + 2] = b
+		data[index + 3] = alpha
+	}
+	return { width, height, data }
+}
+
+const createSolidPngWithRgba = (width, height, colour) => {
+	const rgba = createSolidRgba(width, height, colour)
+	return {
+		image: encodePng(rgba),
+		rgba,
+	}
+}
+
+const createSolidPng = (width, height, colour) => createSolidPngWithRgba(width, height, colour).image
+
+// Summarize the decoded pixels directly. The original implementation first
+// allocated a four-number array for every pixel and then constructed an RGB
+// string for all 262,144 pixels. Packing RGB into an integer keeps the hot loop
+// allocation-light; strings are created only once per distinct colour/tile.
+const rgbaToTileColourData = (source, tileSize = 32) => {
+	if (!Number.isInteger(tileSize) || tileSize < 1 || source.width % tileSize || source.height % tileSize) {
+		throw new RangeError(`${source.width}x${source.height} cannot be divided into ${tileSize}px tiles`)
+	}
+
+	const data = asBuffer(source.data)
+	const expectedBytes = source.width * source.height * 4
+	if (data.length < expectedBytes) {
+		throw new RangeError(`RGBA buffer contains ${data.length} bytes; expected at least ${expectedBytes}`)
+	}
+
+	const colourData = {}
+	const tilesWide = source.width / tileSize
+	const tilesHigh = source.height / tileSize
+
+	for (let tileY = 0; tileY < tilesHigh; tileY++) {
+		for (let tileX = 0; tileX < tilesWide; tileX++) {
+			const counts = new Map()
+			const pixelStartX = tileX * tileSize
+			const pixelEndY = (tileY + 1) * tileSize
+
+			for (let pixelY = tileY * tileSize; pixelY < pixelEndY; pixelY++) {
+				let index = ((pixelY * source.width) + pixelStartX) * 4
+				const rowEnd = index + (tileSize * 4)
+				for (; index < rowEnd; index += 4) {
+					const packedRgb = (data[index] << 16) | (data[index + 1] << 8) | data[index + 2]
+					counts.set(packedRgb, (counts.get(packedRgb) || 0) + 1)
+				}
+			}
+
+			const colourCounts = {}
+			let maxColour = null
+			let maxCount = 0
+			for (const [packedRgb, count] of counts) {
+				const colour = `${packedRgb >>> 16},${(packedRgb >>> 8) & 255},${packedRgb & 255}`
+				colourCounts[colour] = count
+				if (count > maxCount) {
+					maxColour = colour
+					maxCount = count
+				}
+			}
+			colourCounts.max = maxColour
+			colourData[`${tileX},${tileY}`] = colourCounts
 		}
-		matrix[y] = row
 	}
 
-	return matrix
+	return colourData
 }
 
-export { createSolidPng, cropPng, imageToRgbaMatrix }
+export {
+	createSolidPng,
+	createSolidPngWithRgba,
+	cropPng,
+	cropPngWithRgba,
+	cropRgba,
+	decodePng,
+	encodePng,
+	rgbaToTileColourData,
+}

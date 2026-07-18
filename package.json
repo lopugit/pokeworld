@@ -19,6 +19,7 @@
     "pms-stop": "pnpm --dir app pms-stop",
     "workflow:inspect": "pnpm --dir app workflow:inspect",
     "workflow:web": "pnpm --dir app workflow:web",
-    "map:generate": "pnpm --dir app map:generate"
+    "map:generate": "pnpm --dir app map:generate",
+    "benchmark:map": "pnpm --dir app benchmark:map"
   }
 }
