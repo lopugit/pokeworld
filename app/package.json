@@ -20,7 +20,8 @@
     "pms-stop": "node scripts/pm2.mjs stop",
     "workflow:inspect": "workflow inspect runs",
     "workflow:web": "workflow web",
-    "map:generate": "node scripts/map/generate-map.mjs"
+    "map:generate": "node scripts/map/generate-map.mjs",
+    "benchmark:map": "node scripts/benchmark-map-pipeline.mjs"
   },
   "dependencies": {
     "dotenv": "17.2.3",

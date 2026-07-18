@@ -10,7 +10,10 @@ import log from './log'
 import * as mapSource from './map-source'
 import { classifyTerrainPng, summarizeTerrain } from '../terrain-classifier'
 import { v4 as uuidv4 } from 'uuid'
-import { imageToRgbaMatrix } from './png'
+import { rgbaToTileColourData } from './png'
+
+const sortedMods = [...mods].sort((a, b) => a.priority - b.priority)
+const coordinateKey = value => `${value.x},${value.y}`
 
 // Generated coordinate data (gitignored); tolerate absence so the server boots.
 let latsDb = []
@@ -97,7 +100,10 @@ const toExport = version => {
 				blockDb,
 				lats: latsDb,
 				lngs: lngsDb,
-				mods,
+				maps: {
+					pending: new Map(),
+				},
+				mods: sortedMods,
 			}
 
 			await initBlocks(state)
@@ -158,9 +164,14 @@ const toExport = version => {
 	const initBlocks = async state => {
 		populateBlocks(state)
 
+		// Explicit regeneration is known before the first Mongo read, so start the
+		// Google request immediately and overlap it with DB synchronization/locking.
+		if (state.regenerate) prefetchBlockMaps(state)
+
 		await syncBlocks(state)
 
 		scanBlocks(state)
+		prefetchBlockMaps(state)
 
 	}
 
@@ -231,24 +242,30 @@ const toExport = version => {
 
 	const syncBlocks = async state => {
 		if (!client) return
-		const blockDb = await client.db(process.env.MONGODB_DB || 'pokeworld').collection('blocks')
+		const coordinates = state.blocks.all.map(block => ({ x: block.x, y: block.y }))
+		const dbBlocks = await state.blockDb.find({ $or: coordinates }).toArray()
+		const dbBlocksByCoordinate = new Map(dbBlocks.map(block => [coordinateKey(block), block]))
 
-		const proms = []
 		for (const block of state.blocks.all) {
-			proms.push(blockDb.findOne({
-				x: block.x,
-				y: block.y,
-			}))
+			const dbBlock = dbBlocksByCoordinate.get(coordinateKey(block))
+			if (dbBlock) Object.assign(block, dbBlock)
 		}
 
-		const dbBlocks = await Promise.all(proms)
+	}
 
-		state.blocks.all.forEach((block, i) => {
-			if (dbBlocks[i]) {
-				Object.assign(block, dbBlocks[i])
+	const prefetchBlockMaps = state => {
+		for (const block of state.blocks.generate) {
+			if (!block.regenerate && !state.regenerate) continue
+			const key = coordinateKey(block)
+			if (!state.maps.pending.has(key)) {
+				const pending = functions.getMapAtWithSource(block.lat, block.lng, 20)
+				// Attach a handler immediately so a very fast rejection cannot become an
+				// unhandled promise while Mongo work is still in progress. The original
+				// promise remains in the map and still rejects when awaited below.
+				pending.catch(() => {})
+				state.maps.pending.set(key, pending)
 			}
-		})
-
+		}
 	}
 
 	const scanBlocks = async state => {
@@ -306,24 +323,13 @@ const toExport = version => {
 							const dateNow = Date.now()
 							const writeable = dbBlocks.every(block => block.lockId === state.lockId || (dateNow - block.lockDate > 1000 * 60))
 							if (writeable) {
-								const proms = []
-								for (const block of state.blocks.all) {
-									proms.push(
-										state.blockDb.findOneAndUpdate({
-											x: block.x,
-											y: block.y,
-										}, {
-											$set: {
-												lockId: null,
-												lockDate: null,
-											},
-										}, {
-											upsert: true,
-										}),
-									)
-								}
-
-								await Promise.all(proms)
+								await state.blockDb.bulkWrite(state.blocks.all.map(block => ({
+									updateOne: {
+										filter: { x: block.x, y: block.y },
+										update: { $set: { lockId: null, lockDate: null } },
+										upsert: true,
+									},
+								})), { ordered: false })
 							}
 						} finally {
 							// session.endSession()
@@ -353,27 +359,20 @@ const toExport = version => {
 						const writeable = dbBlocks.every(block => !block.lockId || (Date.now() - block.lockDate > 1000 * 60))
 						if (writeable) {
 							clearInterval(blockWriteLockInterval)
-							const proms = []
 							const lockDate = Date.now()
 							for (const block of state.blocks.all) {
 								block.lockId = state.lockId
 								block.lockDate = lockDate
 								delete block.tiles
-								proms.push(
-									state.blockDb.findOneAndUpdate({
-										x: block.x,
-										y: block.y,
-									}, {
-										$set: {
-											...block,
-										},
-									}, {
-										upsert: true,
-									}),
-								)
 							}
 
-							await Promise.all(proms)
+							await state.blockDb.bulkWrite(state.blocks.all.map(block => ({
+								updateOne: {
+									filter: { x: block.x, y: block.y },
+									update: { $set: { ...block } },
+									upsert: true,
+								},
+							})), { ordered: false })
 							resolve()
 						}
 					}, transactionOptions)
@@ -389,28 +388,25 @@ const toExport = version => {
 		const blocks = [...state.blocks.generate, ...state.blocks.edges]
 		const saveStartTime = Date.now()
 
-		const proms = []
+		const blocksToSave = []
 		for (const block of blocks) {
 			if (block.regenerate) {
 				block.needsSaving = false
 				block.needsSprites = false
 				block.regenerate = false
-				const prom = state.blockDb.findOneAndUpdate({
-					x: block.x,
-					y: block.y,
-				}, {
-					$set: {
-						...block,
-					},
-				}, {
-					upsert: true,
-				})
-
-				proms.push(prom)
+				blocksToSave.push(block)
 			}
 		}
 
-		await Promise.all(proms)
+		if (blocksToSave.length) {
+			await state.blockDb.bulkWrite(blocksToSave.map(block => ({
+				updateOne: {
+					filter: { x: block.x, y: block.y },
+					update: { $set: { ...block } },
+					upsert: true,
+				},
+			})), { ordered: false })
+		}
 
 		const saveEndTime = Date.now()
 
@@ -474,9 +470,7 @@ const toExport = version => {
 
 		const startTime = Date.now()
 
-		const sortedMods = [...state.mods].sort((a, b) => a.priority - b.priority)
-
-		for (const mod of sortedMods) {
+		for (const mod of state.mods) {
 			mod.run(state, block)
 		}
 
@@ -488,7 +482,13 @@ const toExport = version => {
 
 	const generateBlockColourData = async (state, block) => {
 
-		const mapResult = await functions.getMapAtWithSource(block.lat, block.lng, 20)
+		const mapKey = coordinateKey(block)
+		let mapResult
+		try {
+			mapResult = await (state.maps.pending.get(mapKey) || functions.getMapAtWithSource(block.lat, block.lng, 20))
+		} finally {
+			state.maps.pending.delete(mapKey)
+		}
 		const googleMap = mapResult.image
 
 		block.googleMap = googleMap.toString('base64')
@@ -500,48 +500,7 @@ const toExport = version => {
 		})
 		block.terrainSummary = summarizeTerrain(terrainData)
 
-		const colourDataRaw = imageToRgbaMatrix(googleMap)
-
-		const colourData = {}
-
-		for (let idx = 0; idx < colourDataRaw.length; idx++) {
-			const x = colourDataRaw[idx]
-			for (let idy = 0; idy < x.length; idy++) {
-				const y = x[idy]
-				const tileX = Math.floor(idx / 32)
-				const tileY = Math.floor(idy / 32)
-				if (!colourData[tileY + ',' + tileX]) {
-					colourData[tileY + ',' + tileX] = {}
-				}
-
-				colourData[tileY + ',' + tileX][y[0] + ',' + y[1] + ',' + y[2]] = colourData[tileY + ',' + tileX][y[0] + ',' + y[1] + ',' + y[2]] + 1 || 1
-			}
-		}
-
-		const colourKeys = Object.keys(colourData)
-		for (const key of colourKeys) {
-			const colourCounts = colourData[key]
-			const colours = Object.keys(colourCounts)
-			let maxColour = null
-			let maxCount = 0
-			for (const colour of colours) {
-				if (colourCounts[colour] > maxCount) {
-					maxColour = colour
-					maxCount = colourCounts[colour]
-				}
-			}
-
-			colourCounts.max = maxColour
-		}
-
-		const stats = {
-			count: 0,
-			total: 512 / 32 * 512 / 32,
-		}
-
-		const inter = setInterval(() => {
-			log('Processed', stats.count, 'out of', stats.total, 'tiles')
-		}, 1000)
+		const colourData = rgbaToTileColourData(mapResult.rgba, 32)
 
 		block.tiles = []
 
@@ -564,12 +523,9 @@ const toExport = version => {
 					terrainCoverage: terrainData[offsetY][offsetX].coverage,
 				}
 				block.tiles.push(tile)
-				stats.count++
 				state.tiles.cache[tile.mapX + ',' + tile.mapY] = tile
 			}
 		}
-
-		clearInterval(inter)
 
 	}
 
