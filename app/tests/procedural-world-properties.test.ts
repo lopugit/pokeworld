@@ -96,7 +96,7 @@ function broadWalk(seed: number): TerrainSample[][] {
   return values;
 }
 
-function makeUniformState(blockX = 0, blockY = 0) {
+function makeUniformState(blockX = 0, blockY = 0, terrain: TerrainKind = "grass") {
   const cache: Record<string, MapTile> = {};
   const tiles: MapTile[] = [];
   for (let x = 0; x < 16; x += 1) {
@@ -109,7 +109,7 @@ function makeUniformState(blockX = 0, blockY = 0) {
         mapY: blockY * 512 + (15 - sourceY) * 32,
         x,
         y: 15 - sourceY,
-        terrain: "grass",
+        terrain,
       };
       cache[`${tile.mapX},${tile.mapY}`] = tile;
       tiles.push(tile);
@@ -231,6 +231,55 @@ describe("procedural world acceptance properties", () => {
 
     const south = makeUniformState(4, -3);
     const north = makeUniformState(4, -2);
+    terrainLife.run(south.state, south.block);
+    terrainLife.run(north.state, north.block);
+    expect(
+      south.block.tiles
+        .filter((tile) => sourceY(tile) === 0 && isRoute(tile.terrain))
+        .map((tile) => tile.x),
+    ).toEqual(
+      north.block.tiles
+        .filter((tile) => sourceY(tile) === 15 && isRoute(tile.terrain))
+        .map((tile) => tile.x),
+    );
+  });
+
+  it("builds a deterministic walkable bridge for an all-water spawn", () => {
+    const first = makeUniformState(31, -12, "water");
+    const second = makeUniformState(31, -12, "water");
+    terrainLife.run(first.state, first.block);
+    terrainLife.run(second.state, second.block);
+
+    const route = first.block.tiles.filter((tile) => isRoute(tile.terrain));
+    expect(route.map((tile) => [tile.x, tile.y, tile.terrain])).toEqual(
+      second.block.tiles
+        .filter((tile) => isRoute(tile.terrain))
+        .map((tile) => [tile.x, tile.y, tile.terrain]),
+    );
+    expect(route.length).toBeGreaterThan(0);
+    expect(route.every((tile) => tile.solid !== true)).toBe(true);
+    expect(
+      route.some((tile) => tile.x === 0 || tile.x === 15 || sourceY(tile) === 0 || sourceY(tile) === 15),
+    ).toBe(true);
+  });
+
+  it("matches deterministic all-water bridge portals between neighboring blocks", () => {
+    const west = makeUniformState(31, -12, "water");
+    const east = makeUniformState(32, -12, "water");
+    terrainLife.run(west.state, west.block);
+    terrainLife.run(east.state, east.block);
+    expect(
+      west.block.tiles
+        .filter((tile) => tile.x === 15 && isRoute(tile.terrain))
+        .map(sourceY),
+    ).toEqual(
+      east.block.tiles
+        .filter((tile) => tile.x === 0 && isRoute(tile.terrain))
+        .map(sourceY),
+    );
+
+    const south = makeUniformState(31, -12, "water");
+    const north = makeUniformState(31, -11, "water");
     terrainLife.run(south.state, south.block);
     terrainLife.run(north.state, north.block);
     expect(
