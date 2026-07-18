@@ -78,6 +78,486 @@
   },
   "nodes": [
     {
+      "label": "Game.tsx",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_components_game",
+      "community": 2,
+      "norm_label": "game.tsx"
+    },
+    {
+      "label": "defaultCoordinates",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "app_src_components_game_defaultcoordinates",
+      "community": 2,
+      "norm_label": "defaultcoordinates"
+    },
+    {
+      "label": "GameSettings",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "app_src_components_game_gamesettings",
+      "community": 2,
+      "norm_label": "gamesettings"
+    },
+    {
+      "label": "MapView",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "app_src_components_game_mapview",
+      "community": 2,
+      "norm_label": "mapview"
+    },
+    {
+      "label": "MoveAction",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "app_src_components_game_moveaction",
+      "community": 2,
+      "norm_label": "moveaction"
+    },
+    {
+      "label": "PlayerState",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "app_src_components_game_playerstate",
+      "community": 2,
+      "norm_label": "playerstate"
+    },
+    {
+      "label": "GameComponentState",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "app_src_components_game_gamecomponentstate",
+      "community": 2,
+      "norm_label": "gamecomponentstate"
+    },
+    {
+      "label": "StoredImage",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "app_src_components_game_storedimage",
+      "community": 2,
+      "norm_label": "storedimage"
+    },
+    {
+      "label": "isFiniteNumber()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "app_src_components_game_isfinitenumber",
+      "community": 2,
+      "norm_label": "isfinitenumber()"
+    },
+    {
+      "label": "Game",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "app_src_components_game_game",
+      "community": 2,
+      "norm_label": "game"
+    },
+    {
+      "label": ".componentDidMount()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L167",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_componentdidmount",
+      "community": 2,
+      "norm_label": ".componentdidmount()"
+    },
+    {
+      "label": ".componentWillUnmount()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L172",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_componentwillunmount",
+      "community": 2,
+      "norm_label": ".componentwillunmount()"
+    },
+    {
+      "label": ".setStateAsync()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L184",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_setstateasync",
+      "community": 2,
+      "norm_label": ".setstateasync()"
+    },
+    {
+      "label": ".initialize()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L187",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_initialize",
+      "community": 2,
+      "norm_label": ".initialize()"
+    },
+    {
+      "label": ".getLocation()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_getlocation",
+      "community": 2,
+      "norm_label": ".getlocation()"
+    },
+    {
+      "label": ".initializeGame()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_initializegame",
+      "community": 2,
+      "norm_label": ".initializegame()"
+    },
+    {
+      "label": ".initializeMap()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L257",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_initializemap",
+      "community": 2,
+      "norm_label": ".initializemap()"
+    },
+    {
+      "label": ".initializePlayer()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L298",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_initializeplayer",
+      "community": 2,
+      "norm_label": ".initializeplayer()"
+    },
+    {
+      "label": ".withUpdatedPlayerBlock()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L324",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_withupdatedplayerblock",
+      "community": 2,
+      "norm_label": ".withupdatedplayerblock()"
+    },
+    {
+      "label": ".onKeydown()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L339",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_onkeydown",
+      "community": 2,
+      "norm_label": ".onkeydown()"
+    },
+    {
+      "label": ".action()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L352",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_action",
+      "community": 2,
+      "norm_label": ".action()"
+    },
+    {
+      "label": ".resizeGame()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L402",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_resizegame",
+      "community": 2,
+      "norm_label": ".resizegame()"
+    },
+    {
+      "label": ".restoreBoardWidth()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L416",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_restoreboardwidth",
+      "community": 2,
+      "norm_label": ".restoreboardwidth()"
+    },
+    {
+      "label": ".startBoardResize()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L423",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_startboardresize",
+      "community": 2,
+      "norm_label": ".startboardresize()"
+    },
+    {
+      "label": ".onBoardResize()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L437",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_onboardresize",
+      "community": 2,
+      "norm_label": ".onboardresize()"
+    },
+    {
+      "label": ".endBoardResize()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L445",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_endboardresize",
+      "community": 2,
+      "norm_label": ".endboardresize()"
+    },
+    {
+      "label": ".removeBoardResizeListeners()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L451",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_removeboardresizelisteners",
+      "community": 2,
+      "norm_label": ".removeboardresizelisteners()"
+    },
+    {
+      "label": ".setGame()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L458",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_setgame",
+      "community": 2,
+      "norm_label": ".setgame()"
+    },
+    {
+      "label": ".zoom()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L468",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_zoom",
+      "community": 2,
+      "norm_label": ".zoom()"
+    },
+    {
+      "label": ".centeredMap()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L492",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_centeredmap",
+      "community": 2,
+      "norm_label": ".centeredmap()"
+    },
+    {
+      "label": ".getBlocks()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L508",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_getblocks",
+      "community": 2,
+      "norm_label": ".getblocks()"
+    },
+    {
+      "label": ".processBlocks()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L562",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_processblocks",
+      "community": 2,
+      "norm_label": ".processblocks()"
+    },
+    {
+      "label": ".loadImage()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L585",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_loadimage",
+      "community": 2,
+      "norm_label": ".loadimage()"
+    },
+    {
+      "label": ".storeTileData()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L596",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_storetiledata",
+      "community": 2,
+      "norm_label": ".storetiledata()"
+    },
+    {
+      "label": ".storeBlockData()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L604",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_storeblockdata",
+      "community": 2,
+      "norm_label": ".storeblockdata()"
+    },
+    {
+      "label": ".renderLoop()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L610",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_renderloop",
+      "community": 2,
+      "norm_label": ".renderloop()"
+    },
+    {
+      "label": ".renderCanvas()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L616",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_rendercanvas",
+      "community": 2,
+      "norm_label": ".rendercanvas()"
+    },
+    {
+      "label": ".tileShouldRender()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L689",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_tileshouldrender",
+      "community": 2,
+      "norm_label": ".tileshouldrender()"
+    },
+    {
+      "label": ".blockShouldRender()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L699",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_blockshouldrender",
+      "community": 2,
+      "norm_label": ".blockshouldrender()"
+    },
+    {
+      "label": ".convertY()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L704",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_converty",
+      "community": 2,
+      "norm_label": ".converty()"
+    },
+    {
+      "label": ".resetGame()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L709",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_resetgame",
+      "community": 2,
+      "norm_label": ".resetgame()"
+    },
+    {
+      "label": ".tileBrowserTile()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L714",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_tilebrowsertile",
+      "community": 2,
+      "norm_label": ".tilebrowsertile()"
+    },
+    {
+      "label": ".render()",
+      "file_type": "code",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L720",
+      "_origin": "ast",
+      "id": "app_src_components_game_game_render",
+      "community": 2,
+      "norm_label": ".render()"
+    },
+    {
+      "label": "game-zoom.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_lib_game_zoom",
+      "community": 2,
+      "norm_label": "game-zoom.ts"
+    },
+    {
+      "label": "ZoomDirection",
+      "file_type": "code",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "app_src_lib_game_zoom_zoomdirection",
+      "community": 2,
+      "norm_label": "zoomdirection"
+    },
+    {
+      "label": "nextZoomValue()",
+      "file_type": "code",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "app_src_lib_game_zoom_nextzoomvalue",
+      "community": 2,
+      "norm_label": "nextzoomvalue()"
+    },
+    {
+      "label": "mapOffsetLimitForZoom()",
+      "file_type": "code",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
+      "community": 2,
+      "norm_label": "mapoffsetlimitforzoom()"
+    },
+    {
+      "label": "game-zoom.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/game-zoom.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tests_game_zoom_test",
+      "community": 2,
+      "norm_label": "game-zoom.test.ts"
+    },
+    {
       "label": "sw.js",
       "file_type": "code",
       "source_file": "app/public/sw.js",
@@ -5915,534 +6395,6 @@
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_source_nodes"
     },
     {
-      "label": "Game.tsx",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "game.tsx",
-      "id": "app_src_components_game",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "defaultCoordinates",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "defaultcoordinates",
-      "id": "app_src_components_game_defaultcoordinates",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "GameSettings",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "gamesettings",
-      "id": "app_src_components_game_gamesettings",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "MapView",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L46",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "mapview",
-      "id": "app_src_components_game_mapview",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "MoveAction",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L60",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "moveaction",
-      "id": "app_src_components_game_moveaction",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "PlayerState",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "playerstate",
-      "id": "app_src_components_game_playerstate",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "GameComponentState",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "gamecomponentstate",
-      "id": "app_src_components_game_gamecomponentstate",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "StoredImage",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L87",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "storedimage",
-      "id": "app_src_components_game_storedimage",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "isFiniteNumber()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L92",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "isfinitenumber()",
-      "id": "app_src_components_game_isfinitenumber",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "Game",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L94",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "game",
-      "id": "app_src_components_game_game",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".componentDidMount()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L167",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".componentdidmount()",
-      "id": "app_src_components_game_game_componentdidmount",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".componentWillUnmount()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L172",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".componentwillunmount()",
-      "id": "app_src_components_game_game_componentwillunmount",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".setStateAsync()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L184",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".setstateasync()",
-      "id": "app_src_components_game_game_setstateasync",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".initialize()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L187",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".initialize()",
-      "id": "app_src_components_game_game_initialize",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".getLocation()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L198",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".getlocation()",
-      "id": "app_src_components_game_game_getlocation",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".initializeGame()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L238",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".initializegame()",
-      "id": "app_src_components_game_game_initializegame",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".initializeMap()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L257",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".initializemap()",
-      "id": "app_src_components_game_game_initializemap",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".initializePlayer()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L298",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".initializeplayer()",
-      "id": "app_src_components_game_game_initializeplayer",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".withUpdatedPlayerBlock()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L324",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".withupdatedplayerblock()",
-      "id": "app_src_components_game_game_withupdatedplayerblock",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".onKeydown()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L339",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".onkeydown()",
-      "id": "app_src_components_game_game_onkeydown",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".action()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L352",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".action()",
-      "id": "app_src_components_game_game_action",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".resizeGame()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L402",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".resizegame()",
-      "id": "app_src_components_game_game_resizegame",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".restoreBoardWidth()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L416",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".restoreboardwidth()",
-      "id": "app_src_components_game_game_restoreboardwidth",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".startBoardResize()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L423",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".startboardresize()",
-      "id": "app_src_components_game_game_startboardresize",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".onBoardResize()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L437",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".onboardresize()",
-      "id": "app_src_components_game_game_onboardresize",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".endBoardResize()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L445",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".endboardresize()",
-      "id": "app_src_components_game_game_endboardresize",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".removeBoardResizeListeners()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L451",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".removeboardresizelisteners()",
-      "id": "app_src_components_game_game_removeboardresizelisteners",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".setGame()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L458",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".setgame()",
-      "id": "app_src_components_game_game_setgame",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".zoom()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L468",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".zoom()",
-      "id": "app_src_components_game_game_zoom",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".centeredMap()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L492",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".centeredmap()",
-      "id": "app_src_components_game_game_centeredmap",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".getBlocks()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L508",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".getblocks()",
-      "id": "app_src_components_game_game_getblocks",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".processBlocks()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L562",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".processblocks()",
-      "id": "app_src_components_game_game_processblocks",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".loadImage()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L585",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".loadimage()",
-      "id": "app_src_components_game_game_loadimage",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".storeTileData()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L596",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".storetiledata()",
-      "id": "app_src_components_game_game_storetiledata",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".storeBlockData()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L604",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".storeblockdata()",
-      "id": "app_src_components_game_game_storeblockdata",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".renderLoop()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L610",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".renderloop()",
-      "id": "app_src_components_game_game_renderloop",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".renderCanvas()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L616",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".rendercanvas()",
-      "id": "app_src_components_game_game_rendercanvas",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".tileShouldRender()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L689",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".tileshouldrender()",
-      "id": "app_src_components_game_game_tileshouldrender",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".blockShouldRender()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L699",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".blockshouldrender()",
-      "id": "app_src_components_game_game_blockshouldrender",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".convertY()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L704",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".converty()",
-      "id": "app_src_components_game_game_converty",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".resetGame()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L709",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".resetgame()",
-      "id": "app_src_components_game_game_resetgame",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".tileBrowserTile()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L714",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".tilebrowsertile()",
-      "id": "app_src_components_game_game_tilebrowsertile",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": ".render()",
-      "file_type": "code",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L720",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".render()",
-      "id": "app_src_components_game_game_render",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "game-zoom.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "game-zoom.ts",
-      "id": "app_src_lib_game_zoom",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "ZoomDirection",
-      "file_type": "code",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "zoomdirection",
-      "id": "app_src_lib_game_zoom_zoomdirection",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "nextZoomValue()",
-      "file_type": "code",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "nextzoomvalue()",
-      "id": "app_src_lib_game_zoom_nextzoomvalue",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "mapOffsetLimitForZoom()",
-      "file_type": "code",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "mapoffsetlimitforzoom()",
-      "id": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
-      "community_name": "Game Map Component"
-    },
-    {
-      "label": "game-zoom.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/game-zoom.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "game-zoom.test.ts",
-      "id": "app_tests_game_zoom_test",
-      "community_name": "Game Map Component"
-    },
-    {
       "label": "Mountain Terrain Tile",
       "file_type": "image",
       "source_file": "app/public/tiles/mountain-9.png",
@@ -6453,8 +6405,8 @@
       "contributor": null,
       "community": 84,
       "norm_label": "mountain terrain tile",
-      "id": "app_public_tiles_mountain_9_image",
-      "community_name": "Mountain Terrain Tile"
+      "community_name": "Mountain Terrain Tile",
+      "id": "app_public_tiles_mountain_9_image"
     },
     {
       "label": "Pond Center Terrain Tile 1",
@@ -6467,8 +6419,8 @@
       "contributor": null,
       "community": 109,
       "norm_label": "pond center terrain tile 1",
-      "id": "app_public_tiles_pond_center_1_image",
-      "community_name": "Pond Center Tile 1"
+      "community_name": "Pond Center Tile 1",
+      "id": "app_public_tiles_pond_center_1_image"
     },
     {
       "label": "Pond Center Terrain Tile 2",
@@ -6481,8 +6433,8 @@
       "contributor": null,
       "community": 110,
       "norm_label": "pond center terrain tile 2",
-      "id": "app_public_tiles_pond_center_2_image",
-      "community_name": "Pond Center Tile 2"
+      "community_name": "Pond Center Tile 2",
+      "id": "app_public_tiles_pond_center_2_image"
     },
     {
       "label": "Pond Center Terrain Tile 3",
@@ -6495,8 +6447,8 @@
       "contributor": null,
       "community": 111,
       "norm_label": "pond center terrain tile 3",
-      "id": "app_public_tiles_pond_center_3_image",
-      "community_name": "Pond Center Tile 3"
+      "community_name": "Pond Center Tile 3",
+      "id": "app_public_tiles_pond_center_3_image"
     },
     {
       "label": "Pond Center Terrain Tile 4",
@@ -6509,8 +6461,8 @@
       "contributor": null,
       "community": 112,
       "norm_label": "pond center terrain tile 4",
-      "id": "app_public_tiles_pond_center_4_image",
-      "community_name": "Pond Center Tile 4"
+      "community_name": "Pond Center Tile 4",
+      "id": "app_public_tiles_pond_center_4_image"
     },
     {
       "label": "Rock Terrain Tile",
@@ -6523,8 +6475,8 @@
       "contributor": null,
       "community": 122,
       "norm_label": "rock terrain tile",
-      "id": "app_public_tiles_rock_1_image",
-      "community_name": "Rock Terrain Tile"
+      "community_name": "Rock Terrain Tile",
+      "id": "app_public_tiles_rock_1_image"
     },
     {
       "label": "Vercel Deployments",
@@ -6537,8 +6489,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "vercel deployments",
-      "id": "app_vercel_deployments_vercel_deployments",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_vercel_deployments"
     },
     {
       "label": "Pokeworld Vercel Project",
@@ -6551,8 +6503,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "pokeworld vercel project",
-      "id": "app_vercel_deployments_pokeworld_vercel_project",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_pokeworld_vercel_project"
     },
     {
       "label": "Pokeworld GitHub Repository",
@@ -6565,8 +6517,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "pokeworld github repository",
-      "id": "app_vercel_deployments_pokeworld_github_repository",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_pokeworld_github_repository"
     },
     {
       "label": "Verified Migration Preview",
@@ -6579,8 +6531,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "verified migration preview",
-      "id": "app_vercel_deployments_verified_migration_preview",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_verified_migration_preview"
     },
     {
       "label": "Vercel Workflow Map Job",
@@ -6593,8 +6545,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "vercel workflow map job",
-      "id": "app_vercel_deployments_vercel_workflow_map_job",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_vercel_workflow_map_job"
     },
     {
       "label": "Vercel Build Process",
@@ -6607,8 +6559,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "vercel build process",
-      "id": "app_vercel_deployments_vercel_build",
-      "community_name": "Vercel Deployment Configuration"
+      "community_name": "Vercel Deployment Configuration",
+      "id": "app_vercel_deployments_vercel_build"
     },
     {
       "label": "Red House Tile 1",
@@ -6621,8 +6573,8 @@
       "contributor": null,
       "community": 66,
       "norm_label": "red house tile 1",
-      "id": "app_public_tiles_house_red_1_house_red_1",
-      "community_name": "Red House Tile 1"
+      "community_name": "Red House Tile 1",
+      "id": "app_public_tiles_house_red_1_house_red_1"
     },
     {
       "label": "Red House Tile 10",
@@ -6635,8 +6587,8 @@
       "contributor": null,
       "community": 63,
       "norm_label": "red house tile 10",
-      "id": "app_public_tiles_house_red_10_house_red_10",
-      "community_name": "Red House Tile 10"
+      "community_name": "Red House Tile 10",
+      "id": "app_public_tiles_house_red_10_house_red_10"
     },
     {
       "label": "Red House Tile 11",
@@ -6649,8 +6601,8 @@
       "contributor": null,
       "community": 64,
       "norm_label": "red house tile 11",
-      "id": "app_public_tiles_house_red_11_house_red_11",
-      "community_name": "Red House Tile 11"
+      "community_name": "Red House Tile 11",
+      "id": "app_public_tiles_house_red_11_house_red_11"
     },
     {
       "label": "Red House Tile 12",
@@ -6663,8 +6615,8 @@
       "contributor": null,
       "community": 65,
       "norm_label": "red house tile 12",
-      "id": "app_public_tiles_house_red_12_house_red_12",
-      "community_name": "Red House Tile 12"
+      "community_name": "Red House Tile 12",
+      "id": "app_public_tiles_house_red_12_house_red_12"
     },
     {
       "label": "Red House Tile 2",
@@ -6677,8 +6629,8 @@
       "contributor": null,
       "community": 67,
       "norm_label": "red house tile 2",
-      "id": "app_public_tiles_house_red_2_house_red_2",
-      "community_name": "Red House Tile 2"
+      "community_name": "Red House Tile 2",
+      "id": "app_public_tiles_house_red_2_house_red_2"
     },
     {
       "label": "Red House Tile 3",
@@ -6691,8 +6643,8 @@
       "contributor": null,
       "community": 68,
       "norm_label": "red house tile 3",
-      "id": "app_public_tiles_house_red_3_house_red_3",
-      "community_name": "Red House Tile 3"
+      "community_name": "Red House Tile 3",
+      "id": "app_public_tiles_house_red_3_house_red_3"
     },
     {
       "label": "Red House Tile 4",
@@ -6705,8 +6657,8 @@
       "contributor": null,
       "community": 69,
       "norm_label": "red house tile 4",
-      "id": "app_public_tiles_house_red_4_house_red_4",
-      "community_name": "Red House Tile 4"
+      "community_name": "Red House Tile 4",
+      "id": "app_public_tiles_house_red_4_house_red_4"
     },
     {
       "label": "Red House Tile 5",
@@ -6719,8 +6671,8 @@
       "contributor": null,
       "community": 70,
       "norm_label": "red house tile 5",
-      "id": "app_public_tiles_house_red_5_house_red_5",
-      "community_name": "Red House Tile 5"
+      "community_name": "Red House Tile 5",
+      "id": "app_public_tiles_house_red_5_house_red_5"
     },
     {
       "label": "Red House Tile 6",
@@ -6733,8 +6685,8 @@
       "contributor": null,
       "community": 71,
       "norm_label": "red house tile 6",
-      "id": "app_public_tiles_house_red_6_house_red_6",
-      "community_name": "Red House Tile 6"
+      "community_name": "Red House Tile 6",
+      "id": "app_public_tiles_house_red_6_house_red_6"
     },
     {
       "label": "Red House Tile 7",
@@ -6747,8 +6699,8 @@
       "contributor": null,
       "community": 72,
       "norm_label": "red house tile 7",
-      "id": "app_public_tiles_house_red_7_house_red_7",
-      "community_name": "Red House Tile 7"
+      "community_name": "Red House Tile 7",
+      "id": "app_public_tiles_house_red_7_house_red_7"
     },
     {
       "label": "Red House Tile 8",
@@ -6761,8 +6713,8 @@
       "contributor": null,
       "community": 73,
       "norm_label": "red house tile 8",
-      "id": "app_public_tiles_house_red_8_house_red_8",
-      "community_name": "Red House Tile 8"
+      "community_name": "Red House Tile 8",
+      "id": "app_public_tiles_house_red_8_house_red_8"
     },
     {
       "label": "Red House Tile 9",
@@ -6775,8 +6727,8 @@
       "contributor": null,
       "community": 74,
       "norm_label": "red house tile 9",
-      "id": "app_public_tiles_house_red_9_house_red_9",
-      "community_name": "Red House Tile 9"
+      "community_name": "Red House Tile 9",
+      "id": "app_public_tiles_house_red_9_house_red_9"
     },
     {
       "label": "Mountain Tile 1",
@@ -6789,8 +6741,8 @@
       "contributor": null,
       "community": 76,
       "norm_label": "mountain tile 1",
-      "id": "app_public_tiles_mountain_1_mountain_1",
-      "community_name": "Mountain Tile 1"
+      "community_name": "Mountain Tile 1",
+      "id": "app_public_tiles_mountain_1_mountain_1"
     },
     {
       "label": "Mountain Tile 2",
@@ -6803,8 +6755,8 @@
       "contributor": null,
       "community": 77,
       "norm_label": "mountain tile 2",
-      "id": "app_public_tiles_mountain_2_mountain_2",
-      "community_name": "Mountain Tile 2"
+      "community_name": "Mountain Tile 2",
+      "id": "app_public_tiles_mountain_2_mountain_2"
     },
     {
       "label": "Mountain Tile 3",
@@ -6817,8 +6769,8 @@
       "contributor": null,
       "community": 78,
       "norm_label": "mountain tile 3",
-      "id": "app_public_tiles_mountain_3_mountain_3",
-      "community_name": "Mountain Tile 3"
+      "community_name": "Mountain Tile 3",
+      "id": "app_public_tiles_mountain_3_mountain_3"
     },
     {
       "label": "Mountain Tile 4",
@@ -6831,8 +6783,8 @@
       "contributor": null,
       "community": 79,
       "norm_label": "mountain tile 4",
-      "id": "app_public_tiles_mountain_4_mountain_4",
-      "community_name": "Mountain Tile 4"
+      "community_name": "Mountain Tile 4",
+      "id": "app_public_tiles_mountain_4_mountain_4"
     },
     {
       "label": "Mountain Tile 5",
@@ -6845,8 +6797,8 @@
       "contributor": null,
       "community": 80,
       "norm_label": "mountain tile 5",
-      "id": "app_public_tiles_mountain_5_mountain_5",
-      "community_name": "Mountain Tile 5"
+      "community_name": "Mountain Tile 5",
+      "id": "app_public_tiles_mountain_5_mountain_5"
     },
     {
       "label": "Mountain Tile 6",
@@ -6859,8 +6811,8 @@
       "contributor": null,
       "community": 81,
       "norm_label": "mountain tile 6",
-      "id": "app_public_tiles_mountain_6_mountain_6",
-      "community_name": "Mountain Tile 6"
+      "community_name": "Mountain Tile 6",
+      "id": "app_public_tiles_mountain_6_mountain_6"
     },
     {
       "label": "Mountain Tile 7",
@@ -6873,8 +6825,8 @@
       "contributor": null,
       "community": 82,
       "norm_label": "mountain tile 7",
-      "id": "app_public_tiles_mountain_7_mountain_7",
-      "community_name": "Mountain Tile 7"
+      "community_name": "Mountain Tile 7",
+      "id": "app_public_tiles_mountain_7_mountain_7"
     },
     {
       "label": "Mountain Tile 8",
@@ -6887,11 +6839,912 @@
       "contributor": null,
       "community": 83,
       "norm_label": "mountain tile 8",
-      "id": "app_public_tiles_mountain_8_mountain_8",
-      "community_name": "Mountain Tile 8"
+      "community_name": "Mountain Tile 8",
+      "id": "app_public_tiles_mountain_8_mountain_8"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_defaultcoordinates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_game",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_gamecomponentstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_gamesettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_isfinitenumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_mapview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_moveaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_playerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_components_game_storedimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_game_zoom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_game_zoom_nextzoomvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_pages_gamepage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_getlocation",
+      "target": "app_src_components_game_isfinitenumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L266",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializemap",
+      "target": "app_src_components_game_isfinitenumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializeplayer",
+      "target": "app_src_components_game_isfinitenumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_withupdatedplayerblock",
+      "target": "app_src_components_game_isfinitenumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L352",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L699",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_blockshouldrender",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L492",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_centeredmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_componentdidmount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_componentwillunmount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L704",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_converty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L445",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_endboardresize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L508",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_getblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_getlocation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_initialize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_initializegame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L257",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_initializemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_initializeplayer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L585",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_loadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_onboardresize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L339",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_onkeydown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L562",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_processblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L451",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_removeboardresizelisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L720",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_render",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L616",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_rendercanvas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L610",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_renderloop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L709",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_resetgame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L402",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_resizegame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L416",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_restoreboardwidth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_setgame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_setstateasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L423",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_startboardresize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L604",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_storeblockdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L596",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_storetiledata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L714",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_tilebrowsertile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L689",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_tileshouldrender",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L324",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_withupdatedplayerblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_components_game_game_zoom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_components_game_game",
+      "target": "app_src_pages_gamepage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_componentdidmount",
+      "target": "app_src_components_game_game_initialize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_componentwillunmount",
+      "target": "app_src_components_game_game_removeboardresizelisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L250",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializegame",
+      "target": "app_src_components_game_game_setstateasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L294",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializemap",
+      "target": "app_src_components_game_game_setstateasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L315",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializeplayer",
+      "target": "app_src_components_game_game_setstateasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initialize",
+      "target": "app_src_components_game_game_getlocation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initialize",
+      "target": "app_src_components_game_game_initializegame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initialize",
+      "target": "app_src_components_game_game_initializemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initialize",
+      "target": "app_src_components_game_game_initializeplayer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initialize",
+      "target": "app_src_components_game_game_restoreboardwidth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializegame",
+      "target": "app_src_components_game_game_resizegame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L321",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializeplayer",
+      "target": "app_src_components_game_game_getblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializeplayer",
+      "target": "app_src_components_game_game_withupdatedplayerblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_action",
+      "target": "app_src_components_game_game_withupdatedplayerblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L349",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_onkeydown",
+      "target": "app_src_components_game_game_action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L447",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_endboardresize",
+      "target": "app_src_components_game_game_removeboardresizelisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L478",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_zoom",
+      "target": "app_src_components_game_game_centeredmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L470",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_zoom",
+      "target": "app_src_lib_game_zoom_nextzoomvalue"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L547",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_getblocks",
+      "target": "app_src_components_game_game_processblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L512",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_getblocks",
+      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L582",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_processblocks",
+      "target": "app_src_components_game_game_storeblockdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L581",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_processblocks",
+      "target": "app_src_components_game_game_storetiledata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L625",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_rendercanvas",
+      "target": "app_src_components_game_game_loadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L606",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_storeblockdata",
+      "target": "app_src_components_game_game_loadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L598",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_storetiledata",
+      "target": "app_src_components_game_game_loadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L612",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_renderloop",
+      "target": "app_src_components_game_game_rendercanvas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L664",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_rendercanvas",
+      "target": "app_src_components_game_game_blockshouldrender",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L653",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_rendercanvas",
+      "target": "app_src_components_game_game_converty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L644",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_rendercanvas",
+      "target": "app_src_components_game_game_tileshouldrender",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_src_lib_game_zoom",
+      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_src_lib_game_zoom",
+      "target": "app_src_lib_game_zoom_nextzoomvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/game-zoom.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_src_lib_game_zoom",
+      "target": "app_src_lib_game_zoom_zoomdirection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/game-zoom.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_game_zoom_test",
+      "target": "app_src_lib_game_zoom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/game-zoom.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_game_zoom_test",
+      "target": "app_src_lib_game_zoom_nextzoomvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/game-zoom.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_game_zoom_test",
+      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -10959,28 +11812,6 @@
       "target": "app_tests_persisted_state_test"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_pages_gamepage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_pages_gamepage"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/pages/GamePage.tsx",
@@ -13525,885 +14356,6 @@
       "target": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_source_nodes"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_defaultcoordinates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_game"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_gamecomponentstate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_gamesettings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_isfinitenumber"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_mapview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_moveaction"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_playerstate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_components_game_storedimage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_game_zoom"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_game_zoom_nextzoomvalue"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L203",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_getlocation",
-      "target": "app_src_components_game_isfinitenumber"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L266",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializemap",
-      "target": "app_src_components_game_isfinitenumber"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L304",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializeplayer",
-      "target": "app_src_components_game_isfinitenumber"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L332",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_withupdatedplayerblock",
-      "target": "app_src_components_game_isfinitenumber"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L352",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_action"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L699",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_blockshouldrender"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L492",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_centeredmap"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L167",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_componentdidmount"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L172",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_componentwillunmount"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L704",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_converty"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L445",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_endboardresize"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L508",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_getblocks"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L198",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_getlocation"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L187",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_initialize"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L238",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_initializegame"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L257",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_initializemap"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L298",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_initializeplayer"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L585",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_loadimage"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L437",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_onboardresize"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L339",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_onkeydown"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L562",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_processblocks"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L451",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_removeboardresizelisteners"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L720",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_render"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L616",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_rendercanvas"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L610",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_renderloop"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L709",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_resetgame"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L402",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_resizegame"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L416",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_restoreboardwidth"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L458",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_setgame"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L184",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_setstateasync"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L423",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_startboardresize"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L604",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_storeblockdata"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L596",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_storetiledata"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L714",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_tilebrowsertile"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L689",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_tileshouldrender"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L324",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_withupdatedplayerblock"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L468",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game",
-      "target": "app_src_components_game_game_zoom"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L169",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_componentdidmount",
-      "target": "app_src_components_game_game_initialize"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_componentwillunmount",
-      "target": "app_src_components_game_game_removeboardresizelisteners"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L250",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializegame",
-      "target": "app_src_components_game_game_setstateasync"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L294",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializemap",
-      "target": "app_src_components_game_game_setstateasync"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L315",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializeplayer",
-      "target": "app_src_components_game_game_setstateasync"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L189",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initialize",
-      "target": "app_src_components_game_game_getlocation"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L191",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initialize",
-      "target": "app_src_components_game_game_initializegame"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L192",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initialize",
-      "target": "app_src_components_game_game_initializemap"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L193",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initialize",
-      "target": "app_src_components_game_game_initializeplayer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L188",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initialize",
-      "target": "app_src_components_game_game_restoreboardwidth"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L252",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializegame",
-      "target": "app_src_components_game_game_resizegame"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L321",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializeplayer",
-      "target": "app_src_components_game_game_getblocks"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L314",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_initializeplayer",
-      "target": "app_src_components_game_game_withupdatedplayerblock"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L385",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_action",
-      "target": "app_src_components_game_game_withupdatedplayerblock"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L349",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_onkeydown",
-      "target": "app_src_components_game_game_action"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L447",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_endboardresize",
-      "target": "app_src_components_game_game_removeboardresizelisteners"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L478",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_zoom",
-      "target": "app_src_components_game_game_centeredmap"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L470",
-      "weight": 1.0,
-      "source": "app_src_components_game_game_zoom",
-      "target": "app_src_lib_game_zoom_nextzoomvalue"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L547",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_getblocks",
-      "target": "app_src_components_game_game_processblocks"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L512",
-      "weight": 1.0,
-      "source": "app_src_components_game_game_getblocks",
-      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L582",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_processblocks",
-      "target": "app_src_components_game_game_storeblockdata"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L581",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_processblocks",
-      "target": "app_src_components_game_game_storetiledata"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L625",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_rendercanvas",
-      "target": "app_src_components_game_game_loadimage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L606",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_storeblockdata",
-      "target": "app_src_components_game_game_loadimage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L598",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_storetiledata",
-      "target": "app_src_components_game_game_loadimage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L612",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_renderloop",
-      "target": "app_src_components_game_game_rendercanvas"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L664",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_rendercanvas",
-      "target": "app_src_components_game_game_blockshouldrender"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L653",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_rendercanvas",
-      "target": "app_src_components_game_game_converty"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L644",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game_game_rendercanvas",
-      "target": "app_src_components_game_game_tileshouldrender"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_game_zoom",
-      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_game_zoom",
-      "target": "app_src_lib_game_zoom_nextzoomvalue"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/game-zoom.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_game_zoom",
-      "target": "app_src_lib_game_zoom_zoomdirection"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/game-zoom.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_tests_game_zoom_test",
-      "target": "app_src_lib_game_zoom"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/game-zoom.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_tests_game_zoom_test",
-      "target": "app_src_lib_game_zoom_nextzoomvalue"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/game-zoom.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_tests_game_zoom_test",
-      "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -14537,5 +14489,5 @@
       "source_file": "app/VERCEL_DEPLOYMENTS.md"
     }
   ],
-  "built_at_commit": "2c484bf2de13af06b9e65495cdbfbebdaf7ca8e8"
+  "built_at_commit": "6a2dca1db27109f390c8e68cc1244d57661b3dae"
 }

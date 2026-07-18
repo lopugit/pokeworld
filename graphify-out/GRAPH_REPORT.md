@@ -1,7 +1,8 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld-codex-merge.MroLdY  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 72 files · ~101,421 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 582 nodes · 724 edges · 143 communities (30 shown, 113 thin omitted)
@@ -9,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2c484bf2`
+- Built from commit: `6a2dca1d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -294,7 +295,7 @@ Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **290 isolated node(s):** `CORE_ASSETS`, `root`, `transformedShell`, `target`, `scriptDir` (+285 more)
+- **290 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+285 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **113 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -305,7 +306,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `rgbaToTileColourData()` connect `Map Block Data Pipeline` to `Map Pipeline Benchmark`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **What connects `CORE_ASSETS`, `root`, `transformedShell` to the rest of the system?**
+- **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
   _291 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Map Block Data Pipeline` be split into smaller, more focused modules?**
   _Cohesion score 0.06939890710382514 - nodes in this community are weakly interconnected._
