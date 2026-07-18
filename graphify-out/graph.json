@@ -94,6 +94,94 @@
   },
   "nodes": [
     {
+      "label": "map-benchmark.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/map-benchmark.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "map-benchmark.test.ts",
+      "id": "app_tests_map_benchmark_test",
+      "community_name": "Character Walking Animation Tileset"
+    },
+    {
+      "label": "MapBenchmarkResult",
+      "file_type": "code",
+      "source_file": "app/tests/map-benchmark.test.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "mapbenchmarkresult",
+      "id": "app_tests_map_benchmark_test_mapbenchmarkresult",
+      "community_name": "Character Walking Animation Tileset"
+    },
+    {
+      "label": "map-source.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/map-source.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 163,
+      "norm_label": "map-source.test.ts",
+      "id": "app_tests_map_source_test",
+      "community_name": "map-source.test.ts"
+    },
+    {
+      "label": "PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "file_type": "document",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 169,
+      "norm_label": "procedural_world_acceptance.md",
+      "id": "docs_procedural_world_acceptance",
+      "community_name": "Procedural Emerald world acceptance"
+    },
+    {
+      "label": "Procedural Emerald world acceptance",
+      "file_type": "document",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 169,
+      "norm_label": "procedural emerald world acceptance",
+      "id": "docs_procedural_world_acceptance_procedural_emerald_world_acceptance",
+      "community_name": "Procedural Emerald world acceptance"
+    },
+    {
+      "label": "Required verification",
+      "file_type": "document",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 169,
+      "norm_label": "required verification",
+      "id": "docs_procedural_world_acceptance_required_verification",
+      "community_name": "Procedural Emerald world acceptance"
+    },
+    {
+      "label": "Current visual evidence",
+      "file_type": "document",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 169,
+      "norm_label": "current visual evidence",
+      "id": "docs_procedural_world_acceptance_current_visual_evidence",
+      "community_name": "Procedural Emerald world acceptance"
+    },
+    {
+      "label": "Latest verification",
+      "file_type": "document",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "community": 169,
+      "norm_label": "latest verification",
+      "id": "docs_procedural_world_acceptance_latest_verification",
+      "community_name": "Procedural Emerald world acceptance"
+    },
+    {
       "label": "Game.tsx",
       "file_type": "code",
       "source_file": "app/src/components/Game.tsx",
@@ -440,9 +528,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L501",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": ".interact()",
-      "community_name": "Nuxt 2 Frontend",
+      "community_name": "index.js",
       "id": "app_src_components_game_game_interact"
     },
     {
@@ -4556,7 +4644,7 @@
       "_origin": "ast",
       "community": 161,
       "norm_label": "privacy-policy.get.ts",
-      "community_name": "Community 161",
+      "community_name": "privacy-policy.get.ts",
       "id": "app_server_routes_privacy_policy_get"
     },
     {
@@ -5931,7 +6019,7 @@
       "_origin": "ast",
       "community": 162,
       "norm_label": "vite-env.d.ts",
-      "community_name": "Community 162",
+      "community_name": "vite-env.d.ts",
       "id": "app_src_vite_env_d"
     },
     {
@@ -6272,7 +6360,7 @@
       "_origin": "ast",
       "community": 165,
       "norm_label": "vite.config.ts",
-      "community_name": "Community 165",
+      "community_name": "vite.config.ts",
       "id": "app_vite_config"
     },
     {
@@ -6283,7 +6371,7 @@
       "_origin": "ast",
       "community": 166,
       "norm_label": "vitest.config.ts",
-      "community_name": "Community 166",
+      "community_name": "vitest.config.ts",
       "id": "app_vitest_config"
     },
     {
@@ -6671,7 +6759,7 @@
       "contributor": null,
       "community": 164,
       "norm_label": "fallback map regeneration and repair",
-      "community_name": "Community 164",
+      "community_name": "Fallback Map Regeneration and Repair",
       "id": "app_todo_fallback_map_regeneration_fallback_repair"
     },
     {
@@ -6727,7 +6815,7 @@
       "contributor": null,
       "community": 168,
       "norm_label": "pnpm workspace configuration",
-      "community_name": "Community 168",
+      "community_name": "pnpm Workspace Configuration",
       "id": "pnpm_workspace_workspace_configuration"
     },
     {
@@ -8934,7 +9022,7 @@
       "contributor": null,
       "community": 167,
       "norm_label": "dense procedural world desktop ui screenshot",
-      "community_name": "Community 167",
+      "community_name": "Dense Procedural World Desktop UI Screenshot",
       "id": "docs_qa_dense_world_desktop_dense_world_desktop_ui"
     },
     {
@@ -9131,39 +9219,6 @@
       "id": "app_public_tiles_rock_1_rock_tile"
     },
     {
-      "label": "map-benchmark.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/map-benchmark.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 30,
-      "norm_label": "map-benchmark.test.ts",
-      "id": "app_tests_map_benchmark_test",
-      "community_name": "Character Walking Animation Tileset"
-    },
-    {
-      "label": "MapBenchmarkResult",
-      "file_type": "code",
-      "source_file": "app/tests/map-benchmark.test.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 30,
-      "norm_label": "mapbenchmarkresult",
-      "id": "app_tests_map_benchmark_test_mapbenchmarkresult",
-      "community_name": "Character Walking Animation Tileset"
-    },
-    {
-      "label": "map-source.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/map-source.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 163,
-      "norm_label": "map-source.test.ts",
-      "id": "app_tests_map_source_test",
-      "community_name": "Community 163"
-    },
-    {
       "label": "Emerald Game Systems Design and Cross-Agent Contract",
       "file_type": "document",
       "source_file": "app/DESIGN-emerald-game-systems.md",
@@ -9174,8 +9229,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "emerald game systems design and cross-agent contract",
-      "id": "app_design_emerald_game_systems_emerald_game_systems_contract",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_emerald_game_systems_contract"
     },
     {
       "label": "Server World Generation",
@@ -9188,8 +9243,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "server world generation",
-      "id": "app_design_emerald_game_systems_server_world_generation",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_server_world_generation"
     },
     {
       "label": "Client Game Systems",
@@ -9202,8 +9257,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "client game systems",
-      "id": "app_design_emerald_game_systems_client_game_systems",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_client_game_systems"
     },
     {
       "label": "MapTile Feature Protocol",
@@ -9216,8 +9271,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "maptile feature protocol",
-      "id": "app_design_emerald_game_systems_map_tile_feature_protocol",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_map_tile_feature_protocol"
     },
     {
       "label": "hashUnit",
@@ -9230,8 +9285,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "hashunit",
-      "id": "app_design_emerald_game_systems_hash_unit",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_hash_unit"
     },
     {
       "label": "resolveMove",
@@ -9244,8 +9299,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "resolvemove",
-      "id": "app_design_emerald_game_systems_resolve_move",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_resolve_move"
     },
     {
       "label": "TrainerState",
@@ -9258,8 +9313,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "trainerstate",
-      "id": "app_design_emerald_game_systems_trainer_state",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_trainer_state"
     },
     {
       "label": "Game UI Layer",
@@ -9272,8 +9327,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "game ui layer",
-      "id": "app_design_emerald_game_systems_game_ui_layer",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_game_ui_layer"
     },
     {
       "label": "DialogBox",
@@ -9286,8 +9341,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "dialogbox",
-      "id": "app_design_emerald_game_systems_dialog_box",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_dialog_box"
     },
     {
       "label": "StartMenu",
@@ -9300,8 +9355,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "startmenu",
-      "id": "app_design_emerald_game_systems_start_menu",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_start_menu"
     },
     {
       "label": "PartyPanel",
@@ -9314,8 +9369,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "partypanel",
-      "id": "app_design_emerald_game_systems_party_panel",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_party_panel"
     },
     {
       "label": "BagPanel",
@@ -9328,8 +9383,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "bagpanel",
-      "id": "app_design_emerald_game_systems_bag_panel",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_bag_panel"
     },
     {
       "label": "BadgesPanel",
@@ -9342,8 +9397,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "badgespanel",
-      "id": "app_design_emerald_game_systems_badges_panel",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_badges_panel"
     },
     {
       "label": "PcPanel",
@@ -9356,8 +9411,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "pcpanel",
-      "id": "app_design_emerald_game_systems_pc_panel",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_design_emerald_game_systems_pc_panel"
     },
     {
       "label": "Pok\u00e9mon World Application",
@@ -9370,8 +9425,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "pokemon world application",
-      "id": "app_readme_pokemon_world_application",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_readme_pokemon_world_application"
     },
     {
       "label": "Full-Stack React, Nitro, Vite, and Workflow Runtime",
@@ -9384,8 +9439,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "full-stack react, nitro, vite, and workflow runtime",
-      "id": "app_readme_full_stack_runtime",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_readme_full_stack_runtime"
     },
     {
       "label": "generateMapWorkflow",
@@ -9398,8 +9453,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "generatemapworkflow",
-      "id": "app_readme_generate_map_workflow",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_readme_generate_map_workflow"
     },
     {
       "label": "Emerald World Grammar",
@@ -9412,8 +9467,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "emerald world grammar",
-      "id": "app_readme_emerald_world_grammar",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_readme_emerald_world_grammar"
     },
     {
       "label": "Trainer Menu",
@@ -9426,8 +9481,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "trainer menu",
-      "id": "app_readme_trainer_menu",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "app_readme_trainer_menu"
     },
     {
       "label": "Dense Emerald-Style World Mobile UI Screenshot",
@@ -9440,8 +9495,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "dense emerald-style world mobile ui screenshot",
-      "id": "docs_qa_dense_world_mobile_dense_world_mobile_screenshot",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "docs_qa_dense_world_mobile_dense_world_mobile_screenshot"
     },
     {
       "label": "Trainer Party Desktop UI Screenshot",
@@ -9454,8 +9509,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "trainer party desktop ui screenshot",
-      "id": "docs_qa_trainer_party_desktop_trainer_party_desktop_screenshot",
-      "community_name": "dependencies"
+      "community_name": "dependencies",
+      "id": "docs_qa_trainer_party_desktop_trainer_party_desktop_screenshot"
     },
     {
       "label": "Trainer PC Mobile UI Screenshot",
@@ -9468,120 +9523,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "trainer pc mobile ui screenshot",
-      "id": "docs_qa_trainer_pc_mobile_trainer_pc_mobile_screenshot",
-      "community_name": "dependencies"
-    },
-    {
-      "label": "Procedural Emerald World Acceptance Checklist",
-      "file_type": "document",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-07-19",
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "procedural emerald world acceptance checklist",
-      "id": "docs_procedural_world_acceptance_checklist",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Google Static Maps Semantic Terrain Source",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "google static maps semantic terrain source",
-      "id": "docs_procedural_world_acceptance_google_static_maps",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "864 Deterministic World Recipes",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "864 deterministic world recipes",
-      "id": "docs_procedural_world_acceptance_deterministic_world_recipes",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Original Pok\u00e9mon Emerald Exterior Tileset",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "original pokemon emerald exterior tileset",
-      "id": "docs_procedural_world_acceptance_emerald_tileset",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Local Gameplay Persistence",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "local gameplay persistence",
-      "id": "docs_procedural_world_acceptance_local_persistence",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "pnpm app check",
-      "file_type": "code",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "pnpm app check",
-      "id": "docs_procedural_world_acceptance_app_check",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Map Pipeline Benchmark",
-      "file_type": "code",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "map pipeline benchmark",
-      "id": "docs_procedural_world_acceptance_map_benchmark",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Forced Live Map Generation",
-      "file_type": "code",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "forced live map generation",
-      "id": "docs_procedural_world_acceptance_live_map_generation",
-      "community_name": "vercel.json"
+      "community_name": "dependencies",
+      "id": "docs_qa_trainer_pc_mobile_trainer_pc_mobile_screenshot"
     },
     {
       "label": "Dense World Desktop Visual Evidence",
@@ -9594,8 +9537,8 @@
       "contributor": null,
       "community": 16,
       "norm_label": "dense world desktop visual evidence",
-      "id": "docs_procedural_world_acceptance_desktop_visual_evidence",
-      "community_name": "vercel.json"
+      "community_name": "vercel.json",
+      "id": "docs_procedural_world_acceptance_desktop_visual_evidence"
     },
     {
       "label": "Dense World Mobile Visual Evidence",
@@ -9606,10 +9549,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 170,
       "norm_label": "dense world mobile visual evidence",
-      "id": "docs_procedural_world_acceptance_mobile_visual_evidence",
-      "community_name": "vercel.json"
+      "community_name": "Dense World Mobile Visual Evidence",
+      "id": "docs_procedural_world_acceptance_mobile_visual_evidence"
     },
     {
       "label": "Trainer Party Desktop Visual Evidence",
@@ -9620,10 +9563,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 171,
       "norm_label": "trainer party desktop visual evidence",
-      "id": "docs_procedural_world_acceptance_trainer_party_visual_evidence",
-      "community_name": "vercel.json"
+      "community_name": "Trainer Party Desktop Visual Evidence",
+      "id": "docs_procedural_world_acceptance_trainer_party_visual_evidence"
     },
     {
       "label": "Trainer PC Mobile Visual Evidence",
@@ -9634,41 +9577,63 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 172,
       "norm_label": "trainer pc mobile visual evidence",
-      "id": "docs_procedural_world_acceptance_trainer_pc_visual_evidence",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Workflow Run wrun_01KXV1CCY0F428X5DE2SC7A94S",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "workflow run wrun_01kxv1ccy0f428x5de2sc7a94s",
-      "id": "docs_procedural_world_acceptance_workflow_run",
-      "community_name": "vercel.json"
-    },
-    {
-      "label": "Native Chrome Desktop and Mobile Verification",
-      "file_type": "concept",
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "native chrome desktop and mobile verification",
-      "id": "docs_procedural_world_acceptance_native_chrome_verification",
-      "community_name": "vercel.json"
+      "community_name": "Trainer PC Mobile Visual Evidence",
+      "id": "docs_procedural_world_acceptance_trainer_pc_visual_evidence"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-benchmark.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_map_benchmark_test",
+      "target": "app_tests_map_benchmark_test_mapbenchmarkresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_procedural_world_acceptance",
+      "target": "docs_procedural_world_acceptance_procedural_emerald_world_acceptance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_procedural_world_acceptance_procedural_emerald_world_acceptance",
+      "target": "docs_procedural_world_acceptance_current_visual_evidence"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_procedural_world_acceptance_procedural_emerald_world_acceptance",
+      "target": "docs_procedural_world_acceptance_latest_verification"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_procedural_world_acceptance_procedural_emerald_world_acceptance",
+      "target": "docs_procedural_world_acceptance_required_verification"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -21740,16 +21705,6 @@
       "target": "app_vercel_deployments_vercel_workflow_map_jobs"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/map-benchmark.test.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_tests_map_benchmark_test",
-      "target": "app_tests_map_benchmark_test_mapbenchmarkresult"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -22038,156 +21993,6 @@
       "weight": 1.0,
       "source": "docs_qa_trainer_party_desktop_trainer_party_desktop_screenshot",
       "target": "app_readme_trainer_menu"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_app_check"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_desktop_visual_evidence"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_deterministic_world_recipes"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_emerald_tileset"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_google_static_maps"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_live_map_generation"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_local_persistence"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_map_benchmark"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_mobile_visual_evidence"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_trainer_party_visual_evidence"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_checklist",
-      "target": "docs_procedural_world_acceptance_trainer_pc_visual_evidence"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_live_map_generation",
-      "target": "docs_procedural_world_acceptance_google_static_maps"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_workflow_run",
-      "target": "docs_procedural_world_acceptance_google_static_maps"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_native_chrome_verification",
-      "target": "docs_procedural_world_acceptance_desktop_visual_evidence"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_procedural_world_acceptance_native_chrome_verification",
-      "target": "docs_procedural_world_acceptance_mobile_visual_evidence"
     }
   ],
   "hyperedges": [
@@ -22279,5 +22084,5 @@
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md"
     }
   ],
-  "built_at_commit": "e5b73e57e0e0d7fa42fe78d694473eb3cefbf6aa"
+  "built_at_commit": "eca04cd488d072e0b954a3c9f210523bfa14436c"
 }

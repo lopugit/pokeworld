@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 815 nodes · 1193 edges · 169 communities (33 shown, 136 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.74)
+- 810 nodes · 1182 edges · 173 communities (33 shown, 140 thin omitted)
+- Extraction: 96% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 41 edges (avg confidence: 0.73)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e5b73e57`
+- Built from commit: `eca04cd4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -175,9 +175,13 @@
 - [[_COMMUNITY_Emerald game systems — design & cross-agent contract|Emerald game systems — design & cross-agent contract]]
 - [[_COMMUNITY_map-source.ts|map-source.ts]]
 - [[_COMMUNITY_Pokeworld Vercel Deployments|Pokeworld Vercel Deployments]]
-- [[_COMMUNITY_Community 164|Community 164]]
-- [[_COMMUNITY_Community 167|Community 167]]
-- [[_COMMUNITY_Community 168|Community 168]]
+- [[_COMMUNITY_Fallback Map Regeneration and Repair|Fallback Map Regeneration and Repair]]
+- [[_COMMUNITY_Dense Procedural World Desktop UI Screenshot|Dense Procedural World Desktop UI Screenshot]]
+- [[_COMMUNITY_pnpm Workspace Configuration|pnpm Workspace Configuration]]
+- [[_COMMUNITY_Procedural Emerald world acceptance|Procedural Emerald world acceptance]]
+- [[_COMMUNITY_Dense World Mobile Visual Evidence|Dense World Mobile Visual Evidence]]
+- [[_COMMUNITY_Trainer Party Desktop Visual Evidence|Trainer Party Desktop Visual Evidence]]
+- [[_COMMUNITY_Trainer PC Mobile Visual Evidence|Trainer PC Mobile Visual Evidence]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 45 edges
@@ -189,7 +193,7 @@
 7. `TrainerState` - 11 edges
 8. `tileKey()` - 11 edges
 9. `normalizeRoutes()` - 11 edges
-10. `Procedural Emerald World Acceptance Checklist` - 11 edges
+10. `sourceY()` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Dense Emerald-Style World Mobile UI Screenshot` --references--> `MapTile Feature Protocol`  [AMBIGUOUS]
@@ -214,7 +218,7 @@
 - **Current Desktop and Mobile Visual Evidence** — docs_procedural_world_acceptance_desktop_visual_evidence, docs_procedural_world_acceptance_mobile_visual_evidence, docs_procedural_world_acceptance_trainer_party_visual_evidence, docs_procedural_world_acceptance_trainer_pc_visual_evidence [EXTRACTED 1.00]
 - **Procedural World Acceptance Evidence Flow** — docs_procedural_world_acceptance_checklist, docs_procedural_world_acceptance_app_check, docs_procedural_world_acceptance_map_benchmark, docs_procedural_world_acceptance_live_map_generation, docs_procedural_world_acceptance_workflow_run, docs_procedural_world_acceptance_native_chrome_verification [EXTRACTED 0.95]
 
-## Communities (169 total, 136 thin omitted)
+## Communities (173 total, 140 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.05
@@ -276,10 +280,6 @@ Nodes (14): Mountain Terrain Tile, Pond Center Terrain Tile 1, Pond Center Terra
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
-### Community 16 - "vercel.json"
-Cohesion: 0.16
-Nodes (14): pnpm app check, Procedural Emerald World Acceptance Checklist, Dense World Desktop Visual Evidence, 864 Deterministic World Recipes, Original Pokémon Emerald Exterior Tileset, Google Static Maps Semantic Terrain Source, Forced Live Map Generation, Local Gameplay Persistence (+6 more)
-
 ### Community 17 - "extract-terrain-tiles.mjs"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
@@ -328,28 +328,32 @@ Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Gras
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
+### Community 169 - "Procedural Emerald world acceptance"
+Cohesion: 0.40
+Nodes (4): Current visual evidence, Latest verification, Procedural Emerald world acceptance, Required verification
+
 ## Ambiguous Edges - Review These
 - `MapTile Feature Protocol` → `Dense Emerald-Style World Mobile UI Screenshot`  [AMBIGUOUS]
   docs/qa/dense-world-mobile.png · relation: references
 
 ## Knowledge Gaps
-- **354 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PanelId` (+349 more)
+- **353 isolated node(s):** `MapBenchmarkResult`, `Required verification`, `Current visual evidence`, `Latest verification`, `defaultCoordinates` (+348 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **136 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **140 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `MapTile Feature Protocol` and `Dense Emerald-Style World Mobile UI Screenshot`?**
   _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
-- **Why does `Game` connect `index.js` to `Game.vue`, `DevKit.vue`, `Nuxt 2 Frontend`?**
+- **Why does `Game` connect `index.js` to `Game.vue`, `DevKit.vue`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `TerrainKind` connect `package.json` to `blocks.js`, `devDependencies`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `rgbaToTileColourData()` connect `functions.js` to `blocks.js`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
-  _355 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `MapBenchmarkResult`, `Required verification`, `Current visual evidence` to the rest of the system?**
+  _354 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.05322947095098994 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
