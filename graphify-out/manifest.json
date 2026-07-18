@@ -17,7 +17,7 @@
   "app/package.json": {
     "mtime": 1784386523.839911,
     "ast_hash": "e9a6709d9b50e01bdaa0445dee6d11fe",
-    "semantic_hash": ""
+    "semantic_hash": "e9a6709d9b50e01bdaa0445dee6d11fe"
   },
   "app/public/sw.js": {
     "mtime": 1784386518.2972927,
@@ -102,7 +102,7 @@
   "app/server/services/map/legacy/blocks.ts": {
     "mtime": 1784386602.912624,
     "ast_hash": "d74622f6d8e121b33527c7c2cf631fd8",
-    "semantic_hash": ""
+    "semantic_hash": "d74622f6d8e121b33527c7c2cf631fd8"
   },
   "app/server/services/map/legacy/coordinates.ts": {
     "mtime": 1784386518.3117754,
@@ -112,7 +112,7 @@
   "app/server/services/map/legacy/functions.ts": {
     "mtime": 1784386567.8279655,
     "ast_hash": "938fac5850039cbf65ae1a9f9b2a7ade",
-    "semantic_hash": ""
+    "semantic_hash": "938fac5850039cbf65ae1a9f9b2a7ade"
   },
   "app/server/services/map/legacy/log.ts": {
     "mtime": 1784386518.3123405,
@@ -157,7 +157,7 @@
   "app/server/services/map/legacy/png.ts": {
     "mtime": 1784386659.1490257,
     "ast_hash": "2b19f117b741385f544fd598ab8f4248",
-    "semantic_hash": ""
+    "semantic_hash": "2b19f117b741385f544fd598ab8f4248"
   },
   "app/server/services/map/mongo.ts": {
     "mtime": 1784386518.3147218,
@@ -277,7 +277,7 @@
   "package.json": {
     "mtime": 1784386523.8402104,
     "ast_hash": "9d11832d0eda25e1b3ddf00d9861d8b6",
-    "semantic_hash": ""
+    "semantic_hash": "9d11832d0eda25e1b3ddf00d9861d8b6"
   },
   "README.md": {
     "mtime": 1784386518.274467,
@@ -295,9 +295,9 @@
     "semantic_hash": "30e44bf692b9dd1feb61caef628e3781"
   },
   "app/VERCEL_DEPLOYMENTS.md": {
-    "mtime": 1784386518.2763357,
-    "ast_hash": "938c706cf63bee7e393bfb0edde04931",
-    "semantic_hash": ""
+    "mtime": 1784387115.4163852,
+    "ast_hash": "d64a36c6b59ab72c6da059e3a626c58e",
+    "semantic_hash": "d64a36c6b59ab72c6da059e3a626c58e"
   },
   "app/index.html": {
     "mtime": 1784386518.2769287,
@@ -757,11 +757,11 @@
   "app/scripts/benchmark-map-pipeline.mjs": {
     "mtime": 1784386635.6807494,
     "ast_hash": "08d8027ecc1dc70f87eb7a767dd158a6",
-    "semantic_hash": ""
+    "semantic_hash": "08d8027ecc1dc70f87eb7a767dd158a6"
   },
   "app/tests/png-pipeline.test.ts": {
     "mtime": 1784386635.6804812,
     "ast_hash": "819a020321b1c08879a2c9b9f202721a",
-    "semantic_hash": ""
+    "semantic_hash": "819a020321b1c08879a2c9b9f202721a"
   }
 }
