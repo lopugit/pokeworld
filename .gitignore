@@ -1,5 +1,6 @@
 # Graphify machine-local caches and regenerable working files
 graphify-out/.graphify_*
+graphify-out/.rebuild.lock
 graphify-out/cache/
 graphify-out/20*/
 
