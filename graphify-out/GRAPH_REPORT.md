@@ -9,7 +9,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0fee83d7`
+- Built from commit: `4e3b77ed`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,14 +30,14 @@
 - [[_COMMUNITY_generate-map.mjs|generate-map.mjs]]
 - [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
 - [[_COMMUNITY_benchmark-map-pipeline.mjs|benchmark-map-pipeline.mjs]]
-- [[_COMMUNITY_vercel.json|vercel.json]]
+- [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_log.ts|log.ts]]
-- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_vercel.json|vercel.json]]
 - [[_COMMUNITY_Pokémon World HTML Shell|Pokémon World HTML Shell]]
 - [[_COMMUNITY_Generated 16 by 16 Block Tiles|Generated 16 by 16 Block Tiles]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Google Map Source Image|Google Map Source Image]]
 - [[_COMMUNITY_Google Map Source Image|Google Map Source Image]]
 - [[_COMMUNITY_Sand Terrain Sprite 1|Sand Terrain Sprite 1]]
 - [[_COMMUNITY_Sand Terrain Sprite 2|Sand Terrain Sprite 2]]
@@ -239,7 +239,7 @@ Nodes (10): Vercel Deployments, Map Jobs API, POKEWORLD_OFFLINE_MAP Preview Mode
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 16 - "vercel.json"
+### Community 16 - "Community 16"
 Cohesion: 0.53
 Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
 
@@ -247,7 +247,7 @@ Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGenerated
 Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
-### Community 18 - "Community 18"
+### Community 18 - "vercel.json"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
