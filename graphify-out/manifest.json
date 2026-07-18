@@ -1,281 +1,281 @@
 {
   "app/map-assets/db/grid.json": {
-    "mtime": 1784389168.2416413,
+    "mtime": 1784389600.5478048,
     "ast_hash": "9eccc66a27a32dfa5e10124c263bd804",
     "semantic_hash": "9eccc66a27a32dfa5e10124c263bd804"
   },
   "app/map-assets/lats-example.json": {
-    "mtime": 1784389168.2420385,
+    "mtime": 1784389600.5481956,
     "ast_hash": "38033c24c35f4eec3667b68c4497be4d",
     "semantic_hash": "38033c24c35f4eec3667b68c4497be4d"
   },
   "app/map-assets/lngs-example.json": {
-    "mtime": 1784389168.2422347,
+    "mtime": 1784389600.548307,
     "ast_hash": "8e4c0942dbb3fff13902f310e650b798",
     "semantic_hash": "8e4c0942dbb3fff13902f310e650b798"
   },
   "app/package.json": {
-    "mtime": 1784389196.6428607,
+    "mtime": 1784389600.5636673,
     "ast_hash": "e9a6709d9b50e01bdaa0445dee6d11fe",
     "semantic_hash": "e9a6709d9b50e01bdaa0445dee6d11fe"
   },
   "app/public/sw.js": {
-    "mtime": 1784389168.2627404,
+    "mtime": 1784389600.566909,
     "ast_hash": "bfe73ba737f1ee4aaa79f2929b9790b9",
     "semantic_hash": "bfe73ba737f1ee4aaa79f2929b9790b9"
   },
   "app/scripts/finalize-static-shell.mjs": {
-    "mtime": 1784389168.279127,
+    "mtime": 1784389600.5827754,
     "ast_hash": "dc07dc2f61cc5b8617047d736f46e9aa",
     "semantic_hash": "dc07dc2f61cc5b8617047d736f46e9aa"
   },
   "app/scripts/map/generate-map.mjs": {
-    "mtime": 1784389168.2797022,
+    "mtime": 1784389600.584463,
     "ast_hash": "e99e4d50ab5d1b128f22a1f2ad10c4a6",
     "semantic_hash": "e99e4d50ab5d1b128f22a1f2ad10c4a6"
   },
   "app/scripts/pm2.mjs": {
-    "mtime": 1784389168.279829,
+    "mtime": 1784389600.584604,
     "ast_hash": "c3c550568895895c8a1a4b7e5de26529",
     "semantic_hash": "c3c550568895895c8a1a4b7e5de26529"
   },
   "app/scripts/verify-vercel-output.mjs": {
-    "mtime": 1784389168.280407,
+    "mtime": 1784389600.5847192,
     "ast_hash": "6e929f7992b2551672de655480b9ff98",
     "semantic_hash": "6e929f7992b2551672de655480b9ff98"
   },
   "app/server/routes/api/block-lat-lng.get.ts": {
-    "mtime": 1784389168.2807038,
+    "mtime": 1784389600.584963,
     "ast_hash": "4610831bd4690244ff6965684403a5e0",
     "semantic_hash": "4610831bd4690244ff6965684403a5e0"
   },
   "app/server/routes/api/blocks.get.ts": {
-    "mtime": 1784389168.280942,
+    "mtime": 1784389600.5852144,
     "ast_hash": "f419c564c2a1e32ee57318ecd41ab7de",
     "semantic_hash": "f419c564c2a1e32ee57318ecd41ab7de"
   },
   "app/server/routes/api/health.get.ts": {
-    "mtime": 1784389168.2810576,
+    "mtime": 1784389600.5853379,
     "ast_hash": "fd376493098bd1954d036386a5bcf95d",
     "semantic_hash": "fd376493098bd1954d036386a5bcf95d"
   },
   "app/server/routes/api/map-jobs.post.ts": {
-    "mtime": 1784389168.2811778,
+    "mtime": 1784389600.5854597,
     "ast_hash": "dbd6afa54b6c009ec34b39f87fc9986f",
     "semantic_hash": "dbd6afa54b6c009ec34b39f87fc9986f"
   },
   "app/server/routes/api/map-jobs/[runId].get.ts": {
-    "mtime": 1784389168.2814631,
+    "mtime": 1784389600.58561,
     "ast_hash": "ce931ffdc1a86efe88d24811d2962484",
     "semantic_hash": "ce931ffdc1a86efe88d24811d2962484"
   },
   "app/server/routes/privacy-policy.get.ts": {
-    "mtime": 1784389168.2815866,
+    "mtime": 1784389600.5857184,
     "ast_hash": "717422f290032b0741cef83e0654f9cb",
     "semantic_hash": "717422f290032b0741cef83e0654f9cb"
   },
   "app/server/routes/v1/blockLatLng.get.ts": {
-    "mtime": 1784389168.2817638,
+    "mtime": 1784389600.5858693,
     "ast_hash": "f6be2ab88063ac6e1ccd5231e3ed5fd3",
     "semantic_hash": "f6be2ab88063ac6e1ccd5231e3ed5fd3"
   },
   "app/server/routes/v1/blocks.get.ts": {
-    "mtime": 1784389168.2818823,
+    "mtime": 1784389600.5859766,
     "ast_hash": "fb575af6fb53dc4ec525097be1d15456",
     "semantic_hash": "fb575af6fb53dc4ec525097be1d15456"
   },
   "app/server/services/map/coordinates.ts": {
-    "mtime": 1784389168.2822492,
+    "mtime": 1784389600.586164,
     "ast_hash": "3ff8163e95d5f692ec46af954fb8859b",
     "semantic_hash": "3ff8163e95d5f692ec46af954fb8859b"
   },
   "app/server/services/map/generate.ts": {
-    "mtime": 1784389168.2823834,
+    "mtime": 1784389600.586538,
     "ast_hash": "833195b31c644473fecd42610a365ea1",
     "semantic_hash": "833195b31c644473fecd42610a365ea1"
   },
   "app/server/services/map/input.ts": {
-    "mtime": 1784389168.282492,
+    "mtime": 1784389600.5866694,
     "ast_hash": "61eae3b9d250e0247b391b759732a075",
     "semantic_hash": "61eae3b9d250e0247b391b759732a075"
   },
   "app/server/services/map/legacy/blocks.ts": {
-    "mtime": 1784389196.6439974,
+    "mtime": 1784389600.587018,
     "ast_hash": "48d4892808338175d7444a5651d5b012",
     "semantic_hash": "48d4892808338175d7444a5651d5b012"
   },
   "app/server/services/map/legacy/coordinates.ts": {
-    "mtime": 1784389168.2830148,
+    "mtime": 1784389600.5871277,
     "ast_hash": "155fd49f3991f128acc8577900d752da",
     "semantic_hash": "155fd49f3991f128acc8577900d752da"
   },
   "app/server/services/map/legacy/functions.ts": {
-    "mtime": 1784389225.7295816,
+    "mtime": 1784389600.58739,
     "ast_hash": "81d1cb6030ed460f3c75995b6eaadc05",
     "semantic_hash": "81d1cb6030ed460f3c75995b6eaadc05"
   },
   "app/server/services/map/legacy/log.ts": {
-    "mtime": 1784389168.283386,
+    "mtime": 1784389600.5874944,
     "ast_hash": "6e3e56510ec74e3d84f076c2f5e86de9",
     "semantic_hash": "6e3e56510ec74e3d84f076c2f5e86de9"
   },
   "app/server/services/map/legacy/map-source.ts": {
-    "mtime": 1784389168.2836175,
+    "mtime": 1784389600.5876033,
     "ast_hash": "2ef9e05a8b2a7c481c3e29bfc8f9e4fc",
     "semantic_hash": "2ef9e05a8b2a7c481c3e29bfc8f9e4fc"
   },
   "app/server/services/map/legacy/mods/flowers.ts": {
-    "mtime": 1784389168.2838013,
+    "mtime": 1784389600.5877583,
     "ast_hash": "344f597ea66a604487c0f91802b0b872",
     "semantic_hash": "344f597ea66a604487c0f91802b0b872"
   },
   "app/server/services/map/legacy/mods/grass.ts": {
-    "mtime": 1784389168.2839563,
+    "mtime": 1784389600.58795,
     "ast_hash": "3f81204e93c9c46c685107430613ba62",
     "semantic_hash": "3f81204e93c9c46c685107430613ba62"
   },
   "app/server/services/map/legacy/mods/index.ts": {
-    "mtime": 1784389168.2840974,
+    "mtime": 1784389600.5882044,
     "ast_hash": "9e8aa6d9186d1ca76e47689931b24f93",
     "semantic_hash": "9e8aa6d9186d1ca76e47689931b24f93"
   },
   "app/server/services/map/legacy/mods/patherize.ts": {
-    "mtime": 1784389168.2842236,
+    "mtime": 1784389600.588324,
     "ast_hash": "f7f9130bc7bdca4be264c505847d9b83",
     "semantic_hash": "f7f9130bc7bdca4be264c505847d9b83"
   },
   "app/server/services/map/legacy/mods/ponds.ts": {
-    "mtime": 1784389168.2843566,
+    "mtime": 1784389600.5884461,
     "ast_hash": "7b9f7a422d150f43d560b6a1c0a40122",
     "semantic_hash": "7b9f7a422d150f43d560b6a1c0a40122"
   },
   "app/server/services/map/legacy/mods/roads.ts": {
-    "mtime": 1784389168.2846427,
+    "mtime": 1784389600.5885658,
     "ast_hash": "2064944459f448880c7343dfd99ddea1",
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/png.ts": {
-    "mtime": 1784389196.6445272,
+    "mtime": 1784389600.5888755,
     "ast_hash": "2b19f117b741385f544fd598ab8f4248",
     "semantic_hash": "2b19f117b741385f544fd598ab8f4248"
   },
   "app/server/services/map/mongo.ts": {
-    "mtime": 1784389168.2850187,
+    "mtime": 1784389600.5889761,
     "ast_hash": "5fd580ab8ec8c3036b367eaeac5611f0",
     "semantic_hash": "5fd580ab8ec8c3036b367eaeac5611f0"
   },
   "app/server/services/map/types.ts": {
-    "mtime": 1784389168.2853253,
+    "mtime": 1784389600.5894601,
     "ast_hash": "0fbb6ef47b4ec1082118acb036807ce9",
     "semantic_hash": "0fbb6ef47b4ec1082118acb036807ce9"
   },
   "app/server/utils/http.ts": {
-    "mtime": 1784389168.2855115,
+    "mtime": 1784389600.5896122,
     "ast_hash": "06123e97aa0e58cac61d6aef1b3e9a9d",
     "semantic_hash": "06123e97aa0e58cac61d6aef1b3e9a9d"
   },
   "app/src/App.tsx": {
-    "mtime": 1784389168.2856753,
+    "mtime": 1784389600.5897825,
     "ast_hash": "c5ad88d353bef220bd93b8ec15498f94",
     "semantic_hash": "c5ad88d353bef220bd93b8ec15498f94"
   },
   "app/src/components/Banner.tsx": {
-    "mtime": 1784389168.285844,
+    "mtime": 1784389600.5899856,
     "ast_hash": "65782f33b2d4a593a00ce21eb18a09b5",
     "semantic_hash": "65782f33b2d4a593a00ce21eb18a09b5"
   },
   "app/src/components/DevKit.tsx": {
-    "mtime": 1784389168.2860954,
+    "mtime": 1784389600.5903907,
     "ast_hash": "c5842360af139375a4cbe97c7f25e7b3",
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1784389168.2863019,
-    "ast_hash": "760a071ac8a40f9c5a21de595a60f701",
-    "semantic_hash": "760a071ac8a40f9c5a21de595a60f701"
+    "mtime": 1784389667.193021,
+    "ast_hash": "825b4a39450693716a23380cd8fd2fda",
+    "semantic_hash": "825b4a39450693716a23380cd8fd2fda"
   },
   "app/src/components/Nav.tsx": {
-    "mtime": 1784389168.2865536,
+    "mtime": 1784389600.5908473,
     "ast_hash": "424cfca8d5230fa53030dc9e9baeaa41",
     "semantic_hash": "424cfca8d5230fa53030dc9e9baeaa41"
   },
   "app/src/entry-client.tsx": {
-    "mtime": 1784389168.2867877,
+    "mtime": 1784389600.5909574,
     "ast_hash": "3e56f4a6029587b4a15a12f190ae759c",
     "semantic_hash": "3e56f4a6029587b4a15a12f190ae759c"
   },
   "app/src/lib/map-api.ts": {
-    "mtime": 1784389168.2870045,
+    "mtime": 1784389600.5911086,
     "ast_hash": "0a4768942c25a7ef9c1fa114194fab75",
     "semantic_hash": "0a4768942c25a7ef9c1fa114194fab75"
   },
   "app/src/lib/persisted-state.ts": {
-    "mtime": 1784389168.2872488,
+    "mtime": 1784389600.5916536,
     "ast_hash": "ea5224aba4dcf4306e5c05ef1ea137f7",
     "semantic_hash": "ea5224aba4dcf4306e5c05ef1ea137f7"
   },
   "app/src/pages/GamePage.tsx": {
-    "mtime": 1784389168.2873993,
+    "mtime": 1784389600.591814,
     "ast_hash": "ccd00721d625e9c61eb7103f61ef180a",
     "semantic_hash": "ccd00721d625e9c61eb7103f61ef180a"
   },
   "app/src/pages/HomePage.tsx": {
-    "mtime": 1784389168.2875094,
+    "mtime": 1784389600.5919235,
     "ast_hash": "fcd204f47d263fd2af549ce15432763a",
     "semantic_hash": "fcd204f47d263fd2af549ce15432763a"
   },
   "app/src/vite-env.d.ts": {
-    "mtime": 1784389168.2879972,
+    "mtime": 1784389600.5927343,
     "ast_hash": "0352474ba2918efe13895edbc3780d94",
     "semantic_hash": "0352474ba2918efe13895edbc3780d94"
   },
   "app/tests/map-generation.test.ts": {
-    "mtime": 1784389168.2882738,
+    "mtime": 1784389600.5931342,
     "ast_hash": "cc15a176ee935300dec6b72e34441ae9",
     "semantic_hash": "cc15a176ee935300dec6b72e34441ae9"
   },
   "app/tests/map-input.test.ts": {
-    "mtime": 1784389168.2883887,
+    "mtime": 1784389600.5933805,
     "ast_hash": "5378c9ab694ff21193559fa53d7f17d6",
     "semantic_hash": "5378c9ab694ff21193559fa53d7f17d6"
   },
   "app/tests/map-source.test.ts": {
-    "mtime": 1784389168.288653,
+    "mtime": 1784389600.5937467,
     "ast_hash": "2b4418fc7737679f50c4d411c96b32ee",
     "semantic_hash": "2b4418fc7737679f50c4d411c96b32ee"
   },
   "app/tsconfig.json": {
-    "mtime": 1784389168.289163,
+    "mtime": 1784389600.5947099,
     "ast_hash": "38d3eb8ef3d8b0921ac2001f4f35e7d4",
     "semantic_hash": "38d3eb8ef3d8b0921ac2001f4f35e7d4"
   },
   "app/vercel.json": {
-    "mtime": 1784389168.2892814,
+    "mtime": 1784389600.5948212,
     "ast_hash": "2a5e5dfe8f5200dc9e1cbedb390e6ee3",
     "semantic_hash": "2a5e5dfe8f5200dc9e1cbedb390e6ee3"
   },
   "app/vite.config.ts": {
-    "mtime": 1784389168.289406,
+    "mtime": 1784389600.594931,
     "ast_hash": "a922b690260002633aa5823d20e0361e",
     "semantic_hash": "a922b690260002633aa5823d20e0361e"
   },
   "app/vitest.config.ts": {
-    "mtime": 1784389168.289687,
+    "mtime": 1784389600.59503,
     "ast_hash": "f2f66e7fb62a331fe78906a07b5629e5",
     "semantic_hash": "f2f66e7fb62a331fe78906a07b5629e5"
   },
   "app/workflows/map-generation/index.ts": {
-    "mtime": 1784389168.2900987,
+    "mtime": 1784389600.5952387,
     "ast_hash": "da43a3ff0253859b2b62732eb8656c82",
     "semantic_hash": "da43a3ff0253859b2b62732eb8656c82"
   },
   "app/workflows/map-generation/steps.ts": {
-    "mtime": 1784389168.2903373,
+    "mtime": 1784389600.5953436,
     "ast_hash": "d921f0e7d8c5e482d46c0468bce3127b",
     "semantic_hash": "d921f0e7d8c5e482d46c0468bce3127b"
   },
   "package.json": {
-    "mtime": 1784389196.6472077,
+    "mtime": 1784389600.597767,
     "ast_hash": "9d11832d0eda25e1b3ddf00d9861d8b6",
     "semantic_hash": "9d11832d0eda25e1b3ddf00d9861d8b6"
   },
@@ -755,42 +755,42 @@
     "semantic_hash": "b7eb1bf22edddae5aae961cf317979c7"
   },
   "app/scripts/map/extract-terrain-tiles.mjs": {
-    "mtime": 1784389168.2795568,
+    "mtime": 1784389600.584311,
     "ast_hash": "a51774153f5d1dae31e0c5c403b0b905",
     "semantic_hash": "a51774153f5d1dae31e0c5c403b0b905"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1784389168.2847922,
+    "mtime": 1784389600.5887628,
     "ast_hash": "b1e962bb020fceb09f64d22016a76586",
     "semantic_hash": "b1e962bb020fceb09f64d22016a76586"
   },
   "app/server/services/map/terrain-classifier.ts": {
-    "mtime": 1784389168.2851784,
+    "mtime": 1784389600.5892422,
     "ast_hash": "9b2bee1114acab27bf06b50768c3b88d",
     "semantic_hash": "9b2bee1114acab27bf06b50768c3b88d"
   },
   "app/src/lib/map-load.ts": {
-    "mtime": 1784389168.2871377,
+    "mtime": 1784389600.5913672,
     "ast_hash": "ee936cb6f9e7c1117e690b190e4ddd7a",
     "semantic_hash": "ee936cb6f9e7c1117e690b190e4ddd7a"
   },
   "app/tests/map-load.test.ts": {
-    "mtime": 1784389168.288527,
+    "mtime": 1784389600.5935993,
     "ast_hash": "4ada63ed2d6f3fbd0e4f29df53344add",
     "semantic_hash": "4ada63ed2d6f3fbd0e4f29df53344add"
   },
   "app/tests/persisted-state.test.ts": {
-    "mtime": 1784389168.2887807,
+    "mtime": 1784389600.5939903,
     "ast_hash": "0f176a1fcfcf3a5c83af42f620b17ac2",
     "semantic_hash": "0f176a1fcfcf3a5c83af42f620b17ac2"
   },
   "app/tests/terrain-classifier.test.ts": {
-    "mtime": 1784389168.2889092,
+    "mtime": 1784389600.5943477,
     "ast_hash": "352fe358ef808b355479708744395b51",
     "semantic_hash": "352fe358ef808b355479708744395b51"
   },
   "app/tests/terrain-life.test.ts": {
-    "mtime": 1784389168.2890403,
+    "mtime": 1784389600.5945816,
     "ast_hash": "6e6e67b823b067849d810bd4e93f3934",
     "semantic_hash": "6e6e67b823b067849d810bd4e93f3934"
   },
@@ -925,13 +925,23 @@
     "semantic_hash": ""
   },
   "app/scripts/benchmark-map-pipeline.mjs": {
-    "mtime": 1784389196.6436617,
+    "mtime": 1784389600.582657,
     "ast_hash": "08d8027ecc1dc70f87eb7a767dd158a6",
     "semantic_hash": "08d8027ecc1dc70f87eb7a767dd158a6"
   },
   "app/tests/png-pipeline.test.ts": {
-    "mtime": 1784389196.64481,
+    "mtime": 1784389600.5941195,
     "ast_hash": "819a020321b1c08879a2c9b9f202721a",
     "semantic_hash": "819a020321b1c08879a2c9b9f202721a"
+  },
+  "app/src/lib/game-zoom.ts": {
+    "mtime": 1784389605.3909783,
+    "ast_hash": "9dd78610c7061c9ae97ccc668d44c9cf",
+    "semantic_hash": "9dd78610c7061c9ae97ccc668d44c9cf"
+  },
+  "app/tests/game-zoom.test.ts": {
+    "mtime": 1784389605.3912184,
+    "ast_hash": "a631144c9b8e31b159105bdeceb07498",
+    "semantic_hash": "a631144c9b8e31b159105bdeceb07498"
   }
 }
