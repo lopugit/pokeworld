@@ -1,7 +1,8 @@
-# Graph Report - .  (2026-07-18)
+# Graph Report - pokeworld  (2026-07-18)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 53 files · ~36,327,522 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 413 nodes · 347 edges · 125 communities (32 shown, 93 thin omitted)
@@ -9,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `971540a8`
+- Built from commit: `02337a56`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -127,8 +128,8 @@
 - [[_COMMUNITY_Worktree Port Derivation|Worktree Port Derivation]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `getBlocks()` - 8 edges
-2. `scripts` - 8 edges
+1. `scripts` - 8 edges
+2. `getBlocks()` - 8 edges
 3. `scripts` - 8 edges
 4. `Special Directories` - 8 edges
 5. `scripts` - 7 edges
@@ -242,7 +243,7 @@ Cohesion: 0.40
 Nodes (5): Frontend Banner Artwork, Pokeworld Application Icon, Loading Animation, Lopu Designs Branding Image, Nuxt 2 Frontend
 
 ## Knowledge Gaps
-- **258 isolated node(s):** `{ pm2AppConfig }`, `fs`, `latsMap`, `lngsMap`, `v1Blocks` (+253 more)
+- **258 isolated node(s):** `name`, `version`, `private`, `description`, `postinstall` (+253 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **93 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -251,7 +252,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `{ pm2AppConfig }`, `fs`, `latsMap` to the rest of the system?**
+- **What connects `name`, `version`, `private` to the rest of the system?**
   _258 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.07317073170731707 - nodes in this community are weakly interconnected._
