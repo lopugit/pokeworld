@@ -9,7 +9,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `23ff859e`
+- Built from commit: `bd7fbac0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,40 +33,40 @@
 - [[_COMMUNITY_vercel.json|vercel.json]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_Community 18|Community 18]]
-- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
-- [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
-- [[_COMMUNITY_Grass Terrain Sprite|Grass Terrain Sprite]]
-- [[_COMMUNITY_vite.config.ts|vite.config.ts]]
-- [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
-- [[_COMMUNITY_Nitro Cache Bypass for Stale Fallback Blocks|Nitro Cache Bypass for Stale Fallback Blocks]]
-- [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
-- [[_COMMUNITY_Fallback Map Regeneration Repair|Fallback Map Regeneration Repair]]
-- [[_COMMUNITY_Lazy Durable Workflow Regeneration|Lazy Durable Workflow Regeneration]]
-- [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
-- [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
-- [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
-- [[_COMMUNITY_generateMapWorkflow|generateMapWorkflow]]
-- [[_COMMUNITY_Google Static Maps|Google Static Maps]]
-- [[_COMMUNITY_Local World|Local World]]
-- [[_COMMUNITY_GET apimap-jobsrunId|GET /api/map-jobs/:runId]]
-- [[_COMMUNITY_POST apimap-jobs|POST /api/map-jobs]]
-- [[_COMMUNITY_MongoDB|MongoDB]]
-- [[_COMMUNITY_Nitro 3|Nitro 3]]
-- [[_COMMUNITY_POKEWORLD_OFFLINE_MAP Mode|POKEWORLD_OFFLINE_MAP Mode]]
-- [[_COMMUNITY_pokeworld-nitro-react-3847 PM2 Process|pokeworld-nitro-react-3847 PM2 Process]]
-- [[_COMMUNITY_React 19|React 19]]
-- [[_COMMUNITY_React Router|React Router]]
-- [[_COMMUNITY_Vercel Build Verification|Vercel Build Verification]]
-- [[_COMMUNITY_VERCEL_DEPLOYMENTS|VERCEL_DEPLOYMENTS.md]]
-- [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
-- [[_COMMUNITY_Vercel Workflow|Vercel Workflow]]
-- [[_COMMUNITY_Vercel World|Vercel World]]
-- [[_COMMUNITY_Vite 8|Vite 8]]
-- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
-- [[_COMMUNITY_vite-env.d.ts|vite-env.d.ts]]
-- [[_COMMUNITY_vite.config.ts|vite.config.ts]]
-- [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
+- [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
@@ -232,7 +232,7 @@ Nodes (4): Pokémon World HTML Shell, Pokémon World Application Icon, Android C
 Cohesion: 0.50
 Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Grass Terrain Sprite, Pokémon Emerald Exterior Tileset
 
-### Community 19 - "Community 19"
+### Community 19 - "finalize-static-shell.mjs"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 

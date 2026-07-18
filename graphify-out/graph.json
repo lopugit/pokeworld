@@ -665,7 +665,7 @@
       "community": 19,
       "norm_label": "finalize-static-shell.mjs",
       "id": "app_scripts_finalize_static_shell",
-      "community_name": "Community 19"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "root",
@@ -676,7 +676,7 @@
       "community": 19,
       "norm_label": "root",
       "id": "app_scripts_finalize_static_shell_root",
-      "community_name": "Community 19"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "transformedShell",
@@ -687,7 +687,7 @@
       "community": 19,
       "norm_label": "transformedshell",
       "id": "app_scripts_finalize_static_shell_transformedshell",
-      "community_name": "Community 19"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "target",
@@ -698,7 +698,7 @@
       "community": 19,
       "norm_label": "target",
       "id": "app_scripts_finalize_static_shell_target",
-      "community_name": "Community 19"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "generate-map.mjs",
@@ -1237,7 +1237,7 @@
       "community": 103,
       "norm_label": "privacy-policy.get.ts",
       "id": "app_server_routes_privacy_policy_get",
-      "community_name": "Community 103"
+      "community_name": "privacy-policy.get.ts"
     },
     {
       "label": "blockLatLng.get.ts",
@@ -3096,7 +3096,7 @@
       "community": 104,
       "norm_label": "vite-env.d.ts",
       "id": "app_src_vite_env_d",
-      "community_name": "Community 104"
+      "community_name": "vite-env.d.ts"
     },
     {
       "label": "map-generation.test.ts",
@@ -3349,7 +3349,7 @@
       "community": 105,
       "norm_label": "vite.config.ts",
       "id": "app_vite_config",
-      "community_name": "Community 105"
+      "community_name": "vite.config.ts"
     },
     {
       "label": "vitest.config.ts",
@@ -3360,7 +3360,7 @@
       "community": 106,
       "norm_label": "vitest.config.ts",
       "id": "app_vitest_config",
-      "community_name": "Community 106"
+      "community_name": "vitest.config.ts"
     },
     {
       "label": "index.ts",
@@ -3957,7 +3957,7 @@
       "community": 21,
       "norm_label": "sand terrain sprite 1",
       "id": "app_map_assets_sprites_sand_1_sand_sprite_1",
-      "community_name": "privacy-policy.get.ts"
+      "community_name": "Community 21"
     },
     {
       "label": "Sand Terrain Sprite 2",
@@ -3971,7 +3971,7 @@
       "community": 22,
       "norm_label": "sand terrain sprite 2",
       "id": "app_map_assets_sprites_sand_2_sand_sprite_2",
-      "community_name": "Grass Terrain Sprite"
+      "community_name": "Community 22"
     },
     {
       "label": "Sand Terrain Sprite 3",
@@ -3985,7 +3985,7 @@
       "community": 23,
       "norm_label": "sand terrain sprite 3",
       "id": "app_map_assets_sprites_sand_3_sand_sprite_3",
-      "community_name": "vite.config.ts"
+      "community_name": "Community 23"
     },
     {
       "label": "Sand Terrain Sprite 4",
@@ -3999,7 +3999,7 @@
       "community": 24,
       "norm_label": "sand terrain sprite 4",
       "id": "app_map_assets_sprites_sand_4_sand_sprite_4",
-      "community_name": "vitest.config.ts"
+      "community_name": "Community 24"
     },
     {
       "label": "Sand Terrain Sprite 5",
@@ -4013,7 +4013,7 @@
       "community": 25,
       "norm_label": "sand terrain sprite 5",
       "id": "app_map_assets_sprites_sand_5_sand_sprite_5",
-      "community_name": "Nitro Cache Bypass for Stale Fallback Blocks"
+      "community_name": "Community 25"
     },
     {
       "label": "Sand Terrain Sprite 6",
@@ -4027,7 +4027,7 @@
       "community": 26,
       "norm_label": "sand terrain sprite 6",
       "id": "app_map_assets_sprites_sand_6_sand_sprite_6",
-      "community_name": "Fallback Map Regeneration Query"
+      "community_name": "Community 26"
     },
     {
       "label": "Sand Terrain Sprite 7",
@@ -4041,7 +4041,7 @@
       "community": 27,
       "norm_label": "sand terrain sprite 7",
       "id": "app_map_assets_sprites_sand_7_sand_sprite_7",
-      "community_name": "Fallback Map Regeneration Repair"
+      "community_name": "Community 27"
     },
     {
       "label": "Sand Terrain Sprite 8",
@@ -4055,7 +4055,7 @@
       "community": 28,
       "norm_label": "sand terrain sprite 8",
       "id": "app_map_assets_sprites_sand_8_sand_sprite_8",
-      "community_name": "Lazy Durable Workflow Regeneration"
+      "community_name": "Community 28"
     },
     {
       "label": "Sand Terrain Sprite 9",
@@ -4069,7 +4069,7 @@
       "community": 29,
       "norm_label": "sand terrain sprite 9",
       "id": "app_map_assets_sprites_sand_9_sand_sprite_9",
-      "community_name": "Legacy Fallback Fingerprint Detection"
+      "community_name": "Community 29"
     },
     {
       "label": "Pok\u00e9mon Emerald Exterior Tileset",
@@ -4097,7 +4097,7 @@
       "community": 30,
       "norm_label": "character walking animation tileset",
       "id": "app_map_assets_tilesets_char_walk_1_character_walk_tileset",
-      "community_name": "Stale Fallback Block Detection"
+      "community_name": "Community 30"
     },
     {
       "label": "Pok\u00e9mon Emerald Male Character Tileset",
@@ -4111,7 +4111,7 @@
       "community": 31,
       "norm_label": "pokemon emerald male character tileset",
       "id": "app_map_assets_tilesets_emerald_character_male_male_character_tileset",
-      "community_name": "TODO-fallback-map-regeneration.md"
+      "community_name": "Community 31"
     },
     {
       "label": "Pok\u00e9mon World Banner Graphic",
@@ -4125,7 +4125,7 @@
       "community": 32,
       "norm_label": "pokemon world banner graphic",
       "id": "app_public_bannerpic1_banner",
-      "community_name": "generateMapWorkflow"
+      "community_name": "Community 32"
     },
     {
       "label": "Pok\u00e9mon World Application Icon",
@@ -4181,7 +4181,7 @@
       "community": 33,
       "norm_label": "apple touch application icon",
       "id": "app_public_icons_apple_touch_icon_image",
-      "community_name": "Google Static Maps"
+      "community_name": "Community 33"
     },
     {
       "label": "16\u00d716 Website Favicon",
@@ -4195,7 +4195,7 @@
       "community": 34,
       "norm_label": "16\u00d716 website favicon",
       "id": "app_public_icons_favicon_16x16_image",
-      "community_name": "Local World"
+      "community_name": "Community 34"
     },
     {
       "label": "32\u00d732 Website Favicon",
@@ -4209,7 +4209,7 @@
       "community": 35,
       "norm_label": "32\u00d732 website favicon",
       "id": "app_public_icons_favicon_32x32_image",
-      "community_name": "GET /api/map-jobs/:runId"
+      "community_name": "Community 35"
     },
     {
       "label": "Loading Animation",
@@ -4223,7 +4223,7 @@
       "community": 36,
       "norm_label": "loading animation",
       "id": "app_public_loading_loading_animation",
-      "community_name": "POST /api/map-jobs"
+      "community_name": "Community 36"
     },
     {
       "label": "Lopu Designs Brand Image",
@@ -4237,7 +4237,7 @@
       "community": 37,
       "norm_label": "lopu designs brand image",
       "id": "app_public_lopudesigns_lopu_designs_image",
-      "community_name": "MongoDB"
+      "community_name": "Community 37"
     },
     {
       "label": "Walking Character Sprite",
@@ -4251,7 +4251,7 @@
       "community": 38,
       "norm_label": "walking character sprite",
       "id": "app_public_sprites_char_walk_1_image",
-      "community_name": "Nitro 3"
+      "community_name": "Community 38"
     },
     {
       "label": "Game Tile Artwork",
@@ -4265,7 +4265,7 @@
       "community": 39,
       "norm_label": "game tile artwork",
       "id": "app_public_tiles_78oelhvvnpf51_image",
-      "community_name": "POKEWORLD_OFFLINE_MAP Mode"
+      "community_name": "Community 39"
     },
     {
       "label": "Large Tree Tile Variant 1",
@@ -4279,7 +4279,7 @@
       "community": 41,
       "norm_label": "large tree tile variant 1",
       "id": "app_public_tiles_big_tree_1_image",
-      "community_name": "React 19"
+      "community_name": "Community 41"
     },
     {
       "label": "Large Tree Tile Variant 10",
@@ -4293,7 +4293,7 @@
       "community": 40,
       "norm_label": "large tree tile variant 10",
       "id": "app_public_tiles_big_tree_10_image",
-      "community_name": "pokeworld-nitro-react-3847 PM2 Process"
+      "community_name": "Community 40"
     },
     {
       "label": "Large Tree Tile Variant 2",
@@ -4307,7 +4307,7 @@
       "community": 42,
       "norm_label": "large tree tile variant 2",
       "id": "app_public_tiles_big_tree_2_image",
-      "community_name": "React Router"
+      "community_name": "Community 42"
     },
     {
       "label": "Large Tree Tile Variant 3",
@@ -4321,7 +4321,7 @@
       "community": 43,
       "norm_label": "large tree tile variant 3",
       "id": "app_public_tiles_big_tree_3_image",
-      "community_name": "Vercel Build Verification"
+      "community_name": "Community 43"
     },
     {
       "label": "Large Tree Tile Variant 4",
@@ -4335,7 +4335,7 @@
       "community": 44,
       "norm_label": "large tree tile variant 4",
       "id": "app_public_tiles_big_tree_4_image",
-      "community_name": "VERCEL_DEPLOYMENTS.md"
+      "community_name": "Community 44"
     },
     {
       "label": "Large Tree Tile Variant 5",
@@ -4349,7 +4349,7 @@
       "community": 45,
       "norm_label": "large tree tile variant 5",
       "id": "app_public_tiles_big_tree_5_image",
-      "community_name": "Pokeworld Vercel Project"
+      "community_name": "Community 45"
     },
     {
       "label": "Large Tree Tile Variant 6",
@@ -4363,7 +4363,7 @@
       "community": 46,
       "norm_label": "large tree tile variant 6",
       "id": "app_public_tiles_big_tree_6_image",
-      "community_name": "Vercel Workflow"
+      "community_name": "Community 46"
     },
     {
       "label": "Large Tree Tile Variant 7",
@@ -4377,7 +4377,7 @@
       "community": 47,
       "norm_label": "large tree tile variant 7",
       "id": "app_public_tiles_big_tree_7_image",
-      "community_name": "Vercel World"
+      "community_name": "Community 47"
     },
     {
       "label": "Large Tree Tile Variant 8",
@@ -4391,7 +4391,7 @@
       "community": 48,
       "norm_label": "large tree tile variant 8",
       "id": "app_public_tiles_big_tree_8_image",
-      "community_name": "Vite 8"
+      "community_name": "Community 48"
     },
     {
       "label": "Large Tree Tile Variant 9",
@@ -4405,7 +4405,7 @@
       "community": 49,
       "norm_label": "large tree tile variant 9",
       "id": "app_public_tiles_big_tree_9_image",
-      "community_name": "blocks.get.ts"
+      "community_name": "Community 49"
     },
     {
       "label": "Downloaded Game Tile Artwork",
@@ -4419,7 +4419,7 @@
       "community": 50,
       "norm_label": "downloaded game tile artwork",
       "id": "app_public_tiles_download_image",
-      "community_name": "vite-env.d.ts"
+      "community_name": "Community 50"
     },
     {
       "label": "Flower Tile Variant 1",
@@ -4433,7 +4433,7 @@
       "community": 51,
       "norm_label": "flower tile variant 1",
       "id": "app_public_tiles_flower_1_image",
-      "community_name": "vite.config.ts"
+      "community_name": "Community 51"
     },
     {
       "label": "Flower Tile Variant 2",
@@ -4447,7 +4447,7 @@
       "community": 52,
       "norm_label": "flower tile variant 2",
       "id": "app_public_tiles_flower_2_image",
-      "community_name": "vitest.config.ts"
+      "community_name": "Community 52"
     },
     {
       "label": "Flower Tile Variant 3",
@@ -10663,5 +10663,5 @@
       "source_file": "app/public/tiles/sand-1.png"
     }
   ],
-  "built_at_commit": "23ff859ecc48fac1b2e5fb5cefb71385c62a49b9"
+  "built_at_commit": "bd7fbac0abe3746ea8a13a765710d6fbf32cb402"
 }
