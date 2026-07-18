@@ -1,12 +1,12 @@
 # Procedural World Acceptance
 
-Status: In Progress
+Status: Complete
 
 Last reviewed: 2026-07-19
 
 This ledger is the completion source of truth for the deterministic Emerald-style
-world work on `codex/dense-pokemon-worlds`. Set `Status: Complete` only after every
-gate below is backed by current automated and native Chrome evidence.
+world work on `codex/dense-pokemon-worlds`. Complete status is retained only while
+every gate below remains backed by current automated and native Chrome evidence.
 
 ## Required commands
 
@@ -61,9 +61,9 @@ current final-commit screenshots above remain outside the repository as required
 
 ## Delivery gates
 
-- [ ] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
-- [ ] `codex/dense-pokemon-worlds` is pushed.
-- [ ] One ready-for-review pull request is open and current.
+- [x] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
+- [x] `codex/dense-pokemon-worlds` and the compatible Codex/Claude branches are synchronized.
+- [x] One ready-for-review pull request is open and current.
 
 ## Latest verification
 
@@ -75,12 +75,13 @@ current final-commit screenshots above remain outside the repository as required
 - Weighted biome rules sampled at least 500 distinct deterministic compositions while
   reusing only the existing Emerald-era asset corpus.
 - The Vercel static shell and routing/output verifier passed on the integrated branch.
-- Forced local Workflow `wrun_01KXV4RFY3QH722P0E8Z6500SV` completed one real Google
+- Forced local Workflow `wrun_01KXV5076T5BWEYJBV1GH01AZR` completed one real Google
   Static Maps block with 256 tiles, `mapSource: google-static-maps`,
   `fallbackGenerated: false`, tile version `2.3.0001`, and a populated
   `wild-route/secret-grove/route-garden/signed` profile from 864 deterministic recipes.
-- The map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
-  the optimized path measured 10.10x faster than the legacy path.
+- The latest map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
+  the optimized path measured 8.67x faster than the legacy path in that run (10.10x in the
+  immediately preceding acceptance run).
 - Native Chrome desktop and mobile QA passed at Melbourne, Sydney Harbour, and Victorian
   alpine coordinates with full-page scrolling, persisted party/items/badges/PC flows,
   regeneration and movement. The Sydney run verified a deterministic one-tile bridge from
