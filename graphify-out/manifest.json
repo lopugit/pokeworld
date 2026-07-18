@@ -297,7 +297,7 @@
   "app/VERCEL_DEPLOYMENTS.md": {
     "mtime": 1784392505.0034986,
     "ast_hash": "d64a36c6b59ab72c6da059e3a626c58e",
-    "semantic_hash": ""
+    "semantic_hash": "d64a36c6b59ab72c6da059e3a626c58e"
   },
   "app/index.html": {
     "mtime": 1784392505.0039573,
@@ -797,132 +797,132 @@
   "app/public/tiles/house-red-1.png": {
     "mtime": 1784392505.0368087,
     "ast_hash": "60652eb7841e040e2eea84ce71043a93",
-    "semantic_hash": ""
+    "semantic_hash": "60652eb7841e040e2eea84ce71043a93"
   },
   "app/public/tiles/house-red-10.png": {
     "mtime": 1784392505.0370717,
     "ast_hash": "013e93f63aae2f6fb181292276893bcd",
-    "semantic_hash": ""
+    "semantic_hash": "013e93f63aae2f6fb181292276893bcd"
   },
   "app/public/tiles/house-red-11.png": {
     "mtime": 1784392505.037402,
     "ast_hash": "93c65739e0538062fd4773cd50d176c3",
-    "semantic_hash": ""
+    "semantic_hash": "93c65739e0538062fd4773cd50d176c3"
   },
   "app/public/tiles/house-red-12.png": {
     "mtime": 1784392505.0375352,
     "ast_hash": "2724661671b1217ee043d110a346a752",
-    "semantic_hash": ""
+    "semantic_hash": "2724661671b1217ee043d110a346a752"
   },
   "app/public/tiles/house-red-2.png": {
     "mtime": 1784392505.0377593,
     "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
-    "semantic_hash": ""
+    "semantic_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82"
   },
   "app/public/tiles/house-red-3.png": {
     "mtime": 1784392505.0380025,
     "ast_hash": "be132a3726084c042912c6131f3ee746",
-    "semantic_hash": ""
+    "semantic_hash": "be132a3726084c042912c6131f3ee746"
   },
   "app/public/tiles/house-red-4.png": {
     "mtime": 1784392505.0382142,
     "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
-    "semantic_hash": ""
+    "semantic_hash": "a30ff242cb5446a89cc89f48d9882213"
   },
   "app/public/tiles/house-red-5.png": {
     "mtime": 1784392505.0386474,
     "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
-    "semantic_hash": ""
+    "semantic_hash": "172946d04f5e2b7662d7fc65cb8734d5"
   },
   "app/public/tiles/house-red-6.png": {
     "mtime": 1784392505.0411205,
     "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
-    "semantic_hash": ""
+    "semantic_hash": "b6f8e247e3b771cb17255d1f6eef88e3"
   },
   "app/public/tiles/house-red-7.png": {
     "mtime": 1784392505.041809,
     "ast_hash": "4d33c8270a08203ca540f187f9b83550",
-    "semantic_hash": ""
+    "semantic_hash": "4d33c8270a08203ca540f187f9b83550"
   },
   "app/public/tiles/house-red-8.png": {
     "mtime": 1784392505.0419507,
     "ast_hash": "36f822650895c57171532481ee224ab7",
-    "semantic_hash": ""
+    "semantic_hash": "36f822650895c57171532481ee224ab7"
   },
   "app/public/tiles/house-red-9.png": {
     "mtime": 1784392505.0420837,
     "ast_hash": "f3414598cd710fb1435750bee155c185",
-    "semantic_hash": ""
+    "semantic_hash": "f3414598cd710fb1435750bee155c185"
   },
   "app/public/tiles/mountain-1.png": {
     "mtime": 1784392505.0427797,
     "ast_hash": "1c4c5715bd58100803261eb23af366fa",
-    "semantic_hash": ""
+    "semantic_hash": "1c4c5715bd58100803261eb23af366fa"
   },
   "app/public/tiles/mountain-2.png": {
     "mtime": 1784392505.0429263,
     "ast_hash": "f34671313fae5c1ea450a79e38b01396",
-    "semantic_hash": ""
+    "semantic_hash": "f34671313fae5c1ea450a79e38b01396"
   },
   "app/public/tiles/mountain-3.png": {
     "mtime": 1784392505.0430675,
     "ast_hash": "956f9d35d63b9e0b36639b98d5a032a6",
-    "semantic_hash": ""
+    "semantic_hash": "956f9d35d63b9e0b36639b98d5a032a6"
   },
   "app/public/tiles/mountain-4.png": {
     "mtime": 1784392505.043307,
     "ast_hash": "b778e1b26a8edc093ef415ed3c0eaf3f",
-    "semantic_hash": ""
+    "semantic_hash": "b778e1b26a8edc093ef415ed3c0eaf3f"
   },
   "app/public/tiles/mountain-5.png": {
     "mtime": 1784392505.0435488,
     "ast_hash": "52576a804961df2973295a8940f3664c",
-    "semantic_hash": ""
+    "semantic_hash": "52576a804961df2973295a8940f3664c"
   },
   "app/public/tiles/mountain-6.png": {
     "mtime": 1784392505.0438426,
     "ast_hash": "be248a153fedc37fe20b2d79472ee692",
-    "semantic_hash": ""
+    "semantic_hash": "be248a153fedc37fe20b2d79472ee692"
   },
   "app/public/tiles/mountain-7.png": {
     "mtime": 1784392505.044078,
     "ast_hash": "d52b78371eb99f621ddb32667d55d969",
-    "semantic_hash": ""
+    "semantic_hash": "d52b78371eb99f621ddb32667d55d969"
   },
   "app/public/tiles/mountain-8.png": {
     "mtime": 1784392505.044438,
     "ast_hash": "a93c18e08f4ad0925a6ce6334c9e3b78",
-    "semantic_hash": ""
+    "semantic_hash": "a93c18e08f4ad0925a6ce6334c9e3b78"
   },
   "app/public/tiles/mountain-9.png": {
     "mtime": 1784392505.0446715,
     "ast_hash": "d0213287d60c2633b3ad3d3775f26e39",
-    "semantic_hash": ""
+    "semantic_hash": "d0213287d60c2633b3ad3d3775f26e39"
   },
   "app/public/tiles/pond-center-1.png": {
     "mtime": 1784392505.0516546,
     "ast_hash": "0fe0b10ce7de06da9abf12c2daf8d8aa",
-    "semantic_hash": ""
+    "semantic_hash": "0fe0b10ce7de06da9abf12c2daf8d8aa"
   },
   "app/public/tiles/pond-center-2.png": {
     "mtime": 1784392505.0518887,
     "ast_hash": "995a845f3e8ac239e1e14ff55ee9de66",
-    "semantic_hash": ""
+    "semantic_hash": "995a845f3e8ac239e1e14ff55ee9de66"
   },
   "app/public/tiles/pond-center-3.png": {
     "mtime": 1784392505.05232,
     "ast_hash": "c7e5cbf2176dca0726eb65d8d0bfc600",
-    "semantic_hash": ""
+    "semantic_hash": "c7e5cbf2176dca0726eb65d8d0bfc600"
   },
   "app/public/tiles/pond-center-4.png": {
     "mtime": 1784392505.0524502,
     "ast_hash": "e53715392e3c6ec2a6e9ab08b69fea36",
-    "semantic_hash": ""
+    "semantic_hash": "e53715392e3c6ec2a6e9ab08b69fea36"
   },
   "app/public/tiles/rock-1.png": {
     "mtime": 1784392505.0539725,
     "ast_hash": "01fb5b9d2084b941783bcd3daaa8cde9",
-    "semantic_hash": ""
+    "semantic_hash": "01fb5b9d2084b941783bcd3daaa8cde9"
   },
   "app/scripts/benchmark-map-pipeline.mjs": {
     "mtime": 1784392505.0591843,
@@ -1002,11 +1002,16 @@
   "app/DESIGN-emerald-game-systems.md": {
     "mtime": 1784392505.002765,
     "ast_hash": "c6b76e9cc2b544735f29161a60da2fd5",
-    "semantic_hash": ""
+    "semantic_hash": "c6b76e9cc2b544735f29161a60da2fd5"
   },
   "app/tests/map-benchmark.test.ts": {
     "mtime": 1784392670.1085987,
     "ast_hash": "091ba90e2480695844c4478fbac903d7",
     "semantic_hash": "091ba90e2480695844c4478fbac903d7"
+  },
+  "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
+    "mtime": 1784392729.7782092,
+    "ast_hash": "96cc03812f264c78388967b57e9e5b97",
+    "semantic_hash": "96cc03812f264c78388967b57e9e5b97"
   }
 }

@@ -9,7 +9,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d9af7922`
+- Built from commit: `33b4835c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -168,9 +168,9 @@
 - None detected.
 
 ## Hyperedges (group relationships)
+- **Emerald Client Gameplay Flow** — app_design_emerald_game_systems_tile_feature_protocol, app_design_emerald_game_systems_movement_rules, app_design_emerald_game_systems_trainer_state, app_design_emerald_game_systems_game_ui [EXTRACTED 0.98]
 - **Procedural World Acceptance Evidence** — docs_procedural_world_acceptance_automated_gates, docs_procedural_world_acceptance_native_chrome_gates, docs_procedural_world_acceptance_delivery_gates [EXTRACTED 1.00]
 - **Procedural Terrain Tile Set** — app_public_tiles_mountain_9_mountain_tile, app_public_tiles_pond_center_1_pond_center_tile, app_public_tiles_pond_center_2_pond_center_tile, app_public_tiles_pond_center_3_pond_center_tile, app_public_tiles_pond_center_4_pond_center_tile, app_public_tiles_rock_1_rock_tile [INFERRED 0.90]
-- **Emerald Client Gameplay Flow** — app_design_emerald_game_systems_tile_feature_protocol, app_design_emerald_game_systems_movement_rules, app_design_emerald_game_systems_trainer_state, app_design_emerald_game_systems_game_ui [EXTRACTED 0.98]
 - **Red House Tileset** — app_public_tiles_house_red_1_house_tile, app_public_tiles_house_red_2_house_tile, app_public_tiles_house_red_3_house_tile, app_public_tiles_house_red_4_house_tile, app_public_tiles_house_red_5_house_tile, app_public_tiles_house_red_6_house_tile, app_public_tiles_house_red_7_house_tile, app_public_tiles_house_red_8_house_tile, app_public_tiles_house_red_9_house_tile, app_public_tiles_house_red_10_house_tile, app_public_tiles_house_red_11_house_tile, app_public_tiles_house_red_12_house_tile [EXTRACTED 1.00]
 - **Mountain Terrain Tileset** — app_public_tiles_mountain_1_mountain_tile, app_public_tiles_mountain_2_mountain_tile, app_public_tiles_mountain_3_mountain_tile, app_public_tiles_mountain_4_mountain_tile, app_public_tiles_mountain_5_mountain_tile, app_public_tiles_mountain_6_mountain_tile, app_public_tiles_mountain_7_mountain_tile, app_public_tiles_mountain_8_mountain_tile [EXTRACTED 1.00]
 - **Terrain Tile Asset Set** — app_public_tiles_mountain_9_image, app_public_tiles_pond_center_1_image, app_public_tiles_pond_center_2_image, app_public_tiles_pond_center_3_image, app_public_tiles_pond_center_4_image, app_public_tiles_rock_1_image [INFERRED 0.95]
@@ -210,16 +210,16 @@ Cohesion: 0.09
 Nodes (23): Client Game Systems, Seeded Detail Density Target, Emerald Game Systems Design and Cross-Agent Contract, Game UI Systems, Movement Rules, Server World Generation, Tile Feature Protocol, Persisted Trainer State (+15 more)
 
 ### Community 9 - "pm2.mjs"
+Cohesion: 0.18
+Nodes (18): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+10 more)
+
+### Community 10 - "compilerOptions"
 Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
-### Community 10 - "compilerOptions"
-Cohesion: 0.20
-Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
-
 ### Community 11 - "Game.tsx"
 Cohesion: 0.14
-Nodes (16): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE (+8 more)
+Nodes (15): CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE, PIXEL_PALETTE (+7 more)
 
 ### Community 12 - "game-rules.ts"
 Cohesion: 0.12
@@ -290,7 +290,7 @@ Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **310 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+305 more)
+- **310 isolated node(s):** `MapBenchmarkResult`, `name`, `version`, `private`, `type` (+305 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **97 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -299,9 +299,9 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `scripts` to `types.ts`, `DevKit.tsx`, `terrain-life.ts`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **Why does `rgbaToTileColourData()` connect `compilerOptions` to `extract-terrain-tiles.mjs`, `generate-map.mjs`?**
+- **Why does `rgbaToTileColourData()` connect `pm2.mjs` to `extract-terrain-tiles.mjs`, `generate-map.mjs`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
+- **What connects `MapBenchmarkResult`, `name`, `version` to the rest of the system?**
   _311 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `functions.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.07401129943502825 - nodes in this community are weakly interconnected._
