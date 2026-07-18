@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 470 nodes · 562 edges · 121 communities (25 shown, 96 thin omitted)
+- 470 nodes · 551 edges · 121 communities (25 shown, 96 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 15 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7368b248`
+- Built from commit: `b28349f4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -130,19 +130,18 @@
 - [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
 - [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
 - [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
-- [[_COMMUNITY_map-source.ts|map-source.ts]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 35 edges
 2. `scripts` - 14 edges
 3. `scripts` - 14 edges
 4. `compilerOptions` - 9 edges
-5. `start()` - 8 edges
-6. `cropPngWithRgba()` - 8 edges
+5. `cropPngWithRgba()` - 8 edges
+6. `start()` - 8 edges
 7. `encodePng()` - 7 edges
 8. `loadThings()` - 7 edges
 9. `saveThing()` - 7 edges
-10. `stop()` - 6 edges
+10. `cropRgba()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `pnpm Workspace Configuration` --references--> `Pokémon World application`  [EXTRACTED]
@@ -175,23 +174,23 @@
 
 ### Community 0 - "functions.ts"
 Cohesion: 0.07
-Nodes (38): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap() (+30 more)
+Nodes (37): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap() (+29 more)
 
 ### Community 1 - "Game"
 Cohesion: 0.10
 Nodes (6): Game, isFiniteNumber(), emptyState(), loadThings(), saveThing(), ThingsState
 
 ### Community 2 - "Game.tsx"
-Cohesion: 0.17
-Nodes (14): MapBlock, MapJobInput, defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState (+6 more)
+Cohesion: 0.11
+Nodes (25): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), blocksCollection(), getStoredBlocks(), isMongoConfigured(), mongoUri(), MapBlock (+17 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.06
 Nodes (33): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+25 more)
 
 ### Community 4 - "types.ts"
-Cohesion: 0.11
-Nodes (24): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+16 more)
+Cohesion: 0.13
+Nodes (17): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), parseMapJobInput(), parseOffset() (+9 more)
 
 ### Community 5 - "GamePage.tsx"
 Cohesion: 0.13
@@ -253,10 +252,6 @@ Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Gras
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-### Community 124 - "map-source.ts"
-Cohesion: 0.53
-Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
-
 ## Knowledge Gaps
 - **249 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+244 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -266,16 +261,16 @@ Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGenerated
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `Game` to `Game.tsx`, `GamePage.tsx`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `Game.tsx` to `types.ts`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `rgbaToTileColourData()` connect `functions.ts` to `benchmark-map-pipeline.mjs`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
   _250 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `functions.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06715063520871144 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06623376623376623 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._
+- **Should `Game.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.10984848484848485 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
