@@ -1,1 +1,1 @@
-export { default } from "../api/blocks.get";
+export { default } from "../api/blocks.get.ts";

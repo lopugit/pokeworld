@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 335 nodes · 506 edges · 25 communities (22 shown, 3 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.57)
+- 345 nodes · 487 edges · 49 communities (22 shown, 27 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `44118605`
+- Built from commit: `3aa98d43`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,25 +28,49 @@
 - [[_COMMUNITY_apis.js|apis.js]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
-- [[_COMMUNITY_Community 14|Community 14]]
-- [[_COMMUNITY_Community 15|Community 15]]
-- [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
+- [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
+- [[_COMMUNITY_vercel.json|vercel.json]]
+- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
 - [[_COMMUNITY_Banner.vue|Banner.vue]]
-- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
+- [[_COMMUNITY_Nitro Cache Bypass for Stale Fallback Blocks|Nitro Cache Bypass for Stale Fallback Blocks]]
+- [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
+- [[_COMMUNITY_Fallback Map Regeneration Repair|Fallback Map Regeneration Repair]]
+- [[_COMMUNITY_Lazy Durable Workflow Regeneration|Lazy Durable Workflow Regeneration]]
+- [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
+- [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
+- [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
+- [[_COMMUNITY_generateMapWorkflow|generateMapWorkflow]]
+- [[_COMMUNITY_Google Static Maps|Google Static Maps]]
+- [[_COMMUNITY_Local World|Local World]]
+- [[_COMMUNITY_GET apimap-jobsrunId|GET /api/map-jobs/:runId]]
+- [[_COMMUNITY_POST apimap-jobs|POST /api/map-jobs]]
+- [[_COMMUNITY_MongoDB|MongoDB]]
+- [[_COMMUNITY_Nitro 3|Nitro 3]]
+- [[_COMMUNITY_POKEWORLD_OFFLINE_MAP Mode|POKEWORLD_OFFLINE_MAP Mode]]
+- [[_COMMUNITY_pokeworld-nitro-react-3847 PM2 Process|pokeworld-nitro-react-3847 PM2 Process]]
+- [[_COMMUNITY_React 19|React 19]]
+- [[_COMMUNITY_React Router|React Router]]
+- [[_COMMUNITY_Vercel Build Verification|Vercel Build Verification]]
+- [[_COMMUNITY_VERCEL_DEPLOYMENTS|VERCEL_DEPLOYMENTS.md]]
+- [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
+- [[_COMMUNITY_Vercel Workflow|Vercel Workflow]]
+- [[_COMMUNITY_Vercel World|Vercel World]]
+- [[_COMMUNITY_Vite 8|Vite 8]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 35 edges
 2. `scripts` - 13 edges
-3. `Pokémon World` - 10 edges
-4. `compilerOptions` - 9 edges
-5. `start()` - 8 edges
-6. `loadThings()` - 7 edges
-7. `saveThing()` - 7 edges
-8. `stop()` - 6 edges
-9. `parseMapJobInput()` - 6 edges
-10. `log()` - 6 edges
+3. `compilerOptions` - 9 edges
+4. `start()` - 8 edges
+5. `loadThings()` - 7 edges
+6. `saveThing()` - 7 edges
+7. `stop()` - 6 edges
+8. `parseMapJobInput()` - 6 edges
+9. `log()` - 6 edges
+10. `MapBlock` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `BlocksResponse` --references--> `MapBlock`  [EXTRACTED]
@@ -78,15 +102,15 @@
 - **Flower Tile Variant Set** — public_tiles_flower_1_flower_tile_1, public_tiles_flower_2_flower_tile_2, public_tiles_flower_3_flower_tile_3 [INFERRED 0.98]
 - **Website Icon Set** — public_icons_apple_touch_icon_apple_touch_icon, public_icons_favicon_16x16_favicon_16x16, public_icons_favicon_32x32_favicon_32x32 [INFERRED 0.98]
 
-## Communities (25 total, 3 thin omitted)
+## Communities (49 total, 27 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (33): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+25 more)
+Cohesion: 0.08
+Nodes (29): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+21 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.11
-Nodes (25): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+17 more)
+Cohesion: 0.10
+Nodes (28): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), blocksCollection(), getStoredBlocks(), isMongoConfigured(), mongoUri(), MapBlock (+20 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.10
@@ -100,10 +124,6 @@ Nodes (20): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react
 Cohesion: 0.13
 Nodes (12): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+4 more)
 
-### Community 5 - "index.js"
-Cohesion: 0.13
-Nodes (19): GET /api/blocks, generateMapWorkflow, Google Static Maps, Local World, GET /api/map-jobs/:runId, POST /api/map-jobs, MongoDB, Nitro 3 (+11 more)
-
 ### Community 6 - "devDependencies"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
@@ -113,8 +133,8 @@ Cohesion: 0.32
 Nodes (14): apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2(), removeOwned() (+6 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.19
-Nodes (13): MapBlock, defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PlayerState, StoredImage (+5 more)
+Cohesion: 0.15
+Nodes (14): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), parseMapJobInput(), parseOffset() (+6 more)
 
 ### Community 9 - "dependencies"
 Cohesion: 0.14
@@ -136,41 +156,45 @@ Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJEC
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 14 - "Community 14"
-Cohesion: 0.25
-Nodes (8): blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback Map Regeneration Query, Fallback Map Regeneration Repair, Lazy Durable Workflow Regeneration, Legacy Fallback Fingerprint Detection, Stale Fallback Block Detection, TODO-fallback-map-regeneration.md
-
-### Community 15 - "Community 15"
+### Community 15 - "TODO: fallback map regeneration"
 Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
-### Community 16 - "Community 16"
+### Community 16 - "vercel.json"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
-### Community 17 - "Community 17"
+### Community 17 - "finalize-static-shell.mjs"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
+### Community 18 - "ecosystem.config.js"
+Cohesion: 0.20
+Nodes (8): API routes, How Workflow works locally, Install and run, Map generation, Pokémon World, Verification and deployment, Build, Vercel deployments
+
+### Community 20 - "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?, Source Nodes
+
 ## Knowledge Gaps
-- **129 isolated node(s):** `Problem`, `Implemented behavior`, `Operational note`, `Remaining follow-up`, `Build` (+124 more)
+- **147 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+142 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `package.json` to `DevKit.vue`, `dependencies`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `DevKit.vue` to `functions.js`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+- **Why does `Game` connect `package.json` to `functions.js`, `dependencies`?**
+  _High betweenness centrality (0.080) - this node is a cross-community bridge._
 - **Why does `scripts` connect `apis.js` to `blocks.js`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **What connects `Problem`, `Implemented behavior`, `Operational note` to the rest of the system?**
-  _129 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **What connects `name`, `version`, `private` to the rest of the system?**
+  _147 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.06980392156862746 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0797979797979798 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.10520487264673312 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0990990990990991 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._
+- **Should `blocks.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._

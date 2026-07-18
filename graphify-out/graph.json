@@ -226,105 +226,6 @@
   },
   "nodes": [
     {
-      "label": "TODO-fallback-map-regeneration.md",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "todo-fallback-map-regeneration.md",
-      "id": "todo_fallback_map_regeneration",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "TODO: fallback map regeneration",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "todo: fallback map regeneration",
-      "id": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "Problem",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "problem",
-      "id": "todo_fallback_map_regeneration_problem",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "Implemented behavior",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "implemented behavior",
-      "id": "todo_fallback_map_regeneration_implemented_behavior",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "Operational note",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "operational note",
-      "id": "todo_fallback_map_regeneration_operational_note",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "Remaining follow-up",
-      "file_type": "document",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "remaining follow-up",
-      "id": "todo_fallback_map_regeneration_remaining_follow_up",
-      "community_name": "Community 15"
-    },
-    {
-      "label": "VERCEL_DEPLOYMENTS.md",
-      "file_type": "document",
-      "source_file": "VERCEL_DEPLOYMENTS.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "vercel_deployments.md",
-      "id": "vercel_deployments",
-      "community_name": "ecosystem.config.js"
-    },
-    {
-      "label": "Vercel deployments",
-      "file_type": "document",
-      "source_file": "VERCEL_DEPLOYMENTS.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "vercel deployments",
-      "id": "vercel_deployments_vercel_deployments",
-      "community_name": "ecosystem.config.js"
-    },
-    {
-      "label": "Build",
-      "file_type": "document",
-      "source_file": "VERCEL_DEPLOYMENTS.md",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "build",
-      "id": "vercel_deployments_build",
-      "community_name": "ecosystem.config.js"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
@@ -872,7 +773,7 @@
       "community": 17,
       "norm_label": "finalize-static-shell.mjs",
       "id": "scripts_finalize_static_shell",
-      "community_name": "Community 17"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "root",
@@ -883,7 +784,7 @@
       "community": 17,
       "norm_label": "root",
       "id": "scripts_finalize_static_shell_root",
-      "community_name": "Community 17"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "transformedShell",
@@ -894,7 +795,7 @@
       "community": 17,
       "norm_label": "transformedshell",
       "id": "scripts_finalize_static_shell_transformedshell",
-      "community_name": "Community 17"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "target",
@@ -905,7 +806,7 @@
       "community": 17,
       "norm_label": "target",
       "id": "scripts_finalize_static_shell_target",
-      "community_name": "Community 17"
+      "community_name": "finalize-static-shell.mjs"
     },
     {
       "label": "generate-map.mjs",
@@ -1364,10 +1265,10 @@
       "source_file": "server/routes/api/block-lat-lng.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "block-lat-lng.get.ts",
       "id": "server_routes_api_block_lat_lng_get",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "blocks.get.ts",
@@ -1375,10 +1276,10 @@
       "source_file": "server/routes/api/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "blocks.get.ts",
       "id": "server_routes_api_blocks_get",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "queryOffsets()",
@@ -1386,10 +1287,10 @@
       "source_file": "server/routes/api/blocks.get.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "queryoffsets()",
       "id": "server_routes_api_blocks_get_queryoffsets",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "health.get.ts",
@@ -1408,10 +1309,10 @@
       "source_file": "server/routes/api/map-jobs.post.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "map-jobs.post.ts",
       "id": "server_routes_api_map_jobs_post",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "[runId].get.ts",
@@ -1419,10 +1320,10 @@
       "source_file": "server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "[runid].get.ts",
       "id": "server_routes_api_map_jobs_runid_get",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "privacy-policy.get.ts",
@@ -1433,7 +1334,7 @@
       "community": 21,
       "norm_label": "privacy-policy.get.ts",
       "id": "server_routes_privacy_policy_get",
-      "community_name": "Community 21"
+      "community_name": "privacy-policy.get.ts"
     },
     {
       "label": "blockLatLng.get.ts",
@@ -1441,10 +1342,10 @@
       "source_file": "server/routes/v1/blockLatLng.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "blocklatlng.get.ts",
       "id": "server_routes_v1_blocklatlng_get",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "blocks.get.ts",
@@ -1452,10 +1353,10 @@
       "source_file": "server/routes/v1/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "blocks.get.ts",
       "id": "server_routes_v1_blocks_get",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "coordinates.ts",
@@ -1463,10 +1364,10 @@
       "source_file": "server/services/map/coordinates.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "coordinates.ts",
       "id": "server_services_map_coordinates",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "toRadians()",
@@ -1474,10 +1375,10 @@
       "source_file": "server/services/map/coordinates.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "toradians()",
       "id": "server_services_map_coordinates_toradians",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "projectLatitude()",
@@ -1485,10 +1386,10 @@
       "source_file": "server/services/map/coordinates.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "projectlatitude()",
       "id": "server_services_map_coordinates_projectlatitude",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "minLatitudeProjected",
@@ -1496,10 +1397,10 @@
       "source_file": "server/services/map/coordinates.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "minlatitudeprojected",
       "id": "server_services_map_coordinates_minlatitudeprojected",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "blockForCoordinates()",
@@ -1507,10 +1408,10 @@
       "source_file": "server/services/map/coordinates.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "blockforcoordinates()",
       "id": "server_services_map_coordinates_blockforcoordinates",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "generate.ts",
@@ -1562,10 +1463,10 @@
       "source_file": "server/services/map/input.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "input.ts",
       "id": "server_services_map_input",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "finiteInteger()",
@@ -1573,10 +1474,10 @@
       "source_file": "server/services/map/input.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "finiteinteger()",
       "id": "server_services_map_input_finiteinteger",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "parseOffset()",
@@ -1584,10 +1485,10 @@
       "source_file": "server/services/map/input.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "parseoffset()",
       "id": "server_services_map_input_parseoffset",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "parseMapJobInput()",
@@ -1595,10 +1496,10 @@
       "source_file": "server/services/map/input.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "parsemapjobinput()",
       "id": "server_services_map_input_parsemapjobinput",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "coordinatesForInput()",
@@ -1606,10 +1507,10 @@
       "source_file": "server/services/map/input.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "coordinatesforinput()",
       "id": "server_services_map_input_coordinatesforinput",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "blocks.ts",
@@ -2057,10 +1958,10 @@
       "source_file": "server/services/map/legacy/map-source.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "map-source.ts",
       "id": "server_services_map_legacy_map_source",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "canUseGoogleStaticMaps()",
@@ -2068,10 +1969,10 @@
       "source_file": "server/services/map/legacy/map-source.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "canusegooglestaticmaps()",
       "id": "server_services_map_legacy_map_source_canusegooglestaticmaps",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "getBase64ImageSha256()",
@@ -2079,10 +1980,10 @@
       "source_file": "server/services/map/legacy/map-source.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "getbase64imagesha256()",
       "id": "server_services_map_legacy_map_source_getbase64imagesha256",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "isFallbackGeneratedBlock()",
@@ -2090,10 +1991,10 @@
       "source_file": "server/services/map/legacy/map-source.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "isfallbackgeneratedblock()",
       "id": "server_services_map_legacy_map_source_isfallbackgeneratedblock",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "shouldRegenerateFallbackBlock()",
@@ -2101,10 +2002,10 @@
       "source_file": "server/services/map/legacy/map-source.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "shouldregeneratefallbackblock()",
       "id": "server_services_map_legacy_map_source_shouldregeneratefallbackblock",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "flowers.ts",
@@ -2398,10 +2299,10 @@
       "source_file": "server/services/map/types.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "mapblock",
       "id": "server_services_map_types_mapblock",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "MapGenerationStepResult",
@@ -2431,10 +2332,10 @@
       "source_file": "server/utils/http.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "http.ts",
       "id": "server_utils_http",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "jsonResponse()",
@@ -2442,10 +2343,10 @@
       "source_file": "server/utils/http.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "jsonresponse()",
       "id": "server_utils_http_jsonresponse",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "errorResponse()",
@@ -2453,10 +2354,10 @@
       "source_file": "server/utils/http.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "errorresponse()",
       "id": "server_utils_http_errorresponse",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "App.tsx",
@@ -2607,10 +2508,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "game.tsx",
       "id": "src_components_game",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "defaultCoordinates",
@@ -2618,10 +2519,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "defaultcoordinates",
       "id": "src_components_game_defaultcoordinates",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "GameSettings",
@@ -2629,10 +2530,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "gamesettings",
       "id": "src_components_game_gamesettings",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "MapView",
@@ -2640,10 +2541,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "mapview",
       "id": "src_components_game_mapview",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "MoveAction",
@@ -2651,10 +2552,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "moveaction",
       "id": "src_components_game_moveaction",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "PlayerState",
@@ -2662,10 +2563,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "playerstate",
       "id": "src_components_game_playerstate",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "GameComponentState",
@@ -2673,10 +2574,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "gamecomponentstate",
       "id": "src_components_game_gamecomponentstate",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "StoredImage",
@@ -2684,10 +2585,10 @@
       "source_file": "src/components/Game.tsx",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "storedimage",
       "id": "src_components_game_storedimage",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "isFiniteNumber()",
@@ -3124,10 +3025,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "map-api.ts",
       "id": "src_lib_map_api",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "BlocksResponse",
@@ -3135,10 +3036,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "blocksresponse",
       "id": "src_lib_map_api_blocksresponse",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "abortableDelay()",
@@ -3146,10 +3047,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "abortabledelay()",
       "id": "src_lib_map_api_abortabledelay",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "responseJson()",
@@ -3157,10 +3058,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "responsejson()",
       "id": "src_lib_map_api_responsejson",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "getMapBlocks()",
@@ -3168,10 +3069,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "getmapblocks()",
       "id": "src_lib_map_api_getmapblocks",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "getBlockForCoordinates()",
@@ -3179,10 +3080,10 @@
       "source_file": "src/lib/map-api.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "getblockforcoordinates()",
       "id": "src_lib_map_api_getblockforcoordinates",
-      "community_name": "DevKit.vue"
+      "community_name": "functions.js"
     },
     {
       "label": "persisted-state.ts",
@@ -3311,10 +3212,10 @@
       "source_file": "tests/map-input.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "map-input.test.ts",
       "id": "tests_map_input_test",
-      "community_name": "functions.js"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "map-source.test.ts",
@@ -3322,10 +3223,10 @@
       "source_file": "tests/map-source.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 8,
       "norm_label": "map-source.test.ts",
       "id": "tests_map_source_test",
-      "community_name": "Game.vue"
+      "community_name": "DevKit.vue"
     },
     {
       "label": "tsconfig.json",
@@ -3490,7 +3391,7 @@
       "community": 16,
       "norm_label": "vercel.json",
       "id": "vercel",
-      "community_name": "Community 16"
+      "community_name": "vercel.json"
     },
     {
       "label": "$schema",
@@ -3501,7 +3402,7 @@
       "community": 16,
       "norm_label": "$schema",
       "id": "vercel_schema",
-      "community_name": "Community 16"
+      "community_name": "vercel.json"
     },
     {
       "label": "framework",
@@ -3512,7 +3413,7 @@
       "community": 16,
       "norm_label": "framework",
       "id": "vercel_framework",
-      "community_name": "Community 16"
+      "community_name": "vercel.json"
     },
     {
       "label": "installCommand",
@@ -3523,7 +3424,7 @@
       "community": 16,
       "norm_label": "installcommand",
       "id": "vercel_installcommand",
-      "community_name": "Community 16"
+      "community_name": "vercel.json"
     },
     {
       "label": "buildCommand",
@@ -3534,7 +3435,7 @@
       "community": 16,
       "norm_label": "buildcommand",
       "id": "vercel_buildcommand",
-      "community_name": "Community 16"
+      "community_name": "vercel.json"
     },
     {
       "label": "vite.config.ts",
@@ -3545,7 +3446,7 @@
       "community": 23,
       "norm_label": "vite.config.ts",
       "id": "vite_config",
-      "community_name": "Community 23"
+      "community_name": "vite.config.ts"
     },
     {
       "label": "vitest.config.ts",
@@ -3556,7 +3457,7 @@
       "community": 24,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config",
-      "community_name": "Community 24"
+      "community_name": "vitest.config.ts"
     },
     {
       "label": "index.ts",
@@ -3603,6 +3504,237 @@
       "community_name": "functions.js"
     },
     {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "readme.md",
+      "id": "readme",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Pok\u00e9mon World",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "pokemon world",
+      "id": "readme_pok\u00e9mon_world",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Install and run",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "install and run",
+      "id": "readme_install_and_run",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "How Workflow works locally",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "how workflow works locally",
+      "id": "readme_how_workflow_works_locally",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Map generation",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L65",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "map generation",
+      "id": "readme_map_generation",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "API routes",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "api routes",
+      "id": "readme_api_routes",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Verification and deployment",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L91",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "verification and deployment",
+      "id": "readme_verification_and_deployment",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "TODO-fallback-map-regeneration.md",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "todo-fallback-map-regeneration.md",
+      "id": "todo_fallback_map_regeneration",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "TODO: fallback map regeneration",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "todo: fallback map regeneration",
+      "id": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "Problem",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "problem",
+      "id": "todo_fallback_map_regeneration_problem",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "Implemented behavior",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "implemented behavior",
+      "id": "todo_fallback_map_regeneration_implemented_behavior",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "Operational note",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "operational note",
+      "id": "todo_fallback_map_regeneration_operational_note",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "Remaining follow-up",
+      "file_type": "document",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "remaining follow-up",
+      "id": "todo_fallback_map_regeneration_remaining_follow_up",
+      "community_name": "TODO: fallback map regeneration"
+    },
+    {
+      "label": "VERCEL_DEPLOYMENTS.md",
+      "file_type": "document",
+      "source_file": "VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "vercel_deployments.md",
+      "id": "vercel_deployments",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Vercel deployments",
+      "file_type": "document",
+      "source_file": "VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "vercel deployments",
+      "id": "vercel_deployments_vercel_deployments",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "Build",
+      "file_type": "document",
+      "source_file": "VERCEL_DEPLOYMENTS.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "build",
+      "id": "vercel_deployments_build",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo",
+      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+    },
+    {
+      "label": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "q: can we add a todo-${task}.md to document the mongodb fallback-generated block problem and implement automatic regeneration?",
+      "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration",
+      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "answer",
+      "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_answer",
+      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+    },
+    {
+      "label": "Outcome",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "outcome",
+      "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_outcome",
+      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "source nodes",
+      "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_source_nodes",
+      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
+    },
+    {
       "label": "Fallback Map Regeneration Query",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
@@ -3611,9 +3743,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 26,
       "norm_label": "fallback map regeneration query",
-      "community_name": "Community 14",
+      "community_name": "Fallback Map Regeneration Query",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query"
     },
     {
@@ -3625,9 +3757,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 27,
       "norm_label": "fallback map regeneration repair",
-      "community_name": "Community 14",
+      "community_name": "Fallback Map Regeneration Repair",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_repair"
     },
     {
@@ -3639,9 +3771,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 30,
       "norm_label": "stale fallback block detection",
-      "community_name": "Community 14",
+      "community_name": "Stale Fallback Block Detection",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection"
     },
     {
@@ -3655,7 +3787,7 @@
       "contributor": "graphify",
       "community": 14,
       "norm_label": "blocks.get.ts",
-      "community_name": "Community 14",
+      "community_name": "blocks.get.ts",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get"
     },
     {
@@ -3667,9 +3799,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 29,
       "norm_label": "legacy fallback fingerprint detection",
-      "community_name": "Community 14",
+      "community_name": "Legacy Fallback Fingerprint Detection",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint"
     },
     {
@@ -3681,9 +3813,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 25,
       "norm_label": "nitro cache bypass for stale fallback blocks",
-      "community_name": "Community 14",
+      "community_name": "Nitro Cache Bypass for Stale Fallback Blocks",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass"
     },
     {
@@ -3695,9 +3827,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 28,
       "norm_label": "lazy durable workflow regeneration",
-      "community_name": "Community 14",
+      "community_name": "Lazy Durable Workflow Regeneration",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration"
     },
     {
@@ -3709,24 +3841,10 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 14,
+      "community": 31,
       "norm_label": "todo-fallback-map-regeneration.md",
-      "community_name": "Community 14",
+      "community_name": "TODO-fallback-map-regeneration.md",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_todo_document"
-    },
-    {
-      "label": "Pok\u00e9mon World",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 5,
-      "norm_label": "pokemon world",
-      "id": "readme_pokemon_world",
-      "community_name": "index.js"
     },
     {
       "label": "React 19",
@@ -3737,10 +3855,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 41,
       "norm_label": "react 19",
-      "id": "readme_react_19",
-      "community_name": "index.js"
+      "community_name": "React 19",
+      "id": "readme_react_19"
     },
     {
       "label": "React Router",
@@ -3751,10 +3869,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 42,
       "norm_label": "react router",
-      "id": "readme_react_router",
-      "community_name": "index.js"
+      "community_name": "React Router",
+      "id": "readme_react_router"
     },
     {
       "label": "Vite 8",
@@ -3765,10 +3883,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 48,
       "norm_label": "vite 8",
-      "id": "readme_vite_8",
-      "community_name": "index.js"
+      "community_name": "Vite 8",
+      "id": "readme_vite_8"
     },
     {
       "label": "Nitro 3",
@@ -3779,10 +3897,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 38,
       "norm_label": "nitro 3",
-      "id": "readme_nitro_3",
-      "community_name": "index.js"
+      "community_name": "Nitro 3",
+      "id": "readme_nitro_3"
     },
     {
       "label": "Vercel Workflow",
@@ -3793,10 +3911,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 46,
       "norm_label": "vercel workflow",
-      "id": "readme_vercel_workflow",
-      "community_name": "index.js"
+      "community_name": "Vercel Workflow",
+      "id": "readme_vercel_workflow"
     },
     {
       "label": "MongoDB",
@@ -3807,10 +3925,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 37,
       "norm_label": "mongodb",
-      "id": "readme_mongodb",
-      "community_name": "index.js"
+      "community_name": "MongoDB",
+      "id": "readme_mongodb"
     },
     {
       "label": "Google Static Maps",
@@ -3821,10 +3939,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 33,
       "norm_label": "google static maps",
-      "id": "readme_google_static_maps",
-      "community_name": "index.js"
+      "community_name": "Google Static Maps",
+      "id": "readme_google_static_maps"
     },
     {
       "label": "Local World",
@@ -3835,10 +3953,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 34,
       "norm_label": "local world",
-      "id": "readme_local_world",
-      "community_name": "index.js"
+      "community_name": "Local World",
+      "id": "readme_local_world"
     },
     {
       "label": "Vercel World",
@@ -3849,10 +3967,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 47,
       "norm_label": "vercel world",
-      "id": "readme_vercel_world",
-      "community_name": "index.js"
+      "community_name": "Vercel World",
+      "id": "readme_vercel_world"
     },
     {
       "label": "pokeworld-nitro-react-3847 PM2 Process",
@@ -3863,24 +3981,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 40,
       "norm_label": "pokeworld-nitro-react-3847 pm2 process",
-      "id": "readme_pm2_process",
-      "community_name": "index.js"
-    },
-    {
-      "label": "Map Generation",
-      "file_type": "concept",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 20,
-      "norm_label": "map generation",
-      "id": "readme_map_generation",
-      "community_name": "Community 20"
+      "community_name": "pokeworld-nitro-react-3847 PM2 Process",
+      "id": "readme_pm2_process"
     },
     {
       "label": "generateMapWorkflow",
@@ -3891,10 +3995,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 32,
       "norm_label": "generatemapworkflow",
-      "id": "readme_generate_map_workflow",
-      "community_name": "index.js"
+      "community_name": "generateMapWorkflow",
+      "id": "readme_generate_map_workflow"
     },
     {
       "label": "GET /api/blocks",
@@ -3907,8 +4011,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "get /api/blocks",
-      "id": "readme_blocks_api",
-      "community_name": "index.js"
+      "community_name": "index.js",
+      "id": "readme_blocks_api"
     },
     {
       "label": "POST /api/map-jobs",
@@ -3919,10 +4023,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 36,
       "norm_label": "post /api/map-jobs",
-      "id": "readme_map_jobs_api",
-      "community_name": "index.js"
+      "community_name": "POST /api/map-jobs",
+      "id": "readme_map_jobs_api"
     },
     {
       "label": "GET /api/map-jobs/:runId",
@@ -3933,10 +4037,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 35,
       "norm_label": "get /api/map-jobs/:runid",
-      "id": "readme_map_job_status_api",
-      "community_name": "index.js"
+      "community_name": "GET /api/map-jobs/:runId",
+      "id": "readme_map_job_status_api"
     },
     {
       "label": "POKEWORLD_OFFLINE_MAP Mode",
@@ -3947,10 +4051,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 39,
       "norm_label": "pokeworld_offline_map mode",
-      "id": "readme_offline_map_mode",
-      "community_name": "index.js"
+      "community_name": "POKEWORLD_OFFLINE_MAP Mode",
+      "id": "readme_offline_map_mode"
     },
     {
       "label": "Vercel Build Verification",
@@ -3961,10 +4065,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 43,
       "norm_label": "vercel build verification",
-      "id": "readme_vercel_build_verification",
-      "community_name": "index.js"
+      "community_name": "Vercel Build Verification",
+      "id": "readme_vercel_build_verification"
     },
     {
       "label": "Pokeworld Vercel Project",
@@ -3975,10 +4079,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 45,
       "norm_label": "pokeworld vercel project",
-      "id": "readme_vercel_project",
-      "community_name": "index.js"
+      "community_name": "Pokeworld Vercel Project",
+      "id": "readme_vercel_project"
     },
     {
       "label": "VERCEL_DEPLOYMENTS.md",
@@ -3989,83 +4093,13 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 44,
       "norm_label": "vercel_deployments.md",
-      "id": "readme_vercel_deployments",
-      "community_name": "index.js"
+      "community_name": "VERCEL_DEPLOYMENTS.md",
+      "id": "readme_vercel_deployments"
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "todo_fallback_map_regeneration",
-      "target": "todo_fallback_map_regeneration_todo_fallback_map_regeneration"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
-      "target": "todo_fallback_map_regeneration_implemented_behavior"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
-      "target": "todo_fallback_map_regeneration_operational_note"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
-      "target": "todo_fallback_map_regeneration_problem"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TODO-fallback-map-regeneration.md",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
-      "target": "todo_fallback_map_regeneration_remaining_follow_up"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "VERCEL_DEPLOYMENTS.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "vercel_deployments",
-      "target": "vercel_deployments_vercel_deployments"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "VERCEL_DEPLOYMENTS.md",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "vercel_deployments_vercel_deployments",
-      "target": "vercel_deployments_build"
-    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -8985,304 +9019,184 @@
       "target": "workflows_map_generation_steps_generatemapblockstep"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme",
+      "target": "readme_pok\u00e9mon_world"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L109",
+      "weight": 1.0,
       "confidence_score": 1.0,
+      "source": "readme",
+      "target": "vercel_deployments"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_pok\u00e9mon_world",
+      "target": "readme_how_workflow_works_locally"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_pok\u00e9mon_world",
+      "target": "readme_install_and_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_pok\u00e9mon_world",
+      "target": "readme_map_generation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_pok\u00e9mon_world",
+      "target": "readme_verification_and_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_map_generation",
+      "target": "readme_api_routes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "todo_fallback_map_regeneration",
+      "target": "todo_fallback_map_regeneration_todo_fallback_map_regeneration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
+      "target": "todo_fallback_map_regeneration_implemented_behavior"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
+      "target": "todo_fallback_map_regeneration_operational_note"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
+      "target": "todo_fallback_map_regeneration_problem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TODO-fallback-map-regeneration.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "todo_fallback_map_regeneration_todo_fallback_map_regeneration",
+      "target": "todo_fallback_map_regeneration_remaining_follow_up"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vercel_deployments",
+      "target": "vercel_deployments_vercel_deployments"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "VERCEL_DEPLOYMENTS.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vercel_deployments_vercel_deployments",
+      "target": "vercel_deployments_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get"
+      "confidence_score": 1.0,
+      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo",
+      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration"
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
+      "source_location": "L12",
       "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_repair"
+      "confidence_score": 1.0,
+      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration",
+      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_answer"
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
+      "source_location": "L16",
       "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection"
+      "confidence_score": 1.0,
+      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration",
+      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_outcome"
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
+      "source_location": "L20",
       "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_todo_document"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.88,
-      "source_file": "graphify-out/memory/query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get",
-      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_google_static_maps"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_mongodb"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_nitro_3"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_pm2_process"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_react_19"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_react_router"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_vercel_deployments"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_vercel_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_pokemon_world",
-      "target": "readme_vite_8"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_local_world",
-      "target": "readme_nitro_3"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vercel_build_verification",
-      "target": "readme_nitro_3"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vercel_build_verification",
-      "target": "readme_vercel_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vercel_workflow",
-      "target": "readme_local_world"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vercel_workflow",
-      "target": "readme_vercel_world"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_blocks_api",
-      "target": "readme_mongodb"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_generate_map_workflow",
-      "target": "readme_mongodb"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_offline_map_mode",
-      "target": "readme_mongodb"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_generate_map_workflow",
-      "target": "readme_google_static_maps"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_offline_map_mode",
-      "target": "readme_google_static_maps"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_blocks_api",
-      "target": "readme_generate_map_workflow"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_map_jobs_api",
-      "target": "readme_generate_map_workflow"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_blocks_api",
-      "target": "readme_map_job_status_api"
+      "source": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_q_can_we_add_a_todo_task_md_to_document_the_mongodb_fallback_generated_block_problem_and_implement_automatic_regeneration",
+      "target": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo_task_md_to_document_the_mongo_source_nodes"
     }
   ],
   "hyperedges": [
@@ -9506,5 +9420,5 @@
       "source_file": "public/icons"
     }
   ],
-  "built_at_commit": "441186058ee27b971e29cd4a42169921495e580c"
+  "built_at_commit": "3aa98d432ed919ad8c5bf2b53b809d0b07440dce"
 }
