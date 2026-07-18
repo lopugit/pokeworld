@@ -4,6 +4,7 @@
   "private": true,
   "description": "Pokeworld dev orchestration — worktree-aware PM2 flow for the api + frontend stack (see scripts/worktree-ports.cjs).",
   "scripts": {
+    "postinstall": "npm install --prefix api && npm install --prefix frontend",
     "pms": "node scripts/dev-pm2.cjs start",
     "pms-stop": "node scripts/dev-pm2.cjs stop",
     "ports": "node scripts/worktree-ports.cjs",

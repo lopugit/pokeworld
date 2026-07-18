@@ -240,9 +240,9 @@
     "semantic_hash": "6d31a0cbed0278d7b4b09a42c23993e5"
   },
   "package.json": {
-    "mtime": 1784373461.7826734,
-    "ast_hash": "5a79c2b63ffd8044a0c4cf898857868b",
-    "semantic_hash": "5a79c2b63ffd8044a0c4cf898857868b"
+    "mtime": 1784375230.896524,
+    "ast_hash": "cf909f107d2e9a48b53225d3e17557af",
+    "semantic_hash": ""
   },
   "ecosystem.config.js": {
     "mtime": 1784373865.1489053,

@@ -217,36 +217,6 @@
   },
   "nodes": [
     {
-      "label": "ecosystem.config.js",
-      "file_type": "code",
-      "source_file": "ecosystem.config.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "ecosystem_config",
-      "community": 18,
-      "norm_label": "ecosystem.config.js"
-    },
-    {
-      "label": "api",
-      "file_type": "code",
-      "source_file": "ecosystem.config.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "ecosystem_config_api",
-      "community": 18,
-      "norm_label": "api"
-    },
-    {
-      "label": "frontend",
-      "file_type": "code",
-      "source_file": "ecosystem.config.js",
-      "source_location": "L2",
-      "_origin": "ast",
-      "id": "ecosystem_config_frontend",
-      "community": 18,
-      "norm_label": "frontend"
-    },
-    {
       "label": ".eslintrc.js",
       "file_type": "code",
       "source_file": "api/.eslintrc.js",
@@ -254,7 +224,8 @@
       "_origin": "ast",
       "community": 32,
       "norm_label": ".eslintrc.js",
-      "id": "api_eslintrc"
+      "id": "api_eslintrc",
+      "community_name": ".eslintrc.js"
     },
     {
       "label": "ecosystem.config.js",
@@ -262,9 +233,10 @@
       "source_file": "api/ecosystem.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 126,
+      "community": 18,
       "norm_label": "ecosystem.config.js",
-      "id": "api_ecosystem_config"
+      "id": "api_ecosystem_config",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "{ pm2AppConfig }",
@@ -272,9 +244,10 @@
       "source_file": "api/ecosystem.config.js",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 126,
+      "community": 18,
       "norm_label": "{ pm2appconfig }",
-      "id": "api_ecosystem_config_pm2appconfig"
+      "id": "api_ecosystem_config_pm2appconfig",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "maptest.ecosystem.config.js",
@@ -284,7 +257,8 @@
       "_origin": "ast",
       "community": 33,
       "norm_label": "maptest.ecosystem.config.js",
-      "id": "api_maptest_ecosystem_config"
+      "id": "api_maptest_ecosystem_config",
+      "community_name": "maptest.ecosystem.config.js"
     },
     {
       "label": "apis.js",
@@ -294,7 +268,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "apis.js",
-      "id": "api_modules_apis"
+      "id": "api_modules_apis",
+      "community_name": "apis.js"
     },
     {
       "label": "fs",
@@ -304,7 +279,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "fs",
-      "id": "api_modules_apis_fs"
+      "id": "api_modules_apis_fs",
+      "community_name": "apis.js"
     },
     {
       "label": "latsMap",
@@ -314,7 +290,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "latsmap",
-      "id": "api_modules_apis_latsmap"
+      "id": "api_modules_apis_latsmap",
+      "community_name": "apis.js"
     },
     {
       "label": "lngsMap",
@@ -324,7 +301,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "lngsmap",
-      "id": "api_modules_apis_lngsmap"
+      "id": "api_modules_apis_lngsmap",
+      "community_name": "apis.js"
     },
     {
       "label": "v1BlockLatLng()",
@@ -334,7 +312,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "v1blocklatlng()",
-      "id": "api_modules_apis_v1blocklatlng"
+      "id": "api_modules_apis_v1blocklatlng",
+      "community_name": "apis.js"
     },
     {
       "label": "v1Blocks",
@@ -344,7 +323,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "v1blocks",
-      "id": "api_modules_apis_v1blocks"
+      "id": "api_modules_apis_v1blocks",
+      "community_name": "apis.js"
     },
     {
       "label": "getLngFromLng()",
@@ -354,7 +334,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "getlngfromlng()",
-      "id": "api_modules_apis_getlngfromlng"
+      "id": "api_modules_apis_getlngfromlng",
+      "community_name": "apis.js"
     },
     {
       "label": "getLatFromLat()",
@@ -364,7 +345,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "getlatfromlat()",
-      "id": "api_modules_apis_getlatfromlat"
+      "id": "api_modules_apis_getlatfromlat",
+      "community_name": "apis.js"
     },
     {
       "label": "blocks.js",
@@ -374,7 +356,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "blocks.js",
-      "id": "api_modules_apis_blocks"
+      "id": "api_modules_apis_blocks",
+      "community_name": "blocks.js"
     },
     {
       "label": "mods",
@@ -384,7 +367,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "mods",
-      "id": "api_modules_apis_blocks_mods"
+      "id": "api_modules_apis_blocks_mods",
+      "community_name": "blocks.js"
     },
     {
       "label": "functions",
@@ -394,7 +378,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "functions",
-      "id": "api_modules_apis_blocks_functions"
+      "id": "api_modules_apis_blocks_functions",
+      "community_name": "blocks.js"
     },
     {
       "label": "{ MongoClient }",
@@ -404,7 +389,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "{ mongoclient }",
-      "id": "api_modules_apis_blocks_mongoclient"
+      "id": "api_modules_apis_blocks_mongoclient",
+      "community_name": "blocks.js"
     },
     {
       "label": "fs",
@@ -414,7 +400,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "fs",
-      "id": "api_modules_apis_blocks_fs"
+      "id": "api_modules_apis_blocks_fs",
+      "community_name": "blocks.js"
     },
     {
       "label": "log",
@@ -424,7 +411,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "log",
-      "id": "api_modules_apis_blocks_log"
+      "id": "api_modules_apis_blocks_log",
+      "community_name": "blocks.js"
     },
     {
       "label": "latsDb",
@@ -434,7 +422,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "latsdb",
-      "id": "api_modules_apis_blocks_latsdb"
+      "id": "api_modules_apis_blocks_latsdb",
+      "community_name": "blocks.js"
     },
     {
       "label": "lngsDb",
@@ -444,7 +433,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "lngsdb",
-      "id": "api_modules_apis_blocks_lngsdb"
+      "id": "api_modules_apis_blocks_lngsdb",
+      "community_name": "blocks.js"
     },
     {
       "label": "{ v4: uuidv4 }",
@@ -454,7 +444,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "{ v4: uuidv4 }",
-      "id": "api_modules_apis_blocks_v4_uuidv4"
+      "id": "api_modules_apis_blocks_v4_uuidv4",
+      "community_name": "blocks.js"
     },
     {
       "label": "transactions",
@@ -464,7 +455,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "transactions",
-      "id": "api_modules_apis_blocks_transactions"
+      "id": "api_modules_apis_blocks_transactions",
+      "community_name": "blocks.js"
     },
     {
       "label": "imageToRgbaMatrix",
@@ -474,7 +466,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "imagetorgbamatrix",
-      "id": "api_modules_apis_blocks_imagetorgbamatrix"
+      "id": "api_modules_apis_blocks_imagetorgbamatrix",
+      "community_name": "blocks.js"
     },
     {
       "label": "transactionOptions",
@@ -484,7 +477,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "transactionoptions",
-      "id": "api_modules_apis_blocks_transactionoptions"
+      "id": "api_modules_apis_blocks_transactionoptions",
+      "community_name": "blocks.js"
     },
     {
       "label": "toExport()",
@@ -494,7 +488,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "toexport()",
-      "id": "api_modules_apis_blocks_toexport"
+      "id": "api_modules_apis_blocks_toexport",
+      "community_name": "blocks.js"
     },
     {
       "label": "functions.js",
@@ -504,7 +499,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "functions.js",
-      "id": "api_modules_functions"
+      "id": "api_modules_functions",
+      "community_name": "functions.js"
     },
     {
       "label": "fs",
@@ -514,7 +510,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "fs",
-      "id": "api_modules_functions_fs"
+      "id": "api_modules_functions_fs",
+      "community_name": "functions.js"
     },
     {
       "label": "{ get }",
@@ -524,7 +521,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "{ get }",
-      "id": "api_modules_functions_get"
+      "id": "api_modules_functions_get",
+      "community_name": "functions.js"
     },
     {
       "label": "axios",
@@ -534,7 +532,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "axios",
-      "id": "api_modules_functions_axios"
+      "id": "api_modules_functions_axios",
+      "community_name": "functions.js"
     },
     {
       "label": "throttledQueue",
@@ -544,7 +543,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "throttledqueue",
-      "id": "api_modules_functions_throttledqueue"
+      "id": "api_modules_functions_throttledqueue",
+      "community_name": "functions.js"
     },
     {
       "label": "sharp",
@@ -554,7 +554,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "sharp",
-      "id": "api_modules_functions_sharp"
+      "id": "api_modules_functions_sharp",
+      "community_name": "functions.js"
     },
     {
       "label": "{ MongoClient }",
@@ -564,7 +565,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "{ mongoclient }",
-      "id": "api_modules_functions_mongoclient"
+      "id": "api_modules_functions_mongoclient",
+      "community_name": "functions.js"
     },
     {
       "label": "log",
@@ -574,7 +576,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "log",
-      "id": "api_modules_functions_log"
+      "id": "api_modules_functions_log",
+      "community_name": "functions.js"
     },
     {
       "label": "saveMapAtThrottled",
@@ -584,7 +587,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "savemapatthrottled",
-      "id": "api_modules_functions_savemapatthrottled"
+      "id": "api_modules_functions_savemapatthrottled",
+      "community_name": "functions.js"
     },
     {
       "label": "getXIncrement()",
@@ -594,7 +598,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getxincrement()",
-      "id": "api_modules_functions_getxincrement"
+      "id": "api_modules_functions_getxincrement",
+      "community_name": "functions.js"
     },
     {
       "label": "getYIncrement()",
@@ -604,7 +609,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getyincrement()",
-      "id": "api_modules_functions_getyincrement"
+      "id": "api_modules_functions_getyincrement",
+      "community_name": "functions.js"
     },
     {
       "label": "generateMap()",
@@ -614,7 +620,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "generatemap()",
-      "id": "api_modules_functions_generatemap"
+      "id": "api_modules_functions_generatemap",
+      "community_name": "functions.js"
     },
     {
       "label": "generateOutputs()",
@@ -624,7 +631,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "generateoutputs()",
-      "id": "api_modules_functions_generateoutputs"
+      "id": "api_modules_functions_generateoutputs",
+      "community_name": "functions.js"
     },
     {
       "label": "initDirs()",
@@ -634,7 +642,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "initdirs()",
-      "id": "api_modules_functions_initdirs"
+      "id": "api_modules_functions_initdirs",
+      "community_name": "functions.js"
     },
     {
       "label": "formatCoord()",
@@ -644,7 +653,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "formatcoord()",
-      "id": "api_modules_functions_formatcoord"
+      "id": "api_modules_functions_formatcoord",
+      "community_name": "functions.js"
     },
     {
       "label": "saveMapAt()",
@@ -654,7 +664,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "savemapat()",
-      "id": "api_modules_functions_savemapat"
+      "id": "api_modules_functions_savemapat",
+      "community_name": "functions.js"
     },
     {
       "label": "getMapAt()",
@@ -664,7 +675,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getmapat()",
-      "id": "api_modules_functions_getmapat"
+      "id": "api_modules_functions_getmapat",
+      "community_name": "functions.js"
     },
     {
       "label": "generateCoordinatesGrid()",
@@ -674,7 +686,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "generatecoordinatesgrid()",
-      "id": "api_modules_functions_generatecoordinatesgrid"
+      "id": "api_modules_functions_generatecoordinatesgrid",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileOffsetColour()",
@@ -684,7 +697,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettileoffsetcolour()",
-      "id": "api_modules_functions_gettileoffsetcolour"
+      "id": "api_modules_functions_gettileoffsetcolour",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileOffsetSprite()",
@@ -694,7 +708,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettileoffsetsprite()",
-      "id": "api_modules_functions_gettileoffsetsprite"
+      "id": "api_modules_functions_gettileoffsetsprite",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileOffsetSprite2()",
@@ -704,7 +719,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettileoffsetsprite2()",
-      "id": "api_modules_functions_gettileoffsetsprite2"
+      "id": "api_modules_functions_gettileoffsetsprite2",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileOffset()",
@@ -714,7 +730,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettileoffset()",
-      "id": "api_modules_functions_gettileoffset"
+      "id": "api_modules_functions_gettileoffset",
+      "community_name": "functions.js"
     },
     {
       "label": "getTile()",
@@ -724,7 +741,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettile()",
-      "id": "api_modules_functions_gettile"
+      "id": "api_modules_functions_gettile",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileColour()",
@@ -734,7 +752,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettilecolour()",
-      "id": "api_modules_functions_gettilecolour"
+      "id": "api_modules_functions_gettilecolour",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileSprite()",
@@ -744,7 +763,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettilesprite()",
-      "id": "api_modules_functions_gettilesprite"
+      "id": "api_modules_functions_gettilesprite",
+      "community_name": "functions.js"
     },
     {
       "label": "getTileSprite2()",
@@ -754,7 +774,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "gettilesprite2()",
-      "id": "api_modules_functions_gettilesprite2"
+      "id": "api_modules_functions_gettilesprite2",
+      "community_name": "functions.js"
     },
     {
       "label": "index.js",
@@ -764,7 +785,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "index.js",
-      "id": "api_modules_index"
+      "id": "api_modules_index",
+      "community_name": "apis.js"
     },
     {
       "label": "bodyParser",
@@ -774,7 +796,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "bodyparser",
-      "id": "api_modules_index_bodyparser"
+      "id": "api_modules_index_bodyparser",
+      "community_name": "apis.js"
     },
     {
       "label": "compression",
@@ -784,7 +807,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "compression",
-      "id": "api_modules_index_compression"
+      "id": "api_modules_index_compression",
+      "community_name": "apis.js"
     },
     {
       "label": "express",
@@ -794,7 +818,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "express",
-      "id": "api_modules_index_express"
+      "id": "api_modules_index_express",
+      "community_name": "apis.js"
     },
     {
       "label": "cors",
@@ -804,7 +829,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "cors",
-      "id": "api_modules_index_cors"
+      "id": "api_modules_index_cors",
+      "community_name": "apis.js"
     },
     {
       "label": "app",
@@ -814,7 +840,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "app",
-      "id": "api_modules_index_app"
+      "id": "api_modules_index_app",
+      "community_name": "apis.js"
     },
     {
       "label": "pug",
@@ -824,7 +851,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "pug",
-      "id": "api_modules_index_pug"
+      "id": "api_modules_index_pug",
+      "community_name": "apis.js"
     },
     {
       "label": "apis",
@@ -834,7 +862,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "apis",
-      "id": "api_modules_index_apis"
+      "id": "api_modules_index_apis",
+      "community_name": "apis.js"
     },
     {
       "label": "log",
@@ -844,7 +873,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "log",
-      "id": "api_modules_index_log"
+      "id": "api_modules_index_log",
+      "community_name": "apis.js"
     },
     {
       "label": "log.js",
@@ -854,7 +884,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "log.js",
-      "id": "api_modules_log"
+      "id": "api_modules_log",
+      "community_name": "apis.js"
     },
     {
       "label": "flowers.js",
@@ -864,7 +895,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "flowers.js",
-      "id": "api_modules_mods_flowers"
+      "id": "api_modules_mods_flowers",
+      "community_name": "index.js"
     },
     {
       "label": "functions",
@@ -874,7 +906,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "functions",
-      "id": "api_modules_mods_flowers_functions"
+      "id": "api_modules_mods_flowers_functions",
+      "community_name": "index.js"
     },
     {
       "label": "flowers()",
@@ -884,7 +917,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "flowers()",
-      "id": "api_modules_mods_flowers_flowers"
+      "id": "api_modules_mods_flowers_flowers",
+      "community_name": "index.js"
     },
     {
       "label": "grass.js",
@@ -894,7 +928,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "grass.js",
-      "id": "api_modules_mods_grass"
+      "id": "api_modules_mods_grass",
+      "community_name": "index.js"
     },
     {
       "label": "functions",
@@ -904,7 +939,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "functions",
-      "id": "api_modules_mods_grass_functions"
+      "id": "api_modules_mods_grass_functions",
+      "community_name": "index.js"
     },
     {
       "label": "grass()",
@@ -914,7 +950,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "grass()",
-      "id": "api_modules_mods_grass_grass"
+      "id": "api_modules_mods_grass_grass",
+      "community_name": "index.js"
     },
     {
       "label": "index.js",
@@ -924,7 +961,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "index.js",
-      "id": "api_modules_mods_index"
+      "id": "api_modules_mods_index",
+      "community_name": "index.js"
     },
     {
       "label": "roads",
@@ -934,7 +972,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "roads",
-      "id": "api_modules_mods_index_roads"
+      "id": "api_modules_mods_index_roads",
+      "community_name": "index.js"
     },
     {
       "label": "patherize",
@@ -944,7 +983,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "patherize",
-      "id": "api_modules_mods_index_patherize"
+      "id": "api_modules_mods_index_patherize",
+      "community_name": "index.js"
     },
     {
       "label": "grass",
@@ -954,7 +994,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "grass",
-      "id": "api_modules_mods_index_grass"
+      "id": "api_modules_mods_index_grass",
+      "community_name": "index.js"
     },
     {
       "label": "ponds",
@@ -964,7 +1005,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "ponds",
-      "id": "api_modules_mods_index_ponds"
+      "id": "api_modules_mods_index_ponds",
+      "community_name": "index.js"
     },
     {
       "label": "flowers",
@@ -974,7 +1016,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "flowers",
-      "id": "api_modules_mods_index_flowers"
+      "id": "api_modules_mods_index_flowers",
+      "community_name": "index.js"
     },
     {
       "label": "patherize.js",
@@ -984,7 +1027,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "patherize.js",
-      "id": "api_modules_mods_patherize"
+      "id": "api_modules_mods_patherize",
+      "community_name": "index.js"
     },
     {
       "label": "functions",
@@ -994,7 +1038,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "functions",
-      "id": "api_modules_mods_patherize_functions"
+      "id": "api_modules_mods_patherize_functions",
+      "community_name": "index.js"
     },
     {
       "label": "patherize()",
@@ -1004,7 +1049,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "patherize()",
-      "id": "api_modules_mods_patherize_patherize"
+      "id": "api_modules_mods_patherize_patherize",
+      "community_name": "index.js"
     },
     {
       "label": "ponds.js",
@@ -1014,7 +1060,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "ponds.js",
-      "id": "api_modules_mods_ponds"
+      "id": "api_modules_mods_ponds",
+      "community_name": "index.js"
     },
     {
       "label": "functions",
@@ -1024,7 +1071,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "functions",
-      "id": "api_modules_mods_ponds_functions"
+      "id": "api_modules_mods_ponds_functions",
+      "community_name": "index.js"
     },
     {
       "label": "ponds()",
@@ -1034,7 +1082,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "ponds()",
-      "id": "api_modules_mods_ponds_ponds"
+      "id": "api_modules_mods_ponds_ponds",
+      "community_name": "index.js"
     },
     {
       "label": "roads.js",
@@ -1044,7 +1093,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "roads.js",
-      "id": "api_modules_mods_roads"
+      "id": "api_modules_mods_roads",
+      "community_name": "index.js"
     },
     {
       "label": "functions",
@@ -1054,7 +1104,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "functions",
-      "id": "api_modules_mods_roads_functions"
+      "id": "api_modules_mods_roads_functions",
+      "community_name": "index.js"
     },
     {
       "label": "baseRoads()",
@@ -1064,7 +1115,8 @@
       "_origin": "ast",
       "community": 5,
       "norm_label": "baseroads()",
-      "id": "api_modules_mods_roads_baseroads"
+      "id": "api_modules_mods_roads_baseroads",
+      "community_name": "index.js"
     },
     {
       "label": "apiTests.js",
@@ -1074,7 +1126,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "apitests.js",
-      "id": "api_modules_tests_apitests"
+      "id": "api_modules_tests_apitests",
+      "community_name": "apis.js"
     },
     {
       "label": "apis",
@@ -1084,7 +1137,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "apis",
-      "id": "api_modules_tests_apitests_apis"
+      "id": "api_modules_tests_apitests_apis",
+      "community_name": "apis.js"
     },
     {
       "label": "axios",
@@ -1094,7 +1148,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "axios",
-      "id": "api_modules_tests_apitests_axios"
+      "id": "api_modules_tests_apitests_axios",
+      "community_name": "apis.js"
     },
     {
       "label": "test()",
@@ -1104,7 +1159,8 @@
       "_origin": "ast",
       "community": 11,
       "norm_label": "test()",
-      "id": "api_modules_tests_apitests_test"
+      "id": "api_modules_tests_apitests_test",
+      "community_name": "apis.js"
     },
     {
       "label": "index.js",
@@ -1114,7 +1170,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "index.js",
-      "id": "api_modules_tests_index"
+      "id": "api_modules_tests_index",
+      "community_name": "functions.js"
     },
     {
       "label": "{ increments, roundToNearestTude }",
@@ -1124,7 +1181,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "{ increments, roundtonearesttude }",
-      "id": "api_modules_tests_index_increments_roundtonearesttude"
+      "id": "api_modules_tests_index_increments_roundtonearesttude",
+      "community_name": "functions.js"
     },
     {
       "label": "failedNumbers",
@@ -1134,7 +1192,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "failednumbers",
-      "id": "api_modules_tests_index_failednumbers"
+      "id": "api_modules_tests_index_failednumbers",
+      "community_name": "functions.js"
     },
     {
       "label": "osmtogeojson.js",
@@ -1144,7 +1203,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "osmtogeojson.js",
-      "id": "api_modules_tests_osmtogeojson"
+      "id": "api_modules_tests_osmtogeojson",
+      "community_name": "dependencies"
     },
     {
       "label": "osmtogeojson",
@@ -1154,7 +1214,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "osmtogeojson",
-      "id": "api_modules_tests_osmtogeojson_osmtogeojson"
+      "id": "api_modules_tests_osmtogeojson_osmtogeojson",
+      "community_name": "dependencies"
     },
     {
       "label": "fs",
@@ -1164,7 +1225,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "fs",
-      "id": "api_modules_tests_osmtogeojson_fs"
+      "id": "api_modules_tests_osmtogeojson_fs",
+      "community_name": "dependencies"
     },
     {
       "label": "xml",
@@ -1174,7 +1236,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "xml",
-      "id": "api_modules_tests_osmtogeojson_xml"
+      "id": "api_modules_tests_osmtogeojson_xml",
+      "community_name": "dependencies"
     },
     {
       "label": "json",
@@ -1184,7 +1247,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "json",
-      "id": "api_modules_tests_osmtogeojson_json"
+      "id": "api_modules_tests_osmtogeojson_json",
+      "community_name": "dependencies"
     },
     {
       "label": "runGenerateCoordinatesGrid.js",
@@ -1194,7 +1258,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "rungeneratecoordinatesgrid.js",
-      "id": "api_modules_tests_rungeneratecoordinatesgrid"
+      "id": "api_modules_tests_rungeneratecoordinatesgrid",
+      "community_name": "functions.js"
     },
     {
       "label": "{ generateCoordinatesGrid }",
@@ -1204,7 +1269,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "{ generatecoordinatesgrid }",
-      "id": "api_modules_tests_rungeneratecoordinatesgrid_generatecoordinatesgrid"
+      "id": "api_modules_tests_rungeneratecoordinatesgrid_generatecoordinatesgrid",
+      "community_name": "functions.js"
     },
     {
       "label": "runGenerateMap.js",
@@ -1214,7 +1280,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "rungeneratemap.js",
-      "id": "api_modules_tests_rungeneratemap"
+      "id": "api_modules_tests_rungeneratemap",
+      "community_name": "functions.js"
     },
     {
       "label": "{ generateMap }",
@@ -1224,7 +1291,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "{ generatemap }",
-      "id": "api_modules_tests_rungeneratemap_generatemap"
+      "id": "api_modules_tests_rungeneratemap_generatemap",
+      "community_name": "functions.js"
     },
     {
       "label": "package.json",
@@ -1234,7 +1302,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "package.json",
-      "id": "api_package"
+      "id": "api_package",
+      "community_name": "package.json"
     },
     {
       "label": "name",
@@ -1244,7 +1313,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "name",
-      "id": "api_package_name"
+      "id": "api_package_name",
+      "community_name": "package.json"
     },
     {
       "label": "version",
@@ -1254,7 +1324,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "version",
-      "id": "api_package_version"
+      "id": "api_package_version",
+      "community_name": "package.json"
     },
     {
       "label": "description",
@@ -1264,7 +1335,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "description",
-      "id": "api_package_description"
+      "id": "api_package_description",
+      "community_name": "package.json"
     },
     {
       "label": "main",
@@ -1274,7 +1346,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "main",
-      "id": "api_package_main"
+      "id": "api_package_main",
+      "community_name": "package.json"
     },
     {
       "label": "scripts",
@@ -1282,9 +1355,10 @@
       "source_file": "api/package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "scripts",
-      "id": "api_package_scripts"
+      "id": "api_package_scripts",
+      "community_name": "package.json"
     },
     {
       "label": "dev.dev",
@@ -1292,9 +1366,10 @@
       "source_file": "api/package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "dev.dev",
-      "id": "api_package_scripts_dev_dev"
+      "id": "api_package_scripts_dev_dev",
+      "community_name": "package.json"
     },
     {
       "label": "stop.dev",
@@ -1302,9 +1377,10 @@
       "source_file": "api/package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "stop.dev",
-      "id": "api_package_scripts_stop_dev"
+      "id": "api_package_scripts_stop_dev",
+      "community_name": "package.json"
     },
     {
       "label": "start.dev",
@@ -1312,9 +1388,10 @@
       "source_file": "api/package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "start.dev",
-      "id": "api_package_scripts_start_dev"
+      "id": "api_package_scripts_start_dev",
+      "community_name": "package.json"
     },
     {
       "label": "start",
@@ -1322,9 +1399,10 @@
       "source_file": "api/package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "start",
-      "id": "api_package_scripts_start"
+      "id": "api_package_scripts_start",
+      "community_name": "package.json"
     },
     {
       "label": "log.dev",
@@ -1332,9 +1410,10 @@
       "source_file": "api/package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "log.dev",
-      "id": "api_package_scripts_log_dev"
+      "id": "api_package_scripts_log_dev",
+      "community_name": "package.json"
     },
     {
       "label": "test",
@@ -1342,9 +1421,10 @@
       "source_file": "api/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 125,
+      "community": 2,
       "norm_label": "test",
-      "id": "api_package_scripts_test"
+      "id": "api_package_scripts_test",
+      "community_name": "package.json"
     },
     {
       "label": "repository",
@@ -1354,7 +1434,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "repository",
-      "id": "api_package_repository"
+      "id": "api_package_repository",
+      "community_name": "package.json"
     },
     {
       "label": "type",
@@ -1364,7 +1445,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "type",
-      "id": "api_package_repository_type"
+      "id": "api_package_repository_type",
+      "community_name": "package.json"
     },
     {
       "label": "url",
@@ -1374,7 +1456,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "url",
-      "id": "api_package_repository_url"
+      "id": "api_package_repository_url",
+      "community_name": "package.json"
     },
     {
       "label": "author",
@@ -1384,7 +1467,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "author",
-      "id": "api_package_author"
+      "id": "api_package_author",
+      "community_name": "package.json"
     },
     {
       "label": "license",
@@ -1394,7 +1478,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "license",
-      "id": "api_package_license"
+      "id": "api_package_license",
+      "community_name": "package.json"
     },
     {
       "label": "bugs",
@@ -1404,7 +1489,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "bugs",
-      "id": "api_package_bugs"
+      "id": "api_package_bugs",
+      "community_name": "package.json"
     },
     {
       "label": "url",
@@ -1414,7 +1500,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "url",
-      "id": "api_package_bugs_url"
+      "id": "api_package_bugs_url",
+      "community_name": "package.json"
     },
     {
       "label": "homepage",
@@ -1424,7 +1511,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "homepage",
-      "id": "api_package_homepage"
+      "id": "api_package_homepage",
+      "community_name": "package.json"
     },
     {
       "label": "dependencies",
@@ -1434,7 +1522,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "dependencies",
-      "id": "api_package_dependencies"
+      "id": "api_package_dependencies",
+      "community_name": "dependencies"
     },
     {
       "label": "axios",
@@ -1444,7 +1533,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "axios",
-      "id": "api_package_dependencies_axios"
+      "id": "api_package_dependencies_axios",
+      "community_name": "dependencies"
     },
     {
       "label": "bcrypt",
@@ -1454,7 +1544,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "bcrypt",
-      "id": "api_package_dependencies_bcrypt"
+      "id": "api_package_dependencies_bcrypt",
+      "community_name": "dependencies"
     },
     {
       "label": "body-parser",
@@ -1464,7 +1555,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "body-parser",
-      "id": "api_package_dependencies_body_parser"
+      "id": "api_package_dependencies_body_parser",
+      "community_name": "dependencies"
     },
     {
       "label": "compression",
@@ -1474,7 +1566,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "compression",
-      "id": "api_package_dependencies_compression"
+      "id": "api_package_dependencies_compression",
+      "community_name": "dependencies"
     },
     {
       "label": "cors",
@@ -1484,7 +1577,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "cors",
-      "id": "api_package_dependencies_cors"
+      "id": "api_package_dependencies_cors",
+      "community_name": "dependencies"
     },
     {
       "label": "dotenv",
@@ -1494,7 +1588,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "dotenv",
-      "id": "api_package_dependencies_dotenv"
+      "id": "api_package_dependencies_dotenv",
+      "community_name": "dependencies"
     },
     {
       "label": "express",
@@ -1504,7 +1599,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "express",
-      "id": "api_package_dependencies_express"
+      "id": "api_package_dependencies_express",
+      "community_name": "dependencies"
     },
     {
       "label": "fs",
@@ -1514,7 +1610,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "fs",
-      "id": "api_package_dependencies_fs"
+      "id": "api_package_dependencies_fs",
+      "community_name": "dependencies"
     },
     {
       "label": "image-to-rgba-matrix",
@@ -1524,7 +1621,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "image-to-rgba-matrix",
-      "id": "api_package_dependencies_image_to_rgba_matrix"
+      "id": "api_package_dependencies_image_to_rgba_matrix",
+      "community_name": "dependencies"
     },
     {
       "label": "lodash",
@@ -1534,7 +1632,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "lodash",
-      "id": "api_package_dependencies_lodash"
+      "id": "api_package_dependencies_lodash",
+      "community_name": "dependencies"
     },
     {
       "label": "luxon",
@@ -1544,7 +1643,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "luxon",
-      "id": "api_package_dependencies_luxon"
+      "id": "api_package_dependencies_luxon",
+      "community_name": "dependencies"
     },
     {
       "label": "mongodb",
@@ -1554,7 +1654,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "mongodb",
-      "id": "api_package_dependencies_mongodb"
+      "id": "api_package_dependencies_mongodb",
+      "community_name": "dependencies"
     },
     {
       "label": "osmtogeojson",
@@ -1564,7 +1665,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "osmtogeojson",
-      "id": "api_package_dependencies_osmtogeojson"
+      "id": "api_package_dependencies_osmtogeojson",
+      "community_name": "dependencies"
     },
     {
       "label": "pug",
@@ -1574,7 +1676,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "pug",
-      "id": "api_package_dependencies_pug"
+      "id": "api_package_dependencies_pug",
+      "community_name": "dependencies"
     },
     {
       "label": "sharp",
@@ -1584,7 +1687,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "sharp",
-      "id": "api_package_dependencies_sharp"
+      "id": "api_package_dependencies_sharp",
+      "community_name": "dependencies"
     },
     {
       "label": "throttled-queue",
@@ -1594,7 +1698,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "throttled-queue",
-      "id": "api_package_dependencies_throttled_queue"
+      "id": "api_package_dependencies_throttled_queue",
+      "community_name": "dependencies"
     },
     {
       "label": "uuid",
@@ -1604,7 +1709,8 @@
       "_origin": "ast",
       "community": 4,
       "norm_label": "uuid",
-      "id": "api_package_dependencies_uuid"
+      "id": "api_package_dependencies_uuid",
+      "community_name": "dependencies"
     },
     {
       "label": "devDependencies",
@@ -1614,7 +1720,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "devdependencies",
-      "id": "api_package_devdependencies"
+      "id": "api_package_devdependencies",
+      "community_name": "package.json"
     },
     {
       "label": "@nuxtjs/eslint-config",
@@ -1624,7 +1731,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "@nuxtjs/eslint-config",
-      "id": "api_package_devdependencies_nuxtjs_eslint_config"
+      "id": "api_package_devdependencies_nuxtjs_eslint_config",
+      "community_name": "package.json"
     },
     {
       "label": "@prettier/plugin-pug",
@@ -1634,7 +1742,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "@prettier/plugin-pug",
-      "id": "api_package_devdependencies_prettier_plugin_pug"
+      "id": "api_package_devdependencies_prettier_plugin_pug",
+      "community_name": "package.json"
     },
     {
       "label": "eslint",
@@ -1644,7 +1753,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint",
-      "id": "api_package_devdependencies_eslint"
+      "id": "api_package_devdependencies_eslint",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-config-prettier",
@@ -1654,7 +1764,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-config-prettier",
-      "id": "api_package_devdependencies_eslint_config_prettier"
+      "id": "api_package_devdependencies_eslint_config_prettier",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-config-xo",
@@ -1664,7 +1775,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-config-xo",
-      "id": "api_package_devdependencies_eslint_config_xo"
+      "id": "api_package_devdependencies_eslint_config_xo",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-jest",
@@ -1674,7 +1786,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-jest",
-      "id": "api_package_devdependencies_eslint_plugin_jest"
+      "id": "api_package_devdependencies_eslint_plugin_jest",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-node",
@@ -1684,7 +1797,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-node",
-      "id": "api_package_devdependencies_eslint_plugin_node"
+      "id": "api_package_devdependencies_eslint_plugin_node",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-nuxt",
@@ -1694,7 +1808,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-nuxt",
-      "id": "api_package_devdependencies_eslint_plugin_nuxt"
+      "id": "api_package_devdependencies_eslint_plugin_nuxt",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-prettier",
@@ -1704,7 +1819,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-prettier",
-      "id": "api_package_devdependencies_eslint_plugin_prettier"
+      "id": "api_package_devdependencies_eslint_plugin_prettier",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-unicorn",
@@ -1714,7 +1830,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-unicorn",
-      "id": "api_package_devdependencies_eslint_plugin_unicorn"
+      "id": "api_package_devdependencies_eslint_plugin_unicorn",
+      "community_name": "package.json"
     },
     {
       "label": "eslint-plugin-vue",
@@ -1724,7 +1841,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "eslint-plugin-vue",
-      "id": "api_package_devdependencies_eslint_plugin_vue"
+      "id": "api_package_devdependencies_eslint_plugin_vue",
+      "community_name": "package.json"
     },
     {
       "label": "engines",
@@ -1734,7 +1852,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "engines",
-      "id": "api_package_engines"
+      "id": "api_package_engines",
+      "community_name": "package.json"
     },
     {
       "label": "node",
@@ -1744,7 +1863,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "node",
-      "id": "api_package_engines_node"
+      "id": "api_package_engines_node",
+      "community_name": "package.json"
     },
     {
       "label": "pnpm",
@@ -1754,7 +1874,8 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "pnpm",
-      "id": "api_package_pnpm"
+      "id": "api_package_pnpm",
+      "community_name": "package.json"
     },
     {
       "label": "neverBuiltDependencies",
@@ -1764,7 +1885,41 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "neverbuiltdependencies",
-      "id": "api_package_pnpm_neverbuiltdependencies"
+      "id": "api_package_pnpm_neverbuiltdependencies",
+      "community_name": "package.json"
+    },
+    {
+      "label": "ecosystem.config.js",
+      "file_type": "code",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "ecosystem.config.js",
+      "id": "ecosystem_config",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "api",
+      "file_type": "code",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "api",
+      "id": "ecosystem_config_api",
+      "community_name": "ecosystem.config.js"
+    },
+    {
+      "label": "frontend",
+      "file_type": "code",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "frontend",
+      "id": "ecosystem_config_frontend",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": ".eslintrc.js",
@@ -1774,7 +1929,8 @@
       "_origin": "ast",
       "community": 38,
       "norm_label": ".eslintrc.js",
-      "id": "frontend_eslintrc"
+      "id": "frontend_eslintrc",
+      "community_name": ".eslintrc.js"
     },
     {
       "label": "Banner.vue",
@@ -1784,7 +1940,8 @@
       "_origin": "ast",
       "community": 19,
       "norm_label": "banner.vue",
-      "id": "frontend_components_banner"
+      "id": "frontend_components_banner",
+      "community_name": "Banner.vue"
     },
     {
       "label": "data()",
@@ -1794,7 +1951,8 @@
       "_origin": "ast",
       "community": 19,
       "norm_label": "data()",
-      "id": "frontend_components_banner_data"
+      "id": "frontend_components_banner_data",
+      "community_name": "Banner.vue"
     },
     {
       "label": "DevKit.vue",
@@ -1804,7 +1962,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "devkit.vue",
-      "id": "frontend_components_devkit"
+      "id": "frontend_components_devkit",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "PRESETS",
@@ -1814,7 +1973,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "presets",
-      "id": "frontend_components_devkit_presets"
+      "id": "frontend_components_devkit_presets",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "data()",
@@ -1824,7 +1984,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "data()",
-      "id": "frontend_components_devkit_data"
+      "id": "frontend_components_devkit_data",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "hasOverride()",
@@ -1834,7 +1995,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "hasoverride()",
-      "id": "frontend_components_devkit_hasoverride"
+      "id": "frontend_components_devkit_hasoverride",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "mounted()",
@@ -1844,7 +2006,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "mounted()",
-      "id": "frontend_components_devkit_mounted"
+      "id": "frontend_components_devkit_mounted",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "beforeDestroy()",
@@ -1854,7 +2017,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "beforedestroy()",
-      "id": "frontend_components_devkit_beforedestroy"
+      "id": "frontend_components_devkit_beforedestroy",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "isActive()",
@@ -1864,7 +2028,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "isactive()",
-      "id": "frontend_components_devkit_isactive"
+      "id": "frontend_components_devkit_isactive",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "clampToViewport()",
@@ -1874,7 +2039,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "clamptoviewport()",
-      "id": "frontend_components_devkit_clamptoviewport"
+      "id": "frontend_components_devkit_clamptoviewport",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "onIconClick()",
@@ -1884,7 +2050,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "oniconclick()",
-      "id": "frontend_components_devkit_oniconclick"
+      "id": "frontend_components_devkit_oniconclick",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "startDrag()",
@@ -1894,7 +2061,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "startdrag()",
-      "id": "frontend_components_devkit_startdrag"
+      "id": "frontend_components_devkit_startdrag",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "onDrag()",
@@ -1904,7 +2072,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "ondrag()",
-      "id": "frontend_components_devkit_ondrag"
+      "id": "frontend_components_devkit_ondrag",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "endDrag()",
@@ -1914,7 +2083,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "enddrag()",
-      "id": "frontend_components_devkit_enddrag"
+      "id": "frontend_components_devkit_enddrag",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "removeDragListeners()",
@@ -1924,7 +2094,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "removedraglisteners()",
-      "id": "frontend_components_devkit_removedraglisteners"
+      "id": "frontend_components_devkit_removedraglisteners",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "select()",
@@ -1934,7 +2105,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "select()",
-      "id": "frontend_components_devkit_select"
+      "id": "frontend_components_devkit_select",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "useDeviceLocation()",
@@ -1944,7 +2116,8 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "usedevicelocation()",
-      "id": "frontend_components_devkit_usedevicelocation"
+      "id": "frontend_components_devkit_usedevicelocation",
+      "community_name": "DevKit.vue"
     },
     {
       "label": "Game.vue",
@@ -1954,7 +2127,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "game.vue",
-      "id": "frontend_components_game"
+      "id": "frontend_components_game",
+      "community_name": "Game.vue"
     },
     {
       "label": "data()",
@@ -1964,7 +2138,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "data()",
-      "id": "frontend_components_game_data"
+      "id": "frontend_components_game_data",
+      "community_name": "Game.vue"
     },
     {
       "label": "tileBrowserTile()",
@@ -1974,7 +2149,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tilebrowsertile()",
-      "id": "frontend_components_game_tilebrowsertile"
+      "id": "frontend_components_game_tilebrowsertile",
+      "community_name": "Game.vue"
     },
     {
       "label": "tileBrowserTiles()",
@@ -1984,7 +2160,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tilebrowsertiles()",
-      "id": "frontend_components_game_tilebrowsertiles"
+      "id": "frontend_components_game_tilebrowsertiles",
+      "community_name": "Game.vue"
     },
     {
       "label": "handler()",
@@ -1994,7 +2171,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "handler()",
-      "id": "frontend_components_game_handler"
+      "id": "frontend_components_game_handler",
+      "community_name": "Game.vue"
     },
     {
       "label": "'game.zoom'()",
@@ -2004,7 +2182,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'game.zoom'()",
-      "id": "frontend_components_game_game_zoom"
+      "id": "frontend_components_game_game_zoom",
+      "community_name": "Game.vue"
     },
     {
       "label": "'game.regenerate'()",
@@ -2014,7 +2193,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'game.regenerate'()",
-      "id": "frontend_components_game_game_regenerate"
+      "id": "frontend_components_game_game_regenerate",
+      "community_name": "Game.vue"
     },
     {
       "label": "'player.x'()",
@@ -2024,7 +2204,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'player.x'()",
-      "id": "frontend_components_game_player_x"
+      "id": "frontend_components_game_player_x",
+      "community_name": "Game.vue"
     },
     {
       "label": "'player.y'()",
@@ -2034,7 +2215,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'player.y'()",
-      "id": "frontend_components_game_player_y"
+      "id": "frontend_components_game_player_y",
+      "community_name": "Game.vue"
     },
     {
       "label": "'player.blockX'()",
@@ -2044,7 +2226,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'player.blockx'()",
-      "id": "frontend_components_game_player_blockx"
+      "id": "frontend_components_game_player_blockx",
+      "community_name": "Game.vue"
     },
     {
       "label": "'player.blockY'()",
@@ -2054,7 +2237,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'player.blocky'()",
-      "id": "frontend_components_game_player_blocky"
+      "id": "frontend_components_game_player_blocky",
+      "community_name": "Game.vue"
     },
     {
       "label": "'tiles'()",
@@ -2064,7 +2248,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "'tiles'()",
-      "id": "frontend_components_game_tiles"
+      "id": "frontend_components_game_tiles",
+      "community_name": "Game.vue"
     },
     {
       "label": "mounted()",
@@ -2074,7 +2259,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "mounted()",
-      "id": "frontend_components_game_mounted"
+      "id": "frontend_components_game_mounted",
+      "community_name": "Game.vue"
     },
     {
       "label": "debug()",
@@ -2084,7 +2270,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "debug()",
-      "id": "frontend_components_game_debug"
+      "id": "frontend_components_game_debug",
+      "community_name": "Game.vue"
     },
     {
       "label": "updatePlayerBlock()",
@@ -2094,7 +2281,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "updateplayerblock()",
-      "id": "frontend_components_game_updateplayerblock"
+      "id": "frontend_components_game_updateplayerblock",
+      "community_name": "Game.vue"
     },
     {
       "label": "initializePlayer()",
@@ -2104,7 +2292,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "initializeplayer()",
-      "id": "frontend_components_game_initializeplayer"
+      "id": "frontend_components_game_initializeplayer",
+      "community_name": "Game.vue"
     },
     {
       "label": "moveRight()",
@@ -2114,7 +2303,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "moveright()",
-      "id": "frontend_components_game_moveright"
+      "id": "frontend_components_game_moveright",
+      "community_name": "Game.vue"
     },
     {
       "label": "moveLeft()",
@@ -2124,7 +2314,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "moveleft()",
-      "id": "frontend_components_game_moveleft"
+      "id": "frontend_components_game_moveleft",
+      "community_name": "Game.vue"
     },
     {
       "label": "moveUp()",
@@ -2134,7 +2325,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "moveup()",
-      "id": "frontend_components_game_moveup"
+      "id": "frontend_components_game_moveup",
+      "community_name": "Game.vue"
     },
     {
       "label": "moveDown()",
@@ -2144,7 +2336,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "movedown()",
-      "id": "frontend_components_game_movedown"
+      "id": "frontend_components_game_movedown",
+      "community_name": "Game.vue"
     },
     {
       "label": "action()",
@@ -2154,7 +2347,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "action()",
-      "id": "frontend_components_game_action"
+      "id": "frontend_components_game_action",
+      "community_name": "Game.vue"
     },
     {
       "label": "onKeydown()",
@@ -2164,7 +2358,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "onkeydown()",
-      "id": "frontend_components_game_onkeydown"
+      "id": "frontend_components_game_onkeydown",
+      "community_name": "Game.vue"
     },
     {
       "label": "initializeMap()",
@@ -2174,7 +2369,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "initializemap()",
-      "id": "frontend_components_game_initializemap"
+      "id": "frontend_components_game_initializemap",
+      "community_name": "Game.vue"
     },
     {
       "label": "updateMapBlock()",
@@ -2184,7 +2380,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "updatemapblock()",
-      "id": "frontend_components_game_updatemapblock"
+      "id": "frontend_components_game_updatemapblock",
+      "community_name": "Game.vue"
     },
     {
       "label": "resetGame()",
@@ -2194,7 +2391,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "resetgame()",
-      "id": "frontend_components_game_resetgame"
+      "id": "frontend_components_game_resetgame",
+      "community_name": "Game.vue"
     },
     {
       "label": "initializeGame()",
@@ -2204,7 +2402,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "initializegame()",
-      "id": "frontend_components_game_initializegame"
+      "id": "frontend_components_game_initializegame",
+      "community_name": "Game.vue"
     },
     {
       "label": "continueWithoutLocation()",
@@ -2214,7 +2413,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "continuewithoutlocation()",
-      "id": "frontend_components_game_continuewithoutlocation"
+      "id": "frontend_components_game_continuewithoutlocation",
+      "community_name": "Game.vue"
     },
     {
       "label": "getLocation()",
@@ -2224,7 +2424,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getlocation()",
-      "id": "frontend_components_game_getlocation"
+      "id": "frontend_components_game_getlocation",
+      "community_name": "Game.vue"
     },
     {
       "label": "resizeGame()",
@@ -2234,7 +2435,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "resizegame()",
-      "id": "frontend_components_game_resizegame"
+      "id": "frontend_components_game_resizegame",
+      "community_name": "Game.vue"
     },
     {
       "label": "restoreBoardWidth()",
@@ -2244,7 +2446,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "restoreboardwidth()",
-      "id": "frontend_components_game_restoreboardwidth"
+      "id": "frontend_components_game_restoreboardwidth",
+      "community_name": "Game.vue"
     },
     {
       "label": "startBoardResize()",
@@ -2254,7 +2457,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "startboardresize()",
-      "id": "frontend_components_game_startboardresize"
+      "id": "frontend_components_game_startboardresize",
+      "community_name": "Game.vue"
     },
     {
       "label": "onBoardResize()",
@@ -2264,7 +2468,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "onboardresize()",
-      "id": "frontend_components_game_onboardresize"
+      "id": "frontend_components_game_onboardresize",
+      "community_name": "Game.vue"
     },
     {
       "label": "endBoardResize()",
@@ -2274,7 +2479,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "endboardresize()",
-      "id": "frontend_components_game_endboardresize"
+      "id": "frontend_components_game_endboardresize",
+      "community_name": "Game.vue"
     },
     {
       "label": "zoom()",
@@ -2284,7 +2490,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "zoom()",
-      "id": "frontend_components_game_zoom"
+      "id": "frontend_components_game_zoom",
+      "community_name": "Game.vue"
     },
     {
       "label": "centreMap()",
@@ -2294,7 +2501,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "centremap()",
-      "id": "frontend_components_game_centremap"
+      "id": "frontend_components_game_centremap",
+      "community_name": "Game.vue"
     },
     {
       "label": "renderCanvas()",
@@ -2304,7 +2512,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "rendercanvas()",
-      "id": "frontend_components_game_rendercanvas"
+      "id": "frontend_components_game_rendercanvas",
+      "community_name": "Game.vue"
     },
     {
       "label": "tileShouldRender()",
@@ -2314,7 +2523,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tileshouldrender()",
-      "id": "frontend_components_game_tileshouldrender"
+      "id": "frontend_components_game_tileshouldrender",
+      "community_name": "Game.vue"
     },
     {
       "label": "blockShouldRender()",
@@ -2324,7 +2534,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "blockshouldrender()",
-      "id": "frontend_components_game_blockshouldrender"
+      "id": "frontend_components_game_blockshouldrender",
+      "community_name": "Game.vue"
     },
     {
       "label": "convertY()",
@@ -2334,7 +2545,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "converty()",
-      "id": "frontend_components_game_converty"
+      "id": "frontend_components_game_converty",
+      "community_name": "Game.vue"
     },
     {
       "label": "getBlocks()",
@@ -2344,7 +2556,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getblocks()",
-      "id": "frontend_components_game_getblocks"
+      "id": "frontend_components_game_getblocks",
+      "community_name": "Game.vue"
     },
     {
       "label": "storeTileData()",
@@ -2354,7 +2567,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "storetiledata()",
-      "id": "frontend_components_game_storetiledata"
+      "id": "frontend_components_game_storetiledata",
+      "community_name": "Game.vue"
     },
     {
       "label": "storeBlockData()",
@@ -2364,7 +2578,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "storeblockdata()",
-      "id": "frontend_components_game_storeblockdata"
+      "id": "frontend_components_game_storeblockdata",
+      "community_name": "Game.vue"
     },
     {
       "label": "LoginRegister.vue",
@@ -2374,7 +2589,8 @@
       "_origin": "ast",
       "community": 15,
       "norm_label": "loginregister.vue",
-      "id": "frontend_components_loginregister"
+      "id": "frontend_components_loginregister",
+      "community_name": "LoginRegister.vue"
     },
     {
       "label": "data()",
@@ -2384,7 +2600,8 @@
       "_origin": "ast",
       "community": 15,
       "norm_label": "data()",
-      "id": "frontend_components_loginregister_data"
+      "id": "frontend_components_loginregister_data",
+      "community_name": "LoginRegister.vue"
     },
     {
       "label": "mounted()",
@@ -2394,7 +2611,8 @@
       "_origin": "ast",
       "community": 15,
       "norm_label": "mounted()",
-      "id": "frontend_components_loginregister_mounted"
+      "id": "frontend_components_loginregister_mounted",
+      "community_name": "LoginRegister.vue"
     },
     {
       "label": "login()",
@@ -2404,7 +2622,8 @@
       "_origin": "ast",
       "community": 15,
       "norm_label": "login()",
-      "id": "frontend_components_loginregister_login"
+      "id": "frontend_components_loginregister_login",
+      "community_name": "LoginRegister.vue"
     },
     {
       "label": "Nav.vue",
@@ -2414,7 +2633,8 @@
       "_origin": "ast",
       "community": 36,
       "norm_label": "nav.vue",
-      "id": "frontend_components_nav"
+      "id": "frontend_components_nav",
+      "community_name": "Nav.vue"
     },
     {
       "label": "NuxtLogo.vue",
@@ -2424,7 +2644,8 @@
       "_origin": "ast",
       "community": 37,
       "norm_label": "nuxtlogo.vue",
-      "id": "frontend_components_nuxtlogo"
+      "id": "frontend_components_nuxtlogo",
+      "community_name": "NuxtLogo.vue"
     },
     {
       "label": "ecosystem.config.js",
@@ -2432,9 +2653,10 @@
       "source_file": "frontend/ecosystem.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 127,
+      "community": 18,
       "norm_label": "ecosystem.config.js",
-      "id": "frontend_ecosystem_config"
+      "id": "frontend_ecosystem_config",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "{ pm2AppConfig }",
@@ -2442,9 +2664,10 @@
       "source_file": "frontend/ecosystem.config.js",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 127,
+      "community": 18,
       "norm_label": "{ pm2appconfig }",
-      "id": "frontend_ecosystem_config_pm2appconfig"
+      "id": "frontend_ecosystem_config_pm2appconfig",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "jsconfig.json",
@@ -2454,7 +2677,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "jsconfig.json",
-      "id": "frontend_jsconfig"
+      "id": "frontend_jsconfig",
+      "community_name": "compilerOptions"
     },
     {
       "label": "compilerOptions",
@@ -2464,7 +2688,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "compileroptions",
-      "id": "frontend_jsconfig_compileroptions"
+      "id": "frontend_jsconfig_compileroptions",
+      "community_name": "compilerOptions"
     },
     {
       "label": "baseUrl",
@@ -2474,7 +2699,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "baseurl",
-      "id": "frontend_jsconfig_compileroptions_baseurl"
+      "id": "frontend_jsconfig_compileroptions_baseurl",
+      "community_name": "compilerOptions"
     },
     {
       "label": "paths",
@@ -2484,7 +2710,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "paths",
-      "id": "frontend_jsconfig_compileroptions_paths"
+      "id": "frontend_jsconfig_compileroptions_paths",
+      "community_name": "compilerOptions"
     },
     {
       "label": "~/*",
@@ -2494,7 +2721,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "~/*",
-      "id": "frontend_jsconfig_paths"
+      "id": "frontend_jsconfig_paths",
+      "community_name": "compilerOptions"
     },
     {
       "label": "exclude",
@@ -2504,7 +2732,8 @@
       "_origin": "ast",
       "community": 13,
       "norm_label": "exclude",
-      "id": "frontend_jsconfig_exclude"
+      "id": "frontend_jsconfig_exclude",
+      "community_name": "compilerOptions"
     },
     {
       "label": "default.vue",
@@ -2514,7 +2743,8 @@
       "_origin": "ast",
       "community": 39,
       "norm_label": "default.vue",
-      "id": "frontend_layouts_default"
+      "id": "frontend_layouts_default",
+      "community_name": "default.vue"
     },
     {
       "label": "game.vue",
@@ -2524,7 +2754,8 @@
       "_origin": "ast",
       "community": 40,
       "norm_label": "game.vue",
-      "id": "frontend_layouts_game"
+      "id": "frontend_layouts_game",
+      "community_name": "game.vue"
     },
     {
       "label": "nuxt.config.js",
@@ -2534,7 +2765,8 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "nuxt.config.js",
-      "id": "frontend_nuxt_config"
+      "id": "frontend_nuxt_config",
+      "community_name": "nuxt.config.js"
     },
     {
       "label": "package.json",
@@ -2544,7 +2776,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "package.json",
-      "id": "frontend_package"
+      "id": "frontend_package",
+      "community_name": "dependencies"
     },
     {
       "label": "name",
@@ -2554,7 +2787,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "name",
-      "id": "frontend_package_name"
+      "id": "frontend_package_name",
+      "community_name": "dependencies"
     },
     {
       "label": "version",
@@ -2564,7 +2798,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "version",
-      "id": "frontend_package_version"
+      "id": "frontend_package_version",
+      "community_name": "dependencies"
     },
     {
       "label": "private",
@@ -2574,7 +2809,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "private",
-      "id": "frontend_package_private"
+      "id": "frontend_package_private",
+      "community_name": "dependencies"
     },
     {
       "label": "scripts",
@@ -2584,7 +2820,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "scripts",
-      "id": "frontend_package_scripts"
+      "id": "frontend_package_scripts",
+      "community_name": "dependencies"
     },
     {
       "label": "dev",
@@ -2594,7 +2831,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "dev",
-      "id": "frontend_package_scripts_dev"
+      "id": "frontend_package_scripts_dev",
+      "community_name": "dependencies"
     },
     {
       "label": "build",
@@ -2604,7 +2842,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "build",
-      "id": "frontend_package_scripts_build"
+      "id": "frontend_package_scripts_build",
+      "community_name": "dependencies"
     },
     {
       "label": "start",
@@ -2614,7 +2853,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "start",
-      "id": "frontend_package_scripts_start"
+      "id": "frontend_package_scripts_start",
+      "community_name": "dependencies"
     },
     {
       "label": "generate",
@@ -2624,7 +2864,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "generate",
-      "id": "frontend_package_scripts_generate"
+      "id": "frontend_package_scripts_generate",
+      "community_name": "dependencies"
     },
     {
       "label": "lint:js",
@@ -2634,7 +2875,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "lint:js",
-      "id": "frontend_package_scripts_lint_js"
+      "id": "frontend_package_scripts_lint_js",
+      "community_name": "dependencies"
     },
     {
       "label": "lint",
@@ -2644,7 +2886,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "lint",
-      "id": "frontend_package_scripts_lint"
+      "id": "frontend_package_scripts_lint",
+      "community_name": "dependencies"
     },
     {
       "label": "lintfix",
@@ -2654,7 +2897,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "lintfix",
-      "id": "frontend_package_scripts_lintfix"
+      "id": "frontend_package_scripts_lintfix",
+      "community_name": "dependencies"
     },
     {
       "label": "dependencies",
@@ -2664,7 +2908,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "dependencies",
-      "id": "frontend_package_dependencies"
+      "id": "frontend_package_dependencies",
+      "community_name": "dependencies"
     },
     {
       "label": "@nuxtjs/axios",
@@ -2674,7 +2919,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "@nuxtjs/axios",
-      "id": "frontend_package_dependencies_nuxtjs_axios"
+      "id": "frontend_package_dependencies_nuxtjs_axios",
+      "community_name": "dependencies"
     },
     {
       "label": "@nuxtjs/pwa",
@@ -2684,7 +2930,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "@nuxtjs/pwa",
-      "id": "frontend_package_dependencies_nuxtjs_pwa"
+      "id": "frontend_package_dependencies_nuxtjs_pwa",
+      "community_name": "dependencies"
     },
     {
       "label": "core-js",
@@ -2694,7 +2941,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "core-js",
-      "id": "frontend_package_dependencies_core_js"
+      "id": "frontend_package_dependencies_core_js",
+      "community_name": "dependencies"
     },
     {
       "label": "lodash",
@@ -2704,7 +2952,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "lodash",
-      "id": "frontend_package_dependencies_lodash"
+      "id": "frontend_package_dependencies_lodash",
+      "community_name": "dependencies"
     },
     {
       "label": "lodash-es",
@@ -2714,7 +2963,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "lodash-es",
-      "id": "frontend_package_dependencies_lodash_es"
+      "id": "frontend_package_dependencies_lodash_es",
+      "community_name": "dependencies"
     },
     {
       "label": "nuxt",
@@ -2724,7 +2974,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "nuxt",
-      "id": "frontend_package_dependencies_nuxt"
+      "id": "frontend_package_dependencies_nuxt",
+      "community_name": "dependencies"
     },
     {
       "label": "sass",
@@ -2734,7 +2985,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "sass",
-      "id": "frontend_package_dependencies_sass"
+      "id": "frontend_package_dependencies_sass",
+      "community_name": "dependencies"
     },
     {
       "label": "sass-loader",
@@ -2744,7 +2996,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "sass-loader",
-      "id": "frontend_package_dependencies_sass_loader"
+      "id": "frontend_package_dependencies_sass_loader",
+      "community_name": "dependencies"
     },
     {
       "label": "vue",
@@ -2754,7 +3007,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "vue",
-      "id": "frontend_package_dependencies_vue"
+      "id": "frontend_package_dependencies_vue",
+      "community_name": "dependencies"
     },
     {
       "label": "vue-server-renderer",
@@ -2764,7 +3018,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "vue-server-renderer",
-      "id": "frontend_package_dependencies_vue_server_renderer"
+      "id": "frontend_package_dependencies_vue_server_renderer",
+      "community_name": "dependencies"
     },
     {
       "label": "vue-template-compiler",
@@ -2774,7 +3029,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "vue-template-compiler",
-      "id": "frontend_package_dependencies_vue_template_compiler"
+      "id": "frontend_package_dependencies_vue_template_compiler",
+      "community_name": "dependencies"
     },
     {
       "label": "vuex-persistedstate",
@@ -2784,7 +3040,8 @@
       "_origin": "ast",
       "community": 9,
       "norm_label": "vuex-persistedstate",
-      "id": "frontend_package_dependencies_vuex_persistedstate"
+      "id": "frontend_package_dependencies_vuex_persistedstate",
+      "community_name": "dependencies"
     },
     {
       "label": "devDependencies",
@@ -2794,7 +3051,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "devdependencies",
-      "id": "frontend_package_devdependencies"
+      "id": "frontend_package_devdependencies",
+      "community_name": "devDependencies"
     },
     {
       "label": "@babel/eslint-parser",
@@ -2804,7 +3062,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "@babel/eslint-parser",
-      "id": "frontend_package_devdependencies_babel_eslint_parser"
+      "id": "frontend_package_devdependencies_babel_eslint_parser",
+      "community_name": "devDependencies"
     },
     {
       "label": "@nuxtjs/eslint-config",
@@ -2814,7 +3073,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "@nuxtjs/eslint-config",
-      "id": "frontend_package_devdependencies_nuxtjs_eslint_config"
+      "id": "frontend_package_devdependencies_nuxtjs_eslint_config",
+      "community_name": "devDependencies"
     },
     {
       "label": "@nuxtjs/eslint-module",
@@ -2824,7 +3084,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "@nuxtjs/eslint-module",
-      "id": "frontend_package_devdependencies_nuxtjs_eslint_module"
+      "id": "frontend_package_devdependencies_nuxtjs_eslint_module",
+      "community_name": "devDependencies"
     },
     {
       "label": "@nuxtjs/tailwindcss",
@@ -2834,7 +3095,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "@nuxtjs/tailwindcss",
-      "id": "frontend_package_devdependencies_nuxtjs_tailwindcss"
+      "id": "frontend_package_devdependencies_nuxtjs_tailwindcss",
+      "community_name": "devDependencies"
     },
     {
       "label": "eslint",
@@ -2844,7 +3106,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "eslint",
-      "id": "frontend_package_devdependencies_eslint"
+      "id": "frontend_package_devdependencies_eslint",
+      "community_name": "devDependencies"
     },
     {
       "label": "eslint-plugin-nuxt",
@@ -2854,7 +3117,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "eslint-plugin-nuxt",
-      "id": "frontend_package_devdependencies_eslint_plugin_nuxt"
+      "id": "frontend_package_devdependencies_eslint_plugin_nuxt",
+      "community_name": "devDependencies"
     },
     {
       "label": "eslint-plugin-vue",
@@ -2864,7 +3128,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "eslint-plugin-vue",
-      "id": "frontend_package_devdependencies_eslint_plugin_vue"
+      "id": "frontend_package_devdependencies_eslint_plugin_vue",
+      "community_name": "devDependencies"
     },
     {
       "label": "postcss",
@@ -2874,7 +3139,8 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "postcss",
-      "id": "frontend_package_devdependencies_postcss"
+      "id": "frontend_package_devdependencies_postcss",
+      "community_name": "devDependencies"
     },
     {
       "label": "game.vue",
@@ -2884,7 +3150,8 @@
       "_origin": "ast",
       "community": 42,
       "norm_label": "game.vue",
-      "id": "frontend_pages_game"
+      "id": "frontend_pages_game",
+      "community_name": "game.vue"
     },
     {
       "label": "index.vue",
@@ -2894,7 +3161,8 @@
       "_origin": "ast",
       "community": 43,
       "norm_label": "index.vue",
-      "id": "frontend_pages_index"
+      "id": "frontend_pages_index",
+      "community_name": "index.vue"
     },
     {
       "label": "persistedState.client.js",
@@ -2904,7 +3172,8 @@
       "_origin": "ast",
       "community": 44,
       "norm_label": "persistedstate.client.js",
-      "id": "frontend_plugins_persistedstate_client"
+      "id": "frontend_plugins_persistedstate_client",
+      "community_name": "persistedState.client.js"
     },
     {
       "label": "sw.js",
@@ -2914,7 +3183,8 @@
       "_origin": "ast",
       "community": 51,
       "norm_label": "sw.js",
-      "id": "frontend_static_sw"
+      "id": "frontend_static_sw",
+      "community_name": "sw.js"
     },
     {
       "label": "things.js",
@@ -2924,7 +3194,8 @@
       "_origin": "ast",
       "community": 14,
       "norm_label": "things.js",
-      "id": "frontend_store_things"
+      "id": "frontend_store_things",
+      "community_name": "things.js"
     },
     {
       "label": "state()",
@@ -2934,7 +3205,8 @@
       "_origin": "ast",
       "community": 14,
       "norm_label": "state()",
-      "id": "frontend_store_things_state"
+      "id": "frontend_store_things_state",
+      "community_name": "things.js"
     },
     {
       "label": "getters",
@@ -2944,7 +3216,8 @@
       "_origin": "ast",
       "community": 14,
       "norm_label": "getters",
-      "id": "frontend_store_things_getters"
+      "id": "frontend_store_things_getters",
+      "community_name": "things.js"
     },
     {
       "label": "mutations",
@@ -2954,7 +3227,8 @@
       "_origin": "ast",
       "community": 14,
       "norm_label": "mutations",
-      "id": "frontend_store_things_mutations"
+      "id": "frontend_store_things_mutations",
+      "community_name": "things.js"
     },
     {
       "label": "actions",
@@ -2964,7 +3238,8 @@
       "_origin": "ast",
       "community": 14,
       "norm_label": "actions",
-      "id": "frontend_store_things_actions"
+      "id": "frontend_store_things_actions",
+      "community_name": "things.js"
     },
     {
       "label": "tailwind.config.js",
@@ -2974,7 +3249,8 @@
       "_origin": "ast",
       "community": 21,
       "norm_label": "tailwind.config.js",
-      "id": "frontend_tailwind_config"
+      "id": "frontend_tailwind_config",
+      "community_name": "tailwind.config.js"
     },
     {
       "label": "tailwindConf",
@@ -2984,7 +3260,8 @@
       "_origin": "ast",
       "community": 21,
       "norm_label": "tailwindconf",
-      "id": "frontend_tailwind_config_tailwindconf"
+      "id": "frontend_tailwind_config_tailwindconf",
+      "community_name": "tailwind.config.js"
     },
     {
       "label": "package.json",
@@ -2994,7 +3271,8 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "package.json",
-      "id": "package"
+      "id": "package",
+      "community_name": "scripts"
     },
     {
       "label": "name",
@@ -3004,7 +3282,8 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "name",
-      "id": "package_name"
+      "id": "package_name",
+      "community_name": "scripts"
     },
     {
       "label": "version",
@@ -3014,7 +3293,8 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "version",
-      "id": "package_version"
+      "id": "package_version",
+      "community_name": "scripts"
     },
     {
       "label": "private",
@@ -3024,7 +3304,8 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "private",
-      "id": "package_private"
+      "id": "package_private",
+      "community_name": "scripts"
     },
     {
       "label": "description",
@@ -3034,7 +3315,8 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "description",
-      "id": "package_description"
+      "id": "package_description",
+      "community_name": "scripts"
     },
     {
       "label": "scripts",
@@ -3044,77 +3326,96 @@
       "_origin": "ast",
       "community": 10,
       "norm_label": "scripts",
-      "id": "package_scripts"
+      "id": "package_scripts",
+      "community_name": "scripts"
     },
     {
-      "label": "pms",
+      "label": "postinstall",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
       "community": 10,
-      "norm_label": "pms",
-      "id": "package_scripts_pms"
+      "norm_label": "postinstall",
+      "id": "package_scripts_postinstall",
+      "community_name": "scripts"
     },
     {
-      "label": "pms-stop",
+      "label": "pms",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
       "community": 10,
-      "norm_label": "pms-stop",
-      "id": "package_scripts_pms_stop"
+      "norm_label": "pms",
+      "id": "package_scripts_pms",
+      "community_name": "scripts"
     },
     {
-      "label": "ports",
+      "label": "pms-stop",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
       "community": 10,
-      "norm_label": "ports",
-      "id": "package_scripts_ports"
+      "norm_label": "pms-stop",
+      "id": "package_scripts_pms_stop",
+      "community_name": "scripts"
     },
     {
-      "label": "ports:all",
+      "label": "ports",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
       "community": 10,
-      "norm_label": "ports:all",
-      "id": "package_scripts_ports_all"
+      "norm_label": "ports",
+      "id": "package_scripts_ports",
+      "community_name": "scripts"
     },
     {
-      "label": "api",
+      "label": "ports:all",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
       "community": 10,
-      "norm_label": "api",
-      "id": "package_scripts_api"
+      "norm_label": "ports:all",
+      "id": "package_scripts_ports_all",
+      "community_name": "scripts"
     },
     {
-      "label": "frontend",
+      "label": "api",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
       "community": 10,
+      "norm_label": "api",
+      "id": "package_scripts_api",
+      "community_name": "scripts"
+    },
+    {
+      "label": "frontend",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 10,
       "norm_label": "frontend",
-      "id": "package_scripts_frontend"
+      "id": "package_scripts_frontend",
+      "community_name": "scripts"
     },
     {
       "label": "license",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "community": 10,
       "norm_label": "license",
-      "id": "package_license"
+      "id": "package_license",
+      "community_name": "scripts"
     },
     {
       "label": "README.md",
@@ -3124,7 +3425,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "readme.md",
-      "id": "readme"
+      "id": "readme",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "Pokeworld",
@@ -3134,7 +3436,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "pokeworld",
-      "id": "readme_pokeworld"
+      "id": "readme_pokeworld",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "Local dev \u2014 worktree-aware PM2 flow",
@@ -3144,7 +3447,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "local dev \u2014 worktree-aware pm2 flow",
-      "id": "readme_local_dev_worktree_aware_pm2_flow"
+      "id": "readme_local_dev_worktree_aware_pm2_flow",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "Ports & names",
@@ -3154,7 +3458,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "ports & names",
-      "id": "readme_ports_names"
+      "id": "readme_ports_names",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "Install",
@@ -3164,7 +3469,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "install",
-      "id": "readme_install"
+      "id": "readme_install",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "api runtime config (`api/.env`)",
@@ -3174,7 +3480,8 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "api runtime config (`api/.env`)",
-      "id": "readme_api_runtime_config_api_env"
+      "id": "readme_api_runtime_config_api_env",
+      "community_name": "ecosystem.config.js"
     },
     {
       "label": "README.md",
@@ -3184,7 +3491,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "readme.md",
-      "id": "frontend_readme"
+      "id": "frontend_readme",
+      "community_name": "devDependencies"
     },
     {
       "label": "pokeworld-frontend",
@@ -3194,7 +3502,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "pokeworld-frontend",
-      "id": "frontend_readme_pokeworld_frontend"
+      "id": "frontend_readme_pokeworld_frontend",
+      "community_name": "devDependencies"
     },
     {
       "label": "Build Setup",
@@ -3204,7 +3513,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "build setup",
-      "id": "frontend_readme_build_setup"
+      "id": "frontend_readme_build_setup",
+      "community_name": "devDependencies"
     },
     {
       "label": "Special Directories",
@@ -3214,7 +3524,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "special directories",
-      "id": "frontend_readme_special_directories"
+      "id": "frontend_readme_special_directories",
+      "community_name": "devDependencies"
     },
     {
       "label": "`assets`",
@@ -3224,7 +3535,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`assets`",
-      "id": "frontend_readme_assets"
+      "id": "frontend_readme_assets",
+      "community_name": "devDependencies"
     },
     {
       "label": "`components`",
@@ -3234,7 +3546,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`components`",
-      "id": "frontend_readme_components"
+      "id": "frontend_readme_components",
+      "community_name": "devDependencies"
     },
     {
       "label": "`layouts`",
@@ -3244,7 +3557,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`layouts`",
-      "id": "frontend_readme_layouts"
+      "id": "frontend_readme_layouts",
+      "community_name": "devDependencies"
     },
     {
       "label": "`pages`",
@@ -3254,7 +3568,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`pages`",
-      "id": "frontend_readme_pages"
+      "id": "frontend_readme_pages",
+      "community_name": "devDependencies"
     },
     {
       "label": "`plugins`",
@@ -3264,7 +3579,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`plugins`",
-      "id": "frontend_readme_plugins"
+      "id": "frontend_readme_plugins",
+      "community_name": "devDependencies"
     },
     {
       "label": "`static`",
@@ -3274,7 +3590,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`static`",
-      "id": "frontend_readme_static"
+      "id": "frontend_readme_static",
+      "community_name": "devDependencies"
     },
     {
       "label": "`store`",
@@ -3284,7 +3601,8 @@
       "_origin": "ast",
       "community": 12,
       "norm_label": "`store`",
-      "id": "frontend_readme_store"
+      "id": "frontend_readme_store",
+      "community_name": "devDependencies"
     },
     {
       "label": "README.md",
@@ -3294,7 +3612,8 @@
       "_origin": "ast",
       "community": 16,
       "norm_label": "readme.md",
-      "id": "frontend_store_readme"
+      "id": "frontend_store_readme",
+      "community_name": "Nuxt.js Framework"
     },
     {
       "label": "STORE",
@@ -3304,7 +3623,8 @@
       "_origin": "ast",
       "community": 16,
       "norm_label": "store",
-      "id": "frontend_store_readme_store"
+      "id": "frontend_store_readme_store",
+      "community_name": "Nuxt.js Framework"
     },
     {
       "label": "Pond Tile 24",
@@ -4753,32 +5073,23 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "ecosystem.config.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "ecosystem_config",
-      "target": "ecosystem_config_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ecosystem.config.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "ecosystem_config",
-      "target": "ecosystem_config_frontend",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "api/ecosystem.config.js",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "api_ecosystem_config",
       "target": "api_ecosystem_config_pm2appconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ecosystem_config",
+      "target": "api_ecosystem_config"
     },
     {
       "relation": "contains",
@@ -6583,6 +6894,37 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ecosystem_config",
+      "target": "ecosystem_config_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ecosystem_config",
+      "target": "ecosystem_config_frontend"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ecosystem.config.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ecosystem_config",
+      "target": "frontend_ecosystem_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/components/Banner.vue",
       "source_location": "L94",
       "weight": 1.0,
@@ -7910,7 +8252,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package",
@@ -7960,7 +8302,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
@@ -7970,7 +8312,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
@@ -7980,7 +8322,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
@@ -7990,7 +8332,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
@@ -8000,7 +8342,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
@@ -8010,11 +8352,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_scripts",
       "target": "package_scripts_ports_all"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_postinstall"
     },
     {
       "relation": "contains",
@@ -8489,5 +8841,5 @@
       "source_file": "api/assets/gmap.png"
     }
   ],
-  "built_at_commit": "ba8dcf75ae8b0dc94f1795d21a5888ada68bfcbb"
+  "built_at_commit": "971540a82181649216a2580431997041eb6f577d"
 }
