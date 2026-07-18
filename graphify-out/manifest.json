@@ -359,6 +359,11 @@
     "ast_hash": "819a020321b1c08879a2c9b9f202721a",
     "semantic_hash": "819a020321b1c08879a2c9b9f202721a"
   },
+  "app/tests/procedural-world-properties.test.ts": {
+    "mtime": 1784395579.3235304,
+    "ast_hash": "bc70c57c0982efc8eaff9abee0844df4",
+    "semantic_hash": "bc70c57c0982efc8eaff9abee0844df4"
+  },
   "app/tests/terrain-classifier.test.ts": {
     "mtime": 1784393754.9210045,
     "ast_hash": "352fe358ef808b355479708744395b51",
@@ -440,9 +445,9 @@
     "semantic_hash": "30e44bf692b9dd1feb61caef628e3781"
   },
   "app/VERCEL_DEPLOYMENTS.md": {
-    "mtime": 1784393754.8810208,
-    "ast_hash": "d64a36c6b59ab72c6da059e3a626c58e",
-    "semantic_hash": "d64a36c6b59ab72c6da059e3a626c58e"
+    "mtime": 1784395691.9888127,
+    "ast_hash": "74c00fa1b78158b1bf3eff97b495b1b8",
+    "semantic_hash": "74c00fa1b78158b1bf3eff97b495b1b8"
   },
   "app/index.html": {
     "mtime": 1784393754.8812294,
@@ -453,11 +458,6 @@
     "mtime": 1784393754.8815312,
     "ast_hash": "157c9d51eacb2ba0acc2848dced82cd0",
     "semantic_hash": "157c9d51eacb2ba0acc2848dced82cd0"
-  },
-  "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
-    "mtime": 1784395522.7237458,
-    "ast_hash": "9d0534d3ecd5ec9e6fb44f3268a8aa7b",
-    "semantic_hash": ""
   },
   "pnpm-workspace.yaml": {
     "mtime": 1784393754.925532,
@@ -1123,10 +1123,5 @@
     "mtime": 1784393754.923268,
     "ast_hash": "2c4f745223a2ef1165960165680cae84",
     "semantic_hash": "2c4f745223a2ef1165960165680cae84"
-  },
-  "app/tests/procedural-world-properties.test.ts": {
-    "mtime": 1784395579.3235304,
-    "ast_hash": "bc70c57c0982efc8eaff9abee0844df4",
-    "semantic_hash": "bc70c57c0982efc8eaff9abee0844df4"
   }
 }

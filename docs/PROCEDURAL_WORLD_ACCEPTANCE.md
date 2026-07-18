@@ -14,6 +14,7 @@ gate below is backed by current automated and native Chrome evidence.
 pnpm --dir app typecheck
 pnpm --dir app test
 pnpm --dir app benchmark:map
+pnpm --dir app map:generate -- 946579 488585 --regenerate
 pnpm --dir app build:vercel
 pnpm --dir app exec node scripts/verify-vercel-output.mjs
 ```
@@ -26,8 +27,11 @@ pnpm --dir app exec node scripts/verify-vercel-output.mjs
 - [x] Property tests measure at least 500 distinct weighted grammar combinations.
 - [x] Ordinary ground has no large unintentional plain region.
 - [x] Spawn is safe and has access to a connected walkable route.
+- [x] Real Google colour data remains the semantic source for water, roads, buildings, and ground.
 - [x] Google Static Maps success and fallback paths carry distinct provenance.
 - [x] The map-pipeline benchmark executes and checks output equivalence.
+- [x] Forest grammar includes deterministic natural secret trails and hidden-item pockets.
+- [x] Every shipped terrain/object tile is an exact crop of the repository's supplied Emerald tileset.
 - [x] Party, items, badges, PC storage, collision, ledges, and interaction rules have unit tests.
 - [x] All required commands pass together on the final commit.
 
@@ -50,6 +54,9 @@ Final native Chrome screenshots saved outside the repository:
 - `/tmp/pokeworld-alpine-desktop-20260719.png`
 - `/tmp/pokeworld-alpine-mobile-20260719.png`
 
+Earlier accepted visual baselines remain in `docs/qa/` for pull-request comparison; the
+current final-commit screenshots above remain outside the repository as required by this run.
+
 ## Delivery gates
 
 - [ ] Graphify outputs are refreshed and `graphify-out/graph.html` is preserved.
@@ -60,14 +67,17 @@ Final native Chrome screenshots saved outside the repository:
 
 2026-07-19 automation slice:
 
-- `pnpm --dir app check` passed with 15 test files and 82 tests, including property
+- `pnpm --dir app check` passed with 15 test files and 83 tests, including property
   coverage for orthogonal edges, route width and connectivity, deterministic replay,
   global-coordinate seams, plain-ground bounds, and safe land and all-water spawns.
 - Weighted biome rules sampled at least 500 distinct deterministic compositions while
   reusing only the existing Emerald-era asset corpus.
 - The Vercel static shell and routing/output verifier passed on the integrated branch.
+- Forced local Workflow `wrun_01KXV4HTK2ARGTX7G22PT5Q628` completed one real Google
+  Static Maps block with 256 tiles, `mapSource: google-static-maps`,
+  `fallbackGenerated: false`, and an 864-recipe deterministic world profile.
 - The map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
-  the optimized path measured 9.69x faster than the legacy path.
+  the optimized path measured 9.44x faster than the legacy path.
 - Native Chrome desktop and mobile QA passed at Melbourne, Sydney Harbour, and Victorian
   alpine coordinates with full-page scrolling, persisted party/items/badges/PC flows,
   regeneration and movement. The Sydney run verified a deterministic one-tile bridge from

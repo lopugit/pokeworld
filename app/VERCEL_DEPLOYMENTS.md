@@ -8,6 +8,8 @@
 
 ## Verified migration preview
 
+- Dense procedural world PR #7 (2026-07-19):
+  [pokeworld-iewue50xu-lopugits-projects.vercel.app](https://pokeworld-iewue50xu-lopugits-projects.vercel.app)
 - Stable branch alias:
   [pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app](https://pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app)
 - Verified `app`-root deployment (2026-07-19):
@@ -15,6 +17,8 @@
 
 The project-level SSO deployment gate is disabled so preview aliases are publicly testable. The
 verified deployment served `/`, `/index.html`, `/game`, both hashed Vite assets, and `/api/health`.
+A current dense-world deployment repeated those shell, SPA-fallback, hashed-asset, and health checks
+after the procedural grammar and merged Emerald game systems landed.
 A forced one-block map job was also started through `/api/map-jobs` and reached `completed` through
 Vercel Workflow's managed queue in 3.35 seconds before returning the generated block and its 256
 tile records (`wrun_01KXTW01FE93NY3PYGY9NYT0PZ`). The output-equivalent colour-analysis benchmark
