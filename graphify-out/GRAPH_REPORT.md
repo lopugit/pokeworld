@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 59 files · ~95,387 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 360 nodes · 496 edges · 53 communities (26 shown, 27 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.54)
+- 346 nodes · 485 edges · 51 communities (24 shown, 27 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `00e6a7de`
+- Built from commit: `fe095ccd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,8 +33,6 @@
 - [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
 - [[_COMMUNITY_vercel.json|vercel.json]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
-- [[_COMMUNITY_ecosystem.config.js|ecosystem.config.js]]
-- [[_COMMUNITY_Banner.vue|Banner.vue]]
 - [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
 - [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
 - [[_COMMUNITY_Grass Terrain Sprite|Grass Terrain Sprite]]
@@ -107,19 +106,19 @@
 - **Flower Tile Variant Set** — public_tiles_flower_1_flower_tile_1, public_tiles_flower_2_flower_tile_2, public_tiles_flower_3_flower_tile_3 [INFERRED 0.98]
 - **Website Icon Set** — public_icons_apple_touch_icon_apple_touch_icon, public_icons_favicon_16x16_favicon_16x16, public_icons_favicon_32x32_favicon_32x32 [INFERRED 0.98]
 
-## Communities (53 total, 27 thin omitted)
+## Communities (51 total, 27 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (33): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+25 more)
+Cohesion: 0.08
+Nodes (29): latsDb, lngsDb, toExport(), transactionOptions, transactions, generateCoordinatesGrid(), generateMap(), generateOutputs() (+21 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.08
-Nodes (14): defaultCoordinates, Game, GameComponentState, GameSettings, isFiniteNumber(), MapView, MoveAction, PlayerState (+6 more)
+Cohesion: 0.10
+Nodes (7): Game, isFiniteNumber(), getBlockForCoordinates(), emptyState(), loadThings(), saveThing(), ThingsState
 
 ### Community 2 - "package.json"
-Cohesion: 0.10
-Nodes (30): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinatesForInput() (+22 more)
+Cohesion: 0.13
+Nodes (19): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), parseMapJobInput(), parseOffset() (+11 more)
 
 ### Community 3 - "blocks.js"
 Cohesion: 0.06
@@ -142,8 +141,8 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.15
-Nodes (13): devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node, @types/react (+5 more)
+Cohesion: 0.12
+Nodes (22): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), MapBlock, MapGenerationResult, MapGenerationStepResult, MapJobInput, MapSource (+14 more)
 
 ### Community 9 - "dependencies"
 Cohesion: 0.25
@@ -162,8 +161,8 @@ Cohesion: 0.33
 Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
 ### Community 13 - "compilerOptions"
-Cohesion: 0.33
-Nodes (6): Generated Map Block and 256 Tile Records, One-Block Map Job, POKEWORLD_OFFLINE_MAP Preview Mode, Production MongoDB and Google Static Maps Services, Vercel Workflow Managed Queue, Managed Vercel World
+Cohesion: 0.15
+Nodes (13): scripts, build, build:vercel, check, dev, map:generate, pms, pms-stop (+5 more)
 
 ### Community 14 - "blocks.get.ts"
 Cohesion: 0.40
@@ -179,35 +178,27 @@ Nodes (3): root, target, transformedShell
 
 ### Community 17 - "finalize-static-shell.mjs"
 Cohesion: 0.50
-Nodes (4): Automatic Vercel Git Branch Previews, Main Branch, lopugit/pokeworld GitHub Repository, Pokeworld Vercel Project
-
-### Community 18 - "ecosystem.config.js"
-Cohesion: 0.50
-Nodes (4): Vercel Build Output API Directory, Vercel Build Pipeline, Build Output Verification, .vercelignore Source Upload Exclusions
-
-### Community 19 - "Banner.vue"
-Cohesion: 0.50
-Nodes (4): Public Preview Access, Stable Migration Branch Alias, Verified Deployment 2026-07-18, Verified Application Routes and Assets
+Nodes (3): Build, Vercel deployments, Verified migration preview
 
 ## Knowledge Gaps
-- **155 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+150 more)
+- **148 isolated node(s):** `Verified migration preview`, `Build`, `name`, `version`, `private` (+143 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `functions.js` to `dependencies`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `package.json` to `functions.js`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _155 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Game` connect `functions.js` to `DevKit.vue`, `dependencies`?**
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+- **Why does `MapBlock` connect `DevKit.vue` to `package.json`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+- **Why does `scripts` connect `compilerOptions` to `blocks.js`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **What connects `Verified migration preview`, `Build`, `name` to the rest of the system?**
+  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.06980392156862746 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0797979797979798 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07738095238095238 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0951219512195122 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.09805735430157261 - nodes in this community are weakly interconnected._
-- **Should `blocks.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1310483870967742 - nodes in this community are weakly interconnected._
