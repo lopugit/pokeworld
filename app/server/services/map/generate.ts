@@ -10,7 +10,7 @@ const createLegacyBlocksHandler = createLegacyBlocksHandlerUntyped as (
 }>;
 
 // Bump when terrain semantics or sprite stitching changes so stored blocks are rebuilt.
-export const MAP_BLOCK_VERSION = "2.2.0000";
+export const MAP_BLOCK_VERSION = "2.3.0000";
 
 const blocksHandler = createLegacyBlocksHandler(MAP_BLOCK_VERSION);
 

@@ -14,8 +14,10 @@ has automated coverage or current native-Chrome evidence in `docs/qa/`.
   boulders, ledges, signs, caves, houses, and authored clearings.
 - [x] Forests can contain deterministic natural secret paths and invisible hidden-item grass tiles.
 - [x] Six biomes, eight structure templates, six detail palettes, and three route treatments provide
-  864 deterministic world recipes.
-- [x] The player's central landing area and route boundary portals remain traversable.
+  864 deterministic world recipes, with biome-weighted structures and details rather than uniform
+  combinations.
+- [x] The player's central landing area is walkable and connected to an intentional route; adjacent
+  blocks derive matching boundary portals from their shared global coordinates.
 - [x] Every shipped terrain/object tile is an exact crop of the repository's original Pokémon
   Emerald exterior tileset; party and PC creatures use Emerald-version sprites.
 - [x] Party, items, badges, and PC deposit/withdraw interactions persist locally and work with
@@ -50,11 +52,15 @@ compare the accepted desktop and mobile result with later changes.
 
 ## Latest verification
 
-- `pnpm --dir app check`: 14 test files / 76 tests, typecheck, Vercel build, static shell, Workflow
+- `pnpm --dir app check`: 15 test files / 82 tests, typecheck, Vercel build, static shell, Workflow
   manifest, queue privacy, and maximum-duration checks passed.
 - `pnpm --dir app benchmark:map`: 262,144 pixels produced 256 output-equivalent tiles; optimized
-  median 4.91 ms versus legacy median 44.51 ms (9.06× in this run).
-- Forced local Workflow `wrun_01KXV1CCY0F428X5DE2SC7A94S`: one real Google Static Maps block,
-  256 tiles, `fallbackGenerated: false`, current tile version `2.2.0000`.
+  median 4.45 ms versus legacy median 42.40 ms (9.53× in this run).
+- Forced local Workflow `wrun_01KXV3H298BC79YV0MSP71MJXF`: one real Google Static Maps block,
+  256 tiles, `fallbackGenerated: false`, current tile version `2.3.0000`; the selected recipe was
+  `wild-route/secret-grove/route-garden/signed` and populated all 256 tiles with terrain or detail,
+  including a tree grove, secret trail, hidden item, ledges, signs, houses, and long-grass fields.
 - Native Chrome: desktop and 390×844 mobile maps, full-page bounds, Start menu, party lead, Bag,
-  badge progress, Box 1 transfers, Save dialog, and application-origin console were verified.
+  badge progress, Box 1 transfers, Save dialog, exact sprite loading, and application-origin console
+  were verified. Chrome exposed and confirmed the fix for stale saves that referenced non-Emerald
+  trainer sprites.
