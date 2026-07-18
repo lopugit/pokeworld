@@ -135,6 +135,50 @@
   },
   "nodes": [
     {
+      "label": "VERCEL_DEPLOYMENTS.md",
+      "file_type": "document",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 23,
+      "norm_label": "vercel_deployments.md",
+      "id": "app_vercel_deployments",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Vercel deployments",
+      "file_type": "document",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 23,
+      "norm_label": "vercel deployments",
+      "id": "app_vercel_deployments_vercel_deployments",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Verified migration preview",
+      "file_type": "document",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 23,
+      "norm_label": "verified migration preview",
+      "id": "app_vercel_deployments_verified_migration_preview",
+      "community_name": "Vercel Build Process"
+    },
+    {
+      "label": "Build",
+      "file_type": "document",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 23,
+      "norm_label": "build",
+      "id": "app_vercel_deployments_build",
+      "community_name": "Vercel Build Process"
+    },
+    {
       "label": "map-benchmark.test.ts",
       "file_type": "code",
       "source_file": "app/tests/map-benchmark.test.ts",
@@ -173,9 +217,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "game.tsx",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game"
     },
     {
@@ -184,9 +228,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "defaultcoordinates",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_defaultcoordinates"
     },
     {
@@ -195,9 +239,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "gamesettings",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_gamesettings"
     },
     {
@@ -206,9 +250,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "mapview",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_mapview"
     },
     {
@@ -217,9 +261,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L84",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "moveaction",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_moveaction"
     },
     {
@@ -228,9 +272,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L86",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "playerstate",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_playerstate"
     },
     {
@@ -239,9 +283,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L102",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "panelid",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_panelid"
     },
     {
@@ -250,9 +294,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "uistate",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_uistate"
     },
     {
@@ -272,9 +316,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "storedimage",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_storedimage"
     },
     {
@@ -426,9 +470,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L449",
       "_origin": "ast",
-      "community": 0,
+      "community": 4,
       "norm_label": ".settrainer()",
-      "community_name": "Game.vue",
+      "community_name": "dependencies",
       "id": "app_src_components_game_game_settrainer"
     },
     {
@@ -866,9 +910,9 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "dialogbox.tsx",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_dialogbox"
     },
     {
@@ -877,9 +921,9 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "dialogboxprops",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_dialogbox_dialogboxprops"
     },
     {
@@ -888,9 +932,9 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "dialogbox()",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_dialogbox_dialogbox"
     },
     {
@@ -1009,9 +1053,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "startmenu.tsx",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_startmenu"
     },
     {
@@ -1020,9 +1064,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "menuitemid",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_startmenu_menuitemid"
     },
     {
@@ -1031,9 +1075,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "menu_items",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_startmenu_menu_items"
     },
     {
@@ -1042,9 +1086,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "startmenuprops",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_startmenu_startmenuprops"
     },
     {
@@ -1053,9 +1097,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "startmenu()",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_components_game_ui_startmenu_startmenu"
     },
     {
@@ -1075,9 +1119,9 @@
       "source_file": "app/src/lib/game-rules.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "direction",
-      "community_name": "blocks.js",
+      "community_name": "Game.vue",
       "id": "app_src_lib_game_rules_direction"
     },
     {
@@ -1262,9 +1306,9 @@
       "source_file": "app/src/lib/game-rules.ts",
       "source_location": "L103",
       "_origin": "ast",
-      "community": 0,
+      "community": 3,
       "norm_label": "fielditem",
-      "community_name": "Game.vue",
+      "community_name": "blocks.js",
       "id": "app_src_lib_game_rules_fielditem"
     },
     {
@@ -1790,9 +1834,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L131",
       "_origin": "ast",
-      "community": 0,
+      "community": 4,
       "norm_label": "savetrainer()",
-      "community_name": "Game.vue",
+      "community_name": "dependencies",
       "id": "app_src_lib_trainer_state_savetrainer"
     },
     {
@@ -2461,9 +2505,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "blocks.ts",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks"
     },
     {
@@ -2472,9 +2516,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "sortedmods",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_sortedmods"
     },
     {
@@ -2483,9 +2527,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "coordinatekey()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_coordinatekey"
     },
     {
@@ -2494,9 +2538,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "latsdb",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_latsdb"
     },
     {
@@ -2505,9 +2549,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "lngsdb",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_lngsdb"
     },
     {
@@ -2516,9 +2560,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "transactions",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_transactions"
     },
     {
@@ -2527,9 +2571,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "transactionoptions",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_transactionoptions"
     },
     {
@@ -2538,9 +2582,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "toexport()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_blocks_toexport"
     },
     {
@@ -2934,9 +2978,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "terrain-classifier.ts",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier"
     },
     {
@@ -2956,9 +3000,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "rgbaimage",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_rgbaimage"
     },
     {
@@ -2978,9 +3022,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "pixelkind",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_pixelkind"
     },
     {
@@ -2989,9 +3033,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "rgb",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_rgb"
     },
     {
@@ -3000,9 +3044,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "google_static_map_styles",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_google_static_map_styles"
     },
     {
@@ -3011,9 +3055,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "pixel_palette",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_pixel_palette"
     },
     {
@@ -3022,9 +3066,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "terrain_kinds",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_terrain_kinds"
     },
     {
@@ -3033,9 +3077,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "minimum_coverage",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_minimum_coverage"
     },
     {
@@ -3044,9 +3088,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "classification_priority",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_classification_priority"
     },
     {
@@ -3055,9 +3099,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "roundcoverage()",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_roundcoverage"
     },
     {
@@ -3066,9 +3110,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "emptycoverage()",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_emptycoverage"
     },
     {
@@ -3077,9 +3121,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "nearestpixelkind()",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_nearestpixelkind"
     },
     {
@@ -3088,9 +3132,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L112",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "classifycounts()",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_classifycounts"
     },
     {
@@ -3099,9 +3143,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "classifyterraintiles()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_classifyterraintiles"
     },
     {
@@ -3110,9 +3154,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L187",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "classifyterrainpng()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_classifyterrainpng"
     },
     {
@@ -3121,9 +3165,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L195",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "summarizeterrain()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
     },
     {
@@ -3132,9 +3176,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L203",
       "_origin": "ast",
-      "community": 13,
+      "community": 10,
       "norm_label": "centeredcroprect()",
-      "community_name": "coordinates.ts",
+      "community_name": "scripts",
       "id": "app_server_services_map_terrain_classifier_centeredcroprect"
     },
     {
@@ -3836,9 +3880,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "benchmark-map-pipeline.mjs",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline"
     },
     {
@@ -3847,9 +3891,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "patternedimage()",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_patternedimage"
     },
     {
@@ -3858,9 +3902,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "legacytilecolourdata()",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_legacytilecolourdata"
     },
     {
@@ -3869,9 +3913,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "median()",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_median"
     },
     {
@@ -3880,9 +3924,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "source",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_source"
     },
     {
@@ -3891,9 +3935,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L84",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "reference",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_reference"
     },
     {
@@ -3902,9 +3946,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "optimized",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_optimized"
     },
     {
@@ -3913,9 +3957,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "legacysamples",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_legacysamples"
     },
     {
@@ -3924,9 +3968,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L95",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "optimizedsamples",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_optimizedsamples"
     },
     {
@@ -3935,9 +3979,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "legacyms",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_legacyms"
     },
     {
@@ -3946,9 +3990,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 20,
+      "community": 10,
       "norm_label": "optimizedms",
-      "community_name": "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?",
+      "community_name": "scripts",
       "id": "app_scripts_benchmark_map_pipeline_optimizedms"
     },
     {
@@ -4892,9 +4936,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "functions.ts",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions"
     },
     {
@@ -4914,9 +4958,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "savemapatthrottled",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_savemapatthrottled"
     },
     {
@@ -4925,9 +4969,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "getxincrement()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_getxincrement"
     },
     {
@@ -4936,9 +4980,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "getyincrement()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_getyincrement"
     },
     {
@@ -4947,9 +4991,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "generatemap()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_generatemap"
     },
     {
@@ -4958,9 +5002,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L182",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "generateoutputs()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_generateoutputs"
     },
     {
@@ -4969,9 +5013,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L250",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "initdirs()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_initdirs"
     },
     {
@@ -4980,9 +5024,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L261",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "formatcoord()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_formatcoord"
     },
     {
@@ -5013,9 +5057,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L300",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "buildgooglestaticmapurl()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_buildgooglestaticmapurl"
     },
     {
@@ -5035,9 +5079,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L351",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "generatecoordinatesgrid()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_generatecoordinatesgrid"
     },
     {
@@ -5046,9 +5090,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L450",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettileoffsetcolour()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettileoffsetcolour"
     },
     {
@@ -5057,9 +5101,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L460",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettileoffsetsprite()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettileoffsetsprite"
     },
     {
@@ -5068,9 +5112,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L470",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettileoffsetsprite2()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettileoffsetsprite2"
     },
     {
@@ -5079,9 +5123,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L480",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettileoffset()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettileoffset"
     },
     {
@@ -5090,9 +5134,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L490",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettile()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettile"
     },
     {
@@ -5101,9 +5145,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L492",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettilecolour()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettilecolour"
     },
     {
@@ -5112,9 +5156,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L501",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettilesprite()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettilesprite"
     },
     {
@@ -5123,9 +5167,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L510",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "gettilesprite2()",
-      "community_name": "apis.js",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_functions_gettilesprite2"
     },
     {
@@ -5134,9 +5178,9 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 10,
       "norm_label": "log.ts",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_log"
     },
     {
@@ -5145,9 +5189,9 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 10,
       "norm_label": "log()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_log_log"
     },
     {
@@ -5156,9 +5200,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "map-source.ts",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_map_source"
     },
     {
@@ -5167,9 +5211,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "canusegooglestaticmaps()",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_map_source_canusegooglestaticmaps"
     },
     {
@@ -5178,9 +5222,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "getbase64imagesha256()",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_map_source_getbase64imagesha256"
     },
     {
@@ -5189,9 +5233,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "isfallbackgeneratedblock()",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_map_source_isfallbackgeneratedblock"
     },
     {
@@ -5200,9 +5244,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "shouldregeneratefallbackblock()",
-      "community_name": "functions.js",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_map_source_shouldregeneratefallbackblock"
     },
     {
@@ -5211,9 +5255,9 @@
       "source_file": "app/server/services/map/legacy/mods/flowers.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "flowers.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_flowers"
     },
     {
@@ -5222,9 +5266,9 @@
       "source_file": "app/server/services/map/legacy/mods/flowers.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "flowers()",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_flowers_flowers"
     },
     {
@@ -5233,9 +5277,9 @@
       "source_file": "app/server/services/map/legacy/mods/grass.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "grass.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_grass"
     },
     {
@@ -5244,9 +5288,9 @@
       "source_file": "app/server/services/map/legacy/mods/grass.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "grass()",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_grass_grass"
     },
     {
@@ -5255,9 +5299,9 @@
       "source_file": "app/server/services/map/legacy/mods/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "index.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_index"
     },
     {
@@ -5266,9 +5310,9 @@
       "source_file": "app/server/services/map/legacy/mods/patherize.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "patherize.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_patherize"
     },
     {
@@ -5277,9 +5321,9 @@
       "source_file": "app/server/services/map/legacy/mods/patherize.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "patherize()",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_patherize_patherize"
     },
     {
@@ -5288,9 +5332,9 @@
       "source_file": "app/server/services/map/legacy/mods/ponds.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "ponds.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_ponds"
     },
     {
@@ -5299,9 +5343,9 @@
       "source_file": "app/server/services/map/legacy/mods/ponds.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "ponds()",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_ponds_ponds"
     },
     {
@@ -5310,9 +5354,9 @@
       "source_file": "app/server/services/map/legacy/mods/roads.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "roads.ts",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_roads"
     },
     {
@@ -5321,9 +5365,9 @@
       "source_file": "app/server/services/map/legacy/mods/roads.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 22,
+      "community": 10,
       "norm_label": "baseroads()",
-      "community_name": "vercel.json",
+      "community_name": "scripts",
       "id": "app_server_services_map_legacy_mods_roads_baseroads"
     },
     {
@@ -6102,9 +6146,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "terrain-classifier.test.ts",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_tests_terrain_classifier_test"
     },
     {
@@ -6113,9 +6157,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "colours",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_tests_terrain_classifier_test_colours"
     },
     {
@@ -6124,9 +6168,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 13,
+      "community": 7,
       "norm_label": "stripedimage()",
-      "community_name": "coordinates.ts",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_tests_terrain_classifier_test_stripedimage"
     },
     {
@@ -6357,7 +6401,7 @@
       "_origin": "ast",
       "community": 173,
       "norm_label": "vitest.config.ts",
-      "community_name": "Community 173",
+      "community_name": "vitest.config.ts",
       "id": "app_vitest_config"
     },
     {
@@ -6801,7 +6845,7 @@
       "contributor": null,
       "community": 175,
       "norm_label": "pnpm workspace configuration",
-      "community_name": "Community 175",
+      "community_name": "pnpm Workspace Configuration",
       "id": "pnpm_workspace_workspace_configuration"
     },
     {
@@ -8630,9 +8674,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 17,
+      "community": 7,
       "norm_label": "imagetorgbamatrix()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Nuxt 2 Frontend",
       "id": "app_server_services_map_legacy_png_imagetorgbamatrix"
     },
     {
@@ -8952,7 +8996,7 @@
       "contributor": null,
       "community": 174,
       "norm_label": "dense procedural world desktop ui screenshot",
-      "community_name": "Community 174",
+      "community_name": "Dense Procedural World Desktop UI Screenshot",
       "id": "docs_qa_dense_world_desktop_dense_world_desktop_ui"
     },
     {
@@ -9509,8 +9553,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "procedural emerald world acceptance checklist",
-      "id": "docs_procedural_world_acceptance_checklist",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_checklist"
     },
     {
       "label": "Google Static Maps Semantic Terrain Source",
@@ -9523,8 +9567,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "google static maps semantic terrain source",
-      "id": "docs_procedural_world_acceptance_google_static_maps",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_google_static_maps"
     },
     {
       "label": "864 Deterministic World Recipes",
@@ -9537,8 +9581,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "864 deterministic world recipes",
-      "id": "docs_procedural_world_acceptance_deterministic_world_recipes",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_deterministic_world_recipes"
     },
     {
       "label": "Original Pok\u00e9mon Emerald Exterior Tileset",
@@ -9551,8 +9595,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "original pokemon emerald exterior tileset",
-      "id": "docs_procedural_world_acceptance_emerald_tileset",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_emerald_tileset"
     },
     {
       "label": "Local Gameplay Persistence",
@@ -9565,8 +9609,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "local gameplay persistence",
-      "id": "docs_procedural_world_acceptance_local_persistence",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_local_persistence"
     },
     {
       "label": "pnpm app check",
@@ -9579,8 +9623,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "pnpm app check",
-      "id": "docs_procedural_world_acceptance_app_check",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_app_check"
     },
     {
       "label": "Map Pipeline Benchmark",
@@ -9593,8 +9637,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "map pipeline benchmark",
-      "id": "docs_procedural_world_acceptance_map_benchmark",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_map_benchmark"
     },
     {
       "label": "Forced Live Map Generation",
@@ -9607,8 +9651,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "forced live map generation",
-      "id": "docs_procedural_world_acceptance_live_map_generation",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_live_map_generation"
     },
     {
       "label": "Workflow Run wrun_01KXV1CCY0F428X5DE2SC7A94S",
@@ -9621,8 +9665,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "workflow run wrun_01kxv1ccy0f428x5de2sc7a94s",
-      "id": "docs_procedural_world_acceptance_workflow_run",
-      "community_name": "finalize-static-shell.mjs"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_workflow_run"
     },
     {
       "label": "Native Chrome Desktop and Mobile Verification",
@@ -9635,207 +9679,41 @@
       "contributor": null,
       "community": 19,
       "norm_label": "native chrome desktop and mobile verification",
-      "id": "docs_procedural_world_acceptance_native_chrome_verification",
-      "community_name": "finalize-static-shell.mjs"
-    },
-    {
-      "label": "Vercel Deployments",
-      "file_type": "document",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "vercel deployments",
-      "id": "app_vercel_deployments_vercel_deployments",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "lopugits-projects/pokeworld Vercel Project",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://vercel.com/lopugits-projects/pokeworld",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "lopugits-projects/pokeworld vercel project",
-      "id": "app_vercel_deployments_pokeworld_vercel_project",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "lopugit/pokeworld GitHub Repository",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://github.com/lopugit/pokeworld",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "lopugit/pokeworld github repository",
-      "id": "app_vercel_deployments_pokeworld_github_repository",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Dense Procedural World PR 7 Preview",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-iewue50xu-lopugits-projects.vercel.app",
-      "captured_at": "2026-07-19",
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "dense procedural world pr 7 preview",
-      "id": "app_vercel_deployments_dense_world_preview",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Stable Branch Alias",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app",
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "stable branch alias",
-      "id": "app_vercel_deployments_stable_branch_alias",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Verified App-Root Deployment",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": "https://pokeworld-f0vewe7wm-lopugits-projects.vercel.app",
-      "captured_at": "2026-07-19",
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "verified app-root deployment",
-      "id": "app_vercel_deployments_verified_app_root_deployment",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Vercel Workflow Managed Queue",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "vercel workflow managed queue",
-      "id": "app_vercel_deployments_vercel_workflow",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Map Jobs API",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "map jobs api",
-      "id": "app_vercel_deployments_map_jobs_api",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "POKEWORLD_OFFLINE_MAP Mode",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 35,
-      "norm_label": "pokeworld_offline_map mode",
-      "id": "app_vercel_deployments_offline_map_mode",
-      "community_name": "32\u00d732 Website Favicon"
-    },
-    {
-      "label": "MongoDB",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 35,
-      "norm_label": "mongodb",
-      "id": "app_vercel_deployments_mongodb",
-      "community_name": "32\u00d732 Website Favicon"
-    },
-    {
-      "label": "Google Static Maps",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 35,
-      "norm_label": "google static maps",
-      "id": "app_vercel_deployments_google_static_maps",
-      "community_name": "32\u00d732 Website Favicon"
-    },
-    {
-      "label": "Vercel Build Output API Build",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "vercel build output api build",
-      "id": "app_vercel_deployments_vercel_build",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "React Static Shell",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "react static shell",
-      "id": "app_vercel_deployments_react_static_shell",
-      "community_name": "Vercel Build Process"
-    },
-    {
-      "label": "Nitro Fallback",
-      "file_type": "concept",
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 23,
-      "norm_label": "nitro fallback",
-      "id": "app_vercel_deployments_nitro_fallback",
-      "community_name": "Vercel Build Process"
+      "community_name": "finalize-static-shell.mjs",
+      "id": "docs_procedural_world_acceptance_native_chrome_verification"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_vercel_deployments",
+      "target": "app_vercel_deployments_vercel_deployments"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_vercel_deployments_vercel_deployments",
+      "target": "app_vercel_deployments_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/VERCEL_DEPLOYMENTS.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_vercel_deployments_vercel_deployments",
+      "target": "app_vercel_deployments_verified_migration_preview"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -22305,136 +22183,6 @@
       "weight": 1.0,
       "source": "docs_procedural_world_acceptance_workflow_run",
       "target": "docs_procedural_world_acceptance_google_static_maps"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_deployments",
-      "target": "app_vercel_deployments_pokeworld_github_repository"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_deployments",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_dense_world_preview",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_pokeworld_vercel_project",
-      "target": "app_vercel_deployments_pokeworld_github_repository"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_stable_branch_alias",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_verified_app_root_deployment",
-      "target": "app_vercel_deployments_pokeworld_vercel_project"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.92,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_dense_world_preview",
-      "target": "app_vercel_deployments_map_jobs_api"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_map_jobs_api",
-      "target": "app_vercel_deployments_vercel_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_vercel_workflow"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_offline_map_mode",
-      "target": "app_vercel_deployments_google_static_maps"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_offline_map_mode",
-      "target": "app_vercel_deployments_mongodb"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_nitro_fallback"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/VERCEL_DEPLOYMENTS.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "app_vercel_deployments_vercel_build",
-      "target": "app_vercel_deployments_react_static_shell"
     }
   ],
   "hyperedges": [
@@ -22567,5 +22315,5 @@
       "source_file": "app/README.md"
     }
   ],
-  "built_at_commit": "d41b2b5c173eeb7b58b5931e48bce0409aff72da"
+  "built_at_commit": "7b1ae7046a9e42fa10a9a5935f3ff82f2dae7d23"
 }

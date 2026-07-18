@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 824 nodes · 1201 edges · 176 communities (40 shown, 136 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 45 edges (avg confidence: 0.75)
+- 814 nodes · 1191 edges · 170 communities (35 shown, 135 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 42 edges (avg confidence: 0.74)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d41b2b5c`
+- Built from commit: `7b1ae704`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,16 +25,12 @@
 - [[_COMMUNITY_DevKit.vue|DevKit.vue]]
 - [[_COMMUNITY_dependencies|dependencies]]
 - [[_COMMUNITY_scripts|scripts]]
-- [[_COMMUNITY_apis.js|apis.js]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
-- [[_COMMUNITY_coordinates.ts|coordinates.ts]]
 - [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
 - [[_COMMUNITY_coordinates.ts|coordinates.ts]]
 - [[_COMMUNITY_vercel.json|vercel.json]]
-- [[_COMMUNITY_extract-terrain-tiles.mjs|extract-terrain-tiles.mjs]]
 - [[_COMMUNITY_Generated 16 by 16 Block Tiles|Generated 16 by 16 Block Tiles]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
-- [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
 - [[_COMMUNITY_Sand Terrain Sprite 1|Sand Terrain Sprite 1]]
 - [[_COMMUNITY_Vercel Build Process|Vercel Build Process]]
 - [[_COMMUNITY_Sand Terrain Sprite 4|Sand Terrain Sprite 4]]
@@ -48,7 +44,6 @@
 - [[_COMMUNITY_Pokémon World Banner Graphic|Pokémon World Banner Graphic]]
 - [[_COMMUNITY_Apple Touch Application Icon|Apple Touch Application Icon]]
 - [[_COMMUNITY_16×16 Website Favicon|16×16 Website Favicon]]
-- [[_COMMUNITY_32×32 Website Favicon|32×32 Website Favicon]]
 - [[_COMMUNITY_Loading Animation|Loading Animation]]
 - [[_COMMUNITY_Lopu Designs Brand Image|Lopu Designs Brand Image]]
 - [[_COMMUNITY_Walking Character Sprite|Walking Character Sprite]]
@@ -182,8 +177,8 @@
 - [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
 - [[_COMMUNITY_Dense Procedural World Desktop UI Screenshot|Dense Procedural World Desktop UI Screenshot]]
 - [[_COMMUNITY_Trainer Party Desktop Visual Evidence|Trainer Party Desktop Visual Evidence]]
-- [[_COMMUNITY_Community 174|Community 174]]
-- [[_COMMUNITY_Community 175|Community 175]]
+- [[_COMMUNITY_Dense Procedural World Desktop UI Screenshot|Dense Procedural World Desktop UI Screenshot]]
+- [[_COMMUNITY_pnpm Workspace Configuration|pnpm Workspace Configuration]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 45 edges
@@ -223,23 +218,27 @@
 - **Trainer Menu Panel System** — app_design_emerald_game_systems_start_menu, app_design_emerald_game_systems_party_panel, app_design_emerald_game_systems_bag_panel, app_design_emerald_game_systems_badges_panel, app_design_emerald_game_systems_pc_panel, app_design_emerald_game_systems_trainer_state [EXTRACTED 1.00]
 - **Durable Emerald World Generation Flow** — app_readme_generate_map_workflow, app_readme_emerald_world_grammar, app_design_emerald_game_systems_server_world_generation, app_design_emerald_game_systems_map_tile_feature_protocol [INFERRED 0.90]
 
-## Communities (176 total, 136 thin omitted)
+## Communities (170 total, 135 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (49): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+41 more)
+Cohesion: 0.05
+Nodes (62): defaultCoordinates, GameComponentState, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage (+54 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.07
-Nodes (37): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+29 more)
+Cohesion: 0.08
+Nodes (33): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+25 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.04
 Nodes (48): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+40 more)
 
 ### Community 3 - "blocks.js"
-Cohesion: 0.08
-Nodes (42): defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage, DialogBox() (+34 more)
+Cohesion: 0.12
+Nodes (28): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedLookup, directionDelta, FIELD_ITEM_TABLE, FieldItem (+20 more)
+
+### Community 4 - "dependencies"
+Cohesion: 0.09
+Nodes (3): Game, isFiniteNumber(), saveTrainer()
 
 ### Community 5 - "index.js"
 Cohesion: 0.16
@@ -250,8 +249,8 @@ Cohesion: 0.10
 Nodes (21): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+13 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
-Cohesion: 0.12
-Nodes (23): TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds(), Mask (+15 more)
+Cohesion: 0.05
+Nodes (49): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, canUseGoogleStaticMaps(), getBase64ImageSha256() (+41 more)
 
 ### Community 8 - "DevKit.vue"
 Cohesion: 0.13
@@ -262,20 +261,12 @@ Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
 ### Community 10 - "scripts"
-Cohesion: 0.24
-Nodes (16): getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng(), createSolidPngWithRgba() (+8 more)
-
-### Community 11 - "apis.js"
-Cohesion: 0.19
-Nodes (16): buildGoogleStaticMapUrl(), generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour() (+8 more)
+Cohesion: 0.06
+Nodes (41): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source, buildGoogleStaticMapUrl() (+33 more)
 
 ### Community 12 - "devDependencies"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
-
-### Community 13 - "coordinates.ts"
-Cohesion: 0.15
-Nodes (13): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE, PIXEL_PALETTE, PixelKind (+5 more)
 
 ### Community 14 - "blocks.get.ts"
 Cohesion: 0.19
@@ -289,10 +280,6 @@ Nodes (15): appRoot, apps(), delay(), ecosystem, isOwned(), listeners(), ownedDi
 Cohesion: 0.21
 Nodes (14): Mountain Terrain Tile, Pond Center Terrain Tile 1, Pond Center Terrain Tile 2, Pond Center Terrain Tile 3, Pond Center Terrain Tile 4, Rock Terrain Tile, Native Chrome Visual QA, DevKit() (+6 more)
 
-### Community 17 - "extract-terrain-tiles.mjs"
-Cohesion: 0.22
-Nodes (11): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, log(), imageToRgbaMatrix() (+3 more)
-
 ### Community 18 - "Generated 16 by 16 Block Tiles"
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
@@ -301,17 +288,13 @@ Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugi
 Cohesion: 0.16
 Nodes (14): pnpm app check, Procedural Emerald World Acceptance Checklist, Dense World Desktop Visual Evidence, 864 Deterministic World Recipes, Original Pokémon Emerald Exterior Tileset, Google Static Maps Semantic Terrain Source, Forced Live Map Generation, Local Gameplay Persistence (+6 more)
 
-### Community 20 - "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
-Cohesion: 0.18
-Nodes (7): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source
-
 ### Community 21 - "Sand Terrain Sprite 1"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
 ### Community 23 - "Vercel Build Process"
-Cohesion: 0.20
-Nodes (11): Dense Procedural World PR 7 Preview, Map Jobs API, Nitro Fallback, lopugit/pokeworld GitHub Repository, lopugits-projects/pokeworld Vercel Project, React Static Shell, Stable Branch Alias, Vercel Build Output API Build (+3 more)
+Cohesion: 0.50
+Nodes (3): Build, Vercel deployments, Verified migration preview
 
 ### Community 24 - "Sand Terrain Sprite 4"
 Cohesion: 0.25
@@ -357,33 +340,29 @@ Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Gras
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-### Community 35 - "32×32 Website Favicon"
-Cohesion: 0.67
-Nodes (3): Google Static Maps, MongoDB, POKEWORLD_OFFLINE_MAP Mode
-
 ## Ambiguous Edges - Review These
 - `MapTile Feature Protocol` → `Dense Emerald-Style World Mobile UI Screenshot`  [AMBIGUOUS]
   docs/qa/dense-world-mobile.png · relation: references
 
 ## Knowledge Gaps
-- **358 isolated node(s):** `MapBenchmarkResult`, `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction` (+353 more)
+- **354 isolated node(s):** `Verified migration preview`, `Build`, `MapBenchmarkResult`, `defaultCoordinates`, `GameSettings` (+349 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **136 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **135 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `MapTile Feature Protocol` and `Dense Emerald-Style World Mobile UI Screenshot`?**
   _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
-- **Why does `Game` connect `dependencies` to `Game.vue`, `blocks.js`, `devDependencies`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `TerrainKind` connect `functions.js` to `coordinates.ts`, `blocks.get.ts`, `Nuxt 2 Frontend`?**
+- **Why does `Game` connect `dependencies` to `Game.vue`, `devDependencies`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `TerrainKind` connect `functions.js` to `blocks.get.ts`, `Nuxt 2 Frontend`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `rgbaToTileColourData()` connect `scripts` to `extract-terrain-tiles.mjs`, `Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?`?**
+- **Why does `rgbaToTileColourData()` connect `scripts` to `Nuxt 2 Frontend`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **What connects `MapBenchmarkResult`, `defaultCoordinates`, `GameSettings` to the rest of the system?**
-  _359 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Verified migration preview`, `Build`, `MapBenchmarkResult` to the rest of the system?**
+  _355 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.06768905341089371 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.054340396445659606 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07401129943502825 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08215488215488216 - nodes in this community are weakly interconnected._
