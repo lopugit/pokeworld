@@ -75,13 +75,13 @@ current final-commit screenshots above remain outside the repository as required
 - Weighted biome rules sampled at least 500 distinct deterministic compositions while
   reusing only the existing Emerald-era asset corpus.
 - The Vercel static shell and routing/output verifier passed on the integrated branch.
-- Forced local Workflow `wrun_01KXV5076T5BWEYJBV1GH01AZR` completed one real Google
+- Forced local Workflow `wrun_01KXV574452BB1DND5RJ246Y9K` completed one real Google
   Static Maps block with 256 tiles, `mapSource: google-static-maps`,
   `fallbackGenerated: false`, tile version `2.3.0001`, and a populated
   `wild-route/secret-grove/route-garden/signed` profile from 864 deterministic recipes.
 - The latest map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
-  the optimized path measured 8.67x faster than the legacy path in that run (10.10x in the
-  immediately preceding acceptance run).
+  the optimized path measured 9.84x faster than the legacy path in that run (10.10x in an
+  earlier acceptance run).
 - Native Chrome desktop and mobile QA passed at Melbourne, Sydney Harbour, and Victorian
   alpine coordinates with full-page scrolling, persisted party/items/badges/PC flows,
   regeneration and movement. The Sydney run verified a deterministic one-tile bridge from
