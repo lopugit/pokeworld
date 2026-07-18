@@ -1,6 +1,7 @@
 import { Component, createRef } from "react";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
+import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
 import { loadThings, saveThing } from "../lib/persisted-state";
 import "../styles/game.scss";
 
@@ -13,6 +14,7 @@ const defaultCoordinates = { latitude: -37.87569351417865, longitude: 145.005699
 interface GameSettings {
   scale: number;
   zoomMode: boolean;
+  noMaxZoom: boolean;
   zoom: number;
   zoomScale: number;
   regenerate: boolean;
@@ -105,6 +107,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     game: {
       scale: 1,
       zoomMode: false,
+      noMaxZoom: false,
       zoom: 1.25,
       zoomScale: 0.8,
       regenerate: false,
@@ -452,12 +455,14 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private zoom = (direction: "in" | "out") => {
-    let zoom = this.state.game.zoom;
-    if (direction === "in" && zoom > 0.75) {
-      zoom = (zoom / (this.state.game.canvasWidth * zoom)) * (this.state.game.canvasWidth * zoom - tileSize * 2);
-    } else if (direction === "out" && zoom < 3) {
-      zoom = (this.state.game.canvasWidth * zoom + tileSize * 2) / this.state.game.canvasWidth;
-    } else return;
+    const { game } = this.state;
+    const zoom = nextZoomValue(
+      game.zoom,
+      direction,
+      (tileSize * 2) / game.canvasWidth,
+      game.noMaxZoom,
+    );
+    if (zoom === null) return;
 
     const map = this.centeredMap(direction, zoom);
     this.setState(
@@ -493,8 +498,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const { player, game } = this.state;
     if (!Number.isFinite(player.blockX) || !Number.isFinite(player.blockY)) return;
 
-    const maybeOffsetLimit = Math.ceil(2 * (game.zoom / 2));
-    const offsetLimit = Math.max(2, maybeOffsetLimit);
+    const offsetLimit = mapOffsetLimitForZoom(game.zoom);
     const offsets: Array<[number, number]> = [];
     for (let x = 0; x < offsetLimit; x += 1) {
       for (let y = 0; y < offsetLimit; y += 1) {
@@ -598,6 +602,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const gmapContext = this.gmapRef.current?.getContext("2d");
     if (!canvasContext) return;
 
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    const layerCanvas = this.layer1Ref.current;
+    if (layerContext && layerCanvas) layerContext.clearRect(0, 0, layerCanvas.width, layerCanvas.height);
+    const gmapCanvas = this.gmapRef.current;
+    if (gmapContext && gmapCanvas) gmapContext.clearRect(0, 0, gmapCanvas.width, gmapCanvas.height);
+
     const { game, map, player } = this.state;
     map.tileCount = 0;
     map.blocks = [];
@@ -613,7 +623,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       const drawX = x * game.scale * game.zoomScale;
       const drawY = this.convertY(y, height);
       const base = tile.img ? this.storedImages.get(tile.img) : undefined;
-      if (base?.loaded && layerContext) layerContext.drawImage(base.element, drawX, drawY, width, height);
+      if (base?.loaded) {
+        canvasContext.drawImage(base.element, drawX, drawY, width, height);
+        layerContext?.drawImage(base.element, drawX, drawY, width, height);
+      }
       const top = tile.img2 ? this.storedImages.get(tile.img2) : undefined;
       if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
     }
@@ -808,6 +821,15 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                 </button>
                 <button type="button" className={debugButton} onClick={() => this.setGame({ zoomMode: !game.zoomMode })}>
                   Zoom Mode {game.zoomMode ? "On" : "Off"}
+                </button>
+                <button
+                  type="button"
+                  className={debugButton}
+                  aria-pressed={game.noMaxZoom}
+                  title="Allow the - button to zoom out past the normal 3x limit while keeping map loading bounded"
+                  onClick={() => this.setGame({ noMaxZoom: !game.noMaxZoom })}
+                >
+                  No Max Zoom Value {game.noMaxZoom ? "On" : "Off"}
                 </button>
                 <button type="button" className={debugButton} onClick={() => this.setGame({ debugPosition: !game.debugPosition })}>
                   Debug {game.debugPosition ? "Right" : "Bottom"}
