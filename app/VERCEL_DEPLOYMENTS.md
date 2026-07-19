@@ -1,12 +1,15 @@
 # Vercel deployments
 
 - Project: [lopugits-projects/pokeworld](https://vercel.com/lopugits-projects/pokeworld)
-- Production: assigned from the `main` branch after this migration is merged
+- Production: [www.pokeworld.center](https://www.pokeworld.center), deployed from `main`
 - Branch previews: automatic Vercel Git previews for every branch in
   [`lopugit/pokeworld`](https://github.com/lopugit/pokeworld)
 - Root Directory: `app`
 
 ## Verified migration preview
+
+- Production Mongo repair deployment (2026-07-19):
+  [pokeworld-bsiwtaftd-lopugits-projects.vercel.app](https://pokeworld-bsiwtaftd-lopugits-projects.vercel.app)
 
 - Final dense procedural world PR #7 commit `5188647` (2026-07-19):
   [pokeworld-it1tq88z9-lopugits-projects.vercel.app](https://pokeworld-it1tq88z9-lopugits-projects.vercel.app)
@@ -35,9 +38,11 @@ reduced its 512-by-512 image median from 41.73 ms to 4.45 ms (9.37x faster).
 
 Preview and production deployments both have a server-side `GOOGLE_API_KEY` and set
 `POKEWORLD_OFFLINE_MAP=false`, so every public frontend can display the real Google Static Maps
-source layer. Preview deliberately remains without MongoDB configuration, so preview generation
-is non-persistent while production retains Google-backed MongoDB persistence. The Google key is a
-sensitive Vercel environment value and is never included in the client bundle.
+source layer. Preview and production currently run without MongoDB configuration, so generated
+blocks are returned inline and are non-persistent. Production's former `MONGODB_*` variables were
+local-development values that resolved to `127.0.0.1:27017` inside Vercel; they were removed on
+2026-07-19. Add a hosted `MONGODB_URI` and redeploy before re-enabling durable persistence. The
+Google key is a sensitive Vercel environment value and is never included in the client bundle.
 
 ## Build
 
