@@ -1,4 +1,4 @@
-const CACHE_NAME = "pokeworld-v2";
+const CACHE_NAME = "pokeworld-v3";
 const CORE_ASSETS = [
   "/",
   "/game",
@@ -23,7 +23,13 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) {
+  const url = new URL(event.request.url);
+  if (
+    event.request.method !== "GET" ||
+    url.origin !== self.location.origin ||
+    url.pathname.startsWith("/api/") ||
+    url.pathname.startsWith("/v1/")
+  ) {
     return;
   }
 
