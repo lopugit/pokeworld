@@ -25,9 +25,10 @@ blocks per rolling five seconds and 500 reserved blocks per UTC day. Immutable-I
 and reset the daily quota at `/admin`; `@lopu` is configured as the initial admin, and the app is owned
 by the Thingtime service identity `@pokeworld-service`.
 
-Vercel stores `POKEWORLD_QUOTA_MONGODB_URI`, `POKEWORLD_QUOTA_MONGODB_DB`,
-`POKEWORLD_SESSION_SECRET`, and `THINGTIME_SERVICE_TOKEN` as encrypted server values. The public
-`VITE_THINGTIME_CLIENT_ID` identifies the Thingtime app without exposing a credential.
+Vercel stores `POKEWORLD_SESSION_SECRET` and `THINGTIME_SERVICE_TOKEN` as encrypted server values.
+The service identity owns complete compressed map-block Things and calls Thingtime's atomic quota
+endpoint; the public `VITE_THINGTIME_CLIENT_ID` identifies the Thingtime app without exposing a
+credential.
 
 ## Verified migration preview
 
@@ -49,7 +50,7 @@ The project-level SSO deployment gate is disabled so preview aliases are publicl
 verified deployment served `/`, `/index.html`, `/game`, both hashed Vite assets, and `/api/health`.
 A current dense-world deployment repeated those shell, SPA-fallback, hashed-asset, and health checks
 after the procedural grammar and merged Emerald game systems landed.
-The final `5188647` preview returned HTTP 200 for `/`, `/index.html`, `/game`, and
+The final `5188647` historical preview returned HTTP 200 for `/`, `/index.html`, `/game`, and
 `/assets/index-ttT-5K1O.js`; `/api/health` reported the app healthy with Vercel Workflow auto
 selection. The preview intentionally has no MongoDB configuration and therefore does not run the
 production persistence path, but its server-side map jobs do call Google Static Maps and return
@@ -61,13 +62,11 @@ reduced its 512-by-512 image median from 41.73 ms to 4.45 ms (9.37x faster).
 
 Preview and production deployments both have a server-side `GOOGLE_API_KEY` and set
 `POKEWORLD_OFFLINE_MAP=false`, so every public frontend can display the real Google Static Maps
-source layer. Preview and production still run without the map-block persistence `MONGODB_URI`, so
-generated blocks are returned inline and are non-persistent. Production's former `MONGODB_*`
-variables were local-development values that resolved to `127.0.0.1:27017` inside Vercel; they were
-removed on 2026-07-19. A separate encrypted hosted MongoDB connection now stores generation quota
-state, and public generation fails closed if that quota store is unavailable. Add a hosted map-block
-`MONGODB_URI` and redeploy before re-enabling durable map persistence. The Google key is a sensitive
-Vercel environment value and is never included in the client bundle.
+source layer. Production's former `MONGODB_*` variables were local-development values that resolved
+to `127.0.0.1:27017` inside Vercel; they were removed on 2026-07-19. The current storage release
+routes both durable map blocks and quota state through Thingtime's authenticated API boundary
+instead. The Google key and Thingtime service token are sensitive Vercel environment values and are
+never included in the client bundle.
 
 ## Build
 

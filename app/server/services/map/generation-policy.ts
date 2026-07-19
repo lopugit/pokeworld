@@ -62,6 +62,11 @@ export function assertPublicGenerationPermit(
   }
 }
 
-export function generationControlStatus(error: unknown): number {
-  return error instanceof GenerationControlError ? error.statusCode : 400;
+export function generationControlStatus(
+  error: unknown,
+  fallbackStatus = 400,
+): number {
+  return error instanceof GenerationControlError
+    ? error.statusCode
+    : fallbackStatus;
 }

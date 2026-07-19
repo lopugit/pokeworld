@@ -1,6 +1,6 @@
 import { isCurrentMapBlock } from "./generate";
 import { shouldRegenerateFallbackBlock } from "./legacy/map-source";
-import { getStoredBlocks } from "./mongo";
+import { getStoredBlocks } from "./block-store";
 import type { MapBlock } from "./types";
 
 interface StoredBlockLike {
@@ -59,7 +59,7 @@ export function completedBlockSet<T extends StoredBlockLike>(
   return current.length === requestedCount ? current : null;
 }
 
-// MongoDB is the source of truth for finished map data. Workflow run
+// Durable block storage is the source of truth for finished map data. Workflow run
 // bookkeeping can lag behind the durable writes (a run may report "running"
 // minutes after its blocks landed), so API routes answer from stored blocks
 // whenever the full requested set is already current.

@@ -7,6 +7,11 @@ import {
 } from "./generation-policy";
 import { mongoUri } from "./mongo";
 import type { MapGenerationQuotaReservation } from "./types";
+import {
+  ThingtimeApiError,
+  isThingtimeServiceConfigured,
+  thingtimeServiceRequest,
+} from "../thingtime/client";
 
 export const GENERATION_DAILY_LIMIT = 500;
 export const GENERATION_ROLLING_LIMIT = 9;
@@ -14,6 +19,7 @@ export const GENERATION_ROLLING_WINDOW_MS = 5_000;
 
 const QUOTA_DOCUMENT_ID = "global-block-generation";
 const QUOTA_COLLECTION = "generation-quotas";
+const THINGTIME_QUOTA_KEY = "pokeworld-global-block-generation";
 
 interface QuotaReservationRecord {
   count: number;
@@ -70,8 +76,206 @@ export interface GenerationQuotaStore {
   status(now: number): Promise<GenerationQuotaStatus>;
 }
 
+interface ThingtimeQuotaStatus {
+  dayKey: string;
+  dailyRemaining: number;
+  dailyUsed: number;
+  key: string;
+  policy: {
+    dailyLimit: number;
+    rollingLimit: number;
+    rollingWindowMs: number;
+  };
+  rollingRemaining: number;
+  rollingResetAt: number | null;
+  rollingUsed: number;
+}
+
+interface ThingtimeQuotaResponse {
+  ok: true;
+  permit?: {
+    granted: boolean;
+    permitId: string;
+    retryAt?: number;
+  };
+  reservation?: MapGenerationQuotaReservation;
+  status: ThingtimeQuotaStatus;
+}
+
+type ThingtimeQuotaRequester = <T>(
+  path: string,
+  init?: RequestInit,
+) => Promise<T>;
+
+const defaultThingtimeQuotaRequester: ThingtimeQuotaRequester = (path, init) =>
+  thingtimeServiceRequest(path, init);
+
+function thingtimeQuotaStatus(
+  source: ThingtimeQuotaStatus,
+): GenerationQuotaStatus {
+  return {
+    dailyLimit: source.policy.dailyLimit,
+    dailyRemaining: source.dailyRemaining,
+    dailyUsed: source.dailyUsed,
+    dayKey: source.dayKey,
+    rollingLimit: source.policy.rollingLimit,
+    rollingRemaining: source.rollingRemaining,
+    rollingWindowMs: source.policy.rollingWindowMs,
+  };
+}
+
+function emptyQuotaStatus(now: number): GenerationQuotaStatus {
+  return {
+    dailyLimit: GENERATION_DAILY_LIMIT,
+    dailyRemaining: GENERATION_DAILY_LIMIT,
+    dailyUsed: 0,
+    dayKey: utcGenerationDayKey(now),
+    rollingLimit: GENERATION_ROLLING_LIMIT,
+    rollingRemaining: GENERATION_ROLLING_LIMIT,
+    rollingWindowMs: GENERATION_ROLLING_WINDOW_MS,
+  };
+}
+
+const thingtimeGenerationCode = (code?: string): string => {
+  switch (code) {
+    case "QUOTA_DAILY_LIMIT":
+      return "GENERATION_DAILY_LIMIT";
+    case "QUOTA_RESERVATION_CONFLICT":
+      return "GENERATION_RESERVATION_CONFLICT";
+    case "QUOTA_RESERVATION_EXPIRED":
+      return "GENERATION_RESERVATION_EXPIRED";
+    case "QUOTA_PERMIT_CONFLICT":
+    case "QUOTA_RELEASE_CONFLICT":
+      return "GENERATION_PERMIT_CONFLICT";
+    case "QUOTA_POLICY_CONFLICT":
+      return "GENERATION_QUOTA_POLICY_CONFLICT";
+    default:
+      return "GENERATION_QUOTA_UNAVAILABLE";
+  }
+};
+
+function rethrowThingtimeQuotaError(error: unknown): never {
+  if (!(error instanceof ThingtimeApiError)) throw error;
+  if (error.statusCode === 409 || error.statusCode === 429) {
+    throw new GenerationControlError(
+      error.message,
+      error.statusCode,
+      thingtimeGenerationCode(error.code),
+    );
+  }
+  throw error;
+}
+
+export class ThingtimeGenerationQuotaStore implements GenerationQuotaStore {
+  constructor(
+    private readonly request: ThingtimeQuotaRequester =
+      defaultThingtimeQuotaRequester,
+  ) {}
+
+  private async post(
+    body: Record<string, unknown>,
+  ): Promise<ThingtimeQuotaResponse> {
+    try {
+      return await this.request<ThingtimeQuotaResponse>(
+        "/api/v1/things/quota",
+        {
+          method: "POST",
+          body: JSON.stringify({ key: THINGTIME_QUOTA_KEY, ...body }),
+        },
+      );
+    } catch (error) {
+      rethrowThingtimeQuotaError(error);
+    }
+  }
+
+  async reserve(input: {
+    count: number;
+    now: number;
+    reservationId: string;
+  }): Promise<MapGenerationQuotaReservation> {
+    const response = await this.post({
+      operation: "reserve",
+      reservationId: input.reservationId,
+      count: input.count,
+      policy: {
+        dailyLimit: GENERATION_DAILY_LIMIT,
+        rollingLimit: GENERATION_ROLLING_LIMIT,
+        rollingWindowMs: GENERATION_ROLLING_WINDOW_MS,
+      },
+    });
+    if (!response.reservation) {
+      throw new Error("Thingtime did not return a generation reservation");
+    }
+    return response.reservation;
+  }
+
+  async acquirePermit(input: {
+    now: number;
+    permitId: string;
+    reservationId: string;
+  }): Promise<GenerationPermitResult> {
+    const response = await this.post({
+      operation: "permit",
+      reservationId: input.reservationId,
+      permitId: input.permitId,
+    });
+    if (!response.permit) {
+      throw new Error("Thingtime did not return a generation permit");
+    }
+    if (response.permit.granted) {
+      return { granted: true, permitId: response.permit.permitId };
+    }
+    if (typeof response.permit.retryAt !== "number") {
+      throw new Error("Thingtime denied a generation permit without a retry time");
+    }
+    return {
+      granted: false,
+      permitId: response.permit.permitId,
+      retryAt: response.permit.retryAt,
+    };
+  }
+
+  async releaseReservationSlot(input: {
+    now: number;
+    releaseId: string;
+    reservationId: string;
+  }): Promise<void> {
+    await this.post({
+      operation: "release",
+      reservationId: input.reservationId,
+      releaseId: input.releaseId,
+    });
+  }
+
+  async status(now: number): Promise<GenerationQuotaStatus> {
+    try {
+      const response = await this.request<ThingtimeQuotaResponse>(
+        `/api/v1/things/quota?key=${encodeURIComponent(THINGTIME_QUOTA_KEY)}`,
+      );
+      return thingtimeQuotaStatus(response.status);
+    } catch (error) {
+      if (error instanceof ThingtimeApiError && error.statusCode === 404) {
+        return emptyQuotaStatus(now);
+      }
+      rethrowThingtimeQuotaError(error);
+    }
+  }
+
+  async reset(now: number): Promise<GenerationQuotaStatus> {
+    try {
+      return thingtimeQuotaStatus((await this.post({ operation: "reset" })).status);
+    } catch (error) {
+      if (error instanceof ThingtimeApiError && error.statusCode === 404) {
+        return emptyQuotaStatus(now);
+      }
+      throw error;
+    }
+  }
+}
+
 // A deterministic implementation used by focused unit tests and local tooling.
-// Production uses the atomic Mongo implementation below.
+// Production uses the atomic Thingtime service above; the Mongo implementation
+// below remains a non-public local migration fallback.
 export class InMemoryGenerationQuotaStore implements GenerationQuotaStore {
   private dailyUsed = 0;
   private dayKey = "";
@@ -566,6 +770,9 @@ async function quotaCollection(): Promise<Collection<GenerationQuotaDocument> | 
 }
 
 async function configuredStore(): Promise<GenerationQuotaStore | undefined> {
+  if (isThingtimeServiceConfigured()) {
+    return new ThingtimeGenerationQuotaStore();
+  }
   const collection = await quotaCollection();
   return collection ? new MongoGenerationQuotaStore(collection) : undefined;
 }

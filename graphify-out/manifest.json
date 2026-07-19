@@ -110,9 +110,9 @@
     "semantic_hash": "3f5904b2e4617498e7b4fa7cc7bd0853"
   },
   "app/server/routes/api/health.get.ts": {
-    "mtime": 1784378712.495733,
-    "ast_hash": "fd376493098bd1954d036386a5bcf95d",
-    "semantic_hash": "fd376493098bd1954d036386a5bcf95d"
+    "mtime": 1784467025.9253519,
+    "ast_hash": "4ea23fc4d9327743dca74236cbde5999",
+    "semantic_hash": "4ea23fc4d9327743dca74236cbde5999"
   },
   "app/server/routes/api/map-jobs.post.ts": {
     "mtime": 1784463482.779376,
@@ -120,9 +120,9 @@
     "semantic_hash": "eb565c25746bb7f9e0629d76970590d6"
   },
   "app/server/routes/api/map-jobs/[runId].get.ts": {
-    "mtime": 1784434424.7685332,
-    "ast_hash": "71ca1af615a3375df9dbea29754e73ff",
-    "semantic_hash": "71ca1af615a3375df9dbea29754e73ff"
+    "mtime": 1784467674.6356742,
+    "ast_hash": "849bd88e0bdc5e809865194875340c99",
+    "semantic_hash": "849bd88e0bdc5e809865194875340c99"
   },
   "app/server/routes/privacy-policy.get.ts": {
     "mtime": 1784378712.497682,
@@ -160,9 +160,9 @@
     "semantic_hash": "3ff8163e95d5f692ec46af954fb8859b"
   },
   "app/server/services/map/generate.ts": {
-    "mtime": 1784463314.5378423,
-    "ast_hash": "5bddff17ec1a008c6f99a3f0f7f48079",
-    "semantic_hash": "5bddff17ec1a008c6f99a3f0f7f48079"
+    "mtime": 1784467025.9176145,
+    "ast_hash": "6560118c44fbe0d3f9b0b701e281c2a4",
+    "semantic_hash": "6560118c44fbe0d3f9b0b701e281c2a4"
   },
   "app/server/services/map/generation-job.ts": {
     "mtime": 1784463454.7114847,
@@ -170,14 +170,14 @@
     "semantic_hash": "0f45f63c4c606c0cd5c1ff61becc8dce"
   },
   "app/server/services/map/generation-policy.ts": {
-    "mtime": 1784463195.6076448,
-    "ast_hash": "7b36f9ef13bd2e83cba5bb11ec156fca",
-    "semantic_hash": "7b36f9ef13bd2e83cba5bb11ec156fca"
+    "mtime": 1784467674.6308973,
+    "ast_hash": "f59301c07b281cdcba718e3446b1ec16",
+    "semantic_hash": "f59301c07b281cdcba718e3446b1ec16"
   },
   "app/server/services/map/generation-quota.ts": {
-    "mtime": 1784464257.8980963,
-    "ast_hash": "509c6a699c401035fc3608ca5759498f",
-    "semantic_hash": "509c6a699c401035fc3608ca5759498f"
+    "mtime": 1784467506.802777,
+    "ast_hash": "a1c6efd219485cde1cec0cc719029b2a",
+    "semantic_hash": "a1c6efd219485cde1cec0cc719029b2a"
   },
   "app/server/services/map/input.ts": {
     "mtime": 1784432133.3435004,
@@ -250,14 +250,14 @@
     "semantic_hash": "2b19f117b741385f544fd598ab8f4248"
   },
   "app/server/services/map/mongo.ts": {
-    "mtime": 1784378676.5344923,
-    "ast_hash": "5fd580ab8ec8c3036b367eaeac5611f0",
-    "semantic_hash": "5fd580ab8ec8c3036b367eaeac5611f0"
+    "mtime": 1784467037.7161818,
+    "ast_hash": "82a866abc91801026e4400555d83620b",
+    "semantic_hash": "82a866abc91801026e4400555d83620b"
   },
   "app/server/services/map/stored-blocks.ts": {
-    "mtime": 1784434420.2977142,
-    "ast_hash": "d864e5ca4814cbb5cda2e6d8973c6f03",
-    "semantic_hash": "d864e5ca4814cbb5cda2e6d8973c6f03"
+    "mtime": 1784467506.7980907,
+    "ast_hash": "0bffee36046662ee9337f9c03281ff68",
+    "semantic_hash": "0bffee36046662ee9337f9c03281ff68"
   },
   "app/server/services/map/terrain-classifier.ts": {
     "mtime": 1784391645.5566788,
@@ -445,9 +445,9 @@
     "semantic_hash": "78a64c85b50391b629bcdf4acf29a5bd"
   },
   "app/tests/generation-quota.test.ts": {
-    "mtime": 1784464257.8991709,
-    "ast_hash": "433c3ed756ed26b51a6ff3f8f007752f",
-    "semantic_hash": "433c3ed756ed26b51a6ff3f8f007752f"
+    "mtime": 1784467389.9956853,
+    "ast_hash": "95598b418bbb8f3c2d44bf2b56d22cfd",
+    "semantic_hash": "95598b418bbb8f3c2d44bf2b56d22cfd"
   },
   "app/tests/http-and-service-worker.test.ts": {
     "mtime": 1784465060.733318,
@@ -595,9 +595,9 @@
     "semantic_hash": "ebed0fa91f24b2cf25d96b9d17f09d39"
   },
   "app/README.md": {
-    "mtime": 1784464257.9034846,
-    "ast_hash": "2cf940375458a87c47406baa57c84b22",
-    "semantic_hash": "2cf940375458a87c47406baa57c84b22"
+    "mtime": 1784467536.5474608,
+    "ast_hash": "224d0fcf0b0325ed2b5dea5614de6560",
+    "semantic_hash": ""
   },
   "app/TODO-fallback-map-regeneration.md": {
     "mtime": 1784379351.541113,
@@ -605,8 +605,8 @@
     "semantic_hash": "30e44bf692b9dd1feb61caef628e3781"
   },
   "app/VERCEL_DEPLOYMENTS.md": {
-    "mtime": 1784465631.6336453,
-    "ast_hash": "c1dd8f1be409afe242937ac2bc8b262c",
+    "mtime": 1784467560.2622757,
+    "ast_hash": "ae4b66d627a224aa9a1f79c06ba31590",
     "semantic_hash": ""
   },
   "app/index.html": {
@@ -677,12 +677,12 @@
   "graphify-out/memory/query_20260719_115708_trace_the_server_side_generation_queue_and_regener.md": {
     "mtime": 1784462228.3160381,
     "ast_hash": "7b70fa58f5d6c38a62a73beb37a0a2e7",
-    "semantic_hash": ""
+    "semantic_hash": "7b70fa58f5d6c38a62a73beb37a0a2e7"
   },
   "graphify-out/memory/query_20260719_121030_implement_atomic_global_block_generation_quotas_an.md": {
     "mtime": 1784463030.6282752,
     "ast_hash": "c798dd6a5982c761f3463cfeba39ed40",
-    "semantic_hash": ""
+    "semantic_hash": "c798dd6a5982c761f3463cfeba39ed40"
   },
   "graphify-out/memory/query_20260719_121300_where_should_thingtime_sso_session_context__naviga.md": {
     "mtime": 1784463180.1897016,
@@ -1353,5 +1353,40 @@
     "mtime": 1784395179.48995,
     "ast_hash": "12e25b145ed7ca6086520d024f34999f",
     "semantic_hash": "12e25b145ed7ca6086520d024f34999f"
+  },
+  "app/server/services/map/block-store.ts": {
+    "mtime": 1784467643.503388,
+    "ast_hash": "9ab30bf386cc602e1eca8a3a20b2c573",
+    "semantic_hash": "9ab30bf386cc602e1eca8a3a20b2c573"
+  },
+  "app/server/services/map/thingtime-block-store.ts": {
+    "mtime": 1784467762.274372,
+    "ast_hash": "a3cb1562105c19717021e5655c3b8d38",
+    "semantic_hash": "a3cb1562105c19717021e5655c3b8d38"
+  },
+  "app/server/services/map/version.ts": {
+    "mtime": 1784467014.9740183,
+    "ast_hash": "17a329a4776632d467fb9a3d65a6039d",
+    "semantic_hash": "17a329a4776632d467fb9a3d65a6039d"
+  },
+  "app/server/services/thingtime/client.ts": {
+    "mtime": 1784467053.249926,
+    "ast_hash": "caa96a1cc494262d45d931eba469bbf0",
+    "semantic_hash": "caa96a1cc494262d45d931eba469bbf0"
+  },
+  "app/tests/block-store.test.ts": {
+    "mtime": 1784467339.7962255,
+    "ast_hash": "67cbc1d6719323f9d3d9e940129ebb2d",
+    "semantic_hash": "67cbc1d6719323f9d3d9e940129ebb2d"
+  },
+  "app/tests/thingtime-block-store.test.ts": {
+    "mtime": 1784467762.282333,
+    "ast_hash": "d60fd92c281f5ec59ba9ca4a3e9f375e",
+    "semantic_hash": "d60fd92c281f5ec59ba9ca4a3e9f375e"
+  },
+  "app/tests/thingtime-client.test.ts": {
+    "mtime": 1784467339.7957153,
+    "ast_hash": "da15890126958c856a7326b31ecb5de8",
+    "semantic_hash": "da15890126958c856a7326b31ecb5de8"
   }
 }

@@ -3,15 +3,15 @@ import type { MapBlock } from "./types";
 
 let clientPromise: Promise<MongoClient> | undefined;
 
-export function mongoUri(): string | undefined {
-  if (process.env.POKEWORLD_OFFLINE_MAP === "true") return undefined;
-  if (process.env.MONGODB_URI) return process.env.MONGODB_URI;
-  if (!process.env.MONGODB_SCHEME) return undefined;
-  return `${process.env.MONGODB_SCHEME}${process.env.MONGODB_USER ?? ""}:${process.env.MONGODB_PWD ?? ""}@${process.env.MONGODB_URL ?? ""}/${process.env.MONGODB_DB ?? "pokeworld"}?retryWrites=true&w=majority${process.env.MONGODB_URL_PARAMS ?? ""}`;
+export function mongoUri(env: NodeJS.ProcessEnv = process.env): string | undefined {
+  if (env.POKEWORLD_OFFLINE_MAP === "true") return undefined;
+  if (env.MONGODB_URI) return env.MONGODB_URI;
+  if (!env.MONGODB_SCHEME) return undefined;
+  return `${env.MONGODB_SCHEME}${env.MONGODB_USER ?? ""}:${env.MONGODB_PWD ?? ""}@${env.MONGODB_URL ?? ""}/${env.MONGODB_DB ?? "pokeworld"}?retryWrites=true&w=majority${env.MONGODB_URL_PARAMS ?? ""}`;
 }
 
-export function isMongoConfigured() {
-  return Boolean(mongoUri());
+export function isMongoConfigured(env: NodeJS.ProcessEnv = process.env) {
+  return Boolean(mongoUri(env));
 }
 
 async function blocksCollection() {

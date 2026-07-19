@@ -1,9 +1,10 @@
-import { isMongoConfigured } from "./mongo";
+import { putStoredBlocks } from "./block-store";
 import {
   assertPublicGenerationPermit,
   assertRegenerationAllowed,
 } from "./generation-policy";
 import type { MapBlock, MapGenerationStepResult } from "./types";
+import { MAP_BLOCK_VERSION } from "./version";
 import createLegacyBlocksHandlerUntyped from "./legacy/blocks";
 
 const createLegacyBlocksHandler = createLegacyBlocksHandlerUntyped as (
@@ -13,8 +14,7 @@ const createLegacyBlocksHandler = createLegacyBlocksHandlerUntyped as (
   status: number;
 }>;
 
-// Bump when terrain semantics or sprite stitching changes so stored blocks are rebuilt.
-export const MAP_BLOCK_VERSION = "2.3.0001";
+export { MAP_BLOCK_VERSION } from "./version";
 
 const blocksHandler = createLegacyBlocksHandler(MAP_BLOCK_VERSION);
 
@@ -53,8 +53,10 @@ export async function generateMapBlock(input: {
     throw new Error(`Map generation did not return block ${input.x},${input.y}`);
   }
 
+  const persisted = await putStoredBlocks([target]);
+
   return {
     requested: { x: input.x, y: input.y },
-    ...(isMongoConfigured() ? {} : { inlineBlock: target }),
+    ...(persisted ? {} : { inlineBlock: target }),
   };
 }
