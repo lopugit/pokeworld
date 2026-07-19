@@ -10,8 +10,9 @@ Pokémon World is now one full-stack application:
 - **Vite 8** for the browser build and local HMR.
 - **Nitro 3** for API routes, static delivery, and the Vercel build output.
 - **Vercel Workflow** for durable, retryable map generation.
-- **MongoDB** for production block/tile persistence and **Google Static Maps** for real colour data.
-- **Thingtime SSO** for general user login and immutable-ID-based administrator access.
+- **Thingtime** for production map-block persistence, atomic quota state, general SSO, and
+  immutable-ID-based administrator access.
+- **Google Static Maps** for real street, building, water, and terrain colour data.
 
 There are no separate `frontend/` and `api/` packages or proxy ports anymore. The React app,
 Nitro routes, and local Workflow runtime all share port **3847**.
@@ -45,6 +46,22 @@ seven-day `HttpOnly`, `Secure`, `SameSite=Lax` Pokeworld cookie. Neither the Thi
 admin status is accepted from browser state. User `@lopu` is mapped to administrator access by its
 immutable Thingtime user ID; additional immutable IDs can be supplied through the optional
 comma-separated `POKEWORLD_ADMIN_THINGTIME_IDS` variable.
+
+### Thingtime database
+
+Set the private `THINGTIME_SERVICE_TOKEN` only on the Nitro server. Pokeworld stores each complete
+16×16 map block as one private Thing owned by `@pokeworld-service`, preserving the fast bundled
+block model rather than writing 256 tile records. The full block JSON is gzip-compressed into the
+Thing's bounded `extended` sidecar; small coordinates, source/version metadata, byte sizes, and a
+SHA-256 checksum remain in its searchable crystal. Deterministic block IDs make neighbour reads
+direct and idempotent, while checksum validation prevents a damaged partial block from entering the
+game world.
+
+The same service identity calls Thingtime's atomic quota endpoint. Thingtime's server clock and
+database update pipeline make reservations, rolling permits, cached-block releases, and admin
+resets safe across concurrent Vercel functions. `THINGTIME_API_URL` defaults to
+`https://thingtime.com`; `THINGTIME_API_TIMEOUT_MS` defaults to 15 seconds. Mongo remains available
+only as an optional non-public local migration fallback when no Thingtime service token is set.
 
 For the persistent local process:
 
@@ -85,7 +102,7 @@ Official references: [Workflow with Nitro](https://useworkflow.dev/docs/getting-
 
 ## Map generation
 
-The browser requests nearby blocks through `GET /api/blocks`. Cached MongoDB blocks return
+The browser requests nearby blocks through `GET /api/blocks`. Cached Thingtime blocks return
 immediately; missing or stale blocks queue `generateMapWorkflow` and the browser polls the run.
 
 You can enqueue the same durable path from the terminal while the app is running:
@@ -96,19 +113,17 @@ pnpm map:generate -- 946647 488524 --radius 2 --regenerate
 ```
 
 `--radius 2` requests the maximum 25 blocks. In offline development,
-`POKEWORLD_OFFLINE_MAP=true` avoids MongoDB and Google and uses a deterministic fallback image.
+`POKEWORLD_OFFLINE_MAP=true` avoids external storage and Google and uses a deterministic fallback image.
 Production blocks record `mapSource`, `fallbackGenerated`, and `mapGeneratedAt`, allowing a later
-request to repair fallback-derived MongoDB data when Google Static Maps is available.
+request to repair fallback-derived Thingtime data when Google Static Maps is available.
 
-All uncached generation is protected by one Mongo-backed global allowance: at most **9 actual
+All uncached generation is protected by one Thingtime-backed global allowance: at most **9 actual
 block generations in any rolling 5-second window** and **500 reserved blocks per UTC day**. Cached
-blocks cost nothing, and workflows recheck the cache before consuming a permit. Configure
-`POKEWORLD_QUOTA_MONGODB_URI` (and optionally `POKEWORLD_QUOTA_MONGODB_DB`) to use a dedicated
-shared store; otherwise the map Mongo connection is used. Public deployments fail closed with
-`503` when no quota store is reachable. Explicit regeneration is disabled on every Vercel/public
-build, while an authenticated Pokeworld administrator can inspect or reset the daily allowance at
-`/admin` without clearing the active rolling five-second window or cancelling workflows already in
-progress.
+blocks cost nothing, and workflows recheck Thingtime before consuming a permit. Public deployments
+fail closed with `503` when the Thingtime quota service is unreachable. Explicit regeneration is
+disabled on every Vercel/public build, while an authenticated Pokeworld administrator can inspect or
+reset the daily allowance at `/admin` without clearing the active rolling five-second window or
+cancelling workflows already in progress.
 
 ### Emerald world grammar
 

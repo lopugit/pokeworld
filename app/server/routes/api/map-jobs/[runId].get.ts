@@ -1,7 +1,8 @@
 import { defineEventHandler, getQuery, getRouterParam } from "nitro/h3";
 import { getRun } from "workflow/api";
 import { coordinatesForInput, offsetsFromQuery, parseMapJobInput } from "../../../services/map/input";
-import { getStoredBlocks } from "../../../services/map/mongo";
+import { getStoredBlocks } from "../../../services/map/block-store";
+import { generationControlStatus } from "../../../services/map/generation-policy";
 import {
   findCurrentStoredBlocks,
   hasEveryRequestedBlock,
@@ -10,13 +11,14 @@ import type { MapGenerationResult } from "../../../services/map/types";
 import { errorResponse, jsonResponse } from "../../../utils/http";
 
 // Workflow run bookkeeping can report "running" long after every requested
-// block has landed in MongoDB. When the poll carries the original request
+// block has landed in durable storage. When the poll carries the original request
 // parameters, answer from the durable store instead of stalling the client.
 async function storedBlocksProgress(query: Record<string, unknown>) {
   if (query.regenerate === "true") return null;
   if (query.blockX === undefined || query.blockY === undefined || query.offsets === undefined) {
     return null;
   }
+  let requested: Array<{ x: number; y: number }>;
   try {
     const input = parseMapJobInput({
       blockX: query.blockX,
@@ -24,13 +26,13 @@ async function storedBlocksProgress(query: Record<string, unknown>) {
       offsets: offsetsFromQuery(query.offsets),
       regenerate: false,
     });
-    const requested = coordinatesForInput(input);
-    const blocks = await findCurrentStoredBlocks(requested);
-    return { blocks, requested };
+    requested = coordinatesForInput(input);
   } catch {
     // Malformed hint parameters must never break run polling.
     return null;
   }
+  const blocks = await findCurrentStoredBlocks(requested);
+  return { blocks, requested };
 }
 
 export default defineEventHandler(async (event) => {
@@ -63,6 +65,6 @@ export default defineEventHandler(async (event) => {
     const blocks = result.inlineBlocks ?? (await getStoredBlocks(result.requested)) ?? [];
     return jsonResponse({ blocks, requested: result.requested, runId, status });
   } catch (error) {
-    return errorResponse(error, 500);
+    return errorResponse(error, generationControlStatus(error, 500));
   }
 });
