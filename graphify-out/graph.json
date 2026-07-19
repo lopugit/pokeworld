@@ -47,6 +47,256 @@
   },
   "nodes": [
     {
+      "label": "blocks.get.ts",
+      "file_type": "code",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_routes_api_blocks_get",
+      "community": 5,
+      "norm_label": "blocks.get.ts"
+    },
+    {
+      "label": "[runId].get.ts",
+      "file_type": "code",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_routes_api_map_jobs_runid_get",
+      "community": 5,
+      "norm_label": "[runid].get.ts"
+    },
+    {
+      "label": "storedBlocksFallback()",
+      "file_type": "code",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "community": 5,
+      "norm_label": "storedblocksfallback()"
+    },
+    {
+      "label": "input.ts",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_services_map_input",
+      "community": 5,
+      "norm_label": "input.ts"
+    },
+    {
+      "label": "finiteInteger()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "app_server_services_map_input_finiteinteger",
+      "community": 5,
+      "norm_label": "finiteinteger()"
+    },
+    {
+      "label": "parseOffset()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "app_server_services_map_input_parseoffset",
+      "community": 5,
+      "norm_label": "parseoffset()"
+    },
+    {
+      "label": "parseMapJobInput()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "app_server_services_map_input_parsemapjobinput",
+      "community": 5,
+      "norm_label": "parsemapjobinput()"
+    },
+    {
+      "label": "coordinatesForInput()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "app_server_services_map_input_coordinatesforinput",
+      "community": 5,
+      "norm_label": "coordinatesforinput()"
+    },
+    {
+      "label": "offsetsFromQuery()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "app_server_services_map_input_offsetsfromquery",
+      "community": 5,
+      "norm_label": "offsetsfromquery()"
+    },
+    {
+      "label": "stored-blocks.ts",
+      "file_type": "code",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_services_map_stored_blocks",
+      "community": 5,
+      "norm_label": "stored-blocks.ts"
+    },
+    {
+      "label": "StoredBlockLike",
+      "file_type": "code",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "app_server_services_map_stored_blocks_storedblocklike",
+      "community": 5,
+      "norm_label": "storedblocklike"
+    },
+    {
+      "label": "completedBlockSet()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "app_server_services_map_stored_blocks_completedblockset",
+      "community": 5,
+      "norm_label": "completedblockset()"
+    },
+    {
+      "label": "findCompletedStoredBlocks()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "community": 5,
+      "norm_label": "findcompletedstoredblocks()"
+    },
+    {
+      "label": "map-api.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api",
+      "community": 0,
+      "norm_label": "map-api.ts"
+    },
+    {
+      "label": "BlocksResponse",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_blocksresponse",
+      "community": 0,
+      "norm_label": "blocksresponse"
+    },
+    {
+      "label": "abortableDelay()",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_abortabledelay",
+      "community": 0,
+      "norm_label": "abortabledelay()"
+    },
+    {
+      "label": "responseJson()",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_responsejson",
+      "community": 0,
+      "norm_label": "responsejson()"
+    },
+    {
+      "label": "mapJobPollPath()",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_mapjobpollpath",
+      "community": 0,
+      "norm_label": "mapjobpollpath()"
+    },
+    {
+      "label": "getMapBlocks()",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_getmapblocks",
+      "community": 0,
+      "norm_label": "getmapblocks()"
+    },
+    {
+      "label": "getBlockForCoordinates()",
+      "file_type": "code",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "app_src_lib_map_api_getblockforcoordinates",
+      "community": 0,
+      "norm_label": "getblockforcoordinates()"
+    },
+    {
+      "label": "map-api.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tests_map_api_test",
+      "community": 0,
+      "norm_label": "map-api.test.ts"
+    },
+    {
+      "label": "input",
+      "file_type": "code",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_tests_map_api_test_input",
+      "community": 0,
+      "norm_label": "input"
+    },
+    {
+      "label": "jsonResponse()",
+      "file_type": "code",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "app_tests_map_api_test_jsonresponse",
+      "community": 0,
+      "norm_label": "jsonresponse()"
+    },
+    {
+      "label": "stored-blocks.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/stored-blocks.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tests_stored_blocks_test",
+      "community": 5,
+      "norm_label": "stored-blocks.test.ts"
+    },
+    {
+      "label": "currentBlock()",
+      "file_type": "code",
+      "source_file": "app/tests/stored-blocks.test.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_tests_stored_blocks_test_currentblock",
+      "community": 5,
+      "norm_label": "currentblock()"
+    },
+    {
       "label": "Dense World Desktop Visual Evidence",
       "file_type": "image",
       "source_file": "qa/dense-world-desktop.png",
@@ -1401,34 +1651,12 @@
       "id": "app_server_routes_api_block_lat_lng_get"
     },
     {
-      "label": "blocks.get.ts",
-      "file_type": "code",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "blocks.get.ts",
-      "community_name": "index.js",
-      "id": "app_server_routes_api_blocks_get"
-    },
-    {
-      "label": "queryOffsets()",
-      "file_type": "code",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "queryoffsets()",
-      "community_name": "index.js",
-      "id": "app_server_routes_api_blocks_get_queryoffsets"
-    },
-    {
       "label": "health.get.ts",
       "file_type": "code",
       "source_file": "app/server/routes/api/health.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "health.get.ts",
       "community_name": "index.js",
       "id": "app_server_routes_api_health_get"
@@ -1443,17 +1671,6 @@
       "norm_label": "map-jobs.post.ts",
       "community_name": "index.js",
       "id": "app_server_routes_api_map_jobs_post"
-    },
-    {
-      "label": "[runId].get.ts",
-      "file_type": "code",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "[runid].get.ts",
-      "community_name": "index.js",
-      "id": "app_server_routes_api_map_jobs_runid_get"
     },
     {
       "label": "privacy-policy.get.ts",
@@ -1549,7 +1766,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "generate.ts",
       "community_name": "index.js",
       "id": "app_server_services_map_generate"
@@ -1560,7 +1777,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "createlegacyblockshandler",
       "community_name": "index.js",
       "id": "app_server_services_map_generate_createlegacyblockshandler"
@@ -1571,7 +1788,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "blockshandler",
       "community_name": "index.js",
       "id": "app_server_services_map_generate_blockshandler"
@@ -1582,7 +1799,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "iscurrentmapblock()",
       "community_name": "index.js",
       "id": "app_server_services_map_generate_iscurrentmapblock"
@@ -1593,65 +1810,10 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "generatemapblock()",
       "community_name": "index.js",
       "id": "app_server_services_map_generate_generatemapblock"
-    },
-    {
-      "label": "input.ts",
-      "file_type": "code",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "input.ts",
-      "community_name": "index.js",
-      "id": "app_server_services_map_input"
-    },
-    {
-      "label": "finiteInteger()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "finiteinteger()",
-      "community_name": "index.js",
-      "id": "app_server_services_map_input_finiteinteger"
-    },
-    {
-      "label": "parseOffset()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "parseoffset()",
-      "community_name": "index.js",
-      "id": "app_server_services_map_input_parseoffset"
-    },
-    {
-      "label": "parseMapJobInput()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "parsemapjobinput()",
-      "community_name": "index.js",
-      "id": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "label": "coordinatesForInput()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L53",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "coordinatesforinput()",
-      "community_name": "index.js",
-      "id": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "label": "blocks.ts",
@@ -1736,7 +1898,7 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 10,
+      "community": 19,
       "norm_label": "toexport()",
       "community_name": "scripts",
       "id": "app_server_services_map_legacy_blocks_toexport"
@@ -1879,7 +2041,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 8,
+      "community": 174,
       "norm_label": "getfallbackmap()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getfallbackmap"
@@ -1978,7 +2140,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L295",
       "_origin": "ast",
-      "community": 8,
+      "community": 174,
       "norm_label": "getmapat()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getmapat"
@@ -1989,7 +2151,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L300",
       "_origin": "ast",
-      "community": 8,
+      "community": 174,
       "norm_label": "buildgooglestaticmapurl()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_buildgooglestaticmapurl"
@@ -2000,7 +2162,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L316",
       "_origin": "ast",
-      "community": 8,
+      "community": 174,
       "norm_label": "getmapatwithsource()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getmapatwithsource"
@@ -2132,7 +2294,7 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 175,
       "norm_label": "map-source.ts",
       "community_name": "index.js",
       "id": "app_server_services_map_legacy_map_source"
@@ -2143,7 +2305,7 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
+      "community": 175,
       "norm_label": "canusegooglestaticmaps()",
       "community_name": "index.js",
       "id": "app_server_services_map_legacy_map_source_canusegooglestaticmaps"
@@ -2154,7 +2316,7 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 5,
+      "community": 175,
       "norm_label": "getbase64imagesha256()",
       "community_name": "index.js",
       "id": "app_server_services_map_legacy_map_source_getbase64imagesha256"
@@ -2165,7 +2327,7 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 5,
+      "community": 175,
       "norm_label": "isfallbackgeneratedblock()",
       "community_name": "index.js",
       "id": "app_server_services_map_legacy_map_source_isfallbackgeneratedblock"
@@ -2176,7 +2338,7 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 5,
+      "community": 175,
       "norm_label": "shouldregeneratefallbackblock()",
       "community_name": "index.js",
       "id": "app_server_services_map_legacy_map_source_shouldregeneratefallbackblock"
@@ -2924,7 +3086,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "mongo.ts",
       "community_name": "index.js",
       "id": "app_server_services_map_mongo"
@@ -2935,7 +3097,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "mongouri()",
       "community_name": "index.js",
       "id": "app_server_services_map_mongo_mongouri"
@@ -2946,7 +3108,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "ismongoconfigured()",
       "community_name": "index.js",
       "id": "app_server_services_map_mongo_ismongoconfigured"
@@ -2957,7 +3119,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "blockscollection()",
       "community_name": "index.js",
       "id": "app_server_services_map_mongo_blockscollection"
@@ -2968,7 +3130,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "getstoredblocks()",
       "community_name": "index.js",
       "id": "app_server_services_map_mongo_getstoredblocks"
@@ -2990,7 +3152,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "terrainkind",
       "community_name": "Game.vue",
       "id": "app_server_services_map_terrain_classifier_terrainkind"
@@ -3166,7 +3328,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 10,
+      "community": 19,
       "norm_label": "summarizeterrain()",
       "community_name": "scripts",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
@@ -3430,7 +3592,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "types.ts",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types"
@@ -3441,7 +3603,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "mapoffset",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types_mapoffset"
@@ -3452,7 +3614,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "mapsource",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types_mapsource"
@@ -3463,7 +3625,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "mapjobinput",
       "community_name": "index.js",
       "id": "app_server_services_map_types_mapjobinput"
@@ -3474,7 +3636,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "maptile",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types_maptile"
@@ -3485,7 +3647,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "mapblock",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types_mapblock"
@@ -3496,7 +3658,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "mapgenerationstepresult",
       "community_name": "index.js",
       "id": "app_server_services_map_types_mapgenerationstepresult"
@@ -3507,7 +3669,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "mapgenerationresult",
       "community_name": "index.js",
       "id": "app_server_services_map_types_mapgenerationresult"
@@ -3826,7 +3988,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "devkit.tsx",
       "community_name": "package.json",
       "id": "app_src_components_devkit"
@@ -3837,7 +3999,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "presets",
       "community_name": "package.json",
       "id": "app_src_components_devkit_presets"
@@ -3848,7 +4010,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "point",
       "community_name": "package.json",
       "id": "app_src_components_devkit_point"
@@ -3859,7 +4021,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "coordinates",
       "community_name": "package.json",
       "id": "app_src_components_devkit_coordinates"
@@ -3870,7 +4032,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "clamptoviewport()",
       "community_name": "package.json",
       "id": "app_src_components_devkit_clamptoviewport"
@@ -3881,7 +4043,7 @@
       "source_file": "app/src/components/DevKit.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "devkit()",
       "community_name": "package.json",
       "id": "app_src_components_devkit_devkit"
@@ -4233,7 +4395,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L512",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": ".interact()",
       "community_name": "Game.vue",
       "id": "app_src_components_game_game_interact"
@@ -5025,7 +5187,7 @@
       "source_file": "app/src/lib/game-rules.ts",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "fielditem",
       "community_name": "functions.js",
       "id": "app_src_lib_game_rules_fielditem"
@@ -5185,78 +5347,12 @@
       "id": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
     },
     {
-      "label": "map-api.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "map-api.ts",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api"
-    },
-    {
-      "label": "BlocksResponse",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "blocksresponse",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api_blocksresponse"
-    },
-    {
-      "label": "abortableDelay()",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "abortabledelay()",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api_abortabledelay"
-    },
-    {
-      "label": "responseJson()",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "responsejson()",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api_responsejson"
-    },
-    {
-      "label": "getMapBlocks()",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "getmapblocks()",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api_getmapblocks"
-    },
-    {
-      "label": "getBlockForCoordinates()",
-      "file_type": "code",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L51",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "getblockforcoordinates()",
-      "community_name": "Game.vue",
-      "id": "app_src_lib_map_api_getblockforcoordinates"
-    },
-    {
       "label": "map-load.ts",
       "file_type": "code",
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "map-load.ts",
       "community_name": "Game.vue",
       "id": "app_src_lib_map_load"
@@ -5267,7 +5363,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "prioritizeinitialmapoffsets()",
       "community_name": "Game.vue",
       "id": "app_src_lib_map_load_prioritizeinitialmapoffsets"
@@ -5949,7 +6045,7 @@
       "source_file": "app/tests/map-generation.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "map-generation.test.ts",
       "community_name": "index.js",
       "id": "app_tests_map_generation_test"
@@ -5971,7 +6067,7 @@
       "source_file": "app/tests/map-load.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 173,
       "norm_label": "map-load.test.ts",
       "community_name": "Game.vue",
       "id": "app_tests_map_load_test"
@@ -5982,7 +6078,7 @@
       "source_file": "app/tests/map-source.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 174,
       "norm_label": "map-source.test.ts",
       "community_name": "DevKit.vue",
       "id": "app_tests_map_source_test"
@@ -6598,7 +6694,7 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "index.ts",
       "community_name": "index.js",
       "id": "app_workflows_map_generation_index"
@@ -6620,7 +6716,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "steps.ts",
       "community_name": "index.js",
       "id": "app_workflows_map_generation_steps"
@@ -6631,7 +6727,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "generatemapblockstep()",
       "community_name": "index.js",
       "id": "app_workflows_map_generation_steps_generatemapblockstep"
@@ -9827,8 +9923,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "procedural world acceptance ledger",
-      "id": "docs_procedural_world_acceptance_acceptance_ledger",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_acceptance_ledger"
     },
     {
       "label": "Deterministic Emerald-Style World",
@@ -9841,8 +9937,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "deterministic emerald-style world",
-      "id": "docs_procedural_world_acceptance_deterministic_emerald_world",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_deterministic_emerald_world"
     },
     {
       "label": "Automated Acceptance Gates",
@@ -9855,8 +9951,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "automated acceptance gates",
-      "id": "docs_procedural_world_acceptance_automated_gates",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_automated_gates"
     },
     {
       "label": "Native Chrome Acceptance Gates",
@@ -9869,8 +9965,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "native chrome acceptance gates",
-      "id": "docs_procedural_world_acceptance_native_chrome_gates",
-      "community_name": "Sand Terrain Sprite 4"
+      "community_name": "Sand Terrain Sprite 4",
+      "id": "docs_procedural_world_acceptance_native_chrome_gates"
     },
     {
       "label": "Delivery Gates",
@@ -9883,8 +9979,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "delivery gates",
-      "id": "docs_procedural_world_acceptance_delivery_gates",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_delivery_gates"
     },
     {
       "label": "Required Verification Commands",
@@ -9897,8 +9993,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "required verification commands",
-      "id": "docs_procedural_world_acceptance_required_commands",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_required_commands"
     },
     {
       "label": "Procedural Map Pipeline",
@@ -9911,8 +10007,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "procedural map pipeline",
-      "id": "docs_procedural_world_acceptance_procedural_map_pipeline",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_procedural_map_pipeline"
     },
     {
       "label": "Google Static Maps Source",
@@ -9925,8 +10021,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "google static maps source",
-      "id": "docs_procedural_world_acceptance_google_static_maps",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_google_static_maps"
     },
     {
       "label": "Repository Emerald Tileset",
@@ -9939,8 +10035,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "repository emerald tileset",
-      "id": "docs_procedural_world_acceptance_emerald_tileset",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_emerald_tileset"
     },
     {
       "label": "Weighted Biome Grammar",
@@ -9953,8 +10049,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "weighted biome grammar",
-      "id": "docs_procedural_world_acceptance_weighted_biome_grammar",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_weighted_biome_grammar"
     },
     {
       "label": "Global-Coordinate Continuity",
@@ -9967,8 +10063,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "global-coordinate continuity",
-      "id": "docs_procedural_world_acceptance_global_coordinate_continuity",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_global_coordinate_continuity"
     },
     {
       "label": "Safe Spawn and Connected Routes",
@@ -9981,8 +10077,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "safe spawn and connected routes",
-      "id": "docs_procedural_world_acceptance_safe_spawn_and_routes",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_safe_spawn_and_routes"
     },
     {
       "label": "Gameplay and Persistence Systems",
@@ -9995,8 +10091,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "gameplay and persistence systems",
-      "id": "docs_procedural_world_acceptance_gameplay_systems",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_gameplay_systems"
     },
     {
       "label": "Vercel Static Output",
@@ -10009,8 +10105,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "vercel static output",
-      "id": "docs_procedural_world_acceptance_vercel_output",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_vercel_output"
     },
     {
       "label": "Graphify Outputs",
@@ -10023,8 +10119,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "graphify outputs",
-      "id": "docs_procedural_world_acceptance_graphify_outputs",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_graphify_outputs"
     },
     {
       "label": "Melbourne, Sydney Harbour, and Alpine Native Chrome QA",
@@ -10037,8 +10133,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "melbourne, sydney harbour, and alpine native chrome qa",
-      "id": "docs_procedural_world_acceptance_native_chrome_qa",
-      "community_name": "Vercel Build Process"
+      "community_name": "Vercel Build Process",
+      "id": "docs_procedural_world_acceptance_native_chrome_qa"
     },
     {
       "label": "Ready-for-Review Pull Request",
@@ -10051,11 +10147,620 @@
       "contributor": null,
       "community": 29,
       "norm_label": "ready-for-review pull request",
-      "id": "docs_procedural_world_acceptance_pull_request",
-      "community_name": "Sand Terrain Sprite 9"
+      "community_name": "Sand Terrain Sprite 9",
+      "id": "docs_procedural_world_acceptance_pull_request"
     }
   ],
   "links": [
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/v1/blocks.get.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_routes_v1_blocks_get"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_input_coordinatesforinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_input_offsetsfromquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_input_parsemapjobinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_stored_blocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_input_coordinatesforinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_input_offsetsfromquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_input_parsemapjobinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_stored_blocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "target": "app_server_services_map_input_coordinatesforinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "target": "app_server_services_map_input_offsetsfromquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "target": "app_server_services_map_input_parsemapjobinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs.post.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_post",
+      "target": "app_server_services_map_input"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_server_services_map_input_coordinatesforinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_server_services_map_input_finiteinteger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_server_services_map_input_offsetsfromquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_server_services_map_input_parsemapjobinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_server_services_map_input_parseoffset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-input.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_services_map_input",
+      "target": "app_tests_map_input_test"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "app_server_services_map_input_parsemapjobinput",
+      "target": "app_server_services_map_input_finiteinteger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "app_server_services_map_input_parseoffset",
+      "target": "app_server_services_map_input_finiteinteger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/input.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "app_server_services_map_input_parsemapjobinput",
+      "target": "app_server_services_map_input_parseoffset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs.post.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_post",
+      "target": "app_server_services_map_input_parsemapjobinput"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-input.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_services_map_input_parsemapjobinput",
+      "target": "app_tests_map_input_test"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-input.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_services_map_input_coordinatesforinput",
+      "target": "app_tests_map_input_test"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "app_server_services_map_stored_blocks",
+      "target": "app_server_services_map_stored_blocks_completedblockset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_server_services_map_stored_blocks",
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_server_services_map_stored_blocks",
+      "target": "app_server_services_map_stored_blocks_storedblocklike",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/stored-blocks.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_stored_blocks_test",
+      "target": "app_server_services_map_stored_blocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/map/stored-blocks.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
+      "target": "app_server_services_map_stored_blocks_completedblockset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/stored-blocks.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_stored_blocks_test",
+      "target": "app_server_services_map_stored_blocks_completedblockset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_map_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_abortabledelay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_blocksresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_getblockforcoordinates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_getmapblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_mapjobpollpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api",
+      "target": "app_src_lib_map_api_responsejson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tests_map_api_test",
+      "target": "app_src_lib_map_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api_getmapblocks",
+      "target": "app_src_lib_map_api_abortabledelay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api_getmapblocks",
+      "target": "app_src_lib_map_api_responsejson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/map-api.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "app_src_lib_map_api_getmapblocks",
+      "target": "app_src_lib_map_api_mapjobpollpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tests_map_api_test",
+      "target": "app_src_lib_map_api_mapjobpollpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_map_api_getmapblocks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L751",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_getblocks",
+      "target": "app_src_lib_map_api_getmapblocks"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tests_map_api_test",
+      "target": "app_src_lib_map_api_getmapblocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_components_game",
+      "target": "app_src_lib_map_api_getblockforcoordinates"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/components/Game.tsx",
+      "source_location": "L315",
+      "weight": 1.0,
+      "source": "app_src_components_game_game_initializemap",
+      "target": "app_src_lib_map_api_getblockforcoordinates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_tests_map_api_test",
+      "target": "app_tests_map_api_test_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/map-api.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tests_map_api_test",
+      "target": "app_tests_map_api_test_jsonresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/stored-blocks.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_tests_stored_blocks_test",
+      "target": "app_tests_stored_blocks_test_currentblock",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -11466,181 +12171,6 @@
       "target": "app_server_utils_http_jsonresponse"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_routes_api_blocks_get_queryoffsets"
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/v1/blocks.get.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_routes_v1_blocks_get"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_generate"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_generate_iscurrentmapblock"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input_coordinatesforinput"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_legacy_map_source"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_legacy_map_source_shouldregeneratefallbackblock"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_mongo"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_mongo_getstoredblocks"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http_jsonresponse"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_workflows_map_generation_index"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_workflows_map_generation_index_generatemapworkflow"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11667,28 +12197,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/server/routes/api/map-jobs.post.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_post",
-      "target": "app_server_services_map_input"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs.post.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_post",
-      "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs.post.ts",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11738,83 +12246,6 @@
       "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_post",
       "target": "app_workflows_map_generation_index_generatemapworkflow"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_mongo"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_mongo_getstoredblocks"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_types_mapgenerationresult"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http_jsonresponse"
     },
     {
       "relation": "contains",
@@ -12093,145 +12524,6 @@
       "weight": 1.0,
       "source": "app_server_services_map_generate_generatemapblock",
       "target": "app_workflows_map_generation_steps_generatemapblockstep"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_coordinatesforinput"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_finiteinteger"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_parseoffset"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_types_mapjobinput"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_server_services_map_types_mapoffset"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/map-input.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input",
-      "target": "app_tests_map_input_test"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input_finiteinteger",
-      "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input_finiteinteger",
-      "target": "app_server_services_map_input_parseoffset"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/map/input.ts",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input_parseoffset",
-      "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/map-input.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input_parsemapjobinput",
-      "target": "app_tests_map_input_test"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/map-input.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_input_coordinatesforinput",
-      "target": "app_tests_map_input_test"
     },
     {
       "relation": "contains",
@@ -16458,17 +16750,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_types",
-      "target": "app_src_lib_map_api"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -16557,17 +16838,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_types_mapjobinput",
-      "target": "app_src_lib_map_api"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -16640,28 +16910,6 @@
       "confidence_score": 1.0,
       "source": "app_server_services_map_types_mapblock",
       "target": "app_src_components_game"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_types_mapblock",
-      "target": "app_src_lib_map_api"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_services_map_types_mapblock",
-      "target": "app_src_lib_map_api_blocksresponse"
     },
     {
       "relation": "imports",
@@ -17684,39 +17932,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/src/components/Game.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_map_api"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_map_api_getblockforcoordinates"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_components_game",
-      "target": "app_src_lib_map_api_getmapblocks"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Game.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -18511,17 +18726,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/components/Game.tsx",
-      "source_location": "L315",
-      "weight": 1.0,
-      "source": "app_src_components_game_game_initializemap",
-      "target": "app_src_lib_map_api_getblockforcoordinates"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/components/Game.tsx",
       "source_location": "L297",
       "weight": 1.0,
       "source": "app_src_components_game_game_initializemap",
@@ -18955,17 +19159,6 @@
       "weight": 1.0,
       "source": "app_src_components_game_game_getblocks",
       "target": "app_src_lib_game_zoom_mapoffsetlimitforzoom"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/components/Game.tsx",
-      "source_location": "L751",
-      "weight": 1.0,
-      "source": "app_src_components_game_game_getblocks",
-      "target": "app_src_lib_map_api_getmapblocks"
     },
     {
       "relation": "calls",
@@ -20410,78 +20603,6 @@
       "confidence_score": 1.0,
       "source": "app_src_lib_game_zoom_mapoffsetlimitforzoom",
       "target": "app_tests_game_zoom_test"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_abortabledelay"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_blocksresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_getblockforcoordinates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_getmapblocks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_responsejson"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api_abortabledelay",
-      "target": "app_src_lib_map_api_getmapblocks"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/map-api.ts",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_map_api_responsejson",
-      "target": "app_src_lib_map_api_getmapblocks"
     },
     {
       "relation": "contains",
@@ -23512,5 +23633,5 @@
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md"
     }
   ],
-  "built_at_commit": "0b9bc71a7bbf0d5ba910f5a7d4cf2862b8c5cb19"
+  "built_at_commit": "dceee6c1d720a373d3b717a43f98e99659bae2d3"
 }
