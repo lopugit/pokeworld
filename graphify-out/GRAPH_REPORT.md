@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 136 files · ~36,369,975 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1169 nodes · 1703 edges · 305 communities (55 shown, 250 thin omitted)
+- 1155 nodes · 1695 edges · 292 communities (55 shown, 237 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `72bbe362`
+- Built from commit: `a219bfbf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -281,19 +282,6 @@
 - [[_COMMUNITY_BadgesPanel|BadgesPanel]]
 - [[_COMMUNITY_Emerald Game Systems Design and Cross-Agent Contract|Emerald Game Systems Design and Cross-Agent Contract]]
 - [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
-- [[_COMMUNITY_Vercel Deployments|Vercel Deployments]]
-- [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
-- [[_COMMUNITY_Google Static Maps Source Layer|Google Static Maps Source Layer]]
-- [[_COMMUNITY_Map Jobs API|Map Jobs API]]
-- [[_COMMUNITY_MongoDB Durable Persistence|MongoDB Durable Persistence]]
-- [[_COMMUNITY_lopugitpokeworld GitHub Repository|lopugit/pokeworld GitHub Repository]]
-- [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
-- [[_COMMUNITY_Pokeworld Production Deployment|Pokeworld Production Deployment]]
-- [[_COMMUNITY_Google Static Maps Source Layer|Google Static Maps Source Layer]]
-- [[_COMMUNITY_Vercel Build Output|Vercel Build Output]]
-- [[_COMMUNITY_Vercel Build Output|Vercel Build Output]]
-- [[_COMMUNITY_Vercel Workflow Managed Queue|Vercel Workflow Managed Queue]]
-- [[_COMMUNITY_Vercel Workflow Map Job|Vercel Workflow Map Job]]
 - [[_COMMUNITY_Fallback Map PNG|Fallback Map PNG]]
 - [[_COMMUNITY_Game renderCanvas|Game renderCanvas]]
 - [[_COMMUNITY_Google Static Map Diagnosis|Google Static Map Diagnosis]]
@@ -343,11 +331,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (305 total, 250 thin omitted)
+## Communities (292 total, 237 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.05
-Nodes (77): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+69 more)
+Cohesion: 0.06
+Nodes (64): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+56 more)
 
 ### Community 1 - "functions.js"
 Cohesion: 0.07
@@ -378,12 +366,12 @@ Cohesion: 0.10
 Nodes (21): BoundaryWait, defaultCoordinates, GameSettings, MapLoadingState, MapView, MoveAction, PanelId, PlayerState (+13 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.12
-Nodes (8): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey(), MapGenerationQuotaReservation, start
+Cohesion: 0.09
+Nodes (21): GenerationControlError, configuredStore(), GenerationPermitResult, GenerationQuotaDocument, generationQuotaMongoUri(), GenerationQuotaStatus, GenerationQuotaStore, getGenerationQuotaStatus() (+13 more)
 
 ### Community 9 - "dependencies"
-Cohesion: 0.06
-Nodes (33): App(), ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthProvider(), AuthSession (+25 more)
+Cohesion: 0.07
+Nodes (28): ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthSession, AuthStatus, AuthUser (+20 more)
 
 ### Community 10 - "scripts"
 Cohesion: 0.19
@@ -550,9 +538,9 @@ Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **532 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+527 more)
+- **518 isolated node(s):** `Verified migration preview`, `Build`, `CORE_ASSETS`, `name`, `version` (+513 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **250 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **237 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
@@ -571,16 +559,16 @@ Nodes (3): root, target, transformedShell
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Game` connect `functions.js` to `dependencies`, `BadgesPanel`, `Nuxt 2 Frontend`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Why does `TerrainKind` connect `Game.vue` to `dependencies`, `pm2.mjs`, `blocks.get.ts`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `Game.vue` to `Nuxt 2 Frontend`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _543 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Verified migration preview`, `Build`, `CORE_ASSETS` to the rest of the system?**
+  _529 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.05164797825348284 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.060398078242964996 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07213114754098361 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
+- **Should `blocks.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.12244897959183673 - nodes in this community are weakly interconnected._
