@@ -47,14 +47,84 @@
   },
   "nodes": [
     {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents",
+      "community": 176,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "Pokeworld \u2014 agent instructions",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_pokeworld_agent_instructions",
+      "community": 176,
+      "norm_label": "pokeworld \u2014 agent instructions"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude",
+      "community": 174,
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "Pokeworld \u2014 repo instructions for AI agents",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_pokeworld_repo_instructions_for_ai_agents",
+      "community": 174,
+      "norm_label": "pokeworld \u2014 repo instructions for ai agents"
+    },
+    {
+      "label": "Multi-agent main-branch sync protocol (MANDATORY)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "claude_multi_agent_main_branch_sync_protocol_mandatory",
+      "community": 174,
+      "norm_label": "multi-agent main-branch sync protocol (mandatory)"
+    },
+    {
+      "label": "Conflict resolution rules",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "claude_conflict_resolution_rules",
+      "community": 174,
+      "norm_label": "conflict resolution rules"
+    },
+    {
+      "label": "Coordination notes",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "claude_coordination_notes",
+      "community": 174,
+      "norm_label": "coordination notes"
+    },
+    {
       "label": "blocks.get.ts",
       "file_type": "code",
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_routes_api_blocks_get",
       "community": 5,
-      "norm_label": "blocks.get.ts"
+      "norm_label": "blocks.get.ts",
+      "id": "app_server_routes_api_blocks_get"
     },
     {
       "label": "[runId].get.ts",
@@ -62,9 +132,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_routes_api_map_jobs_runid_get",
       "community": 5,
-      "norm_label": "[runid].get.ts"
+      "norm_label": "[runid].get.ts",
+      "id": "app_server_routes_api_map_jobs_runid_get"
     },
     {
       "label": "storedBlocksFallback()",
@@ -72,9 +142,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
       "community": 5,
-      "norm_label": "storedblocksfallback()"
+      "norm_label": "storedblocksfallback()",
+      "id": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback"
     },
     {
       "label": "input.ts",
@@ -82,9 +152,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_services_map_input",
       "community": 5,
-      "norm_label": "input.ts"
+      "norm_label": "input.ts",
+      "id": "app_server_services_map_input"
     },
     {
       "label": "finiteInteger()",
@@ -92,9 +162,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "app_server_services_map_input_finiteinteger",
       "community": 5,
-      "norm_label": "finiteinteger()"
+      "norm_label": "finiteinteger()",
+      "id": "app_server_services_map_input_finiteinteger"
     },
     {
       "label": "parseOffset()",
@@ -102,9 +172,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "app_server_services_map_input_parseoffset",
       "community": 5,
-      "norm_label": "parseoffset()"
+      "norm_label": "parseoffset()",
+      "id": "app_server_services_map_input_parseoffset"
     },
     {
       "label": "parseMapJobInput()",
@@ -112,9 +182,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "app_server_services_map_input_parsemapjobinput",
       "community": 5,
-      "norm_label": "parsemapjobinput()"
+      "norm_label": "parsemapjobinput()",
+      "id": "app_server_services_map_input_parsemapjobinput"
     },
     {
       "label": "coordinatesForInput()",
@@ -122,9 +192,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "app_server_services_map_input_coordinatesforinput",
       "community": 5,
-      "norm_label": "coordinatesforinput()"
+      "norm_label": "coordinatesforinput()",
+      "id": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "label": "offsetsFromQuery()",
@@ -132,9 +202,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L62",
       "_origin": "ast",
-      "id": "app_server_services_map_input_offsetsfromquery",
       "community": 5,
-      "norm_label": "offsetsfromquery()"
+      "norm_label": "offsetsfromquery()",
+      "id": "app_server_services_map_input_offsetsfromquery"
     },
     {
       "label": "stored-blocks.ts",
@@ -142,9 +212,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_services_map_stored_blocks",
       "community": 5,
-      "norm_label": "stored-blocks.ts"
+      "norm_label": "stored-blocks.ts",
+      "id": "app_server_services_map_stored_blocks"
     },
     {
       "label": "StoredBlockLike",
@@ -152,9 +222,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "app_server_services_map_stored_blocks_storedblocklike",
       "community": 5,
-      "norm_label": "storedblocklike"
+      "norm_label": "storedblocklike",
+      "id": "app_server_services_map_stored_blocks_storedblocklike"
     },
     {
       "label": "completedBlockSet()",
@@ -162,9 +232,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "app_server_services_map_stored_blocks_completedblockset",
       "community": 5,
-      "norm_label": "completedblockset()"
+      "norm_label": "completedblockset()",
+      "id": "app_server_services_map_stored_blocks_completedblockset"
     },
     {
       "label": "findCompletedStoredBlocks()",
@@ -172,9 +242,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
       "community": 5,
-      "norm_label": "findcompletedstoredblocks()"
+      "norm_label": "findcompletedstoredblocks()",
+      "id": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
     },
     {
       "label": "map-api.ts",
@@ -182,9 +252,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_lib_map_api",
       "community": 0,
-      "norm_label": "map-api.ts"
+      "norm_label": "map-api.ts",
+      "id": "app_src_lib_map_api"
     },
     {
       "label": "BlocksResponse",
@@ -192,9 +262,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_blocksresponse",
       "community": 0,
-      "norm_label": "blocksresponse"
+      "norm_label": "blocksresponse",
+      "id": "app_src_lib_map_api_blocksresponse"
     },
     {
       "label": "abortableDelay()",
@@ -202,9 +272,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_abortabledelay",
       "community": 0,
-      "norm_label": "abortabledelay()"
+      "norm_label": "abortabledelay()",
+      "id": "app_src_lib_map_api_abortabledelay"
     },
     {
       "label": "responseJson()",
@@ -212,9 +282,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_responsejson",
       "community": 0,
-      "norm_label": "responsejson()"
+      "norm_label": "responsejson()",
+      "id": "app_src_lib_map_api_responsejson"
     },
     {
       "label": "mapJobPollPath()",
@@ -222,9 +292,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_mapjobpollpath",
       "community": 0,
-      "norm_label": "mapjobpollpath()"
+      "norm_label": "mapjobpollpath()",
+      "id": "app_src_lib_map_api_mapjobpollpath"
     },
     {
       "label": "getMapBlocks()",
@@ -232,9 +302,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_getmapblocks",
       "community": 0,
-      "norm_label": "getmapblocks()"
+      "norm_label": "getmapblocks()",
+      "id": "app_src_lib_map_api_getmapblocks"
     },
     {
       "label": "getBlockForCoordinates()",
@@ -242,9 +312,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "app_src_lib_map_api_getblockforcoordinates",
-      "community": 0,
-      "norm_label": "getblockforcoordinates()"
+      "community": 2,
+      "norm_label": "getblockforcoordinates()",
+      "id": "app_src_lib_map_api_getblockforcoordinates"
     },
     {
       "label": "map-api.test.ts",
@@ -252,9 +322,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_tests_map_api_test",
       "community": 0,
-      "norm_label": "map-api.test.ts"
+      "norm_label": "map-api.test.ts",
+      "id": "app_tests_map_api_test"
     },
     {
       "label": "input",
@@ -262,9 +332,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "app_tests_map_api_test_input",
       "community": 0,
-      "norm_label": "input"
+      "norm_label": "input",
+      "id": "app_tests_map_api_test_input"
     },
     {
       "label": "jsonResponse()",
@@ -272,9 +342,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "app_tests_map_api_test_jsonresponse",
       "community": 0,
-      "norm_label": "jsonresponse()"
+      "norm_label": "jsonresponse()",
+      "id": "app_tests_map_api_test_jsonresponse"
     },
     {
       "label": "stored-blocks.test.ts",
@@ -282,9 +352,9 @@
       "source_file": "app/tests/stored-blocks.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_tests_stored_blocks_test",
       "community": 5,
-      "norm_label": "stored-blocks.test.ts"
+      "norm_label": "stored-blocks.test.ts",
+      "id": "app_tests_stored_blocks_test"
     },
     {
       "label": "currentBlock()",
@@ -292,9 +362,9 @@
       "source_file": "app/tests/stored-blocks.test.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "app_tests_stored_blocks_test_currentblock",
       "community": 5,
-      "norm_label": "currentblock()"
+      "norm_label": "currentblock()",
+      "id": "app_tests_stored_blocks_test_currentblock"
     },
     {
       "label": "Dense World Desktop Visual Evidence",
@@ -1898,7 +1968,7 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 19,
+      "community": 10,
       "norm_label": "toexport()",
       "community_name": "scripts",
       "id": "app_server_services_map_legacy_blocks_toexport"
@@ -2041,7 +2111,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 174,
+      "community": 8,
       "norm_label": "getfallbackmap()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getfallbackmap"
@@ -2140,7 +2210,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L295",
       "_origin": "ast",
-      "community": 174,
+      "community": 8,
       "norm_label": "getmapat()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getmapat"
@@ -2151,7 +2221,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L300",
       "_origin": "ast",
-      "community": 174,
+      "community": 8,
       "norm_label": "buildgooglestaticmapurl()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_buildgooglestaticmapurl"
@@ -2162,7 +2232,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L316",
       "_origin": "ast",
-      "community": 174,
+      "community": 8,
       "norm_label": "getmapatwithsource()",
       "community_name": "DevKit.vue",
       "id": "app_server_services_map_legacy_functions_getmapatwithsource"
@@ -2272,7 +2342,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 7,
       "norm_label": "log.ts",
       "community_name": "finalize-static-shell.mjs",
       "id": "app_server_services_map_legacy_log"
@@ -2283,7 +2353,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 7,
       "norm_label": "log()",
       "community_name": "finalize-static-shell.mjs",
       "id": "app_server_services_map_legacy_log_log"
@@ -3328,7 +3398,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 19,
+      "community": 10,
       "norm_label": "summarizeterrain()",
       "community_name": "scripts",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
@@ -3603,7 +3673,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 173,
+      "community": 0,
       "norm_label": "mapoffset",
       "community_name": "Game.vue",
       "id": "app_server_services_map_types_mapoffset"
@@ -4395,7 +4465,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L512",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": ".interact()",
       "community_name": "Game.vue",
       "id": "app_src_components_game_game_interact"
@@ -4516,7 +4586,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L721",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": ".getblocks()",
       "community_name": "package.json",
       "id": "app_src_components_game_game_getblocks"
@@ -5352,7 +5422,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 173,
+      "community": 0,
       "norm_label": "map-load.ts",
       "community_name": "Game.vue",
       "id": "app_src_lib_map_load"
@@ -5363,7 +5433,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 173,
+      "community": 0,
       "norm_label": "prioritizeinitialmapoffsets()",
       "community_name": "Game.vue",
       "id": "app_src_lib_map_load_prioritizeinitialmapoffsets"
@@ -6067,7 +6137,7 @@
       "source_file": "app/tests/map-load.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 173,
+      "community": 0,
       "norm_label": "map-load.test.ts",
       "community_name": "Game.vue",
       "id": "app_tests_map_load_test"
@@ -6078,7 +6148,7 @@
       "source_file": "app/tests/map-source.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 174,
+      "community": 8,
       "norm_label": "map-source.test.ts",
       "community_name": "DevKit.vue",
       "id": "app_tests_map_source_test"
@@ -6705,7 +6775,7 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 5,
+      "community": 173,
       "norm_label": "generatemapworkflow()",
       "community_name": "index.js",
       "id": "app_workflows_map_generation_index_generatemapworkflow"
@@ -10153,6 +10223,56 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_pokeworld_agent_instructions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "claude",
+      "target": "claude_pokeworld_repo_instructions_for_ai_agents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "claude_pokeworld_repo_instructions_for_ai_agents",
+      "target": "claude_multi_agent_main_branch_sync_protocol_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "claude_multi_agent_main_branch_sync_protocol_mandatory",
+      "target": "claude_conflict_resolution_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "claude_multi_agent_main_branch_sync_protocol_mandatory",
+      "target": "claude_coordination_notes",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "re_exports",
       "context": "export",
       "confidence": "EXTRACTED",
@@ -10170,9 +10290,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input"
     },
     {
       "relation": "imports",
@@ -10181,9 +10301,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input_coordinatesforinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "relation": "imports",
@@ -10192,9 +10312,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input_offsetsfromquery",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_offsetsfromquery"
     },
     {
       "relation": "imports",
@@ -10203,9 +10323,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_input_parsemapjobinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parsemapjobinput"
     },
     {
       "relation": "imports_from",
@@ -10214,9 +10334,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_stored_blocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks"
     },
     {
       "relation": "imports",
@@ -10225,9 +10345,9 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
     },
     {
       "relation": "contains",
@@ -10235,9 +10355,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
-      "confidence_score": 1.0
+      "target": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback"
     },
     {
       "relation": "imports_from",
@@ -10246,9 +10366,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_input",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input"
     },
     {
       "relation": "imports",
@@ -10257,9 +10377,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_input_coordinatesforinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "relation": "imports",
@@ -10268,9 +10388,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_input_offsetsfromquery",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_offsetsfromquery"
     },
     {
       "relation": "imports",
@@ -10279,9 +10399,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_input_parsemapjobinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parsemapjobinput"
     },
     {
       "relation": "imports_from",
@@ -10290,9 +10410,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_stored_blocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks"
     },
     {
       "relation": "imports",
@@ -10301,9 +10421,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
     },
     {
       "relation": "calls",
@@ -10312,9 +10432,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
-      "target": "app_server_services_map_input_coordinatesforinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "relation": "calls",
@@ -10323,9 +10443,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
-      "target": "app_server_services_map_input_offsetsfromquery",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_offsetsfromquery"
     },
     {
       "relation": "calls",
@@ -10334,9 +10454,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
-      "target": "app_server_services_map_input_parsemapjobinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parsemapjobinput"
     },
     {
       "relation": "calls",
@@ -10345,9 +10465,9 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get_storedblocksfallback",
-      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
     },
     {
       "relation": "imports_from",
@@ -10366,9 +10486,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_coordinatesforinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_coordinatesforinput"
     },
     {
       "relation": "contains",
@@ -10376,9 +10496,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_finiteinteger",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_finiteinteger"
     },
     {
       "relation": "contains",
@@ -10386,9 +10506,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_offsetsfromquery",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_offsetsfromquery"
     },
     {
       "relation": "contains",
@@ -10396,9 +10516,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_parsemapjobinput",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parsemapjobinput"
     },
     {
       "relation": "contains",
@@ -10406,9 +10526,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input",
-      "target": "app_server_services_map_input_parseoffset",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parseoffset"
     },
     {
       "relation": "imports_from",
@@ -10428,9 +10548,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input_parsemapjobinput",
-      "target": "app_server_services_map_input_finiteinteger",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_finiteinteger"
     },
     {
       "relation": "calls",
@@ -10439,9 +10559,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input_parseoffset",
-      "target": "app_server_services_map_input_finiteinteger",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_finiteinteger"
     },
     {
       "relation": "calls",
@@ -10450,9 +10570,9 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_input_parsemapjobinput",
-      "target": "app_server_services_map_input_parseoffset",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_input_parseoffset"
     },
     {
       "relation": "imports",
@@ -10493,9 +10613,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_stored_blocks",
-      "target": "app_server_services_map_stored_blocks_completedblockset",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_completedblockset"
     },
     {
       "relation": "contains",
@@ -10503,9 +10623,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_stored_blocks",
-      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
     },
     {
       "relation": "contains",
@@ -10513,9 +10633,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_stored_blocks",
-      "target": "app_server_services_map_stored_blocks_storedblocklike",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_storedblocklike"
     },
     {
       "relation": "imports_from",
@@ -10524,9 +10644,9 @@
       "source_file": "app/tests/stored-blocks.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_stored_blocks_test",
-      "target": "app_server_services_map_stored_blocks",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks"
     },
     {
       "relation": "calls",
@@ -10535,9 +10655,9 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_stored_blocks_findcompletedstoredblocks",
-      "target": "app_server_services_map_stored_blocks_completedblockset",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_completedblockset"
     },
     {
       "relation": "imports",
@@ -10546,9 +10666,9 @@
       "source_file": "app/tests/stored-blocks.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_stored_blocks_test",
-      "target": "app_server_services_map_stored_blocks_completedblockset",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_stored_blocks_completedblockset"
     },
     {
       "relation": "imports_from",
@@ -10567,9 +10687,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_abortabledelay",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_abortabledelay"
     },
     {
       "relation": "contains",
@@ -10577,9 +10697,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_blocksresponse",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_blocksresponse"
     },
     {
       "relation": "contains",
@@ -10587,9 +10707,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_getblockforcoordinates",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_getblockforcoordinates"
     },
     {
       "relation": "contains",
@@ -10597,9 +10717,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_getmapblocks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_getmapblocks"
     },
     {
       "relation": "contains",
@@ -10607,9 +10727,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_mapjobpollpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_mapjobpollpath"
     },
     {
       "relation": "contains",
@@ -10617,9 +10737,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api",
-      "target": "app_src_lib_map_api_responsejson",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_responsejson"
     },
     {
       "relation": "imports_from",
@@ -10628,9 +10748,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_map_api_test",
-      "target": "app_src_lib_map_api",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api"
     },
     {
       "relation": "calls",
@@ -10639,9 +10759,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api_getmapblocks",
-      "target": "app_src_lib_map_api_abortabledelay",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_abortabledelay"
     },
     {
       "relation": "calls",
@@ -10650,9 +10770,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api_getmapblocks",
-      "target": "app_src_lib_map_api_responsejson",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_responsejson"
     },
     {
       "relation": "calls",
@@ -10661,9 +10781,9 @@
       "source_file": "app/src/lib/map-api.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_map_api_getmapblocks",
-      "target": "app_src_lib_map_api_mapjobpollpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_mapjobpollpath"
     },
     {
       "relation": "imports",
@@ -10672,9 +10792,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_map_api_test",
-      "target": "app_src_lib_map_api_mapjobpollpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_mapjobpollpath"
     },
     {
       "relation": "imports",
@@ -10705,9 +10825,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_map_api_test",
-      "target": "app_src_lib_map_api_getmapblocks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_map_api_getmapblocks"
     },
     {
       "relation": "imports",
@@ -10737,9 +10857,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_map_api_test",
-      "target": "app_tests_map_api_test_input",
-      "confidence_score": 1.0
+      "target": "app_tests_map_api_test_input"
     },
     {
       "relation": "contains",
@@ -10747,9 +10867,9 @@
       "source_file": "app/tests/map-api.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_map_api_test",
-      "target": "app_tests_map_api_test_jsonresponse",
-      "confidence_score": 1.0
+      "target": "app_tests_map_api_test_jsonresponse"
     },
     {
       "relation": "contains",
@@ -10757,9 +10877,9 @@
       "source_file": "app/tests/stored-blocks.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_stored_blocks_test",
-      "target": "app_tests_stored_blocks_test_currentblock",
-      "confidence_score": 1.0
+      "target": "app_tests_stored_blocks_test_currentblock"
     },
     {
       "relation": "contains",
@@ -23633,5 +23753,5 @@
       "source_file": "docs/PROCEDURAL_WORLD_ACCEPTANCE.md"
     }
   ],
-  "built_at_commit": "dceee6c1d720a373d3b717a43f98e99659bae2d3"
+  "built_at_commit": "10d889f3b96f4bc5c981708f77f5698895d516b5"
 }
