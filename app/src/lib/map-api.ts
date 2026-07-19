@@ -1,28 +1,53 @@
 import type { MapBlock, MapJobInput } from "../../server/services/map/types";
 
 interface BlocksResponse {
-  blocks: MapBlock[];
+  blocks?: MapBlock[];
   runId?: string;
   status: string;
 }
 
 const MAP_JOB_POLL_DELAY_MS = 750;
-// ~90 seconds. A workflow run whose bookkeeping never settles must not freeze
-// map loading forever — timing out lets the caller clear its pending marks and
-// retry as the player keeps moving.
-const MAP_JOB_POLL_LIMIT = 120;
+const MAP_JOB_POLL_MAX_DELAY_MS = 5_000;
+const MAP_JOB_POLL_BACKOFF_EVERY = 20;
+// Neighbour generation can legitimately take several minutes. Stored-block
+// progress keeps the UI moving; a gradual backoff keeps the roughly ten-minute
+// ceiling without hammering MongoDB hundreds of times during a slow run.
+const MAP_JOB_POLL_LIMIT = 180;
+
+const mapJobPollDelay = (baseDelayMs: number, poll: number) => {
+  const maximum = Math.max(baseDelayMs, MAP_JOB_POLL_MAX_DELAY_MS);
+  const multiplier = 1 + Math.floor(poll / MAP_JOB_POLL_BACKOFF_EVERY);
+  return Math.min(maximum, baseDelayMs * multiplier);
+};
+
+const mapBlockRevision = (block: MapBlock) => {
+  let latestTileUpdate = 0;
+  for (const tile of block.tiles ?? []) {
+    if (typeof tile.updated === "number") latestTileUpdate = Math.max(latestTileUpdate, tile.updated);
+  }
+  return [
+    block.updated ?? "",
+    block.mapGeneratedAt ?? "",
+    latestTileUpdate,
+    block.uuid ?? "",
+    block.tiles?.length ?? 0,
+  ].join(":");
+};
 
 const abortableDelay = (milliseconds: number, signal: AbortSignal) =>
   new Promise<void>((resolve, reject) => {
-    const timeout = setTimeout(resolve, milliseconds);
-    signal.addEventListener(
-      "abort",
-      () => {
-        clearTimeout(timeout);
-        reject(new DOMException("Aborted", "AbortError"));
-      },
-      { once: true },
-    );
+    let timeout: ReturnType<typeof setTimeout>;
+    const onAbort = () => {
+      clearTimeout(timeout);
+      signal.removeEventListener("abort", onAbort);
+      reject(new DOMException("Aborted", "AbortError"));
+    };
+    timeout = setTimeout(() => {
+      signal.removeEventListener("abort", onAbort);
+      resolve();
+    }, milliseconds);
+    signal.addEventListener("abort", onAbort, { once: true });
+    if (signal.aborted) onAbort();
   });
 
 async function responseJson(response: Response): Promise<BlocksResponse> {
@@ -48,10 +73,29 @@ export function mapJobPollPath(runId: string, input: MapJobInput): string {
 export async function getMapBlocks(
   input: MapJobInput,
   signal: AbortSignal,
-  options: { pollDelayMs?: number; pollLimit?: number } = {},
+  options: {
+    onBlocks?: (blocks: MapBlock[]) => void;
+    pollDelayMs?: number;
+    pollLimit?: number;
+  } = {},
 ): Promise<MapBlock[]> {
   const pollDelayMs = options.pollDelayMs ?? MAP_JOB_POLL_DELAY_MS;
   const pollLimit = options.pollLimit ?? MAP_JOB_POLL_LIMIT;
+  const received = new Map<string, MapBlock>();
+  const deliveredRevisions = new Map<string, string>();
+  const receive = (blocks: MapBlock[] | undefined) => {
+    const changed: MapBlock[] = [];
+    for (const block of blocks ?? []) {
+      const key = `${block.x},${block.y}`;
+      received.set(key, block);
+      const revision = mapBlockRevision(block);
+      if (deliveredRevisions.get(key) !== revision) {
+        deliveredRevisions.set(key, revision);
+        changed.push(block);
+      }
+    }
+    if (changed.length > 0) options.onBlocks?.(changed);
+  };
   const query = new URLSearchParams({
     blockX: String(input.blockX),
     blockY: String(input.blockY),
@@ -59,14 +103,16 @@ export async function getMapBlocks(
     regenerate: String(input.regenerate),
   });
   const initial = await responseJson(await fetch(`/api/blocks?${query}`, { signal }));
-  if (initial.status === "completed") return initial.blocks;
+  receive(initial.blocks);
+  if (initial.status === "completed") return [...received.values()];
   if (!initial.runId) throw new Error("Map API queued a job without a workflow run ID");
 
   const pollPath = mapJobPollPath(initial.runId, input);
   for (let poll = 0; poll < pollLimit; poll += 1) {
-    await abortableDelay(pollDelayMs, signal);
+    await abortableDelay(mapJobPollDelay(pollDelayMs, poll), signal);
     const current = await responseJson(await fetch(pollPath, { signal }));
-    if (current.status === "completed") return current.blocks;
+    receive(current.blocks);
+    if (current.status === "completed") return [...received.values()];
     if (current.status === "failed" || current.status === "cancelled") {
       throw new Error(`Map workflow ${current.status}`);
     }

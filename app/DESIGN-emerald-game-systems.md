@@ -19,6 +19,24 @@ agents; this document is the shared contract.
 Either side can ship independently: the client reacts to whatever tile
 metadata the server emits, and unknown features are inert.
 
+## Map block streaming protocol (server → client)
+
+- The client submits the complete nearby preload square immediately (3×3 at
+  the normal zoom, capped at 5×5) in one map workflow request. The workflow
+  resolves the centre first, then schedules the already-queued neighbours in
+  bounded groups of four to avoid contention across the legacy generator's
+  expanded block locks.
+- While a run is `queued` or `running`, `GET /api/map-jobs/:runId` may include
+  a cumulative `blocks` subset containing requested blocks that are already
+  current in MongoDB. `status: "completed"` still means the full requested set
+  is current.
+- The client consumes each coordinate revision as it appears, renders it
+  immediately, and retains request-owned absolute-coordinate `pending` /
+  `complete` markers so movement, zoom, and overlapping regeneration calls do
+  not start duplicate work or clear another request's state.
+- Explicit `regenerate` jobs do not expose cached partial blocks because the
+  old stored version cannot be treated as regeneration progress.
+
 ## Tile feature protocol (server → client)
 
 The server communicates gameplay through `MapTile` fields the client already

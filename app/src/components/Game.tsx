@@ -2,7 +2,7 @@ import { Component, createRef } from "react";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
 import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
-import { prioritizeInitialMapOffsets } from "../lib/map-load";
+import { prioritizeMapPreloadOffsets } from "../lib/map-load";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import {
   actionDirection,
@@ -193,7 +193,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private readonly blockDb: Record<string, MapBlock> = {};
   private readonly tileDb: Record<string, MapTile> = {};
   private readonly tileHistoryDb: Record<string, MapTile[]> = {};
-  private readonly queries: Record<string, "pending" | "complete"> = {};
+  private readonly queries: Record<string, number | "complete"> = {};
+  private querySequence = 0;
   private readonly storedImages = new Map<string, StoredImage>();
   private readonly abortControllers = new Set<AbortController>();
   private animationFrame?: number;
@@ -735,20 +736,24 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
     const offsetsToQuery = offsets.filter(([x, y]) => {
       const key = `${player.blockX + x},${player.blockY + y}`;
-      if (!game.regenerate && this.queries[key]) return false;
+      if (typeof this.queries[key] === "number") return false;
+      if (!game.regenerate && this.queries[key] === "complete") return false;
       return true;
     });
     if (!offsetsToQuery.length) return;
 
-    const requestedOffsets = prioritizeInitialMapOffsets(offsetsToQuery, game.anyLoaded);
+    // Queue the complete nearby square immediately. The poll endpoint streams
+    // completed stored blocks back while the rest of this one workflow runs.
+    const requestedOffsets = prioritizeMapPreloadOffsets(offsetsToQuery);
+    const requestToken = ++this.querySequence;
     for (const [x, y] of requestedOffsets) {
-      this.queries[`${player.blockX + x},${player.blockY + y}`] = "pending";
+      this.queries[`${player.blockX + x},${player.blockY + y}`] = requestToken;
     }
 
     const controller = new AbortController();
     this.abortControllers.add(controller);
     try {
-      const blocks = await getMapBlocks(
+      await getMapBlocks(
         {
           blockX: player.blockX,
           blockY: player.blockY,
@@ -756,20 +761,40 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           regenerate: game.regenerate,
         },
         controller.signal,
+        { onBlocks: (ready) => this.receiveBlocks(ready, requestToken) },
       );
-      this.processBlocks(blocks);
-      for (const [x, y] of requestedOffsets) this.queries[`${player.blockX + x},${player.blockY + y}`] = "complete";
-      if (this.loadedTimer) window.clearTimeout(this.loadedTimer);
-      this.loadedTimer = window.setTimeout(() => this.setGame({ anyLoaded: true }), 500);
-      this.setState(({ revision }) => ({ revision: revision + 1, loadError: "" }));
-      if (requestedOffsets.length < offsetsToQuery.length) void this.getBlocks();
+      for (const [x, y] of requestedOffsets) {
+        const key = `${player.blockX + x},${player.blockY + y}`;
+        if (this.queries[key] === requestToken) delete this.queries[key];
+      }
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
-      for (const [x, y] of requestedOffsets) delete this.queries[`${player.blockX + x},${player.blockY + y}`];
+      for (const [x, y] of requestedOffsets) {
+        const key = `${player.blockX + x},${player.blockY + y}`;
+        if (this.queries[key] === requestToken) delete this.queries[key];
+      }
       this.setState({ loadError: error instanceof Error ? error.message : "Map generation failed" });
     } finally {
       this.abortControllers.delete(controller);
     }
+  }
+
+  private receiveBlocks(blocks: MapBlock[], requestToken: number) {
+    if (!this.mounted || blocks.length === 0) return;
+    this.processBlocks(blocks);
+    for (const block of blocks) {
+      const key = `${block.x},${block.y}`;
+      if (this.queries[key] === requestToken) this.queries[key] = "complete";
+    }
+
+    const { player } = this.state;
+    if (!this.state.game.anyLoaded && !this.loadedTimer && this.blockDb[`${player.blockX},${player.blockY}`]) {
+      this.loadedTimer = window.setTimeout(() => {
+        this.loadedTimer = undefined;
+        this.setGame({ anyLoaded: true });
+      }, 500);
+    }
+    this.setState(({ revision }) => ({ revision: revision + 1, loadError: "" }));
   }
 
   private processBlocks(blocks: MapBlock[]) {
