@@ -7,6 +7,25 @@
   [`lopugit/pokeworld`](https://github.com/lopugit/pokeworld)
 - Root Directory: `app`
 
+## Verified Thingtime database preview
+
+- PR [#13](https://github.com/lopugit/pokeworld/pull/13), commit `4ba80cc` (2026-07-19):
+  [immutable deployment](https://pokeworld-7l2op4rch-lopugits-projects.vercel.app)
+- Stable branch alias:
+  [pokeworld-git-codex-thingtime-database-lopugits-projects.vercel.app](https://pokeworld-git-codex-thingtime-database-lopugits-projects.vercel.app)
+
+The preview health endpoint reported Thingtime as the configured map-storage provider with no
+MongoDB connection. A real Google-backed block generation completed with 256 tiles and was stored
+as one private, compressed, checksummed Thing owned by `@pokeworld-service`; requesting the same
+block again returned the durable Thingtime copy without starting another generation run. The same
+service identity successfully reserved and released generation capacity through Thingtime's
+production atomic quota endpoint. Anonymous admin access remained 401 and public
+`regenerate=true` requests remained 403.
+
+The obsolete `POKEWORLD_QUOTA_MONGODB_URI` and `POKEWORLD_QUOTA_MONGODB_DB` Vercel values were
+removed after that live proof. Map blocks, block metadata, and generation quota state now cross the
+same authenticated Thingtime API boundary.
+
 ## Verified guarded-streaming preview
 
 - PR [#12](https://github.com/lopugit/pokeworld/pull/12), commit `362b22b` (2026-07-19):

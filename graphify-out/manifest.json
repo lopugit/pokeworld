@@ -597,7 +597,7 @@
   "app/README.md": {
     "mtime": 1784467536.5474608,
     "ast_hash": "224d0fcf0b0325ed2b5dea5614de6560",
-    "semantic_hash": ""
+    "semantic_hash": "224d0fcf0b0325ed2b5dea5614de6560"
   },
   "app/TODO-fallback-map-regeneration.md": {
     "mtime": 1784379351.541113,
@@ -605,9 +605,9 @@
     "semantic_hash": "30e44bf692b9dd1feb61caef628e3781"
   },
   "app/VERCEL_DEPLOYMENTS.md": {
-    "mtime": 1784467560.2622757,
-    "ast_hash": "ae4b66d627a224aa9a1f79c06ba31590",
-    "semantic_hash": ""
+    "mtime": 1784469514.4992936,
+    "ast_hash": "d26f2f81a78fd7712b34dca0c8c90b07",
+    "semantic_hash": "d26f2f81a78fd7712b34dca0c8c90b07"
   },
   "app/index.html": {
     "mtime": 1784378344.7982473,
