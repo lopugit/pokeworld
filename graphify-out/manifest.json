@@ -430,9 +430,9 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1784434474.3495033,
-    "ast_hash": "fea96b0e381d070de416e323dc6a3caf",
-    "semantic_hash": "fea96b0e381d070de416e323dc6a3caf"
+    "mtime": 1784464257.904042,
+    "ast_hash": "ebed0fa91f24b2cf25d96b9d17f09d39",
+    "semantic_hash": ""
   },
   "app/TODO-fallback-map-regeneration.md": {
     "mtime": 1784379351.541113,
@@ -1095,9 +1095,9 @@
     "semantic_hash": "b7eb1bf22edddae5aae961cf317979c7"
   },
   "app/README.md": {
-    "mtime": 1784394778.5298698,
-    "ast_hash": "80fa35504c37e72db86570aba71690c5",
-    "semantic_hash": "80fa35504c37e72db86570aba71690c5"
+    "mtime": 1784464257.9034846,
+    "ast_hash": "2cf940375458a87c47406baa57c84b22",
+    "semantic_hash": ""
   },
   "app/VERCEL_DEPLOYMENTS.md": {
     "mtime": 1784453964.3581328,
@@ -1338,5 +1338,15 @@
     "mtime": 1784463376.8720922,
     "ast_hash": "3870c239c9d32ea6453d2655780ab069",
     "semantic_hash": "3870c239c9d32ea6453d2655780ab069"
+  },
+  "graphify-out/memory/query_20260719_121030_implement_atomic_global_block_generation_quotas_an.md": {
+    "mtime": 1784463030.6282752,
+    "ast_hash": "c798dd6a5982c761f3463cfeba39ed40",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260719_121300_where_should_thingtime_sso_session_context__naviga.md": {
+    "mtime": 1784463180.1897016,
+    "ast_hash": "c434fd92311874a0e93dd46a4152d91e",
+    "semantic_hash": ""
   }
 }

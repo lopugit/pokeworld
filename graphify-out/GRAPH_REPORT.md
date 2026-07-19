@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 135 files · ~36,369,848 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1075 nodes · 1587 edges · 225 communities (47 shown, 178 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.72)
+- 1082 nodes · 1590 edges · 227 communities (50 shown, 177 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5d11f73d`
+- Built from commit: `91d13bae`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -235,6 +236,8 @@
 - [[_COMMUNITY_Graphify Outputs|Graphify Outputs]]
 - [[_COMMUNITY_Melbourne, Sydney Harbour, and Alpine Native Chrome QA|Melbourne, Sydney Harbour, and Alpine Native Chrome QA]]
 - [[_COMMUNITY_Procedural Map Pipeline|Procedural Map Pipeline]]
+- [[_COMMUNITY_Ready-for-Review Pull Request|Ready-for-Review Pull Request]]
+- [[_COMMUNITY_Safe Spawn and Connected Routes|Safe Spawn and Connected Routes]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 50 edges
@@ -244,14 +247,14 @@
 5. `scripts` - 14 edges
 6. `tileKey()` - 13 edges
 7. `terrainOf()` - 12 edges
-8. `normalizeRoutes()` - 11 edges
+8. `Emerald game systems — design & cross-agent contract` - 11 edges
 9. `assertRegenerationAllowed()` - 11 edges
-10. `sourceY()` - 10 edges
+10. `normalizeRoutes()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Emerald World Grammar` --conceptually_related_to--> `Dense Emerald-Style World Desktop UI Screenshot`  [INFERRED]
+- `Emerald world grammar` --conceptually_related_to--> `Dense Emerald-Style World Desktop UI Screenshot`  [INFERRED]
   app/README.md → docs/qa/dense-world-desktop.png
-- `Emerald World Grammar` --conceptually_related_to--> `Dense Emerald-Style World Mobile UI Screenshot`  [INFERRED]
+- `Emerald world grammar` --conceptually_related_to--> `Dense Emerald-Style World Mobile UI Screenshot`  [INFERRED]
   app/README.md → docs/qa/dense-world-mobile.png
 - `Native Chrome gates` --references--> `Trainer Party Desktop Screenshot`  [INFERRED]
   docs/PROCEDURAL_WORLD_ACCEPTANCE.md → docs/qa/trainer-party-desktop.png
@@ -277,19 +280,23 @@
 - **Coordinate-to-Pokemon World Generation Pipeline** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_devkit, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_google_static_maps, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_map_generation, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_game_page_tsx [INFERRED 0.90]
 - **Visual Pipeline Defects and QA Findings** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_chrome_visual_qa, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_uniform_grass_classification, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_mobile_missing_strip [EXTRACTED 0.95]
 
-## Communities (225 total, 178 thin omitted)
+## Communities (227 total, 177 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.07
 Nodes (44): BADGE_TONES, BadgesPanelProps, BagPanelProps, POCKETS, PanelFrame(), PanelFrameProps, PartyPanelProps, PcPanelProps (+36 more)
 
 ### Community 1 - "functions.js"
-Cohesion: 0.09
-Nodes (38): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinateKey(), generationOffsetsMissingFromBlocks(), generationPermitId(), PreparedMapGenerationJob, prepareMapGenerationJob() (+30 more)
+Cohesion: 0.07
+Nodes (50): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinateKey(), generationOffsetsMissingFromBlocks(), generationPermitId(), PreparedMapGenerationJob, prepareMapGenerationJob() (+42 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.12
-Nodes (44): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), carveSpawnPath() (+36 more)
+Nodes (43): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), carveSpawnPath() (+35 more)
+
+### Community 3 - "blocks.js"
+Cohesion: 0.05
+Nodes (19): BoundaryWait, defaultCoordinates, Game, GameComponentState, GameSettings, isFiniteNumber(), MapLoadingState, MapView (+11 more)
 
 ### Community 4 - "dependencies"
 Cohesion: 0.04
@@ -301,23 +308,23 @@ Nodes (30): LoginBody, AuthHttpError, clearPokeworldSession(), cookieOptions(), 
 
 ### Community 6 - "devDependencies"
 Cohesion: 0.10
-Nodes (29): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), isCurrentMapBlock(), coordinatesForInput(), finiteInteger() (+21 more)
+Nodes (30): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), isCurrentMapBlock(), coordinatesForInput(), finiteInteger() (+22 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
 Cohesion: 0.08
-Nodes (29): TerrainKind, TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds() (+21 more)
+Nodes (30): TerrainKind, TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds() (+22 more)
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.09
-Nodes (20): configuredStore(), GenerationPermitResult, GenerationQuotaDocument, generationQuotaMongoUri(), GenerationQuotaStatus, GenerationQuotaStore, getGenerationQuotaStatus(), InMemoryGenerationQuotaStore (+12 more)
+Cohesion: 0.12
+Nodes (8): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey(), MapGenerationQuotaReservation, start
 
 ### Community 9 - "dependencies"
 Cohesion: 0.07
 Nodes (27): App(), ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthProvider(), AuthSession (+19 more)
 
 ### Community 10 - "scripts"
-Cohesion: 0.06
-Nodes (37): Emerald Game Systems Design, Game UI Systems, Generation Controls, hashUnit, Map Block Streaming Protocol, resolveMove, Tile Feature Protocol, TrainerState (+29 more)
+Cohesion: 0.10
+Nodes (20): Pokémon Emerald Exterior Tileset, API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Thingtime login (+12 more)
 
 ### Community 11 - "Deterministic World Generation"
 Cohesion: 0.12
@@ -332,8 +339,8 @@ Cohesion: 0.19
 Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
 
 ### Community 14 - "blocks.get.ts"
-Cohesion: 0.13
-Nodes (18): MapOffset, BoundaryWait, defaultCoordinates, GameComponentState, GameSettings, MapLoadingState, MapView, MoveAction (+10 more)
+Cohesion: 0.17
+Nodes (11): Detail-density accounting (toward 500–1000), Division of labour, Emerald game systems — design & cross-agent contract, Generation controls, Iteration roadmap (loop), Map block streaming protocol (server → client), Movement rules (client), Streaming boundary UI (+3 more)
 
 ### Community 15 - "coordinates.ts"
 Cohesion: 0.09
@@ -451,14 +458,22 @@ Nodes (3): root, target, transformedShell
 Cohesion: 0.83
 Nodes (4): canUseGoogleStaticMaps, getMapAtWithSource, Google Maps Preview Enablement, renderCanvas
 
+### Community 225 - "Ready-for-Review Pull Request"
+Cohesion: 0.33
+Nodes (6): App, entry-client, GamePage, HomePage, Nav, Thingtime Integration Plan
+
+### Community 226 - "Safe Spawn and Connected Routes"
+Cohesion: 0.40
+Nodes (5): Game.action, Game.getBlocks, Game Integration Boundaries, getMapBlocks, prioritizeMapPreloadOffsets
+
 ## Ambiguous Edges - Review These
 - `canUseGoogleStaticMaps` → `getMapAtWithSource`  [AMBIGUOUS]
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **451 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+446 more)
+- **462 isolated node(s):** `Division of labour`, `Map block streaming protocol (server → client)`, `Tile feature protocol (server → client)`, `Movement rules (client)`, `Streaming boundary UI` (+457 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **178 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **177 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
@@ -478,15 +493,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
-- **Why does `MapTile` connect `package.json` to `functions.js`, `Deterministic World Generation`, `blocks.get.ts`, `Nuxt 2 Frontend`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **Why does `Game` connect `blocks.js` to `Generated 16 by 16 Block Tiles`, `blocks.get.ts`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `Game` connect `blocks.js` to `Generated 16 by 16 Block Tiles`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Why does `MapTile` connect `Nuxt 2 Frontend` to `Deterministic World Generation`, `functions.js`, `package.json`, `blocks.js`?**
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `Nav()` connect `dependencies` to `Generated 16 by 16 Block Tiles`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _457 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **What connects `Division of labour`, `Map block streaming protocol (server → client)`, `Tile feature protocol (server → client)` to the rest of the system?**
+  _468 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
   _Cohesion score 0.07071887784921099 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09022556390977443 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07412008281573498 - nodes in this community are weakly interconnected._
