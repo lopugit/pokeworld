@@ -11,6 +11,7 @@ Pokémon World is now one full-stack application:
 - **Nitro 3** for API routes, static delivery, and the Vercel build output.
 - **Vercel Workflow** for durable, retryable map generation.
 - **MongoDB** for production block/tile persistence and **Google Static Maps** for real colour data.
+- **Thingtime SSO** for general user login and immutable-ID-based administrator access.
 
 There are no separate `frontend/` and `api/` packages or proxy ports anymore. The React app,
 Nitro routes, and local Workflow runtime all share port **3847**.
@@ -28,6 +29,22 @@ pnpm dev
 
 The development server binds only to `127.0.0.1`; Tailscale proxies the public listener into that
 loopback port. The exact Funnel hostname is allowlisted in `app/vite.config.ts`.
+
+### Thingtime login
+
+Set `VITE_THINGTIME_CLIENT_ID` to the public `ttapp_…` client ID for the Thingtime app whose origin
+allowlist contains each exact Pokeworld origin. Set `POKEWORLD_SESSION_SECRET` to a private random
+value of at least 32 characters on every public deployment. Local development uses an ephemeral
+process secret when this variable is omitted, so restarting the local server signs everybody out.
+
+The browser loads Thingtime's official login SDK only after the user presses **Login with
+Thingtime**. It requests `profile.username`, with display name and avatar optional, then sends the
+short-lived app token to Pokeworld once. The Nitro server validates that token against Thingtime's
+`/api/v1/oauth/userinfo` endpoint with the browser's exact `Origin`, discards it, and issues a
+seven-day `HttpOnly`, `Secure`, `SameSite=Lax` Pokeworld cookie. Neither the Thingtime bearer nor
+admin status is accepted from browser state. User `@lopu` is mapped to administrator access by its
+immutable Thingtime user ID; additional immutable IDs can be supplied through the optional
+comma-separated `POKEWORLD_ADMIN_THINGTIME_IDS` variable.
 
 For the persistent local process:
 
@@ -83,6 +100,16 @@ pnpm map:generate -- 946647 488524 --radius 2 --regenerate
 Production blocks record `mapSource`, `fallbackGenerated`, and `mapGeneratedAt`, allowing a later
 request to repair fallback-derived MongoDB data when Google Static Maps is available.
 
+All uncached generation is protected by one Mongo-backed global allowance: at most **9 actual
+block generations in any rolling 5-second window** and **500 reserved blocks per UTC day**. Cached
+blocks cost nothing, and workflows recheck the cache before consuming a permit. Configure
+`POKEWORLD_QUOTA_MONGODB_URI` (and optionally `POKEWORLD_QUOTA_MONGODB_DB`) to use a dedicated
+shared store; otherwise the map Mongo connection is used. Public deployments fail closed with
+`503` when no quota store is reachable. Explicit regeneration is disabled on every Vercel/public
+build, while an authenticated Pokeworld administrator can inspect or reset the daily allowance at
+`/admin` without clearing the active rolling five-second window or cancelling workflows already in
+progress.
+
 ### Emerald world grammar
 
 Google's water, road, building, and ground semantics remain the foundation of every generated
@@ -110,6 +137,11 @@ case, and Box 1 PC deposit/withdraw flow, with trainer progress persisted indepe
 - `GET /api/blocks?blockX=...&blockY=...&offsets=...`
 - `POST /api/map-jobs`
 - `GET /api/map-jobs/:runId`
+- `POST /api/auth/thingtime`
+- `GET /api/auth/session`
+- `POST /api/auth/logout`
+- `GET /api/admin/generation-quota` (administrator only)
+- `POST /api/admin/generation-quota` (administrator-only daily reset)
 - Legacy-compatible aliases: `/v1/blockLatLng` and `/v1/blocks`
 
 ## Verification and deployment

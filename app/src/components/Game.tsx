@@ -2,7 +2,11 @@ import { Component, createRef } from "react";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
 import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
-import { prioritizeMapPreloadOffsets } from "../lib/map-load";
+import {
+  blockCoordinatesForWorldPosition,
+  prioritizeMapPreloadOffsets,
+  type BlockCoordinates,
+} from "../lib/map-load";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import {
   actionDirection,
@@ -27,6 +31,7 @@ import { PartyPanel } from "./game-ui/PartyPanel";
 import { BagPanel } from "./game-ui/BagPanel";
 import { BadgesPanel } from "./game-ui/BadgesPanel";
 import { PcPanel } from "./game-ui/PcPanel";
+import { MapLoadingIndicator } from "./game-ui/MapLoadingIndicator";
 import "../styles/game.scss";
 import "../styles/game-ui.css";
 
@@ -108,11 +113,27 @@ interface UiState {
   dialog: { pages: string[]; advance: number } | null;
 }
 
+interface BoundaryWait {
+  action: MoveAction;
+  blockX: number;
+  blockY: number;
+  error?: string;
+  status: "loading" | "error";
+}
+
+interface MapLoadingState {
+  activeRequests: number;
+  completed: number;
+  requested: number;
+  waitingForBlock: BoundaryWait | null;
+}
+
 interface GameComponentState {
   boardWidth: number;
   game: GameSettings;
   locationError: boolean;
   loadError: string;
+  mapLoading: MapLoadingState;
   map: MapView;
   player: PlayerState;
   revision: number;
@@ -132,6 +153,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     boardWidth: 520,
     locationError: false,
     loadError: "",
+    mapLoading: {
+      activeRequests: 0,
+      completed: 0,
+      requested: 0,
+      waitingForBlock: null,
+    },
     revision: 0,
     map: {
       initialized: false,
@@ -194,6 +221,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private readonly tileDb: Record<string, MapTile> = {};
   private readonly tileHistoryDb: Record<string, MapTile[]> = {};
   private readonly queries: Record<string, number | "complete"> = {};
+  private readonly activeLoadRequests = new Map<
+    number,
+    { completed: Set<string>; requested: Set<string> }
+  >();
   private querySequence = 0;
   private readonly storedImages = new Map<string, StoredImage>();
   private readonly abortControllers = new Set<AbortController>();
@@ -286,6 +317,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       playerYBoundaryOffset: tileSize * playerBoundaryOffset,
       coords,
     };
+    if (!import.meta.env.DEV) game.regenerate = false;
     game.zoomScale = game.canvasWidth / (game.canvasWidth * game.zoom);
     await this.setStateAsync({ game });
     saveThing("game", game);
@@ -374,6 +406,70 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       if (isFiniteNumber(block.lat) && isFiniteNumber(block.lng)) next.latlng = `${block.lat}, ${block.lng}`;
     }
     return next;
+  }
+
+  private mapLoadingSnapshot(
+    waitingForBlock = this.state.mapLoading.waitingForBlock,
+  ): MapLoadingState {
+    let requested = 0;
+    let completed = 0;
+    for (const request of this.activeLoadRequests.values()) {
+      requested += request.requested.size;
+      completed += request.completed.size;
+    }
+    return {
+      activeRequests: this.activeLoadRequests.size,
+      completed,
+      requested,
+      waitingForBlock,
+    };
+  }
+
+  private syncMapLoading(waitingForBlock = this.state.mapLoading.waitingForBlock) {
+    if (this.mounted) this.setState({ mapLoading: this.mapLoadingSnapshot(waitingForBlock) });
+  }
+
+  private waitForDestinationBlock(
+    destinationX: number,
+    destinationY: number,
+    action: MoveAction,
+    player: PlayerState,
+  ): boolean {
+    const block = blockCoordinatesForWorldPosition(
+      destinationX,
+      destinationY,
+      this.state.game.blockSize,
+    );
+    const key = `${block.x},${block.y}`;
+    if (this.blockDb[key]) {
+      if (this.state.mapLoading.waitingForBlock) {
+        this.setState({
+          loadError: "",
+          mapLoading: this.mapLoadingSnapshot(null),
+        });
+      }
+      return false;
+    }
+
+    const stoppedPlayer = { ...player, queuedAction: undefined };
+    const waitingForBlock: BoundaryWait = {
+      action,
+      blockX: block.x,
+      blockY: block.y,
+      status: "loading",
+    };
+    this.setState(
+      {
+        loadError: "",
+        mapLoading: this.mapLoadingSnapshot(waitingForBlock),
+        player: stoppedPlayer,
+      },
+      () => {
+        saveThing("player", stoppedPlayer);
+        void this.getBlocks(block);
+      },
+    );
+    return true;
   }
 
   private onKeydown = (event: KeyboardEvent) => {
@@ -543,8 +639,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   private action = (action: MoveAction) => {
     if (this.state.ui.dialog || this.state.ui.menuOpen || this.state.ui.panel) return;
+    const boundaryWait = this.state.mapLoading.waitingForBlock;
     const now = Date.now();
-    if (this.state.player.lastAction && now - this.state.player.lastAction < 300) {
+    if (!boundaryWait && this.state.player.lastAction && now - this.state.player.lastAction < 300) {
       if (!this.state.player.queuedAction) {
         this.setState(({ player }) => ({ player: { ...player, queuedAction: action } }));
       }
@@ -559,6 +656,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     // Debug zoomMode strides 8 tiles and bypasses collision; normal movement
     // resolves against tile solidity and one-way ledges.
     let steps = 1;
+    let destinationX = player.x;
+    let destinationY = player.y;
     if (!game.zoomMode) {
       const resolution = resolveMove(
         (x, y) => this.tileDb[`${x},${y}`],
@@ -569,11 +668,30 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         (coordKey) => hasCollected(this.state.trainer, coordKey),
       );
       if (resolution.kind === "blocked") {
-        this.setState({ player }, () => saveThing("player", player));
+        if (boundaryWait) {
+          this.setState(
+            {
+              loadError: "",
+              mapLoading: this.mapLoadingSnapshot(null),
+              player,
+            },
+            () => saveThing("player", player),
+          );
+        } else {
+          this.setState({ player }, () => saveThing("player", player));
+        }
         return;
       }
       steps = resolution.kind === "jump" ? 2 : 1;
+      destinationX = resolution.toX;
+      destinationY = resolution.toY;
+    } else {
+      const { dx, dy } = directionDelta[actionDirection[action]];
+      destinationX += dx * distance;
+      destinationY += dy * distance;
     }
+
+    if (this.waitForDestinationBlock(destinationX, destinationY, action, player)) return;
 
     for (let step = 0; step < steps; step += 1) {
       if (action === "moveRight") {
@@ -719,7 +837,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     return map;
   }
 
-  private async getBlocks() {
+  private async getBlocks(requiredBlock?: BlockCoordinates) {
     const { player, game } = this.state;
     if (!Number.isFinite(player.blockX) || !Number.isFinite(player.blockY)) return;
 
@@ -731,6 +849,15 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         if (x !== 0) offsets.push([-x, y]);
         if (y !== 0) offsets.push([x, -y]);
         if (x !== 0 && y !== 0) offsets.push([-x, -y]);
+      }
+    }
+    if (requiredBlock) {
+      const requiredOffset: [number, number] = [
+        requiredBlock.x - player.blockX,
+        requiredBlock.y - player.blockY,
+      ];
+      if (!offsets.some(([x, y]) => x === requiredOffset[0] && y === requiredOffset[1])) {
+        offsets.push(requiredOffset);
       }
     }
 
@@ -746,12 +873,21 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     // completed stored blocks back while the rest of this one workflow runs.
     const requestedOffsets = prioritizeMapPreloadOffsets(offsetsToQuery);
     const requestToken = ++this.querySequence;
+    const requestKeys = new Set(
+      requestedOffsets.map(([x, y]) => `${player.blockX + x},${player.blockY + y}`),
+    );
     for (const [x, y] of requestedOffsets) {
       this.queries[`${player.blockX + x},${player.blockY + y}`] = requestToken;
     }
+    this.activeLoadRequests.set(requestToken, {
+      completed: new Set(),
+      requested: requestKeys,
+    });
+    this.syncMapLoading();
 
     const controller = new AbortController();
     this.abortControllers.add(controller);
+    let loadFailure = "";
     try {
       await getMapBlocks(
         {
@@ -773,18 +909,33 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         const key = `${player.blockX + x},${player.blockY + y}`;
         if (this.queries[key] === requestToken) delete this.queries[key];
       }
-      this.setState({ loadError: error instanceof Error ? error.message : "Map generation failed" });
+      loadFailure = error instanceof Error ? error.message : "Map generation failed";
     } finally {
       this.abortControllers.delete(controller);
+      this.activeLoadRequests.delete(requestToken);
+      if (this.mounted) {
+        const waiting = this.state.mapLoading.waitingForBlock;
+        const waitingKey = waiting ? `${waiting.blockX},${waiting.blockY}` : "";
+        const waitingForBlock =
+          loadFailure && waiting && requestKeys.has(waitingKey)
+            ? { ...waiting, error: loadFailure, status: "error" as const }
+            : waiting;
+        this.setState(({ loadError }) => ({
+          loadError: loadFailure || loadError,
+          mapLoading: this.mapLoadingSnapshot(waitingForBlock),
+        }));
+      }
     }
   }
 
   private receiveBlocks(blocks: MapBlock[], requestToken: number) {
     if (!this.mounted || blocks.length === 0) return;
     this.processBlocks(blocks);
+    const activeRequest = this.activeLoadRequests.get(requestToken);
     for (const block of blocks) {
       const key = `${block.x},${block.y}`;
       if (this.queries[key] === requestToken) this.queries[key] = "complete";
+      if (activeRequest?.requested.has(key)) activeRequest.completed.add(key);
     }
 
     const { player } = this.state;
@@ -794,8 +945,31 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         this.setGame({ anyLoaded: true });
       }, 500);
     }
-    this.setState(({ revision }) => ({ revision: revision + 1, loadError: "" }));
+    const waiting = this.state.mapLoading.waitingForBlock;
+    const waitingForBlock =
+      waiting && this.blockDb[`${waiting.blockX},${waiting.blockY}`] ? null : waiting;
+    this.setState(({ revision }) => ({
+      revision: revision + 1,
+      loadError: "",
+      mapLoading: this.mapLoadingSnapshot(waitingForBlock),
+    }));
   }
+
+  private retryMapLoad = () => {
+    const waiting = this.state.mapLoading.waitingForBlock;
+    const requiredBlock = waiting ? { x: waiting.blockX, y: waiting.blockY } : undefined;
+    if (requiredBlock) delete this.queries[`${requiredBlock.x},${requiredBlock.y}`];
+    const waitingForBlock = waiting
+      ? { ...waiting, error: undefined, status: "loading" as const }
+      : null;
+    this.setState(
+      {
+        loadError: "",
+        mapLoading: this.mapLoadingSnapshot(waitingForBlock),
+      },
+      () => void this.getBlocks(requiredBlock),
+    );
+  };
 
   private processBlocks(blocks: MapBlock[]) {
     for (const block of blocks) {
@@ -958,7 +1132,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   override render() {
-    const { game, map, player } = this.state;
+    const { game, map, mapLoading, player } = this.state;
     if (this.state.locationError) {
       return (
         <div className="w-full flex flex-col items-center justify-center pb-12">
@@ -1022,6 +1196,14 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   height={game.canvasHeight}
                 />
                 <div className="game-ui-layer">
+                  <MapLoadingIndicator
+                    active={mapLoading.activeRequests > 0 || Boolean(mapLoading.waitingForBlock)}
+                    completed={mapLoading.completed}
+                    error={mapLoading.waitingForBlock?.error || this.state.loadError}
+                    onRetry={this.retryMapLoad}
+                    requested={mapLoading.requested}
+                    waitingForBoundary={Boolean(mapLoading.waitingForBlock)}
+                  />
                   {ui.menuOpen ? (
                     <StartMenu
                       selectedIndex={ui.menuIndex}
@@ -1108,9 +1290,11 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           {game.debug ? (
             <div className="flex flex-col md:px-12">
               <div className={`flex flex-row items-center flex-wrap pt-8 ${game.debugPosition ? "" : "justify-center"}`}>
-                <button type="button" className={debugButton} onClick={() => this.setGame({ regenerate: !game.regenerate }, () => void this.getBlocks())}>
-                  Regenerate {game.regenerate ? "On" : "Off"}
-                </button>
+                {import.meta.env.DEV ? (
+                  <button type="button" className={debugButton} onClick={() => this.setGame({ regenerate: !game.regenerate }, () => void this.getBlocks())}>
+                    Regenerate {game.regenerate ? "On" : "Off"}
+                  </button>
+                ) : null}
                 <button type="button" className={debugButton} onClick={() => this.setGame({ tileBrowser: !game.tileBrowser })}>
                   Tile Browser {game.tileBrowser ? "On" : "Off"}
                 </button>

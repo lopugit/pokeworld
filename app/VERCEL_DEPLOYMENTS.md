@@ -1,10 +1,33 @@
 # Vercel deployments
 
 - Project: [lopugits-projects/pokeworld](https://vercel.com/lopugits-projects/pokeworld)
-- Production: [www.pokeworld.center](https://www.pokeworld.center), deployed from `main`
+- Production: [pokeworld.center](https://pokeworld.center) and
+  [www.pokeworld.center](https://www.pokeworld.center), deployed from `main`
 - Branch previews: automatic Vercel Git previews for every branch in
   [`lopugit/pokeworld`](https://github.com/lopugit/pokeworld)
 - Root Directory: `app`
+
+## Verified guarded-streaming preview
+
+- PR [#12](https://github.com/lopugit/pokeworld/pull/12), commit `362b22b` (2026-07-19):
+  [immutable deployment](https://pokeworld-gqockavu5-lopugits-projects.vercel.app)
+- Stable branch alias:
+  [pokeworld-git-codex-thingtime-auth-gen-50694a-lopugits-projects.vercel.app](https://pokeworld-git-codex-thingtime-auth-gen-50694a-lopugits-projects.vercel.app)
+
+The preview returned HTTP 200 for `/`, `/game`, `/api/health`, and `/api/auth/session`;
+anonymous `/api/admin/generation-quota` access returned 401, a hostile-origin login returned 403,
+and `regenerate=true` on the public block API returned 403. The exact preview origin is registered
+with Thingtime, and the live login popup identifies Pokeworld and offers the general account flow.
+
+This release stops player and repeated auto-movement at unloaded block boundaries while neighbouring
+blocks load, with a themed progress, error, and retry overlay. Generation is globally limited to nine
+blocks per rolling five seconds and 500 reserved blocks per UTC day. Immutable-ID admins can inspect
+and reset the daily quota at `/admin`; `@lopu` is configured as the initial admin, and the app is owned
+by the Thingtime service identity `@pokeworld-service`.
+
+Vercel stores `POKEWORLD_QUOTA_MONGODB_URI`, `POKEWORLD_QUOTA_MONGODB_DB`,
+`POKEWORLD_SESSION_SECRET`, and `THINGTIME_SERVICE_TOKEN` as encrypted server values. The public
+`VITE_THINGTIME_CLIENT_ID` identifies the Thingtime app without exposing a credential.
 
 ## Verified migration preview
 
@@ -38,11 +61,13 @@ reduced its 512-by-512 image median from 41.73 ms to 4.45 ms (9.37x faster).
 
 Preview and production deployments both have a server-side `GOOGLE_API_KEY` and set
 `POKEWORLD_OFFLINE_MAP=false`, so every public frontend can display the real Google Static Maps
-source layer. Preview and production currently run without MongoDB configuration, so generated
-blocks are returned inline and are non-persistent. Production's former `MONGODB_*` variables were
-local-development values that resolved to `127.0.0.1:27017` inside Vercel; they were removed on
-2026-07-19. Add a hosted `MONGODB_URI` and redeploy before re-enabling durable persistence. The
-Google key is a sensitive Vercel environment value and is never included in the client bundle.
+source layer. Preview and production still run without the map-block persistence `MONGODB_URI`, so
+generated blocks are returned inline and are non-persistent. Production's former `MONGODB_*`
+variables were local-development values that resolved to `127.0.0.1:27017` inside Vercel; they were
+removed on 2026-07-19. A separate encrypted hosted MongoDB connection now stores generation quota
+state, and public generation fails closed if that quota store is unavailable. Add a hosted map-block
+`MONGODB_URI` and redeploy before re-enabling durable map persistence. The Google key is a sensitive
+Vercel environment value and is never included in the client bundle.
 
 ## Build
 

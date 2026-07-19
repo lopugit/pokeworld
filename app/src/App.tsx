@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
+import { AuthProvider } from "./auth/AuthProvider";
+import { AdminPage } from "./pages/AdminPage";
 import { HomePage } from "./pages/HomePage";
 import { GamePage } from "./pages/GamePage";
 
@@ -21,10 +23,13 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/game" element={<GamePage />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/game" element={<GamePage />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

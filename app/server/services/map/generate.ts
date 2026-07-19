@@ -1,4 +1,8 @@
 import { isMongoConfigured } from "./mongo";
+import {
+  assertPublicGenerationPermit,
+  assertRegenerationAllowed,
+} from "./generation-policy";
 import type { MapBlock, MapGenerationStepResult } from "./types";
 import createLegacyBlocksHandlerUntyped from "./legacy/blocks";
 
@@ -27,7 +31,10 @@ export async function generateMapBlock(input: {
   x: number;
   y: number;
   regenerate: boolean;
+  permitId?: string;
 }): Promise<MapGenerationStepResult> {
+  assertRegenerationAllowed(input.regenerate);
+  assertPublicGenerationPermit(input.permitId);
   const response = await blocksHandler({
     query: {
       blockX: input.x,
