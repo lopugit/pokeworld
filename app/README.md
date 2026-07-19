@@ -83,6 +83,26 @@ pnpm map:generate -- 946647 488524 --radius 2 --regenerate
 Production blocks record `mapSource`, `fallbackGenerated`, and `mapGeneratedAt`, allowing a later
 request to repair fallback-derived MongoDB data when Google Static Maps is available.
 
+### Emerald world grammar
+
+Google's water, road, building, and ground semantics remain the foundation of every generated
+block. A deterministic world-grammar pass then turns that geography into an authored Emerald-style
+route: squared one-to-three-tile paths, coherent forests, ledges, signs, cave approaches, houses,
+flower and long-grass fields, and hidden-item clearings. Six biomes, eight structure templates, six
+detail palettes, and three route treatments produce **864 stable recipes**, so the same coordinates
+always rebuild the same world while nearby places retain meaningful variation. Biome-specific
+weights make woodlands favor forest structures, highlands favor caves and ledges, and village
+greens favor built clusters. Shared global-coordinate portals make neighboring blocks agree at
+their edges, and every block carves a walkable central landing into an intentional route.
+
+All shipped map and Pokémon art is cropped from the repository's original Game Boy Advance Pokémon
+Emerald exterior sheet or the corresponding Emerald-version Pokémon sprites. The generator does not
+ship AI-created or stylistically approximate replacement art.
+
+Press `START`, `Enter`, or `M` to open the trainer menu. `A` / `Z` / `Space` confirms or interacts,
+while `B` / `X` / `Escape` backs out. The menu includes the six-slot party, item pocket, Hoenn badge
+case, and Box 1 PC deposit/withdraw flow, with trainer progress persisted independently of location.
+
 ### API routes
 
 - `GET /api/health`

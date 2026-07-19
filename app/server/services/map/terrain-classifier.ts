@@ -93,7 +93,15 @@ const emptyCoverage = (): Record<TerrainKind, number> => ({
   sand: 0,
 });
 
-function nearestPixelKind(r: number, g: number, b: number): PixelKind {
+function nearestPixelKind(
+  r: number,
+  g: number,
+  b: number,
+  cache?: Map<number, PixelKind>,
+): PixelKind {
+  const packed = (r << 16) | (g << 8) | b;
+  const cached = cache?.get(packed);
+  if (cached) return cached;
   let nearest: PixelKind = "ground";
   let nearestDistance = Number.POSITIVE_INFINITY;
   for (const candidate of PIXEL_PALETTE) {
@@ -106,6 +114,9 @@ function nearestPixelKind(r: number, g: number, b: number): PixelKind {
       nearestDistance = distance;
     }
   }
+  // Styled Google map images repeat a compact palette. Caching those colours
+  // avoids re-running eight distance calculations for every one of 262k pixels.
+  if (cache && cache.size < 8_192) cache.set(packed, nearest);
   return nearest;
 }
 
@@ -157,6 +168,8 @@ export function classifyTerrainTiles(
     );
   }
 
+  const pixelKindCache = new Map<number, PixelKind>();
+
   return Array.from({ length: rows }, (_, tileY) =>
     Array.from({ length: columns }, (_, tileX) => {
       const counts: Record<PixelKind, number> = {
@@ -175,7 +188,14 @@ export function classifyTerrainTiles(
         let index = (pixelY * source.width + tileX * tileSize) * 4;
         const rowEnd = index + tileSize * 4;
         for (; index < rowEnd; index += 4) {
-          counts[nearestPixelKind(source.data[index], source.data[index + 1], source.data[index + 2])] += 1;
+          counts[
+            nearestPixelKind(
+              source.data[index],
+              source.data[index + 1],
+              source.data[index + 2],
+              pixelKindCache,
+            )
+          ] += 1;
         }
       }
 

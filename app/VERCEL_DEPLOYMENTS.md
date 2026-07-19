@@ -8,13 +8,25 @@
 
 ## Verified migration preview
 
-- Stable branch alias:
+- Final dense procedural world PR #7 commit `5188647` (2026-07-19):
+  [pokeworld-it1tq88z9-lopugits-projects.vercel.app](https://pokeworld-it1tq88z9-lopugits-projects.vercel.app)
+- Stable dense-world branch alias:
+  [pokeworld-git-codex-dense-pokemon-worlds-lopugits-projects.vercel.app](https://pokeworld-git-codex-dense-pokemon-worlds-lopugits-projects.vercel.app)
+- Earlier dense procedural world PR #7 preview:
+  [pokeworld-iewue50xu-lopugits-projects.vercel.app](https://pokeworld-iewue50xu-lopugits-projects.vercel.app)
+- Earlier Nitro migration branch alias:
   [pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app](https://pokeworld-git-codex-nitro-react-vercel-f6910e-lopugits-projects.vercel.app)
 - Verified `app`-root deployment (2026-07-19):
   [pokeworld-f0vewe7wm-lopugits-projects.vercel.app](https://pokeworld-f0vewe7wm-lopugits-projects.vercel.app)
 
 The project-level SSO deployment gate is disabled so preview aliases are publicly testable. The
 verified deployment served `/`, `/index.html`, `/game`, both hashed Vite assets, and `/api/health`.
+A current dense-world deployment repeated those shell, SPA-fallback, hashed-asset, and health checks
+after the procedural grammar and merged Emerald game systems landed.
+The final `5188647` preview returned HTTP 200 for `/`, `/index.html`, `/game`, and
+`/assets/index-ttT-5K1O.js`; `/api/health` reported the app healthy with Vercel Workflow auto
+selection. The preview intentionally has no MongoDB configuration and therefore does not run the
+production Google-backed persistence path.
 A forced one-block map job was also started through `/api/map-jobs` and reached `completed` through
 Vercel Workflow's managed queue in 3.35 seconds before returning the generated block and its 256
 tile records (`wrun_01KXTW01FE93NY3PYGY9NYT0PZ`). The output-equivalent colour-analysis benchmark

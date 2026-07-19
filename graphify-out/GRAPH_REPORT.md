@@ -1,83 +1,107 @@
-# Graph Report - pokeworld-codex-merge.MroLdY  (2026-07-19)
+# Graph Report - merge-branches-claude-guidelines-b19fbf  (2026-07-19)
 
 ## Corpus Check
-- 72 files · ~101,421 words
+- 96 files · ~126,856 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 582 nodes · 724 edges · 143 communities (30 shown, 113 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.66)
+- 867 nodes · 1286 edges · 177 communities (43 shown, 134 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 34 edges (avg confidence: 0.74)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6a2dca1d`
+- Built from commit: `10d889f3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Map Block Data Pipeline|Map Block Data Pipeline]]
-- [[_COMMUNITY_Map Block API|Map Block API]]
-- [[_COMMUNITY_Game Map Component|Game Map Component]]
-- [[_COMMUNITY_Frontend Build Tooling|Frontend Build Tooling]]
-- [[_COMMUNITY_Application UI Components|Application UI Components]]
-- [[_COMMUNITY_Terrain and Building Generation|Terrain and Building Generation]]
-- [[_COMMUNITY_Project Build Scripts|Project Build Scripts]]
-- [[_COMMUNITY_Terrain Image Classification|Terrain Image Classification]]
-- [[_COMMUNITY_Vercel Output Verification|Vercel Output Verification]]
-- [[_COMMUNITY_PM2 Process Management|PM2 Process Management]]
-- [[_COMMUNITY_TypeScript Configuration|TypeScript Configuration]]
-- [[_COMMUNITY_Application Dependencies|Application Dependencies]]
-- [[_COMMUNITY_Map Pipeline Benchmark|Map Pipeline Benchmark]]
-- [[_COMMUNITY_Coordinate Projection Utilities|Coordinate Projection Utilities]]
-- [[_COMMUNITY_Fallback Map Regeneration|Fallback Map Regeneration]]
-- [[_COMMUNITY_Pokeworld Project Documentation|Pokeworld Project Documentation]]
-- [[_COMMUNITY_Terrain Tile Extraction|Terrain Tile Extraction]]
-- [[_COMMUNITY_Map Generation CLI|Map Generation CLI]]
-- [[_COMMUNITY_Fallback Regeneration TODO|Fallback Regeneration TODO]]
-- [[_COMMUNITY_Vercel Deployment Configuration|Vercel Deployment Configuration]]
-- [[_COMMUNITY_Vercel Configuration|Vercel Configuration]]
-- [[_COMMUNITY_Fallback Documentation Query|Fallback Documentation Query]]
-- [[_COMMUNITY_Google Maps Verification Query|Google Maps Verification Query]]
-- [[_COMMUNITY_Application Branding Assets|Application Branding Assets]]
-- [[_COMMUNITY_Generated Terrain Assets|Generated Terrain Assets]]
-- [[_COMMUNITY_Static Shell Finalization|Static Shell Finalization]]
-- [[_COMMUNITY_Service Worker Assets|Service Worker Assets]]
-- [[_COMMUNITY_Sand Tile Variant 1|Sand Tile Variant 1]]
-- [[_COMMUNITY_Sand Tile Variant 2|Sand Tile Variant 2]]
-- [[_COMMUNITY_Sand Tile Variant 3|Sand Tile Variant 3]]
-- [[_COMMUNITY_Sand Tile Variant 4|Sand Tile Variant 4]]
-- [[_COMMUNITY_Sand Tile Variant 5|Sand Tile Variant 5]]
-- [[_COMMUNITY_Sand Tile Variant 6|Sand Tile Variant 6]]
-- [[_COMMUNITY_Sand Tile Variant 7|Sand Tile Variant 7]]
-- [[_COMMUNITY_Sand Tile Variant 8|Sand Tile Variant 8]]
-- [[_COMMUNITY_Sand Tile Variant 9|Sand Tile Variant 9]]
-- [[_COMMUNITY_Walking Animation Tileset|Walking Animation Tileset]]
-- [[_COMMUNITY_Male Character Tileset|Male Character Tileset]]
-- [[_COMMUNITY_Pokeworld Banner Graphic|Pokeworld Banner Graphic]]
-- [[_COMMUNITY_Apple Touch Icon|Apple Touch Icon]]
-- [[_COMMUNITY_16px Website Favicon|16px Website Favicon]]
-- [[_COMMUNITY_32px Website Favicon|32px Website Favicon]]
-- [[_COMMUNITY_Loading Animation|Loading Animation]]
-- [[_COMMUNITY_Lopu Designs Branding|Lopu Designs Branding]]
+- [[_COMMUNITY_Game.tsx|Game.tsx]]
+- [[_COMMUNITY_trainer-state.ts|trainer-state.ts]]
+- [[_COMMUNITY_Game|Game]]
+- [[_COMMUNITY_devDependencies|devDependencies]]
+- [[_COMMUNITY_terrain-life.ts|terrain-life.ts]]
+- [[_COMMUNITY_input.ts|input.ts]]
+- [[_COMMUNITY_terrain-layout.ts|terrain-layout.ts]]
+- [[_COMMUNITY_functions.ts|functions.ts]]
+- [[_COMMUNITY_png.ts|png.ts]]
+- [[_COMMUNITY_scripts|scripts]]
+- [[_COMMUNITY_terrain-classifier.ts|terrain-classifier.ts]]
+- [[_COMMUNITY_world-grammar.ts|world-grammar.ts]]
+- [[_COMMUNITY_verify-vercel-output.mjs|verify-vercel-output.mjs]]
+- [[_COMMUNITY_pm2.mjs|pm2.mjs]]
+- [[_COMMUNITY_Pokémon World Application|Pokémon World Application]]
+- [[_COMMUNITY_DevKit.tsx|DevKit.tsx]]
+- [[_COMMUNITY_compilerOptions|compilerOptions]]
+- [[_COMMUNITY_benchmark-map-pipeline.mjs|benchmark-map-pipeline.mjs]]
+- [[_COMMUNITY_coordinates.ts|coordinates.ts]]
+- [[_COMMUNITY_blocks.ts|blocks.ts]]
+- [[_COMMUNITY_extract-terrain-tiles.mjs|extract-terrain-tiles.mjs]]
+- [[_COMMUNITY_generate-map.mjs|generate-map.mjs]]
+- [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
+- [[_COMMUNITY_Procedural Map Pipeline|Procedural Map Pipeline]]
+- [[_COMMUNITY_Deterministic Emerald World Grammar|Deterministic Emerald World Grammar]]
+- [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
+- [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
+- [[_COMMUNITY_Google Static Maps to Pokemon World Pipeline Verification|Google Static Maps to Pokemon World Pipeline Verification]]
+- [[_COMMUNITY_Nitro 3|Nitro 3]]
+- [[_COMMUNITY_Procedural World Acceptance Ledger|Procedural World Acceptance Ledger]]
+- [[_COMMUNITY_Emerald Game Systems Contract|Emerald Game Systems Contract]]
+- [[_COMMUNITY_Pokémon World Browser Shell|Pokémon World Browser Shell]]
+- [[_COMMUNITY_vercel.json|vercel.json]]
+- [[_COMMUNITY_Q Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration|Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?]]
+- [[_COMMUNITY_Q Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitudelongitude, including visual Chrome QA|Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA]]
+- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
+- [[_COMMUNITY_Emerald Game UI Systems|Emerald Game UI Systems]]
+- [[_COMMUNITY_sw.js|sw.js]]
+- [[_COMMUNITY_map-benchmark.test.ts|map-benchmark.test.ts]]
+- [[_COMMUNITY_Fallback Map Regeneration and Repair|Fallback Map Regeneration and Repair]]
+- [[_COMMUNITY_Generated Map Tile Database Viewer|Generated Map Tile Database Viewer]]
+- [[_COMMUNITY_Google Map Source Image|Google Map Source Image]]
+- [[_COMMUNITY_Grass Terrain Sprite|Grass Terrain Sprite]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 1|Sand Terrain Sprite Variant 1]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 2|Sand Terrain Sprite Variant 2]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 3|Sand Terrain Sprite Variant 3]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 4|Sand Terrain Sprite Variant 4]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 5|Sand Terrain Sprite Variant 5]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 6|Sand Terrain Sprite Variant 6]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 7|Sand Terrain Sprite Variant 7]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 8|Sand Terrain Sprite Variant 8]]
+- [[_COMMUNITY_Sand Terrain Sprite Variant 9|Sand Terrain Sprite Variant 9]]
+- [[_COMMUNITY_Pokémon World Banner Artwork|Pokémon World Banner Artwork]]
+- [[_COMMUNITY_Apple Touch App Icon|Apple Touch App Icon]]
+- [[_COMMUNITY_16×16 Website Favicon|16×16 Website Favicon]]
+- [[_COMMUNITY_32×32 Website Favicon|32×32 Website Favicon]]
+- [[_COMMUNITY_Animated Loading Indicator|Animated Loading Indicator]]
+- [[_COMMUNITY_Lopu Designs Brand Image|Lopu Designs Brand Image]]
 - [[_COMMUNITY_Walking Character Sprite|Walking Character Sprite]]
-- [[_COMMUNITY_Game Tile Artwork|Game Tile Artwork]]
-- [[_COMMUNITY_Tree Tile Variant 10|Tree Tile Variant 10]]
-- [[_COMMUNITY_Tree Tile Variant 1|Tree Tile Variant 1]]
-- [[_COMMUNITY_Tree Tile Variant 2|Tree Tile Variant 2]]
-- [[_COMMUNITY_Tree Tile Variant 3|Tree Tile Variant 3]]
-- [[_COMMUNITY_Tree Tile Variant 4|Tree Tile Variant 4]]
-- [[_COMMUNITY_Tree Tile Variant 5|Tree Tile Variant 5]]
-- [[_COMMUNITY_Tree Tile Variant 6|Tree Tile Variant 6]]
-- [[_COMMUNITY_Tree Tile Variant 7|Tree Tile Variant 7]]
-- [[_COMMUNITY_Tree Tile Variant 8|Tree Tile Variant 8]]
-- [[_COMMUNITY_Tree Tile Variant 9|Tree Tile Variant 9]]
-- [[_COMMUNITY_Downloaded Tile Artwork|Downloaded Tile Artwork]]
-- [[_COMMUNITY_Flower Tile Variant 1|Flower Tile Variant 1]]
-- [[_COMMUNITY_Flower Tile Variant 2|Flower Tile Variant 2]]
-- [[_COMMUNITY_Flower Tile Variant 3|Flower Tile Variant 3]]
-- [[_COMMUNITY_Grass Tile Variant 2|Grass Tile Variant 2]]
-- [[_COMMUNITY_Grass and Dirt Tile|Grass and Dirt Tile]]
-- [[_COMMUNITY_Grass Terrain Tile|Grass Terrain Tile]]
+- [[_COMMUNITY_Pokémon Emerald Mudkip Sprite|Pokémon Emerald Mudkip Sprite]]
+- [[_COMMUNITY_Pokémon Emerald Ralts Sprite|Pokémon Emerald Ralts Sprite]]
+- [[_COMMUNITY_Pokémon Emerald Torchic Sprite|Pokémon Emerald Torchic Sprite]]
+- [[_COMMUNITY_Pokémon Emerald Treecko Sprite|Pokémon Emerald Treecko Sprite]]
+- [[_COMMUNITY_Pokémon Emerald Wingull Sprite|Pokémon Emerald Wingull Sprite]]
+- [[_COMMUNITY_Pokémon Emerald Zigzagoon Sprite|Pokémon Emerald Zigzagoon Sprite]]
+- [[_COMMUNITY_Game Environment Tile Artwork|Game Environment Tile Artwork]]
+- [[_COMMUNITY_Big Tree Tile 10|Big Tree Tile 10]]
+- [[_COMMUNITY_Big Tree Tile 1|Big Tree Tile 1]]
+- [[_COMMUNITY_Big Tree Tile 2|Big Tree Tile 2]]
+- [[_COMMUNITY_Big Tree Tile 3|Big Tree Tile 3]]
+- [[_COMMUNITY_Big Tree Tile 4|Big Tree Tile 4]]
+- [[_COMMUNITY_Big Tree Tile 5|Big Tree Tile 5]]
+- [[_COMMUNITY_Big Tree Tile 6|Big Tree Tile 6]]
+- [[_COMMUNITY_Big Tree Tile 7|Big Tree Tile 7]]
+- [[_COMMUNITY_Big Tree Tile 8|Big Tree Tile 8]]
+- [[_COMMUNITY_Big Tree Tile 9|Big Tree Tile 9]]
+- [[_COMMUNITY_Cave Tile 1|Cave Tile 1]]
+- [[_COMMUNITY_Cave Tile 2|Cave Tile 2]]
+- [[_COMMUNITY_Cave Tile 3|Cave Tile 3]]
+- [[_COMMUNITY_Cave Tile 4|Cave Tile 4]]
+- [[_COMMUNITY_Downloaded Tile Image|Downloaded Tile Image]]
+- [[_COMMUNITY_Flower Tile 1|Flower Tile 1]]
+- [[_COMMUNITY_Flower Tile 2|Flower Tile 2]]
+- [[_COMMUNITY_Flower Tile 3|Flower Tile 3]]
+- [[_COMMUNITY_Grass Tile 2|Grass Tile 2]]
+- [[_COMMUNITY_Grass and Dirt Tile 2|Grass and Dirt Tile 2]]
+- [[_COMMUNITY_Grass Tile|Grass Tile]]
 - [[_COMMUNITY_Red House Tile 10|Red House Tile 10]]
 - [[_COMMUNITY_Red House Tile 11|Red House Tile 11]]
 - [[_COMMUNITY_Red House Tile 12|Red House Tile 12]]
@@ -90,7 +114,10 @@
 - [[_COMMUNITY_Red House Tile 7|Red House Tile 7]]
 - [[_COMMUNITY_Red House Tile 8|Red House Tile 8]]
 - [[_COMMUNITY_Red House Tile 9|Red House Tile 9]]
-- [[_COMMUNITY_Terrain Tile Image|Terrain Tile Image]]
+- [[_COMMUNITY_Unspecified Tile Image|Unspecified Tile Image]]
+- [[_COMMUNITY_Left Ledge Tile|Left Ledge Tile]]
+- [[_COMMUNITY_Middle Ledge Tile|Middle Ledge Tile]]
+- [[_COMMUNITY_Right Ledge Tile|Right Ledge Tile]]
 - [[_COMMUNITY_Mountain Tile 1|Mountain Tile 1]]
 - [[_COMMUNITY_Mountain Tile 2|Mountain Tile 2]]
 - [[_COMMUNITY_Mountain Tile 3|Mountain Tile 3]]
@@ -99,24 +126,24 @@
 - [[_COMMUNITY_Mountain Tile 6|Mountain Tile 6]]
 - [[_COMMUNITY_Mountain Tile 7|Mountain Tile 7]]
 - [[_COMMUNITY_Mountain Tile 8|Mountain Tile 8]]
-- [[_COMMUNITY_Mountain Terrain Tile|Mountain Terrain Tile]]
-- [[_COMMUNITY_Path Terrain Tile 1|Path Terrain Tile 1]]
-- [[_COMMUNITY_Path Terrain Tile 2|Path Terrain Tile 2]]
-- [[_COMMUNITY_Path Terrain Tile 3|Path Terrain Tile 3]]
-- [[_COMMUNITY_Path Terrain Tile 4|Path Terrain Tile 4]]
-- [[_COMMUNITY_Path Terrain Tile 5|Path Terrain Tile 5]]
-- [[_COMMUNITY_Path Terrain Tile 6|Path Terrain Tile 6]]
-- [[_COMMUNITY_Path Terrain Tile 7|Path Terrain Tile 7]]
-- [[_COMMUNITY_Path Terrain Tile 8|Path Terrain Tile 8]]
-- [[_COMMUNITY_Path Terrain Tile 9|Path Terrain Tile 9]]
-- [[_COMMUNITY_Pond Terrain Tile 1|Pond Terrain Tile 1]]
-- [[_COMMUNITY_Pond Terrain Tile 20|Pond Terrain Tile 20]]
-- [[_COMMUNITY_Pond Terrain Tile 21|Pond Terrain Tile 21]]
-- [[_COMMUNITY_Pond Terrain Tile 22|Pond Terrain Tile 22]]
-- [[_COMMUNITY_Pond Terrain Tile 23|Pond Terrain Tile 23]]
-- [[_COMMUNITY_Pond Terrain Tile 24|Pond Terrain Tile 24]]
-- [[_COMMUNITY_Pond Terrain Tile 25|Pond Terrain Tile 25]]
-- [[_COMMUNITY_Pond Terrain Tile 2|Pond Terrain Tile 2]]
+- [[_COMMUNITY_Mountain Tile 9|Mountain Tile 9]]
+- [[_COMMUNITY_Path Tile 1|Path Tile 1]]
+- [[_COMMUNITY_Path Tile 2|Path Tile 2]]
+- [[_COMMUNITY_Path Tile 3|Path Tile 3]]
+- [[_COMMUNITY_Path Tile 4|Path Tile 4]]
+- [[_COMMUNITY_Path Tile 5|Path Tile 5]]
+- [[_COMMUNITY_Path Tile 6|Path Tile 6]]
+- [[_COMMUNITY_Path Tile 7|Path Tile 7]]
+- [[_COMMUNITY_Path Tile 8|Path Tile 8]]
+- [[_COMMUNITY_Path Tile 9|Path Tile 9]]
+- [[_COMMUNITY_Pond Tile 1|Pond Tile 1]]
+- [[_COMMUNITY_Pond Tile 20|Pond Tile 20]]
+- [[_COMMUNITY_Pond Tile 21|Pond Tile 21]]
+- [[_COMMUNITY_Pond Tile 22|Pond Tile 22]]
+- [[_COMMUNITY_Pond Tile 23|Pond Tile 23]]
+- [[_COMMUNITY_Pond Tile 24|Pond Tile 24]]
+- [[_COMMUNITY_Pond Tile 25|Pond Tile 25]]
+- [[_COMMUNITY_Pond Tile 2|Pond Tile 2]]
 - [[_COMMUNITY_Pond Tile 3|Pond Tile 3]]
 - [[_COMMUNITY_Pond Tile 4|Pond Tile 4]]
 - [[_COMMUNITY_Pond Tile 5|Pond Tile 5]]
@@ -137,182 +164,240 @@
 - [[_COMMUNITY_Road Tile 7|Road Tile 7]]
 - [[_COMMUNITY_Road Tile 8|Road Tile 8]]
 - [[_COMMUNITY_Road Tile 9|Road Tile 9]]
-- [[_COMMUNITY_Rock Terrain Tile|Rock Terrain Tile]]
-- [[_COMMUNITY_Room Interior Tiles|Room Interior Tiles]]
+- [[_COMMUNITY_Rock Tile 1|Rock Tile 1]]
+- [[_COMMUNITY_Room Interiors Tile Sheet|Room Interiors Tile Sheet]]
+- [[_COMMUNITY_Route Sign Tile 1|Route Sign Tile 1]]
 - [[_COMMUNITY_Sand Tile 1|Sand Tile 1]]
 - [[_COMMUNITY_Sand Tile 2|Sand Tile 2]]
 - [[_COMMUNITY_Sand Tile 3|Sand Tile 3]]
-- [[_COMMUNITY_Sand Terrain Tile 4|Sand Terrain Tile 4]]
-- [[_COMMUNITY_Sand Terrain Tile 5|Sand Terrain Tile 5]]
-- [[_COMMUNITY_Sand Terrain Tile 6|Sand Terrain Tile 6]]
-- [[_COMMUNITY_Sand Terrain Tile 7|Sand Terrain Tile 7]]
-- [[_COMMUNITY_Sand Terrain Tile 8|Sand Terrain Tile 8]]
-- [[_COMMUNITY_Sand Terrain Tile 9|Sand Terrain Tile 9]]
-- [[_COMMUNITY_Shrub Vegetation Tile|Shrub Vegetation Tile]]
-- [[_COMMUNITY_Tree Vegetation Tile|Tree Vegetation Tile]]
-- [[_COMMUNITY_Durable Map Generation|Durable Map Generation]]
-- [[_COMMUNITY_Web Application Runtime|Web Application Runtime]]
-- [[_COMMUNITY_Map Block Persistence|Map Block Persistence]]
-- [[_COMMUNITY_Map Regeneration and Repair|Map Regeneration and Repair]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 4|Emerald-Style Sand Terrain Tile 4]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 5|Emerald-Style Sand Terrain Tile 5]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 6|Emerald-Style Sand Terrain Tile 6]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 7|Emerald-Style Sand Terrain Tile 7]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 8|Emerald-Style Sand Terrain Tile 8]]
+- [[_COMMUNITY_Emerald-Style Sand Terrain Tile 9|Emerald-Style Sand Terrain Tile 9]]
+- [[_COMMUNITY_Emerald-Style Shrub Object Tile|Emerald-Style Shrub Object Tile]]
+- [[_COMMUNITY_Emerald-Style Tree Object Tile|Emerald-Style Tree Object Tile]]
+- [[_COMMUNITY_Dense World Desktop Screenshot|Dense World Desktop Screenshot]]
+- [[_COMMUNITY_Dense World Mobile Screenshot|Dense World Mobile Screenshot]]
+- [[_COMMUNITY_Dense World Desktop Visual Evidence|Dense World Desktop Visual Evidence]]
+- [[_COMMUNITY_Dense World Mobile Visual Evidence|Dense World Mobile Visual Evidence]]
+- [[_COMMUNITY_Trainer Party Desktop Visual Evidence|Trainer Party Desktop Visual Evidence]]
+- [[_COMMUNITY_Trainer PC Mobile Visual Evidence|Trainer PC Mobile Visual Evidence]]
+- [[_COMMUNITY_types.ts|types.ts]]
+- [[_COMMUNITY_Multi-agent main-branch sync protocol (MANDATORY)|Multi-agent main-branch sync protocol (MANDATORY)]]
+- [[_COMMUNITY_map-source.ts|map-source.ts]]
+- [[_COMMUNITY_AGENTS|AGENTS.md]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Game` - 35 edges
-2. `scripts` - 14 edges
-3. `scripts` - 14 edges
-4. `compilerOptions` - 9 edges
-5. `getMapAtWithSource()` - 9 edges
-6. `start()` - 8 edges
-7. `addLife()` - 8 edges
-8. `encodePng()` - 8 edges
-9. `cropPngWithRgba()` - 8 edges
-10. `terrainLife()` - 7 edges
+1. `Game` - 45 edges
+2. `terrainLife()` - 17 edges
+3. `Pokémon World Application` - 17 edges
+4. `hashUnit()` - 15 edges
+5. `scripts` - 14 edges
+6. `scripts` - 14 edges
+7. `tileKey()` - 13 edges
+8. `terrainOf()` - 12 edges
+9. `normalizeRoutes()` - 11 edges
+10. `interactionFor()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Pokémon World application` --references--> `pnpm Workspace Configuration`  [EXTRACTED]
-  app/README.md → pnpm-workspace.yaml
-- `Google Static Maps Colour Source` --conceptually_related_to--> `Google Map Source Image`  [INFERRED]
-  app/README.md → app/map-assets/gmap.png
-- `Pokémon World HTML Shell` --conceptually_related_to--> `Android Chrome Application Icon 192x192`  [INFERRED]
-  app/index.html → app/public/icons/android-chrome-192x192.png
-- `Pokémon World HTML Shell` --conceptually_related_to--> `Android Chrome Application Icon 512x512`  [INFERRED]
-  app/index.html → app/public/icons/android-chrome-512x512.png
-- `Generated 16 by 16 Block Tiles` --conceptually_related_to--> `Grass Terrain Sprite`  [INFERRED]
-  app/map-assets/db/index.html → app/map-assets/sprites/grass.png
+- `Deterministic Emerald World Grammar` --conceptually_related_to--> `Dense Emerald-Style World Desktop UI Screenshot`  [INFERRED]
+  app/README.md → docs/qa/dense-world-desktop.png
+- `Deterministic Emerald World Grammar` --conceptually_related_to--> `Dense Emerald-Style World Mobile UI Screenshot`  [INFERRED]
+  app/README.md → docs/qa/dense-world-mobile.png
+- `Trainer Party, Items, Badges, and PC Systems` --references--> `Trainer Party Desktop Screenshot`  [INFERRED]
+  app/README.md → docs/qa/trainer-party-desktop.png
+- `Trainer Party, Items, Badges, and PC Systems` --references--> `Trainer PC Mobile Screenshot`  [INFERRED]
+  app/README.md → docs/qa/trainer-pc-mobile.png
+- `Application Workspace Configuration` --references--> `Pokémon World Application`  [INFERRED]
+  pnpm-workspace.yaml → app/README.md
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Terrain Tile Asset Set** — app_public_tiles_mountain_9_image, app_public_tiles_pond_center_1_image, app_public_tiles_pond_center_2_image, app_public_tiles_pond_center_3_image, app_public_tiles_pond_center_4_image, app_public_tiles_rock_1_image [INFERRED 0.95]
-- **Red House Tile Set** — app_public_tiles_house_red_1_house_red_1, app_public_tiles_house_red_2_house_red_2, app_public_tiles_house_red_3_house_red_3, app_public_tiles_house_red_4_house_red_4, app_public_tiles_house_red_5_house_red_5, app_public_tiles_house_red_6_house_red_6, app_public_tiles_house_red_7_house_red_7, app_public_tiles_house_red_8_house_red_8, app_public_tiles_house_red_9_house_red_9, app_public_tiles_house_red_10_house_red_10, app_public_tiles_house_red_11_house_red_11, app_public_tiles_house_red_12_house_red_12 [EXTRACTED 0.99]
-- **Mountain Tile Set** — app_public_tiles_mountain_1_mountain_1, app_public_tiles_mountain_2_mountain_2, app_public_tiles_mountain_3_mountain_3, app_public_tiles_mountain_4_mountain_4, app_public_tiles_mountain_5_mountain_5, app_public_tiles_mountain_6_mountain_6, app_public_tiles_mountain_7_mountain_7, app_public_tiles_mountain_8_mountain_8 [EXTRACTED 0.99]
-- **Pokeworld Vercel Delivery Flow** — app_vercel_deployments_pokeworld_github_repository, app_vercel_deployments_pokeworld_vercel_project, app_vercel_deployments_verified_migration_preview, app_vercel_deployments_vercel_build, app_vercel_deployments_vercel_workflow_map_job [EXTRACTED 0.98]
+- **Procedural World Acceptance Evidence** — docs_procedural_world_acceptance_automated_gates, docs_procedural_world_acceptance_native_chrome_gates, docs_procedural_world_acceptance_delivery_gates [EXTRACTED 1.00]
+- **Deterministic World Generation Flow** — docs_procedural_world_acceptance_google_static_maps, docs_procedural_world_acceptance_procedural_map_pipeline, docs_procedural_world_acceptance_weighted_biome_grammar, docs_procedural_world_acceptance_emerald_tileset [INFERRED 0.90]
+- **World Traversal Integrity** — docs_procedural_world_acceptance_global_coordinate_continuity, docs_procedural_world_acceptance_safe_spawn_and_routes, docs_procedural_world_acceptance_native_chrome_qa [INFERRED 0.90]
 
-## Communities (143 total, 113 thin omitted)
+## Communities (177 total, 134 thin omitted)
 
-### Community 0 - "Map Block Data Pipeline"
-Cohesion: 0.07
-Nodes (40): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, buildGoogleStaticMapUrl(), generateCoordinatesGrid() (+32 more)
-
-### Community 1 - "Map Block API"
-Cohesion: 0.07
-Nodes (37): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock() (+29 more)
-
-### Community 2 - "Game Map Component"
-Cohesion: 0.07
-Nodes (12): defaultCoordinates, Game, GameComponentState, GameSettings, isFiniteNumber(), MapView, MoveAction, PlayerState (+4 more)
-
-### Community 3 - "Frontend Build Tooling"
+### Community 0 - "Game.tsx"
 Cohesion: 0.05
-Nodes (36): description, devDependencies, autoprefixer, jiti, postcss, sass, tailwindcss, @types/node (+28 more)
+Nodes (54): MapOffset, defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage (+46 more)
 
-### Community 4 - "Application UI Components"
-Cohesion: 0.10
-Nodes (21): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+13 more)
+### Community 1 - "trainer-state.ts"
+Cohesion: 0.07
+Nodes (49): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+41 more)
 
-### Community 5 - "Terrain and Building Generation"
+### Community 2 - "Game"
+Cohesion: 0.08
+Nodes (12): Game, isFiniteNumber(), getBlockForCoordinates(), clearLocationBoundState(), emptyState(), loadThings(), locationKey(), parseThings() (+4 more)
+
+### Community 3 - "devDependencies"
+Cohesion: 0.04
+Nodes (48): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+40 more)
+
+### Community 4 - "terrain-life.ts"
+Cohesion: 0.12
+Nodes (43): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), carveSpawnPath() (+35 more)
+
+### Community 5 - "input.ts"
+Cohesion: 0.15
+Nodes (15): storedBlocksFallback(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), coordinatesForInput(), finiteInteger(), offsetsFromQuery() (+7 more)
+
+### Community 6 - "terrain-layout.ts"
+Cohesion: 0.08
+Nodes (28): TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds(), Mask (+20 more)
+
+### Community 7 - "functions.ts"
+Cohesion: 0.11
+Nodes (16): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+8 more)
+
+### Community 8 - "png.ts"
 Cohesion: 0.19
-Nodes (22): addLife(), blockTiles(), buildingComponents(), findHouseAnchor(), footprintAt(), getAutotileIndex(), getOffsetTile(), getTile() (+14 more)
+Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
 
-### Community 6 - "Project Build Scripts"
+### Community 9 - "scripts"
 Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
-### Community 7 - "Terrain Image Classification"
-Cohesion: 0.13
-Nodes (17): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE (+9 more)
+### Community 10 - "terrain-classifier.ts"
+Cohesion: 0.14
+Nodes (17): toExport(), centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES (+9 more)
 
-### Community 8 - "Vercel Output Verification"
+### Community 11 - "world-grammar.ts"
+Cohesion: 0.18
+Nodes (16): BIOME_PRESETS, BIOME_RULES, choose(), chooseWeighted(), DETAIL_PALETTES, recipeHash(), ROUTE_TREATMENTS, SECRET_PATH_PATTERNS (+8 more)
+
+### Community 12 - "verify-vercel-output.mjs"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
-### Community 9 - "PM2 Process Management"
+### Community 13 - "pm2.mjs"
 Cohesion: 0.29
 Nodes (15): appRoot, apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2() (+7 more)
 
-### Community 10 - "TypeScript Configuration"
+### Community 14 - "Pokémon World Application"
+Cohesion: 0.21
+Nodes (15): Pokémon World API Routes, Full-Stack React, Nitro, Vite, and Workflow Runtime, generateMapWorkflow, Google Static Maps Colour Data, Local Durable Map Workflow Runtime, Map Generation Pipeline, MongoDB Block and Tile Persistence, Pokémon World Application (+7 more)
+
+### Community 15 - "DevKit.tsx"
+Cohesion: 0.13
+Nodes (12): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+4 more)
+
+### Community 16 - "compilerOptions"
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
-### Community 11 - "Application Dependencies"
-Cohesion: 0.18
-Nodes (11): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+3 more)
-
-### Community 12 - "Map Pipeline Benchmark"
+### Community 17 - "benchmark-map-pipeline.mjs"
 Cohesion: 0.18
 Nodes (7): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source
 
-### Community 13 - "Coordinate Projection Utilities"
+### Community 18 - "coordinates.ts"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
-### Community 14 - "Fallback Map Regeneration"
-Cohesion: 0.20
-Nodes (10): Google Map Source Image, Google Static Maps Colour Source, blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback Map Regeneration Query, Fallback Map Regeneration Repair, Lazy Durable Workflow Regeneration, Legacy Fallback Fingerprint Detection (+2 more)
+### Community 19 - "blocks.ts"
+Cohesion: 0.25
+Nodes (5): latsDb, lngsDb, sortedMods, transactionOptions, transactions
 
-### Community 15 - "Pokeworld Project Documentation"
-Cohesion: 0.20
-Nodes (8): API routes, How Workflow works locally, Install and run, Map generation, Pokémon World application, Verification and deployment, pnpm Workspace Configuration, Pokeworld workspace
-
-### Community 16 - "Terrain Tile Extraction"
+### Community 20 - "extract-terrain-tiles.mjs"
 Cohesion: 0.25
 Nodes (7): appDir, crop(), outputDir, scriptDir, source, sourcePath, writeGrid()
 
-### Community 17 - "Map Generation CLI"
+### Community 21 - "generate-map.mjs"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 18 - "Fallback Regeneration TODO"
+### Community 22 - "Pokeworld Vercel Project"
+Cohesion: 0.25
+Nodes (9): Verified App-Root Deployment, Automatic Branch Preview Deployments, Main Branch Production Deployment, Offline Map Mode, Pokeworld GitHub Repository, Pokeworld Vercel Project, MongoDB and Google Production Persistence, Stable Dense-World Branch Alias (+1 more)
+
+### Community 23 - "Procedural Map Pipeline"
+Cohesion: 0.22
+Nodes (9): Automated Acceptance Gates, Repository Emerald Tileset, Gameplay and Persistence Systems, Global-Coordinate Continuity, Google Static Maps Source, Melbourne, Sydney Harbour, and Alpine Native Chrome QA, Procedural Map Pipeline, Safe Spawn and Connected Routes (+1 more)
+
+### Community 24 - "Deterministic Emerald World Grammar"
+Cohesion: 0.32
+Nodes (8): Pokémon Emerald Exterior Tileset, Deterministic Emerald World Grammar, Trainer Party, Items, Badges, and PC Systems, Native Chrome Acceptance Gates, Trainer Party Desktop Screenshot, Trainer PC Mobile Screenshot, Dense Emerald-Style World Desktop UI Screenshot, Dense Emerald-Style World Mobile UI Screenshot
+
+### Community 25 - "Final Dense Procedural World Preview"
+Cohesion: 0.25
+Nodes (8): Health API, Vercel Build Output API, Commit 5188647, Final Dense Procedural World Preview, Map Jobs API, Pull Request 7, Vercel Build Process, Vercel Workflow Managed Queue
+
+### Community 26 - "Fallback Map Regeneration Query"
+Cohesion: 0.25
+Nodes (8): blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback Map Regeneration Query, Fallback Map Regeneration Repair, Lazy Durable Workflow Regeneration, Legacy Fallback Fingerprint Detection, Stale Fallback Block Detection, TODO-fallback-map-regeneration.md
+
+### Community 27 - "Google Static Maps to Pokemon World Pipeline Verification"
+Cohesion: 0.46
+Nodes (8): Native Chrome Visual QA, DevKit(), GamePage.tsx, Google Static Maps, Map Generation, Mobile Black Missing Strip, Google Static Maps to Pokemon World Pipeline Verification, Uniform Grass Tile Classification
+
+### Community 28 - "Nitro 3"
+Cohesion: 0.29
+Nodes (7): Workflow Local World, Nitro 3, Vercel Build Verification, Vercel Workflow, Managed Workflow Map Run, Preview Offline Map Mode, Verified Migration Preview
+
+### Community 29 - "Procedural World Acceptance Ledger"
+Cohesion: 0.29
+Nodes (7): Procedural World Acceptance Ledger, Delivery Gates, Deterministic Emerald-Style World, Graphify Outputs, Ready-for-Review Pull Request, Required Verification Commands, Vercel Static Output
+
+### Community 30 - "Emerald Game Systems Contract"
 Cohesion: 0.33
-Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
+Nodes (6): Emerald Game Systems Contract, resolveMove, Server World Generation, MapTile Feature Protocol, Walking Character Sprite Frame, Pokémon Emerald Male Character Spritesheet
 
-### Community 19 - "Vercel Deployment Configuration"
-Cohesion: 0.40
-Nodes (6): Pokeworld GitHub Repository, Pokeworld Vercel Project, Vercel Build Process, Vercel Deployments, Vercel Workflow Map Job, Verified Migration Preview
+### Community 31 - "Pokémon World Browser Shell"
+Cohesion: 0.50
+Nodes (5): Pokémon World Browser Shell, React Client Entry Module, Pokémon World Application Icon, Android Chrome Application Icon 192 by 192, Android Chrome Application Icon 512 by 512
 
-### Community 20 - "Vercel Configuration"
+### Community 32 - "vercel.json"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
-### Community 21 - "Fallback Documentation Query"
+### Community 33 - "Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Can we add a TODO-${task}.md to document the MongoDB fallback-generated block problem and implement automatic regeneration?, Source Nodes
 
-### Community 22 - "Google Maps Verification Query"
+### Community 34 - "Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA, Source Nodes
 
-### Community 23 - "Application Branding Assets"
-Cohesion: 0.67
-Nodes (4): Pokémon World HTML Shell, Pokémon World Application Icon, Android Chrome Application Icon 192x192, Android Chrome Application Icon 512x512
-
-### Community 24 - "Generated Terrain Assets"
-Cohesion: 0.50
-Nodes (4): Generated 16 by 16 Block Tiles, Generated Map Tile Preview Grid, Grass Terrain Sprite, Pokémon Emerald Exterior Tileset
-
-### Community 25 - "Static Shell Finalization"
+### Community 35 - "finalize-static-shell.mjs"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
+### Community 173 - "types.ts"
+Cohesion: 0.17
+Nodes (17): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), isCurrentMapBlock(), blocksCollection(), getStoredBlocks(), isMongoConfigured(), mongoUri() (+9 more)
+
+### Community 174 - "Multi-agent main-branch sync protocol (MANDATORY)"
+Cohesion: 0.40
+Nodes (4): Conflict resolution rules, Coordination notes, Multi-agent main-branch sync protocol (MANDATORY), Pokeworld — repo instructions for AI agents
+
+### Community 175 - "map-source.ts"
+Cohesion: 0.70
+Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
+
 ## Knowledge Gaps
-- **290 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+285 more)
+- **366 isolated node(s):** `Pokeworld — agent instructions`, `Conflict resolution rules`, `Coordination notes`, `StoredBlockLike`, `BlocksResponse` (+361 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **113 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **134 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `Game Map Component` to `Application UI Components`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `rgbaToTileColourData()` connect `Map Block Data Pipeline` to `Map Pipeline Benchmark`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
-  _291 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Map Block Data Pipeline` be split into smaller, more focused modules?**
-  _Cohesion score 0.06939890710382514 - nodes in this community are weakly interconnected._
-- **Should `Map Block API` be split into smaller, more focused modules?**
-  _Cohesion score 0.07401129943502825 - nodes in this community are weakly interconnected._
-- **Should `Game Map Component` be split into smaller, more focused modules?**
-  _Cohesion score 0.07446808510638298 - nodes in this community are weakly interconnected._
-- **Should `Frontend Build Tooling` be split into smaller, more focused modules?**
-  _Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected._
+- **Why does `Game` connect `Game` to `Game.tsx`, `trainer-state.ts`, `DevKit.tsx`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+- **Why does `TerrainKind` connect `types.ts` to `terrain-classifier.ts`, `world-grammar.ts`, `terrain-layout.ts`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `MapTile` connect `types.ts` to `Game.tsx`, `terrain-life.ts`, `terrain-layout.ts`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **What connects `Pokeworld — agent instructions`, `Conflict resolution rules`, `Coordination notes` to the rest of the system?**
+  _367 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Game.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.05300207039337474 - nodes in this community are weakly interconnected._
+- **Should `trainer-state.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.06721311475409836 - nodes in this community are weakly interconnected._
+- **Should `Game` be split into smaller, more focused modules?**
+  _Cohesion score 0.07966457023060797 - nodes in this community are weakly interconnected._

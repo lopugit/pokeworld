@@ -8,7 +8,8 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import log from './log'
 import * as mapSource from './map-source'
-import { classifyTerrainPng, summarizeTerrain } from '../terrain-classifier'
+import { classifyTerrainTiles, summarizeTerrain } from '../terrain-classifier'
+import { normalizeTerrainLayout } from '../terrain-layout'
 import { v4 as uuidv4 } from 'uuid'
 import { rgbaToTileColourData } from './png'
 
@@ -495,9 +496,11 @@ const toExport = version => {
 		block.mapSource = mapResult.source
 		block.fallbackGenerated = mapResult.source === mapSource.MAP_SOURCE_FALLBACK
 		block.mapGeneratedAt = Date.now()
-		const terrainData = classifyTerrainPng(googleMap, {
+		// mapResult already carries decoded RGBA data. Reuse it here instead of
+		// decoding the same PNG a second time just for semantic classification.
+		const terrainData = normalizeTerrainLayout(classifyTerrainTiles(mapResult.rgba, {
 			fallback: mapResult.source === mapSource.MAP_SOURCE_FALLBACK,
-		})
+		}))
 		block.terrainSummary = summarizeTerrain(terrainData)
 
 		const colourData = rgbaToTileColourData(mapResult.rgba, 32)

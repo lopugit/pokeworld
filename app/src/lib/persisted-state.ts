@@ -3,12 +3,13 @@ export interface ThingsState {
   player: Record<string, unknown>;
   map: Record<string, unknown>;
   game: Record<string, unknown>;
+  trainer: Record<string, unknown>;
 }
 
 const STORAGE_KEY = "things:v2";
 const LEGACY_STORAGE_KEY = "things";
 
-const emptyState = (): ThingsState => ({ loggedIn: false, player: {}, map: {}, game: {} });
+const emptyState = (): ThingsState => ({ loggedIn: false, player: {}, map: {}, game: {}, trainer: {} });
 
 function parseThings(raw: string | null): ThingsState | null {
   if (!raw) return null;

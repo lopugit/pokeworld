@@ -12,6 +12,7 @@ describe("location-bound persistence", () => {
       map: { x: 123, blockX: 9, locationKey: "old" },
       player: { x: 456, blockX: 9, locationKey: "old" },
       game: { debug: true, zoom: 1.5, anyLoaded: true, coords: { latitude: 1, longitude: 2 } },
+      trainer: { badges: [{ id: "badge-1", earned: true }] },
     };
 
     expect(resetLocationBoundThings(state)).toEqual({
@@ -24,6 +25,7 @@ describe("location-bound persistence", () => {
         anyLoaded: false,
         coords: { latitude: null, longitude: null },
       },
+      trainer: { badges: [{ id: "badge-1", earned: true }] },
     });
   });
 

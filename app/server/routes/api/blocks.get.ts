@@ -1,18 +1,9 @@
 import { defineEventHandler, getQuery } from "nitro/h3";
 import { start } from "workflow/api";
 import { generateMapWorkflow } from "../../../workflows/map-generation";
-import { coordinatesForInput, parseMapJobInput } from "../../services/map/input";
-import { isCurrentMapBlock } from "../../services/map/generate";
-import { shouldRegenerateFallbackBlock } from "../../services/map/legacy/map-source";
-import { getStoredBlocks } from "../../services/map/mongo";
+import { coordinatesForInput, offsetsFromQuery, parseMapJobInput } from "../../services/map/input";
+import { findCompletedStoredBlocks } from "../../services/map/stored-blocks";
 import { errorResponse, jsonResponse } from "../../utils/http";
-
-function queryOffsets(raw: unknown) {
-  if (Array.isArray(raw)) return raw;
-  if (typeof raw !== "string") return [[0, 0]];
-  const parsed = JSON.parse(raw);
-  return Array.isArray(parsed[0]) ? parsed : [parsed];
-}
 
 export default defineEventHandler(async (event) => {
   try {
@@ -20,23 +11,14 @@ export default defineEventHandler(async (event) => {
     const input = parseMapJobInput({
       blockX: query.blockX,
       blockY: query.blockY,
-      offsets: queryOffsets(query.offsets),
+      offsets: offsetsFromQuery(query.offsets),
       regenerate: query.regenerate,
     });
     const requested = coordinatesForInput(input);
 
     if (!input.regenerate) {
-      const cached = await getStoredBlocks(requested);
-      const hasStaleFallback = cached?.some((block) =>
-        shouldRegenerateFallbackBlock(block),
-      );
-      const hasStaleVersion = cached?.some((block) => !isCurrentMapBlock(block));
-      if (
-        cached &&
-        cached.length === requested.length &&
-        !hasStaleFallback &&
-        !hasStaleVersion
-      ) {
+      const cached = await findCompletedStoredBlocks(requested);
+      if (cached) {
         return jsonResponse({ blocks: cached, status: "completed" });
       }
     }
