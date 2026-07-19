@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 136 files · ~36,370,163 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1040 nodes · 1719 edges · 176 communities (47 shown, 129 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.72)
+- 1029 nodes · 1706 edges · 173 communities (44 shown, 129 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.7)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `362b22b8`
+- Built from commit: `ddbb1206`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,7 +29,6 @@
 - [[_COMMUNITY_Deterministic World Generation|Deterministic World Generation]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
 - [[_COMMUNITY_pm2.mjs|pm2.mjs]]
-- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
 - [[_COMMUNITY_coordinates.ts|coordinates.ts]]
 - [[_COMMUNITY_png.ts|png.ts]]
 - [[_COMMUNITY_Cave Entrance Feature|Cave Entrance Feature]]
@@ -45,11 +45,9 @@
 - [[_COMMUNITY_Sand Terrain Sprite 8|Sand Terrain Sprite 8]]
 - [[_COMMUNITY_Sand Terrain Sprite 9|Sand Terrain Sprite 9]]
 - [[_COMMUNITY_trainer-state.test.ts|trainer-state.test.ts]]
-- [[_COMMUNITY_saveTrainer|saveTrainer]]
 - [[_COMMUNITY_Pokémon World Banner Graphic|Pokémon World Banner Graphic]]
 - [[_COMMUNITY_Apple Touch Application Icon|Apple Touch Application Icon]]
 - [[_COMMUNITY_16×16 Website Favicon|16×16 Website Favicon]]
-- [[_COMMUNITY_Sand Terrain Sprite 5|Sand Terrain Sprite 5]]
 - [[_COMMUNITY_Loading Animation|Loading Animation]]
 - [[_COMMUNITY_Lopu Designs Brand Image|Lopu Designs Brand Image]]
 - [[_COMMUNITY_Walking Character Sprite|Walking Character Sprite]]
@@ -237,15 +235,15 @@
 - **Managed Map Generation Flow** — app_vercel_deployments_map_jobs_api, app_vercel_deployments_vercel_workflow, app_vercel_deployments_google_static_maps, app_vercel_deployments_map_block_persistence [EXTRACTED 0.95]
 - **Generation Route Query Dead Ends** — graphify_out_memory_query_20260719_115708_trace_the_server_side_generation_queue_and_regener_server_side_generation_queue_query, graphify_out_memory_query_20260719_121030_implement_atomic_global_block_generation_quotas_an_atomic_quota_query, graphify_out_memory_query_20260719_115708_trace_the_server_side_generation_queue_and_regener_generate_map, graphify_out_memory_query_20260719_115708_trace_the_server_side_generation_queue_and_regener_regenerate, graphify_out_memory_query_20260719_115708_trace_the_server_side_generation_queue_and_regener_workflow [EXTRACTED 1.00]
 
-## Communities (176 total, 129 thin omitted)
+## Communities (173 total, 129 thin omitted)
 
 ### Community 0 - "Game.vue"
 Cohesion: 0.06
-Nodes (66): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+58 more)
+Nodes (70): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+62 more)
 
 ### Community 1 - "functions.js"
 Cohesion: 0.07
-Nodes (11): Game, isFiniteNumber(), clearLocationBoundState(), emptyState(), loadThings(), locationKey(), parseThings(), resetLocationBoundThings() (+3 more)
+Nodes (12): Game, isFiniteNumber(), getBlockForCoordinates(), clearLocationBoundState(), emptyState(), loadThings(), locationKey(), parseThings() (+4 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.04
@@ -265,19 +263,19 @@ Nodes (30): LoginBody, AuthHttpError, clearPokeworldSession(), cookieOptions(), 
 
 ### Community 6 - "devDependencies"
 Cohesion: 0.08
-Nodes (28): TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds(), Mask (+20 more)
+Nodes (29): TerrainKind, TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds() (+21 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
-Cohesion: 0.09
-Nodes (19): configuredStore(), GenerationPermitResult, GenerationQuotaDocument, generationQuotaMongoUri(), GenerationQuotaStatus, GenerationQuotaStore, getGenerationQuotaStatus(), InMemoryGenerationQuotaStore (+11 more)
+Cohesion: 0.12
+Nodes (7): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey(), start
 
 ### Community 8 - "DevKit.vue"
-Cohesion: 0.11
-Nodes (31): addItemToBag(), Badge, BagItem, defaultTrainer(), depositPartyMember(), emeraldSprites, HOENN_BADGES, isRecord() (+23 more)
+Cohesion: 0.07
+Nodes (50): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+42 more)
 
 ### Community 9 - "dependencies"
-Cohesion: 0.12
-Nodes (28): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedLookup, directionDelta, FIELD_ITEM_TABLE, FieldItem (+20 more)
+Cohesion: 0.06
+Nodes (54): MapTile, BoundaryWait, defaultCoordinates, GameSettings, MapLoadingState, MapView, MoveAction, PanelId (+46 more)
 
 ### Community 10 - "scripts"
 Cohesion: 0.11
@@ -288,16 +286,12 @@ Cohesion: 0.07
 Nodes (28): Emerald Game Systems Design, Game UI Systems, Generation Controls, hashUnit, Map Block Streaming Protocol, resolveMove, Tile Feature Protocol, TrainerState (+20 more)
 
 ### Community 12 - "devDependencies"
-Cohesion: 0.10
-Nodes (22): BoundaryWait, defaultCoordinates, GameSettings, MapLoadingState, MapView, MoveAction, PanelId, PlayerState (+14 more)
+Cohesion: 0.29
+Nodes (7): abortableDelay(), BlocksResponse, getMapBlocks(), mapJobPollDelay(), mapJobPollPath(), responseJson(), input
 
 ### Community 13 - "pm2.mjs"
 Cohesion: 0.19
 Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
-
-### Community 14 - "blocks.get.ts"
-Cohesion: 0.15
-Nodes (16): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+8 more)
 
 ### Community 15 - "coordinates.ts"
 Cohesion: 0.09
@@ -316,8 +310,8 @@ Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
 ### Community 19 - "finalize-static-shell.mjs"
-Cohesion: 0.14
-Nodes (17): Admin Generation Quota Route, Dense Procedural World Release, Global Block Generation Quota, Google Static Maps, Guarded Streaming Release, Map Block Persistence, Map Jobs API, Public Block Regeneration Policy (+9 more)
+Cohesion: 0.60
+Nodes (5): generate-map.mjs, Regenerate, Server-Side Generation Queue and Regeneration Routes Query, Workflow, Atomic Global Block Generation Quotas and Regeneration Policy Query
 
 ### Community 20 - "Pokémon World application"
 Cohesion: 0.12
@@ -363,10 +357,6 @@ Nodes (8): blocks.get.ts, Nitro Cache Bypass for Stale Fallback Blocks, Fallback
 Cohesion: 0.43
 Nodes (8): Procedural World Acceptance Commands Query, Procedural World Gate Verification, Acceptance Completion Verification, Acceptance Surface Verification, CARDINAL, Complete Acceptance Status, normalizeTerrainLayout, procedural-world-properties.test.ts
 
-### Community 31 - "saveTrainer"
-Cohesion: 0.48
-Nodes (5): MapOffset, BlockCoordinates, blockCoordinatesForWorldPosition(), blockKeyForWorldPosition(), prioritizeMapPreloadOffsets()
-
 ### Community 32 - "Pokémon World Banner Graphic"
 Cohesion: 0.29
 Nodes (5): ImportMeta, ImportMetaEnv, ThingtimeLoginGrant, ThingtimeSdk, Window
@@ -378,10 +368,6 @@ Nodes (6): DevKit, Fallback Map PNG, Game renderCanvas, Google Static Map Diagno
 ### Community 34 - "16×16 Website Favicon"
 Cohesion: 0.70
 Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
-
-### Community 35 - "Sand Terrain Sprite 5"
-Cohesion: 0.60
-Nodes (3): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection
 
 ### Community 36 - "Loading Animation"
 Cohesion: 0.40
@@ -404,8 +390,8 @@ Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ### Community 41 - "Large Tree Tile Variant 1"
-Cohesion: 0.67
-Nodes (4): Pokeworld GitHub Repository, Pokeworld Vercel Project, Pokeworld Production Domains, Vercel Deployments
+Cohesion: 0.40
+Nodes (4): Build, Vercel deployments, Verified guarded-streaming preview, Verified migration preview
 
 ### Community 42 - "Large Tree Tile Variant 2"
 Cohesion: 0.83
@@ -420,7 +406,7 @@ Nodes (3): Pokeworld Agent Instructions, Graphify Union Merge Workflow, Multi-Ag
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **397 isolated node(s):** `Dense World Desktop Visual Evidence`, `Dense World Mobile Visual Evidence`, `Trainer Party Desktop Visual Evidence`, `Trainer PC Mobile Visual Evidence`, `Production MongoDB Environment Variables` (+392 more)
+- **392 isolated node(s):** `Verified guarded-streaming preview`, `Verified migration preview`, `Build`, `Dense World Desktop Visual Evidence`, `Dense World Mobile Visual Evidence` (+387 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **129 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -442,15 +428,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
-- **Why does `Game` connect `functions.js` to `devDependencies`, `dependencies`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
-- **Why does `MapBlock` connect `Game.vue` to `devDependencies`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `TerrainKind` connect `Game.vue` to `png.ts`, `Cave Entrance Feature`, `devDependencies`?**
+- **Why does `Game` connect `functions.js` to `DevKit.vue`, `dependencies`, `dependencies`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `MapBlock` connect `Game.vue` to `dependencies`, `devDependencies`, `devDependencies`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `TerrainKind` connect `devDependencies` to `png.ts`, `Game.vue`, `dependencies`, `Cave Entrance Feature`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **What connects `Dense World Desktop Visual Evidence`, `Dense World Mobile Visual Evidence`, `Trainer Party Desktop Visual Evidence` to the rest of the system?**
-  _401 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Verified guarded-streaming preview`, `Verified migration preview`, `Build` to the rest of the system?**
+  _396 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.05820446735395189 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05996212918156953 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07213114754098361 - nodes in this community are weakly interconnected._
