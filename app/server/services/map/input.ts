@@ -56,3 +56,12 @@ export function coordinatesForInput(input: MapJobInput) {
     y: input.blockY + y,
   }));
 }
+
+// Query-string offsets arrive either as a JSON string or as an already-split
+// array; normalise both into the [[x, y], ...] shape parseMapJobInput expects.
+export function offsetsFromQuery(raw: unknown): unknown[] {
+  if (Array.isArray(raw)) return raw;
+  if (typeof raw !== "string") return [[0, 0]];
+  const parsed = JSON.parse(raw);
+  return Array.isArray(parsed[0]) ? parsed : [parsed];
+}
