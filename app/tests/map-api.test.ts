@@ -49,6 +49,31 @@ describe("getMapBlocks polling", () => {
     expect(polls).toBe(3);
   });
 
+  it("streams newly stored blocks while the neighbour job is still running", async () => {
+    const center = { x: 5, y: -3, tiles: [{ updated: 1 }] };
+    const updatedCenter = { x: 5, y: -3, tiles: [{ updated: 2 }] };
+    const east = { x: 6, y: -3, tiles: [{ updated: 1 }] };
+    const streamed: unknown[][] = [];
+    let polls = 0;
+    globalThis.fetch = (async (url: RequestInfo | URL) => {
+      if (String(url).startsWith("/api/blocks")) {
+        return jsonResponse({ blocks: [], runId: "wrun_stream", status: "queued" }, 202);
+      }
+      polls += 1;
+      if (polls === 1) return jsonResponse({ blocks: [center], status: "running" });
+      if (polls === 2) return jsonResponse({ blocks: [updatedCenter, east], status: "running" });
+      return jsonResponse({ blocks: [updatedCenter, east], status: "completed" });
+    }) as typeof fetch;
+
+    const blocks = await getMapBlocks(input, new AbortController().signal, {
+      onBlocks: (ready) => streamed.push(ready),
+      pollDelayMs: 1,
+    });
+
+    expect(streamed).toEqual([[center], [updatedCenter, east]]);
+    expect(blocks).toEqual([updatedCenter, east]);
+  });
+
   it("gives up after the poll limit instead of polling a stalled run forever", async () => {
     const requests: string[] = [];
     globalThis.fetch = (async (url: RequestInfo | URL) => {

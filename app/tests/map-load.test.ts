@@ -1,34 +1,34 @@
 import { describe, expect, it } from "vitest";
-import { prioritizeInitialMapOffsets } from "../src/lib/map-load";
+import { prioritizeMapPreloadOffsets } from "../src/lib/map-load";
 
-describe("progressive map loading", () => {
-  const offsets = [
-    [1, 0],
-    [0, 0],
-    [-1, 0],
-  ] as const;
+describe("map preload priority", () => {
+  it("keeps every neighbour in the initial request and puts visible blocks first", () => {
+    const offsets = [
+      [1, 1],
+      [0, -1],
+      [-1, 0],
+      [0, 0],
+      [1, 0],
+      [0, 1],
+      [-1, -1],
+    ] as const;
 
-  it("loads the player block first while the game is empty", () => {
-    expect(prioritizeInitialMapOffsets([...offsets], false)).toEqual([[0, 0]]);
+    expect(prioritizeMapPreloadOffsets([...offsets])).toEqual([
+      [0, 0],
+      [0, -1],
+      [-1, 0],
+      [1, 0],
+      [0, 1],
+      [1, 1],
+      [-1, -1],
+    ]);
   });
 
-  it("loads neighboring offsets in small progressive batches", () => {
-    expect(prioritizeInitialMapOffsets([...offsets], true, 2)).toEqual([
-      [1, 0],
-      [0, 0],
-    ]);
-    expect(
-      prioritizeInitialMapOffsets(
-        [
-          ...offsets.filter(([x, y]) => x !== 0 || y !== 0),
-          [0, 1],
-        ],
-        false,
-        2,
-      ),
-    ).toEqual([
-      [1, 0],
-      [-1, 0],
-    ]);
+  it("does not mutate the caller's offset order", () => {
+    const offsets = [[2, 0], [0, 0], [1, 1]] as const;
+    const input = [...offsets];
+
+    expect(prioritizeMapPreloadOffsets(input)).toEqual([[0, 0], [1, 1], [2, 0]]);
+    expect(input).toEqual(offsets);
   });
 });
