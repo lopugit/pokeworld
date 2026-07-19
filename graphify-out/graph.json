@@ -4,20 +4,6 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "production_mongodb_failure_path",
-        "label": "Production MongoDB Failure Path",
-        "nodes": [
-          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks",
-          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables",
-          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint",
-          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.98,
-        "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md"
-      },
-      {
         "id": "app_vercel_deployments_public_deployment_flow",
         "label": "Pokeworld Public Deployment Flow",
         "nodes": [
@@ -44,6 +30,20 @@
         "confidence": "EXTRACTED",
         "confidence_score": 0.95,
         "source_file": "app/VERCEL_DEPLOYMENTS.md"
+      },
+      {
+        "id": "production_mongodb_failure_path",
+        "label": "Production MongoDB Failure Path",
+        "nodes": [
+          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks",
+          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables",
+          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint",
+          "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.98,
+        "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md"
       },
       {
         "id": "fallback_rendering_diagnosis",
@@ -205,6 +205,105 @@
     ]
   },
   "nodes": [
+    {
+      "label": "sw.js",
+      "file_type": "code",
+      "source_file": "app/public/sw.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 39,
+      "norm_label": "sw.js",
+      "id": "app_public_sw",
+      "community_name": "sw.js"
+    },
+    {
+      "label": "CORE_ASSETS",
+      "file_type": "code",
+      "source_file": "app/public/sw.js",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 39,
+      "norm_label": "core_assets",
+      "id": "app_public_sw_core_assets",
+      "community_name": "sw.js"
+    },
+    {
+      "label": "http.ts",
+      "file_type": "code",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "http.ts",
+      "id": "app_server_utils_http",
+      "community_name": "types.ts"
+    },
+    {
+      "label": "jsonResponse()",
+      "file_type": "code",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "jsonresponse()",
+      "id": "app_server_utils_http_jsonresponse",
+      "community_name": "types.ts"
+    },
+    {
+      "label": "errorResponse()",
+      "file_type": "code",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "errorresponse()",
+      "id": "app_server_utils_http_errorresponse",
+      "community_name": "types.ts"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "app.tsx",
+      "id": "app_src_app",
+      "community_name": "Community 32"
+    },
+    {
+      "label": "environmentPrefix()",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "environmentprefix()",
+      "id": "app_src_app_environmentprefix",
+      "community_name": "Community 32"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "app()",
+      "id": "app_src_app_app",
+      "community_name": "Community 32"
+    },
+    {
+      "label": "http-and-service-worker.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/http-and-service-worker.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "http-and-service-worker.test.ts",
+      "id": "app_tests_http_and_service_worker_test",
+      "community_name": "types.ts"
+    },
     {
       "label": "package.json",
       "file_type": "code",
@@ -750,9 +849,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "benchmark-map-pipeline.mjs",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline"
     },
     {
@@ -761,9 +860,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "patternedimage()",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_patternedimage"
     },
     {
@@ -772,9 +871,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "legacytilecolourdata()",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_legacytilecolourdata"
     },
     {
@@ -783,9 +882,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "median()",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_median"
     },
     {
@@ -794,9 +893,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "source",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_source"
     },
     {
@@ -805,9 +904,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L84",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "reference",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_reference"
     },
     {
@@ -816,9 +915,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "optimized",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_optimized"
     },
     {
@@ -827,9 +926,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "legacysamples",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_legacysamples"
     },
     {
@@ -838,9 +937,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L95",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "optimizedsamples",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_optimizedsamples"
     },
     {
@@ -849,9 +948,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "legacyms",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_legacyms"
     },
     {
@@ -860,9 +959,9 @@
       "source_file": "app/scripts/benchmark-map-pipeline.mjs",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 21,
+      "community": 19,
       "norm_label": "optimizedms",
-      "community_name": "benchmark-map-pipeline.mjs",
+      "community_name": "Fallback Map PNG",
       "id": "app_scripts_benchmark_map_pipeline_optimizedms"
     },
     {
@@ -873,7 +972,7 @@
       "_origin": "ast",
       "community": 36,
       "norm_label": "finalize-static-shell.mjs",
-      "community_name": "Community 36",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_finalize_static_shell"
     },
     {
@@ -884,7 +983,7 @@
       "_origin": "ast",
       "community": 36,
       "norm_label": "root",
-      "community_name": "Community 36",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_finalize_static_shell_root"
     },
     {
@@ -895,7 +994,7 @@
       "_origin": "ast",
       "community": 36,
       "norm_label": "transformedshell",
-      "community_name": "Community 36",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_finalize_static_shell_transformedshell"
     },
     {
@@ -906,7 +1005,7 @@
       "_origin": "ast",
       "community": 36,
       "norm_label": "target",
-      "community_name": "Community 36",
+      "community_name": "finalize-static-shell.mjs",
       "id": "app_scripts_finalize_static_shell_target"
     },
     {
@@ -915,9 +1014,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "extract-terrain-tiles.mjs",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles"
     },
     {
@@ -926,9 +1025,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "scriptdir",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_scriptdir"
     },
     {
@@ -937,9 +1036,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "appdir",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_appdir"
     },
     {
@@ -948,9 +1047,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "sourcepath",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_sourcepath"
     },
     {
@@ -959,9 +1058,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "outputdir",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_outputdir"
     },
     {
@@ -970,9 +1069,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "source",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_source"
     },
     {
@@ -981,9 +1080,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "crop()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_crop"
     },
     {
@@ -992,9 +1091,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "writegrid()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_writegrid"
     },
     {
@@ -1003,9 +1102,9 @@
       "source_file": "app/scripts/map/extract-terrain-tiles.mjs",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "writewatervariants()",
-      "community_name": "extract-terrain-tiles.mjs",
+      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
       "id": "app_scripts_map_extract_terrain_tiles_writewatervariants"
     },
     {
@@ -1014,9 +1113,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "generate-map.mjs",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map"
     },
     {
@@ -1025,9 +1124,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "args",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_args"
     },
     {
@@ -1036,9 +1135,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "regenerate",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_regenerate"
     },
     {
@@ -1047,9 +1146,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "radiusflag",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_radiusflag"
     },
     {
@@ -1058,9 +1157,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "positional",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_positional"
     },
     {
@@ -1069,9 +1168,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "blockx",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_blockx"
     },
     {
@@ -1080,9 +1179,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "blocky",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_blocky"
     },
     {
@@ -1091,9 +1190,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "offsets",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_offsets"
     },
     {
@@ -1102,9 +1201,9 @@
       "source_file": "app/scripts/map/generate-map.mjs",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "baseurl",
-      "community_name": "generate-map.mjs",
+      "community_name": "extract-terrain-tiles.mjs",
       "id": "app_scripts_map_generate_map_baseurl"
     },
     {
@@ -1289,9 +1388,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "verify-vercel-output.mjs",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output"
     },
     {
@@ -1300,9 +1399,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "root",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_root"
     },
     {
@@ -1311,9 +1410,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "output",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_output"
     },
     {
@@ -1322,9 +1421,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "indexpath",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_indexpath"
     },
     {
@@ -1333,9 +1432,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "configpath",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_configpath"
     },
     {
@@ -1344,9 +1443,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "workflowmanifestpath",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_workflowmanifestpath"
     },
     {
@@ -1355,9 +1454,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "workflowstepconfigpath",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_workflowstepconfigpath"
     },
     {
@@ -1366,9 +1465,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "invariant()",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_invariant"
     },
     {
@@ -1377,9 +1476,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "filesbelow()",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_filesbelow"
     },
     {
@@ -1388,9 +1487,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "index",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_index"
     },
     {
@@ -1399,9 +1498,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "config",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_config"
     },
     {
@@ -1410,9 +1509,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "filesystemindex",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_filesystemindex"
     },
     {
@@ -1421,9 +1520,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "fallbackindex",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_fallbackindex"
     },
     {
@@ -1432,9 +1531,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "functionconfigs",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_functionconfigs"
     },
     {
@@ -1443,9 +1542,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "functionvalues",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_functionvalues"
     },
     {
@@ -1454,9 +1553,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "workflowstepconfig",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_workflowstepconfig"
     },
     {
@@ -1465,9 +1564,9 @@
       "source_file": "app/scripts/verify-vercel-output.mjs",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "workflowmanifest",
-      "community_name": "world-grammar.ts",
+      "community_name": "verify-vercel-output.mjs",
       "id": "app_scripts_verify_vercel_output_workflowmanifest"
     },
     {
@@ -1751,9 +1850,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "blocks.ts",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks"
     },
     {
@@ -1762,9 +1861,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "sortedmods",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_sortedmods"
     },
     {
@@ -1773,9 +1872,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "coordinatekey()",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_coordinatekey"
     },
     {
@@ -1784,9 +1883,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "latsdb",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_latsdb"
     },
     {
@@ -1795,9 +1894,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "lngsdb",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_lngsdb"
     },
     {
@@ -1806,9 +1905,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "transactions",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_transactions"
     },
     {
@@ -1817,9 +1916,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "transactionoptions",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_blocks_transactionoptions"
     },
     {
@@ -1828,9 +1927,9 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 20,
+      "community": 13,
       "norm_label": "toexport()",
-      "community_name": "blocks.ts",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_legacy_blocks_toexport"
     },
     {
@@ -1839,9 +1938,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "coordinates.ts",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates"
     },
     {
@@ -1850,9 +1949,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "clamp()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_clamp"
     },
     {
@@ -1861,9 +1960,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "toradians()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_toradians"
     },
     {
@@ -1872,9 +1971,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "getxincrement()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_getxincrement"
     },
     {
@@ -1883,9 +1982,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "projectlatitude()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_projectlatitude"
     },
     {
@@ -1894,9 +1993,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "unprojectlatitude()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_unprojectlatitude"
     },
     {
@@ -1905,9 +2004,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "x_increment",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_x_increment"
     },
     {
@@ -1916,9 +2015,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "min_latitude_projected",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_min_latitude_projected"
     },
     {
@@ -1927,9 +2026,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "blockforcoordinates()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_blockforcoordinates"
     },
     {
@@ -1938,9 +2037,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "getlngforblock()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_getlngforblock"
     },
     {
@@ -1949,9 +2048,9 @@
       "source_file": "app/server/services/map/legacy/coordinates.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "norm_label": "getlatforblock()",
-      "community_name": "coordinates.ts",
+      "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_coordinates_getlatforblock"
     },
     {
@@ -1971,9 +2070,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "getfallbackmap()",
-      "community_name": "saveTrainer",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_functions_getfallbackmap"
     },
     {
@@ -2059,9 +2158,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L270",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "savemapat()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_functions_savemapat"
     },
     {
@@ -2070,9 +2169,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L295",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "getmapat()",
-      "community_name": "saveTrainer",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_functions_getmapat"
     },
     {
@@ -2081,9 +2180,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L300",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "buildgooglestaticmapurl()",
-      "community_name": "saveTrainer",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_functions_buildgooglestaticmapurl"
     },
     {
@@ -2092,9 +2191,9 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L316",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "getmapatwithsource()",
-      "community_name": "saveTrainer",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_functions_getmapatwithsource"
     },
     {
@@ -2202,9 +2301,9 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 6,
       "norm_label": "log.ts",
-      "community_name": "blocks.ts",
+      "community_name": "functions.ts",
       "id": "app_server_services_map_legacy_log"
     },
     {
@@ -2213,9 +2312,9 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 6,
       "norm_label": "log()",
-      "community_name": "blocks.ts",
+      "community_name": "functions.ts",
       "id": "app_server_services_map_legacy_log_log"
     },
     {
@@ -2224,9 +2323,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 31,
       "norm_label": "map-source.ts",
-      "community_name": "vercel.json",
+      "community_name": "Community 31",
       "id": "app_server_services_map_legacy_map_source"
     },
     {
@@ -2235,9 +2334,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 32,
+      "community": 31,
       "norm_label": "canusegooglestaticmaps()",
-      "community_name": "vercel.json",
+      "community_name": "Community 31",
       "id": "app_server_services_map_legacy_map_source_canusegooglestaticmaps"
     },
     {
@@ -2246,9 +2345,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 32,
+      "community": 31,
       "norm_label": "getbase64imagesha256()",
-      "community_name": "vercel.json",
+      "community_name": "Community 31",
       "id": "app_server_services_map_legacy_map_source_getbase64imagesha256"
     },
     {
@@ -2257,9 +2356,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 32,
+      "community": 31,
       "norm_label": "isfallbackgeneratedblock()",
-      "community_name": "vercel.json",
+      "community_name": "Community 31",
       "id": "app_server_services_map_legacy_map_source_isfallbackgeneratedblock"
     },
     {
@@ -2268,9 +2367,9 @@
       "source_file": "app/server/services/map/legacy/map-source.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 32,
+      "community": 31,
       "norm_label": "shouldregeneratefallbackblock()",
-      "community_name": "vercel.json",
+      "community_name": "Community 31",
       "id": "app_server_services_map_legacy_map_source_shouldregeneratefallbackblock"
     },
     {
@@ -2323,9 +2422,9 @@
       "source_file": "app/server/services/map/legacy/mods/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 25,
       "norm_label": "index.ts",
-      "community_name": "blocks.ts",
+      "community_name": "generate-map.mjs",
       "id": "app_server_services_map_legacy_mods_index"
     },
     {
@@ -2884,9 +2983,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "png.ts",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png"
     },
     {
@@ -2895,9 +2994,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "assertcrop()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_assertcrop"
     },
     {
@@ -2906,9 +3005,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "asbuffer()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_asbuffer"
     },
     {
@@ -2917,9 +3016,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "decodepng()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_decodepng"
     },
     {
@@ -2928,9 +3027,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "encodepng()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_encodepng"
     },
     {
@@ -2939,9 +3038,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "croprgba()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_croprgba"
     },
     {
@@ -2950,9 +3049,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "croppngwithrgba()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_croppngwithrgba"
     },
     {
@@ -2961,9 +3060,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "croppng()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_croppng"
     },
     {
@@ -2972,9 +3071,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "createsolidrgba()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_createsolidrgba"
     },
     {
@@ -2983,9 +3082,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "createsolidpngwithrgba()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_createsolidpngwithrgba"
     },
     {
@@ -2994,9 +3093,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "createsolidpng()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_createsolidpng"
     },
     {
@@ -3005,9 +3104,9 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "rgbatotilecolourdata()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_server_services_map_legacy_png_rgbatotilecolourdata"
     },
     {
@@ -3170,9 +3269,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "terrain-classifier.ts",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier"
     },
     {
@@ -3192,9 +3291,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "rgbaimage",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_rgbaimage"
     },
     {
@@ -3214,9 +3313,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "pixelkind",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_pixelkind"
     },
     {
@@ -3225,9 +3324,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "rgb",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_rgb"
     },
     {
@@ -3236,9 +3335,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "google_static_map_styles",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_google_static_map_styles"
     },
     {
@@ -3247,9 +3346,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "pixel_palette",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_pixel_palette"
     },
     {
@@ -3258,9 +3357,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "terrain_kinds",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_terrain_kinds"
     },
     {
@@ -3269,9 +3368,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "minimum_coverage",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_minimum_coverage"
     },
     {
@@ -3280,9 +3379,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "classification_priority",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_classification_priority"
     },
     {
@@ -3291,9 +3390,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "roundcoverage()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_roundcoverage"
     },
     {
@@ -3302,9 +3401,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "emptycoverage()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_emptycoverage"
     },
     {
@@ -3313,9 +3412,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "nearestpixelkind()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_nearestpixelkind"
     },
     {
@@ -3324,9 +3423,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "classifycounts()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_classifycounts"
     },
     {
@@ -3335,9 +3434,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "classifyterraintiles()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_classifyterraintiles"
     },
     {
@@ -3346,9 +3445,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L207",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "classifyterrainpng()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_classifyterrainpng"
     },
     {
@@ -3357,9 +3456,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 20,
+      "community": 13,
       "norm_label": "summarizeterrain()",
-      "community_name": "blocks.ts",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
     },
     {
@@ -3368,9 +3467,9 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L223",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "centeredcroprect()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_server_services_map_terrain_classifier_centeredcroprect"
     },
     {
@@ -3709,9 +3808,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "world-grammar.ts",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar"
     },
     {
@@ -3720,9 +3819,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "structurerole",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_structurerole"
     },
     {
@@ -3731,9 +3830,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "structurecell",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_structurecell"
     },
     {
@@ -3742,9 +3841,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "structurepreset",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_structurepreset"
     },
     {
@@ -3753,9 +3852,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "terraincounts",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_terraincounts"
     },
     {
@@ -3764,9 +3863,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "recipehash()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_recipehash"
     },
     {
@@ -3775,9 +3874,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "choose()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_choose"
     },
     {
@@ -3786,9 +3885,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "chooseweighted()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_chooseweighted"
     },
     {
@@ -3797,9 +3896,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "biome_presets",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_biome_presets"
     },
     {
@@ -3808,9 +3907,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "detail_palettes",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_detail_palettes"
     },
     {
@@ -3819,9 +3918,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "route_treatments",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_route_treatments"
     },
     {
@@ -3830,9 +3929,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "cells()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_cells"
     },
     {
@@ -3841,9 +3940,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "structure_presets",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_structure_presets"
     },
     {
@@ -3852,9 +3951,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L150",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "secret_path_patterns",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_secret_path_patterns"
     },
     {
@@ -3863,9 +3962,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L152",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "biome_rules",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_biome_rules"
     },
     {
@@ -3874,9 +3973,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L194",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "worldprofile",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_worldprofile"
     },
     {
@@ -3885,9 +3984,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L203",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "selectbiome()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_selectbiome"
     },
     {
@@ -3896,9 +3995,9 @@
       "source_file": "app/server/services/map/world-grammar.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "selectworldprofile()",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_server_services_map_world_grammar_selectworldprofile"
     },
     {
@@ -4105,9 +4204,9 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "gamecomponentstate",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_gamecomponentstate"
     },
     {
@@ -4272,7 +4371,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": ".settrainer()",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_components_game_game_settrainer"
     },
     {
@@ -4655,9 +4754,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "badgespanel.tsx",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_badgespanel"
     },
     {
@@ -4666,9 +4765,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "badge_tones",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_badgespanel_badge_tones"
     },
     {
@@ -4677,9 +4776,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "badgespanelprops",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_badgespanel_badgespanelprops"
     },
     {
@@ -4688,9 +4787,9 @@
       "source_file": "app/src/components/game-ui/BadgesPanel.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "badgespanel()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_badgespanel_badgespanel"
     },
     {
@@ -4699,9 +4798,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "bagpanel.tsx",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_bagpanel"
     },
     {
@@ -4710,9 +4809,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "pockets",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_bagpanel_pockets"
     },
     {
@@ -4721,9 +4820,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "bagpanelprops",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_bagpanel_bagpanelprops"
     },
     {
@@ -4732,9 +4831,9 @@
       "source_file": "app/src/components/game-ui/BagPanel.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "bagpanel()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_bagpanel_bagpanel"
     },
     {
@@ -4776,9 +4875,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "panelframe.tsx",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_panelframe"
     },
     {
@@ -4787,9 +4886,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "panelframeprops",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_panelframe_panelframeprops"
     },
     {
@@ -4798,9 +4897,9 @@
       "source_file": "app/src/components/game-ui/PanelFrame.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "panelframe()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_panelframe_panelframe"
     },
     {
@@ -4809,9 +4908,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "partypanel.tsx",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_partypanel"
     },
     {
@@ -4820,9 +4919,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "partypanelprops",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_partypanel_partypanelprops"
     },
     {
@@ -4831,9 +4930,9 @@
       "source_file": "app/src/components/game-ui/PartyPanel.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "partypanel()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_partypanel_partypanel"
     },
     {
@@ -4842,9 +4941,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "pcpanel.tsx",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_pcpanel"
     },
     {
@@ -4853,9 +4952,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "pcpanelprops",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_pcpanel_pcpanelprops"
     },
     {
@@ -4864,9 +4963,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "memberbutton()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_pcpanel_memberbutton"
     },
     {
@@ -4875,9 +4974,9 @@
       "source_file": "app/src/components/game-ui/PcPanel.tsx",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "pcpanel()",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_components_game_ui_pcpanel_pcpanel"
     },
     {
@@ -4941,9 +5040,9 @@
       "source_file": "app/src/entry-client.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 32,
       "norm_label": "entry-client.tsx",
-      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
+      "community_name": "Community 32",
       "id": "app_src_entry_client"
     },
     {
@@ -4952,9 +5051,9 @@
       "source_file": "app/src/entry-client.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 33,
+      "community": 32,
       "norm_label": "root",
-      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
+      "community_name": "Community 32",
       "id": "app_src_entry_client_root"
     },
     {
@@ -5568,9 +5667,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "pocketname",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_lib_trainer_state_pocketname"
     },
     {
@@ -5623,9 +5722,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "trainerstate",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_lib_trainer_state_trainerstate"
     },
     {
@@ -5634,9 +5733,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "trainertransition",
-      "community_name": "PcPanel.tsx",
+      "community_name": "scripts",
       "id": "app_src_lib_trainer_state_trainertransition"
     },
     {
@@ -5845,7 +5944,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "transition()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_transition"
     },
     {
@@ -5856,7 +5955,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "usebagitem()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_usebagitem"
     },
     {
@@ -5867,7 +5966,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "setleadpartymember()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_setleadpartymember"
     },
     {
@@ -5878,7 +5977,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "togglebadge()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_togglebadge"
     },
     {
@@ -5889,7 +5988,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "depositpartymember()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_depositpartymember"
     },
     {
@@ -5900,7 +5999,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "withdrawpartymember()",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_src_lib_trainer_state_withdrawpartymember"
     },
     {
@@ -5911,7 +6010,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": "storagelike",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_lib_trainer_state_storagelike"
     },
     {
@@ -5922,7 +6021,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": ".getitem()",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_lib_trainer_state_storagelike_getitem"
     },
     {
@@ -5933,7 +6032,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": ".setitem()",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_lib_trainer_state_storagelike_setitem"
     },
     {
@@ -5955,7 +6054,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": "readjson()",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_lib_trainer_state_readjson"
     },
     {
@@ -5977,7 +6076,7 @@
       "_origin": "ast",
       "community": 27,
       "norm_label": "savetrainer()",
-      "community_name": "TODO: fallback map regeneration",
+      "community_name": "Community 27",
       "id": "app_src_lib_trainer_state_savetrainer"
     },
     {
@@ -6184,9 +6283,9 @@
       "source_file": "app/tests/map-source.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "map-source.test.ts",
-      "community_name": "saveTrainer",
+      "community_name": "Community 10",
       "id": "app_tests_map_source_test"
     },
     {
@@ -6228,9 +6327,9 @@
       "source_file": "app/tests/png-pipeline.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "png-pipeline.test.ts",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_tests_png_pipeline_test"
     },
     {
@@ -6239,9 +6338,9 @@
       "source_file": "app/tests/png-pipeline.test.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "rgbaimage",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_tests_png_pipeline_test_rgbaimage"
     },
     {
@@ -6250,9 +6349,9 @@
       "source_file": "app/tests/png-pipeline.test.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "legacytilecolourdata()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_tests_png_pipeline_test_legacytilecolourdata"
     },
     {
@@ -6261,9 +6360,9 @@
       "source_file": "app/tests/png-pipeline.test.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 15,
+      "community": 10,
       "norm_label": "patternedimage()",
-      "community_name": "verify-vercel-output.mjs",
+      "community_name": "Community 10",
       "id": "app_tests_png_pipeline_test_patternedimage"
     },
     {
@@ -6426,9 +6525,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "terrain-classifier.test.ts",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_tests_terrain_classifier_test"
     },
     {
@@ -6437,9 +6536,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "colours",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_tests_terrain_classifier_test_colours"
     },
     {
@@ -6448,9 +6547,9 @@
       "source_file": "app/tests/terrain-classifier.test.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "norm_label": "stripedimage()",
-      "community_name": "DevKit.tsx",
+      "community_name": "terrain-classifier.ts",
       "id": "app_tests_terrain_classifier_test_stripedimage"
     },
     {
@@ -6582,7 +6681,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "trainer-state.test.ts",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_tests_trainer_state_test"
     },
     {
@@ -6593,7 +6692,7 @@
       "_origin": "ast",
       "community": 26,
       "norm_label": "fielditem",
-      "community_name": "trainer-state.test.ts",
+      "community_name": "Community 26",
       "id": "app_tests_trainer_state_test_fielditem"
     },
     {
@@ -6602,9 +6701,9 @@
       "source_file": "app/tests/world-grammar.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "world-grammar.test.ts",
-      "community_name": "terrain-classifier.ts",
+      "community_name": "world-grammar.ts",
       "id": "app_tests_world_grammar_test"
     },
     {
@@ -6613,9 +6712,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "tsconfig.json",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig"
     },
     {
@@ -6624,9 +6723,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "extends",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_extends"
     },
     {
@@ -6635,9 +6734,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "compileroptions",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions"
     },
     {
@@ -6646,9 +6745,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "allowjs",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_allowjs"
     },
     {
@@ -6657,9 +6756,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "jsx",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_jsx"
     },
     {
@@ -6668,9 +6767,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "jsximportsource",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_jsximportsource"
     },
     {
@@ -6679,9 +6778,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "noemit",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_noemit"
     },
     {
@@ -6690,9 +6789,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "paths",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_paths"
     },
     {
@@ -6701,9 +6800,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "@/*",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_paths"
     },
     {
@@ -6712,9 +6811,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "@server/*",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_paths_server"
     },
     {
@@ -6723,9 +6822,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "plugins",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_plugins"
     },
     {
@@ -6734,9 +6833,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "strict",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_strict"
     },
     {
@@ -6745,9 +6844,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "types",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_compileroptions_types"
     },
     {
@@ -6756,9 +6855,9 @@
       "source_file": "app/tsconfig.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "include",
-      "community_name": "Fallback Map PNG",
+      "community_name": "compilerOptions",
       "id": "app_tsconfig_include"
     },
     {
@@ -6767,9 +6866,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 34,
+      "community": 33,
       "norm_label": "vercel.json",
-      "community_name": "Q: hmmm why are we getting this on prod? :O",
+      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
       "id": "app_vercel"
     },
     {
@@ -6778,9 +6877,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 34,
+      "community": 33,
       "norm_label": "$schema",
-      "community_name": "Q: hmmm why are we getting this on prod? :O",
+      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
       "id": "app_vercel_schema"
     },
     {
@@ -6789,9 +6888,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 34,
+      "community": 33,
       "norm_label": "framework",
-      "community_name": "Q: hmmm why are we getting this on prod? :O",
+      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
       "id": "app_vercel_framework"
     },
     {
@@ -6800,9 +6899,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 34,
+      "community": 33,
       "norm_label": "installcommand",
-      "community_name": "Q: hmmm why are we getting this on prod? :O",
+      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
       "id": "app_vercel_installcommand"
     },
     {
@@ -6811,9 +6910,9 @@
       "source_file": "app/vercel.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 34,
+      "community": 33,
       "norm_label": "buildcommand",
-      "community_name": "Q: hmmm why are we getting this on prod? :O",
+      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
       "id": "app_vercel_buildcommand"
     },
     {
@@ -6822,9 +6921,9 @@
       "source_file": "app/vite.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 208,
+      "community": 207,
       "norm_label": "vite.config.ts",
-      "community_name": "vite-env.d.ts",
+      "community_name": "privacy-policy.get.ts",
       "id": "app_vite_config"
     },
     {
@@ -6833,9 +6932,9 @@
       "source_file": "app/vitest.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 209,
+      "community": 208,
       "norm_label": "vitest.config.ts",
-      "community_name": "Fallback Map Regeneration and Repair",
+      "community_name": "vite-env.d.ts",
       "id": "app_vitest_config"
     },
     {
@@ -6899,9 +6998,9 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "package.json",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package"
     },
     {
@@ -6910,9 +7009,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "name",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_name"
     },
     {
@@ -6921,9 +7020,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "version",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_version"
     },
     {
@@ -6932,9 +7031,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "private",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_private"
     },
     {
@@ -6943,9 +7042,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "description",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_description"
     },
     {
@@ -6954,9 +7053,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "packagemanager",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_packagemanager"
     },
     {
@@ -6965,9 +7064,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "engines",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_engines"
     },
     {
@@ -6976,9 +7075,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "node",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_engines_node"
     },
     {
@@ -6987,9 +7086,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "scripts",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts"
     },
     {
@@ -6998,9 +7097,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "dev",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_dev"
     },
     {
@@ -7009,9 +7108,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "build",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_build"
     },
     {
@@ -7020,9 +7119,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "build:vercel",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_build_vercel"
     },
     {
@@ -7031,9 +7130,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "preview",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_preview"
     },
     {
@@ -7042,9 +7141,9 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "typecheck",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_typecheck"
     },
     {
@@ -7053,9 +7152,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "test",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_test"
     },
     {
@@ -7064,9 +7163,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "check",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_check"
     },
     {
@@ -7075,9 +7174,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "pms",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_pms"
     },
     {
@@ -7086,9 +7185,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "pms-stop",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_pms_stop"
     },
     {
@@ -7097,9 +7196,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "workflow:inspect",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_workflow_inspect"
     },
     {
@@ -7108,9 +7207,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "workflow:web",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_workflow_web"
     },
     {
@@ -7119,9 +7218,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "map:generate",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_map_generate"
     },
     {
@@ -7130,9 +7229,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "norm_label": "benchmark:map",
-      "community_name": "scripts",
+      "community_name": "DevKit.tsx",
       "id": "package_scripts_benchmark_map"
     },
     {
@@ -7143,7 +7242,7 @@
       "_origin": "ast",
       "community": 37,
       "norm_label": "agents.md",
-      "community_name": "Community 37",
+      "community_name": "AGENTS.md",
       "id": "agents"
     },
     {
@@ -7154,7 +7253,7 @@
       "_origin": "ast",
       "community": 37,
       "norm_label": "pokeworld \u2014 agent instructions",
-      "community_name": "Community 37",
+      "community_name": "AGENTS.md",
       "id": "agents_pokeworld_agent_instructions"
     },
     {
@@ -7163,9 +7262,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 35,
+      "community": 34,
       "norm_label": "claude.md",
-      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "community_name": "Q: hmmm why are we getting this on prod? :O",
       "id": "claude"
     },
     {
@@ -7174,9 +7273,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 35,
+      "community": 34,
       "norm_label": "pokeworld \u2014 repo instructions for ai agents",
-      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "community_name": "Q: hmmm why are we getting this on prod? :O",
       "id": "claude_pokeworld_repo_instructions_for_ai_agents"
     },
     {
@@ -7185,9 +7284,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 35,
+      "community": 34,
       "norm_label": "multi-agent main-branch sync protocol (mandatory)",
-      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "community_name": "Q: hmmm why are we getting this on prod? :O",
       "id": "claude_multi_agent_main_branch_sync_protocol_mandatory"
     },
     {
@@ -7196,9 +7295,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 35,
+      "community": 34,
       "norm_label": "conflict resolution rules",
-      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "community_name": "Q: hmmm why are we getting this on prod? :O",
       "id": "claude_conflict_resolution_rules"
     },
     {
@@ -7207,9 +7306,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 35,
+      "community": 34,
       "norm_label": "coordination notes",
-      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "community_name": "Q: hmmm why are we getting this on prod? :O",
       "id": "claude_coordination_notes"
     },
     {
@@ -7240,9 +7339,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "design-emerald-game-systems.md",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems"
     },
     {
@@ -7251,9 +7350,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "division of labour",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_division_of_labour"
     },
     {
@@ -7262,9 +7361,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "map block streaming protocol (server \u2192 client)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_map_block_streaming_protocol_server_client"
     },
     {
@@ -7273,9 +7372,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "tile feature protocol (server \u2192 client)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_tile_feature_protocol_server_client"
     },
     {
@@ -7284,9 +7383,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "movement rules (client)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_movement_rules_client"
     },
     {
@@ -7295,9 +7394,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "trainer state (client)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_trainer_state_client"
     },
     {
@@ -7306,9 +7405,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L98",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "ui systems",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_ui_systems"
     },
     {
@@ -7317,9 +7416,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L119",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "iteration roadmap (loop)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_iteration_roadmap_loop"
     },
     {
@@ -7328,9 +7427,9 @@
       "source_file": "app/DESIGN-emerald-game-systems.md",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 23,
+      "community": 21,
       "norm_label": "detail-density accounting (toward 500\u20131000)",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_detail_density_accounting_toward_500_1000"
     },
     {
@@ -7573,9 +7672,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 216,
+      "community": 215,
       "norm_label": "dense world desktop visual evidence",
-      "community_name": "Procedural World Acceptance Ledger",
+      "community_name": "Shared Map Tile Contract",
       "id": "docs_procedural_world_acceptance_desktop_visual_evidence"
     },
     {
@@ -7587,9 +7686,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 223,
+      "community": 222,
       "norm_label": "dense world mobile visual evidence",
-      "community_name": "Global-Coordinate Continuity",
+      "community_name": "Gameplay and Persistence Systems",
       "id": "docs_procedural_world_acceptance_mobile_visual_evidence"
     },
     {
@@ -7601,9 +7700,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 228,
+      "community": 227,
       "norm_label": "trainer party desktop visual evidence",
-      "community_name": "Procedural Map Pipeline",
+      "community_name": "Melbourne, Sydney Harbour, and Alpine Native Chrome QA",
       "id": "docs_procedural_world_acceptance_trainer_party_visual_evidence"
     },
     {
@@ -7615,9 +7714,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 229,
+      "community": 228,
       "norm_label": "trainer pc mobile visual evidence",
-      "community_name": "Ready-for-Review Pull Request",
+      "community_name": "Procedural Map Pipeline",
       "id": "docs_procedural_world_acceptance_trainer_pc_visual_evidence"
     },
     {
@@ -7629,9 +7728,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 206,
+      "community": 205,
       "norm_label": "fallback map regeneration and repair",
-      "community_name": "Vite 8",
+      "community_name": "Community 205",
       "id": "app_todo_fallback_map_regeneration_fallback_repair"
     },
     {
@@ -7643,9 +7742,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 207,
+      "community": 206,
       "norm_label": "rate-limited administrative fallback sweep",
-      "community_name": "privacy-policy.get.ts",
+      "community_name": "Vite 8",
       "id": "app_todo_fallback_map_regeneration_proactive_sweep"
     },
     {
@@ -7883,7 +7982,7 @@
       "contributor": null,
       "community": 38,
       "norm_label": "walking character sprite frame",
-      "community_name": "Community 38",
+      "community_name": "Walking Character Sprite Frame",
       "id": "app_map_assets_tilesets_char_walk_1_image"
     },
     {
@@ -7897,7 +7996,7 @@
       "contributor": null,
       "community": 38,
       "norm_label": "pokemon emerald male character spritesheet",
-      "community_name": "Community 38",
+      "community_name": "Walking Character Sprite Frame",
       "id": "app_map_assets_tilesets_emerald_character_male_image"
     },
     {
@@ -9561,9 +9660,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 214,
+      "community": 213,
       "norm_label": "dense world desktop screenshot",
-      "community_name": "Multi-Agent Main-Branch Sync Protocol",
+      "community_name": "Graphify Union Merge Workflow",
       "id": "docs_procedural_world_acceptance_dense_world_desktop"
     },
     {
@@ -9575,9 +9674,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 215,
+      "community": 214,
       "norm_label": "dense world mobile screenshot",
-      "community_name": "Shared Map Tile Contract",
+      "community_name": "Multi-Agent Main-Branch Sync Protocol",
       "id": "docs_procedural_world_acceptance_dense_world_mobile"
     },
     {
@@ -9799,9 +9898,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 213,
+      "community": 212,
       "norm_label": "procedural world acceptance ledger",
-      "community_name": "Graphify Union Merge Workflow",
+      "community_name": "vitest.config.ts",
       "id": "docs_procedural_world_acceptance_acceptance_ledger"
     },
     {
@@ -9813,9 +9912,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 217,
+      "community": 216,
       "norm_label": "deterministic emerald-style world",
-      "community_name": "Dense World Desktop Screenshot",
+      "community_name": "Procedural World Acceptance Ledger",
       "id": "docs_procedural_world_acceptance_deterministic_emerald_world"
     },
     {
@@ -9827,9 +9926,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 225,
+      "community": 224,
       "norm_label": "procedural map pipeline",
-      "community_name": "Graphify Outputs",
+      "community_name": "Google Static Maps Source",
       "id": "docs_procedural_world_acceptance_procedural_map_pipeline"
     },
     {
@@ -9841,9 +9940,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 221,
+      "community": 220,
       "norm_label": "google static maps source",
-      "community_name": "Repository Emerald Tileset",
+      "community_name": "Deterministic Emerald-Style World",
       "id": "docs_procedural_world_acceptance_google_static_maps"
     },
     {
@@ -9855,9 +9954,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 218,
+      "community": 217,
       "norm_label": "repository emerald tileset",
-      "community_name": "Dense World Mobile Screenshot",
+      "community_name": "Dense World Desktop Screenshot",
       "id": "docs_procedural_world_acceptance_emerald_tileset"
     },
     {
@@ -9869,9 +9968,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 231,
+      "community": 230,
       "norm_label": "weighted biome grammar",
-      "community_name": "Trainer Party Desktop Visual Evidence",
+      "community_name": "Safe Spawn and Connected Routes",
       "id": "docs_procedural_world_acceptance_weighted_biome_grammar"
     },
     {
@@ -9883,9 +9982,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 220,
+      "community": 219,
       "norm_label": "global-coordinate continuity",
-      "community_name": "Deterministic Emerald-Style World",
+      "community_name": "Dense World Desktop Visual Evidence",
       "id": "docs_procedural_world_acceptance_global_coordinate_continuity"
     },
     {
@@ -9897,9 +9996,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 227,
+      "community": 226,
       "norm_label": "safe spawn and connected routes",
-      "community_name": "Melbourne, Sydney Harbour, and Alpine Native Chrome QA",
+      "community_name": "Dense World Mobile Visual Evidence",
       "id": "docs_procedural_world_acceptance_safe_spawn_and_routes"
     },
     {
@@ -9911,9 +10010,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 219,
+      "community": 218,
       "norm_label": "gameplay and persistence systems",
-      "community_name": "Dense World Desktop Visual Evidence",
+      "community_name": "Dense World Mobile Screenshot",
       "id": "docs_procedural_world_acceptance_gameplay_systems"
     },
     {
@@ -9925,9 +10024,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 230,
+      "community": 229,
       "norm_label": "vercel static output",
-      "community_name": "Safe Spawn and Connected Routes",
+      "community_name": "Ready-for-Review Pull Request",
       "id": "docs_procedural_world_acceptance_vercel_output"
     },
     {
@@ -9939,9 +10038,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 222,
+      "community": 221,
       "norm_label": "graphify outputs",
-      "community_name": "Gameplay and Persistence Systems",
+      "community_name": "Repository Emerald Tileset",
       "id": "docs_procedural_world_acceptance_graphify_outputs"
     },
     {
@@ -9953,9 +10052,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 224,
+      "community": 223,
       "norm_label": "melbourne, sydney harbour, and alpine native chrome qa",
-      "community_name": "Google Static Maps Source",
+      "community_name": "Global-Coordinate Continuity",
       "id": "docs_procedural_world_acceptance_native_chrome_qa"
     },
     {
@@ -9967,9 +10066,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 226,
+      "community": 225,
       "norm_label": "ready-for-review pull request",
-      "community_name": "Dense World Mobile Visual Evidence",
+      "community_name": "Graphify Outputs",
       "id": "docs_procedural_world_acceptance_pull_request"
     },
     {
@@ -9981,9 +10080,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 234,
+      "community": 233,
       "norm_label": "fallback map regeneration query",
-      "community_name": "Weighted Biome Grammar",
+      "community_name": "Vercel Static Output",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_query"
     },
     {
@@ -9995,9 +10094,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 235,
+      "community": 234,
       "norm_label": "fallback map regeneration repair",
-      "community_name": "blocks.get.ts",
+      "community_name": "Weighted Biome Grammar",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_fallback_map_regeneration_repair"
     },
     {
@@ -10009,9 +10108,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 238,
+      "community": 237,
       "norm_label": "stale fallback block detection",
-      "community_name": "Fallback Map Regeneration Repair",
+      "community_name": "Fallback Map Regeneration Query",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection"
     },
     {
@@ -10023,9 +10122,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 232,
+      "community": 231,
       "norm_label": "blocks.get.ts",
-      "community_name": "Trainer PC Mobile Visual Evidence",
+      "community_name": "Trainer Party Desktop Visual Evidence",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_blocks_get"
     },
     {
@@ -10037,9 +10136,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 237,
+      "community": 236,
       "norm_label": "legacy fallback fingerprint detection",
-      "community_name": "Fallback Map Regeneration Query",
+      "community_name": "Nitro Cache Bypass for Stale Fallback Blocks",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint"
     },
     {
@@ -10051,9 +10150,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 233,
+      "community": 232,
       "norm_label": "nitro cache bypass for stale fallback blocks",
-      "community_name": "Vercel Static Output",
+      "community_name": "Trainer PC Mobile Visual Evidence",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass"
     },
     {
@@ -10065,9 +10164,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 236,
+      "community": 235,
       "norm_label": "lazy durable workflow regeneration",
-      "community_name": "Nitro Cache Bypass for Stale Fallback Blocks",
+      "community_name": "blocks.get.ts",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration"
     },
     {
@@ -10079,9 +10178,9 @@
       "captured_at": "2026-07-18T13:01:54.819652+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 239,
+      "community": 238,
       "norm_label": "todo-fallback-map-regeneration.md",
-      "community_name": "Lazy Durable Workflow Regeneration",
+      "community_name": "Fallback Map Regeneration Repair",
       "id": "graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_todo_document"
     },
     {
@@ -10093,9 +10192,9 @@
       "captured_at": "2026-07-18T14:33:55.510498+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 246,
+      "community": 245,
       "norm_label": "google static maps to pokemon world pipeline verification",
-      "community_name": "Google Static Maps",
+      "community_name": "GamePage.tsx",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_query"
     },
     {
@@ -10107,9 +10206,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 243,
+      "community": 242,
       "norm_label": "google static maps",
-      "community_name": "Native Chrome Visual QA",
+      "community_name": "TODO-fallback-map-regeneration.md",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_google_static_maps"
     },
     {
@@ -10121,9 +10220,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 244,
+      "community": 243,
       "norm_label": "map generation",
-      "community_name": "DevKit",
+      "community_name": "Native Chrome Visual QA",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_map_generation"
     },
     {
@@ -10135,9 +10234,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 241,
+      "community": 240,
       "norm_label": "devkit()",
-      "community_name": "Stale Fallback Block Detection",
+      "community_name": "Legacy Fallback Fingerprint Detection",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_devkit"
     },
     {
@@ -10149,9 +10248,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 242,
+      "community": 241,
       "norm_label": "gamepage.tsx",
-      "community_name": "TODO-fallback-map-regeneration.md",
+      "community_name": "Stale Fallback Block Detection",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_game_page_tsx"
     },
     {
@@ -10163,9 +10262,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 240,
+      "community": 239,
       "norm_label": "native chrome visual qa",
-      "community_name": "Legacy Fallback Fingerprint Detection",
+      "community_name": "Lazy Durable Workflow Regeneration",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_chrome_visual_qa"
     },
     {
@@ -10177,9 +10276,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 247,
+      "community": 246,
       "norm_label": "uniform grass tile classification",
-      "community_name": "Map Generation",
+      "community_name": "Google Static Maps",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_uniform_grass_classification"
     },
     {
@@ -10191,9 +10290,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 245,
+      "community": 244,
       "norm_label": "mobile black missing strip",
-      "community_name": "GamePage.tsx",
+      "community_name": "DevKit",
       "id": "graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_mobile_missing_strip"
     },
     {
@@ -10205,9 +10304,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 211,
+      "community": 210,
       "norm_label": "multi-agent main-branch sync protocol",
-      "community_name": "vite.config.ts",
+      "community_name": "Rate-Limited Administrative Fallback Sweep",
       "id": "claude_multi_agent_main_branch_sync_protocol"
     },
     {
@@ -10219,9 +10318,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 210,
+      "community": 209,
       "norm_label": "graphify union merge workflow",
-      "community_name": "Rate-Limited Administrative Fallback Sweep",
+      "community_name": "Fallback Map Regeneration and Repair",
       "id": "claude_graphify_union_merge_workflow"
     },
     {
@@ -10233,9 +10332,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 212,
+      "community": 211,
       "norm_label": "shared map tile contract",
-      "community_name": "vitest.config.ts",
+      "community_name": "vite.config.ts",
       "id": "claude_shared_map_tile_contract"
     },
     {
@@ -10247,9 +10346,9 @@
       "captured_at": "2026-07-18T17:55:03.223375+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 248,
+      "community": 247,
       "norm_label": "procedural world acceptance commands query",
-      "community_name": "Mobile Black Missing Strip",
+      "community_name": "Map Generation",
       "id": "graphify_out_memory_query_20260718_175503_which_acceptance_status_and_commands_determine_com_procedural_world_acceptance_query"
     },
     {
@@ -10261,9 +10360,9 @@
       "captured_at": "2026-07-19T00:14:53.730617+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 249,
+      "community": 248,
       "norm_label": "procedural world gate verification",
-      "community_name": "Google Static Maps to Pokemon World Pipeline Verification",
+      "community_name": "Mobile Black Missing Strip",
       "id": "graphify_out_memory_query_20260719_001453_does_the_completed_procedural_world_still_satisfy_procedural_world_gate_verification"
     },
     {
@@ -10275,9 +10374,9 @@
       "captured_at": "2026-07-19T00:54:29.287074+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 250,
+      "community": 249,
       "norm_label": "acceptance completion verification",
-      "community_name": "Uniform Grass Tile Classification",
+      "community_name": "Google Static Maps to Pokemon World Pipeline Verification",
       "id": "graphify_out_memory_query_20260719_005429_verify_the_accepted_pokeworld_procedural_world_com_acceptance_completion_verification"
     },
     {
@@ -10289,9 +10388,9 @@
       "captured_at": "2026-07-19T01:04:29.928447+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 251,
+      "community": 250,
       "norm_label": "acceptance surface verification",
-      "community_name": "Procedural World Acceptance Commands Query",
+      "community_name": "Uniform Grass Tile Classification",
       "id": "graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_acceptance_surface_verification"
     },
     {
@@ -10303,9 +10402,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 252,
+      "community": 251,
       "norm_label": "cardinal",
-      "community_name": "Procedural World Gate Verification",
+      "community_name": "Procedural World Acceptance Commands Query",
       "id": "graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_cardinal"
     },
     {
@@ -10317,9 +10416,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 255,
+      "community": 254,
       "norm_label": "procedural-world-properties.test.ts",
-      "community_name": "CARDINAL",
+      "community_name": "Acceptance Surface Verification",
       "id": "graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_procedural_world_properties_test"
     },
     {
@@ -10331,9 +10430,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 254,
+      "community": 253,
       "norm_label": "normalizeterrainlayout",
-      "community_name": "Acceptance Surface Verification",
+      "community_name": "Acceptance Completion Verification",
       "id": "graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_normalize_terrain_layout"
     },
     {
@@ -10345,9 +10444,9 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 253,
+      "community": 252,
       "norm_label": "complete acceptance status",
-      "community_name": "Acceptance Completion Verification",
+      "community_name": "Procedural World Gate Verification",
       "id": "graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_complete_acceptance_status"
     },
     {
@@ -10359,9 +10458,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 23,
+      "community": 21,
       "norm_label": "emerald game systems design and cross-agent contract",
-      "community_name": "Emerald game systems \u2014 design & cross-agent contract",
+      "community_name": "benchmark-map-pipeline.mjs",
       "id": "app_design_emerald_game_systems_contract"
     },
     {
@@ -10799,105 +10898,6 @@
       "id": "graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_devkit"
     },
     {
-      "label": "sw.js",
-      "file_type": "code",
-      "source_file": "app/public/sw.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "sw.js",
-      "community_name": "Community 39",
-      "id": "app_public_sw"
-    },
-    {
-      "label": "CORE_ASSETS",
-      "file_type": "code",
-      "source_file": "app/public/sw.js",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "core_assets",
-      "community_name": "Community 39",
-      "id": "app_public_sw_core_assets"
-    },
-    {
-      "label": "http.ts",
-      "file_type": "code",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "http.ts",
-      "community_name": "types.ts",
-      "id": "app_server_utils_http"
-    },
-    {
-      "label": "jsonResponse()",
-      "file_type": "code",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "jsonresponse()",
-      "community_name": "types.ts",
-      "id": "app_server_utils_http_jsonresponse"
-    },
-    {
-      "label": "errorResponse()",
-      "file_type": "code",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "errorresponse()",
-      "community_name": "types.ts",
-      "id": "app_server_utils_http_errorresponse"
-    },
-    {
-      "label": "App.tsx",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 33,
-      "norm_label": "app.tsx",
-      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
-      "id": "app_src_app"
-    },
-    {
-      "label": "environmentPrefix()",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 33,
-      "norm_label": "environmentprefix()",
-      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
-      "id": "app_src_app_environmentprefix"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 33,
-      "norm_label": "app()",
-      "community_name": "Multi-agent main-branch sync protocol (MANDATORY)",
-      "id": "app_src_app_app"
-    },
-    {
-      "label": "http-and-service-worker.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/http-and-service-worker.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 205,
-      "norm_label": "http-and-service-worker.test.ts",
-      "id": "app_tests_http_and_service_worker_test",
-      "community_name": "Vercel Workflow"
-    },
-    {
       "label": "Production MongoDB Configuration Failure Query",
       "file_type": "rationale",
       "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md",
@@ -10906,10 +10906,10 @@
       "captured_at": "2026-07-19T12:15:15.022621+00:00",
       "author": null,
       "contributor": "graphify",
-      "community": 18,
+      "community": 35,
       "norm_label": "production mongodb configuration failure query",
-      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_production_mongodb_failure",
-      "community_name": "compilerOptions"
+      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_production_mongodb_failure"
     },
     {
       "label": "MongoDB",
@@ -10920,10 +10920,10 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 18,
+      "community": 35,
       "norm_label": "mongodb",
-      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb",
-      "community_name": "compilerOptions"
+      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb"
     },
     {
       "label": "/api/blocks Handler",
@@ -10934,10 +10934,10 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 18,
+      "community": 35,
       "norm_label": "/api/blocks handler",
-      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks",
-      "community_name": "compilerOptions"
+      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks"
     },
     {
       "label": "127.0.0.1:27017 Loopback Endpoint",
@@ -10948,10 +10948,10 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 18,
+      "community": 35,
       "norm_label": "127.0.0.1:27017 loopback endpoint",
-      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint",
-      "community_name": "compilerOptions"
+      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint"
     },
     {
       "label": "Production MongoDB Environment Variables",
@@ -10962,10 +10962,10 @@
       "captured_at": null,
       "author": null,
       "contributor": "graphify",
-      "community": 18,
+      "community": 35,
       "norm_label": "production mongodb environment variables",
-      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables",
-      "community_name": "compilerOptions"
+      "community_name": "Emerald Game Systems Design and Cross-Agent Contract",
+      "id": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables"
     },
     {
       "label": "Vercel Deployments",
@@ -10976,10 +10976,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "vercel deployments",
       "id": "app_vercel_deployments_document",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Pokeworld Vercel Project",
@@ -10990,10 +10990,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "pokeworld vercel project",
       "id": "app_vercel_deployments_pokeworld_vercel_project",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "lopugit/pokeworld GitHub Repository",
@@ -11004,10 +11004,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "lopugit/pokeworld github repository",
       "id": "app_vercel_deployments_pokeworld_github_repository",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Pokeworld Production Deployment",
@@ -11018,10 +11018,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "pokeworld production deployment",
       "id": "app_vercel_deployments_production_deployment",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Final Dense Procedural World Preview",
@@ -11032,10 +11032,10 @@
       "captured_at": "2026-07-19",
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "final dense procedural world preview",
       "id": "app_vercel_deployments_dense_world_preview",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Vercel Workflow Managed Queue",
@@ -11046,10 +11046,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "vercel workflow managed queue",
       "id": "app_vercel_deployments_vercel_workflow",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Map Jobs API",
@@ -11060,10 +11060,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "map jobs api",
       "id": "app_vercel_deployments_map_jobs_api",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Google Static Maps Source Layer",
@@ -11074,10 +11074,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "google static maps source layer",
       "id": "app_vercel_deployments_google_static_maps",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "MongoDB Durable Persistence",
@@ -11088,10 +11088,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "mongodb durable persistence",
       "id": "app_vercel_deployments_mongodb_persistence",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     },
     {
       "label": "Vercel Build Output",
@@ -11102,13 +11102,261 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 22,
       "norm_label": "vercel build output",
       "id": "app_vercel_deployments_vercel_build",
-      "community_name": "compilerOptions"
+      "community_name": "coordinates.ts"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/public/sw.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_public_sw",
+      "target": "app_public_sw_core_assets"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_block_lat_lng_get",
+      "target": "app_server_utils_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_utils_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs.post.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_post",
+      "target": "app_server_utils_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_utils_http"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_utils_http",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_utils_http",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/http-and-service-worker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_http_and_service_worker_test",
+      "target": "app_server_utils_http"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_block_lat_lng_get",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs.post.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_post",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/utils/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_utils_http_errorresponse",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/http-and-service-worker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_http_and_service_worker_test",
+      "target": "app_server_utils_http_jsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_block_lat_lng_get",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/blocks.get.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_blocks_get",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs.post.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_post",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_server_routes_api_map_jobs_runid_get",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/http-and-service-worker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_http_and_service_worker_test",
+      "target": "app_server_utils_http_errorresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_app_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_app_environmentprefix"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/entry-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_entry_client",
+      "target": "app_src_app"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/entry-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_entry_client",
+      "target": "app_src_app_app"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -12465,39 +12713,6 @@
       "target": "app_server_services_map_coordinates_blockforcoordinates"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_block_lat_lng_get",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_block_lat_lng_get",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/block-lat-lng.get.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_block_lat_lng_get",
-      "target": "app_server_utils_http_jsonresponse"
-    },
-    {
       "relation": "re_exports",
       "context": "export",
       "confidence": "EXTRACTED",
@@ -12579,39 +12794,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_blocks_get",
-      "target": "app_server_utils_http_jsonresponse"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12683,39 +12865,6 @@
       "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_post",
       "target": "app_server_services_map_input_parsemapjobinput"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs.post.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_post",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs.post.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_post",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs.post.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_post",
-      "target": "app_server_utils_http_jsonresponse"
     },
     {
       "relation": "imports_from",
@@ -12869,39 +13018,6 @@
       "confidence_score": 1.0,
       "source": "app_server_routes_api_map_jobs_runid_get",
       "target": "app_server_services_map_types_mapgenerationresult"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_routes_api_map_jobs_runid_get",
-      "target": "app_server_utils_http_jsonresponse"
     },
     {
       "relation": "calls",
@@ -21129,28 +21245,6 @@
       "target": "app_src_components_game_ui_startmenu_startmenuprops"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/entry-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_entry_client",
-      "target": "app_src_app"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/entry-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_entry_client",
-      "target": "app_src_app_app"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/entry-client.tsx",
@@ -24484,77 +24578,6 @@
       "target": "graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_fallback_map_png"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/public/sw.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_public_sw",
-      "target": "app_public_sw_core_assets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_utils_http",
-      "target": "app_server_utils_http_errorresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_utils_http",
-      "target": "app_server_utils_http_jsonresponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/utils/http.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_server_utils_http_errorresponse",
-      "target": "app_server_utils_http_jsonresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_app",
-      "target": "app_src_app_app"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_app",
-      "target": "app_src_app_environmentprefix"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.92,
-      "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_production_mongodb_failure",
-      "target": "app_vercel_deployments_mongodb_persistence"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -24717,20 +24740,6 @@
   ],
   "hyperedges": [
     {
-      "id": "production_mongodb_failure_path",
-      "label": "Production MongoDB Failure Path",
-      "nodes": [
-        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks",
-        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables",
-        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint",
-        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.98,
-      "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md"
-    },
-    {
       "id": "app_vercel_deployments_public_deployment_flow",
       "label": "Pokeworld Public Deployment Flow",
       "nodes": [
@@ -24757,6 +24766,20 @@
       "confidence": "EXTRACTED",
       "confidence_score": 0.95,
       "source_file": "app/VERCEL_DEPLOYMENTS.md"
+    },
+    {
+      "id": "production_mongodb_failure_path",
+      "label": "Production MongoDB Failure Path",
+      "nodes": [
+        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks",
+        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables",
+        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint",
+        "graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "graphify-out/memory/query_20260719_121515_hmmm_why_are_we_getting_this_on_prod___o.md"
     },
     {
       "id": "fallback_rendering_diagnosis",
@@ -24916,5 +24939,5 @@
       "source_file": "graphify-out/memory/query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl.md"
     }
   ],
-  "built_at_commit": "5d11f73d648a41be2c6419b4d97f23e27252efab"
+  "built_at_commit": "fcaf9959ac4dbce278549066b059c7c0596dca86"
 }

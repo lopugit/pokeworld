@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 924 nodes · 1293 edges · 256 communities (42 shown, 214 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.73)
+- 924 nodes · 1295 edges · 255 communities (41 shown, 214 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5d11f73d`
+- Built from commit: `fcaf9959`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,7 @@
 - [[_COMMUNITY_trainer-state.ts|trainer-state.ts]]
 - [[_COMMUNITY_Pokémon World application|Pokémon World application]]
 - [[_COMMUNITY_Game.tsx|Game.tsx]]
-- [[_COMMUNITY_PcPanel.tsx|PcPanel.tsx]]
+- [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_scripts|scripts]]
 - [[_COMMUNITY_DevKit.tsx|DevKit.tsx]]
 - [[_COMMUNITY_terrain-classifier.ts|terrain-classifier.ts]]
@@ -40,20 +40,20 @@
 - [[_COMMUNITY_Emerald game systems — design & cross-agent contract|Emerald game systems — design & cross-agent contract]]
 - [[_COMMUNITY_extract-terrain-tiles.mjs|extract-terrain-tiles.mjs]]
 - [[_COMMUNITY_generate-map.mjs|generate-map.mjs]]
-- [[_COMMUNITY_trainer-state.test.ts|trainer-state.test.ts]]
-- [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
 - [[_COMMUNITY_Pokémon World Browser Shell|Pokémon World Browser Shell]]
 - [[_COMMUNITY_getMapAtWithSource|getMapAtWithSource]]
 - [[_COMMUNITY_map-source.ts|map-source.ts]]
-- [[_COMMUNITY_saveTrainer|saveTrainer]]
-- [[_COMMUNITY_vercel.json|vercel.json]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Multi-agent main-branch sync protocol (MANDATORY)|Multi-agent main-branch sync protocol (MANDATORY)]]
 - [[_COMMUNITY_Q hmmm why are we getting this on prod O|Q: hmmm why are we getting this on prod? :O]]
 - [[_COMMUNITY_Emerald Game Systems Design and Cross-Agent Contract|Emerald Game Systems Design and Cross-Agent Contract]]
-- [[_COMMUNITY_Community 36|Community 36]]
-- [[_COMMUNITY_Community 37|Community 37]]
-- [[_COMMUNITY_Community 38|Community 38]]
-- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
+- [[_COMMUNITY_AGENTS|AGENTS.md]]
+- [[_COMMUNITY_Walking Character Sprite Frame|Walking Character Sprite Frame]]
+- [[_COMMUNITY_sw.js|sw.js]]
 - [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
 - [[_COMMUNITY_AGENTS|AGENTS.md]]
 - [[_COMMUNITY_Walking Character Sprite Frame|Walking Character Sprite Frame]]
@@ -217,8 +217,9 @@
 - [[_COMMUNITY_React 19|React 19]]
 - [[_COMMUNITY_React Router Non-Framework Mode|React Router Non-Framework Mode]]
 - [[_COMMUNITY_Persistent Trainer, Party, Item, Badge, and PC System|Persistent Trainer, Party, Item, Badge, and PC System]]
+- [[_COMMUNITY_Community 205|Community 205]]
 - [[_COMMUNITY_Vite 8|Vite 8]]
-- [[_COMMUNITY_privacy-policy.get.ts|privacy-policy.get.ts]]
+- [[_COMMUNITY_Fallback Map Regeneration and Repair|Fallback Map Regeneration and Repair]]
 - [[_COMMUNITY_Rate-Limited Administrative Fallback Sweep|Rate-Limited Administrative Fallback Sweep]]
 - [[_COMMUNITY_vite.config.ts|vite.config.ts]]
 - [[_COMMUNITY_vitest.config.ts|vitest.config.ts]]
@@ -249,7 +250,7 @@
 - [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
 - [[_COMMUNITY_Fallback Map Regeneration Repair|Fallback Map Regeneration Repair]]
 - [[_COMMUNITY_Lazy Durable Workflow Regeneration|Lazy Durable Workflow Regeneration]]
-- [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
+- [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
 - [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
 - [[_COMMUNITY_Native Chrome Visual QA|Native Chrome Visual QA]]
 - [[_COMMUNITY_DevKit|DevKit]]
@@ -263,7 +264,6 @@
 - [[_COMMUNITY_Procedural World Gate Verification|Procedural World Gate Verification]]
 - [[_COMMUNITY_Acceptance Completion Verification|Acceptance Completion Verification]]
 - [[_COMMUNITY_Acceptance Surface Verification|Acceptance Surface Verification]]
-- [[_COMMUNITY_CARDINAL|CARDINAL]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 46 edges
@@ -293,9 +293,9 @@
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Production MongoDB Failure Path** — graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb [EXTRACTED 0.98]
 - **Pokeworld Public Deployment Flow** — app_vercel_deployments_pokeworld_github_repository, app_vercel_deployments_pokeworld_vercel_project, app_vercel_deployments_production_deployment, app_vercel_deployments_dense_world_preview [EXTRACTED 1.00]
 - **Server-side Map Generation Flow** — app_vercel_deployments_dense_world_preview, app_vercel_deployments_map_jobs_api, app_vercel_deployments_vercel_workflow, app_vercel_deployments_google_static_maps [EXTRACTED 0.95]
+- **Production MongoDB Failure Path** — graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_api_blocks, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb_environment_variables, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_loopback_endpoint, graphify_out_memory_query_20260719_121515_hmmm_why_are_we_getting_this_on_prod_o_mongodb [EXTRACTED 0.98]
 - **Fallback Rendering Diagnosis** — graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_offline_map_mode, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_fallback_map_png, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_game_render_canvas, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_google_static_maps_caption [EXTRACTED 0.98]
 - **Server-to-Client Tile Metadata Contract** — app_design_emerald_game_systems_server_world_generation, app_design_emerald_game_systems_tile_feature_protocol, app_design_emerald_game_systems_client_game_systems, app_design_emerald_game_systems_map_tile [EXTRACTED 1.00]
 - **Emerald UI Systems** — app_design_emerald_game_systems_dialog_box, app_design_emerald_game_systems_start_menu, app_design_emerald_game_systems_party_panel, app_design_emerald_game_systems_bag_panel, app_design_emerald_game_systems_badges_panel, app_design_emerald_game_systems_pc_panel, app_design_emerald_game_systems_game_key_routing [EXTRACTED 1.00]
@@ -308,7 +308,7 @@
 - **Coordinate-to-Pokemon World Generation Pipeline** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_devkit, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_google_static_maps, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_map_generation, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_game_page_tsx [INFERRED 0.90]
 - **Visual Pipeline Defects and QA Findings** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_chrome_visual_qa, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_uniform_grass_classification, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_mobile_missing_strip [EXTRACTED 0.95]
 
-## Communities (256 total, 214 thin omitted)
+## Communities (255 total, 214 thin omitted)
 
 ### Community 0 - "types.ts"
 Cohesion: 0.07
@@ -336,7 +336,7 @@ Nodes (28): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedL
 
 ### Community 6 - "functions.ts"
 Cohesion: 0.11
-Nodes (15): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+7 more)
+Nodes (16): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+8 more)
 
 ### Community 7 - "trainer-state.ts"
 Cohesion: 0.11
@@ -350,29 +350,29 @@ Nodes (23): addItemToBag(), Badge, BagItem, collectFieldItem(), defaultTrainer()
 Cohesion: 0.09
 Nodes (21): Pokémon Emerald Exterior Tileset, API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Trainer Party, Items, Badges, and PC Systems (+13 more)
 
-### Community 10 - "PcPanel.tsx"
+### Community 10 - "Community 10"
+Cohesion: 0.19
+Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
+
+### Community 11 - "scripts"
 Cohesion: 0.15
 Nodes (16): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+8 more)
 
-### Community 11 - "scripts"
+### Community 12 - "DevKit.tsx"
 Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
-### Community 12 - "DevKit.tsx"
-Cohesion: 0.15
-Nodes (15): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE (+7 more)
-
 ### Community 13 - "terrain-classifier.ts"
+Cohesion: 0.14
+Nodes (17): toExport(), centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES (+9 more)
+
+### Community 14 - "world-grammar.ts"
 Cohesion: 0.18
 Nodes (16): BIOME_PRESETS, BIOME_RULES, choose(), chooseWeighted(), DETAIL_PALETTES, recipeHash(), ROUTE_TREATMENTS, SECRET_PATH_PATTERNS (+8 more)
 
-### Community 14 - "world-grammar.ts"
+### Community 15 - "verify-vercel-output.mjs"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
-
-### Community 15 - "verify-vercel-output.mjs"
-Cohesion: 0.24
-Nodes (13): saveMapAt(), asBuffer(), assertCrop(), createSolidPng(), createSolidPngWithRgba(), createSolidRgba(), cropPng(), cropPngWithRgba() (+5 more)
 
 ### Community 16 - "png.ts"
 Cohesion: 0.29
@@ -383,42 +383,42 @@ Cohesion: 0.16
 Nodes (8): Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS, Nav()
 
 ### Community 18 - "compilerOptions"
-Cohesion: 0.16
-Nodes (15): Final Dense Procedural World Preview, Vercel Deployments, Google Static Maps Source Layer, Map Jobs API, MongoDB Durable Persistence, lopugit/pokeworld GitHub Repository, Pokeworld Vercel Project, Pokeworld Production Deployment (+7 more)
-
-### Community 19 - "Fallback Map PNG"
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
-### Community 20 - "blocks.ts"
-Cohesion: 0.21
-Nodes (8): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, log(), summarizeTerrain()
-
-### Community 21 - "benchmark-map-pipeline.mjs"
+### Community 19 - "Fallback Map PNG"
 Cohesion: 0.18
 Nodes (7): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source
 
-### Community 22 - "coordinates.ts"
+### Community 20 - "blocks.ts"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
-### Community 23 - "Emerald game systems — design & cross-agent contract"
+### Community 21 - "benchmark-map-pipeline.mjs"
 Cohesion: 0.20
 Nodes (9): Emerald Game Systems Design and Cross-Agent Contract, Detail-density accounting (toward 500–1000), Division of labour, Iteration roadmap (loop), Map block streaming protocol (server → client), Movement rules (client), Tile feature protocol (server → client), Trainer state (client) (+1 more)
 
-### Community 24 - "extract-terrain-tiles.mjs"
+### Community 22 - "coordinates.ts"
+Cohesion: 0.27
+Nodes (10): Final Dense Procedural World Preview, Vercel Deployments, Google Static Maps Source Layer, Map Jobs API, MongoDB Durable Persistence, lopugit/pokeworld GitHub Repository, Pokeworld Vercel Project, Pokeworld Production Deployment (+2 more)
+
+### Community 23 - "Emerald game systems — design & cross-agent contract"
 Cohesion: 0.25
 Nodes (7): appDir, crop(), outputDir, scriptDir, source, sourcePath, writeGrid()
 
-### Community 25 - "generate-map.mjs"
+### Community 24 - "extract-terrain-tiles.mjs"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
 
-### Community 26 - "trainer-state.test.ts"
+### Community 25 - "generate-map.mjs"
+Cohesion: 0.25
+Nodes (5): latsDb, lngsDb, sortedMods, transactionOptions, transactions
+
+### Community 26 - "Community 26"
 Cohesion: 0.39
 Nodes (7): depositPartyMember(), setLeadPartyMember(), toggleBadge(), transition(), useBagItem(), withdrawPartyMember(), fieldItem
 
-### Community 27 - "TODO: fallback map regeneration"
+### Community 27 - "Community 27"
 Cohesion: 0.33
 Nodes (3): readJson(), saveTrainer(), StorageLike
 
@@ -434,28 +434,28 @@ Nodes (6): DevKit, Fallback Map PNG, Game renderCanvas, Google Static Map Diagno
 Cohesion: 0.50
 Nodes (5): Pokémon World Browser Shell, React Client Entry Module, Pokémon World Application Icon, Android Chrome Application Icon 192 by 192, Android Chrome Application Icon 512 by 512
 
-### Community 31 - "saveTrainer"
-Cohesion: 0.50
-Nodes (4): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource()
-
-### Community 32 - "vercel.json"
+### Community 31 - "Community 31"
 Cohesion: 0.70
 Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
 
-### Community 34 - "Q: hmmm why are we getting this on prod? :O"
+### Community 33 - "Multi-agent main-branch sync protocol (MANDATORY)"
 Cohesion: 0.40
 Nodes (4): buildCommand, framework, installCommand, $schema
 
-### Community 35 - "Emerald Game Systems Design and Cross-Agent Contract"
+### Community 34 - "Q: hmmm why are we getting this on prod? :O"
 Cohesion: 0.40
 Nodes (4): Conflict resolution rules, Coordination notes, Multi-agent main-branch sync protocol (MANDATORY), Pokeworld — repo instructions for AI agents
 
-### Community 36 - "Community 36"
+### Community 35 - "Emerald Game Systems Design and Cross-Agent Contract"
+Cohesion: 0.40
+Nodes (5): /api/blocks Handler, 127.0.0.1:27017 Loopback Endpoint, MongoDB, Production MongoDB Environment Variables, Production MongoDB Configuration Failure Query
+
+### Community 36 - "finalize-static-shell.mjs"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **433 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+428 more)
+- **433 isolated node(s):** `CORE_ASSETS`, `name`, `version`, `private`, `type` (+428 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **214 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -467,16 +467,16 @@ Nodes (3): root, target, transformedShell
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `Game` to `pm2.mjs`, `TODO: fallback map regeneration`, `game-rules.ts`, `trainer-state.ts`?**
+- **Why does `Game` connect `Game` to `pm2.mjs`, `Community 27`, `game-rules.ts`, `trainer-state.ts`?**
   _High betweenness centrality (0.036) - this node is a cross-community bridge._
-- **Why does `TerrainKind` connect `types.ts` to `terrain-classifier.ts`, `DevKit.tsx`, `terrain-layout.ts`?**
+- **Why does `TerrainKind` connect `types.ts` to `terrain-layout.ts`, `terrain-classifier.ts`, `world-grammar.ts`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `MapBlock` connect `types.ts` to `trainer-state.ts`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _438 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `CORE_ASSETS`, `name`, `version` to the rest of the system?**
+  _439 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `types.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06964006259780908 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06887366818873668 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.07662337662337662 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
