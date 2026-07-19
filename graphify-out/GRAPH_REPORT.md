@@ -1,16 +1,15 @@
-# Graph Report - pokeworld  (2026-07-19)
+# Graph Report - .  (2026-07-19)
 
 ## Corpus Check
-- 135 files · ~36,369,848 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 1082 nodes · 1590 edges · 227 communities (50 shown, 177 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.69)
+- 1169 nodes · 1703 edges · 305 communities (55 shown, 250 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `91d13bae`
+- Built from commit: `72bbe362`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -188,8 +187,11 @@
 - [[_COMMUNITY_Dense World Mobile Visual Evidence|Dense World Mobile Visual Evidence]]
 - [[_COMMUNITY_Trainer Party Desktop Screenshot|Trainer Party Desktop Screenshot]]
 - [[_COMMUNITY_Trainer Party Desktop Visual Evidence|Trainer Party Desktop Visual Evidence]]
+- [[_COMMUNITY_Trainer PC Mobile Screenshot|Trainer PC Mobile Screenshot]]
 - [[_COMMUNITY_Multi-agent main-branch sync protocol (MANDATORY)|Multi-agent main-branch sync protocol (MANDATORY)]]
 - [[_COMMUNITY_PcPanel.tsx|PcPanel.tsx]]
+- [[_COMMUNITY_AGENTS|AGENTS.md]]
+- [[_COMMUNITY_Emerald game systems — design & cross-agent contract|Emerald game systems — design & cross-agent contract]]
 - [[_COMMUNITY_trainer-state.test.ts|trainer-state.test.ts]]
 - [[_COMMUNITY_TODO fallback map regeneration|TODO: fallback map regeneration]]
 - [[_COMMUNITY_Q Which acceptance status and commands determine completion of the procedural world|Q: Which acceptance status and commands determine completion of the procedural world?]]
@@ -215,12 +217,10 @@
 - [[_COMMUNITY_Vite 8|Vite 8]]
 - [[_COMMUNITY_Rate-Limited Administrative Fallback Sweep|Rate-Limited Administrative Fallback Sweep]]
 - [[_COMMUNITY_Automatic Branch Preview Deployments|Automatic Branch Preview Deployments]]
-- [[_COMMUNITY_Vercel Build Output API|Vercel Build Output API]]
 - [[_COMMUNITY_Commit 5188647|Commit 5188647]]
 - [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
 - [[_COMMUNITY_Main Branch Production Deployment|Main Branch Production Deployment]]
-- [[_COMMUNITY_Managed Workflow Map Run|Managed Workflow Map Run]]
-- [[_COMMUNITY_Map Jobs API|Map Jobs API]]
+- [[_COMMUNITY_Offline Map Mode|Offline Map Mode]]
 - [[_COMMUNITY_Pokeworld GitHub Repository|Pokeworld GitHub Repository]]
 - [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
 - [[_COMMUNITY_Pull Request 7|Pull Request 7]]
@@ -238,6 +238,83 @@
 - [[_COMMUNITY_Procedural Map Pipeline|Procedural Map Pipeline]]
 - [[_COMMUNITY_Ready-for-Review Pull Request|Ready-for-Review Pull Request]]
 - [[_COMMUNITY_Safe Spawn and Connected Routes|Safe Spawn and Connected Routes]]
+- [[_COMMUNITY_Trainer Party Desktop Visual Evidence|Trainer Party Desktop Visual Evidence]]
+- [[_COMMUNITY_Trainer PC Mobile Visual Evidence|Trainer PC Mobile Visual Evidence]]
+- [[_COMMUNITY_Vercel Static Output|Vercel Static Output]]
+- [[_COMMUNITY_Weighted Biome Grammar|Weighted Biome Grammar]]
+- [[_COMMUNITY_blocks.get.ts|blocks.get.ts]]
+- [[_COMMUNITY_Nitro Cache Bypass for Stale Fallback Blocks|Nitro Cache Bypass for Stale Fallback Blocks]]
+- [[_COMMUNITY_Fallback Map Regeneration Query|Fallback Map Regeneration Query]]
+- [[_COMMUNITY_Fallback Map Regeneration Repair|Fallback Map Regeneration Repair]]
+- [[_COMMUNITY_Lazy Durable Workflow Regeneration|Lazy Durable Workflow Regeneration]]
+- [[_COMMUNITY_Legacy Fallback Fingerprint Detection|Legacy Fallback Fingerprint Detection]]
+- [[_COMMUNITY_Stale Fallback Block Detection|Stale Fallback Block Detection]]
+- [[_COMMUNITY_TODO-fallback-map-regeneration|TODO-fallback-map-regeneration.md]]
+- [[_COMMUNITY_Native Chrome Visual QA|Native Chrome Visual QA]]
+- [[_COMMUNITY_GamePage.tsx|GamePage.tsx]]
+- [[_COMMUNITY_Google Static Maps|Google Static Maps]]
+- [[_COMMUNITY_Map Generation|Map Generation]]
+- [[_COMMUNITY_Mobile Black Missing Strip|Mobile Black Missing Strip]]
+- [[_COMMUNITY_Google Static Maps to Pokemon World Pipeline Verification|Google Static Maps to Pokemon World Pipeline Verification]]
+- [[_COMMUNITY_Uniform Grass Tile Classification|Uniform Grass Tile Classification]]
+- [[_COMMUNITY_Procedural World Acceptance Commands Query|Procedural World Acceptance Commands Query]]
+- [[_COMMUNITY_Procedural World Gate Verification|Procedural World Gate Verification]]
+- [[_COMMUNITY_Acceptance Completion Verification|Acceptance Completion Verification]]
+- [[_COMMUNITY_Acceptance Surface Verification|Acceptance Surface Verification]]
+- [[_COMMUNITY_CARDINAL|CARDINAL]]
+- [[_COMMUNITY_Complete Acceptance Status|Complete Acceptance Status]]
+- [[_COMMUNITY_normalizeTerrainLayout|normalizeTerrainLayout]]
+- [[_COMMUNITY_procedural-world-properties.test.ts|procedural-world-properties.test.ts]]
+- [[_COMMUNITY_game-zoom.ts|game-zoom.ts]]
+- [[_COMMUNITY_Q Can you have a quick look into why the Google static map view isn’t showing any of the Google map data like streetshouses etc O|Q: Can you have a quick look into why the Google static map view isn’t showing any of the Google map data like streets/houses etc? :O]]
+- [[_COMMUNITY_Q Does enabling GOOGLE_API_KEY for Vercel Preview expose the key to the browser, and what public endpoint abuse risks exist|Q: Does enabling GOOGLE_API_KEY for Vercel Preview expose the key to the browser, and what public endpoint abuse risks exist?]]
+- [[_COMMUNITY_Q It's fine to show the google maps source on any frontend even if it's public can we update that please 🥰🙌|Q: It's fine to show the google maps source on any frontend even if it's public can we update that please 🥰🙌]]
+- [[_COMMUNITY_Q Trace the existing block generation, movement, preload, authentication, and admin integration boundaries|Q: Trace the existing block generation, movement, preload, authentication, and admin integration boundaries]]
+- [[_COMMUNITY_Q Implement atomic global block generation quotas and public regeneration policy|Q: Implement atomic global block generation quotas and public regeneration policy]]
+- [[_COMMUNITY_Q Where should Thingtime SSO session context, navigation login controls, and an admin page integrate in Pokeworld|Q: Where should Thingtime SSO session context, navigation login controls, and an admin page integrate in Pokeworld?]]
+- [[_COMMUNITY_apiblocks Handler|/api/blocks Handler]]
+- [[_COMMUNITY_finalize-static-shell.mjs|finalize-static-shell.mjs]]
+- [[_COMMUNITY_AGENTS|AGENTS.md]]
+- [[_COMMUNITY_Walking Character Sprite Frame|Walking Character Sprite Frame]]
+- [[_COMMUNITY_sw.js|sw.js]]
+- [[_COMMUNITY_map-benchmark.test.ts|map-benchmark.test.ts]]
+- [[_COMMUNITY_BadgesPanel|BadgesPanel]]
+- [[_COMMUNITY_Emerald Game Systems Design and Cross-Agent Contract|Emerald Game Systems Design and Cross-Agent Contract]]
+- [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
+- [[_COMMUNITY_Vercel Deployments|Vercel Deployments]]
+- [[_COMMUNITY_Final Dense Procedural World Preview|Final Dense Procedural World Preview]]
+- [[_COMMUNITY_Google Static Maps Source Layer|Google Static Maps Source Layer]]
+- [[_COMMUNITY_Map Jobs API|Map Jobs API]]
+- [[_COMMUNITY_MongoDB Durable Persistence|MongoDB Durable Persistence]]
+- [[_COMMUNITY_lopugitpokeworld GitHub Repository|lopugit/pokeworld GitHub Repository]]
+- [[_COMMUNITY_Pokeworld Vercel Project|Pokeworld Vercel Project]]
+- [[_COMMUNITY_Pokeworld Production Deployment|Pokeworld Production Deployment]]
+- [[_COMMUNITY_Google Static Maps Source Layer|Google Static Maps Source Layer]]
+- [[_COMMUNITY_Vercel Build Output|Vercel Build Output]]
+- [[_COMMUNITY_Vercel Build Output|Vercel Build Output]]
+- [[_COMMUNITY_Vercel Workflow Managed Queue|Vercel Workflow Managed Queue]]
+- [[_COMMUNITY_Vercel Workflow Map Job|Vercel Workflow Map Job]]
+- [[_COMMUNITY_Fallback Map PNG|Fallback Map PNG]]
+- [[_COMMUNITY_Game renderCanvas|Game renderCanvas]]
+- [[_COMMUNITY_Google Static Map Diagnosis|Google Static Map Diagnosis]]
+- [[_COMMUNITY_Google Static Maps Source Caption|Google Static Maps Source Caption]]
+- [[_COMMUNITY_Offline Map Mode|Offline Map Mode]]
+- [[_COMMUNITY_Google API Key Preview Security|Google API Key Preview Security]]
+- [[_COMMUNITY_canUseGoogleStaticMaps|canUseGoogleStaticMaps]]
+- [[_COMMUNITY_getMapAtWithSource|getMapAtWithSource]]
+- [[_COMMUNITY_Google Maps Preview Enablement|Google Maps Preview Enablement]]
+- [[_COMMUNITY_renderCanvas|renderCanvas]]
+- [[_COMMUNITY_Game.action|Game.action]]
+- [[_COMMUNITY_Game.getBlocks|Game.getBlocks]]
+- [[_COMMUNITY_Game Integration Boundaries|Game Integration Boundaries]]
+- [[_COMMUNITY_getMapBlocks|getMapBlocks]]
+- [[_COMMUNITY_prioritizeMapPreloadOffsets|prioritizeMapPreloadOffsets]]
+- [[_COMMUNITY_App|App]]
+- [[_COMMUNITY_entry-client|entry-client]]
+- [[_COMMUNITY_GamePage|GamePage]]
+- [[_COMMUNITY_HomePage|HomePage]]
+- [[_COMMUNITY_Nav|Nav]]
+- [[_COMMUNITY_Thingtime Integration Plan|Thingtime Integration Plan]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Game` - 50 edges
@@ -247,172 +324,154 @@
 5. `scripts` - 14 edges
 6. `tileKey()` - 13 edges
 7. `terrainOf()` - 12 edges
-8. `Emerald game systems — design & cross-agent contract` - 11 edges
-9. `assertRegenerationAllowed()` - 11 edges
-10. `normalizeRoutes()` - 11 edges
+8. `assertRegenerationAllowed()` - 11 edges
+9. `normalizeRoutes()` - 11 edges
+10. `interactionFor()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Emerald world grammar` --conceptually_related_to--> `Dense Emerald-Style World Desktop UI Screenshot`  [INFERRED]
   app/README.md → docs/qa/dense-world-desktop.png
 - `Emerald world grammar` --conceptually_related_to--> `Dense Emerald-Style World Mobile UI Screenshot`  [INFERRED]
   app/README.md → docs/qa/dense-world-mobile.png
-- `Native Chrome gates` --references--> `Trainer Party Desktop Screenshot`  [INFERRED]
-  docs/PROCEDURAL_WORLD_ACCEPTANCE.md → docs/qa/trainer-party-desktop.png
-- `Native Chrome gates` --references--> `Trainer PC Mobile Screenshot`  [INFERRED]
-  docs/PROCEDURAL_WORLD_ACCEPTANCE.md → docs/qa/trainer-pc-mobile.png
-- `Native Chrome gates` --references--> `Dense Emerald-Style World Desktop UI Screenshot`  [INFERRED]
-  docs/PROCEDURAL_WORLD_ACCEPTANCE.md → docs/qa/dense-world-desktop.png
+- `Trainer Party Desktop Screenshot` --references--> `Trainer Party, Items, Badges, and PC Systems`  [INFERRED]
+  docs/qa/trainer-party-desktop.png → app/README.md
+- `Trainer PC Mobile Screenshot` --references--> `Trainer Party, Items, Badges, and PC Systems`  [INFERRED]
+  docs/qa/trainer-pc-mobile.png → app/README.md
+- `Pokémon World application` --references--> `Application Workspace Configuration`  [INFERRED]
+  app/README.md → pnpm-workspace.yaml
 
 ## Import Cycles
 - None detected.
 
-## Hyperedges (group relationships)
-- **Preview Map Delivery Flow** — app_vercel_deployments_final_dense_world_preview, app_vercel_deployments_static_maps_source_layer, app_vercel_deployments_vercel_workflow_map_job [EXTRACTED 0.96]
-- **Fallback Rendering Diagnosis** — graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_offline_map_mode, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_fallback_map_png, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_game_render_canvas, graphify_out_memory_query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat_google_static_maps_caption [EXTRACTED 0.98]
-- **Emerald Gameplay Contract** — app_design_emerald_game_systems_tile_feature_protocol, app_design_emerald_game_systems_resolve_move, app_design_emerald_game_systems_trainer_state, app_design_emerald_game_systems_game_ui_systems [EXTRACTED 0.97]
-- **Durable Map Generation Flow** — app_design_emerald_game_systems_map_block_streaming_protocol, app_readme_generate_map_workflow, app_readme_global_generation_allowance [INFERRED 0.92]
-- **Thingtime Client Integration** — graphify_out_memory_query_20260719_121300_where_should_thingtime_sso_session_context__naviga_app, graphify_out_memory_query_20260719_121300_where_should_thingtime_sso_session_context__naviga_nav, graphify_out_memory_query_20260719_121300_where_should_thingtime_sso_session_context__naviga_home_page, graphify_out_memory_query_20260719_121300_where_should_thingtime_sso_session_context__naviga_game_page, graphify_out_memory_query_20260719_121300_where_should_thingtime_sso_session_context__naviga_entry_client [EXTRACTED 0.95]
-- **Procedural World Acceptance Surface** — graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_cardinal, graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_procedural_world_properties_test, graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_normalize_terrain_layout, graphify_out_memory_query_20260719_010429_does_the_completed_pokeworld_procedural_world_acce_complete_acceptance_status [EXTRACTED 0.95]
-- **Procedural World Acceptance Evidence** — docs_procedural_world_acceptance_automated_gates, docs_procedural_world_acceptance_native_chrome_gates, docs_procedural_world_acceptance_delivery_gates [EXTRACTED 1.00]
-- **Deterministic World Generation Flow** — docs_procedural_world_acceptance_google_static_maps, docs_procedural_world_acceptance_procedural_map_pipeline, docs_procedural_world_acceptance_weighted_biome_grammar, docs_procedural_world_acceptance_emerald_tileset [INFERRED 0.90]
-- **World Traversal Integrity** — docs_procedural_world_acceptance_global_coordinate_continuity, docs_procedural_world_acceptance_safe_spawn_and_routes, docs_procedural_world_acceptance_native_chrome_qa [INFERRED 0.90]
-- **Fallback Map Regeneration Solution** — graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_stale_fallback_detection, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_legacy_fallback_fingerprint, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_cache_bypass, graphify_out_memory_query_20260718_130154_can_we_add_a_todo___task__md_to_document_the_mongo_lazy_workflow_regeneration [EXTRACTED 0.98]
-- **Coordinate-to-Pokemon World Generation Pipeline** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_devkit, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_google_static_maps, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_map_generation, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_game_page_tsx [INFERRED 0.90]
-- **Visual Pipeline Defects and QA Findings** — graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_chrome_visual_qa, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_uniform_grass_classification, graphify_out_memory_query_20260718_143355_verify_the_real_google_static_maps_to_pokemon_worl_mobile_missing_strip [EXTRACTED 0.95]
-
-## Communities (227 total, 177 thin omitted)
+## Communities (305 total, 250 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (44): BADGE_TONES, BadgesPanelProps, BagPanelProps, POCKETS, PanelFrame(), PanelFrameProps, PartyPanelProps, PcPanelProps (+36 more)
+Cohesion: 0.05
+Nodes (77): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+69 more)
 
 ### Community 1 - "functions.js"
 Cohesion: 0.07
-Nodes (50): blocksHandler, createLegacyBlocksHandler, generateMapBlock(), coordinateKey(), generationOffsetsMissingFromBlocks(), generationPermitId(), PreparedMapGenerationJob, prepareMapGenerationJob() (+42 more)
+Nodes (12): Game, isFiniteNumber(), getBlockForCoordinates(), clearLocationBoundState(), emptyState(), loadThings(), locationKey(), parseThings() (+4 more)
 
 ### Community 2 - "package.json"
+Cohesion: 0.04
+Nodes (48): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+40 more)
+
+### Community 3 - "blocks.js"
 Cohesion: 0.12
 Nodes (43): addForestClusters(), addLife(), addLine(), addSigns(), blockTiles(), buildingComponents(), buildReservedGround(), carveSpawnPath() (+35 more)
 
-### Community 3 - "blocks.js"
-Cohesion: 0.05
-Nodes (19): BoundaryWait, defaultCoordinates, Game, GameComponentState, GameSettings, isFiniteNumber(), MapLoadingState, MapView (+11 more)
-
 ### Community 4 - "dependencies"
-Cohesion: 0.04
-Nodes (48): dependencies, dotenv, mongodb, nitro, pngjs, react, react-dom, react-router (+40 more)
+Cohesion: 0.08
+Nodes (28): TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds(), Mask (+20 more)
 
 ### Community 5 - "index.js"
 Cohesion: 0.11
 Nodes (30): LoginBody, AuthHttpError, clearPokeworldSession(), cookieOptions(), privateJson(), readPokeworldSession(), requireAdminSession(), requireSameOrigin() (+22 more)
 
 ### Community 6 - "devDependencies"
-Cohesion: 0.10
-Nodes (30): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), isCurrentMapBlock(), coordinatesForInput(), finiteInteger() (+22 more)
+Cohesion: 0.11
+Nodes (16): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+8 more)
 
 ### Community 7 - "Nuxt 2 Frontend"
-Cohesion: 0.08
-Nodes (30): TerrainKind, TerrainSample, bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds() (+22 more)
+Cohesion: 0.10
+Nodes (21): BoundaryWait, defaultCoordinates, GameSettings, MapLoadingState, MapView, MoveAction, PanelId, PlayerState (+13 more)
 
 ### Community 8 - "DevKit.vue"
 Cohesion: 0.12
 Nodes (8): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey(), MapGenerationQuotaReservation, start
 
 ### Community 9 - "dependencies"
-Cohesion: 0.07
-Nodes (27): App(), ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthProvider(), AuthSession (+19 more)
+Cohesion: 0.06
+Nodes (33): App(), ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthProvider(), AuthSession (+25 more)
 
 ### Community 10 - "scripts"
-Cohesion: 0.10
-Nodes (20): Pokémon Emerald Exterior Tileset, API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Thingtime login (+12 more)
-
-### Community 11 - "Deterministic World Generation"
-Cohesion: 0.12
-Nodes (29): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedLookup, Direction, directionDelta, FIELD_ITEM_TABLE (+21 more)
-
-### Community 12 - "devDependencies"
-Cohesion: 0.11
-Nodes (15): generateCoordinatesGrid(), generateMap(), generateOutputs(), getTile(), getTileColour(), getTileOffset(), getTileOffsetColour(), getTileOffsetSprite() (+7 more)
-
-### Community 13 - "pm2.mjs"
 Cohesion: 0.19
 Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
 
-### Community 14 - "blocks.get.ts"
-Cohesion: 0.17
-Nodes (11): Detail-density accounting (toward 500–1000), Division of labour, Emerald game systems — design & cross-agent contract, Generation controls, Iteration roadmap (loop), Map block streaming protocol (server → client), Movement rules (client), Streaming boundary UI (+3 more)
+### Community 11 - "Deterministic World Generation"
+Cohesion: 0.15
+Nodes (16): GameComponentState, BADGE_TONES, BadgesPanel(), BadgesPanelProps, BagPanel(), BagPanelProps, POCKETS, PanelFrame() (+8 more)
 
-### Community 15 - "coordinates.ts"
+### Community 12 - "devDependencies"
 Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
-### Community 16 - "png.ts"
+### Community 13 - "pm2.mjs"
 Cohesion: 0.14
 Nodes (17): toExport(), centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES (+9 more)
 
-### Community 17 - "Cave Entrance Feature"
+### Community 14 - "blocks.get.ts"
 Cohesion: 0.18
 Nodes (16): BIOME_PRESETS, BIOME_RULES, choose(), chooseWeighted(), DETAIL_PALETTES, recipeHash(), ROUTE_TREATMENTS, SECRET_PATH_PATTERNS (+8 more)
 
-### Community 18 - "Generated 16 by 16 Block Tiles"
-Cohesion: 0.18
-Nodes (13): Coordinates, DevKit(), Point, PRESETS, clearLocationBoundState(), emptyState(), loadThings(), locationKey() (+5 more)
-
-### Community 19 - "finalize-static-shell.mjs"
+### Community 15 - "coordinates.ts"
 Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
-### Community 20 - "Pokémon World application"
+### Community 16 - "png.ts"
 Cohesion: 0.29
 Nodes (15): appRoot, apps(), delay(), ecosystem, isOwned(), listeners(), ownedDirectories, pm2() (+7 more)
 
-### Community 21 - "blocks.ts"
+### Community 17 - "Cave Entrance Feature"
+Cohesion: 0.12
+Nodes (28): actionDelta, actionDirection, CAVE_PAGES, cavePagesFor(), CollectedLookup, directionDelta, FIELD_ITEM_TABLE, FieldItem (+20 more)
+
+### Community 18 - "Generated 16 by 16 Block Tiles"
 Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
-### Community 22 - "benchmark-map-pipeline.mjs"
-Cohesion: 0.15
-Nodes (14): Final Dense Procedural World Preview, MongoDB Persistence, Pokeworld GitHub Repository, Pokeworld Vercel Project, Google Static Maps Source Layer, Vercel Build Output, Vercel Deployments, Vercel Workflow Map Job (+6 more)
-
-### Community 23 - "Vercel Build Process"
+### Community 19 - "finalize-static-shell.mjs"
 Cohesion: 0.18
 Nodes (7): legacyMs, legacySamples, optimized, optimizedMs, optimizedSamples, reference, source
 
-### Community 24 - "Sand Terrain Sprite 4"
+### Community 20 - "Pokémon World application"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
-### Community 25 - "Sand Terrain Sprite 5"
-Cohesion: 0.22
-Nodes (6): latsDb, lngsDb, sortedMods, transactionOptions, transactions, log()
+### Community 21 - "blocks.ts"
+Cohesion: 0.17
+Nodes (11): Detail-density accounting (toward 500–1000), Division of labour, Emerald game systems — design & cross-agent contract, Generation controls, Iteration roadmap (loop), Map block streaming protocol (server → client), Movement rules (client), Streaming boundary UI (+3 more)
 
-### Community 26 - "Sand Terrain Sprite 6"
+### Community 22 - "benchmark-map-pipeline.mjs"
+Cohesion: 0.07
+Nodes (25): Pokémon Emerald Exterior Tileset, API routes, Emerald world grammar, How Workflow works locally, Install and run, Map generation, Pokémon World application, Thingtime login (+17 more)
+
+### Community 23 - "Vercel Build Process"
 Cohesion: 0.25
 Nodes (7): appDir, crop(), outputDir, scriptDir, source, sourcePath, writeGrid()
 
-### Community 27 - "BadgesPanel"
+### Community 24 - "Sand Terrain Sprite 4"
 Cohesion: 0.22
 Nodes (8): args, baseUrl, blockX, blockY, offsets, positional, radiusFlag, regenerate
+
+### Community 25 - "Sand Terrain Sprite 5"
+Cohesion: 0.25
+Nodes (5): latsDb, lngsDb, sortedMods, transactionOptions, transactions
+
+### Community 26 - "Sand Terrain Sprite 6"
+Cohesion: 0.39
+Nodes (7): depositPartyMember(), setLeadPartyMember(), toggleBadge(), transition(), useBagItem(), withdrawPartyMember(), fieldItem
+
+### Community 27 - "BadgesPanel"
+Cohesion: 0.12
+Nodes (24): addItemToBag(), Badge, BagItem, defaultTrainer(), emeraldSprites, HOENN_BADGES, isRecord(), itemKindFor() (+16 more)
 
 ### Community 28 - "Sand Terrain Sprite 8"
 Cohesion: 0.29
 Nodes (5): ImportMeta, ImportMetaEnv, ThingtimeLoginGrant, ThingtimeSdk, Window
-
-### Community 29 - "Sand Terrain Sprite 9"
-Cohesion: 0.33
-Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
 
 ### Community 30 - "trainer-state.test.ts"
 Cohesion: 0.50
 Nodes (5): Pokémon World Browser Shell, React Client Entry Module, Pokémon World Application Icon, Android Chrome Application Icon 192 by 192, Android Chrome Application Icon 512 by 512
 
 ### Community 31 - "saveTrainer"
-Cohesion: 0.40
-Nodes (3): MENU_ITEMS, MenuItemId, StartMenuProps
+Cohesion: 0.70
+Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
 
 ### Community 32 - "Pokémon World Banner Graphic"
-Cohesion: 0.60
-Nodes (3): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection
+Cohesion: 0.48
+Nodes (5): MapOffset, BlockCoordinates, blockCoordinatesForWorldPosition(), blockKeyForWorldPosition(), prioritizeMapPreloadOffsets()
 
 ### Community 33 - "Apple Touch Application Icon"
 Cohesion: 0.40
@@ -450,38 +509,58 @@ Nodes (4): Answer, Outcome, Q: Does the completed Pokeworld procedural-world acc
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Trace the server-side generation queue and regeneration routes, Source Nodes
 
-### Community 42 - "Large Tree Tile Variant 2"
+### Community 204 - "Commit 5188647"
+Cohesion: 0.33
+Nodes (5): Implemented behavior, Operational note, Problem, Remaining follow-up, TODO: fallback map regeneration
+
+### Community 255 - "game-zoom.ts"
+Cohesion: 0.60
+Nodes (3): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection
+
+### Community 256 - "Q: Can you have a quick look into why the Google static map view isn’t showing any of the Google map data like streets/houses etc? :O"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Can you have a quick look into why the Google static map view isn’t showing any of the Google map data like streets/houses etc? :O, Source Nodes
+
+### Community 257 - "Q: Does enabling GOOGLE_API_KEY for Vercel Preview expose the key to the browser, and what public endpoint abuse risks exist?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Does enabling GOOGLE_API_KEY for Vercel Preview expose the key to the browser, and what public endpoint abuse risks exist?, Source Nodes
+
+### Community 258 - "Q: It's fine to show the google maps source on any frontend even if it's public can we update that please 🥰🙌"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: It's fine to show the google maps source on any frontend even if it's public can we update that please 🥰🙌, Source Nodes
+
+### Community 259 - "Q: Trace the existing block generation, movement, preload, authentication, and admin integration boundaries"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Trace the existing block generation, movement, preload, authentication, and admin integration boundaries, Source Nodes
+
+### Community 260 - "Q: Implement atomic global block generation quotas and public regeneration policy"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Implement atomic global block generation quotas and public regeneration policy, Source Nodes
+
+### Community 261 - "Q: Where should Thingtime SSO session context, navigation login controls, and an admin page integrate in Pokeworld?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Where should Thingtime SSO session context, navigation login controls, and an admin page integrate in Pokeworld?, Source Nodes
+
+### Community 262 - "/api/blocks Handler"
+Cohesion: 0.40
+Nodes (5): /api/blocks Handler, 127.0.0.1:27017 Loopback Endpoint, MongoDB, Production MongoDB Environment Variables, Production MongoDB Configuration Failure Query
+
+### Community 263 - "finalize-static-shell.mjs"
 Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
-### Community 43 - "Large Tree Tile Variant 3"
-Cohesion: 0.83
-Nodes (4): canUseGoogleStaticMaps, getMapAtWithSource, Google Maps Preview Enablement, renderCanvas
-
-### Community 225 - "Ready-for-Review Pull Request"
-Cohesion: 0.33
-Nodes (6): App, entry-client, GamePage, HomePage, Nav, Thingtime Integration Plan
-
-### Community 226 - "Safe Spawn and Connected Routes"
-Cohesion: 0.40
-Nodes (5): Game.action, Game.getBlocks, Game Integration Boundaries, getMapBlocks, prioritizeMapPreloadOffsets
-
-## Ambiguous Edges - Review These
-- `canUseGoogleStaticMaps` → `getMapAtWithSource`  [AMBIGUOUS]
-  graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
-
 ## Knowledge Gaps
-- **462 isolated node(s):** `Division of labour`, `Map block streaming protocol (server → client)`, `Tile feature protocol (server → client)`, `Movement rules (client)`, `Streaming boundary UI` (+457 more)
+- **532 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+527 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **177 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **250 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `.renderCanvas()` (2× useful, score=1.995349794) _(code changed — re-verify)_
-- `normalizeTerrainLayout()` (2× useful, score=1.978999533)
-- `Map generation` (2× useful, score=1.977479828) _(code changed — re-verify)_
-- `Google Static Maps` (2× useful, score=1.977479828)
+- `.renderCanvas()` (2× useful, score=1.993858919)
+- `normalizeTerrainLayout()` (2× useful, score=1.977520874)
+- `Map generation` (2× useful, score=1.976002304)
+- `Google Static Maps` (2× useful, score=1.976002304)
 
 **Known dead ends** — questions that led nowhere; don't re-derive.
 - "Which acceptance status and commands determine completion of the procedural world?" -> `scripts`, `typecheck`, `test`, `benchmark:map`, `check`, `build:vercel`
@@ -491,17 +570,17 @@ Nodes (5): Game.action, Game.getBlocks, Game Integration Boundaries, getMapBlock
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
-  _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
-- **Why does `Game` connect `blocks.js` to `Generated 16 by 16 Block Tiles`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `MapTile` connect `Nuxt 2 Frontend` to `Deterministic World Generation`, `functions.js`, `package.json`, `blocks.js`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `Nav()` connect `dependencies` to `Generated 16 by 16 Block Tiles`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **What connects `Division of labour`, `Map block streaming protocol (server → client)`, `Tile feature protocol (server → client)` to the rest of the system?**
-  _468 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Game` connect `functions.js` to `dependencies`, `BadgesPanel`, `Nuxt 2 Frontend`?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **Why does `TerrainKind` connect `Game.vue` to `dependencies`, `pm2.mjs`, `blocks.get.ts`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `MapBlock` connect `Game.vue` to `Nuxt 2 Frontend`?**
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **What connects `name`, `version`, `private` to the rest of the system?**
+  _543 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.07071887784921099 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05164797825348284 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07412008281573498 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07213114754098361 - nodes in this community are weakly interconnected._
+- **Should `package.json` be split into smaller, more focused modules?**
+  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
