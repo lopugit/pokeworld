@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-07-19)
+# Graph Report - pokeworld  (2026-07-19)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 108 files · ~36,360,349 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 946 nodes · 1313 edges · 259 communities (45 shown, 214 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.72)
+- 942 nodes · 1307 edges · 259 communities (45 shown, 214 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.7)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fe94ac1c`
+- Built from commit: `e0f9a0ed`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -313,8 +314,8 @@
 ## Communities (259 total, 214 thin omitted)
 
 ### Community 0 - "Game.vue"
-Cohesion: 0.07
-Nodes (48): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+40 more)
+Cohesion: 0.06
+Nodes (50): storedBlocksProgress(), blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), blocksHandler, createLegacyBlocksHandler, generateMapBlock() (+42 more)
 
 ### Community 1 - "functions.js"
 Cohesion: 0.08
@@ -350,7 +351,7 @@ Nodes (21): Pokémon Emerald Exterior Tileset, API routes, Emerald world grammar
 
 ### Community 9 - "dependencies"
 Cohesion: 0.12
-Nodes (18): defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage, DialogBox() (+10 more)
+Nodes (17): MapOffset, defaultCoordinates, GameSettings, MapView, MoveAction, PanelId, PlayerState, StoredImage (+9 more)
 
 ### Community 10 - "scripts"
 Cohesion: 0.15
@@ -365,8 +366,8 @@ Cohesion: 0.13
 Nodes (12): App(), Banner(), BannerLink, BannerProps, Coordinates, DevKit(), Point, PRESETS (+4 more)
 
 ### Community 13 - "pm2.mjs"
-Cohesion: 0.15
-Nodes (15): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE (+7 more)
+Cohesion: 0.14
+Nodes (17): toExport(), centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES (+9 more)
 
 ### Community 14 - "blocks.get.ts"
 Cohesion: 0.18
@@ -377,8 +378,8 @@ Cohesion: 0.12
 Nodes (14): config, configPath, fallbackIndex, filesystemIndex, functionConfigs, functionValues, index, indexPath (+6 more)
 
 ### Community 16 - "png.ts"
-Cohesion: 0.24
-Nodes (13): saveMapAt(), asBuffer(), assertCrop(), createSolidPng(), createSolidPngWithRgba(), createSolidRgba(), cropPng(), cropPngWithRgba() (+5 more)
+Cohesion: 0.19
+Nodes (17): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource(), saveMapAt(), asBuffer(), assertCrop(), createSolidPng() (+9 more)
 
 ### Community 17 - "Cave Entrance Feature"
 Cohesion: 0.29
@@ -389,12 +390,12 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+5 more)
 
 ### Community 19 - "finalize-static-shell.mjs"
-Cohesion: 0.15
-Nodes (14): Final Dense Procedural World Preview, MongoDB Persistence, Pokeworld GitHub Repository, Pokeworld Vercel Project, Google Static Maps Source Layer, Vercel Build Output, Vercel Deployments, Vercel Workflow Map Job (+6 more)
+Cohesion: 0.33
+Nodes (6): DevKit, Fallback Map PNG, Game renderCanvas, Google Static Map Diagnosis, Google Static Maps Source Caption, Offline Map Mode
 
 ### Community 20 - "Pokémon World application"
-Cohesion: 0.21
-Nodes (8): latsDb, lngsDb, sortedMods, toExport(), transactionOptions, transactions, log(), summarizeTerrain()
+Cohesion: 0.22
+Nodes (6): latsDb, lngsDb, sortedMods, transactionOptions, transactions, log()
 
 ### Community 21 - "blocks.ts"
 Cohesion: 0.18
@@ -429,12 +430,12 @@ Cohesion: 0.50
 Nodes (5): Pokémon World Browser Shell, React Client Entry Module, Pokémon World Application Icon, Android Chrome Application Icon 192 by 192, Android Chrome Application Icon 512 by 512
 
 ### Community 29 - "Sand Terrain Sprite 9"
-Cohesion: 0.50
-Nodes (4): buildGoogleStaticMapUrl(), getFallbackMap(), getMapAt(), getMapAtWithSource()
+Cohesion: 0.60
+Nodes (3): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection
 
 ### Community 30 - "trainer-state.test.ts"
-Cohesion: 0.70
-Nodes (4): canUseGoogleStaticMaps(), getBase64ImageSha256(), isFallbackGeneratedBlock(), shouldRegenerateFallbackBlock()
+Cohesion: 0.50
+Nodes (3): Build, Vercel deployments, Verified migration preview
 
 ### Community 32 - "Pokémon World Banner Graphic"
 Cohesion: 0.40
@@ -473,7 +474,7 @@ Cohesion: 0.50
 Nodes (3): root, target, transformedShell
 
 ## Knowledge Gaps
-- **452 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+447 more)
+- **450 isolated node(s):** `Verified migration preview`, `Build`, `name`, `version`, `private` (+445 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **214 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -488,17 +489,17 @@ Nodes (3): root, target, transformedShell
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Game` connect `functions.js` to `dependencies`, `devDependencies`, `index.js`, `saveTrainer`?**
+- **Why does `Game` connect `functions.js` to `dependencies`, `devDependencies`, `saveTrainer`?**
   _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `TerrainKind` connect `Game.vue` to `dependencies`, `pm2.mjs`, `blocks.get.ts`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `MapBlock` connect `Game.vue` to `dependencies`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _457 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **What connects `Verified migration preview`, `Build`, `name` to the rest of the system?**
+  _455 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.06594594594594595 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06491228070175438 - nodes in this community are weakly interconnected._
 - **Should `functions.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07662337662337662 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07644110275689223 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
