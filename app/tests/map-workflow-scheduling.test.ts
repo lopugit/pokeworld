@@ -7,10 +7,27 @@ const execution = vi.hoisted(() => ({
   finished: [] as string[],
   maxActive: 0,
   neighbourStartedAfterCenter: [] as boolean[],
+  sleepCalls: [] as Date[],
   started: [] as string[],
+  waitOnceFor: "",
+  waited: new Set<string>(),
+}));
+
+vi.mock("workflow", () => ({
+  sleep: async (until: Date) => {
+    execution.sleepCalls.push(until);
+  },
 }));
 
 vi.mock("../workflows/map-generation/steps", () => ({
+  prepareMapBlockGenerationStep: async (input: { x: number; y: number }) => {
+    const key = `${input.x},${input.y}`;
+    if (key === execution.waitOnceFor && !execution.waited.has(key)) {
+      execution.waited.add(key);
+      return { permitId: `permit:${key}`, retryAt: 12_345, status: "wait" };
+    }
+    return { permitId: `permit:${key}`, status: "ready" };
+  },
   generateMapBlockStep: async (input: { x: number; y: number }) => {
     const key = `${input.x},${input.y}`;
     execution.started.push(key);
@@ -38,7 +55,10 @@ beforeEach(() => {
   execution.finished = [];
   execution.maxActive = 0;
   execution.neighbourStartedAfterCenter = [];
+  execution.sleepCalls = [];
   execution.started = [];
+  execution.waitOnceFor = "";
+  execution.waited = new Set();
 });
 
 describe("map workflow scheduling", () => {
@@ -78,5 +98,18 @@ describe("map workflow scheduling", () => {
       mapGenerationBatches([[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1, 1]], 99)
         .every((batch) => batch.length <= MAP_GENERATION_BATCH_SIZE),
     ).toBe(true);
+  });
+
+  it("durably sleeps until the rolling permit retry time", async () => {
+    execution.waitOnceFor = execution.centerKey;
+    await generateMapWorkflow({
+      blockX: 10,
+      blockY: 20,
+      offsets: [[0, 0]],
+      regenerate: false,
+    });
+
+    expect(execution.sleepCalls).toEqual([new Date(12_345)]);
+    expect(execution.started).toEqual([execution.centerKey]);
   });
 });

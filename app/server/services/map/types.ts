@@ -10,6 +10,19 @@ export interface MapJobInput {
   regenerate: boolean;
 }
 
+export interface MapGenerationQuotaReservation {
+  dayKey: string;
+  reservationId: string;
+}
+
+// Public input is deliberately kept separate from workflow-only metadata. API
+// routes decide which requested offsets still need generation, reserve the
+// daily quota once, then pass that durable reservation into the workflow.
+export interface MapGenerationWorkflowInput extends MapJobInput {
+  generationOffsets?: MapOffset[];
+  quotaReservation?: MapGenerationQuotaReservation;
+}
+
 export interface MapTile {
   uuid: string;
   blockX: number;

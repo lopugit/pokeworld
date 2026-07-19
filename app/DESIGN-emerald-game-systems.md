@@ -50,7 +50,7 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 | `cave-entrance`     | `cave-N`               | A-press shows cave dialog (interiors: future iteration). |
 | `house`             | `house-red-N`          | A-press on a door row shows flavor dialog. |
 | `long-grass`        | `grass-2`              | Reserved for wild encounters (future). |
-| any tile            |                        | `solid: true` blocks movement. Missing tiles (void) stay walkable, matching existing behaviour. |
+| any tile            |                        | `solid: true` blocks movement. A missing tile inside a loaded block stays walkable, but an absent destination block is a hard streaming boundary until it arrives. |
 
 The client also falls back to `img2` prefix detection (`ledge-`, `field-item-`,
 `route-sign-`) so features light up even if a mod forgets to stamp `feature`.
@@ -64,7 +64,7 @@ implementations together.
 
 `resolveMove(lookup, fromX, fromY, action, tileSize, collected)`:
 
-1. Target tile missing → `move` (void walkable — matches today).
+1. Destination block missing → stop before the boundary, preload it, and clear buffered movement. Once the block arrives, the next input may cross. A target tile missing inside an already-loaded block remains walkable.
 2. Target is a ledge → `jump` (2 tiles) only for `moveDown` (screen-down;
    world −y because tile y is flipped) and only if the landing tile is not
    solid; otherwise `blocked`.
@@ -74,6 +74,36 @@ implementations together.
 
 Blocked moves still update `player.facing` (Emerald turn-in-place feel).
 Debug `zoomMode` (8-tile steps) bypasses collision — it's a dev tool.
+It does not bypass the unloaded-block boundary.
+
+## Streaming boundary UI
+
+The game renders after its centre block arrives while the rest of the nearby
+preload square continues in the background. Every manual, repeated-key, and
+debug stride checks the final destination block before mutating player or
+camera coordinates. Missing blocks behave as solid streaming boundaries,
+clear `queuedAction`, and keep the player facing the attempted direction.
+
+While map requests are active, the screen shows a compact Emerald-style
+progress bar. A boundary wait changes the label to “LOADING THE NEXT AREA...”.
+Failures keep the boundary closed and expose one RETRY control; receiving an
+unrelated block never clears the wait. The player can turn around and keep
+walking through already-loaded terrain while that neighbouring request runs.
+
+## Generation controls
+
+Cached current-version blocks cost no generation allowance. Missing offsets
+reserve from one global 500-block UTC daily budget before their workflow starts;
+each actual generator step then needs one of 9 permits available in the rolling
+5-second window. A workflow that reaches the burst limit sleeps durably until
+the oldest permit expires, and a cache hit discovered after reservation releases
+that daily slot idempotently.
+
+Public builds reject explicit `regenerate=true` requests at the route, workflow,
+and generator boundaries. They also fail closed with `503` when the shared Mongo
+quota store is unavailable. The admin reset clears only the daily allowance; it
+does not bypass or erase the active rolling window, and existing workflows keep
+their reservation identity so the reset does not cancel them.
 
 ## Trainer state (client)
 

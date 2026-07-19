@@ -1,8 +1,12 @@
 import { defineEventHandler, getQuery } from "nitro/h3";
 import { start } from "workflow/api";
 import { generateMapWorkflow } from "../../../workflows/map-generation";
-import { coordinatesForInput, offsetsFromQuery, parseMapJobInput } from "../../services/map/input";
-import { findCompletedStoredBlocks } from "../../services/map/stored-blocks";
+import {
+  prepareMapGenerationJob,
+  releasePreparedMapGenerationJob,
+} from "../../services/map/generation-job";
+import { generationControlStatus } from "../../services/map/generation-policy";
+import { offsetsFromQuery, parseMapJobInput } from "../../services/map/input";
 import { errorResponse, jsonResponse } from "../../utils/http";
 
 export default defineEventHandler(async (event) => {
@@ -14,18 +18,32 @@ export default defineEventHandler(async (event) => {
       offsets: offsetsFromQuery(query.offsets),
       regenerate: query.regenerate,
     });
-    const requested = coordinatesForInput(input);
-
-    if (!input.regenerate) {
-      const cached = await findCompletedStoredBlocks(requested);
-      if (cached) {
-        return jsonResponse({ blocks: cached, status: "completed" });
-      }
+    const prepared = await prepareMapGenerationJob(input);
+    if (!prepared.workflowInput) {
+      return jsonResponse({
+        blocks: prepared.blocks,
+        requested: prepared.requested,
+        status: "completed",
+      });
     }
 
-    const run = await start(generateMapWorkflow, [input]);
-    return jsonResponse({ blocks: [], runId: run.runId, status: "queued" }, { status: 202 });
+    let run;
+    try {
+      run = await start(generateMapWorkflow, [prepared.workflowInput]);
+    } catch (error) {
+      await releasePreparedMapGenerationJob(prepared.workflowInput);
+      throw error;
+    }
+    return jsonResponse(
+      {
+        blocks: prepared.blocks,
+        requested: prepared.requested,
+        runId: run.runId,
+        status: "queued",
+      },
+      { status: 202 },
+    );
   } catch (error) {
-    return errorResponse(error);
+    return errorResponse(error, generationControlStatus(error));
   }
 });

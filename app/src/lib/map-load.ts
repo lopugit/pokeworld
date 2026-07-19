@@ -1,5 +1,36 @@
 import type { MapOffset } from "../../server/services/map/types";
 
+export interface BlockCoordinates {
+  x: number;
+  y: number;
+}
+
+export function blockCoordinatesForWorldPosition(
+  worldX: number,
+  worldY: number,
+  blockSize: number,
+): BlockCoordinates {
+  if (!Number.isFinite(worldX) || !Number.isFinite(worldY)) {
+    throw new Error("World coordinates must be finite numbers");
+  }
+  if (!Number.isFinite(blockSize) || blockSize <= 0) {
+    throw new Error("Block size must be a positive number");
+  }
+  return {
+    x: Math.floor(worldX / blockSize),
+    y: Math.floor(worldY / blockSize),
+  };
+}
+
+export function blockKeyForWorldPosition(
+  worldX: number,
+  worldY: number,
+  blockSize: number,
+): string {
+  const block = blockCoordinatesForWorldPosition(worldX, worldY, blockSize);
+  return `${block.x},${block.y}`;
+}
+
 // Submit the complete preload window in one workflow request, but keep the
 // centre and cardinal blocks first so the workflow runtime can schedule the
 // most immediately useful terrain before diagonals and outer rings.

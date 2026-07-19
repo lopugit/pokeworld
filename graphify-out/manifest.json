@@ -60,9 +60,9 @@
     "semantic_hash": "4610831bd4690244ff6965684403a5e0"
   },
   "app/server/routes/api/blocks.get.ts": {
-    "mtime": 1784432133.3387182,
-    "ast_hash": "23f600ffb70fbd094313b3cc51f828a5",
-    "semantic_hash": "23f600ffb70fbd094313b3cc51f828a5"
+    "mtime": 1784463482.779166,
+    "ast_hash": "3f5904b2e4617498e7b4fa7cc7bd0853",
+    "semantic_hash": "3f5904b2e4617498e7b4fa7cc7bd0853"
   },
   "app/server/routes/api/health.get.ts": {
     "mtime": 1784378712.495733,
@@ -70,9 +70,9 @@
     "semantic_hash": "fd376493098bd1954d036386a5bcf95d"
   },
   "app/server/routes/api/map-jobs.post.ts": {
-    "mtime": 1784378712.4961612,
-    "ast_hash": "dbd6afa54b6c009ec34b39f87fc9986f",
-    "semantic_hash": "dbd6afa54b6c009ec34b39f87fc9986f"
+    "mtime": 1784463482.779376,
+    "ast_hash": "eb565c25746bb7f9e0629d76970590d6",
+    "semantic_hash": "eb565c25746bb7f9e0629d76970590d6"
   },
   "app/server/routes/api/map-jobs/[runId].get.ts": {
     "mtime": 1784434424.7685332,
@@ -100,9 +100,9 @@
     "semantic_hash": "3ff8163e95d5f692ec46af954fb8859b"
   },
   "app/server/services/map/generate.ts": {
-    "mtime": 1784395622.569431,
-    "ast_hash": "201f4db8a5b61db73aac0b358b14eba4",
-    "semantic_hash": "201f4db8a5b61db73aac0b358b14eba4"
+    "mtime": 1784463314.5378423,
+    "ast_hash": "5bddff17ec1a008c6f99a3f0f7f48079",
+    "semantic_hash": "5bddff17ec1a008c6f99a3f0f7f48079"
   },
   "app/server/services/map/input.ts": {
     "mtime": 1784432133.3435004,
@@ -190,9 +190,9 @@
     "semantic_hash": "82cbaa85a734a0b384caed2852f29a16"
   },
   "app/server/services/map/types.ts": {
-    "mtime": 1784386714.526398,
-    "ast_hash": "0fbb6ef47b4ec1082118acb036807ce9",
-    "semantic_hash": "0fbb6ef47b4ec1082118acb036807ce9"
+    "mtime": 1784463195.607352,
+    "ast_hash": "657b3e48ced6b1e5b466dc4a6d4bae0a",
+    "semantic_hash": "657b3e48ced6b1e5b466dc4a6d4bae0a"
   },
   "app/server/services/map/world-grammar.ts": {
     "mtime": 1784394678.0341966,
@@ -205,9 +205,9 @@
     "semantic_hash": "06123e97aa0e58cac61d6aef1b3e9a9d"
   },
   "app/src/App.tsx": {
-    "mtime": 1784378811.4220521,
-    "ast_hash": "c5ad88d353bef220bd93b8ec15498f94",
-    "semantic_hash": "c5ad88d353bef220bd93b8ec15498f94"
+    "mtime": 1784463456.043505,
+    "ast_hash": "198a8944a87365a2051e371ddf076783",
+    "semantic_hash": "198a8944a87365a2051e371ddf076783"
   },
   "app/src/components/Banner.tsx": {
     "mtime": 1784378811.4230125,
@@ -220,14 +220,14 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1784434409.6965582,
-    "ast_hash": "02f3a396600bcae7c78c195372cf0c7d",
-    "semantic_hash": "02f3a396600bcae7c78c195372cf0c7d"
+    "mtime": 1784464035.2819736,
+    "ast_hash": "4ad90a9a9d6de5f3ad4459421510b101",
+    "semantic_hash": "4ad90a9a9d6de5f3ad4459421510b101"
   },
   "app/src/components/Nav.tsx": {
-    "mtime": 1784378811.4225652,
-    "ast_hash": "424cfca8d5230fa53030dc9e9baeaa41",
-    "semantic_hash": "424cfca8d5230fa53030dc9e9baeaa41"
+    "mtime": 1784463456.0438955,
+    "ast_hash": "c525792ab557effbe0c6953e5952b595",
+    "semantic_hash": "c525792ab557effbe0c6953e5952b595"
   },
   "app/src/components/game-ui/BadgesPanel.tsx": {
     "mtime": 1784393195.8995173,
@@ -285,9 +285,9 @@
     "semantic_hash": "d94ea238bebd720f153ec95a1bf17e90"
   },
   "app/src/lib/map-load.ts": {
-    "mtime": 1784433152.6055636,
-    "ast_hash": "18e0d83e559613e1d0e5421e70eeb550",
-    "semantic_hash": "18e0d83e559613e1d0e5421e70eeb550"
+    "mtime": 1784462781.3323383,
+    "ast_hash": "9995bbd8fdfcfeeb6a9a3e38ec0b6139",
+    "semantic_hash": "9995bbd8fdfcfeeb6a9a3e38ec0b6139"
   },
   "app/src/lib/persisted-state.ts": {
     "mtime": 1784391391.1487064,
@@ -310,9 +310,9 @@
     "semantic_hash": "fcd204f47d263fd2af549ce15432763a"
   },
   "app/src/vite-env.d.ts": {
-    "mtime": 1784378344.802411,
-    "ast_hash": "0352474ba2918efe13895edbc3780d94",
-    "semantic_hash": "0352474ba2918efe13895edbc3780d94"
+    "mtime": 1784463456.044228,
+    "ast_hash": "56958eb46cc1ab103eedfb6fe8579120",
+    "semantic_hash": "56958eb46cc1ab103eedfb6fe8579120"
   },
   "app/tests/game-rules.test.ts": {
     "mtime": 1784393295.3279016,
@@ -340,9 +340,9 @@
     "semantic_hash": "5378c9ab694ff21193559fa53d7f17d6"
   },
   "app/tests/map-load.test.ts": {
-    "mtime": 1784433152.6099072,
-    "ast_hash": "3483a59d24a018308f25b21d1ee89528",
-    "semantic_hash": "3483a59d24a018308f25b21d1ee89528"
+    "mtime": 1784462781.3328638,
+    "ast_hash": "e145abd5ae7de81aa84e9c956e0f07c3",
+    "semantic_hash": "e145abd5ae7de81aa84e9c956e0f07c3"
   },
   "app/tests/map-source.test.ts": {
     "mtime": 1784393777.6803446,
@@ -410,14 +410,14 @@
     "semantic_hash": "f2f66e7fb62a331fe78906a07b5629e5"
   },
   "app/workflows/map-generation/index.ts": {
-    "mtime": 1784434545.21957,
-    "ast_hash": "90881f962e89293c0ebdc2a2442cf13a",
-    "semantic_hash": "90881f962e89293c0ebdc2a2442cf13a"
+    "mtime": 1784463972.0633323,
+    "ast_hash": "5f9b0ea092d497f7e9b64dab132f1395",
+    "semantic_hash": "5f9b0ea092d497f7e9b64dab132f1395"
   },
   "app/workflows/map-generation/steps.ts": {
-    "mtime": 1784378676.5349283,
-    "ast_hash": "d921f0e7d8c5e482d46c0468bce3127b",
-    "semantic_hash": "d921f0e7d8c5e482d46c0468bce3127b"
+    "mtime": 1784463459.0937223,
+    "ast_hash": "924c12392c0bb40420cec152ab8a2078",
+    "semantic_hash": "924c12392c0bb40420cec152ab8a2078"
   },
   "package.json": {
     "mtime": 1784386322.8609562,
@@ -1102,7 +1102,7 @@
   "app/VERCEL_DEPLOYMENTS.md": {
     "mtime": 1784453964.3581328,
     "ast_hash": "d7493a757765bd3c6c61022f29b58985",
-    "semantic_hash": ""
+    "semantic_hash": "d7493a757765bd3c6c61022f29b58985"
   },
   "docs/qa/dense-world-desktop.png": {
     "mtime": 1784394996.3356688,
@@ -1205,13 +1205,138 @@
     "semantic_hash": "cf1eaaad6155947b77d6d9e1aaa9f23e"
   },
   "app/tests/map-workflow-scheduling.test.ts": {
-    "mtime": 1784434552.3744464,
-    "ast_hash": "bf89fc80423521626e36c940425fc46a",
-    "semantic_hash": "bf89fc80423521626e36c940425fc46a"
+    "mtime": 1784463404.6501281,
+    "ast_hash": "3e8ff5c95811933952d7afa647c9ac22",
+    "semantic_hash": "3e8ff5c95811933952d7afa647c9ac22"
   },
   "graphify-out/memory/query_20260719_091220_can_you_have_a_quick_look_into_why_the_google_stat.md": {
     "mtime": 1784452340.8317676,
     "ast_hash": "93bdfa67b6894af81ab3b62a7d811f30",
+    "semantic_hash": "93bdfa67b6894af81ab3b62a7d811f30"
+  },
+  "graphify-out/memory/query_20260719_094400_does_enabling_google_api_key_for_vercel_preview_ex.md": {
+    "mtime": 1784454240.0068033,
+    "ast_hash": "840dc15eed7e52237e1a9661147737c8",
     "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md": {
+    "mtime": 1784454734.2223759,
+    "ast_hash": "7064f02ff4c7b9d98cefb172d847808d",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260719_115708_trace_the_existing_block_generation__movement__pre.md": {
+    "mtime": 1784462228.315967,
+    "ast_hash": "0ce319dcd96a7ecda5a354f2105ee015",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260719_115708_trace_the_server_side_generation_queue_and_regener.md": {
+    "mtime": 1784462228.3160381,
+    "ast_hash": "7b70fa58f5d6c38a62a73beb37a0a2e7",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/admin/generation-quota.get.ts": {
+    "mtime": 1784463652.8665009,
+    "ast_hash": "b0de5dd8db8efb56489a35d24362677e",
+    "semantic_hash": "b0de5dd8db8efb56489a35d24362677e"
+  },
+  "app/server/routes/api/admin/generation-quota.post.ts": {
+    "mtime": 1784463652.8670394,
+    "ast_hash": "f20c47841f027aedb7cf39e5d2a48085",
+    "semantic_hash": "f20c47841f027aedb7cf39e5d2a48085"
+  },
+  "app/server/routes/api/auth/logout.post.ts": {
+    "mtime": 1784463251.4834712,
+    "ast_hash": "c79a31434b1886d369d8c5b939a53e49",
+    "semantic_hash": "c79a31434b1886d369d8c5b939a53e49"
+  },
+  "app/server/routes/api/auth/session.get.ts": {
+    "mtime": 1784463251.4833589,
+    "ast_hash": "a541993f38c11ba47c8e3fbff6e2e4b5",
+    "semantic_hash": "a541993f38c11ba47c8e3fbff6e2e4b5"
+  },
+  "app/server/routes/api/auth/thingtime.post.ts": {
+    "mtime": 1784463251.4832315,
+    "ast_hash": "b9d5fa3696c23ed499b29bf0c448fa01",
+    "semantic_hash": "b9d5fa3696c23ed499b29bf0c448fa01"
+  },
+  "app/server/services/auth/http.ts": {
+    "mtime": 1784463330.076899,
+    "ast_hash": "0702a017ae7add0bfaac9b6ad05c2906",
+    "semantic_hash": "0702a017ae7add0bfaac9b6ad05c2906"
+  },
+  "app/server/services/auth/session.ts": {
+    "mtime": 1784463330.0765545,
+    "ast_hash": "3af75b088e8ef55ba1f4c3eef2c00682",
+    "semantic_hash": "3af75b088e8ef55ba1f4c3eef2c00682"
+  },
+  "app/server/services/auth/thingtime.ts": {
+    "mtime": 1784463330.077202,
+    "ast_hash": "32093303c97fcb4e0314a845634520b7",
+    "semantic_hash": "32093303c97fcb4e0314a845634520b7"
+  },
+  "app/server/services/map/generation-job.ts": {
+    "mtime": 1784463454.7114847,
+    "ast_hash": "0f45f63c4c606c0cd5c1ff61becc8dce",
+    "semantic_hash": "0f45f63c4c606c0cd5c1ff61becc8dce"
+  },
+  "app/server/services/map/generation-policy.ts": {
+    "mtime": 1784463195.6076448,
+    "ast_hash": "7b36f9ef13bd2e83cba5bb11ec156fca",
+    "semantic_hash": "7b36f9ef13bd2e83cba5bb11ec156fca"
+  },
+  "app/server/services/map/generation-quota.ts": {
+    "mtime": 1784464257.8980963,
+    "ast_hash": "509c6a699c401035fc3608ca5759498f",
+    "semantic_hash": "509c6a699c401035fc3608ca5759498f"
+  },
+  "app/src/auth/AuthProvider.tsx": {
+    "mtime": 1784463456.0424447,
+    "ast_hash": "5733343820f158de3fc94d721427a514",
+    "semantic_hash": "5733343820f158de3fc94d721427a514"
+  },
+  "app/src/auth/thingtime-sdk.ts": {
+    "mtime": 1784463592.204084,
+    "ast_hash": "46c5bdf8607b6250181b4c1d604d8605",
+    "semantic_hash": "46c5bdf8607b6250181b4c1d604d8605"
+  },
+  "app/src/components/AuthControls.tsx": {
+    "mtime": 1784463456.0428276,
+    "ast_hash": "5907b2f47280c3e8c453337a46a5da15",
+    "semantic_hash": "5907b2f47280c3e8c453337a46a5da15"
+  },
+  "app/src/components/game-ui/MapLoadingIndicator.tsx": {
+    "mtime": 1784462781.3326538,
+    "ast_hash": "6fc36b69df54470a196ed85c3a24d51f",
+    "semantic_hash": "6fc36b69df54470a196ed85c3a24d51f"
+  },
+  "app/src/pages/AdminPage.tsx": {
+    "mtime": 1784463456.0430727,
+    "ast_hash": "01e248609799c811cc06ef08f66ad46a",
+    "semantic_hash": "01e248609799c811cc06ef08f66ad46a"
+  },
+  "app/tests/auth-session.test.ts": {
+    "mtime": 1784463360.857989,
+    "ast_hash": "3d9b31921314dd80093ebcc06e2ef5bd",
+    "semantic_hash": "3d9b31921314dd80093ebcc06e2ef5bd"
+  },
+  "app/tests/generation-job.test.ts": {
+    "mtime": 1784463404.6563177,
+    "ast_hash": "3da278f496e188bf05854d5c5c34e7f8",
+    "semantic_hash": "3da278f496e188bf05854d5c5c34e7f8"
+  },
+  "app/tests/generation-policy.test.ts": {
+    "mtime": 1784463404.6555676,
+    "ast_hash": "78a64c85b50391b629bcdf4acf29a5bd",
+    "semantic_hash": "78a64c85b50391b629bcdf4acf29a5bd"
+  },
+  "app/tests/generation-quota.test.ts": {
+    "mtime": 1784464257.8991709,
+    "ast_hash": "433c3ed756ed26b51a6ff3f8f007752f",
+    "semantic_hash": "433c3ed756ed26b51a6ff3f8f007752f"
+  },
+  "app/tests/thingtime-auth.test.ts": {
+    "mtime": 1784463376.8720922,
+    "ast_hash": "3870c239c9d32ea6453d2655780ab069",
+    "semantic_hash": "3870c239c9d32ea6453d2655780ab069"
   }
 }
