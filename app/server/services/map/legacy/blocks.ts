@@ -24,6 +24,22 @@ try {
 	lngsDb = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'map-assets/lngs.json')))
 } catch {}
 
+// Precomputed grids win over the computed fallback below, so a grid generated
+// under a previous ground scale (e.g. zoom 20) would silently remap every
+// block. Discard both files whenever their longitude spacing disagrees with
+// the live X_INCREMENT.
+{
+	const firstIndex = lngsDb.findIndex((entry, index) => entry && lngsDb[index + 1])
+	if (firstIndex !== -1) {
+		const spacing = Math.abs(lngsDb[firstIndex + 1].lng - lngsDb[firstIndex].lng)
+		if (Math.abs(spacing - coordinates.X_INCREMENT) > coordinates.X_INCREMENT * 1e-6) {
+			log('Ignoring map-assets lats/lngs grids: spacing does not match the current ground scale')
+			latsDb = []
+			lngsDb = []
+		}
+	}
+}
+
 const legacyUrl = `${process.env.MONGODB_SCHEME || ''}${process.env.MONGODB_USER || ''}:${process.env.MONGODB_PWD || ''}@${process.env.MONGODB_URL || ''}/${process.env.MONGODB_DB || 'pokeworld'}?retryWrites=true&w=majority${process.env.MONGODB_URL_PARAMS || ''}`
 const mongoUri = process.env.POKEWORLD_OFFLINE_MAP === 'true'
 	? undefined
@@ -259,7 +275,7 @@ const toExport = version => {
 			if (!block.regenerate && !state.regenerate) continue
 			const key = coordinateKey(block)
 			if (!state.maps.pending.has(key)) {
-				const pending = functions.getMapAtWithSource(block.lat, block.lng, 20)
+				const pending = functions.getMapAtWithSource(block.lat, block.lng)
 				// Attach a handler immediately so a very fast rejection cannot become an
 				// unhandled promise while Mongo work is still in progress. The original
 				// promise remains in the map and still rejects when awaited below.
@@ -486,7 +502,7 @@ const toExport = version => {
 		const mapKey = coordinateKey(block)
 		let mapResult
 		try {
-			mapResult = await (state.maps.pending.get(mapKey) || functions.getMapAtWithSource(block.lat, block.lng, 20))
+			mapResult = await (state.maps.pending.get(mapKey) || functions.getMapAtWithSource(block.lat, block.lng))
 		} finally {
 			state.maps.pending.delete(mapKey)
 		}

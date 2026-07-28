@@ -6,6 +6,7 @@ import throttledQueue from 'throttled-queue'
 import { MongoClient } from 'mongodb'
 import log from './log'
 import * as mapSource from './map-source'
+import { GOOGLE_MAP_SOURCE } from './coordinates'
 import { GOOGLE_STATIC_MAP_STYLES, centeredCropRect } from '../terrain-classifier'
 import {
 	createSolidPngWithRgba,
@@ -43,7 +44,7 @@ try {
 
 const saveMapAtThrottled = throttledQueue(50, 1000)
 
-function getXIncrement(width = 512, zoom = 20, scale = 2) {
+function getXIncrement(width = GOOGLE_MAP_SOURCE.width, zoom = GOOGLE_MAP_SOURCE.zoom, scale = GOOGLE_MAP_SOURCE.scale) {
 	const degreesPerMeterAtEquator = 360 / (2 * Math.PI * 6378137)
 	const metresAtEquatorPerTilePx = (156543.03392 / (2 ** zoom))
 	const multiplier = 1
@@ -51,7 +52,7 @@ function getXIncrement(width = 512, zoom = 20, scale = 2) {
 	return lngIncrement
 }
 
-function getYIncrement(lat, width = 512, zoom = 20, scale = 2) {
+function getYIncrement(lat, width = GOOGLE_MAP_SOURCE.width, zoom = GOOGLE_MAP_SOURCE.zoom, scale = GOOGLE_MAP_SOURCE.scale) {
 	const degreesPerMeterAtEquator = 360 / (2 * Math.PI * 6378137)
 	const metresAtEquatorPerTilePx = (156543.03392 / (2 ** zoom))
 	const multiplier = 1
@@ -67,7 +68,7 @@ const generateMap = ({
 	endX = 10,
 	startY = 0,
 	endY = 10,
-	zoom = 20,
+	zoom = GOOGLE_MAP_SOURCE.zoom,
 	path = './assets/db',
 	json = false,
 	html = false,
@@ -292,12 +293,12 @@ async function saveMapAt(x, y, lat, lng, path, zoom) {
 
 }
 
-async function getMapAt(lat, lng, zoom = 20) {
+async function getMapAt(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom) {
 	const result = await getMapAtWithSource(lat, lng, zoom)
 	return result.image
 }
 
-function buildGoogleStaticMapUrl(lat, lng, zoom = 20, apiKey = process.env.GOOGLE_API_KEY) {
+function buildGoogleStaticMapUrl(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom, apiKey = process.env.GOOGLE_API_KEY) {
 	const url = new URL('https://maps.googleapis.com/maps/api/staticmap')
 	const params = new URLSearchParams({
 		center: `${lat},${lng}`,
@@ -313,7 +314,7 @@ function buildGoogleStaticMapUrl(lat, lng, zoom = 20, apiKey = process.env.GOOGL
 	return url
 }
 
-async function getMapAtWithSource(lat, lng, zoom = 20) {
+async function getMapAtWithSource(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom) {
 	// No Google key: skip the doomed request and use the bundled 512x512 fallback
 	// map so tile generation works fully offline (dev).
 	if (!mapSource.canUseGoogleStaticMaps()) {
@@ -376,12 +377,12 @@ async function generateCoordinatesGrid({
 
 	const lats = []
 	const latsMap = {}
-	for (let lat = -87; lat < 87; lat += getYIncrement(lat, 512, 20, 2)) {
+	for (let lat = -87; lat < 87; lat += getYIncrement(lat, GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale)) {
 		latsMap[Math.floor(lat)] = latsMap[Math.floor(lat)] || []
 		const latObj = {
 			y: lats.length,
 			lat,
-			latCenter: lat + (getYIncrement(lat, 512, 20, 2) / 2),
+			latCenter: lat + (getYIncrement(lat, GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale) / 2),
 		}
 		lats.push(latObj)
 		latsMap[Math.floor(lat)].push(latObj)
@@ -396,7 +397,7 @@ async function generateCoordinatesGrid({
 
 	const lngs = []
 	const lngsMap = {}
-	const lngIncrement = getXIncrement(512, 20, 2)
+	const lngIncrement = getXIncrement(GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale)
 	for (let lng = -180; lng < 180; lng += lngIncrement) {
 		lngsMap[Math.floor(lng)] = lngsMap[Math.floor(lng)] || []
 		const lngObj = {
@@ -433,8 +434,8 @@ async function generateCoordinatesGrid({
 					x: lng.x,
 					y: lat.y,
 					key: `${lng.x}_${lat.y}`,
-					px: 512,
-					zoom: 20,
+					px: GOOGLE_MAP_SOURCE.width,
+					zoom: GOOGLE_MAP_SOURCE.zoom,
 					scale: 2,
 					created: new Date(),
 				}).catch(err => {

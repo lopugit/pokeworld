@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { blockForCoordinates } from "../server/services/map/coordinates";
+import { blockForCoordinates as legacyBlockForCoordinates } from "../server/services/map/legacy/coordinates";
 import { coordinatesForInput, parseMapJobInput } from "../server/services/map/input";
 
 describe("map job input", () => {
@@ -35,8 +36,15 @@ describe("map job input", () => {
 
 describe("constant-time coordinate lookup", () => {
   it("maps Melbourne coordinates to stable finite block indexes", () => {
+    // Pinned zoom-19 indices: a change here means the world's ground scale
+    // moved and every stored block must regenerate (see MAP_BLOCK_VERSION).
     const block = blockForCoordinates(-37.87569351417865, 145.00569971273293);
-    expect(block).toEqual({ x: 946647, y: 488524 });
+    expect(block).toEqual({ x: 473323, y: 244262 });
+  });
+
+  it("agrees with the legacy generator grid on block indexes", () => {
+    const legacy = legacyBlockForCoordinates(-37.87569351417865, 145.00569971273293);
+    expect(blockForCoordinates(-37.87569351417865, 145.00569971273293)).toEqual(legacy);
   });
 
   it("clamps coordinates at the supported world boundary", () => {

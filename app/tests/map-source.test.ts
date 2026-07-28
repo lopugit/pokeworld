@@ -5,6 +5,7 @@ import {
   buildGoogleStaticMapUrl,
   getMapAtWithSource,
 } from "../server/services/map/legacy/functions";
+import { GOOGLE_MAP_SOURCE } from "../server/services/map/legacy/coordinates";
 
 afterEach(() => {
   vi.unstubAllEnvs();
@@ -60,8 +61,10 @@ describe("fallback map provenance", () => {
     expect(mapSource.canUseGoogleStaticMaps({ GOOGLE_API_KEY: "   " })).toBe(false);
   });
 
-  it("requests a semantic png32 map without the flattening legacy map id", () => {
-    const url = buildGoogleStaticMapUrl(-37.85921, 144.98228, 20, "test-key");
+  it("requests a semantic png32 map at the world's source zoom", () => {
+    const url = buildGoogleStaticMapUrl(-37.85921, 144.98228, undefined, "test-key");
+    expect(url.searchParams.get("zoom")).toBe(String(GOOGLE_MAP_SOURCE.zoom));
+    expect(url.searchParams.get("zoom")).toBe("19");
     expect(url.searchParams.get("size")).toBe("640x640");
     expect(url.searchParams.get("scale")).toBe("2");
     expect(url.searchParams.get("format")).toBe("png32");
@@ -81,7 +84,7 @@ describe("fallback map provenance", () => {
     });
     vi.stubGlobal("fetch", fetchMock);
 
-    const result = await getMapAtWithSource(-37.85921, 144.98228, 20);
+    const result = await getMapAtWithSource(-37.85921, 144.98228);
 
     expect(fetchMock).toHaveBeenCalledOnce();
     expect(result.source).toBe(mapSource.MAP_SOURCE_GOOGLE);
@@ -95,7 +98,7 @@ describe("fallback map provenance", () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 429 })));
     vi.spyOn(console, "error").mockImplementation(() => undefined);
 
-    const result = await getMapAtWithSource(-37.85921, 144.98228, 20);
+    const result = await getMapAtWithSource(-37.85921, 144.98228);
 
     expect(result.source).toBe(mapSource.MAP_SOURCE_FALLBACK);
     expect(result.image.byteLength).toBeGreaterThan(0);

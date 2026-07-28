@@ -132,7 +132,7 @@ describe("resolveMove", () => {
     const itemTile = tile(32, 0, { feature: "field-item", img2: "field-item-1", solid: true });
     const lookup = lookupFrom([itemTile]);
     expect(resolveMove(lookup, 0, 0, "moveRight", 32, nothingCollected)).toEqual({ kind: "blocked" });
-    const collected = (key: string) => key === "32,0";
+    const collected = (key: string) => key === tileCoordKey(32, 0);
     expect(resolveMove(lookup, 0, 0, "moveRight", 32, collected)).toEqual({ kind: "move", toX: 32, toY: 0 });
     expect(isSolidFor(itemTile, collected)).toBe(false);
   });
@@ -142,7 +142,7 @@ describe("interactions", () => {
   it("offers an item for uncollected field items and nothing afterwards", () => {
     const itemTile = tile(64, 96, { feature: "field-item", solid: true });
     expect(interactionFor(itemTile, nothingCollected)).toEqual({ type: "item" });
-    expect(interactionFor(itemTile, (key) => key === "64,96")).toEqual({ type: "none" });
+    expect(interactionFor(itemTile, (key) => key === tileCoordKey(64, 96))).toEqual({ type: "none" });
   });
 
   it("returns deterministic seeded sign pages", () => {

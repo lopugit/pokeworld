@@ -1,7 +1,12 @@
-import { Component, createRef } from "react";
+import { Component, createRef, type PointerEvent as ReactPointerEvent } from "react";
 import type { MapBlock, MapTile } from "../../server/services/map/types";
 import { getBlockForCoordinates, getMapBlocks } from "../lib/map-api";
 import { mapOffsetLimitForZoom, nextZoomValue } from "../lib/game-zoom";
+import {
+  clampOverlayOpacity,
+  clampOverlaySplit,
+  overlaySplitHit,
+} from "../lib/game-overlay";
 import {
   blockCoordinatesForWorldPosition,
   prioritizeMapPreloadOffsets,
@@ -70,6 +75,10 @@ interface GameSettings {
   tileBrowserUsePlayer: boolean;
   tileBrowserX: number;
   tileBrowserY: number;
+  overlay: boolean;
+  overlayOpacity: number;
+  overlaySplit: boolean;
+  overlaySplitX: number;
 }
 
 interface MapView {
@@ -199,6 +208,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       tileBrowserUsePlayer: false,
       tileBrowserX: 0,
       tileBrowserY: 0,
+      overlay: false,
+      overlayOpacity: 0.5,
+      overlaySplit: false,
+      overlaySplitX: 0.5,
     },
     player: {
       initialized: false,
@@ -316,6 +329,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       playerXBoundaryOffset: tileSize * playerBoundaryOffset,
       playerYBoundaryOffset: tileSize * playerBoundaryOffset,
       coords,
+      // World geometry always comes from the code constants — a persisted
+      // save from an older build must not pin stale tile/block dimensions.
+      tileSize,
+      blockSize,
+      blockCount,
+      blockWidth: tileSize * blockCount,
+      blockHeight: tileSize * blockCount,
     };
     if (!import.meta.env.DEV) game.regenerate = false;
     game.zoomScale = game.canvasWidth / (game.canvasWidth * game.zoom);
@@ -1112,15 +1132,20 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
     }
 
-    for (const block of Object.values(this.blockDb)) {
-      if (!this.blockShouldRender(block) || !block.googleMap || !gmapContext) continue;
-      const image = this.storedImages.get(block.googleMap);
-      if (!image?.loaded) continue;
-      const x = (Number(block.mapX) - map.x) * game.zoomScale;
-      const y = Number(block.mapY) - map.y;
-      const width = game.blockSize * game.zoomScale;
-      const height = game.blockSize * game.zoomScale;
-      gmapContext.drawImage(image.element, x, this.convertY(y, height), width, height);
+    if (gmapContext) this.drawGoogleBlocks(gmapContext);
+
+    if (game.overlay) {
+      canvasContext.save();
+      if (game.overlaySplit) {
+        const splitPx = clampOverlaySplit(game.overlaySplitX) * canvasContext.canvas.width;
+        canvasContext.beginPath();
+        canvasContext.rect(0, 0, splitPx, canvasContext.canvas.height);
+        canvasContext.clip();
+      }
+      canvasContext.globalAlpha = clampOverlayOpacity(game.overlayOpacity);
+      this.drawGoogleBlocks(canvasContext);
+      canvasContext.restore();
+      if (game.overlaySplit) this.drawOverlayDivider(canvasContext);
     }
 
     this.loadImage(player.sprite, `/sprites/${player.sprite}.png`);
@@ -1137,6 +1162,97 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       layerContext?.drawImage(character.element, drawX, drawY, width, height);
     }
   }
+
+  private drawGoogleBlocks(context: CanvasRenderingContext2D) {
+    const { game, map } = this.state;
+    for (const block of Object.values(this.blockDb)) {
+      if (!this.blockShouldRender(block) || !block.googleMap) continue;
+      const image = this.storedImages.get(block.googleMap);
+      if (!image?.loaded) continue;
+      const x = (Number(block.mapX) - map.x) * game.zoomScale;
+      const y = Number(block.mapY) - map.y;
+      const width = game.blockSize * game.zoomScale;
+      const height = game.blockSize * game.zoomScale;
+      context.drawImage(image.element, x, this.convertY(y, height), width, height);
+    }
+  }
+
+  private drawOverlayDivider(context: CanvasRenderingContext2D) {
+    const { width, height } = context.canvas;
+    const x = clampOverlaySplit(this.state.game.overlaySplitX) * width;
+    context.save();
+    context.strokeStyle = "rgba(20, 28, 36, 0.85)";
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(x, 0);
+    context.lineTo(x, height);
+    context.stroke();
+    context.strokeStyle = "rgba(255, 255, 255, 0.95)";
+    context.lineWidth = 2;
+    context.beginPath();
+    context.moveTo(x, 0);
+    context.lineTo(x, height);
+    context.stroke();
+
+    const gripY = height / 2;
+    context.fillStyle = "rgba(20, 28, 36, 0.85)";
+    context.beginPath();
+    context.arc(x, gripY, 11, 0, Math.PI * 2);
+    context.fill();
+    context.strokeStyle = "rgba(255, 255, 255, 0.95)";
+    context.lineWidth = 2;
+    context.beginPath();
+    context.arc(x, gripY, 11, 0, Math.PI * 2);
+    context.stroke();
+    context.fillStyle = "rgba(255, 255, 255, 0.95)";
+    context.beginPath();
+    context.moveTo(x - 7, gripY);
+    context.lineTo(x - 2, gripY - 4);
+    context.lineTo(x - 2, gripY + 4);
+    context.closePath();
+    context.fill();
+    context.beginPath();
+    context.moveTo(x + 7, gripY);
+    context.lineTo(x + 2, gripY - 4);
+    context.lineTo(x + 2, gripY + 4);
+    context.closePath();
+    context.fill();
+    context.restore();
+  }
+
+  private overlayDragging = false;
+
+  private overlayPointerFraction(event: ReactPointerEvent<HTMLCanvasElement>) {
+    const canvas = event.currentTarget;
+    if (!canvas.clientWidth) return Number.NaN;
+    return event.nativeEvent.offsetX / canvas.clientWidth;
+  }
+
+  private onCanvasPointerDown = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    const { game } = this.state;
+    if (!game.overlay || !game.overlaySplit) return;
+    const fraction = this.overlayPointerFraction(event);
+    if (!overlaySplitHit(fraction, game.overlaySplitX)) return;
+    this.overlayDragging = true;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  };
+
+  private onCanvasPointerMove = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (!this.overlayDragging) return;
+    const fraction = clampOverlaySplit(this.overlayPointerFraction(event));
+    // Persisting on release keeps drag updates cheap.
+    this.setState(({ game }) => ({ game: { ...game, overlaySplitX: fraction } }));
+  };
+
+  private onCanvasPointerUp = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (!this.overlayDragging) return;
+    this.overlayDragging = false;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    saveThing("game", this.state.game);
+  };
 
   private tileShouldRender(tile: MapTile) {
     const { map, game } = this.state;
@@ -1229,9 +1345,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               <div className="flex flex-row justify-center w-full board-screen relative">
                 <canvas
                   ref={this.canvasRef}
-                  className="screen-canvas bg-black rounded-lg"
+                  className={`screen-canvas bg-black rounded-lg ${game.overlay && game.overlaySplit ? "overlay-split-active" : ""}`}
                   width={game.canvasWidth}
                   height={game.canvasHeight}
+                  onPointerDown={this.onCanvasPointerDown}
+                  onPointerMove={this.onCanvasPointerMove}
+                  onPointerUp={this.onCanvasPointerUp}
+                  onPointerCancel={this.onCanvasPointerUp}
                 />
                 <div className="game-ui-layer">
                   <MapLoadingIndicator
@@ -1287,7 +1407,41 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   ) : null}
                 </div>
               </div>
-              <div className="w-full pt-10 md:pt-14 pb-12">
+              <div className="overlay-controls w-full flex flex-row items-center justify-center gap-2 pt-3">
+                <button
+                  type="button"
+                  className={`overlay-chip ${game.overlay ? "overlay-chip-active" : ""}`}
+                  aria-pressed={game.overlay}
+                  onClick={() => this.setGame({ overlay: !game.overlay })}
+                >
+                  MAP
+                </button>
+                {game.overlay ? (
+                  <>
+                    <input
+                      type="range"
+                      className="overlay-opacity"
+                      min={0}
+                      max={100}
+                      step={5}
+                      value={Math.round(clampOverlayOpacity(game.overlayOpacity) * 100)}
+                      aria-label="Map overlay opacity"
+                      onChange={(event) =>
+                        this.setGame({ overlayOpacity: Number(event.target.value) / 100 })
+                      }
+                    />
+                    <button
+                      type="button"
+                      className={`overlay-chip ${game.overlaySplit ? "overlay-chip-active" : ""}`}
+                      aria-pressed={game.overlaySplit}
+                      onClick={() => this.setGame({ overlaySplit: !game.overlaySplit })}
+                    >
+                      SPLIT
+                    </button>
+                  </>
+                ) : null}
+              </div>
+              <div className="w-full pt-6 md:pt-10 pb-12">
                 <div className="controls flex flex-row">
                   <div className="dpad ml-4 md:ml-12">
                     <button type="button" aria-label="Move up" className="up" onClick={() => this.action("moveUp")} />

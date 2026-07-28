@@ -1,3 +1,5 @@
+import { GOOGLE_MAP_SOURCE_TAG } from "../../server/services/map/legacy/coordinates";
+
 export interface ThingsState {
   loggedIn: boolean;
   player: Record<string, unknown>;
@@ -44,7 +46,11 @@ export function saveThing(key: keyof ThingsState, value: unknown) {
 }
 
 export function locationKey(latitude: number, longitude: number) {
-  return `${latitude.toFixed(5)},${longitude.toFixed(5)}`;
+  // The world-scale tag is derived from the Google Static Maps source
+  // parameters (see server/services/map/legacy/coordinates.ts). When the
+  // ground scale changes, every block index and world coordinate shifts, so
+  // persisted map/player state keyed to the old scale must not be restored.
+  return `${GOOGLE_MAP_SOURCE_TAG}:${latitude.toFixed(5)},${longitude.toFixed(5)}`;
 }
 
 export function resetLocationBoundThings(state: ThingsState): ThingsState {

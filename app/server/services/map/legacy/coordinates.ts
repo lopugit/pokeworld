@@ -1,8 +1,23 @@
 // @ts-nocheck -- faithful ESM port of the original coordinate helpers.
 const EARTH_RADIUS_METRES = 6378137
-const DEFAULT_ZOOM = 20
+// Google Static Maps source parameters. Zoom 19 puts a real-world house at
+// roughly 3x3-3x4 tiles, matching Pokémon proportions (player ≈ 1/9-1/12 of a
+// house). These values participate in MAP_BLOCK_VERSION: changing any of them
+// shifts every block coordinate, so stored blocks must regenerate.
+const DEFAULT_ZOOM = 19
 const DEFAULT_WIDTH = 512
 const DEFAULT_SCALE = 2
+
+export const GOOGLE_MAP_SOURCE = {
+	zoom: DEFAULT_ZOOM,
+	width: DEFAULT_WIDTH,
+	scale: DEFAULT_SCALE,
+}
+
+// Compact tag for anything keyed to the world's ground scale: the block
+// version, client save keys, and collected-item coordinates all embed it so a
+// scale change orphans every stale artifact at once.
+export const GOOGLE_MAP_SOURCE_TAG = `z${DEFAULT_ZOOM}s${DEFAULT_SCALE}w${DEFAULT_WIDTH}`
 const MIN_LATITUDE = -87
 const MAX_LATITUDE = 87
 

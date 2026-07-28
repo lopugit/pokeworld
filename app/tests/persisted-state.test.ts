@@ -29,7 +29,9 @@ describe("location-bound persistence", () => {
     });
   });
 
-  it("uses a stable metre-scale coordinate key", () => {
-    expect(locationKey(-37.859210163, 144.982275571)).toBe("-37.85921,144.98228");
+  it("uses a stable coordinate key tagged with the world's ground scale", () => {
+    // The z/s/w prefix comes from the Google Static Maps source parameters:
+    // a scale change must orphan persisted map/player state from the old world.
+    expect(locationKey(-37.859210163, 144.982275571)).toBe("z19s2w512:-37.85921,144.98228");
   });
 });

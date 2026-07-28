@@ -108,8 +108,8 @@ immediately; missing or stale blocks queue `generateMapWorkflow` and the browser
 You can enqueue the same durable path from the terminal while the app is running:
 
 ```sh
-pnpm map:generate -- 946647 488524
-pnpm map:generate -- 946647 488524 --radius 2 --regenerate
+pnpm map:generate -- 473323 244262
+pnpm map:generate -- 473323 244262 --radius 2 --regenerate
 ```
 
 `--radius 2` requests the maximum 25 blocks. In offline development,

@@ -1,4 +1,5 @@
 import type { MapTile } from "../../server/services/map/types";
+import { GOOGLE_MAP_SOURCE_TAG } from "../../server/services/map/legacy/coordinates";
 
 export type Direction = "up" | "down" | "left" | "right";
 export type MoveAction = "moveUp" | "moveRight" | "moveDown" | "moveLeft";
@@ -38,7 +39,11 @@ export const hashUnit = (x: number, y: number, salt = ""): number => {
   return (value >>> 0) / 0x100000000;
 };
 
-export const tileCoordKey = (mapX: number, mapY: number) => `${mapX},${mapY}`;
+// Collected-item keys embed the world-scale tag: after a ground-scale change
+// the same mapX/mapY means different real-world ground, so stale collection
+// records from the previous scale must never match the new world's tiles.
+export const tileCoordKey = (mapX: number, mapY: number) =>
+  `${GOOGLE_MAP_SOURCE_TAG}:${mapX},${mapY}`;
 
 const img2Of = (tile: MapTile | undefined) => String(tile?.img2 ?? "");
 

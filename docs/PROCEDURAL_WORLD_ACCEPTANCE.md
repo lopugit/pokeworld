@@ -14,7 +14,7 @@ every gate below remains backed by current automated and native Chrome evidence.
 pnpm --dir app typecheck
 pnpm --dir app test
 pnpm --dir app benchmark:map
-pnpm --dir app map:generate -- 946579 488585 --regenerate
+pnpm --dir app map:generate -- 473289 244292 --regenerate
 pnpm --dir app build:vercel
 pnpm --dir app exec node scripts/verify-vercel-output.mjs
 ```
@@ -77,7 +77,7 @@ current final-commit screenshots above remain outside the repository as required
 - The Vercel static shell and routing/output verifier passed on the integrated branch.
 - Forced local Workflow `wrun_01KXV574452BB1DND5RJ246Y9K` completed one real Google
   Static Maps block with 256 tiles, `mapSource: google-static-maps`,
-  `fallbackGenerated: false`, tile version `2.3.0001`, and a populated
+  `fallbackGenerated: false`, tile version `2.3.0001` (pre-rescale; current derived version is `2.4.0001-z19s2w512` and requires re-acceptance at the zoom-19 ground scale), and a populated
   `wild-route/secret-grove/route-garden/signed` profile from 864 deterministic recipes.
 - The latest map benchmark processed 262,144 pixels into 256 equivalent tiles over seven rounds;
   the optimized path measured 9.84x faster than the legacy path in that run (10.10x in an

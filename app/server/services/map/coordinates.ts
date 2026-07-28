@@ -1,9 +1,13 @@
+import { GOOGLE_MAP_SOURCE } from "./legacy/coordinates";
+
 const EARTH_RADIUS_METRES = 6_378_137;
 const MIN_LATITUDE = -87;
 const MAX_LATITUDE = 87;
-const ZOOM = 20;
-const WIDTH = 512;
-const SCALE = 2;
+// Single source of truth for the world's ground scale — must match the legacy
+// generator grid exactly or API block indices and generated blocks diverge.
+const ZOOM: number = GOOGLE_MAP_SOURCE.zoom;
+const WIDTH: number = GOOGLE_MAP_SOURCE.width;
+const SCALE: number = GOOGLE_MAP_SOURCE.scale;
 
 const degreesPerMeterAtEquator = 360 / (2 * Math.PI * EARTH_RADIUS_METRES);
 const metresAtEquatorPerTilePixel = 156_543.03392 / 2 ** ZOOM;

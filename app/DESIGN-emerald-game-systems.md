@@ -19,6 +19,28 @@ agents; this document is the shared contract.
 Either side can ship independently: the client reacts to whatever tile
 metadata the server emits, and unknown features are inert.
 
+## World ground scale & versioning (shared contract)
+
+- The Google Static Maps source parameters live in one place:
+  `GOOGLE_MAP_SOURCE` in `server/services/map/legacy/coordinates.ts`
+  (currently zoom 19, scale 2, width 512 → a real-world house ≈ 3×3–3×4
+  tiles; the player ≈ 1/9–1/12 of a house, matching Pokémon proportions).
+  `server/services/map/coordinates.ts` (the constant-time mapper behind
+  `/api/block-lat-lng`) imports the same constants — never fork the values.
+- `MAP_BLOCK_VERSION` = `<TERRAIN_REVISION>-<GOOGLE_MAP_SOURCE_TAG>` (e.g.
+  `2.4.0001-z19s2w512`). Bump `TERRAIN_REVISION` for terrain/sprite semantic
+  changes; the source tag changes automatically with the ground scale. All
+  stored-block consumers compare the string exactly, so any change lazily
+  regenerates every block in place (same Mongo/Thingtime IDs — do NOT bump
+  `POKEWORLD_BLOCK_WORLD` for a scale change).
+- Client state keyed to world coordinates embeds `GOOGLE_MAP_SOURCE_TAG`:
+  `locationKey()` (persisted map/player restore gate) and `tileCoordKey()`
+  (trainer collected-item keys). A scale change therefore orphans stale
+  saves/collections automatically instead of restoring wrong-world data.
+- Gitignored precomputed grids (`map-assets/lats.json` / `lngs.json`) are
+  validated against the live `X_INCREMENT` at load and ignored on mismatch;
+  delete or regenerate them after any scale change.
+
 ## Map block streaming protocol (server → client)
 
 - The client submits the complete nearby preload square immediately (3×3 at
