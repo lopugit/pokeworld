@@ -13,7 +13,12 @@ import {
   thingtimeServiceRequest,
 } from "../thingtime/client";
 
-export const GENERATION_DAILY_LIMIT = 500;
+// Overridable so a world-scale migration (which lazily regenerates every
+// visited block) can temporarily widen the public daily budget without a
+// code change.
+const dailyLimitOverride = Number(process.env.POKEWORLD_GENERATION_DAILY_LIMIT);
+export const GENERATION_DAILY_LIMIT =
+  Number.isFinite(dailyLimitOverride) && dailyLimitOverride > 0 ? dailyLimitOverride : 500;
 export const GENERATION_ROLLING_LIMIT = 9;
 export const GENERATION_ROLLING_WINDOW_MS = 5_000;
 

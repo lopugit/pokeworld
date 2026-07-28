@@ -7,6 +7,7 @@ import { MongoClient } from 'mongodb'
 import log from './log'
 import * as mapSource from './map-source'
 import { GOOGLE_MAP_SOURCE } from './coordinates'
+import * as coordinates from './coordinates'
 import { GOOGLE_STATIC_MAP_STYLES, centeredCropRect } from '../terrain-classifier'
 import {
 	createSolidPngWithRgba,
@@ -303,7 +304,9 @@ function buildGoogleStaticMapUrl(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom, apiKey
 	const params = new URLSearchParams({
 		center: `${lat},${lng}`,
 		zoom: String(zoom),
-		scale: '2',
+		scale: String(GOOGLE_MAP_SOURCE.scale),
+		// 640 CSS px of imagery leaves margin around the width/scale ground span
+		// so the Google logo strip can be cropped away below.
 		size: '640x640',
 		format: 'png32',
 		key: apiKey,
@@ -331,7 +334,7 @@ async function getMapAtWithSource(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom) {
 		if (!response.ok) throw new Error(`Google Static Maps returned ${response.status}`)
 		const image = Buffer.from(await response.arrayBuffer())
 		const decoded = decodePng(image)
-		const rgba = cropRgba(decoded, centeredCropRect(decoded.width, decoded.height))
+		const rgba = cropRgba(decoded, centeredCropRect(decoded.width, decoded.height, GOOGLE_MAP_SOURCE.width))
 		const cropped = { image: encodePng(rgba), rgba }
 
 		return {
@@ -375,15 +378,16 @@ async function generateCoordinatesGrid({
 		if (mongodb) console.error(err)
 	}
 
+	// Rows come from the closed-form Mercator mapper so materialized grids are
+	// identical by construction to blockForCoordinates / getLatForBlock —
+	// incremental accumulation drifts by whole blocks across the latitude range.
 	const lats = []
 	const latsMap = {}
-	for (let lat = -87; lat < 87; lat += getYIncrement(lat, GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale)) {
+	for (let y = 0; ; y++) {
+		const { lat, latCenter } = coordinates.getLatForBlock(y)
+		if (lat >= 87) break
+		const latObj = { y, lat, latCenter }
 		latsMap[Math.floor(lat)] = latsMap[Math.floor(lat)] || []
-		const latObj = {
-			y: lats.length,
-			lat,
-			latCenter: lat + (getYIncrement(lat, GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale) / 2),
-		}
 		lats.push(latObj)
 		latsMap[Math.floor(lat)].push(latObj)
 	}
@@ -397,14 +401,11 @@ async function generateCoordinatesGrid({
 
 	const lngs = []
 	const lngsMap = {}
-	const lngIncrement = getXIncrement(GOOGLE_MAP_SOURCE.width, GOOGLE_MAP_SOURCE.zoom, GOOGLE_MAP_SOURCE.scale)
-	for (let lng = -180; lng < 180; lng += lngIncrement) {
+	for (let x = 0; ; x++) {
+		const { lng, lngCenter } = coordinates.getLngForBlock(x)
+		if (lng >= 180) break
+		const lngObj = { x, lng, lngCenter }
 		lngsMap[Math.floor(lng)] = lngsMap[Math.floor(lng)] || []
-		const lngObj = {
-			x: lngs.length,
-			lng,
-			lngCenter: lng + (lngIncrement / 2),
-		}
 		lngsMap[Math.floor(lng)].push(lngObj)
 		lngs.push(lngObj)
 	}
@@ -436,7 +437,7 @@ async function generateCoordinatesGrid({
 					key: `${lng.x}_${lat.y}`,
 					px: GOOGLE_MAP_SOURCE.width,
 					zoom: GOOGLE_MAP_SOURCE.zoom,
-					scale: 2,
+					scale: GOOGLE_MAP_SOURCE.scale,
 					created: new Date(),
 				}).catch(err => {
 					console.error('Error inserting map tile', err)

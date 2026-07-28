@@ -38,8 +38,16 @@ metadata the server emits, and unknown features are inert.
   (trainer collected-item keys). A scale change therefore orphans stale
   saves/collections automatically instead of restoring wrong-world data.
 - Gitignored precomputed grids (`map-assets/lats.json` / `lngs.json`) are
-  validated against the live `X_INCREMENT` at load and ignored on mismatch;
-  delete or regenerate them after any scale change.
+  validated at load by sampling entries against the closed-form mapper
+  (both axes; both files stand or fall together) and ignored on mismatch.
+  `generateCoordinatesGrid` now emits closed-form rows, so regenerated grids
+  match `blockForCoordinates` by construction.
+- Stored Mongo block docs never override computed geometry: `syncBlocks`
+  strips `lat/lng/latCenter/lngCenter/x/y/mapX/mapY` from the merged doc so a
+  pre-rescale record can never redirect imagery fetches to old-world ground.
+- Lazy full-world regeneration consumes the public daily generation quota
+  (default 500 blocks/UTC day). `POKEWORLD_GENERATION_DAILY_LIMIT` widens it
+  temporarily during a migration window.
 
 ## Map block streaming protocol (server → client)
 

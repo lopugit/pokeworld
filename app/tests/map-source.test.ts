@@ -65,6 +65,7 @@ describe("fallback map provenance", () => {
     const url = buildGoogleStaticMapUrl(-37.85921, 144.98228, undefined, "test-key");
     expect(url.searchParams.get("zoom")).toBe(String(GOOGLE_MAP_SOURCE.zoom));
     expect(url.searchParams.get("zoom")).toBe("19");
+    expect(url.searchParams.get("scale")).toBe(String(GOOGLE_MAP_SOURCE.scale));
     expect(url.searchParams.get("size")).toBe("640x640");
     expect(url.searchParams.get("scale")).toBe("2");
     expect(url.searchParams.get("format")).toBe("png32");

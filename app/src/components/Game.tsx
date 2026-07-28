@@ -1220,7 +1220,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     context.restore();
   }
 
-  private overlayDragging = false;
+  private overlayDragPointerId: number | null = null;
 
   private overlayPointerFraction(event: ReactPointerEvent<HTMLCanvasElement>) {
     const canvas = event.currentTarget;
@@ -1231,23 +1231,26 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private onCanvasPointerDown = (event: ReactPointerEvent<HTMLCanvasElement>) => {
     const { game } = this.state;
     if (!game.overlay || !game.overlaySplit) return;
+    // Only the primary pointer's main button may grab the divider; a
+    // right-click or second touch must not start (or steal) a drag.
+    if (event.button !== 0 || !event.isPrimary || this.overlayDragPointerId !== null) return;
     const fraction = this.overlayPointerFraction(event);
     if (!overlaySplitHit(fraction, game.overlaySplitX)) return;
-    this.overlayDragging = true;
+    this.overlayDragPointerId = event.pointerId;
     event.currentTarget.setPointerCapture(event.pointerId);
     event.preventDefault();
   };
 
   private onCanvasPointerMove = (event: ReactPointerEvent<HTMLCanvasElement>) => {
-    if (!this.overlayDragging) return;
+    if (event.pointerId !== this.overlayDragPointerId) return;
     const fraction = clampOverlaySplit(this.overlayPointerFraction(event));
     // Persisting on release keeps drag updates cheap.
     this.setState(({ game }) => ({ game: { ...game, overlaySplitX: fraction } }));
   };
 
   private onCanvasPointerUp = (event: ReactPointerEvent<HTMLCanvasElement>) => {
-    if (!this.overlayDragging) return;
-    this.overlayDragging = false;
+    if (event.pointerId !== this.overlayDragPointerId) return;
+    this.overlayDragPointerId = null;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }

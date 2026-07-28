@@ -26,17 +26,25 @@ try {
 
 // Precomputed grids win over the computed fallback below, so a grid generated
 // under a previous ground scale (e.g. zoom 20) would silently remap every
-// block. Discard both files whenever their longitude spacing disagrees with
-// the live X_INCREMENT.
+// block. Both files stand or fall together, and each axis is validated by
+// sampling entries against the closed-form mapper — this also rejects grids
+// whose accumulated generation drift disagrees with /api/block-lat-lng.
 {
-	const firstIndex = lngsDb.findIndex((entry, index) => entry && lngsDb[index + 1])
-	if (firstIndex !== -1) {
-		const spacing = Math.abs(lngsDb[firstIndex + 1].lng - lngsDb[firstIndex].lng)
-		if (Math.abs(spacing - coordinates.X_INCREMENT) > coordinates.X_INCREMENT * 1e-6) {
-			log('Ignoring map-assets lats/lngs grids: spacing does not match the current ground scale')
-			latsDb = []
-			lngsDb = []
-		}
+	const closeTo = (value, expected) =>
+		Number.isFinite(value) && Math.abs(value - expected) <= Math.max(1e-9, Math.abs(expected) * 1e-6)
+	const sampleIndexes = length => [0, Math.floor(length / 2), length - 1]
+	const emptyGrid = value => Array.isArray(value) && value.length === 0
+	const gridsPresent = !(emptyGrid(latsDb) && emptyGrid(lngsDb))
+	const gridsValid = Array.isArray(latsDb) && Array.isArray(lngsDb)
+		&& latsDb.length > 1 && lngsDb.length > 1
+		&& sampleIndexes(lngsDb.length).every(index =>
+			lngsDb[index] && closeTo(lngsDb[index].lng, coordinates.getLngForBlock(index).lng))
+		&& sampleIndexes(latsDb.length).every(index =>
+			latsDb[index] && closeTo(latsDb[index].lat, coordinates.getLatForBlock(index).lat))
+	if (gridsPresent && !gridsValid) {
+		log('Ignoring map-assets lats/lngs grids: they do not match the current ground scale')
+		latsDb = []
+		lngsDb = []
 	}
 }
 
@@ -265,7 +273,24 @@ const toExport = version => {
 
 		for (const block of state.blocks.all) {
 			const dbBlock = dbBlocksByCoordinate.get(coordinateKey(block))
-			if (dbBlock) Object.assign(block, dbBlock)
+			if (!dbBlock) continue
+			// Never let stored geometry override the freshly computed lat/lng:
+			// docs persisted under a previous ground scale hold coordinates for
+			// DIFFERENT real-world ground at the same block index, and using them
+			// to fetch imagery would permanently bake wrong-world terrain into a
+			// block stamped with the current version.
+			const {
+				lat: _staleLat,
+				lng: _staleLng,
+				latCenter: _staleLatCenter,
+				lngCenter: _staleLngCenter,
+				x: _staleX,
+				y: _staleY,
+				mapX: _staleMapX,
+				mapY: _staleMapY,
+				...stored
+			} = dbBlock
+			Object.assign(block, stored)
 		}
 
 	}
