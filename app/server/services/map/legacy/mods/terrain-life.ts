@@ -214,6 +214,37 @@ const ensureSpawnRoute = (tiles, block) => {
 	}
 }
 
+const waterAt = (state, tile, x, y) => sameTerrainAt(state, tile, 'water', x, y)
+
+// The pond tileset can only draw a closed shoreline when every water tile sits
+// inside at least one full 2x2 square of water, surrounded tiles have at most
+// one land diagonal, and no two water bodies touch corner-to-corner. Erode any
+// tile that breaks those rules until the water mass is fully representable.
+const smoothWater = (state, tiles) => {
+	for (let pass = 0; pass < 40; pass++) {
+		let changed = false
+		for (const tile of tiles) {
+			if (terrainOf(tile) !== 'water') continue
+			const n = neighbourTerrain(state, tile, 'water')
+			const inWaterSquare = [[1, 1], [1, -1], [-1, 1], [-1, -1]].some(([x, y]) =>
+				waterAt(state, tile, x, 0) && waterAt(state, tile, 0, y) && waterAt(state, tile, x, y))
+			const landDiagonals = [n.northWest, n.northEast, n.southWest, n.southEast]
+				.filter(value => !value).length
+			const surrounded = n.north && n.east && n.south && n.west
+			const kissingCorner =
+				(!n.north && !n.east && n.northEast)
+				|| (!n.north && !n.west && n.northWest)
+				|| (!n.south && !n.east && n.southEast)
+				|| (!n.south && !n.west && n.southWest)
+			if (!inWaterSquare || (surrounded && landDiagonals >= 2) || kissingCorner) {
+				setTerrain(tile, 'grass')
+				changed = true
+			}
+		}
+		if (!changed) break
+	}
+}
+
 const resetBaseSprites = (tiles, version, updated) => {
 	for (const tile of tiles) {
 		const terrain = terrainOf(tile)
@@ -306,7 +337,7 @@ const findHouseAnchor = (byGrid, component, occupied, preferredX) => {
 	for (const candidate of candidates) {
 		const footprint = footprintAt(byGrid, candidate.left, candidate.top, 3, 4)
 		if (footprint.length !== 12) continue
-		if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !isWalkableGround(terrainOf(tile)))) continue
+		if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !isWalkableGround(terrainOf(tile)) || isCentralLanding(tile))) continue
 		return { ...candidate, footprint }
 	}
 	return null
@@ -352,7 +383,7 @@ const stitchMountains = (tiles, occupied) => {
 		for (let left = 1; left <= 13; left += 4) {
 			const footprint = footprintAt(byGrid, left, top, 3, 3)
 			if (footprint.length !== 9) continue
-			if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !['natural', 'mountain'].includes(terrainOf(tile)))) continue
+			if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !['natural', 'mountain'].includes(terrainOf(tile)) || isCentralLanding(tile))) continue
 			const anchor = footprint[0]
 			const chance = terrainOf(anchor) === 'mountain' ? 0.62 : 0.22
 			if (hashUnit(anchor.mapX, anchor.mapY, 'mountain') >= chance) continue
@@ -396,7 +427,7 @@ const stitchCave = (tiles, occupied, block) => {
 		for (let left = 1; left <= 13; left++) {
 			const footprint = footprintAt(byGrid, left, top, 2, 2)
 			if (footprint.length !== 4) continue
-			if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !['natural', 'mountain'].includes(terrainOf(tile)))) continue
+			if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !['natural', 'mountain'].includes(terrainOf(tile)) || isCentralLanding(tile))) continue
 			const mountainBonus = footprint.filter(tile => terrainOf(tile) === 'mountain').length / 20
 			candidates.push({
 				left,
@@ -687,15 +718,39 @@ const addForestClusters = (state, tiles, occupied, reserved, profile) => {
 	}
 }
 
+// Flower beds are authored per 6x6 world cell: at most one small single-colour
+// bed per cell, so blooms read as deliberate garden patches instead of noise.
+const FLOWER_BED_CELL = 6
+const flowerBedAt = (globalX, globalY, chance) => {
+	const cellX = Math.floor(globalX / FLOWER_BED_CELL)
+	const cellY = Math.floor(globalY / FLOWER_BED_CELL)
+	if (hashUnit(cellX, cellY, 'flower-bed') >= chance) return null
+	const bedX = cellX * FLOWER_BED_CELL + 1 + Math.floor(hashUnit(cellX, cellY, 'flower-bed-x') * 3)
+	const bedY = cellY * FLOWER_BED_CELL + 1 + Math.floor(hashUnit(cellX, cellY, 'flower-bed-y') * 3)
+	const wide = hashUnit(cellX, cellY, 'flower-bed-shape') > 0.5
+	const inBed = globalX >= bedX && globalX <= bedX + (wide ? 2 : 1)
+		&& globalY >= bedY && globalY <= bedY + 1
+	if (!inBed) return null
+	return 1 + Math.floor(hashUnit(cellX, cellY, 'flower-bed-colour') * 3)
+}
+
+// Long grass grows in chunky meadows: sampling the coarse noise on a 2x2
+// lattice squares the patch edges off the way hand-placed Emerald routes do.
+const inMeadow = (globalX, globalY, threshold) =>
+	coarseNoise(Math.floor(globalX / 2) * 2, Math.floor(globalY / 2) * 2, 'meadow-mass', 6) > threshold
+
 const addLife = (state, tiles, occupied, reserved, profile) => {
 	for (const tile of tiles) {
 		const key = tileKey(tile.x, sourceY(tile))
 		if (occupied.has(key)) continue
 		const terrain = terrainOf(tile)
 		const detail = hashUnit(tile.mapX, tile.mapY, 'life')
+		const globalX = Math.floor(tile.mapX / TILE_SIZE)
+		const globalY = Math.floor(tile.mapY / TILE_SIZE)
 		if (terrain === 'building') {
 			tile.img = 'grass'
-			tile.img2 = detail < 0.42 ? `flower-${1 + Math.floor(hashUnit(tile.mapX, tile.mapY, 'yard-flower') * 3)}` : 'grass'
+			const yardFlower = flowerBedAt(globalX, globalY, 0.5)
+			tile.img2 = yardFlower ? `flower-${yardFlower}` : 'grass'
 			tile.feature = 'building-yard'
 			tile.solid = false
 			continue
@@ -710,11 +765,13 @@ const addLife = (state, tiles, occupied, reserved, profile) => {
 		const canBlock = !reserved.has(key) && !isCentralLanding(tile)
 		const palette = profile.detailPalette
 		const detailBias = profile.biome.detailBias
-		const rockLimit = Math.max(0.05, palette.rocks + detailBias)
-		const shrubLimit = rockLimit + 0.09
-		const longGrassLimit = Math.min(0.72, shrubLimit + palette.longGrass)
-		const flowerLimit = Math.min(0.91, longGrassLimit + palette.flowers)
-		if (canBlock && terrain === 'natural' && detail < 0.065 + detailBias) {
+		const treeLimit = 0.03 + Math.max(0, detailBias) * 0.5
+		const rockLimit = Math.max(0.012, (palette.rocks + detailBias) * 0.22)
+		const shrubLimit = rockLimit + 0.02
+		const meadowThreshold = Math.max(0.38, Math.min(0.66, 0.64 - palette.longGrass * 0.58 - detailBias * 0.4))
+		const bedChance = Math.max(0.2, Math.min(0.65, (palette.flowers + detailBias) * 2.2))
+		const flower = flowerBedAt(globalX, globalY, bedChance)
+		if (canBlock && terrain === 'natural' && detail < treeLimit) {
 			tile.img2 = 'tree-1'
 			tile.feature = 'tree'
 			tile.solid = true
@@ -726,11 +783,10 @@ const addLife = (state, tiles, occupied, reserved, profile) => {
 			tile.img2 = 'shrub-1'
 			tile.feature = 'shrub'
 			tile.solid = true
-		} else if (detail < longGrassLimit && greenNeighbours >= 5) {
+		} else if (greenNeighbours >= 5 && inMeadow(globalX, globalY, meadowThreshold)) {
 			tile.img2 = 'grass-2'
 			tile.feature = 'long-grass'
-		} else if (detail < flowerLimit && greenNeighbours >= 5) {
-			const flower = 1 + Math.floor(hashUnit(tile.mapX, tile.mapY, 'flower') * 3)
+		} else if (flower && greenNeighbours >= 5) {
 			tile.img2 = `flower-${flower}`
 			tile.feature = 'flower'
 		} else {
@@ -746,6 +802,7 @@ const terrainLife = (state, block) => {
 	if (!tiles.length) return
 	const updated = Date.now()
 	ensureSpawnRoute(tiles, block)
+	smoothWater(state, tiles)
 	resetBaseSprites(tiles, state.version, updated)
 	stitchSurfaces(state, tiles)
 	const terrainCounts = tiles.reduce((counts, tile) => {

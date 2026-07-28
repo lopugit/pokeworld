@@ -824,16 +824,18 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private centeredMap(direction: "in" | "out", nextZoom: number): MapView {
     const map = { ...this.state.map };
     const { player, game } = this.state;
-    const centerX = map.x + (game.canvasWidth * game.zoom) / 2;
-    if (player.x >= centerX - 32 && player.x < centerX + 64) map.x += direction === "in" ? 32 : -32;
-    else map.x += player.x < centerX ? -64 : 64;
-
-    const centerY = map.y + (game.canvasHeight * game.zoom) / 2;
-    if (player.y >= centerY - 32 && player.y < centerY + 64) map.y += direction === "in" ? 32 : -32;
-    else map.y += player.y < centerY ? -64 : 64;
-
-    // nextZoom is intentionally accepted so the operation remains explicit at call sites.
-    void nextZoom;
+    // Preserve the view's world-space centre so the tile canvas and the Google
+    // map layer stay locked to the same ground across zoom steps.
+    map.x += (game.canvasWidth * (game.zoom - nextZoom)) / 2;
+    map.y += (game.canvasHeight * (game.zoom - nextZoom)) / 2;
+    // Keep the player inside the zoomed viewport, snapped to the tile grid.
+    const spanX = game.canvasWidth * nextZoom;
+    const spanY = game.canvasHeight * nextZoom;
+    map.x = Math.min(Math.max(map.x, player.x + tileSize - spanX), player.x);
+    map.y = Math.min(Math.max(map.y, player.y + tileSize - spanY), player.y);
+    map.x = Math.round(map.x / tileSize) * tileSize;
+    map.y = Math.round(map.y / tileSize) * tileSize;
+    void direction;
     return map;
   }
 
@@ -992,6 +994,42 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     }
     this.storeTileData();
     this.storeBlockData();
+    this.ensureWalkableSpawn();
+  }
+
+  // A fresh load-in (or a restore into a re-generated world) can land the
+  // player on a solid tile such as a house roof; nudge them to the nearest
+  // walkable tile once their spawn tile is known.
+  private spawnChecked = false;
+
+  private ensureWalkableSpawn() {
+    if (this.spawnChecked) return;
+    const { player } = this.state;
+    const spawnTile = this.tileDb[`${player.x},${player.y}`];
+    if (!spawnTile) return;
+    this.spawnChecked = true;
+    if (!spawnTile.solid) return;
+
+    const visited = new Set([`${player.x},${player.y}`]);
+    const queue: Array<[number, number]> = [[player.x, player.y]];
+    while (queue.length && visited.size <= 400) {
+      const [x, y] = queue.shift() as [number, number];
+      for (const [dx, dy] of [[0, tileSize], [tileSize, 0], [0, -tileSize], [-tileSize, 0]]) {
+        const nextX = x + dx;
+        const nextY = y + dy;
+        const key = `${nextX},${nextY}`;
+        if (visited.has(key)) continue;
+        visited.add(key);
+        const tile = this.tileDb[key];
+        if (!tile) continue;
+        if (!tile.solid) {
+          const relocated = this.withUpdatedPlayerBlock({ ...this.state.player, x: nextX, y: nextY });
+          this.setState({ player: relocated }, () => saveThing("player", relocated));
+          return;
+        }
+        queue.push([nextX, nextY]);
+      }
+    }
   }
 
   private loadImage(key: string, source: string) {

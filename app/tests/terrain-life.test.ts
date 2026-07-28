@@ -141,6 +141,54 @@ describe("terrain sprite stitching", () => {
     );
   });
 
+  it("erodes water into shapes whose shoreline circuits always close", () => {
+    const { state, block } = makeUniformState("grass", 3, 5);
+    const paint = (x: number, sourceY: number) => {
+      const tile = block.tiles.find((candidate) => candidate.x === x && candidate.y === 15 - sourceY);
+      if (tile) tile.terrain = "water";
+    };
+    // A healthy pond, a 1-wide channel, a plus shape, a lone tile, and two
+    // ponds kissing corner-to-corner — only representable water may survive.
+    for (let x = 1; x <= 4; x += 1) for (let y = 10; y <= 13; y += 1) paint(x, y);
+    for (let y = 2; y <= 8; y += 1) paint(7, y);
+    paint(11, 3); paint(10, 4); paint(11, 4); paint(12, 4); paint(11, 5);
+    paint(14, 8);
+    for (let x = 9; x <= 10; x += 1) for (let y = 10; y <= 11; y += 1) paint(x, y);
+    for (let x = 11; x <= 12; x += 1) for (let y = 12; y <= 13; y += 1) paint(x, y);
+    terrainLife.run(state, block);
+
+    const waterAt = new Map(
+      block.tiles.map((tile) => [`${tile.x},${15 - tile.y}`, tile.terrain === "water"]),
+    );
+    const isWater = (x: number, y: number) => waterAt.get(`${x},${y}`) ?? true;
+    const survivors = block.tiles.filter((tile) => tile.terrain === "water");
+    expect(survivors.length).toBeGreaterThan(0);
+    for (const tile of survivors) {
+      const x = tile.x;
+      const y = 15 - tile.y;
+      const north = isWater(x, y - 1);
+      const south = isWater(x, y + 1);
+      const east = isWater(x + 1, y);
+      const west = isWater(x - 1, y);
+      const corners = [
+        [1, 1], [1, -1], [-1, 1], [-1, -1],
+      ].some(([dx, dy]) => isWater(x + dx, y) && isWater(x, y + dy) && isWater(x + dx, y + dy));
+      expect(corners).toBe(true);
+      if (north && south && east && west) {
+        const landDiagonals = [
+          isWater(x - 1, y - 1), isWater(x + 1, y - 1), isWater(x - 1, y + 1), isWater(x + 1, y + 1),
+        ].filter((value) => !value).length;
+        expect(landDiagonals).toBeLessThanOrEqual(1);
+      }
+      const kissing =
+        (!north && !east && isWater(x + 1, y - 1)) ||
+        (!north && !west && isWater(x - 1, y - 1)) ||
+        (!south && !east && isWater(x + 1, y + 1)) ||
+        (!south && !west && isWater(x - 1, y + 1));
+      expect(kissing).toBe(false);
+    }
+  });
+
   it("is deterministic across regenerations", () => {
     expect(hashUnit(144, -288, "life")).toBe(hashUnit(144, -288, "life"));
     expect(hashUnit(144, -288, "life")).not.toBe(hashUnit(145, -288, "life"));

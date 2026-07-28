@@ -210,7 +210,10 @@ describe("procedural world acceptance properties", () => {
         }
         largestPlainRegion = Math.max(largestPlainRegion, size);
       }
-      expect(largestPlainRegion).toBeLessThanOrEqual(48);
+      // The calmer Emerald-style decoration pass allows village-plaza sized
+      // clearings (spawn landing + protected route margins) but still forbids
+      // genuinely empty blocks.
+      expect(largestPlainRegion).toBeLessThanOrEqual(64);
     }
   });
 
