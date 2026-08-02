@@ -57,7 +57,10 @@ export function AnimationSprite({
 
   // Fixed box sized to the largest frame so looping never shifts the layout.
   const box = useMemo(() => {
-    if (!isRectFrames(animation.frames)) return { width: 16, height: 16 };
+    if (!isRectFrames(animation.frames)) {
+      const [width, height] = animation.frameSize ?? [16, 16];
+      return { width, height };
+    }
     let width = 0;
     let height = 0;
     for (const [, , w, h] of animation.frames) {
@@ -65,7 +68,7 @@ export function AnimationSprite({
       height = Math.max(height, h);
     }
     return { width, height };
-  }, [animation.frames]);
+  }, [animation.frames, animation.frameSize]);
 
   useEffect(() => {
     const canvas = canvasRef.current;

@@ -119,4 +119,38 @@ describe("design tile legality (all 500 designs)", () => {
       }
     }
   });
+
+  it("entities never share a tile", () => {
+    for (const summary of catalog) {
+      const design = generateDesign(summary.family, summary.seed)!;
+      const seen = new Set<string>();
+      for (const entity of design.entities) {
+        const key = `${entity.col},${entity.row}`;
+        expect(seen.has(key), `${design.id}: two entities share (${key})`).toBe(false);
+        seen.add(key);
+      }
+    }
+  });
+
+  it("village-family scenes reliably include their houses", () => {
+    for (const familyId of ["hoenn-village", "lakeside-hamlet", "quiet-retreat", "daycare-garden", "woodcutter-camp"]) {
+      let withHouse = 0;
+      const total = 100;
+      for (let seed = 0; seed < total; seed += 1) {
+        const design = generateDesign(familyId, seed)!;
+        if (design.tiles.some((row) => row.some((tile) => tile.feature === "house"))) withHouse += 1;
+      }
+      expect(withHouse / total, `${familyId}: only ${withHouse}/${total} scenes have a house`).toBeGreaterThanOrEqual(0.95);
+    }
+  });
+
+  it("catalog card names always extend the regenerated design name (dedup suffixes only)", () => {
+    for (const summary of catalog) {
+      const design = generateDesign(summary.family, summary.seed)!;
+      expect(
+        summary.name === design.name || summary.name.startsWith(`${design.name} `),
+        `${summary.id}: card "${summary.name}" vs regenerated "${design.name}"`,
+      ).toBe(true);
+    }
+  });
 });

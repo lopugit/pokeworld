@@ -69,7 +69,9 @@ export function DesignDetailModal({ summary, onClose, onSaved, onDeleted }: Desi
         body: JSON.stringify({
           family: design.family,
           seed: design.seed,
-          name: design.name,
+          // Non-remixed saves keep the card's display name (which may carry a
+          // dedup suffix like "II" that regeneration alone doesn't know).
+          name: remixed ? design.name : summary.name,
           remixOf: summary.id,
         }),
       });

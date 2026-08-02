@@ -34,6 +34,8 @@ export interface ManifestAnimation {
   fps: number;
   tags: string[];
   frames: ManifestFrame[] | string[];
+  /** [w, h] for file-per-frame animations (sheet crops carry per-frame rects). */
+  frameSize?: [number, number];
 }
 
 export interface AssetManifest {

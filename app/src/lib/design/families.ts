@@ -11,6 +11,8 @@
 // water obeys the live generator's shoreline smoothing.
 
 import {
+  FOREST_SPIRITS,
+  LEGENDARIES,
   NPC_ANGLERS,
   NPC_MYSTERIOUS,
   NPC_RUNNERS,
@@ -94,13 +96,25 @@ const boulders = (ctx: SceneContext, density: number) =>
     feature: "rock",
   });
 
+// Entities may not stack on the same tile — retry a few spots if occupied.
+const freeEntitySpot = (ctx: SceneContext, margin: number) => {
+  for (let attempt = 0; attempt < 8; attempt += 1) {
+    const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { margin });
+    if (!spot) return null;
+    if (!ctx.entities.some((entity) => entity.col === spot.col && entity.row === spot.row)) {
+      return spot;
+    }
+  }
+  return null;
+};
+
 const addNpc = (ctx: SceneContext, pool = NPC_VILLAGERS, margin = 2) => {
-  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { margin });
+  const spot = freeEntitySpot(ctx, margin);
   if (spot) ctx.entities.push(npcEntity(ctx.rng, pool, spot.col, spot.row));
 };
 
 const addPokemon = (ctx: SceneContext, pool = POKEMON, margin = 2) => {
-  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { margin });
+  const spot = freeEntitySpot(ctx, margin);
   if (spot) ctx.entities.push(pokemonEntity(ctx.rng, spot.col, spot.row, pool));
 };
 
@@ -185,7 +199,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     ],
     paintGround(ctx) {
       paintBlob(ctx.ground, "water", ctx.rng.range(10, 13), ctx.rng.range(10, 13), ctx.rng.range(4, 6), ctx.rng);
-      paintPath(ctx.ground, "path", 2, 2, 6, ctx.rng.range(9, 12), 2, ctx.rng);
+      // Start the lakeside path below the house rows so cottages always fit.
+      paintPath(ctx.ground, "path", 2, 5, 6, ctx.rng.range(9, 12), 2, ctx.rng);
     },
     decorate(ctx) {
       placeHouse(ctx.grid, ctx.ground, 1, 1);
@@ -601,7 +616,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
         }
       }
       placeHiddenItem(ctx.grid, ctx.ground, 8, 8);
-      if (ctx.rng.chance(0.8)) addPokemon(ctx, [POKEMON[3], POKEMON[0]], 5);
+      if (ctx.rng.chance(0.8)) addPokemon(ctx, FOREST_SPIRITS, 5);
       if (ctx.rng.chance(0.4)) addNpc(ctx, NPC_MYSTERIOUS, 4);
     },
   },
@@ -720,7 +735,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       scree(ctx, 0.1);
       rockySignSomewhere(ctx);
       hiddenSomewhere(ctx);
-      addPokemon(ctx, [POKEMON[3], POKEMON[0], POKEMON[2]], 4);
+      addPokemon(ctx, LEGENDARIES, 4);
       if (ctx.rng.chance(0.4)) addNpc(ctx, NPC_MYSTERIOUS, 4);
     },
   },

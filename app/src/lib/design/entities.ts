@@ -59,6 +59,33 @@ export const POKEMON: PokemonVariant[] = [
   { label: "Zigzagoon", species: "zigzagoon", src: "/sprites/pokemon/emerald-zigzagoon.png" },
 ];
 
+// Gen III battle sprites (64×64 with alpha) for the big-name guardians.
+const gen3 = (id: number, label: string): PokemonVariant => ({
+  label,
+  species: label.toLowerCase(),
+  src: `/sprites/pokemon/gen3/${id}.png`,
+});
+
+/** Hoenn's legendaries — guardians for legendary-cave designs. */
+export const LEGENDARIES: PokemonVariant[] = [
+  gen3(377, "Regirock"),
+  gen3(378, "Regice"),
+  gen3(379, "Registeel"),
+  gen3(380, "Latias"),
+  gen3(381, "Latios"),
+  gen3(382, "Kyogre"),
+  gen3(383, "Groudon"),
+  gen3(384, "Rayquaza"),
+];
+
+/** Mythical forest spirits for shrine scenes. */
+export const FOREST_SPIRITS: PokemonVariant[] = [
+  gen3(251, "Celebi"),
+  gen3(385, "Jirachi"),
+  gen3(196, "Espeon"),
+  gen3(203, "Girafarig"),
+];
+
 export function npcEntity(rng: Rng, pool: NpcVariant[], col: number, row: number): DesignEntity {
   const variant = rng.pick(pool);
   return { kind: "npc", col, row, rect: variant.rect, label: variant.label };

@@ -139,6 +139,85 @@ for (const file of fs.readdirSync(pokemonDir).sort()) {
   });
 }
 
+// The complete Gen III Pokédex sprite set (front / shiny / back / back-shiny),
+// named from the shipped Pokédex data.
+const pokedex = JSON.parse(
+  fs.readFileSync(path.join(appDir, "src", "data", "pokedex.json"), "utf8"),
+);
+const dexById = new Map(pokedex.map((entry) => [entry.id, entry]));
+const titleCase = (value) =>
+  value.toLowerCase().replace(/(^|[ -])([a-z])/g, (_, sep, ch) => sep + ch.toUpperCase());
+const GEN3_VARIANTS = [
+  ["", "front", ""],
+  ["shiny/", "shiny", " (shiny)"],
+  ["back/", "back", " (back)"],
+  ["back-shiny/", "back-shiny", " (back, shiny)"],
+];
+for (const [dir, variant, suffix] of GEN3_VARIANTS) {
+  const variantDir = path.join(pokemonDir, "gen3", dir);
+  if (!fs.existsSync(variantDir)) continue;
+  const files = fs
+    .readdirSync(variantDir)
+    .filter((file) => /^\d+\.png$/.test(file))
+    .sort((a, b) => Number.parseInt(a, 10) - Number.parseInt(b, 10));
+  for (const file of files) {
+    const id = Number.parseInt(file, 10);
+    const entry = dexById.get(id);
+    const name = titleCase(entry?.displayName ?? `Pokémon #${id}`);
+    const { width, height } = readPng(path.join(variantDir, file));
+    singles.push({
+      id: `gen3:${variant}:${id}`,
+      name: `#${String(id).padStart(3, "0")} ${name}${suffix}`,
+      src: `/sprites/pokemon/gen3/${dir}${file}`,
+      w: width,
+      h: height,
+      category: "pokemon",
+      tags: [
+        "pokemon",
+        "gen3",
+        variant,
+        name.toLowerCase(),
+        ...(entry?.types ?? []),
+        ...(entry?.isLegendary ? ["legendary"] : []),
+        "battle",
+        "in-game",
+      ],
+      usage: "Gen III battle sprite (encounters, battles, Pokédex).",
+    });
+  }
+}
+
+// Directional player walk frames (boy & girl) — indexed as singles here and
+// grouped into walk-cycle animations further down.
+const PLAYER_DIRECTIONS = ["down", "side", "up"];
+const playerFrames = {};
+for (const character of ["boy", "girl"]) {
+  const characterDir = path.join(spritesDir, "player", character);
+  if (!fs.existsSync(characterDir)) continue;
+  playerFrames[character] = {};
+  for (const direction of PLAYER_DIRECTIONS) {
+    playerFrames[character][direction] = [];
+    for (let frame = 0; frame <= 2; frame += 1) {
+      const file = `${direction}-${frame}.png`;
+      const filePath = path.join(characterDir, file);
+      if (!fs.existsSync(filePath)) continue;
+      const { width, height } = readPng(filePath);
+      const src = `/sprites/player/${character}/${file}`;
+      playerFrames[character][direction].push(src);
+      singles.push({
+        id: `player:${character}:${direction}-${frame}`,
+        name: `Player (${character}) — ${direction} frame ${frame}`,
+        src,
+        w: width,
+        h: height,
+        category: "character",
+        tags: ["character", "player", character, direction, "walk", "in-game"],
+        usage: "Directional walk frame rendered on the live map.",
+      });
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // 2. Sheets — copy source spritesheets into public/design/sheets.
 // ---------------------------------------------------------------------------
@@ -407,6 +486,22 @@ function characterAnimations(file) {
 
 const animations = characterAnimations(CHARACTER_SRC);
 
+// Directional walk cycles from the player sprite sets.
+for (const [character, directions] of Object.entries(playerFrames)) {
+  for (const [direction, frames] of Object.entries(directions)) {
+    if (frames.length < 2) continue;
+    animations.push({
+      id: `player:${character}:walk-${direction}`,
+      name: `Player (${character}) — walk ${direction}`,
+      category: "character",
+      fps: 8,
+      tags: ["character", "player", character, direction, "walk", "animation", "in-game"],
+      frames,
+      frameSize: [16, 32],
+    });
+  }
+}
+
 // Curated tile-flip animations that exist in the shipped tile set.
 animations.push(
   {
@@ -416,6 +511,7 @@ animations.push(
     fps: 3,
     tags: ["water", "ripple", "animation", "in-game"],
     frames: [1, 2, 3, 4].map((n) => `/tiles/pond-center-${n}.png`),
+    frameSize: [16, 16],
   },
   {
     id: "tiles:flower-sway",
@@ -424,6 +520,7 @@ animations.push(
     fps: 3,
     tags: ["flower", "animation", "in-game"],
     frames: [1, 2, 3].map((n) => `/tiles/flower-${n}.png`),
+    frameSize: [16, 16],
   },
 );
 
