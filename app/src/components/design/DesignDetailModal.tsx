@@ -190,7 +190,11 @@ export function DesignDetailModal({ summary, onClose, onSaved, onDeleted }: Desi
               >
                 {remixed ? "Remix again" : "Remix this design"}
               </button>
-              {session.authenticated ? (
+              {isSaved(summary) && !remixed ? (
+                <span className="text-xs text-slate-500">
+                  Already published — remix it to save your own version.
+                </span>
+              ) : session.authenticated ? (
                 <button
                   type="button"
                   onClick={save}

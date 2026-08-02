@@ -55,7 +55,13 @@ let clientPromise: Promise<MongoClient> | undefined;
 async function designsCollection(): Promise<Collection<SavedDesign> | undefined> {
   const uri = mongoUri();
   if (!uri) return undefined;
-  clientPromise ||= new MongoClient(uri).connect();
+  if (!clientPromise) {
+    clientPromise = new MongoClient(uri).connect();
+    // Never cache a failed connection — the next request should retry.
+    clientPromise.catch(() => {
+      clientPromise = undefined;
+    });
+  }
   const client = await clientPromise;
   return client.db(process.env.MONGODB_DB || "pokeworld").collection<SavedDesign>("designs");
 }
@@ -137,6 +143,13 @@ export async function saveDesign(input: SaveDesignInput): Promise<SavedDesign> {
       throw new DesignStoreError(`Each trainer can save up to ${MAX_DESIGNS_PER_USER} designs`, 429);
     }
     await collection.insertOne({ ...design });
+    // The pre-check races under concurrency (count + insert are not atomic);
+    // compensate after the insert so the cap holds without transactions.
+    const after = await collection.countDocuments({ "author.id": input.author.id });
+    if (after > MAX_DESIGNS_PER_USER) {
+      await collection.deleteOne({ id: design.id });
+      throw new DesignStoreError(`Each trainer can save up to ${MAX_DESIGNS_PER_USER} designs`, 429);
+    }
     return design;
   }
 
@@ -149,9 +162,15 @@ export async function saveDesign(input: SaveDesignInput): Promise<SavedDesign> {
   return design;
 }
 
+const clampInt = (value: number | undefined, fallback: number, min: number, max: number) => {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return fallback;
+  return Math.min(max, Math.max(min, Math.floor(parsed)));
+};
+
 export async function listDesigns(query: DesignQuery): Promise<DesignPage> {
-  const page = Math.max(1, Math.floor(query.page ?? 1));
-  const limit = Math.min(MAX_PAGE_SIZE, Math.max(1, Math.floor(query.limit ?? 24)));
+  const page = clampInt(query.page, 1, 1, 1_000_000);
+  const limit = clampInt(query.limit, 24, 1, MAX_PAGE_SIZE);
   const text = query.query?.trim().toLowerCase() ?? "";
 
   const collection = await designsCollection();
@@ -161,7 +180,9 @@ export async function listDesigns(query: DesignQuery): Promise<DesignPage> {
     if (query.tag) filter.tags = query.tag;
     if (query.author) filter["author.username"] = query.author;
     if (text) {
-      const pattern = new RegExp(text.split(/\s+/).map(escapeRegex).join(".*"), "i");
+      // Cap term count so crafted queries can't stack unbounded regex work.
+      const terms = text.split(/\s+/).slice(0, 6);
+      const pattern = new RegExp(terms.map(escapeRegex).join(".*"), "i");
       filter.$or = [
         { name: pattern },
         { description: pattern },
@@ -170,12 +191,13 @@ export async function listDesigns(query: DesignQuery): Promise<DesignPage> {
         { "author.username": pattern },
       ];
     }
-    const total = await collection.countDocuments(filter);
+    const total = await collection.countDocuments(filter, { maxTimeMS: 3000 });
     const documents = await collection
       .find(filter, { projection: { _id: 0 } })
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(limit)
+      .maxTimeMS(3000)
       .toArray();
     return { designs: documents, total, page, pages: Math.max(1, Math.ceil(total / limit)) };
   }

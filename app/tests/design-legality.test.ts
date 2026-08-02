@@ -73,6 +73,27 @@ describe("design tile legality (all 500 designs)", () => {
             (!at(0, 1) && !at(1, 0) && at(1, 1)) ||
             (!at(0, 1) && !at(-1, 0) && at(-1, 1));
           expect(kissingCorner, `${design.id} (${col},${row}): kissing-corner shoreline`).toBe(false);
+          // pond-22/23 art is a bank bar, not a corner nub — never legal
+          expect(baseOf(grid[row][col]), `${design.id} (${col},${row}): unusable pond corner art`).not.toMatch(/^pond-2[23]$/);
+        }
+      }
+    }
+  });
+
+  it("autotiled ground tiles are never isolated (no floating path/road/sand squares)", () => {
+    for (const summary of catalog) {
+      const design = generateDesign(summary.family, summary.seed)!;
+      for (let row = 0; row < DESIGN_GRID; row += 1) {
+        for (let col = 0; col < DESIGN_GRID; col += 1) {
+          const match = /^(path|road|sand)-\d+$/.exec(baseOf(design.tiles[row][col]));
+          if (!match) continue;
+          const prefix = match[1];
+          const sameKind = (c: number, r: number) => {
+            if (c < 0 || r < 0 || c >= DESIGN_GRID || r >= DESIGN_GRID) return true;
+            return baseOf(design.tiles[r][c]).startsWith(`${prefix}-`);
+          };
+          const connected = sameKind(col, row - 1) || sameKind(col, row + 1) || sameKind(col - 1, row) || sameKind(col + 1, row);
+          expect(connected, `${design.id} (${col},${row}): isolated ${prefix} tile`).toBe(true);
         }
       }
     }

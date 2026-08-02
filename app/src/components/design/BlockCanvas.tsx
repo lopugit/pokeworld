@@ -13,7 +13,11 @@ function loadImage(src: string): Promise<HTMLImageElement | null> {
     cached = new Promise((resolve) => {
       const image = new Image();
       image.onload = () => resolve(image);
-      image.onerror = () => resolve(null);
+      image.onerror = () => {
+        // Evict transient failures so the next render retries the load.
+        imageCache.delete(src);
+        resolve(null);
+      };
       image.src = src;
     });
     imageCache.set(src, cached);

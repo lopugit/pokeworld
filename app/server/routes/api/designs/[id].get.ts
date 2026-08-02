@@ -1,6 +1,6 @@
 import { defineEventHandler, getRouterParam } from "nitro/h3";
-import { getSavedDesign } from "../../../services/designs/store";
-import { jsonResponse, errorResponse } from "../../../utils/http";
+import { DesignStoreError, getSavedDesign } from "../../../services/designs/store";
+import { jsonResponse } from "../../../utils/http";
 
 export default defineEventHandler(async (event) => {
   try {
@@ -9,6 +9,9 @@ export default defineEventHandler(async (event) => {
     if (!design) return jsonResponse({ error: "Design not found" }, { status: 404 });
     return jsonResponse({ design });
   } catch (error) {
-    return errorResponse(error, 500);
+    if (error instanceof DesignStoreError) {
+      return jsonResponse({ error: error.message }, { status: error.status });
+    }
+    return jsonResponse({ error: "Designs are unavailable right now" }, { status: 500 });
   }
 });

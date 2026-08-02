@@ -158,16 +158,19 @@ function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
 }
 
 function waterTileName(flags: NeighbourFlags, ripple: () => number): string {
-  const { north, east, south, west, northWest, northEast, southWest, southEast } = flags;
+  const { north, east, south, west, northWest, northEast } = flags;
   if (north && south && east && west) {
     if (!northWest) return "pond-20";
     if (!northEast) return "pond-21";
-    if (!southWest) return "pond-22";
-    if (!southEast) return "pond-23";
+    // The pond-22/23 art is a full-height bank bar (near-duplicate of the
+    // 24/25 channel walls), NOT an inner-corner nub — drawing it in open
+    // water renders a floating bar. smoothWater fills SW/SE notches instead,
+    // and any residual case renders as open water (a subtle missing nub
+    // beats a broken bank).
     return `pond-center-${1 + Math.floor(ripple() * 4)}`;
   }
-  if (north && south && east && !west && !northWest && !southWest) return "pond-25";
-  if (north && south && !east && west && !northEast && !southEast) return "pond-24";
+  if (north && south && east && !west && !flags.northWest && !flags.southWest) return "pond-25";
+  if (north && south && !east && west && !flags.northEast && !flags.southEast) return "pond-24";
   return `pond-${autotileIndex(flags)}`;
 }
 
@@ -220,7 +223,49 @@ export function smoothWater(ground: GroundMap, fallback: Ground = "grass"): void
         if (!inWaterSquare || (surrounded && landDiagonals >= 2) || kissingCorner) {
           ground[row][col] = fallback;
           changed = true;
+          continue;
         }
+        // Design-side extension of the live rules: the SW/SE inner-corner art
+        // (pond-22/23) is unusable (see waterTileName), so fill those notches
+        // with water — the shoreline smooths instead of needing the nub. Only
+        // plain fallback ground may flood; paths/roads stay dry (a residual
+        // notch just renders as open water).
+        if (surrounded && !southWest && inBounds(col - 1, row + 1) && ground[row + 1][col - 1] === fallback) {
+          ground[row + 1][col - 1] = "water";
+          changed = true;
+        }
+        if (surrounded && !southEast && inBounds(col + 1, row + 1) && ground[row + 1][col + 1] === fallback) {
+          ground[row + 1][col + 1] = "water";
+          changed = true;
+        }
+      }
+    }
+    if (!changed) break;
+  }
+}
+
+/** Isolated autotiled specks (a lone sand/path/road tile with no same-family
+ * cardinal neighbour — typically left behind by shoreline smoothing) cannot
+ * render legally: absorb them into surrounding water, or plain grass. */
+function absorbIsolatedSpecks(ground: GroundMap): void {
+  const familyOf = (kind: Ground) => (kind === "dirt" ? "path" : kind);
+  for (let pass = 0; pass < 8; pass += 1) {
+    let changed = false;
+    for (let row = 0; row < DESIGN_GRID; row += 1) {
+      for (let col = 0; col < DESIGN_GRID; col += 1) {
+        const kind = ground[row][col];
+        if (!GROUND_PREFIX[kind]) continue;
+        const family = familyOf(kind);
+        const cardinals: Array<Ground | null> = [
+          inBounds(col, row - 1) ? ground[row - 1][col] : null,
+          inBounds(col, row + 1) ? ground[row + 1][col] : null,
+          inBounds(col - 1, row) ? ground[row][col - 1] : null,
+          inBounds(col + 1, row) ? ground[row][col + 1] : null,
+        ];
+        if (cardinals.some((value) => value === null || familyOf(value) === family)) continue;
+        const waterCount = cardinals.filter((value) => value === "water").length;
+        ground[row][col] = waterCount >= 3 ? "water" : "grass";
+        changed = true;
       }
     }
     if (!changed) break;
@@ -235,6 +280,13 @@ export function bakeGround(
   rng: Rng,
   waterFallback: Ground = "grass",
 ): void {
+  // Smoothing and speck absorption can each expose new work for the other
+  // (absorbed water reopens shoreline checks; smoothing fallback can strand a
+  // speck) — alternate until stable.
+  for (let round = 0; round < 4; round += 1) {
+    smoothWater(ground, waterFallback);
+    absorbIsolatedSpecks(ground);
+  }
   smoothWater(ground, waterFallback);
   for (let row = 0; row < DESIGN_GRID; row += 1) {
     for (let col = 0; col < DESIGN_GRID; col += 1) {

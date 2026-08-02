@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /** Incremental reveal for filtered lists: shows `pageSize` items and grows
- * whenever the sentinel scrolls into view. Reset when the source changes. */
+ * whenever the sentinel scrolls into view. Reset when the source changes.
+ * The sentinel uses a callback ref so a remounted sentinel node (e.g. after a
+ * filter change to an equally-sized result set) is always re-observed. */
 export function useInfiniteReveal<T>(items: T[], pageSize = 60) {
   const [visibleCount, setVisibleCount] = useState(pageSize);
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const [sentinel, setSentinel] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setVisibleCount(pageSize);
@@ -15,7 +17,6 @@ export function useInfiniteReveal<T>(items: T[], pageSize = 60) {
   }, [items.length, pageSize]);
 
   useEffect(() => {
-    const sentinel = sentinelRef.current;
     if (!sentinel) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -25,11 +26,11 @@ export function useInfiniteReveal<T>(items: T[], pageSize = 60) {
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [grow]);
+  }, [sentinel, grow]);
 
   return {
     visible: items.slice(0, visibleCount),
     hasMore: visibleCount < items.length,
-    sentinelRef,
+    sentinelRef: setSentinel,
   };
 }

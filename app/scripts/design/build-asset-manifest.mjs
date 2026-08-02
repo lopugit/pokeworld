@@ -265,7 +265,7 @@ function classifyCell(png, cellX, cellY, cell) {
   const counts = { blue: 0, green: 0, warm: 0, gray: 0, dark: 0, light: 0, other: 0 };
   let opaque = 0;
   let uniform = true;
-  let first = -1;
+  let first;
   for (let y = 0; y < cell; y += 1) {
     for (let x = 0; x < cell; x += 1) {
       const idx = ((cellY * cell + y) * png.width + cellX * cell + x) * 4;
@@ -274,7 +274,10 @@ function classifyCell(png, cellX, cellY, cell) {
       const b = png.data[idx + 2];
       const a = png.data[idx + 3];
       const packed = a < 64 ? -1 : (r << 16) | (g << 8) | b;
-      if (first === -1) first = packed;
+      // undefined sentinel (NOT -1): transparency must count against
+      // uniformity, or a shape on a transparent background would be dropped
+      // as "blank" whenever the transparent pixels come first in scan order.
+      if (first === undefined) first = packed;
       else if (packed !== first) uniform = false;
       if (a < 64) continue;
       opaque += 1;
@@ -419,11 +422,15 @@ function detectIslands(png) {
 const CHARACTER_BANDS = [
   { id: "walk", top: 0, bottom: 22, name: "Overworld walk cycle", fps: 8, tags: ["walk", "overworld", "npc"] },
   { id: "run", top: 22, bottom: 46, name: "Overworld run & pose cycle", fps: 10, tags: ["run", "overworld", "npc"] },
-  { id: "bike-props", top: 46, bottom: 70, name: "Bike & field props", fps: 8, tags: ["bike", "props", "overworld"] },
+  { id: "bike-props", top: 46, bottom: 70, name: "Bike & field icons", fps: 8, tags: ["bike", "props", "overworld"] },
   { id: "fishing", top: 70, bottom: 98, name: "Fishing & field moves", fps: 6, tags: ["fishing", "field", "overworld", "npc"] },
   { id: "pokeball", top: 98, bottom: 118, name: "Poké Ball open/close", fps: 10, tags: ["pokeball", "item"] },
   { id: "hero-large", top: 118, bottom: 182, name: "Hero artwork & bike ride (large)", fps: 8, tags: ["artwork", "bike"] },
 ];
+
+// Tall standing artwork (h ≥ 40 px) belongs with the hero art regardless of
+// which small band its centre lands in.
+const HERO_MIN_HEIGHT = 40;
 
 // Credit text occupies the bottom strip of the sheet — never frames.
 const CHARACTER_EXCLUSIONS = [{ x: 0, y: 183, w: 840, h: 71 }];
@@ -446,7 +453,10 @@ function characterAnimations(file) {
   const orphans = [];
   for (const island of islands) {
     const centerY = island.y + island.h / 2;
-    const band = bands.find((candidate) => centerY >= candidate.top && centerY < candidate.bottom);
+    const band =
+      island.h >= HERO_MIN_HEIGHT
+        ? bands.find((candidate) => candidate.id === "hero-large")
+        : bands.find((candidate) => centerY >= candidate.top && centerY < candidate.bottom);
     if (band) band.frames.push(island);
     else orphans.push(island);
   }

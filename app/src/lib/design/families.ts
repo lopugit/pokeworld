@@ -129,11 +129,18 @@ const rockySignSomewhere = (ctx: SceneContext) => {
 };
 
 const hiddenSomewhere = (ctx: SceneContext) => {
-  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, {
-    allowGround: ["grass", "rocky"],
-    margin: 1,
-  });
-  if (spot) placeHiddenItem(ctx.grid, ctx.ground, spot.col, spot.row);
+  // Also avoid tiles where an entity already stands — a secret buried under a
+  // rendered NPC/Pokémon would be invisible AND unreachable-looking.
+  for (let attempt = 0; attempt < 8; attempt += 1) {
+    const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, {
+      allowGround: ["grass", "rocky"],
+      margin: 1,
+    });
+    if (!spot) return;
+    if (ctx.entities.some((entity) => entity.col === spot.col && entity.row === spot.row)) continue;
+    placeHiddenItem(ctx.grid, ctx.ground, spot.col, spot.row);
+    return;
+  }
 };
 
 const domeSomewhere = (ctx: SceneContext, spots: ReadonlyArray<readonly [number, number]>) => {
@@ -635,11 +642,14 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "Something follows visitors to the edge, then politely stops.",
     ],
     paintGround(ctx) {
-      // one-wide wandering trail
+      // one-wide wandering trail; bridge diagonal steps so the path autotile
+      // always sees a cardinal neighbour (no floating path squares)
       let col = ctx.rng.range(2, 13);
       for (let row = 15; row >= 1; row -= 1) {
         ctx.ground[row][col] = "dirt";
-        col = Math.max(1, Math.min(14, col + ctx.rng.range(-1, 1)));
+        const next = Math.max(1, Math.min(14, col + ctx.rng.range(-1, 1)));
+        if (next !== col) ctx.ground[row][next] = "dirt";
+        col = next;
       }
     },
     decorate(ctx) {

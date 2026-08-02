@@ -68,7 +68,9 @@ export function CommunityBrowser() {
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
-    if (!sentinel) return;
+    // After a failed fetch, stop observing until the user retries explicitly —
+    // otherwise the still-visible sentinel refires the failed request forever.
+    if (!sentinel || error) return;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting) && !loading && page < pages) {
@@ -79,7 +81,7 @@ export function CommunityBrowser() {
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [fetchPage, loading, page, pages]);
+  }, [fetchPage, loading, page, pages, error]);
 
   const onDeleted = useCallback((id: string) => {
     setDesigns((current) => current.filter((design) => design.id !== id));
@@ -115,7 +117,18 @@ export function CommunityBrowser() {
         </div>
       </div>
 
-      {error && <p className="mb-3 text-sm text-rose-400">{error}</p>}
+      {error && (
+        <p className="mb-3 flex items-center gap-3 text-sm text-rose-400">
+          {error}
+          <button
+            type="button"
+            onClick={() => void fetchPage(Math.max(1, page), designs.length === 0)}
+            className="rounded-md border border-rose-500/60 px-2 py-1 text-xs font-bold hover:bg-rose-500/10"
+          >
+            Retry
+          </button>
+        </p>
+      )}
       <p className="mb-3 text-sm text-slate-400">
         {total} saved design{total === 1 ? "" : "s"} from the community
       </p>
