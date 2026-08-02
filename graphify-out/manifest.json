@@ -9130,13 +9130,13 @@
     "semantic_hash": ""
   },
   "app/public/design/asset-manifest.json": {
-    "mtime": 1785677907.989736,
-    "ast_hash": "25e7694f0623c2e2de4c84788781ba64",
+    "mtime": 1785678207.5031147,
+    "ast_hash": "0ec048d99b7336e9bc94656ae9776630",
     "semantic_hash": ""
   },
   "app/scripts/design/build-asset-manifest.mjs": {
-    "mtime": 1785677535.8121607,
-    "ast_hash": "98094ab83d9f00044446f267d3e7fd27",
+    "mtime": 1785678160.4436977,
+    "ast_hash": "3711262c356bbb75457a2c2bbab8076a",
     "semantic_hash": ""
   },
   "app/src/lib/battle.ts": {
@@ -9165,12 +9165,12 @@
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-character-male.png": {
-    "mtime": 1785677907.6985946,
+    "mtime": 1785678207.1965592,
     "ast_hash": "ea113d178bf0b311df317c189bb4178e",
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-exterior.png": {
-    "mtime": 1785677907.69841,
+    "mtime": 1785678207.1960692,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
     "semantic_hash": ""
   },
@@ -9240,8 +9240,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/AnimationSprite.tsx": {
-    "mtime": 1785675439.8117347,
-    "ast_hash": "6bcd114d5c83815f4bb04c79ad3aed23",
+    "mtime": 1785678167.2449667,
+    "ast_hash": "8d75db3f13deef57f86fdbc949855912",
     "semantic_hash": ""
   },
   "app/src/components/design/AssetBrowser.tsx": {
@@ -9265,8 +9265,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/DesignDetailModal.tsx": {
-    "mtime": 1785675846.4652252,
-    "ast_hash": "5f32d6d084a9383d2d277bbea2c06a48",
+    "mtime": 1785678403.1987085,
+    "ast_hash": "4e5c358048c51f06053e1813121d092f",
     "semantic_hash": ""
   },
   "app/src/components/design/SpriteThumb.tsx": {
@@ -9295,8 +9295,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/assets.ts": {
-    "mtime": 1785675489.2828548,
-    "ast_hash": "7712b8e9861291f6cbefe5b9ad2240a0",
+    "mtime": 1785678163.2755218,
+    "ast_hash": "f5b2b12cc67f948a201bf002c5aca23c",
     "semantic_hash": ""
   },
   "app/src/lib/design/catalog.ts": {
@@ -9305,13 +9305,13 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/entities.ts": {
-    "mtime": 1785674476.4978235,
-    "ast_hash": "414f7ad8dbc7d02e1f3c100a5d667e3a",
+    "mtime": 1785678184.292221,
+    "ast_hash": "fc23df33030cd5b36998c3e6408443c0",
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1785677503.0182009,
-    "ast_hash": "2202ada1f28629155f26c7b44d1b5507",
+    "mtime": 1785678400.6349733,
+    "ast_hash": "66575ae277a8a9ff60dc4c82b6a367d0",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
@@ -9350,8 +9350,8 @@
     "semantic_hash": ""
   },
   "app/tests/design-legality.test.ts": {
-    "mtime": 1785677567.5806057,
-    "ast_hash": "703e764fac171d0f789bd6e74de43971",
+    "mtime": 1785678423.5067089,
+    "ast_hash": "b7f24cc18f6c5c96e62199196fcf7366",
     "semantic_hash": ""
   },
   "app/tests/design-store.test.ts": {
@@ -9392,6 +9392,36 @@
   "app/public/tiles/sign-rocky-1.png": {
     "mtime": 1785677175.0146143,
     "ast_hash": "92c49eb245b72cd5263d6436d8d98894",
+    "semantic_hash": ""
+  },
+  "app/.crop-tmp.mjs": {
+    "mtime": 1785678275.7440288,
+    "ast_hash": "5ea2d63ee8dfb3dbb2f33c8428ed9a10",
+    "semantic_hash": ""
+  },
+  "app/.dump-tmp.mjs": {
+    "mtime": 1785678234.3045073,
+    "ast_hash": "cff893a130a7271a7a9f6464d263d086",
+    "semantic_hash": ""
+  },
+  "app/.one-tmp.mjs": {
+    "mtime": 1785678343.1258047,
+    "ast_hash": "803761836576182251c9e44b318caf27",
+    "semantic_hash": ""
+  },
+  "app/.render-tmp.mjs": {
+    "mtime": 1785678157.0267358,
+    "ast_hash": "992c67929e56474c5b4a39ce90a31b31",
+    "semantic_hash": ""
+  },
+  "app/.sheet-tmp.mjs": {
+    "mtime": 1785678306.9446652,
+    "ast_hash": "8ca915540cb789201f0c71bd64d5cb35",
+    "semantic_hash": ""
+  },
+  "app/tests/tmp-hamlet-claim.test.ts": {
+    "mtime": 1785678391.889791,
+    "ast_hash": "4adbe17c8c829f702cacd3b2f4e11971",
     "semantic_hash": ""
   }
 }
