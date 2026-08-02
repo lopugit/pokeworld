@@ -26,10 +26,12 @@ lockedAt: (clear)
 - [x] Vercel production check: https://pokeworld.center/design → 308 →
       https://www.pokeworld.center/design 200, asset manifest 200 (deploy of
       `90ac70e` live; lazy world regen quota is a known watch-item)
-- [ ] Live-map tile legality port (ban pond-22/23, rocky ground under
-      mountains/caves, cave-door-1 for the mountain-8 hole) — coordinate with
-      the spawned task chip / Codex branches before starting; needs
-      TERRAIN_REVISION bump
+- [x] Live-map tile legality port: pond-22/23 banned (SW/SE notch-fill in
+      smoothWater), mountains/caves on rocky-1 aprons (reserved, walkable),
+      mountain-8 hole → cave-door-1 entrance; TERRAIN_REVISION → 2.5.0001
+      (stored blocks lazily regenerate under the daily quota). Verified over
+      120 generated blocks (0 violations) + rendered visual check; 222/222
+      tests.
 - [ ] Final zero-glitch sweep of /design (all tabs, modals, flows, both
       viewports) → set `status: complete`, notify, delete cron job
 

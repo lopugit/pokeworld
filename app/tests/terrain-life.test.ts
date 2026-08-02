@@ -124,6 +124,21 @@ describe("terrain sprite stitching", () => {
     ).toBe("pond-20");
   });
 
+  it("never emits the unusable SW/SE corner art (pond-22/23 are bank bars)", () => {
+    const surroundedWithNotch = (southWest: boolean, southEast: boolean) => ({
+      north: true,
+      east: true,
+      south: true,
+      west: true,
+      northWest: true,
+      northEast: true,
+      southWest,
+      southEast,
+    });
+    expect(getWaterTileName(surroundedWithNotch(false, true), 5, 7)).toMatch(/^pond-center-/);
+    expect(getWaterTileName(surroundedWithNotch(true, false), 5, 7)).toMatch(/^pond-center-/);
+  });
+
   it("uses deterministic ripple tiles for open water", () => {
     const surrounded = {
       north: true,
@@ -286,5 +301,38 @@ describe("terrain sprite stitching", () => {
     expectExactEmeraldCrop("ledge-left-1", 768, 64);
     expectExactEmeraldCrop("ledge-middle-1", 784, 64);
     expectExactEmeraldCrop("ledge-right-1", 800, 64);
+    // rocky-biome vocabulary harvested for the tile-legality port
+    expectExactEmeraldCrop("rocky-1", 768, 48);
+    expectExactEmeraldCrop("rocky-bumps-1", 848, 64);
+    expectExactEmeraldCrop("cave-door-1", 768, 16);
+    expectExactEmeraldCrop("boulder-mossy-1", 784, 48);
+    expectExactEmeraldCrop("sign-rocky-1", 864, 32);
+  });
+
+  it("stitches mountains and caves on rocky ground with a walkable doorway", () => {
+    let found: ReturnType<typeof makeUniformState> | undefined;
+    for (let blockX = -48; blockX <= 48 && !found; blockX += 1) {
+      const candidate = makeUniformState("natural", blockX, 23);
+      terrainLife.run(candidate.state, candidate.block);
+      if (candidate.block.tiles.some((tile) => String(tile.img2).startsWith("mountain-"))) {
+        found = candidate;
+      }
+    }
+    expect(found).toBeDefined();
+    const tiles = found!.block.tiles;
+    for (const tile of tiles) {
+      const overlay = String(tile.img2 ?? "");
+      if (overlay.startsWith("mountain-") || /^cave-[1-4]$/.test(overlay)) {
+        expect(tile.img, `${overlay} must sit on rocky ground`).toBe("rocky-1");
+      }
+      expect(overlay, "mountain-8's unpainted hole must never render").not.toBe("mountain-8");
+      expect(String(tile.img), "pond-22/23 are banned").not.toMatch(/^pond-2[23]$/);
+    }
+    const door = tiles.find((tile) => tile.img2 === "cave-door-1");
+    expect(door).toBeDefined();
+    expect(door?.feature).toBe("cave-entrance");
+    expect(door?.solid).toBe(false);
+    // the apron ring is reserved rocky ground, never grass-backed decoration
+    expect(tiles.some((tile) => tile.feature === "rocky-ground" && tile.img === "rocky-1")).toBe(true);
   });
 });

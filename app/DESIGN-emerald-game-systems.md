@@ -77,7 +77,7 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 | `ledge`             | `ledge-{left,middle,right}-N` | One-way: jumpable moving screen-down (world −y). Blocked from below/sides. Player hops 2 tiles. |
 | `field-item`        | `field-item-N`         | Solid until collected via A-press facing it. Item is seeded from coords (`hashUnit(mapX, mapY, 'field-item')`), goes to BAG, overlay hidden afterwards, collection persisted client-side by world coord key. |
 | `sign`              | `route-sign-N`         | A-press shows seeded signpost dialog. |
-| `cave-entrance`     | `cave-N`               | A-press shows cave dialog (interiors: future iteration). |
+| `cave-entrance`     | `cave-N` / `cave-door-1` | A-press shows cave dialog (interiors: future iteration). `cave-door-1` fills the mountain-8 slot of 3×3 mountains. |
 | `house`             | `house-red-N`          | A-press on a door row shows flavor dialog. |
 | `long-grass`        | `grass-2`              | Reserved for wild encounters (future). |
 | any tile            |                        | `solid: true` blocks movement. A missing tile inside a loaded block stays walkable, but an absent destination block is a hard streaming boundary until it arrives. |
@@ -206,7 +206,15 @@ dependencies) with three tabs:
   ledge caps, invisible `hidden-item` features). A design is fully described
   by `{family, seed}` — the client regenerates tiles on demand and renders
   them to canvas.
-- **Tile legality rules** (enforced by `tests/design-legality.test.ts` over
+- **Tile legality in the LIVE generator** (`TERRAIN_REVISION` 2.5.0001):
+  `getWaterTileName` no longer emits pond-22/23 (their art is a bank bar, not
+  a corner nub) — `smoothWater` floods SW/SE shoreline notches on plain
+  grass/natural ground instead; `stitchMountains`/`stitchCave` place their
+  rocky-backed art on `rocky-1` ground with a 1-tile walkable apron
+  (feature `rocky-ground`, reserved against grass-backed decorations), and
+  mountain-8's unpainted hole is now `cave-door-1` (feature `cave-entrance`,
+  walkable). Stored blocks lazily regenerate on view under the daily quota.
+- **Tile legality rules in /design** (enforced by `tests/design-legality.test.ts` over
   all 500 designs): every decoration may only stand on the ground family its
   art was drawn on — grass props (trees, shrubs, flowers, long grass, houses,
   route signs) on `grass`; the rocky-biome vocabulary (`mountain-*` domes,

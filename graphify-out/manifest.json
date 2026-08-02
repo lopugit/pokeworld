@@ -9393,5 +9393,10 @@
     "mtime": 1785677175.0146143,
     "ast_hash": "92c49eb245b72cd5263d6436d8d98894",
     "semantic_hash": ""
+  },
+  "docs/LOOP-STATE-design-studio.md": {
+    "mtime": 1785680855.873136,
+    "ast_hash": "1df2eca8366accbd1cd4ba2761ca3363",
+    "semantic_hash": ""
   }
 }

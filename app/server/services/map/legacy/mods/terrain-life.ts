@@ -48,16 +48,18 @@ export const getAutotileIndex = ({ north, east, south, west }) => {
 }
 
 export const getWaterTileName = (neighbours, mapX = 0, mapY = 0) => {
-	const { north, east, south, west, northWest, northEast, southWest, southEast } = neighbours
+	const { north, east, south, west, northWest, northEast } = neighbours
 	if (north && south && east && west) {
 		if (!northWest) return 'pond-20'
 		if (!northEast) return 'pond-21'
-		if (!southWest) return 'pond-22'
-		if (!southEast) return 'pond-23'
+		// pond-22/23 are NOT SW/SE corner nubs — their art is a full-height
+		// vertical bank bar (near-duplicates of the pond-24/25 channel walls),
+		// which rendered as a floating bar in open water. smoothWater now fills
+		// SW/SE notches instead; any residual case renders as open water.
 		return `pond-center-${1 + Math.floor(hashUnit(mapX, mapY, 'water-ripple') * 4)}`
 	}
-	if (north && south && east && !west && !northWest && !southWest) return 'pond-25'
-	if (north && south && !east && west && !northEast && !southEast) return 'pond-24'
+	if (north && south && east && !west && !neighbours.northWest && !neighbours.southWest) return 'pond-25'
+	if (north && south && !east && west && !neighbours.northEast && !neighbours.southEast) return 'pond-24'
 	return `pond-${getAutotileIndex(neighbours)}`
 }
 
@@ -239,6 +241,19 @@ const smoothWater = (state, tiles) => {
 			if (!inWaterSquare || (surrounded && landDiagonals >= 2) || kissingCorner) {
 				setTerrain(tile, 'grass')
 				changed = true
+				continue
+			}
+			// The SW/SE inner-corner art (pond-22/23) is unusable (see
+			// getWaterTileName) — flood plain-ground notches so the shoreline
+			// smooths instead of needing the nub. Roads/paths/sand stay dry.
+			for (const [offsetX, offsetY] of [[-1, -1], [1, -1]]) {
+				const diagonalSame = offsetX === -1 ? n.southWest : n.southEast
+				if (!surrounded || diagonalSame) continue
+				const notch = getOffsetTile(state, tile, offsetX, offsetY)
+				if (notch && ['grass', 'natural'].includes(terrainOf(notch))) {
+					setTerrain(notch, 'water')
+					changed = true
+				}
 			}
 		}
 		if (!changed) break
@@ -343,6 +358,30 @@ const findHouseAnchor = (byGrid, component, occupied, preferredX) => {
 	return null
 }
 
+// The mountain-/cave- art carries the exterior sheet's rocky-mauve ground in
+// its background, so those structures are only legal on matching ground. Paint
+// a walkable rocky-1 apron under and around each footprint (plain grass and
+// natural ground only — roads, paths, sand and water stay untouched) and
+// reserve it so decorations with grass-backed art never land on rock.
+const applyRockyApron = (byGrid, occupied, left, top, width, height) => {
+	for (let y = top - 1; y <= top + height; y++) {
+		for (let x = left - 1; x <= left + width; x++) {
+			const inFootprint = x >= left && x < left + width && y >= top && y < top + height
+			if (inFootprint) continue
+			const key = tileKey(x, y)
+			if (occupied.has(key)) continue
+			const tile = byGrid.get(key)
+			if (!tile) continue
+			if (!['grass', 'natural', 'mountain'].includes(terrainOf(tile))) continue
+			tile.img = 'rocky-1'
+			tile.img2 = 'rocky-1'
+			tile.feature = 'rocky-ground'
+			tile.solid = false
+			occupied.add(key)
+		}
+	}
+}
+
 const stitchHouses = tiles => {
 	const { byGrid, components } = buildingComponents(tiles)
 	const occupied = new Set()
@@ -389,11 +428,20 @@ const stitchMountains = (tiles, occupied) => {
 			if (hashUnit(anchor.mapX, anchor.mapY, 'mountain') >= chance) continue
 			footprint.forEach((tile, index) => {
 				occupied.add(tileKey(tile.x, sourceY(tile)))
-				tile.img = 'grass'
-				tile.img2 = `mountain-${index + 1}`
-				tile.feature = 'mountain'
-				tile.solid = true
+				tile.img = 'rocky-1'
+				if (index === 7) {
+					// mountain-8's source art is an unpainted hole in the sheet —
+					// the harvested cave doorway fills it and doubles as an entrance.
+					tile.img2 = 'cave-door-1'
+					tile.feature = 'cave-entrance'
+					tile.solid = false
+				} else {
+					tile.img2 = `mountain-${index + 1}`
+					tile.feature = 'mountain'
+					tile.solid = true
+				}
 			})
+			applyRockyApron(byGrid, occupied, left, top, 3, 3)
 		}
 	}
 }
@@ -442,13 +490,14 @@ const stitchCave = (tiles, occupied, block) => {
 	const caveId = `${block.x}:${block.y}`
 	candidate.footprint.forEach((tile, index) => {
 		occupied.add(tileKey(tile.x, sourceY(tile)))
-		tile.img = 'grass'
+		tile.img = 'rocky-1'
 		tile.img2 = `cave-${index + 1}`
 		tile.feature = index === 3 ? 'cave-entrance' : 'cave'
 		tile.caveId = caveId
 		tile.caveTile = index + 1
 		tile.solid = index !== 3
 	})
+	applyRockyApron(byGrid, occupied, candidate.left, candidate.top, 2, 2)
 	return true
 }
 
