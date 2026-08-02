@@ -105,14 +105,14 @@
     "semantic_hash": "fb575af6fb53dc4ec525097be1d15456"
   },
   "app/server/services/auth/http.ts": {
-    "mtime": 1785674256.339568,
-    "ast_hash": "0702a017ae7add0bfaac9b6ad05c2906",
-    "semantic_hash": "0702a017ae7add0bfaac9b6ad05c2906"
+    "mtime": 1785677619.4032805,
+    "ast_hash": "60f592958790487595540bb51587c1bc",
+    "semantic_hash": ""
   },
   "app/server/services/auth/session.ts": {
-    "mtime": 1785674256.3398201,
-    "ast_hash": "3af75b088e8ef55ba1f4c3eef2c00682",
-    "semantic_hash": "3af75b088e8ef55ba1f4c3eef2c00682"
+    "mtime": 1785677612.6440837,
+    "ast_hash": "c537bdc6e35c22378d6339ae171e0cbf",
+    "semantic_hash": ""
   },
   "app/server/services/auth/thingtime.ts": {
     "mtime": 1785674256.340082,
@@ -385,9 +385,9 @@
     "semantic_hash": "56958eb46cc1ab103eedfb6fe8579120"
   },
   "app/tests/auth-session.test.ts": {
-    "mtime": 1785674256.3607268,
-    "ast_hash": "3d9b31921314dd80093ebcc06e2ef5bd",
-    "semantic_hash": "3d9b31921314dd80093ebcc06e2ef5bd"
+    "mtime": 1785677633.6399426,
+    "ast_hash": "e0cb6c097bc31421860b5bb63749310f",
+    "semantic_hash": ""
   },
   "app/tests/game-rules.test.ts": {
     "mtime": 1785676134.8184416,

@@ -331,14 +331,284 @@
   },
   "nodes": [
     {
+      "label": "http.ts",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http",
+      "community": 2,
+      "norm_label": "http.ts"
+    },
+    {
+      "label": "AuthHttpError",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_authhttperror",
+      "community": 2,
+      "norm_label": "authhttperror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_authhttperror_constructor",
+      "community": 2,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": "privateJson()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_privatejson",
+      "community": 2,
+      "norm_label": "privatejson()"
+    },
+    {
+      "label": "requireSameOrigin()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_requiresameorigin",
+      "community": 2,
+      "norm_label": "requiresameorigin()"
+    },
+    {
+      "label": "cookieOptions()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_cookieoptions",
+      "community": 2,
+      "norm_label": "cookieoptions()"
+    },
+    {
+      "label": "setPokeworldSession()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_setpokeworldsession",
+      "community": 2,
+      "norm_label": "setpokeworldsession()"
+    },
+    {
+      "label": "clearPokeworldSession()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_clearpokeworldsession",
+      "community": 2,
+      "norm_label": "clearpokeworldsession()"
+    },
+    {
+      "label": "readPokeworldSession()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_readpokeworldsession",
+      "community": 2,
+      "norm_label": "readpokeworldsession()"
+    },
+    {
+      "label": "requireAdminSession()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "app_server_services_auth_http_requireadminsession",
+      "community": 2,
+      "norm_label": "requireadminsession()"
+    },
+    {
+      "label": "session.ts",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session",
+      "community": 2,
+      "norm_label": "session.ts"
+    },
+    {
+      "label": "LOCAL_DEVELOPMENT_SECRET",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_local_development_secret",
+      "community": 2,
+      "norm_label": "local_development_secret"
+    },
+    {
+      "label": "PokeworldUser",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_pokeworlduser",
+      "community": 2,
+      "norm_label": "pokeworlduser"
+    },
+    {
+      "label": "PokeworldSessionClaims",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_pokeworldsessionclaims",
+      "community": 2,
+      "norm_label": "pokeworldsessionclaims"
+    },
+    {
+      "label": "PokeworldSessionView",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_pokeworldsessionview",
+      "community": 2,
+      "norm_label": "pokeworldsessionview"
+    },
+    {
+      "label": "isPublicDeployment()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_ispublicdeployment",
+      "community": 2,
+      "norm_label": "ispublicdeployment()"
+    },
+    {
+      "label": "getSessionSecret()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_getsessionsecret",
+      "community": 2,
+      "norm_label": "getsessionsecret()"
+    },
+    {
+      "label": "signatureFor()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_signaturefor",
+      "community": 2,
+      "norm_label": "signaturefor()"
+    },
+    {
+      "label": "isValidUser()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_isvaliduser",
+      "community": 2,
+      "norm_label": "isvaliduser()"
+    },
+    {
+      "label": "isValidClaims()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_isvalidclaims",
+      "community": 2,
+      "norm_label": "isvalidclaims()"
+    },
+    {
+      "label": "createSessionToken()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_createsessiontoken",
+      "community": 2,
+      "norm_label": "createsessiontoken()"
+    },
+    {
+      "label": "verifySessionToken()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_verifysessiontoken",
+      "community": 2,
+      "norm_label": "verifysessiontoken()"
+    },
+    {
+      "label": "isPokeworldAdmin()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L121",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_ispokeworldadmin",
+      "community": 2,
+      "norm_label": "ispokeworldadmin()"
+    },
+    {
+      "label": "toSessionView()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_tosessionview",
+      "community": 2,
+      "norm_label": "tosessionview()"
+    },
+    {
+      "label": "devAdminPreviewSession()",
+      "file_type": "code",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L150",
+      "_origin": "ast",
+      "id": "app_server_services_auth_session_devadminpreviewsession",
+      "community": 2,
+      "norm_label": "devadminpreviewsession()"
+    },
+    {
+      "label": "auth-session.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tests_auth_session_test",
+      "community": 2,
+      "norm_label": "auth-session.test.ts"
+    },
+    {
+      "label": "NOW",
+      "file_type": "code",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "app_tests_auth_session_test_now",
+      "community": 2,
+      "norm_label": "now"
+    },
+    {
       "label": "BattleScreen.tsx",
       "file_type": "code",
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen",
       "community": 27,
-      "norm_label": "battlescreen.tsx"
+      "norm_label": "battlescreen.tsx",
+      "id": "app_src_components_game_ui_battlescreen"
     },
     {
       "label": "BattleScreenProps",
@@ -346,9 +616,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_battlescreenprops",
       "community": 27,
-      "norm_label": "battlescreenprops"
+      "norm_label": "battlescreenprops",
+      "id": "app_src_components_game_ui_battlescreen_battlescreenprops"
     },
     {
       "label": "BattleMenu",
@@ -356,9 +626,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_battlemenu",
       "community": 27,
-      "norm_label": "battlemenu"
+      "norm_label": "battlemenu",
+      "id": "app_src_components_game_ui_battlescreen_battlemenu"
     },
     {
       "label": "BagTab",
@@ -366,9 +636,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_bagtab",
       "community": 27,
-      "norm_label": "bagtab"
+      "norm_label": "bagtab",
+      "id": "app_src_components_game_ui_battlescreen_bagtab"
     },
     {
       "label": "MAIN_ACTIONS",
@@ -376,9 +646,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_main_actions",
       "community": 27,
-      "norm_label": "main_actions"
+      "norm_label": "main_actions",
+      "id": "app_src_components_game_ui_battlescreen_main_actions"
     },
     {
       "label": "USABLE_ITEM_IDS",
@@ -386,9 +656,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_usable_item_ids",
       "community": 27,
-      "norm_label": "usable_item_ids"
+      "norm_label": "usable_item_ids",
+      "id": "app_src_components_game_ui_battlescreen_usable_item_ids"
     },
     {
       "label": "STATUS_SHORT",
@@ -396,9 +666,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_status_short",
       "community": 27,
-      "norm_label": "status_short"
+      "norm_label": "status_short",
+      "id": "app_src_components_game_ui_battlescreen_status_short"
     },
     {
       "label": "ARROW_KEYS",
@@ -406,9 +676,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_arrow_keys",
       "community": 27,
-      "norm_label": "arrow_keys"
+      "norm_label": "arrow_keys",
+      "id": "app_src_components_game_ui_battlescreen_arrow_keys"
     },
     {
       "label": "A_KEYS",
@@ -416,9 +686,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_a_keys",
       "community": 27,
-      "norm_label": "a_keys"
+      "norm_label": "a_keys",
+      "id": "app_src_components_game_ui_battlescreen_a_keys"
     },
     {
       "label": "B_KEYS",
@@ -426,9 +696,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L52",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_b_keys",
       "community": 27,
-      "norm_label": "b_keys"
+      "norm_label": "b_keys",
+      "id": "app_src_components_game_ui_battlescreen_b_keys"
     },
     {
       "label": "BREAK_FREE_MESSAGES",
@@ -436,9 +706,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L55",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_break_free_messages",
       "community": 27,
-      "norm_label": "break_free_messages"
+      "norm_label": "break_free_messages",
+      "id": "app_src_components_game_ui_battlescreen_break_free_messages"
     },
     {
       "label": "ThrowStage",
@@ -446,9 +716,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_throwstage",
       "community": 27,
-      "norm_label": "throwstage"
+      "norm_label": "throwstage",
+      "id": "app_src_components_game_ui_battlescreen_throwstage"
     },
     {
       "label": "MessageFx",
@@ -456,9 +726,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_messagefx",
       "community": 27,
-      "norm_label": "messagefx"
+      "norm_label": "messagefx",
+      "id": "app_src_components_game_ui_battlescreen_messagefx"
     },
     {
       "label": "hpPercent()",
@@ -466,9 +736,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_hppercent",
       "community": 27,
-      "norm_label": "hppercent()"
+      "norm_label": "hppercent()",
+      "id": "app_src_components_game_ui_battlescreen_hppercent"
     },
     {
       "label": "hpLevel()",
@@ -476,9 +746,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_hplevel",
       "community": 27,
-      "norm_label": "hplevel()"
+      "norm_label": "hplevel()",
+      "id": "app_src_components_game_ui_battlescreen_hplevel"
     },
     {
       "label": "expProgress()",
@@ -486,9 +756,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_expprogress",
       "community": 27,
-      "norm_label": "expprogress()"
+      "norm_label": "expprogress()",
+      "id": "app_src_components_game_ui_battlescreen_expprogress"
     },
     {
       "label": "GenderMark()",
@@ -496,9 +766,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L95",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_gendermark",
       "community": 27,
-      "norm_label": "gendermark()"
+      "norm_label": "gendermark()",
+      "id": "app_src_components_game_ui_battlescreen_gendermark"
     },
     {
       "label": "HpBar()",
@@ -506,9 +776,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L102",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_hpbar",
       "community": 27,
-      "norm_label": "hpbar()"
+      "norm_label": "hpbar()",
+      "id": "app_src_components_game_ui_battlescreen_hpbar"
     },
     {
       "label": "StatusBadge()",
@@ -516,9 +786,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L116",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_statusbadge",
       "community": 27,
-      "norm_label": "statusbadge()"
+      "norm_label": "statusbadge()",
+      "id": "app_src_components_game_ui_battlescreen_statusbadge"
     },
     {
       "label": "BattleScreen()",
@@ -526,9 +796,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L123",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_battlescreen_battlescreen",
       "community": 27,
-      "norm_label": "battlescreen()"
+      "norm_label": "battlescreen()",
+      "id": "app_src_components_game_ui_battlescreen_battlescreen"
     },
     {
       "label": "PokedexPanel.tsx",
@@ -536,9 +806,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_pokedexpanel",
       "community": 8,
-      "norm_label": "pokedexpanel.tsx"
+      "norm_label": "pokedexpanel.tsx",
+      "id": "app_src_components_game_ui_pokedexpanel"
     },
     {
       "label": "PokedexPanelProps",
@@ -546,9 +816,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops",
       "community": 8,
-      "norm_label": "pokedexpanelprops"
+      "norm_label": "pokedexpanelprops",
+      "id": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops"
     },
     {
       "label": "dexNo()",
@@ -556,9 +826,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_pokedexpanel_dexno",
       "community": 8,
-      "norm_label": "dexno()"
+      "norm_label": "dexno()",
+      "id": "app_src_components_game_ui_pokedexpanel_dexno"
     },
     {
       "label": "PokedexPanel()",
@@ -566,9 +836,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_pokedexpanel_pokedexpanel",
       "community": 8,
-      "norm_label": "pokedexpanel()"
+      "norm_label": "pokedexpanel()",
+      "id": "app_src_components_game_ui_pokedexpanel_pokedexpanel"
     },
     {
       "label": "battle.ts",
@@ -576,9 +846,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_lib_battle",
       "community": 27,
-      "norm_label": "battle.ts"
+      "norm_label": "battle.ts",
+      "id": "app_src_lib_battle"
     },
     {
       "label": "BattleMove",
@@ -586,9 +856,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battlemove",
       "community": 27,
-      "norm_label": "battlemove"
+      "norm_label": "battlemove",
+      "id": "app_src_lib_battle_battlemove"
     },
     {
       "label": "MoveSpec",
@@ -596,9 +866,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "app_src_lib_battle_movespec",
       "community": 27,
-      "norm_label": "movespec"
+      "norm_label": "movespec",
+      "id": "app_src_lib_battle_movespec"
     },
     {
       "label": "MOVE_LIBRARY",
@@ -606,9 +876,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "id": "app_src_lib_battle_move_library",
       "community": 27,
-      "norm_label": "move_library"
+      "norm_label": "move_library",
+      "id": "app_src_lib_battle_move_library"
     },
     {
       "label": "SPECIAL_TYPES",
@@ -616,9 +886,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L157",
       "_origin": "ast",
-      "id": "app_src_lib_battle_special_types",
       "community": 27,
-      "norm_label": "special_types"
+      "norm_label": "special_types",
+      "id": "app_src_lib_battle_special_types"
     },
     {
       "label": "isSpecialType()",
@@ -626,9 +896,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L159",
       "_origin": "ast",
-      "id": "app_src_lib_battle_isspecialtype",
       "community": 27,
-      "norm_label": "isspecialtype()"
+      "norm_label": "isspecialtype()",
+      "id": "app_src_lib_battle_isspecialtype"
     },
     {
       "label": "moveId()",
@@ -636,9 +906,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L161",
       "_origin": "ast",
-      "id": "app_src_lib_battle_moveid",
       "community": 27,
-      "norm_label": "moveid()"
+      "norm_label": "moveid()",
+      "id": "app_src_lib_battle_moveid"
     },
     {
       "label": "toBattleMove()",
@@ -646,9 +916,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L163",
       "_origin": "ast",
-      "id": "app_src_lib_battle_tobattlemove",
       "community": 27,
-      "norm_label": "tobattlemove()"
+      "norm_label": "tobattlemove()",
+      "id": "app_src_lib_battle_tobattlemove"
     },
     {
       "label": "movesFor()",
@@ -656,9 +926,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "id": "app_src_lib_battle_movesfor",
       "community": 27,
-      "norm_label": "movesfor()"
+      "norm_label": "movesfor()",
+      "id": "app_src_lib_battle_movesfor"
     },
     {
       "label": "STRUGGLE",
@@ -666,9 +936,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L198",
       "_origin": "ast",
-      "id": "app_src_lib_battle_struggle",
       "community": 27,
-      "norm_label": "struggle"
+      "norm_label": "struggle",
+      "id": "app_src_lib_battle_struggle"
     },
     {
       "label": "BattleMon",
@@ -676,9 +946,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L210",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battlemon",
       "community": 27,
-      "norm_label": "battlemon"
+      "norm_label": "battlemon",
+      "id": "app_src_lib_battle_battlemon"
     },
     {
       "label": "FALLBACK_STATS",
@@ -686,9 +956,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L228",
       "_origin": "ast",
-      "id": "app_src_lib_battle_fallback_stats",
       "community": 27,
-      "norm_label": "fallback_stats"
+      "norm_label": "fallback_stats",
+      "id": "app_src_lib_battle_fallback_stats"
     },
     {
       "label": "battleMonFromMember()",
@@ -696,9 +966,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battlemonfrommember",
       "community": 27,
-      "norm_label": "battlemonfrommember()"
+      "norm_label": "battlemonfrommember()",
+      "id": "app_src_lib_battle_battlemonfrommember"
     },
     {
       "label": "wildMonFromEncounter()",
@@ -706,9 +976,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L251",
       "_origin": "ast",
-      "id": "app_src_lib_battle_wildmonfromencounter",
       "community": 27,
-      "norm_label": "wildmonfromencounter()"
+      "norm_label": "wildmonfromencounter()",
+      "id": "app_src_lib_battle_wildmonfromencounter"
     },
     {
       "label": "BattlePhase",
@@ -716,9 +986,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L274",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battlephase",
       "community": 27,
-      "norm_label": "battlephase"
+      "norm_label": "battlephase",
+      "id": "app_src_lib_battle_battlephase"
     },
     {
       "label": "BattleOutcome",
@@ -726,9 +996,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L275",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battleoutcome",
       "community": 27,
-      "norm_label": "battleoutcome"
+      "norm_label": "battleoutcome",
+      "id": "app_src_lib_battle_battleoutcome"
     },
     {
       "label": "BattleState",
@@ -736,9 +1006,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L277",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battlestate",
       "community": 27,
-      "norm_label": "battlestate"
+      "norm_label": "battlestate",
+      "id": "app_src_lib_battle_battlestate"
     },
     {
       "label": "BattleAction",
@@ -746,9 +1016,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L292",
       "_origin": "ast",
-      "id": "app_src_lib_battle_battleaction",
       "community": 27,
-      "norm_label": "battleaction"
+      "norm_label": "battleaction",
+      "id": "app_src_lib_battle_battleaction"
     },
     {
       "label": "createWildBattle()",
@@ -756,9 +1026,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L299",
       "_origin": "ast",
-      "id": "app_src_lib_battle_createwildbattle",
       "community": 27,
-      "norm_label": "createwildbattle()"
+      "norm_label": "createwildbattle()",
+      "id": "app_src_lib_battle_createwildbattle"
     },
     {
       "label": "activeMon()",
@@ -766,9 +1036,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L319",
       "_origin": "ast",
-      "id": "app_src_lib_battle_activemon",
       "community": 27,
-      "norm_label": "activemon()"
+      "norm_label": "activemon()",
+      "id": "app_src_lib_battle_activemon"
     },
     {
       "label": "advanceMessage()",
@@ -776,9 +1046,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L322",
       "_origin": "ast",
-      "id": "app_src_lib_battle_advancemessage",
       "community": 27,
-      "norm_label": "advancemessage()"
+      "norm_label": "advancemessage()",
+      "id": "app_src_lib_battle_advancemessage"
     },
     {
       "label": "STATUS_LABEL",
@@ -786,9 +1056,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L330",
       "_origin": "ast",
-      "id": "app_src_lib_battle_status_label",
       "community": 27,
-      "norm_label": "status_label"
+      "norm_label": "status_label",
+      "id": "app_src_lib_battle_status_label"
     },
     {
       "label": "effectiveSpeed()",
@@ -796,9 +1066,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L338",
       "_origin": "ast",
-      "id": "app_src_lib_battle_effectivespeed",
       "community": 27,
-      "norm_label": "effectivespeed()"
+      "norm_label": "effectivespeed()",
+      "id": "app_src_lib_battle_effectivespeed"
     },
     {
       "label": "effectiveAttack()",
@@ -806,9 +1076,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L341",
       "_origin": "ast",
-      "id": "app_src_lib_battle_effectiveattack",
       "community": 27,
-      "norm_label": "effectiveattack()"
+      "norm_label": "effectiveattack()",
+      "id": "app_src_lib_battle_effectiveattack"
     },
     {
       "label": "StrikeResult",
@@ -816,9 +1086,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L346",
       "_origin": "ast",
-      "id": "app_src_lib_battle_strikeresult",
       "community": 27,
-      "norm_label": "strikeresult"
+      "norm_label": "strikeresult",
+      "id": "app_src_lib_battle_strikeresult"
     },
     {
       "label": "strike()",
@@ -826,9 +1096,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L352",
       "_origin": "ast",
-      "id": "app_src_lib_battle_strike",
       "community": 27,
-      "norm_label": "strike()"
+      "norm_label": "strike()",
+      "id": "app_src_lib_battle_strike"
     },
     {
       "label": "endOfTurnStatus()",
@@ -836,9 +1106,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L432",
       "_origin": "ast",
-      "id": "app_src_lib_battle_endofturnstatus",
       "community": 27,
-      "norm_label": "endofturnstatus()"
+      "norm_label": "endofturnstatus()",
+      "id": "app_src_lib_battle_endofturnstatus"
     },
     {
       "label": "wildPickMove()",
@@ -846,9 +1116,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L444",
       "_origin": "ast",
-      "id": "app_src_lib_battle_wildpickmove",
       "community": 27,
-      "norm_label": "wildpickmove()"
+      "norm_label": "wildpickmove()",
+      "id": "app_src_lib_battle_wildpickmove"
     },
     {
       "label": "decrementPp()",
@@ -856,9 +1126,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L450",
       "_origin": "ast",
-      "id": "app_src_lib_battle_decrementpp",
       "community": 27,
-      "norm_label": "decrementpp()"
+      "norm_label": "decrementpp()",
+      "id": "app_src_lib_battle_decrementpp"
     },
     {
       "label": "grantBattleExp()",
@@ -866,9 +1136,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L458",
       "_origin": "ast",
-      "id": "app_src_lib_battle_grantbattleexp",
       "community": 27,
-      "norm_label": "grantbattleexp()"
+      "norm_label": "grantbattleexp()",
+      "id": "app_src_lib_battle_grantbattleexp"
     },
     {
       "label": "BALL_BONUS",
@@ -876,9 +1146,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L495",
       "_origin": "ast",
-      "id": "app_src_lib_battle_ball_bonus",
       "community": 27,
-      "norm_label": "ball_bonus"
+      "norm_label": "ball_bonus",
+      "id": "app_src_lib_battle_ball_bonus"
     },
     {
       "label": "STATUS_CATCH_BONUS",
@@ -886,9 +1156,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L501",
       "_origin": "ast",
-      "id": "app_src_lib_battle_status_catch_bonus",
       "community": 27,
-      "norm_label": "status_catch_bonus"
+      "norm_label": "status_catch_bonus",
+      "id": "app_src_lib_battle_status_catch_bonus"
     },
     {
       "label": "catchAttempt()",
@@ -896,9 +1166,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L510",
       "_origin": "ast",
-      "id": "app_src_lib_battle_catchattempt",
       "community": 27,
-      "norm_label": "catchattempt()"
+      "norm_label": "catchattempt()",
+      "id": "app_src_lib_battle_catchattempt"
     },
     {
       "label": "wildTurn()",
@@ -906,9 +1176,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L535",
       "_origin": "ast",
-      "id": "app_src_lib_battle_wildturn",
       "community": 27,
-      "norm_label": "wildturn()"
+      "norm_label": "wildturn()",
+      "id": "app_src_lib_battle_wildturn"
     },
     {
       "label": "concludeIfFainted()",
@@ -916,9 +1186,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L552",
       "_origin": "ast",
-      "id": "app_src_lib_battle_concludeiffainted",
       "community": 27,
-      "norm_label": "concludeiffainted()"
+      "norm_label": "concludeiffainted()",
+      "id": "app_src_lib_battle_concludeiffainted"
     },
     {
       "label": "applyEndOfTurn()",
@@ -926,9 +1196,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L575",
       "_origin": "ast",
-      "id": "app_src_lib_battle_applyendofturn",
       "community": 27,
-      "norm_label": "applyendofturn()"
+      "norm_label": "applyendofturn()",
+      "id": "app_src_lib_battle_applyendofturn"
     },
     {
       "label": "submitAction()",
@@ -936,9 +1206,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L589",
       "_origin": "ast",
-      "id": "app_src_lib_battle_submitaction",
       "community": 27,
-      "norm_label": "submitaction()"
+      "norm_label": "submitaction()",
+      "id": "app_src_lib_battle_submitaction"
     },
     {
       "label": "applyBattleItem()",
@@ -946,9 +1216,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L723",
       "_origin": "ast",
-      "id": "app_src_lib_battle_applybattleitem",
       "community": 27,
-      "norm_label": "applybattleitem()"
+      "norm_label": "applybattleitem()",
+      "id": "app_src_lib_battle_applybattleitem"
     },
     {
       "label": "applyBattleOutcome()",
@@ -956,9 +1226,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L757",
       "_origin": "ast",
-      "id": "app_src_lib_battle_applybattleoutcome",
       "community": 27,
-      "norm_label": "applybattleoutcome()"
+      "norm_label": "applybattleoutcome()",
+      "id": "app_src_lib_battle_applybattleoutcome"
     },
     {
       "label": "battle.test.ts",
@@ -966,9 +1236,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_tests_battle_test",
       "community": 27,
-      "norm_label": "battle.test.ts"
+      "norm_label": "battle.test.ts",
+      "id": "app_tests_battle_test"
     },
     {
       "label": "seq()",
@@ -976,9 +1246,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "app_tests_battle_test_seq",
       "community": 27,
-      "norm_label": "seq()"
+      "norm_label": "seq()",
+      "id": "app_tests_battle_test_seq"
     },
     {
       "label": "encounter()",
@@ -986,9 +1256,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "app_tests_battle_test_encounter",
       "community": 27,
-      "norm_label": "encounter()"
+      "norm_label": "encounter()",
+      "id": "app_tests_battle_test_encounter"
     },
     {
       "label": "startBattle()",
@@ -996,9 +1266,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "app_tests_battle_test_startbattle",
       "community": 27,
-      "norm_label": "startbattle()"
+      "norm_label": "startbattle()",
+      "id": "app_tests_battle_test_startbattle"
     },
     {
       "label": "spawn-rules.delete.ts",
@@ -1546,7 +1816,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L788",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": ".interact()",
       "id": "app_src_components_game_game_interact"
     },
@@ -2106,7 +2376,7 @@
       "source_file": "app/src/lib/game-rules.ts",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 1,
+      "community": 8,
       "norm_label": "issurfabletile()",
       "id": "app_src_lib_game_rules_issurfabletile"
     },
@@ -4397,7 +4667,7 @@
       "source_file": "app/package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 7,
+      "community": 29,
       "norm_label": "mongodb",
       "community_name": "MongoDB Block Storage",
       "id": "app_package_dependencies_mongodb"
@@ -4452,7 +4722,7 @@
       "source_file": "app/package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "react-router",
       "community_name": "React Authentication App",
       "id": "app_package_dependencies_react_router"
@@ -4507,7 +4777,7 @@
       "source_file": "app/package.json",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 225,
+      "community": 10,
       "norm_label": "@types/node",
       "community_name": "Frontend Build Dependencies",
       "id": "app_package_devdependencies_types_node"
@@ -4518,7 +4788,7 @@
       "source_file": "app/package.json",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 10,
+      "community": 215,
       "norm_label": "@types/pngjs",
       "community_name": "Frontend Build Dependencies",
       "id": "app_package_devdependencies_types_pngjs"
@@ -4562,7 +4832,7 @@
       "source_file": "app/package.json",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 209,
+      "community": 10,
       "norm_label": "autoprefixer",
       "community_name": "Frontend Build Dependencies",
       "id": "app_package_devdependencies_autoprefixer"
@@ -4573,7 +4843,7 @@
       "source_file": "app/package.json",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 223,
+      "community": 10,
       "norm_label": "jiti",
       "community_name": "Frontend Build Dependencies",
       "id": "app_package_devdependencies_jiti"
@@ -4595,7 +4865,7 @@
       "source_file": "app/package.json",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 224,
+      "community": 10,
       "norm_label": "sass",
       "community_name": "Frontend Build Dependencies",
       "id": "app_package_devdependencies_sass"
@@ -5569,270 +5839,6 @@
       "id": "app_server_routes_v1_blocks_get"
     },
     {
-      "label": "http.ts",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "http.ts",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http"
-    },
-    {
-      "label": "AuthHttpError",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "authhttperror",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "label": ".constructor()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": ".constructor()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_authhttperror_constructor"
-    },
-    {
-      "label": "privateJson()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "privatejson()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "label": "requireSameOrigin()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "requiresameorigin()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_requiresameorigin"
-    },
-    {
-      "label": "cookieOptions()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L58",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "cookieoptions()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_cookieoptions"
-    },
-    {
-      "label": "setPokeworldSession()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L68",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "setpokeworldsession()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_setpokeworldsession"
-    },
-    {
-      "label": "clearPokeworldSession()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "clearpokeworldsession()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_clearpokeworldsession"
-    },
-    {
-      "label": "readPokeworldSession()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "readpokeworldsession()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_readpokeworldsession"
-    },
-    {
-      "label": "requireAdminSession()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L92",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "requireadminsession()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_http_requireadminsession"
-    },
-    {
-      "label": "session.ts",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "session.ts",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session"
-    },
-    {
-      "label": "LOCAL_DEVELOPMENT_SECRET",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "local_development_secret",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_local_development_secret"
-    },
-    {
-      "label": "PokeworldUser",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "pokeworlduser",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_pokeworlduser"
-    },
-    {
-      "label": "PokeworldSessionClaims",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "pokeworldsessionclaims",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_pokeworldsessionclaims"
-    },
-    {
-      "label": "PokeworldSessionView",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "pokeworldsessionview",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_pokeworldsessionview"
-    },
-    {
-      "label": "isPublicDeployment()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "ispublicdeployment()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_ispublicdeployment"
-    },
-    {
-      "label": "getSessionSecret()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "getsessionsecret()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "label": "signatureFor()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L50",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "signaturefor()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_signaturefor"
-    },
-    {
-      "label": "isValidUser()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L54",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "isvaliduser()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_isvaliduser"
-    },
-    {
-      "label": "isValidClaims()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L65",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "isvalidclaims()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_isvalidclaims"
-    },
-    {
-      "label": "createSessionToken()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L78",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "createsessiontoken()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "label": "verifySessionToken()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L99",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "verifysessiontoken()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "label": "isPokeworldAdmin()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L121",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "ispokeworldadmin()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_ispokeworldadmin"
-    },
-    {
-      "label": "toSessionView()",
-      "file_type": "code",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L134",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "tosessionview()",
-      "community_name": "Authentication API",
-      "id": "app_server_services_auth_session_tosessionview"
-    },
-    {
       "label": "thingtime.ts",
       "file_type": "code",
       "source_file": "app/server/services/auth/thingtime.ts",
@@ -5992,7 +5998,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 206,
       "norm_label": "generate.ts",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generate"
@@ -6003,7 +6009,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 23,
+      "community": 206,
       "norm_label": "createlegacyblockshandler",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generate_createlegacyblockshandler"
@@ -6025,7 +6031,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 199,
+      "community": 206,
       "norm_label": "iscurrentmapblock()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generate_iscurrentmapblock"
@@ -6047,7 +6053,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "generation-job.ts",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_job"
@@ -6069,7 +6075,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "coordinatekey()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_job_coordinatekey"
@@ -6080,7 +6086,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 206,
+      "community": 23,
       "norm_label": "generationpermitid()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_job_generationpermitid"
@@ -6091,7 +6097,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "generationoffsetsmissingfromblocks()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_job_generationoffsetsmissingfromblocks"
@@ -6102,7 +6108,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "preparemapgenerationjob()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_job_preparemapgenerationjob"
@@ -6355,7 +6361,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L287",
       "_origin": "ast",
-      "community": 219,
+      "community": 14,
       "norm_label": ".normalize()",
       "community_name": "Quota Normalization Tests",
       "id": "app_server_services_map_generation_quota_inmemorygenerationquotastore_normalize"
@@ -6432,7 +6438,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L425",
       "_origin": "ast",
-      "community": 219,
+      "community": 14,
       "norm_label": "utcgenerationdaykey()",
       "community_name": "Quota Normalization Tests",
       "id": "app_server_services_map_generation_quota_utcgenerationdaykey"
@@ -6443,7 +6449,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L429",
       "_origin": "ast",
-      "community": 205,
+      "community": 14,
       "norm_label": "reservationidsexpression()",
       "community_name": "Generation Quota Service",
       "id": "app_server_services_map_generation_quota_reservationidsexpression"
@@ -6586,7 +6592,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L790",
       "_origin": "ast",
-      "community": 23,
+      "community": 205,
       "norm_label": "withoptionalstore()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_quota_withoptionalstore"
@@ -6597,7 +6603,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L809",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "reservegenerationquota()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_generation_quota_reservegenerationquota"
@@ -6795,7 +6801,7 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 18,
+      "community": 29,
       "norm_label": "toexport()",
       "community_name": "Terrain Image Classification",
       "id": "app_server_services_map_legacy_blocks_toexport"
@@ -7169,7 +7175,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 29,
       "norm_label": "log.ts",
       "community_name": "Map Tile Generation",
       "id": "app_server_services_map_legacy_log"
@@ -7180,7 +7186,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 29,
       "norm_label": "log()",
       "community_name": "Map Tile Generation",
       "id": "app_server_services_map_legacy_log_log"
@@ -7972,7 +7978,7 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 15,
+      "community": 29,
       "norm_label": "rgbatotilecolourdata()",
       "community_name": "Map Image Processing",
       "id": "app_server_services_map_legacy_png_rgbatotilecolourdata"
@@ -8027,7 +8033,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 199,
+      "community": 202,
       "norm_label": "getstoredblocks()",
       "community_name": "Map Block API",
       "id": "app_server_services_map_mongo_getstoredblocks"
@@ -8148,7 +8154,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 203,
+      "community": 206,
       "norm_label": "terrainkind",
       "community_name": "Map Block API",
       "id": "app_server_services_map_terrain_classifier_terrainkind"
@@ -8324,7 +8330,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 18,
+      "community": 29,
       "norm_label": "summarizeterrain()",
       "community_name": "Terrain Image Classification",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
@@ -8588,7 +8594,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 203,
+      "community": 206,
       "norm_label": "types.ts",
       "community_name": "Map Block API",
       "id": "app_server_services_map_types"
@@ -8610,7 +8616,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 203,
+      "community": 206,
       "norm_label": "mapsource",
       "community_name": "Map Block API",
       "id": "app_server_services_map_types_mapsource"
@@ -8654,7 +8660,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 203,
+      "community": 206,
       "norm_label": "maptile",
       "community_name": "Map Block API",
       "id": "app_server_services_map_types_maptile"
@@ -8676,7 +8682,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 23,
+      "community": 206,
       "norm_label": "mapgenerationstepresult",
       "community_name": "Map Block API",
       "id": "app_server_services_map_types_mapgenerationstepresult"
@@ -8687,7 +8693,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 203,
+      "community": 206,
       "norm_label": "mapgenerationresult",
       "community_name": "Map Block API",
       "id": "app_server_services_map_types_mapgenerationresult"
@@ -9116,7 +9122,7 @@
       "source_file": "app/src/auth/AuthProvider.tsx",
       "source_location": "L191",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "useauth()",
       "community_name": "React Authentication App",
       "id": "app_src_auth_authprovider_useauth"
@@ -9160,7 +9166,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "authcontrols.tsx",
       "community_name": "React Authentication App",
       "id": "app_src_components_authcontrols"
@@ -9171,7 +9177,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "useravatar()",
       "community_name": "React Authentication App",
       "id": "app_src_components_authcontrols_useravatar"
@@ -9182,7 +9188,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "authcontrols()",
       "community_name": "React Authentication App",
       "id": "app_src_components_authcontrols_authcontrols"
@@ -9193,7 +9199,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "banner.tsx",
       "community_name": "React Authentication App",
       "id": "app_src_components_banner"
@@ -9204,7 +9210,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "bannerlink",
       "community_name": "React Authentication App",
       "id": "app_src_components_banner_bannerlink"
@@ -9215,7 +9221,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "bannerprops",
       "community_name": "React Authentication App",
       "id": "app_src_components_banner_bannerprops"
@@ -9226,7 +9232,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "banner()",
       "community_name": "React Authentication App",
       "id": "app_src_components_banner_banner"
@@ -9303,7 +9309,7 @@
       "source_file": "app/src/components/Nav.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 209,
       "norm_label": "nav.tsx",
       "community_name": "React Authentication App",
       "id": "app_src_components_nav"
@@ -9941,7 +9947,7 @@
       "source_file": "app/src/pages/HomePage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "homepage.tsx",
       "community_name": "React Authentication App",
       "id": "app_src_pages_homepage"
@@ -9952,7 +9958,7 @@
       "source_file": "app/src/pages/HomePage.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 38,
+      "community": 213,
       "norm_label": "homepage()",
       "community_name": "React Authentication App",
       "id": "app_src_pages_homepage_homepage"
@@ -10035,28 +10041,6 @@
       "id": "app_src_vite_env_d_window"
     },
     {
-      "label": "auth-session.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "auth-session.test.ts",
-      "community_name": "Authentication API",
-      "id": "app_tests_auth_session_test"
-    },
-    {
-      "label": "NOW",
-      "file_type": "code",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "now",
-      "community_name": "Authentication API",
-      "id": "app_tests_auth_session_test_now"
-    },
-    {
       "label": "game-zoom.test.ts",
       "file_type": "code",
       "source_file": "app/tests/game-zoom.test.ts",
@@ -10073,7 +10057,7 @@
       "source_file": "app/tests/generation-job.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "generation-job.test.ts",
       "community_name": "Map Block API",
       "id": "app_tests_generation_job_test"
@@ -10084,7 +10068,7 @@
       "source_file": "app/tests/generation-job.test.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 206,
+      "community": 203,
       "norm_label": "input",
       "community_name": "Map Block API",
       "id": "app_tests_generation_job_test_input"
@@ -10106,7 +10090,7 @@
       "source_file": "app/tests/generation-quota.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 219,
+      "community": 14,
       "norm_label": "generation-quota.test.ts",
       "community_name": "Quota Normalization Tests",
       "id": "app_tests_generation_quota_test"
@@ -10117,7 +10101,7 @@
       "source_file": "app/tests/generation-quota.test.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 219,
+      "community": 14,
       "norm_label": "start",
       "community_name": "Quota Normalization Tests",
       "id": "app_tests_generation_quota_test_start"
@@ -10194,7 +10178,7 @@
       "source_file": "app/tests/map-generation.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 199,
+      "community": 206,
       "norm_label": "map-generation.test.ts",
       "community_name": "Map Block API",
       "id": "app_tests_map_generation_test"
@@ -14309,7 +14293,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 202,
+      "community": 199,
       "community_name": "Map Block API",
       "norm_label": "getstoredblocks()",
       "id": "app_server_services_map_block_store_getstoredblocks"
@@ -14331,7 +14315,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": "thingtimequotastatus",
       "id": "app_server_services_map_generation_quota_thingtimequotastatus"
@@ -14364,7 +14348,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "defaultthingtimequotarequester()",
       "id": "app_server_services_map_generation_quota_defaultthingtimequotarequester"
@@ -14375,7 +14359,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L127",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": "emptyquotastatus()",
       "id": "app_server_services_map_generation_quota_emptyquotastatus"
@@ -14386,7 +14370,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L139",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": "thingtimegenerationcode()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationcode"
@@ -14397,7 +14381,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L157",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": "rethrowthingtimequotaerror()",
       "id": "app_server_services_map_generation_quota_rethrowthingtimequotaerror"
@@ -14408,7 +14392,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L169",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": "thingtimegenerationquotastore",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore"
@@ -14419,7 +14403,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L170",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".constructor()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_constructor"
@@ -14430,7 +14414,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L175",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".post()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_post"
@@ -14441,7 +14425,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L191",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".reserve()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_reserve"
@@ -14452,7 +14436,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L212",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".acquirepermit()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_acquirepermit"
@@ -14463,7 +14447,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L238",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".releasereservationslot()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_releasereservationslot"
@@ -14474,7 +14458,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L250",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".status()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_status"
@@ -14485,7 +14469,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L264",
       "_origin": "ast",
-      "community": 213,
+      "community": 14,
       "community_name": "Thingtime Quota Store",
       "norm_label": ".reset()",
       "id": "app_server_services_map_generation_quota_thingtimegenerationquotastore_reset"
@@ -14617,7 +14601,7 @@
       "source_file": "app/server/services/map/thingtime-block-store.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 202,
+      "community": 22,
       "community_name": "Map Block API",
       "norm_label": "getthingtimestoredblocks()",
       "id": "app_server_services_map_thingtime_block_store_getthingtimestoredblocks"
@@ -14639,7 +14623,7 @@
       "source_file": "app/server/services/map/thingtime-block-store.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 202,
+      "community": 22,
       "community_name": "Map Block API",
       "norm_label": "putthingtimestoredblocks()",
       "id": "app_server_services_map_thingtime_block_store_putthingtimestoredblocks"
@@ -14661,7 +14645,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "client.ts",
       "id": "app_server_services_thingtime_client"
@@ -14683,7 +14667,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "thingtimeapierror",
       "id": "app_server_services_thingtime_client_thingtimeapierror"
@@ -14694,7 +14678,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": ".constructor()",
       "id": "app_server_services_thingtime_client_thingtimeapierror_constructor"
@@ -14705,7 +14689,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "thingtimeapiurl()",
       "id": "app_server_services_thingtime_client_thingtimeapiurl"
@@ -14716,7 +14700,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "thingtimeservicetoken()",
       "id": "app_server_services_thingtime_client_thingtimeservicetoken"
@@ -14727,7 +14711,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "isthingtimeserviceconfigured()",
       "id": "app_server_services_thingtime_client_isthingtimeserviceconfigured"
@@ -14738,7 +14722,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "requesttimeoutms()",
       "id": "app_server_services_thingtime_client_requesttimeoutms"
@@ -14749,7 +14733,7 @@
       "source_file": "app/server/services/thingtime/client.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "thingtimeservicerequest()",
       "id": "app_server_services_thingtime_client_thingtimeservicerequest"
@@ -14771,7 +14755,7 @@
       "source_file": "app/tests/generation-quota.test.ts",
       "source_location": "L132",
       "_origin": "ast",
-      "community": 219,
+      "community": 14,
       "community_name": "Quota Normalization Tests",
       "norm_label": "thingtimestatus()",
       "id": "app_tests_generation_quota_test_thingtimestatus"
@@ -14815,7 +14799,7 @@
       "source_file": "app/tests/thingtime-client.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 215,
+      "community": 22,
       "community_name": "Thingtime API Client",
       "norm_label": "thingtime-client.test.ts",
       "id": "app_tests_thingtime_client_test"
@@ -15841,7 +15825,7 @@
     },
     {
       "file_type": "concept",
-      "community": 7,
+      "community": 29,
       "community_name": "MongoDB Block Storage",
       "norm_label": "",
       "id": "mongodb"
@@ -15876,7 +15860,7 @@
     },
     {
       "file_type": "concept",
-      "community": 4,
+      "community": 209,
       "community_name": "React Authentication App",
       "norm_label": "",
       "id": "react_router"
@@ -15904,14 +15888,14 @@
     },
     {
       "file_type": "concept",
-      "community": 225,
+      "community": 10,
       "community_name": "Frontend Build Dependencies",
       "norm_label": "",
       "id": "types_node"
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 215,
       "community_name": "Frontend Build Dependencies",
       "norm_label": "",
       "id": "types_pngjs"
@@ -15939,14 +15923,14 @@
     },
     {
       "file_type": "concept",
-      "community": 209,
+      "community": 10,
       "community_name": "Frontend Build Dependencies",
       "norm_label": "",
       "id": "autoprefixer"
     },
     {
       "file_type": "concept",
-      "community": 223,
+      "community": 10,
       "community_name": "Frontend Build Dependencies",
       "norm_label": "",
       "id": "jiti"
@@ -15960,7 +15944,7 @@
     },
     {
       "file_type": "concept",
-      "community": 224,
+      "community": 10,
       "community_name": "Frontend Build Dependencies",
       "norm_label": "",
       "id": "sass"
@@ -15988,7 +15972,7 @@
     },
     {
       "file_type": "concept",
-      "community": 208,
+      "community": 23,
       "community_name": "Map Block API",
       "norm_label": "",
       "id": "vitest"
@@ -16044,14 +16028,14 @@
     },
     {
       "file_type": "concept",
-      "community": 2,
+      "community": 219,
       "community_name": "Authentication API",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_auth_session_pokeworld_session_cookie"
     },
     {
       "file_type": "concept",
-      "community": 2,
+      "community": 223,
       "community_name": "Authentication API",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_auth_session_pokeworld_session_ttl_seconds"
@@ -16149,28 +16133,28 @@
     },
     {
       "file_type": "concept",
-      "community": 219,
+      "community": 14,
       "community_name": "Quota Normalization Tests",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generation_quota_generation_daily_limit"
     },
     {
       "file_type": "concept",
-      "community": 219,
+      "community": 14,
       "community_name": "Quota Normalization Tests",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generation_quota_generation_rolling_limit"
     },
     {
       "file_type": "concept",
-      "community": 219,
+      "community": 14,
       "community_name": "Quota Normalization Tests",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generation_quota_generation_rolling_window_ms"
     },
     {
       "file_type": "concept",
-      "community": 199,
+      "community": 206,
       "community_name": "Map Block API",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generate_map_block_version"
@@ -16797,6 +16781,928 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_get",
+      "target": "app_server_services_auth_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_post",
+      "target": "app_server_services_auth_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/logout.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_logout_post",
+      "target": "app_server_services_auth_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/session.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_session_get",
+      "target": "app_server_services_auth_http"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_thingtime_post",
+      "target": "app_server_services_auth_http"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_authhttperror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_clearpokeworldsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_cookieoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_privatejson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_readpokeworldsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_requireadminsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_requiresameorigin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_http_setpokeworldsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_createsessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_devadminpreviewsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_getsessionsecret",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_pokeworldsessionview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_pokeworlduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_tosessionview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "app_server_services_auth_session_verifysessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http",
+      "target": "h3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_get",
+      "target": "app_server_services_auth_http_authhttperror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_post",
+      "target": "app_server_services_auth_http_authhttperror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/logout.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_logout_post",
+      "target": "app_server_services_auth_http_authhttperror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_thingtime_post",
+      "target": "app_server_services_auth_http_authhttperror"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_authhttperror",
+      "target": "app_server_services_auth_http_authhttperror_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_get",
+      "target": "app_server_services_auth_http_privatejson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_post",
+      "target": "app_server_services_auth_http_privatejson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/logout.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_logout_post",
+      "target": "app_server_services_auth_http_privatejson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/session.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_session_get",
+      "target": "app_server_services_auth_http_privatejson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_thingtime_post",
+      "target": "app_server_services_auth_http_privatejson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_post",
+      "target": "app_server_services_auth_http_requiresameorigin"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/logout.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_logout_post",
+      "target": "app_server_services_auth_http_requiresameorigin"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_thingtime_post",
+      "target": "app_server_services_auth_http_requiresameorigin"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_clearpokeworldsession",
+      "target": "app_server_services_auth_http_cookieoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_setpokeworldsession",
+      "target": "app_server_services_auth_http_cookieoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_thingtime_post",
+      "target": "app_server_services_auth_http_setpokeworldsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_setpokeworldsession",
+      "target": "app_server_services_auth_session_createsessiontoken"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_setpokeworldsession",
+      "target": "app_server_services_auth_session_getsessionsecret"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_setpokeworldsession",
+      "target": "app_server_services_auth_session_tosessionview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_setpokeworldsession",
+      "target": "app_server_services_auth_session_verifysessiontoken"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/logout.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_logout_post",
+      "target": "app_server_services_auth_http_clearpokeworldsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_readpokeworldsession",
+      "target": "app_server_services_auth_http_clearpokeworldsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/auth/session.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_auth_session_get",
+      "target": "app_server_services_auth_http_readpokeworldsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_readpokeworldsession",
+      "target": "app_server_services_auth_session_devadminpreviewsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_readpokeworldsession",
+      "target": "app_server_services_auth_session_getsessionsecret"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_readpokeworldsession",
+      "target": "app_server_services_auth_session_tosessionview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_readpokeworldsession",
+      "target": "app_server_services_auth_session_verifysessiontoken"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/http.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "app_server_services_auth_http_requireadminsession",
+      "target": "app_server_services_auth_http_readpokeworldsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_get",
+      "target": "app_server_services_auth_http_requireadminsession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
+      "source_location": "L2",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_routes_api_admin_generation_quota_post",
+      "target": "app_server_services_auth_http_requireadminsession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_createsessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_devadminpreviewsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_getsessionsecret",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_ispokeworldadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_ispublicdeployment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_isvalidclaims",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_isvaliduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_local_development_secret",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_pokeworldsessionclaims",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_pokeworldsessionview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_pokeworlduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_signaturefor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_tosessionview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_session_verifysessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/thingtime.ts",
+      "source_location": "L1",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_services_auth_session",
+      "target": "app_server_services_auth_thingtime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session",
+      "target": "node_crypto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/thingtime.ts",
+      "source_location": "L1",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_services_auth_session_pokeworlduser",
+      "target": "app_server_services_auth_thingtime"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/thingtime.ts",
+      "source_location": "L7",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_server_services_auth_session_pokeworlduser",
+      "target": "app_server_services_auth_thingtime_thingtimeidentity"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_devadminpreviewsession",
+      "target": "app_server_services_auth_session_ispublicdeployment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_getsessionsecret",
+      "target": "app_server_services_auth_session_ispublicdeployment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session_getsessionsecret",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_createsessiontoken",
+      "target": "app_server_services_auth_session_signaturefor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_verifysessiontoken",
+      "target": "app_server_services_auth_session_signaturefor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_createsessiontoken",
+      "target": "app_server_services_auth_session_isvaliduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_isvalidclaims",
+      "target": "app_server_services_auth_session_isvaliduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_verifysessiontoken",
+      "target": "app_server_services_auth_session_isvalidclaims",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session_createsessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session_verifysessiontoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/server/services/auth/session.ts",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "app_server_services_auth_session_tosessionview",
+      "target": "app_server_services_auth_session_ispokeworldadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session_ispokeworldadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_server_services_auth_session_tosessionview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "app_tests_auth_session_test_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/auth-session.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_tests_auth_session_test",
+      "target": "vitest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L62",
       "weight": 1.0,
@@ -16810,9 +17716,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_a_keys",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_a_keys"
     },
     {
       "relation": "contains",
@@ -16820,9 +17726,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_arrow_keys",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_arrow_keys"
     },
     {
       "relation": "contains",
@@ -16830,9 +17736,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_b_keys",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_b_keys"
     },
     {
       "relation": "contains",
@@ -16840,9 +17746,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_bagtab",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_bagtab"
     },
     {
       "relation": "contains",
@@ -16850,9 +17756,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_battlemenu",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_battlemenu"
     },
     {
       "relation": "contains",
@@ -16860,9 +17766,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_battlescreen",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_battlescreen"
     },
     {
       "relation": "contains",
@@ -16870,9 +17776,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_battlescreenprops",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_battlescreenprops"
     },
     {
       "relation": "contains",
@@ -16880,9 +17786,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_break_free_messages",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_break_free_messages"
     },
     {
       "relation": "contains",
@@ -16890,9 +17796,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_expprogress",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_expprogress"
     },
     {
       "relation": "contains",
@@ -16900,9 +17806,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_gendermark",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_gendermark"
     },
     {
       "relation": "contains",
@@ -16910,9 +17816,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_hpbar",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_hpbar"
     },
     {
       "relation": "contains",
@@ -16920,9 +17826,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_hplevel",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_hplevel"
     },
     {
       "relation": "contains",
@@ -16930,9 +17836,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_hppercent",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_hppercent"
     },
     {
       "relation": "contains",
@@ -16940,9 +17846,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_main_actions",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_main_actions"
     },
     {
       "relation": "contains",
@@ -16950,9 +17856,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_messagefx",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_messagefx"
     },
     {
       "relation": "contains",
@@ -16960,9 +17866,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_status_short",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_status_short"
     },
     {
       "relation": "contains",
@@ -16970,9 +17876,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_statusbadge",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_statusbadge"
     },
     {
       "relation": "contains",
@@ -16980,9 +17886,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_throwstage",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_throwstage"
     },
     {
       "relation": "contains",
@@ -16990,9 +17896,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_usable_item_ids",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_usable_item_ids"
     },
     {
       "relation": "imports_from",
@@ -17001,9 +17907,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_lib_battle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle"
     },
     {
       "relation": "imports",
@@ -17012,9 +17918,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "imports",
@@ -17023,9 +17929,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_lib_battle_battleaction",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battleaction"
     },
     {
       "relation": "imports",
@@ -17034,9 +17940,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_lib_battle_battlemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlemon"
     },
     {
       "relation": "imports",
@@ -17045,9 +17951,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "app_src_lib_battle_battlestate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlestate"
     },
     {
       "relation": "imports_from",
@@ -17056,9 +17962,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen",
-      "target": "react",
-      "confidence_score": 1.0
+      "target": "react"
     },
     {
       "relation": "references",
@@ -17067,9 +17973,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen_battlescreenprops",
-      "target": "app_src_lib_battle_battleaction",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battleaction"
     },
     {
       "relation": "references",
@@ -17078,9 +17984,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen_battlescreenprops",
-      "target": "app_src_lib_battle_battlestate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlestate"
     },
     {
       "relation": "calls",
@@ -17089,9 +17995,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen_hpbar",
-      "target": "app_src_components_game_ui_battlescreen_hppercent",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_hppercent"
     },
     {
       "relation": "calls",
@@ -17100,9 +18006,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen_hpbar",
-      "target": "app_src_components_game_ui_battlescreen_hplevel",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_hplevel"
     },
     {
       "relation": "calls",
@@ -17111,9 +18017,9 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L374",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_battlescreen_battlescreen",
-      "target": "app_src_components_game_ui_battlescreen_expprogress",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_battlescreen_expprogress"
     },
     {
       "relation": "imports",
@@ -17154,9 +18060,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_pokedexpanel",
-      "target": "app_src_components_game_ui_pokedexpanel_dexno",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_pokedexpanel_dexno"
     },
     {
       "relation": "contains",
@@ -17164,9 +18070,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_pokedexpanel",
-      "target": "app_src_components_game_ui_pokedexpanel_pokedexpanel",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_pokedexpanel_pokedexpanel"
     },
     {
       "relation": "contains",
@@ -17174,9 +18080,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_pokedexpanel",
-      "target": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops"
     },
     {
       "relation": "imports_from",
@@ -17185,9 +18091,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_pokedexpanel",
-      "target": "react",
-      "confidence_score": 1.0
+      "target": "react"
     },
     {
       "relation": "calls",
@@ -17196,9 +18102,9 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_pokedexpanel_pokedexpanel",
-      "target": "app_src_components_game_ui_pokedexpanel_dexno",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_pokedexpanel_dexno"
     },
     {
       "relation": "imports",
@@ -17217,9 +18123,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L319",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "contains",
@@ -17227,9 +18133,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L322",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_advancemessage",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_advancemessage"
     },
     {
       "relation": "contains",
@@ -17237,9 +18143,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L723",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_applybattleitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applybattleitem"
     },
     {
       "relation": "contains",
@@ -17247,9 +18153,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L757",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_applybattleoutcome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applybattleoutcome"
     },
     {
       "relation": "contains",
@@ -17257,9 +18163,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_applyendofturn",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applyendofturn"
     },
     {
       "relation": "contains",
@@ -17267,9 +18173,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L495",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_ball_bonus",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_ball_bonus"
     },
     {
       "relation": "contains",
@@ -17277,9 +18183,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battleaction",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battleaction"
     },
     {
       "relation": "contains",
@@ -17287,9 +18193,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battlemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlemon"
     },
     {
       "relation": "contains",
@@ -17297,9 +18203,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battlemonfrommember",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlemonfrommember"
     },
     {
       "relation": "contains",
@@ -17307,9 +18213,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battlemove",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlemove"
     },
     {
       "relation": "contains",
@@ -17317,9 +18223,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battleoutcome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battleoutcome"
     },
     {
       "relation": "contains",
@@ -17327,9 +18233,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L274",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battlephase",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlephase"
     },
     {
       "relation": "contains",
@@ -17337,9 +18243,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L277",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_battlestate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlestate"
     },
     {
       "relation": "contains",
@@ -17347,9 +18253,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L510",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_catchattempt",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_catchattempt"
     },
     {
       "relation": "contains",
@@ -17357,9 +18263,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L552",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_concludeiffainted",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_concludeiffainted"
     },
     {
       "relation": "contains",
@@ -17367,9 +18273,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L299",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_createwildbattle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_createwildbattle"
     },
     {
       "relation": "contains",
@@ -17377,9 +18283,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L450",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_decrementpp",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_decrementpp"
     },
     {
       "relation": "contains",
@@ -17387,9 +18293,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L341",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_effectiveattack",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_effectiveattack"
     },
     {
       "relation": "contains",
@@ -17397,9 +18303,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L338",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_effectivespeed",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_effectivespeed"
     },
     {
       "relation": "contains",
@@ -17407,9 +18313,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L432",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_endofturnstatus",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_endofturnstatus"
     },
     {
       "relation": "contains",
@@ -17417,9 +18323,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_fallback_stats",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_fallback_stats"
     },
     {
       "relation": "contains",
@@ -17427,9 +18333,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L458",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_grantbattleexp",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_grantbattleexp"
     },
     {
       "relation": "contains",
@@ -17437,9 +18343,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_isspecialtype",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_isspecialtype"
     },
     {
       "relation": "contains",
@@ -17447,9 +18353,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_move_library",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_move_library"
     },
     {
       "relation": "contains",
@@ -17457,9 +18363,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L161",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_moveid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_moveid"
     },
     {
       "relation": "contains",
@@ -17467,9 +18373,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_movesfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movesfor"
     },
     {
       "relation": "contains",
@@ -17477,9 +18383,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_movespec",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movespec"
     },
     {
       "relation": "contains",
@@ -17487,9 +18393,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_special_types",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_special_types"
     },
     {
       "relation": "contains",
@@ -17497,9 +18403,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L501",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_status_catch_bonus",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_status_catch_bonus"
     },
     {
       "relation": "contains",
@@ -17507,9 +18413,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L330",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_status_label",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_status_label"
     },
     {
       "relation": "contains",
@@ -17517,9 +18423,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L352",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_strike",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_strike"
     },
     {
       "relation": "contains",
@@ -17527,9 +18433,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L346",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_strikeresult",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_strikeresult"
     },
     {
       "relation": "contains",
@@ -17537,9 +18443,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_struggle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_struggle"
     },
     {
       "relation": "contains",
@@ -17547,9 +18453,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L589",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_submitaction",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_submitaction"
     },
     {
       "relation": "contains",
@@ -17557,9 +18463,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_tobattlemove",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_tobattlemove"
     },
     {
       "relation": "contains",
@@ -17567,9 +18473,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_wildmonfromencounter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildmonfromencounter"
     },
     {
       "relation": "contains",
@@ -17577,9 +18483,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L444",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_wildpickmove",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildpickmove"
     },
     {
       "relation": "contains",
@@ -17587,9 +18493,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L535",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle",
-      "target": "app_src_lib_battle_wildturn",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildturn"
     },
     {
       "relation": "imports_from",
@@ -17598,9 +18504,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle"
     },
     {
       "relation": "calls",
@@ -17609,9 +18515,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L388",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_strike",
-      "target": "app_src_lib_battle_isspecialtype",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_isspecialtype"
     },
     {
       "relation": "calls",
@@ -17620,9 +18526,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_tobattlemove",
-      "target": "app_src_lib_battle_moveid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_moveid"
     },
     {
       "relation": "calls",
@@ -17631,9 +18537,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_movesfor",
-      "target": "app_src_lib_battle_tobattlemove",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_tobattlemove"
     },
     {
       "relation": "calls",
@@ -17642,9 +18548,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L245",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_battlemonfrommember",
-      "target": "app_src_lib_battle_movesfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movesfor"
     },
     {
       "relation": "calls",
@@ -17653,9 +18559,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L486",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_grantbattleexp",
-      "target": "app_src_lib_battle_movesfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movesfor"
     },
     {
       "relation": "calls",
@@ -17664,9 +18570,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L266",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_wildmonfromencounter",
-      "target": "app_src_lib_battle_movesfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movesfor"
     },
     {
       "relation": "imports",
@@ -17675,9 +18581,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_movesfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_movesfor"
     },
     {
       "relation": "indirect_call",
@@ -17686,9 +18592,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L300",
       "weight": 1.0,
+      "confidence_score": 0.5,
       "source": "app_src_lib_battle_createwildbattle",
-      "target": "app_src_lib_battle_battlemonfrommember",
-      "confidence_score": 0.5
+      "target": "app_src_lib_battle_battlemonfrommember"
     },
     {
       "relation": "calls",
@@ -17697,9 +18603,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_createwildbattle",
-      "target": "app_src_lib_battle_wildmonfromencounter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildmonfromencounter"
     },
     {
       "relation": "imports",
@@ -17708,9 +18614,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_wildmonfromencounter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildmonfromencounter"
     },
     {
       "relation": "imports",
@@ -17719,9 +18625,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_battlestate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_battlestate"
     },
     {
       "relation": "imports",
@@ -17730,9 +18636,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_createwildbattle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_createwildbattle"
     },
     {
       "relation": "calls",
@@ -17741,9 +18647,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test_startbattle",
-      "target": "app_src_lib_battle_createwildbattle",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_createwildbattle"
     },
     {
       "relation": "calls",
@@ -17752,9 +18658,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L577",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_applyendofturn",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "calls",
@@ -17763,9 +18669,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L554",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_concludeiffainted",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "calls",
@@ -17774,9 +18680,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L460",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_grantbattleexp",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "calls",
@@ -17785,9 +18691,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L596",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "calls",
@@ -17796,9 +18702,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L537",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_wildturn",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "imports",
@@ -17807,9 +18713,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_activemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_activemon"
     },
     {
       "relation": "imports",
@@ -17818,9 +18724,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_advancemessage",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_advancemessage"
     },
     {
       "relation": "calls",
@@ -17829,9 +18735,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test_startbattle",
-      "target": "app_src_lib_battle_advancemessage",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_advancemessage"
     },
     {
       "relation": "calls",
@@ -17840,9 +18746,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L604",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_effectivespeed",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_effectivespeed"
     },
     {
       "relation": "calls",
@@ -17851,9 +18757,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L399",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_strike",
-      "target": "app_src_lib_battle_effectiveattack",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_effectiveattack"
     },
     {
       "relation": "calls",
@@ -17862,9 +18768,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L541",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_wildturn",
-      "target": "app_src_lib_battle_strike",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_strike"
     },
     {
       "relation": "calls",
@@ -17873,9 +18779,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L578",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_applyendofturn",
-      "target": "app_src_lib_battle_endofturnstatus",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_endofturnstatus"
     },
     {
       "relation": "calls",
@@ -17884,9 +18790,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L539",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_wildturn",
-      "target": "app_src_lib_battle_wildpickmove",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildpickmove"
     },
     {
       "relation": "calls",
@@ -17895,9 +18801,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L540",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_wildturn",
-      "target": "app_src_lib_battle_decrementpp",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_decrementpp"
     },
     {
       "relation": "calls",
@@ -17906,9 +18812,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L557",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_concludeiffainted",
-      "target": "app_src_lib_battle_grantbattleexp",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_grantbattleexp"
     },
     {
       "relation": "calls",
@@ -17917,9 +18823,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L672",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_catchattempt",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_catchattempt"
     },
     {
       "relation": "imports",
@@ -17928,9 +18834,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_catchattempt",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_catchattempt"
     },
     {
       "relation": "calls",
@@ -17939,9 +18845,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L624",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_wildturn",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_wildturn"
     },
     {
       "relation": "calls",
@@ -17950,9 +18856,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L586",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_applyendofturn",
-      "target": "app_src_lib_battle_concludeiffainted",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_concludeiffainted"
     },
     {
       "relation": "calls",
@@ -17961,9 +18867,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L623",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_concludeiffainted",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_concludeiffainted"
     },
     {
       "relation": "calls",
@@ -17972,9 +18878,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L632",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_applyendofturn",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applyendofturn"
     },
     {
       "relation": "calls",
@@ -17983,9 +18889,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L651",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_battle_submitaction",
-      "target": "app_src_lib_battle_applybattleitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applybattleitem"
     },
     {
       "relation": "imports",
@@ -17994,9 +18900,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_submitaction",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_submitaction"
     },
     {
       "relation": "imports",
@@ -18005,9 +18911,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_src_lib_battle_applybattleoutcome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_battle_applybattleoutcome"
     },
     {
       "relation": "contains",
@@ -18015,9 +18921,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_tests_battle_test_encounter",
-      "confidence_score": 1.0
+      "target": "app_tests_battle_test_encounter"
     },
     {
       "relation": "contains",
@@ -18025,9 +18931,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_tests_battle_test_seq",
-      "confidence_score": 1.0
+      "target": "app_tests_battle_test_seq"
     },
     {
       "relation": "contains",
@@ -18035,9 +18941,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "app_tests_battle_test_startbattle",
-      "confidence_score": 1.0
+      "target": "app_tests_battle_test_startbattle"
     },
     {
       "relation": "imports_from",
@@ -18046,9 +18952,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_battle_test",
-      "target": "vitest",
-      "confidence_score": 1.0
+      "target": "vitest"
     },
     {
       "relation": "imports_from",
@@ -25806,50 +26712,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_get",
-      "target": "app_server_services_auth_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_get",
-      "target": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_get",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_get",
-      "target": "app_server_services_auth_http_requireadminsession"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.get.ts",
       "source_location": "L7",
       "weight": 1,
       "confidence_score": 1,
@@ -25899,61 +26761,6 @@
       "confidence_score": 1,
       "source": "app_server_routes_api_admin_generation_quota_get",
       "target": "h3"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_post",
-      "target": "app_server_services_auth_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_post",
-      "target": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_post",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_post",
-      "target": "app_server_services_auth_http_requireadminsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/admin/generation-quota.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_admin_generation_quota_post",
-      "target": "app_server_services_auth_http_requiresameorigin"
     },
     {
       "relation": "imports_from",
@@ -26015,99 +26822,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/server/routes/api/auth/logout.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_logout_post",
-      "target": "app_server_services_auth_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/logout.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_logout_post",
-      "target": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/logout.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_logout_post",
-      "target": "app_server_services_auth_http_clearpokeworldsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/logout.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_logout_post",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/logout.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_logout_post",
-      "target": "app_server_services_auth_http_requiresameorigin"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/logout.post.ts",
       "source_location": "L1",
       "weight": 1,
       "confidence_score": 1,
       "source": "app_server_routes_api_auth_logout_post",
       "target": "h3"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/session.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_session_get",
-      "target": "app_server_services_auth_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/session.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_session_get",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/session.get.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_session_get",
-      "target": "app_server_services_auth_http_readpokeworldsession"
     },
     {
       "relation": "imports_from",
@@ -26129,61 +26848,6 @@
       "confidence_score": 1,
       "source": "app_server_routes_api_auth_thingtime_post",
       "target": "app_server_routes_api_auth_thingtime_post_loginbody"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_thingtime_post",
-      "target": "app_server_services_auth_http"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_thingtime_post",
-      "target": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_thingtime_post",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_thingtime_post",
-      "target": "app_server_services_auth_http_requiresameorigin"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/routes/api/auth/thingtime.post.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_routes_api_auth_thingtime_post",
-      "target": "app_server_services_auth_http_setpokeworldsession"
     },
     {
       "relation": "imports_from",
@@ -26986,644 +27650,6 @@
       "confidence_score": 1,
       "source": "app_server_routes_privacy_policy_get",
       "target": "h3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L22",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_authhttperror"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L77",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_clearpokeworldsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L58",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_cookieoptions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L32",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_privatejson"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L81",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_readpokeworldsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L92",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_requireadminsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L40",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_requiresameorigin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L68",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_setpokeworldsession"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_pokeworldsessionview"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_pokeworlduser"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_tosessionview"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "h3"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "users_lopu_things_code_lopugit_pokeworld_app_server_services_auth_session_pokeworld_session_cookie"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http",
-      "target": "users_lopu_things_code_lopugit_pokeworld_app_server_services_auth_session_pokeworld_session_ttl_seconds"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L23",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http_authhttperror",
-      "target": "app_server_services_auth_http_authhttperror_constructor"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L78",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http_cookieoptions",
-      "target": "app_server_services_auth_http_clearpokeworldsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L71",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http_cookieoptions",
-      "target": "app_server_services_auth_http_setpokeworldsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L70",
-      "weight": 1,
-      "source": "app_server_services_auth_http_setpokeworldsession",
-      "target": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L69",
-      "weight": 1,
-      "source": "app_server_services_auth_http_setpokeworldsession",
-      "target": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L74",
-      "weight": 1,
-      "source": "app_server_services_auth_http_setpokeworldsession",
-      "target": "app_server_services_auth_session_tosessionview"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L72",
-      "weight": 1,
-      "source": "app_server_services_auth_http_setpokeworldsession",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L86",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http_clearpokeworldsession",
-      "target": "app_server_services_auth_http_readpokeworldsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L93",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_http_readpokeworldsession",
-      "target": "app_server_services_auth_http_requireadminsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L84",
-      "weight": 1,
-      "source": "app_server_services_auth_http_readpokeworldsession",
-      "target": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L89",
-      "weight": 1,
-      "source": "app_server_services_auth_http_readpokeworldsession",
-      "target": "app_server_services_auth_session_tosessionview"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/server/services/auth/http.ts",
-      "source_location": "L84",
-      "weight": 1,
-      "source": "app_server_services_auth_http_readpokeworldsession",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L78",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L35",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L121",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_ispokeworldadmin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L31",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_ispublicdeployment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L65",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_isvalidclaims"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L54",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_isvaliduser"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L7",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_local_development_secret"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L17",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworldsessionclaims"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L24",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworldsessionview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L9",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworlduser"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L50",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_signaturefor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L134",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_tosessionview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L99",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/thingtime.ts",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_thingtime"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "app_tests_auth_session_test"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session",
-      "target": "node_crypto"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/thingtime.ts",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_pokeworlduser",
-      "target": "app_server_services_auth_thingtime"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/thingtime.ts",
-      "source_location": "L7",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_pokeworlduser",
-      "target": "app_server_services_auth_thingtime_thingtimeidentity"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L43",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_ispublicdeployment",
-      "target": "app_server_services_auth_session_getsessionsecret"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_getsessionsecret",
-      "target": "app_tests_auth_session_test"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L96",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_signaturefor",
-      "target": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L106",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_signaturefor",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L84",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_isvaliduser",
-      "target": "app_server_services_auth_session_createsessiontoken"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L74",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_isvaliduser",
-      "target": "app_server_services_auth_session_isvalidclaims"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L112",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_isvalidclaims",
-      "target": "app_server_services_auth_session_verifysessiontoken"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_createsessiontoken",
-      "target": "app_tests_auth_session_test"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_verifysessiontoken",
-      "target": "app_tests_auth_session_test"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/server/services/auth/session.ts",
-      "source_location": "L138",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_ispokeworldadmin",
-      "target": "app_server_services_auth_session_tosessionview"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_ispokeworldadmin",
-      "target": "app_tests_auth_session_test"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_server_services_auth_session_tosessionview",
-      "target": "app_tests_auth_session_test"
     },
     {
       "relation": "contains",
@@ -37499,27 +37525,6 @@
       "target": "app_src_vite_env_d_thingtimesdk_login"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L11",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_tests_auth_session_test",
-      "target": "app_tests_auth_session_test_now"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/auth-session.test.ts",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_tests_auth_session_test",
-      "target": "vitest"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -42530,5 +42535,5 @@
       "source_file": "/Users/lopu/things/code/lopugit/pokeworld/graphify-out/memory/query_20260719_121030_implement_atomic_global_block_generation_quotas_an.md"
     }
   ],
-  "built_at_commit": "96c9f4d36062b089466ec397119b69f71fa773f7"
+  "built_at_commit": "62453d9f3dea5a1809cd67de5446bcf81e3e72dd"
 }
