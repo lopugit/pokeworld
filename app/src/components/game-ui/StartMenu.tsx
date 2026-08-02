@@ -1,10 +1,20 @@
-export type MenuItemId = "party" | "bag" | "badges" | "pc" | "save" | "exit";
+export type MenuItemId =
+  | "pokedex"
+  | "party"
+  | "bag"
+  | "badges"
+  | "pc"
+  | "settings"
+  | "save"
+  | "exit";
 
 export const MENU_ITEMS: Array<{ id: MenuItemId; label: string }> = [
+  { id: "pokedex", label: "POKéDEX" },
   { id: "party", label: "POKéMON" },
   { id: "bag", label: "BAG" },
   { id: "badges", label: "BADGES" },
   { id: "pc", label: "PC" },
+  { id: "settings", label: "OPTION" },
   { id: "save", label: "SAVE" },
   { id: "exit", label: "EXIT" },
 ];

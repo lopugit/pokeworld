@@ -580,3 +580,270 @@
   color: #506890;
   font-size: 2.1cqw;
 }
+
+/* ---------- Pokédex ---------- */
+
+.pkmn-dex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6cqw;
+}
+
+.pkmn-dex-row {
+  display: grid;
+  grid-template-columns: 2.6cqw auto clamp(20px, 6.5cqw, 32px) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 1.4cqw;
+  width: 100%;
+  padding: 0.6cqw 1.2cqw;
+  border: 0.35cqw solid transparent;
+  border-radius: 0.9cqw;
+  background: #f8f8f0;
+  font-family: inherit;
+  font-size: 2.6cqw;
+  color: #303030;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pkmn-dex-row.selected {
+  border-color: #c04040;
+  background: #fff4f0;
+}
+
+.pkmn-dex-cursor {
+  color: #c04040;
+}
+
+.pkmn-dex-no {
+  color: #506890;
+  font-size: 2.3cqw;
+  white-space: nowrap;
+}
+
+.pkmn-dex-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(20px, 6.5cqw, 32px);
+  height: clamp(20px, 6.5cqw, 32px);
+}
+
+.pkmn-dex-thumb img,
+.pkmn-dex-detail-sprite {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.pkmn-dex-thumb img.silhouette,
+.pkmn-dex-detail-sprite.silhouette {
+  filter: brightness(0);
+  opacity: 0.75;
+}
+
+.pkmn-dex-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pkmn-dex-ball {
+  display: inline-block;
+  width: 2cqw;
+  height: 2cqw;
+  margin-left: 0.8cqw;
+  border: 0.35cqw solid #303030;
+  border-radius: 50%;
+  background: linear-gradient(#d84848 0 45%, #303030 45% 55%, #f8f8f0 55% 100%);
+  flex: none;
+}
+
+.pkmn-dex-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+}
+
+.pkmn-dex-detail-top {
+  display: grid;
+  grid-template-columns: clamp(56px, 22cqw, 112px) minmax(0, 1fr);
+  align-items: center;
+  gap: 2.4cqw;
+  background: #f8f8f0;
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  padding: 2cqw;
+}
+
+.pkmn-dex-detail-sprite {
+  width: clamp(56px, 22cqw, 112px);
+  height: clamp(56px, 22cqw, 112px);
+}
+
+.pkmn-dex-detail-id {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1cqw;
+}
+
+.pkmn-dex-detail-id strong {
+  display: flex;
+  align-items: center;
+  font-size: 3.2cqw;
+  overflow-wrap: anywhere;
+}
+
+.pkmn-dex-genus {
+  color: #506890;
+  font-size: 2.5cqw;
+}
+
+.pkmn-dex-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1cqw;
+}
+
+.pkmn-dex-type-chip {
+  border: 0.35cqw solid #2a7a74;
+  border-radius: 0.8cqw;
+  background: #48a8a0;
+  color: #f8f8f0;
+  padding: 0.4cqw 1.2cqw;
+  font-size: 2.2cqw;
+}
+
+.pkmn-dex-measure {
+  color: #506890;
+  font-size: 2.4cqw;
+}
+
+.pkmn-dex-flavor {
+  margin: 0;
+  background: #f8f8f0;
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  padding: 2cqw;
+  font-size: 2.7cqw;
+  line-height: 1.6;
+}
+
+.pkmn-dex-back {
+  align-self: flex-start;
+  border: 0.4cqw solid #a8b8e8;
+  border-radius: 0.8cqw;
+  padding: 0.8cqw 1.8cqw;
+  font-family: inherit;
+  font-size: 2.5cqw;
+  color: #385088;
+  background: #f8f8f0;
+  cursor: pointer;
+}
+
+/* ---------- Option (settings) ---------- */
+
+.pkmn-opt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4cqw;
+}
+
+.pkmn-opt-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+}
+
+.pkmn-opt-label {
+  color: #506890;
+  font-size: 2.5cqw;
+}
+
+.pkmn-opt-name {
+  width: min(100%, 40cqw);
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 0.9cqw;
+  background: #f8f8f0;
+  padding: 1.2cqw 1.6cqw;
+  font-family: inherit;
+  font-size: 3.2cqw;
+  letter-spacing: 0.6cqw;
+  text-transform: uppercase;
+  color: #303030;
+}
+
+.pkmn-opt-name:focus-visible {
+  outline: 3px solid #f4c95d;
+  outline-offset: 2px;
+}
+
+.pkmn-opt-genders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2cqw;
+}
+
+.pkmn-opt-gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1cqw;
+  border: 0.5cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  background: #f8f8f0;
+  padding: 2cqw 1.5cqw;
+  font-family: inherit;
+  font-size: 2.8cqw;
+  color: #303030;
+  cursor: pointer;
+}
+
+.pkmn-opt-gender.selected {
+  border-color: #c04040;
+  background: #fff4f0;
+  color: #c04040;
+}
+
+.pkmn-opt-gender img {
+  width: clamp(24px, 12cqw, 48px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.pkmn-opt-note {
+  margin: 0;
+  color: #707880;
+  font-size: 2.2cqw;
+  line-height: 1.5;
+}
+
+.pkmn-opt-save-row {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+}
+
+.pkmn-opt-save {
+  border: 0.5cqw solid #2a7a74;
+  border-radius: 1cqw;
+  background: #48a8a0;
+  color: #f8f8f0;
+  padding: 1.2cqw 3cqw;
+  font-family: inherit;
+  font-size: 2.8cqw;
+  cursor: pointer;
+}
+
+.pkmn-opt-saved {
+  color: #2a7a74;
+  font-size: 2.6cqw;
+  opacity: 0;
+  transition: opacity 0.2s steps(2, end);
+}
+
+.pkmn-opt-saved.visible {
+  opacity: 1;
+}

@@ -4,10 +4,12 @@ import { hashUnit as serverHashUnit } from "../server/services/map/legacy/mods/t
 import {
   cavePagesFor,
   fieldItemFor,
+  formatDialogPages,
   hashUnit,
   interactionFor,
   isFieldItemTile,
   isLedgeTile,
+  isNearCaveEntrance,
   isSignTile,
   isSolidFor,
   resolveMove,
@@ -186,5 +188,47 @@ describe("fieldItemFor", () => {
   it("honours authored hidden Poké Balls while keeping ordinary finds seeded", () => {
     expect(fieldItemFor(320, 640, "pokeball").id).toBe("poke-ball");
     expect(fieldItemFor(320, 640, "poke-ball").id).toBe("poke-ball");
+  });
+});
+
+describe("surfing movement", () => {
+  const water = (mapX: number, mapY: number) =>
+    tile(mapX, mapY, { terrain: "water", img: "pond-center-1", solid: true });
+
+  it("water stays solid on foot but opens up while surfing", () => {
+    const lookup = lookupFrom([water(32, 0)]);
+    expect(resolveMove(lookup, 0, 0, "moveRight", 32, nothingCollected)).toEqual({ kind: "blocked" });
+    expect(
+      resolveMove(lookup, 0, 0, "moveRight", 32, nothingCollected, { surfing: true }),
+    ).toEqual({ kind: "move", toX: 32, toY: 0 });
+  });
+
+  it("surfers can step back onto walkable land (dismount) but not into walls", () => {
+    const lookup = lookupFrom([tile(32, 0), tile(-32, 0, { solid: true, feature: "house" })]);
+    expect(
+      resolveMove(lookup, 0, 0, "moveRight", 32, nothingCollected, { surfing: true }),
+    ).toEqual({ kind: "move", toX: 32, toY: 0 });
+    expect(
+      resolveMove(lookup, 0, 0, "moveLeft", 32, nothingCollected, { surfing: true }),
+    ).toEqual({ kind: "blocked" });
+  });
+});
+
+describe("cave hunting zones", () => {
+  it("detects cave entrances within a 3-tile radius", () => {
+    const lookup = lookupFrom([tile(96, 96, { feature: "cave-entrance", solid: true })]);
+    expect(isNearCaveEntrance(lookup, 0, 0, 32)).toBe(true);
+    expect(isNearCaveEntrance(lookup, 96, 192, 32)).toBe(true);
+    expect(isNearCaveEntrance(lookup, -32, 0, 32)).toBe(false);
+    expect(isNearCaveEntrance(lookup, 96, 224, 32, 3)).toBe(false);
+  });
+});
+
+describe("player-name dialog templating", () => {
+  it("replaces {PLAYER} tokens in every page", () => {
+    expect(
+      formatDialogPages(["Hi {PLAYER}!", "Good luck,\n{PLAYER}."], "NIKO"),
+    ).toEqual(["Hi NIKO!", "Good luck,\nNIKO."]);
+    expect(formatDialogPages(["No tokens here."], "NIKO")).toEqual(["No tokens here."]);
   });
 });

@@ -57,31 +57,30 @@ resume point for loop ticks.
 ## Checklist
 
 Phase 0 — foundation
-- [ ] Plan/state doc committed; cron loop armed (job f41e9b2e, every 10 min)
-- [ ] pokedex.json generated (386 entries) + committed
-- [ ] Pokémon battle sprites downloaded + committed (front/shiny/back/back-shiny)
-- [ ] Player walk frames sliced (boy + girl) + committed
-- [ ] Shared type contracts: `src/lib/pokedex.ts` (data access, stat calc,
+- [x] Plan/state doc committed; cron loop armed (job f41e9b2e, every 10 min)
+- [x] pokedex.json generated (386 entries) + committed
+- [x] Pokémon battle sprites downloaded + committed (front/shiny/back/back-shiny)
+- [x] Player walk frames sliced (boy + girl) + committed
+- [x] Shared type contracts: `src/lib/pokedex.ts` (data access, stat calc,
       exp curves), interfaces for battle + encounters
 
 Phase 1 — systems (parallelizable)
-- [ ] `src/lib/battle.ts` battle engine + vitest
-- [ ] `src/lib/encounters.ts` spawn rules, geofence, defaults, rolls + vitest
-- [ ] Trainer state v4 migration + vitest
-- [ ] Server spawn-rules service + routes + vitest
-- [ ] `BattleScreen.tsx` + styles
-- [ ] `PokedexPanel.tsx`, `SettingsPanel.tsx`, StartMenu POKéDEX/OPTION
-- [ ] Admin spawn manager UI on /admin (list, search, variant editor,
-      geofence editor, reset-to-default)
+- [x] `src/lib/battle.ts` battle engine + vitest
+- [x] `src/lib/encounters.ts` spawn rules, geofence, defaults, rolls + vitest
+- [x] Trainer state v4 migration + vitest
+- [~] Server spawn-rules service + routes + vitest (agent landed, verifying)
+- [~] `BattleScreen.tsx` + styles (agent in progress)
+- [~] `PokedexPanel.tsx`, `SettingsPanel.tsx`, StartMenu POKéDEX/OPTION (agent landed, verifying)
+- [~] Admin spawn manager UI on /admin (agent landed, verifying)
 
 Phase 2 — integration
-- [ ] Walk animation + camera interpolation in Game.tsx (Brendan/May frames,
-      facing, step parity; gender-driven sprite set)
-- [ ] Surf mode (enter/exit, water movement)
-- [ ] Encounter trigger on step (grass/cave/water) → BattleScreen; results
+- [x] Walk animation + camera interpolation in Game.tsx (Brendan/May frames,
+      facing, step parity; gender-driven sprite set) — needs browser verify
+- [x] Surf mode (enter/exit, water movement) + game-rules tests
+- [x] Encounter trigger on step (grass/cave/water) → BattleScreen; results
       applied to trainer (catch → party/PC, dex, balls/items consumed, exp)
-- [ ] Player name templated into NPC/sign/house dialogs
-- [ ] START menu wiring, key routing for new panels
+- [x] Player name templated into NPC/sign/house dialogs + tests
+- [x] START menu wiring, key routing for new panels (Game.tsx side)
 
 Phase 3 — verification (loop exit criteria)
 - [ ] `pnpm typecheck && pnpm test` green
