@@ -9130,13 +9130,13 @@
     "semantic_hash": ""
   },
   "app/public/design/asset-manifest.json": {
-    "mtime": 1785678207.5031147,
-    "ast_hash": "0ec048d99b7336e9bc94656ae9776630",
+    "mtime": 1785679822.6037664,
+    "ast_hash": "d3c23e9c69e888185ae8ee569cd36098",
     "semantic_hash": ""
   },
   "app/scripts/design/build-asset-manifest.mjs": {
-    "mtime": 1785678160.4436977,
-    "ast_hash": "3711262c356bbb75457a2c2bbab8076a",
+    "mtime": 1785679802.249497,
+    "ast_hash": "a47b631d10cad60d8e6b840239df903d",
     "semantic_hash": ""
   },
   "app/src/lib/battle.ts": {
@@ -9165,12 +9165,12 @@
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-character-male.png": {
-    "mtime": 1785678207.1965592,
+    "mtime": 1785679822.262926,
     "ast_hash": "ea113d178bf0b311df317c189bb4178e",
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-exterior.png": {
-    "mtime": 1785678207.1960692,
+    "mtime": 1785679822.262197,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
     "semantic_hash": ""
   },
@@ -9205,8 +9205,8 @@
     "semantic_hash": ""
   },
   "app/server/routes/api/designs.get.ts": {
-    "mtime": 1785675192.0835016,
-    "ast_hash": "5bfef94f95f4a86424988d9be0a59b39",
+    "mtime": 1785679694.0426586,
+    "ast_hash": "766e2355e49be3549ad1259149cc4bd8",
     "semantic_hash": ""
   },
   "app/server/routes/api/designs.post.ts": {
@@ -9220,8 +9220,8 @@
     "semantic_hash": ""
   },
   "app/server/routes/api/designs/[id].get.ts": {
-    "mtime": 1785675200.7446828,
-    "ast_hash": "58cbec95f2419e416d83bfbeaec11fcf",
+    "mtime": 1785679696.5459912,
+    "ast_hash": "275bc51dfd702f49e96303729bc32a2d",
     "semantic_hash": ""
   },
   "app/server/routes/api/spawn-rules.get.ts": {
@@ -9230,8 +9230,8 @@
     "semantic_hash": ""
   },
   "app/server/services/designs/store.ts": {
-    "mtime": 1785675724.2646196,
-    "ast_hash": "a8cad931f97041b1b90cb580cc90bff5",
+    "mtime": 1785679675.8037465,
+    "ast_hash": "fab039a256e6e6331be321f2e4d96dad",
     "semantic_hash": ""
   },
   "app/server/services/pokemon/spawn-rules-store.ts": {
@@ -9240,8 +9240,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/AnimationSprite.tsx": {
-    "mtime": 1785678167.2449667,
-    "ast_hash": "8d75db3f13deef57f86fdbc949855912",
+    "mtime": 1785679743.1438227,
+    "ast_hash": "22e6f7581da54c09f4d7584690057c02",
     "semantic_hash": ""
   },
   "app/src/components/design/AssetBrowser.tsx": {
@@ -9250,13 +9250,13 @@
     "semantic_hash": ""
   },
   "app/src/components/design/BlockCanvas.tsx": {
-    "mtime": 1785675392.5982025,
-    "ast_hash": "d126e91fb79c8b708850ad9ac2d9d1e0",
+    "mtime": 1785679740.3638477,
+    "ast_hash": "f29f9f826ef7ba890e7fdf4263d304d2",
     "semantic_hash": ""
   },
   "app/src/components/design/CommunityBrowser.tsx": {
-    "mtime": 1785675846.467761,
-    "ast_hash": "268f0dc7a23160ab3b3341ff90253d58",
+    "mtime": 1785679718.6259916,
+    "ast_hash": "cf45abb2dfdb2e590cffadf8e3e154fd",
     "semantic_hash": ""
   },
   "app/src/components/design/DesignBrowser.tsx": {
@@ -9265,8 +9265,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/DesignDetailModal.tsx": {
-    "mtime": 1785678403.1987085,
-    "ast_hash": "4e5c358048c51f06053e1813121d092f",
+    "mtime": 1785679722.3944626,
+    "ast_hash": "10d9083e0ae7cb6e6a4ba358e983bd5b",
     "semantic_hash": ""
   },
   "app/src/components/design/SpriteThumb.tsx": {
@@ -9275,8 +9275,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/useInfiniteReveal.ts": {
-    "mtime": 1785675503.874637,
-    "ast_hash": "f001ccb3fb271c3f1e590830d8185445",
+    "mtime": 1785679737.4951348,
+    "ast_hash": "83914561dee88b3c883dfd211500ae51",
     "semantic_hash": ""
   },
   "app/src/components/game-ui/BattleScreen.tsx": {
@@ -9310,8 +9310,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1785678400.6349733,
-    "ast_hash": "66575ae277a8a9ff60dc4c82b6a367d0",
+    "mtime": 1785679776.4363866,
+    "ast_hash": "b312e49a2d3c53d3376c50782e45dff1",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
@@ -9320,8 +9320,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1785677271.96334,
-    "ast_hash": "23936f4c8596177c3f74f0cd92c053a4",
+    "mtime": 1785679948.0977197,
+    "ast_hash": "3e85616f751159af72eba59b3ba9f3a4",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9350,8 +9350,8 @@
     "semantic_hash": ""
   },
   "app/tests/design-legality.test.ts": {
-    "mtime": 1785678423.5067089,
-    "ast_hash": "b7f24cc18f6c5c96e62199196fcf7366",
+    "mtime": 1785679810.5246284,
+    "ast_hash": "a79944cba045b01660beb1857ce68fb9",
     "semantic_hash": ""
   },
   "app/tests/design-store.test.ts": {
@@ -9392,41 +9392,6 @@
   "app/public/tiles/sign-rocky-1.png": {
     "mtime": 1785677175.0146143,
     "ast_hash": "92c49eb245b72cd5263d6436d8d98894",
-    "semantic_hash": ""
-  },
-  "app/.crop-tmp.mjs": {
-    "mtime": 1785678275.7440288,
-    "ast_hash": "5ea2d63ee8dfb3dbb2f33c8428ed9a10",
-    "semantic_hash": ""
-  },
-  "app/.dump-tmp.mjs": {
-    "mtime": 1785678234.3045073,
-    "ast_hash": "cff893a130a7271a7a9f6464d263d086",
-    "semantic_hash": ""
-  },
-  "app/.one-tmp.mjs": {
-    "mtime": 1785678343.1258047,
-    "ast_hash": "803761836576182251c9e44b318caf27",
-    "semantic_hash": ""
-  },
-  "app/.render-tmp.mjs": {
-    "mtime": 1785678157.0267358,
-    "ast_hash": "992c67929e56474c5b4a39ce90a31b31",
-    "semantic_hash": ""
-  },
-  "app/.sheet-tmp.mjs": {
-    "mtime": 1785678306.9446652,
-    "ast_hash": "8ca915540cb789201f0c71bd64d5cb35",
-    "semantic_hash": ""
-  },
-  "app/tests/tmp-hamlet-claim.test.ts": {
-    "mtime": 1785678391.889791,
-    "ast_hash": "4adbe17c8c829f702cacd3b2f4e11971",
-    "semantic_hash": ""
-  },
-  "app/tests/tmp-hamlet-debug.test.ts": {
-    "mtime": 1785678457.4784892,
-    "ast_hash": "397e4fc7132f3b3b9ef40bf092a41685",
     "semantic_hash": ""
   }
 }
