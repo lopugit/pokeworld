@@ -17,8 +17,11 @@ import {
   actionDirection,
   directionDelta,
   fieldItemFor,
+  formatDialogPages,
   interactionFor,
   isFieldItemTile,
+  isNearCaveEntrance,
+  isSurfableTile,
   resolveMove,
   tileCoordKey,
   type Direction,
@@ -27,15 +30,36 @@ import {
   collectFieldItem,
   hasCollected,
   loadTrainer,
+  registerSeen,
   saveTrainer,
   type TrainerState,
 } from "../lib/trainer-state";
+import {
+  defaultSpawnRules,
+  encounterBiomeFor,
+  encounterTriggered,
+  mergeSpawnRules,
+  rollEncounter,
+  type SpeciesSpawnOverride,
+  type SpawnRule,
+} from "../lib/encounters";
+import {
+  advanceMessage,
+  applyBattleOutcome,
+  createWildBattle,
+  submitAction,
+  type BattleAction,
+  type BattleState,
+} from "../lib/battle";
 import { DialogBox } from "./game-ui/DialogBox";
 import { MENU_ITEMS, StartMenu, type MenuItemId } from "./game-ui/StartMenu";
 import { PartyPanel } from "./game-ui/PartyPanel";
 import { BagPanel } from "./game-ui/BagPanel";
 import { BadgesPanel } from "./game-ui/BadgesPanel";
 import { PcPanel } from "./game-ui/PcPanel";
+import { PokedexPanel } from "./game-ui/PokedexPanel";
+import { SettingsPanel } from "./game-ui/SettingsPanel";
+import { BattleScreen } from "./game-ui/BattleScreen";
 import { MapLoadingIndicator } from "./game-ui/MapLoadingIndicator";
 import "../styles/game.scss";
 import "../styles/game-ui.css";
@@ -111,9 +135,32 @@ interface PlayerState {
   lastAction?: number;
   queuedAction?: MoveAction;
   facing?: Direction;
+  surfing?: boolean;
 }
 
-type PanelId = "party" | "bag" | "badges" | "pc";
+type PanelId = "party" | "bag" | "badges" | "pc" | "pokedex" | "settings";
+
+// Visual-only interpolation for a tile step: game logic stays tile-snapped,
+// the render loop lerps the scene between the previous and new positions.
+interface MoveAnimation {
+  fromX: number;
+  fromY: number;
+  mapFromX: number;
+  mapFromY: number;
+  start: number;
+  duration: number;
+  kind: "walk" | "jump";
+  parity: 0 | 1;
+}
+
+const WALK_ANIMATION_MS = 250;
+const JUMP_ANIMATION_MS = 360;
+const PLAYER_FRAME_DIRECTORY: Record<Direction, string> = {
+  up: "up",
+  down: "down",
+  left: "side",
+  right: "side",
+};
 
 interface UiState {
   menuOpen: boolean;
@@ -148,6 +195,7 @@ interface GameComponentState {
   revision: number;
   ui: UiState;
   trainer: TrainerState;
+  battle: BattleState | null;
 }
 
 interface StoredImage {
@@ -224,6 +272,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     },
     ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null },
     trainer: loadTrainer(),
+    battle: null,
   };
 
   private readonly canvasRef = createRef<HTMLCanvasElement>();
@@ -247,10 +296,48 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private loadedTimer?: number;
   private mounted = false;
   private boardResize = { active: false, startX: 0, originWidth: 520 };
+  // Wild-encounter tables: defaults immediately, admin overrides merged in
+  // once /api/spawn-rules answers (offline play keeps the defaults).
+  private spawnRules: SpawnRule[] = defaultSpawnRules();
+  private moveAnim: MoveAnimation | null = null;
+  private stepParity: 0 | 1 = 0;
 
   override componentDidMount() {
     this.mounted = true;
     void this.initialize();
+    void this.loadSpawnRuleOverrides();
+    this.preloadPlayerFrames();
+  }
+
+  private async loadSpawnRuleOverrides() {
+    const controller = new AbortController();
+    this.abortControllers.add(controller);
+    try {
+      const response = await fetch("/api/spawn-rules", {
+        headers: { accept: "application/json" },
+        signal: controller.signal,
+      });
+      if (!response.ok) return;
+      const payload = (await response.json()) as { overrides?: SpeciesSpawnOverride[] };
+      if (Array.isArray(payload.overrides) && this.mounted) {
+        this.spawnRules = mergeSpawnRules(payload.overrides);
+      }
+    } catch {
+      // Offline or unavailable — the computed defaults stay in effect.
+    } finally {
+      this.abortControllers.delete(controller);
+    }
+  }
+
+  private preloadPlayerFrames() {
+    for (const gender of ["boy", "girl"]) {
+      for (const direction of ["down", "up", "side"]) {
+        for (let frame = 0; frame < 3; frame += 1) {
+          const key = `player/${gender}/${direction}-${frame}`;
+          this.loadImage(key, `/sprites/${key}.png`);
+        }
+      }
+    }
   }
 
   override componentWillUnmount() {
@@ -504,6 +591,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const isA = key === "z" || key === "Z" || key === " " || key === "Enter";
     const isB = key === "x" || key === "X" || key === "Escape" || key === "Backspace";
 
+    // Typing in a form field (e.g. the OPTION name input) must never trigger
+    // game shortcuts like B-to-close or movement.
+    const target = event.target as HTMLElement | null;
+    if (
+      target &&
+      (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+    ) {
+      return;
+    }
+
+    // BattleScreen owns the keyboard (capture-phase listener) while a battle runs.
+    if (this.state.battle) return;
+
     if (ui.dialog) {
       if (isA || isB || moveKeys[key]) {
         event.preventDefault();
@@ -569,7 +669,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private toggleMenu = () => {
-    if (this.state.ui.dialog || this.state.ui.panel) return;
+    if (this.state.ui.dialog || this.state.ui.panel || this.state.battle) return;
     this.setUi({ menuOpen: !this.state.ui.menuOpen, menuIndex: 0 });
   };
 
@@ -586,7 +686,14 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private closeDialog = () => this.setUi({ dialog: null });
 
   private selectMenuItem = (id: MenuItemId) => {
-    if (id === "party" || id === "bag" || id === "badges" || id === "pc") {
+    if (
+      id === "party" ||
+      id === "bag" ||
+      id === "badges" ||
+      id === "pc" ||
+      id === "pokedex" ||
+      id === "settings"
+    ) {
       this.setUi({ menuOpen: false, panel: id });
       return;
     }
@@ -601,7 +708,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private pressA = () => {
-    const { ui } = this.state;
+    const { ui, battle } = this.state;
+    if (battle) {
+      // Hardware A drives the battle's message flow; menus are on-screen.
+      if (battle.phase === "message") this.onBattleMessage();
+      else if (battle.phase === "over") this.onBattleFinish();
+      return;
+    }
     if (ui.dialog) {
       this.advanceDialog();
       return;
@@ -614,7 +727,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private pressB = () => {
-    const { ui } = this.state;
+    const { ui, battle } = this.state;
+    if (battle) {
+      if (battle.phase === "message") this.onBattleMessage();
+      else if (battle.phase === "over") this.onBattleFinish();
+      return;
+    }
     if (ui.dialog) {
       this.advanceDialog();
       return;
@@ -626,14 +744,93 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     if (ui.menuOpen) this.setUi({ menuOpen: false });
   };
 
+  // --- Wild battles ---------------------------------------------------------
+
+  private startWildBattle(rules: SpawnRule[], biome: "long-grass" | "water" | "cave") {
+    const { player, trainer } = this.state;
+    if (!isFiniteNumber(player.lat) || !isFiniteNumber(player.lng)) return;
+    const encounter = rollEncounter(rules, biome, player.lat, player.lng, Math.random);
+    if (!encounter) return;
+    const battle = createWildBattle(trainer.party, encounter);
+    const seenTrainer = registerSeen(trainer, encounter.speciesId);
+    this.setState(
+      ({ player: current }) => ({
+        battle,
+        trainer: seenTrainer,
+        player: { ...current, queuedAction: undefined },
+      }),
+      () => saveTrainer(this.state.trainer),
+    );
+  }
+
+  private onBattleAction = (action: BattleAction) => {
+    const { battle } = this.state;
+    if (!battle) return;
+    this.setState({ battle: submitAction(battle, action, Math.random) });
+  };
+
+  private onBattleMessage = () => {
+    const { battle } = this.state;
+    if (!battle) return;
+    this.setState({ battle: advanceMessage(battle) });
+  };
+
+  private onBattleFinish = () => {
+    const { battle, trainer } = this.state;
+    if (!battle) return;
+    const applied = applyBattleOutcome(trainer, battle);
+    this.setState({ battle: null, trainer: applied.trainer }, () => {
+      saveTrainer(applied.trainer);
+      if (applied.messages.length) this.openDialog(applied.messages);
+    });
+  };
+
   private interact = () => {
-    const { player, game, trainer } = this.state;
+    const { player, game, trainer, battle } = this.state;
+    if (battle) return;
     const facing = player.facing ?? "down";
     const { dx, dy } = directionDelta[facing];
     const targetX = player.x + dx * game.tileSize;
     const targetY = player.y + dy * game.tileSize;
     const tile = this.tileDb[`${targetX},${targetY}`];
     const collected = (coordKey: string) => hasCollected(trainer, coordKey);
+
+    // Facing open water: a WATER-type partner lets the player surf onto it.
+    if (!player.surfing && isSurfableTile(tile)) {
+      const surfer = trainer.party.find(
+        (member) => member.hp > 0 && member.types.some((type) => type.toUpperCase() === "WATER"),
+      );
+      if (!surfer) {
+        this.openDialog(["The water is a deep, clear blue...", "A WATER POKéMON could SURF\nacross it."]);
+        return;
+      }
+      const previous = { x: player.x, y: player.y, mapX: this.state.map.x, mapY: this.state.map.y };
+      const surfingPlayer = this.withUpdatedPlayerBlock({
+        ...player,
+        x: targetX,
+        y: targetY,
+        surfing: true,
+        lastAction: Date.now(),
+        queuedAction: undefined,
+      });
+      this.stepParity = this.stepParity === 0 ? 1 : 0;
+      this.moveAnim = {
+        fromX: previous.x,
+        fromY: previous.y,
+        mapFromX: previous.mapX,
+        mapFromY: previous.mapY,
+        start: performance.now(),
+        duration: JUMP_ANIMATION_MS,
+        kind: "jump",
+        parity: this.stepParity,
+      };
+      this.setState({ player: surfingPlayer }, () => {
+        saveThing("player", surfingPlayer);
+        this.openDialog([`${surfer.nickname ?? surfer.species} used SURF!`]);
+      });
+      return;
+    }
+
     const interaction = interactionFor(tile, collected);
     if (interaction.type === "item" && tile) {
       const coordKey = tileCoordKey(tile.mapX, tile.mapY);
@@ -654,11 +851,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       }
       return;
     }
-    if (interaction.pages?.length) this.openDialog(interaction.pages);
+    if (interaction.pages?.length) {
+      this.openDialog(formatDialogPages(interaction.pages, trainer.name));
+    }
   };
 
   private action = (action: MoveAction) => {
-    if (this.state.ui.dialog || this.state.ui.menuOpen || this.state.ui.panel) return;
+    if (this.state.ui.dialog || this.state.ui.menuOpen || this.state.ui.panel || this.state.battle) return;
     const boundaryWait = this.state.mapLoading.waitingForBlock;
     const now = Date.now();
     if (!boundaryWait && this.state.player.lastAction && now - this.state.player.lastAction < 300) {
@@ -672,6 +871,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const player = { ...this.state.player, lastAction: now, queuedAction: undefined, facing: actionDirection[action] };
     const map = { ...this.state.map };
     const distance = game.tileSize * (game.zoomMode ? 8 : 1);
+    const animFrom = {
+      x: this.state.player.x,
+      y: this.state.player.y,
+      mapX: this.state.map.x,
+      mapY: this.state.map.y,
+    };
 
     // Debug zoomMode strides 8 tiles and bypasses collision; normal movement
     // resolves against tile solidity and one-way ledges.
@@ -686,6 +891,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         action,
         game.tileSize,
         (coordKey) => hasCollected(this.state.trainer, coordKey),
+        { surfing: player.surfing },
       );
       if (resolution.kind === "blocked") {
         if (boundaryWait) {
@@ -734,6 +940,11 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     }
 
     const previousBlock = `${player.blockX},${player.blockY}`;
+    const destinationTile = this.tileDb[`${player.x},${player.y}`];
+    // Stepping from water back onto walkable land ends the surf ride.
+    if (player.surfing && !game.zoomMode && destinationTile && !isSurfableTile(destinationTile)) {
+      player.surfing = false;
+    }
     const updatedPlayer = this.withUpdatedPlayerBlock(player);
     map.blockX = updatedPlayer.blockX;
     map.blockY = updatedPlayer.blockY;
@@ -743,13 +954,44 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       ? { ...game, tileBrowserX: updatedPlayer.x, tileBrowserY: updatedPlayer.y }
       : game;
 
+    // Kick the visual step animation (logic above already snapped the tile).
+    if (!game.zoomMode) {
+      this.stepParity = this.stepParity === 0 ? 1 : 0;
+      this.moveAnim = {
+        fromX: animFrom.x,
+        fromY: animFrom.y,
+        mapFromX: animFrom.mapX,
+        mapFromY: animFrom.mapY,
+        start: performance.now(),
+        duration: steps > 1 ? JUMP_ANIMATION_MS : WALK_ANIMATION_MS,
+        kind: steps > 1 ? "jump" : "walk",
+        parity: this.stepParity,
+      };
+    }
+
     this.setState({ player: updatedPlayer, map, game: nextGame }, () => {
       saveThing("player", updatedPlayer);
       saveThing("map", map);
       if (nextGame !== game) saveThing("game", nextGame);
       if (previousBlock !== `${updatedPlayer.blockX},${updatedPlayer.blockY}`) void this.getBlocks();
+      this.maybeStartEncounter(updatedPlayer, game.zoomMode);
     });
   };
+
+  // Rolls a wild encounter for the tile the player just stepped onto:
+  // long grass on foot, open water while surfing, and cave-mouth zones.
+  private maybeStartEncounter(player: PlayerState, debugStride: boolean) {
+    if (debugStride || this.state.battle || !this.mounted) return;
+    if (!this.state.trainer.party.some((member) => member.hp > 0)) return;
+    const tile = this.tileDb[`${player.x},${player.y}`];
+    const lookup = (x: number, y: number) => this.tileDb[`${x},${y}`];
+    const biome = encounterBiomeFor(tile, {
+      surfing: player.surfing,
+      nearCave: isNearCaveEntrance(lookup, player.x, player.y, this.state.game.tileSize),
+    });
+    if (!biome || !encounterTriggered(biome, Math.random)) return;
+    this.startWildBattle(this.spawnRules, biome);
+  }
 
   private resizeGame = () => {
     let columns = 1;
@@ -1091,7 +1333,26 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const gmapContext = this.gmapRef.current?.getContext("2d");
     if (!canvasContext) return;
 
-    const { game, map, player } = this.state;
+    const { game, map, player, trainer } = this.state;
+
+    // Visual step interpolation: the whole scene (tiles, overlays, player)
+    // renders against a camera lerped between the pre-step and post-step
+    // positions, so tile-snapped logic looks like Emerald's smooth walk.
+    const anim = this.moveAnim;
+    let animProgress = 1;
+    if (anim) {
+      animProgress = Math.min(1, (performance.now() - anim.start) / anim.duration);
+      if (animProgress >= 1) this.moveAnim = null;
+    }
+    const animating = anim !== null && animProgress < 1;
+    const view =
+      animating && anim
+        ? {
+            x: anim.mapFromX + (map.x - anim.mapFromX) * animProgress,
+            y: anim.mapFromY + (map.y - anim.mapFromY) * animProgress,
+          }
+        : { x: map.x, y: map.y };
+
     this.loadImage("grass", "/tiles/grass.png");
     const grassBackground = this.storedImages.get("grass");
     for (const context of [canvasContext, layerContext, gmapContext]) {
@@ -1115,8 +1376,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       const blockKey = `${tile.blockX}_${tile.blockY}`;
       if (!map.blocks.includes(blockKey)) map.blocks.push(blockKey);
       map.tileCount += 1;
-      const x = tile.mapX - map.x;
-      const y = tile.mapY - map.y;
+      const x = tile.mapX - view.x;
+      const y = tile.mapY - view.y;
       const width = game.tileSize * game.zoomScale;
       const height = game.tileSize * game.zoomScale;
       const drawX = x * game.zoomScale;
@@ -1132,7 +1393,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
     }
 
-    if (gmapContext) this.drawGoogleBlocks(gmapContext);
+    if (gmapContext) this.drawGoogleBlocks(gmapContext, view);
 
     if (game.overlay) {
       canvasContext.save();
@@ -1143,34 +1404,66 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         canvasContext.clip();
       }
       canvasContext.globalAlpha = clampOverlayOpacity(game.overlayOpacity);
-      this.drawGoogleBlocks(canvasContext);
+      this.drawGoogleBlocks(canvasContext, view);
       canvasContext.restore();
       if (game.overlaySplit) this.drawOverlayDivider(canvasContext);
     }
 
-    this.loadImage(player.sprite, `/sprites/${player.sprite}.png`);
-    const character = this.storedImages.get(player.sprite);
+    // Directional Emerald walk frames: idle (0) or the alternating step
+    // frames (1/2) for the first 60% of each tile step. "side" faces left
+    // and is mirrored when walking right.
+    const facing = player.facing ?? "down";
+    const frameDirectory = PLAYER_FRAME_DIRECTORY[facing];
+    let frame = 0;
+    if (animating && anim) {
+      frame = animProgress < 0.6 ? (anim.parity ? 1 : 2) : 0;
+    }
+    const gender = trainer.gender === "girl" ? "girl" : "boy";
+    const spriteKey = `player/${gender}/${frameDirectory}-${frame}`;
+    this.loadImage(spriteKey, `/sprites/${spriteKey}.png`);
+    let character = this.storedImages.get(spriteKey);
+    if (!character?.loaded) {
+      // Frames still decoding on first paint: fall back to the legacy sprite.
+      this.loadImage("char-walk-1", "/sprites/char-walk-1.png");
+      character = this.storedImages.get("char-walk-1");
+    }
     if (character?.loaded) {
-      const x = player.x - map.x;
-      const y = player.y - map.y;
-      const drawX = (x + 2) * game.zoomScale;
-      const width = 28 * game.zoomScale;
-      const height = 42 * game.zoomScale;
-      const drawY = this.convertY(y, height);
-      canvasContext.drawImage(character.element, drawX, drawY, width, height);
-      gmapContext?.drawImage(character.element, drawX, drawY, width, height);
-      layerContext?.drawImage(character.element, drawX, drawY, width, height);
+      const worldX = animating && anim ? anim.fromX + (player.x - anim.fromX) * animProgress : player.x;
+      const worldY = animating && anim ? anim.fromY + (player.y - anim.fromY) * animProgress : player.y;
+      const x = worldX - view.x;
+      const y = worldY - view.y;
+      const width = tileSize * game.zoomScale;
+      const height = tileSize * 2 * game.zoomScale;
+      const drawX = x * game.zoomScale;
+      let drawY = this.convertY(y, height);
+      if (animating && anim?.kind === "jump") {
+        drawY -= Math.sin(animProgress * Math.PI) * tileSize * 0.5 * game.zoomScale;
+      } else if (player.surfing && !animating) {
+        drawY -= (Math.sin(performance.now() / 280) + 1) * 1.5 * game.zoomScale;
+      }
+      const flip = facing === "right";
+      for (const context of [canvasContext, gmapContext, layerContext]) {
+        if (!context) continue;
+        if (flip) {
+          context.save();
+          context.scale(-1, 1);
+          context.drawImage(character.element, -drawX - width, drawY, width, height);
+          context.restore();
+        } else {
+          context.drawImage(character.element, drawX, drawY, width, height);
+        }
+      }
     }
   }
 
-  private drawGoogleBlocks(context: CanvasRenderingContext2D) {
-    const { game, map } = this.state;
+  private drawGoogleBlocks(context: CanvasRenderingContext2D, view: { x: number; y: number }) {
+    const { game } = this.state;
     for (const block of Object.values(this.blockDb)) {
       if (!this.blockShouldRender(block) || !block.googleMap) continue;
       const image = this.storedImages.get(block.googleMap);
       if (!image?.loaded) continue;
-      const x = (Number(block.mapX) - map.x) * game.zoomScale;
-      const y = Number(block.mapY) - map.y;
+      const x = (Number(block.mapX) - view.x) * game.zoomScale;
+      const y = Number(block.mapY) - view.y;
       const width = game.blockSize * game.zoomScale;
       const height = game.blockSize * game.zoomScale;
       context.drawImage(image.element, x, this.convertY(y, height), width, height);
@@ -1259,11 +1552,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   private tileShouldRender(tile: MapTile) {
     const { map, game } = this.state;
+    // One-tile margin keeps edge tiles visible while the camera lerps a step.
     return (
-      tile.mapX >= map.x &&
-      tile.mapX < map.x + game.canvasWidth * game.zoom &&
-      tile.mapY >= map.y &&
-      tile.mapY < map.y + game.canvasWidth * game.zoom
+      tile.mapX >= map.x - tileSize &&
+      tile.mapX < map.x + game.canvasWidth * game.zoom + tileSize &&
+      tile.mapY >= map.y - tileSize &&
+      tile.mapY < map.y + game.canvasWidth * game.zoom + tileSize
     );
   }
 
@@ -1398,6 +1692,28 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                       trainer={trainer}
                       onChange={this.setTrainer}
                       onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.panel === "pokedex" ? (
+                    <PokedexPanel
+                      trainer={trainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {ui.panel === "settings" ? (
+                    <SettingsPanel
+                      trainer={trainer}
+                      onChange={this.setTrainer}
+                      onClose={() => this.setUi({ panel: null, menuOpen: true })}
+                    />
+                  ) : null}
+                  {this.state.battle ? (
+                    <BattleScreen
+                      battle={this.state.battle}
+                      trainer={trainer}
+                      onAction={this.onBattleAction}
+                      onAdvanceMessage={this.onBattleMessage}
+                      onFinish={this.onBattleFinish}
                     />
                   ) : null}
                   {ui.dialog ? (

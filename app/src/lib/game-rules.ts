@@ -62,6 +62,13 @@ export const isSignTile = (tile: MapTile | undefined): boolean =>
 export const isCaveEntranceTile = (tile: MapTile | undefined): boolean =>
   !!tile && tile.feature === "cave-entrance";
 
+// Surfable water: solid to walkers, open water to surfers.
+export const isSurfableTile = (tile: MapTile | undefined): boolean =>
+  !!tile &&
+  (tile.terrain === "water" ||
+    String(tile.img ?? "").startsWith("pond-") ||
+    String(tile.img ?? "").startsWith("water"));
+
 export type TileLookup = (mapX: number, mapY: number) => MapTile | undefined;
 export type CollectedLookup = (coordKey: string) => boolean;
 
@@ -83,12 +90,17 @@ export function resolveMove(
   action: MoveAction,
   tileSize: number,
   collected: CollectedLookup,
+  options: { surfing?: boolean } = {},
 ): MoveResolution {
   const { dx, dy } = actionDelta[action];
   const toX = fromX + dx * tileSize;
   const toY = fromY + dy * tileSize;
   const target = lookup(toX, toY);
   if (!target) return { kind: "move", toX, toY };
+
+  // While surfing, water is open and everything else keeps its walking rules
+  // (stepping onto walkable land dismounts — the caller handles that flag).
+  if (options.surfing && isSurfableTile(target)) return { kind: "move", toX, toY };
 
   if (isLedgeTile(target)) {
     // Ledges are jumped from above, moving screen-down (world -y), landing on
@@ -155,7 +167,29 @@ const SIGN_PAGES: Array<(route: number) => string[]> = [
   (route) => [`ROUTE ${route}`, "“The world is bigger than any\nmap of it.” — a wandering sage"],
   (route) => [`ROUTE ${route}`, "LOST: one BIKE.\nIf found, please ride it\nsomewhere fun."],
   (route) => [`ROUTE ${route}`, "TRAINER TIPS\nTalk to signs. You never know\nwhich ones talk back."],
+  (route) => [`ROUTE ${route}`, "Is that {PLAYER}?!\nSomeone carved your name\ninto this very sign."],
+  (route) => [`ROUTE ${route}`, "TRAINER TIPS\nKeep it up, {PLAYER}!\nEvery master started small."],
 ];
+
+/** Replaces {PLAYER} tokens so NPC/sign dialog addresses the trainer by name. */
+export const formatDialogPages = (pages: string[], playerName: string): string[] =>
+  pages.map((page) => page.replaceAll("{PLAYER}", playerName));
+
+/** True when a tile within `radius` tiles hosts a cave entrance (cave hunting zone). */
+export function isNearCaveEntrance(
+  lookup: TileLookup,
+  x: number,
+  y: number,
+  tileSize: number,
+  radius = 3,
+): boolean {
+  for (let dx = -radius; dx <= radius; dx += 1) {
+    for (let dy = -radius; dy <= radius; dy += 1) {
+      if (isCaveEntranceTile(lookup(x + dx * tileSize, y + dy * tileSize))) return true;
+    }
+  }
+  return false;
+}
 
 export function signPagesFor(mapX: number, mapY: number): string[] {
   const route = 101 + Math.floor(hashUnit(mapX, mapY, "route") * 33);
@@ -178,6 +212,7 @@ const HOUSE_PAGES: string[][] = [
   ["Knock knock.", "...no one answered.\nThe curtains twitched, though."],
   ["The door is locked.", "A doormat reads:\n“GO AWAY (unless you brought\nBERRIES).”"],
   ["You hear a TV inside.", "Someone is watching a show\nabout dramatic WAILORD rescues."],
+  ["Voices drift through the door.", "“...and then {PLAYER} walked by!\nA real TRAINER, right here!”"],
 ];
 
 export function housePagesFor(mapX: number, mapY: number): string[] {

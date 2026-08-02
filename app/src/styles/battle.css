@@ -1,0 +1,826 @@
+/* Emerald-style wild battle screen (BattleScreen.tsx). Every class is
+   prefixed pkbt- so nothing collides with game-ui.css. Sized with container
+   query units (cqw, container = .board-screen) so the battle scales with the
+   resizable board exactly like the rest of the in-game UI. */
+
+.pkbt-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d0f0d8 0%, #b4e4a4 36%, #90cc78 68%, #74b85c 100%);
+  color: #303030;
+  text-align: left;
+}
+
+/* ---------- Battlefield ---------- */
+
+.pkbt-field {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.pkbt-pad {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgba(72, 136, 60, 0.6),
+    rgba(72, 136, 60, 0.38) 62%,
+    rgba(72, 136, 60, 0) 100%
+  );
+}
+
+.pkbt-pad-enemy {
+  top: 23cqw;
+  right: 2cqw;
+  width: 38cqw;
+  height: 11cqw;
+}
+
+.pkbt-pad-player {
+  bottom: -3.5cqw;
+  left: 0.5cqw;
+  width: 46cqw;
+  height: 13cqw;
+}
+
+.pkbt-sprite {
+  position: absolute;
+  object-fit: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.pkbt-sprite-enemy {
+  top: 4cqw;
+  right: 8cqw;
+  width: 26cqw;
+  height: 26cqw;
+}
+
+.pkbt-sprite-player {
+  bottom: 0;
+  left: 7cqw;
+  width: 32cqw;
+  height: 32cqw;
+}
+
+/* ---------- Info boxes ---------- */
+
+.pkbt-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9cqw;
+  width: 44cqw;
+  max-width: 58%;
+  background: #f8f8f0;
+  border: 0.7cqw solid #385088;
+  border-radius: 1.2cqw;
+  box-shadow: inset 0 0 0 0.4cqw #a8b8e8, 0 0.5cqw 0 rgba(0, 0, 0, 0.25);
+  padding: 1.4cqw 1.8cqw;
+}
+
+.pkbt-info-enemy {
+  top: 2cqw;
+  left: 2cqw;
+}
+
+.pkbt-info-player {
+  bottom: 2cqw;
+  right: 2cqw;
+  width: 46cqw;
+}
+
+.pkbt-info-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9cqw;
+  min-width: 0;
+  /* Sized so a 10-char Emerald name + gender + LV.100 fits without ellipsis. */
+  font-size: 2.55cqw;
+  line-height: 1.2;
+}
+
+.pkbt-name {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pkbt-gender {
+  flex: none;
+  font-size: 2.7cqw;
+}
+
+.pkbt-gender.male {
+  color: #3068c8;
+}
+
+.pkbt-gender.female {
+  color: #e05878;
+}
+
+.pkbt-shiny {
+  flex: none;
+  font-size: 2.3cqw;
+}
+
+.pkbt-level {
+  flex: none;
+  margin-left: auto;
+  font-size: 2.3cqw;
+  color: #385088;
+}
+
+.pkbt-hp-row {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+}
+
+.pkbt-hp-tag {
+  flex: none;
+  font-size: 1.8cqw;
+  color: #f8f8f0;
+  background: #e8a038;
+  border-radius: 0.5cqw;
+  padding: 0.2cqw 0.7cqw;
+}
+
+.pkbt-hp-bar {
+  flex: 1;
+  height: 2.2cqw;
+  border: 0.45cqw solid #303030;
+  border-radius: 1.2cqw;
+  background: #605848;
+  overflow: hidden;
+}
+
+.pkbt-hp-fill {
+  display: block;
+  height: 100%;
+  border-radius: 0.8cqw;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.pkbt-hp-fill.high {
+  background: #58d080;
+}
+
+.pkbt-hp-fill.mid {
+  background: #f8d030;
+}
+
+.pkbt-hp-fill.low {
+  background: #e83838;
+}
+
+.pkbt-info-bottom {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  min-width: 0;
+}
+
+.pkbt-hp-digits {
+  margin-left: auto;
+  font-size: 2.5cqw;
+}
+
+.pkbt-status {
+  flex: none;
+  font-size: 1.8cqw;
+  border-radius: 0.6cqw;
+  padding: 0.25cqw 0.8cqw;
+  color: #f8f8f0;
+}
+
+.pkbt-status-poisoned {
+  background: #a040a0;
+}
+
+.pkbt-status-paralyzed {
+  background: #c8a808;
+}
+
+.pkbt-status-asleep {
+  background: #8890a0;
+}
+
+.pkbt-status-burned {
+  background: #f08030;
+}
+
+.pkbt-status-frozen {
+  background: #50b8d8;
+}
+
+.pkbt-exp-row {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+}
+
+.pkbt-exp-tag {
+  flex: none;
+  font-size: 1.7cqw;
+  color: #385088;
+}
+
+.pkbt-exp-bar {
+  flex: 1;
+  height: 1.3cqw;
+  border: 0.35cqw solid #303030;
+  border-radius: 0.8cqw;
+  background: #605848;
+  overflow: hidden;
+}
+
+.pkbt-exp-fill {
+  display: block;
+  height: 100%;
+  background: #48a8e8;
+  transition: width 0.5s ease;
+}
+
+/* ---------- Bottom message / menu bar ---------- */
+
+.pkbt-bottom {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 24cqw;
+  display: flex;
+  gap: 1.2cqw;
+  padding: 1.2cqw;
+  background: #283860;
+  border-top: 0.7cqw solid #182848;
+}
+
+.pkbt-message {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  border: 0.9cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  background: #f8f8f0;
+  box-shadow: inset 0 0 0 0.45cqw #d0d8f0;
+  padding: 2cqw 4.5cqw 2cqw 2.4cqw;
+  font-family: inherit;
+  font-size: 3.2cqw;
+  line-height: 1.6;
+  text-align: left;
+  color: #303030;
+  white-space: pre-line;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pkbt-arrow {
+  position: absolute;
+  right: 1.6cqw;
+  bottom: 0.8cqw;
+  color: #c04040;
+  font-size: 2.8cqw;
+  animation: pkbt-arrow-bounce 0.6s steps(2, end) infinite;
+}
+
+@keyframes pkbt-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.7cqw); }
+}
+
+/* ---------- Command menu (FIGHT / BAG / POKéMON / RUN) ---------- */
+
+.pkbt-command {
+  flex: 1;
+  display: flex;
+  gap: 1.2cqw;
+  min-width: 0;
+}
+
+.pkbt-prompt {
+  flex: 1.1;
+  min-width: 0;
+  border: 0.9cqw solid #a8b8e8;
+  border-radius: 1.2cqw;
+  background: #f8f8f0;
+  box-shadow: inset 0 0 0 0.45cqw #d0d8f0;
+  padding: 2cqw 2.2cqw;
+  font-size: 3cqw;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow: hidden;
+}
+
+.pkbt-actions {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 0.5cqw 0.8cqw;
+  border: 0.9cqw solid #385088;
+  border-radius: 1.2cqw;
+  background: #fff;
+  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
+  padding: 1.4cqw 1.6cqw;
+}
+
+.pkbt-action {
+  display: flex;
+  align-items: center;
+  gap: 0.4cqw;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 2.9cqw;
+  color: #303030;
+  text-align: left;
+  padding: 0.4cqw 0.2cqw;
+  cursor: pointer;
+}
+
+.pkbt-cursor {
+  flex: 0 0 2.6cqw;
+  width: 2.6cqw;
+  color: #c04040;
+  font-size: 2.4cqw;
+}
+
+.pkbt-row-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- FIGHT submenu ---------- */
+
+.pkbt-fight {
+  flex: 1;
+  display: flex;
+  gap: 1.2cqw;
+  min-width: 0;
+}
+
+.pkbt-moves {
+  flex: 1.5;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 0.5cqw 0.8cqw;
+  border: 0.9cqw solid #385088;
+  border-radius: 1.2cqw;
+  background: #fff;
+  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
+  padding: 1.4cqw 1.6cqw;
+}
+
+.pkbt-move {
+  display: flex;
+  align-items: center;
+  gap: 0.4cqw;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 2.7cqw;
+  color: #303030;
+  text-align: left;
+  padding: 0.4cqw 0.2cqw;
+  cursor: pointer;
+}
+
+.pkbt-move.unusable {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pkbt-move-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8cqw;
+  border: 0.9cqw solid #385088;
+  border-radius: 1.2cqw;
+  background: #f8f8f0;
+  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
+  padding: 1.2cqw 1.6cqw;
+  font-size: 2.6cqw;
+}
+
+.pkbt-move-meta-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1cqw;
+  min-width: 0;
+}
+
+.pkbt-move-meta-line span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pkbt-move-meta-label {
+  color: #506890;
+}
+
+/* ---------- BAG / POKéMON sheets ---------- */
+
+.pkbt-sheet {
+  position: absolute;
+  left: 2cqw;
+  right: 2cqw;
+  bottom: 2cqw;
+  z-index: 3;
+  max-height: 72%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  border: 0.9cqw solid #385088;
+  border-radius: 1.4cqw;
+  background: #f0f8f0;
+  box-shadow: inset 0 0 0 0.5cqw #a8b8e8, 0 0.6cqw 0 rgba(0, 0, 0, 0.35);
+  padding: 1.8cqw;
+}
+
+.pkbt-sheet-head {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  min-width: 0;
+}
+
+.pkbt-sheet-title {
+  font-size: 2.7cqw;
+  color: #385088;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pkbt-tab {
+  flex: none;
+  border: 0.45cqw solid #a8b8e8;
+  border-radius: 0.9cqw;
+  background: #f8f8f0;
+  color: #506890;
+  font-family: inherit;
+  font-size: 2.4cqw;
+  padding: 0.7cqw 1.4cqw;
+  cursor: pointer;
+}
+
+.pkbt-tab.active {
+  background: #48a8a0;
+  border-color: #2a7a74;
+  color: #f8f8f0;
+}
+
+.pkbt-back {
+  flex: none;
+  margin-left: auto;
+  border: 0.45cqw solid #a8b8e8;
+  border-radius: 0.8cqw;
+  background: #f8f8f0;
+  color: #385088;
+  font-family: inherit;
+  font-size: 2.2cqw;
+  padding: 0.6cqw 1.2cqw;
+  cursor: pointer;
+}
+
+.pkbt-sheet-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6cqw;
+}
+
+.pkbt-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  min-width: 0;
+  border: 0.4cqw solid transparent;
+  border-radius: 0.9cqw;
+  background: #f8f8f0;
+  padding: 1cqw 1.4cqw;
+  font-family: inherit;
+  font-size: 2.8cqw;
+  color: #303030;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pkbt-row.selected {
+  border-color: #c04040;
+  background: #fff4f0;
+}
+
+.pkbt-row.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pkbt-row-qty {
+  flex: none;
+  color: #506890;
+  font-size: 2.5cqw;
+}
+
+.pkbt-empty {
+  padding: 2.4cqw;
+  text-align: center;
+  color: #707880;
+  font-size: 2.6cqw;
+}
+
+.pkbt-party-sprite {
+  flex: 0 0 6cqw;
+  width: 6cqw;
+  height: 6cqw;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.pkbt-party-lv {
+  flex: none;
+  font-size: 2.3cqw;
+  color: #506890;
+}
+
+.pkbt-party-bar {
+  flex: 0 0 14cqw;
+  height: 1.8cqw;
+  border: 0.35cqw solid #303030;
+  border-radius: 0.9cqw;
+  background: #605848;
+  overflow: hidden;
+}
+
+.pkbt-party-hp {
+  flex: 0 0 auto;
+  min-width: 8cqw;
+  text-align: right;
+  font-size: 2.2cqw;
+}
+
+.pkbt-party-hp.fnt {
+  color: #c04040;
+}
+
+/* ---------- Battle FX: attacks ---------- */
+
+.pkbt-lunge-player {
+  animation: pkbt-lunge-player 0.45s ease-out;
+}
+
+.pkbt-lunge-enemy {
+  animation: pkbt-lunge-enemy 0.45s ease-out;
+}
+
+@keyframes pkbt-lunge-player {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(9cqw, -5cqw); }
+  60% { transform: translate(-1cqw, 0.5cqw); }
+}
+
+@keyframes pkbt-lunge-enemy {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(-9cqw, 5cqw); }
+  60% { transform: translate(1cqw, -0.5cqw); }
+}
+
+/* Defender flinch: blink + jolt, delayed until the attacker connects. */
+.pkbt-hit {
+  animation: pkbt-hit 0.5s steps(1, end) 0.28s;
+}
+
+@keyframes pkbt-hit {
+  0% { opacity: 1; transform: translate(0, 0); }
+  20% { opacity: 0.25; transform: translate(1.2cqw, 0); }
+  40% { opacity: 1; transform: translate(-1.2cqw, 0); }
+  60% { opacity: 0.25; transform: translate(0.8cqw, 0); }
+  80% { opacity: 1; transform: translate(0, 0); }
+}
+
+.pkbt-field-shake {
+  animation: pkbt-field-shake 0.4s linear;
+}
+
+@keyframes pkbt-field-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-1cqw, 0.6cqw); }
+  40% { transform: translate(1cqw, -0.6cqw); }
+  60% { transform: translate(-0.8cqw, -0.4cqw); }
+  80% { transform: translate(0.8cqw, 0.4cqw); }
+}
+
+.pkbt-faint {
+  animation: pkbt-faint 0.55s ease-in forwards;
+}
+
+@keyframes pkbt-faint {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(45%); opacity: 0; }
+}
+
+.pkbt-levelup {
+  animation: pkbt-levelup 0.9s ease-out;
+}
+
+@keyframes pkbt-levelup {
+  0%, 100% { box-shadow: inset 0 0 0 0.4cqw #a8b8e8, 0 0.5cqw 0 rgba(0, 0, 0, 0.25); }
+  35% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 3cqw 1cqw rgba(255, 214, 90, 0.95); }
+  70% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 1.6cqw 0.5cqw rgba(255, 214, 90, 0.7); }
+}
+
+/* ---------- Battle FX: the ball throw ---------- */
+
+/* Resting spot: centre of the enemy pad. The outer element flies the arc;
+   the inner .pkbt-ball-body wobbles, so the two transforms never fight. */
+.pkbt-ball {
+  position: absolute;
+  top: 24.5cqw;
+  right: 17.5cqw;
+  width: 6cqw;
+  height: 6cqw;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pkbt-ball-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #f8f8f0 0 12%, #303030 13% 19%, transparent 20%),
+    linear-gradient(180deg, #e83838 0 44%, #303030 44% 56%, #f8f8f0 56% 100%);
+  border: 0.45cqw solid #303030;
+  box-shadow: inset -0.7cqw -0.9cqw 0 rgba(0, 0, 0, 0.18), 0 0.5cqw 0.4cqw rgba(0, 0, 0, 0.25);
+  transform-origin: 50% 90%;
+}
+
+/* Stage 1: arc from the player side onto the pad, spinning… */
+.pkbt-ball-throw {
+  animation: pkbt-ball-arc 0.6s cubic-bezier(0.25, 0.7, 0.45, 1) backwards;
+}
+
+@keyframes pkbt-ball-arc {
+  0% { transform: translate(-46cqw, 26cqw) rotate(-540deg) scale(0.8); }
+  55% { transform: translate(-18cqw, -9cqw) rotate(-180deg) scale(1.05); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+/* …then wobble exactly the number of shake checks the Gen III formula passed. */
+.pkbt-ball-throw .pkbt-ball-body {
+  animation: pkbt-ball-wobble 0.7s ease-in-out 1.25s;
+  animation-iteration-count: var(--pkbt-shakes, 1);
+}
+
+@keyframes pkbt-ball-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-24deg) translateX(-0.5cqw); }
+  50% { transform: rotate(0deg); }
+  70% { transform: rotate(24deg) translateX(0.5cqw); }
+}
+
+/* Break free: the ball pops open in a flash. */
+.pkbt-ball-burst {
+  animation: pkbt-ball-gone 0.45s ease-out 0.25s forwards;
+}
+
+.pkbt-ball-flash {
+  position: absolute;
+  inset: -70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 30%, rgba(255, 255, 255, 0) 70%);
+  animation: pkbt-ball-flash 0.45s ease-out forwards;
+}
+
+@keyframes pkbt-ball-flash {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes pkbt-ball-gone {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+
+/* Caught: the ball settles with a click and sparkles. */
+.pkbt-ball-caught .pkbt-ball-body {
+  animation: pkbt-ball-settle 0.5s ease-out;
+  filter: saturate(0.85) brightness(0.96);
+}
+
+@keyframes pkbt-ball-settle {
+  0% { transform: scale(1.15); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+.pkbt-spark {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: #ffd65a;
+  font-size: 3.4cqw;
+  text-shadow: 0 0 0.8cqw rgba(255, 214, 90, 0.9);
+  opacity: 0;
+  animation: pkbt-spark 0.9s ease-out forwards;
+}
+
+.pkbt-spark-1 { animation-delay: 0.15s; --sx: -4.5cqw; --sy: -4cqw; }
+.pkbt-spark-2 { animation-delay: 0.3s; --sx: 4.5cqw; --sy: -3.5cqw; }
+.pkbt-spark-3 { animation-delay: 0.45s; --sx: -3cqw; --sy: 2.5cqw; color: #fff3bd; }
+.pkbt-spark-4 { animation-delay: 0.6s; --sx: 3.5cqw; --sy: 3cqw; color: #fff3bd; }
+
+@keyframes pkbt-spark {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--sx, 3cqw), var(--sy, -3cqw)) scale(1.15); }
+}
+
+/* Enemy absorbed into the ball: white-out shrink toward the ball's spot… */
+.pkbt-absorb {
+  animation: pkbt-absorb 0.5s ease-in 0.55s forwards;
+  transform-origin: 60% 100%;
+}
+
+@keyframes pkbt-absorb {
+  0% { transform: scale(1); filter: none; opacity: 1; }
+  45% { filter: brightness(2.4) saturate(0.2); }
+  100% { transform: scale(0.06) translateY(30%); filter: brightness(3); opacity: 0; }
+}
+
+/* …stays hidden while caught, and pops back out when it breaks free. */
+.pkbt-absorbed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pkbt-reappear {
+  animation: pkbt-reappear 0.4s ease-out 0.3s backwards;
+}
+
+@keyframes pkbt-reappear {
+  0% { transform: scale(0.1); filter: brightness(3); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: scale(1); filter: none; opacity: 1; }
+}
+
+/* ---------- Motion preferences ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pkbt-arrow {
+    animation: none;
+  }
+
+  .pkbt-hp-fill,
+  .pkbt-exp-fill {
+    transition: none;
+  }
+
+  .pkbt-lunge-player,
+  .pkbt-lunge-enemy,
+  .pkbt-hit,
+  .pkbt-field-shake,
+  .pkbt-levelup,
+  .pkbt-ball-throw,
+  .pkbt-ball-throw .pkbt-ball-body,
+  .pkbt-spark {
+    animation: none;
+  }
+
+  .pkbt-absorb {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .pkbt-reappear {
+    animation: none;
+  }
+
+  .pkbt-faint {
+    animation: none;
+    opacity: 0;
+  }
+}
