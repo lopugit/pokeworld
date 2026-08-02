@@ -4,6 +4,8 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
+const defaultColors = require('tailwindcss/colors')
+
 const tailwindConf = {
   content: [
     './index.html',
@@ -91,6 +93,11 @@ const tailwindConf = {
       }
     },
     colors: {
+      // Standard scales used by the /design world-builder studio UI.
+      slate: defaultColors.slate,
+      emerald: defaultColors.emerald,
+      amber: defaultColors.amber,
+      rose: defaultColors.rose,
       red: '#FF0000',
       green: '#B2F594',
       // grass: '#25C189',

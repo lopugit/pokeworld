@@ -39,6 +39,7 @@ const TILE_FAMILIES = [
   ["flower-", "vegetation", "Flower bed"],
   ["house-red-", "building", "Red-roof house"],
   ["mountain-", "terrain", "Mountain face"],
+  ["cave-door-", "terrain", "Cave doorway"],
   ["cave-", "terrain", "Cave mouth"],
   ["ledge-left-", "terrain", "Ledge (left cap)"],
   ["ledge-middle-", "terrain", "Ledge (middle)"],
@@ -49,6 +50,10 @@ const TILE_FAMILIES = [
   ["sand-", "ground", "Sand"],
   ["route-sign-", "prop", "Route sign"],
   ["field-item-", "prop", "Field item"],
+  ["rocky-bumps-", "terrain", "Rocky scree"],
+  ["rocky-", "ground", "Rocky ground"],
+  ["boulder-mossy-", "terrain", "Mossy boulder"],
+  ["sign-rocky-", "prop", "Rocky-ground sign"],
 ];
 
 const AUTOTILE_POSITIONS = {
@@ -144,24 +149,32 @@ const CHARACTER_SRC = path.join(appDir, "map-assets", "tilesets", "emerald-chara
 fs.copyFileSync(EXTERIOR_SRC, path.join(sheetsDir, "emerald-exterior.png"));
 fs.copyFileSync(CHARACTER_SRC, path.join(sheetsDir, "emerald-character-male.png"));
 
+const sheetSize = (file) => {
+  const { width, height } = readPng(file);
+  return { w: width, h: height };
+};
+
 const sheets = [
   {
     id: "ex",
     name: "Pokémon Emerald — exterior tileset",
     src: "/design/sheets/emerald-exterior.png",
     cell: 16,
+    ...sheetSize(EXTERIOR_SRC),
   },
   {
     id: "in",
     name: "Pokémon Emerald — room interiors",
     src: "/tiles/roomInteriors.png",
     cell: 16,
+    ...sheetSize(path.join(tilesDir, "roomInteriors.png")),
   },
   {
     id: "char",
     name: "Pokémon Emerald — character sheet (male)",
     src: "/design/sheets/emerald-character-male.png",
     cell: 0,
+    ...sheetSize(CHARACTER_SRC),
   },
 ];
 

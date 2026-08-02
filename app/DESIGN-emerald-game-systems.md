@@ -186,6 +186,51 @@ Z/Space = A (interact), Enter = START, X/Esc = B.
    caves, signed routes, path width ≤ 3, and squared semantic edges.
 6. ✅ Badge progress, PC withdraw/deposit, and item use (including POTION).
 
+## /design — world-builder studio (asset DB, example blocks, remixes)
+
+`/design` is a standalone studio page (React route + Nitro API, no game
+dependencies) with three tabs:
+
+- **Asset database** — searchable index of every shipped asset: the 98 curated
+  `/tiles/*.png`, player/Pokémon sprites, plus the full Emerald exterior
+  tileset and roomInteriors sheets sliced into deduped 16×16 cells, and
+  animation reels (character sheet frames auto-detected by alpha islands;
+  water/flower tile flips). Regenerate the manifest with
+  `node scripts/design/build-asset-manifest.mjs` →
+  `public/design/asset-manifest.json` (committed, deterministic — no
+  timestamps). Sheets are served from `public/design/sheets/`.
+- **Design browser** — 500 deterministic example dioramas from
+  `src/lib/design/` (34 theme families × seeded variants). Blocks are 16×16
+  screen-order grids that reuse the live map's tile conventions (autotile
+  indexes 1–9, pond corners 20–23/24/25, `house-red-1..12` 3×4 footprints,
+  ledge caps, invisible `hidden-item` features). A design is fully described
+  by `{family, seed}` — the client regenerates tiles on demand and renders
+  them to canvas.
+- **Tile legality rules** (enforced by `tests/design-legality.test.ts` over
+  all 500 designs): every decoration may only stand on the ground family its
+  art was drawn on — grass props (trees, shrubs, flowers, long grass, houses,
+  route signs) on `grass`; the rocky-biome vocabulary (`mountain-*` domes,
+  `cave-door-1`, `ledge-*`, `rock-1`, `boulder-mossy-1`, `rocky-bumps-1`,
+  `sign-rocky-1`) only on full-bleed `rocky-1` ground. Water follows the live
+  generator's `smoothWater` invariants (2×2 squares, ≤1 land diagonal when
+  surrounded, no kissing corners), mirrored in `paint.ts`. `cave-1..4` is
+  never composed free-standing (its crop carries foreign background); domes
+  embed `cave-door-1` in the `mountain-8` slot instead. The rocky vocabulary
+  is harvested from the Emerald exterior sheet by
+  `scripts/design/build-design-tiles.mjs`.
+- **Community** — designs saved by trainers via `POST /api/designs`
+  (Thingtime session + same-origin required; the server re-derives
+  name/tags/biome from the recipe so searchable fields can't be spoofed).
+  `GET /api/designs?q=&biome=&tag=&author=&page=` is public search;
+  `GET/DELETE /api/designs/:id` fetch/delete (owner or admin). Storage:
+  Mongo collection `designs`, with a JSON-file fallback (`app/.data/`,
+  gitignored) when Mongo is not configured (offline dev).
+
+Remixing = regenerate the same family with a fresh seed (Minecraft-style
+structure variation). Because recipes are deterministic, saved designs are a
+few bytes and rebuild identically anywhere — including, in a future
+iteration, insertion into the live world as preset structures.
+
 ## Detail-density accounting (toward 500–1000)
 
 Seeded decorations already emit per block (16×16): trees, shrubs, rocks,

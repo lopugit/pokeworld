@@ -157,7 +157,20 @@ case, and Box 1 PC deposit/withdraw flow, with trainer progress persisted indepe
 - `POST /api/auth/logout`
 - `GET /api/admin/generation-quota` (administrator only)
 - `POST /api/admin/generation-quota` (administrator-only daily reset)
+- `GET /api/designs?q=&biome=&tag=&author=&page=&limit=` (public search of saved designs)
+- `POST /api/designs` (save a `{family, seed}` design recipe; Thingtime session required)
+- `GET /api/designs/:id`
+- `DELETE /api/designs/:id` (author or administrator)
 - Legacy-compatible aliases: `/v1/blockLatLng` and `/v1/blocks`
+
+### /design world-builder studio
+
+`/design` hosts the asset database (every tile, sprite, sheet cell and
+animation, searchable), the 500-example design browser, and the community
+gallery of saved remixes. See “/design — world-builder studio” in
+`DESIGN-emerald-game-systems.md` for the full contract, and regenerate the
+asset manifest with `node scripts/design/build-asset-manifest.mjs` after
+adding art.
 
 ## Verification and deployment
 

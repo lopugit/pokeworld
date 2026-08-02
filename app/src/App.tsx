@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { AuthProvider } from "./auth/AuthProvider";
 import { AdminPage } from "./pages/AdminPage";
+import { DesignPage } from "./pages/DesignPage";
 import { HomePage } from "./pages/HomePage";
 import { GamePage } from "./pages/GamePage";
 
@@ -27,6 +28,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/design" element={<DesignPage />} />
           <Route path="/game" element={<GamePage />} />
         </Routes>
       </AuthProvider>

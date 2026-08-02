@@ -12,6 +12,9 @@
 /.env.*
 !/.env.example
 
+# Offline dev fallback store for saved /design blocks
+/.data/
+
 # Generated coordinate indexes (hundreds of MB; optional local accelerator)
 /map-assets/lats.json
 /map-assets/latsMap.json

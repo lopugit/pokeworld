@@ -4,6 +4,11 @@
 // wild Pokémon. All randomness flows through the seeded RNG, so a
 // {family, seed} pair regenerates the identical design anywhere — remixing is
 // just a new seed.
+//
+// Scenes follow the tile legality rules documented in paint.ts: grass-backed
+// props stay on grass, the rocky-biome vocabulary (domes, cave doors, ledges,
+// boulders, scree, rocky signs) lives only in full-bleed rocky scenes, and
+// water obeys the live generator's shoreline smoothing.
 
 import {
   NPC_ANGLERS,
@@ -14,24 +19,21 @@ import {
   npcEntity,
   pokemonEntity,
 } from "./entities";
-import type { GroundMap } from "./paint";
+import type { Ground, GroundMap } from "./paint";
 import {
-  bakeGround,
   findClearSpot,
   hedgeLine,
   isClear,
   longGrassPatch,
-  newGrid,
-  newGround,
   paintBlob,
   paintPath,
   paintRect,
-  placeCave,
   placeDecor,
+  placeDome,
   placeHiddenItem,
   placeHouse,
   placeLedgeRow,
-  placeMountain,
+  placeRockySign,
   placeSign,
   scatter,
   treeBorder,
@@ -52,6 +54,8 @@ export interface DesignFamily {
   label: string;
   biome: BiomeId;
   tags: string[];
+  /** Ground that replaces illegal water during shoreline smoothing. */
+  waterFallback?: Ground;
   names: { adjectives: string[]; nouns: string[] };
   blurbs: string[];
   paintGround(ctx: SceneContext): void;
@@ -64,14 +68,31 @@ const FLOWERS = ["flower-1", "flower-2", "flower-3"] as const;
 // generator's decoration rules), so scenes pick one flower and stick to it.
 const flowerOf = (rng: Rng) => [rng.pick(FLOWERS)] as const;
 
+const fillGround = (ctx: SceneContext, kind: Ground) => {
+  for (let row = 0; row < DESIGN_GRID; row += 1) {
+    for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = kind;
+  }
+};
+
 const scatterTrees = (ctx: SceneContext, density: number) =>
   scatter(ctx.grid, ctx.ground, ctx.rng, [treePick(ctx.rng), treePick(ctx.rng), "tree-1"], density, {
     solid: true,
     feature: "tree",
   });
 
-const rocks = (ctx: SceneContext, density: number, on: ("grass" | "sand" | "dirt")[] = ["grass"]) =>
-  scatter(ctx.grid, ctx.ground, ctx.rng, ["rock-1"], density, { on, solid: true, feature: "rock" });
+// Rocky-biome texture: walkable scree bumps plus solid boulders.
+const scree = (ctx: SceneContext, density: number) =>
+  scatter(ctx.grid, ctx.ground, ctx.rng, ["rocky-bumps-1"], density, {
+    on: ["rocky"],
+    feature: "scree",
+  });
+
+const boulders = (ctx: SceneContext, density: number) =>
+  scatter(ctx.grid, ctx.ground, ctx.rng, ["rock-1", "boulder-mossy-1"], density, {
+    on: ["rocky"],
+    solid: true,
+    feature: "rock",
+  });
 
 const addNpc = (ctx: SceneContext, pool = NPC_VILLAGERS, margin = 2) => {
   const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { margin });
@@ -84,13 +105,28 @@ const addPokemon = (ctx: SceneContext, pool = POKEMON, margin = 2) => {
 };
 
 const signSomewhere = (ctx: SceneContext) => {
-  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { margin: 2 });
-  if (spot) placeSign(ctx.grid, spot.col, spot.row);
+  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass"], margin: 2 });
+  if (spot) placeSign(ctx.grid, ctx.ground, spot.col, spot.row);
+};
+
+const rockySignSomewhere = (ctx: SceneContext) => {
+  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["rocky"], margin: 2 });
+  if (spot) placeRockySign(ctx.grid, ctx.ground, spot.col, spot.row);
 };
 
 const hiddenSomewhere = (ctx: SceneContext) => {
-  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass"], margin: 1 });
-  if (spot) placeHiddenItem(ctx.grid, spot.col, spot.row);
+  const spot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, {
+    allowGround: ["grass", "rocky"],
+    margin: 1,
+  });
+  if (spot) placeHiddenItem(ctx.grid, ctx.ground, spot.col, spot.row);
+};
+
+const domeSomewhere = (ctx: SceneContext, spots: ReadonlyArray<readonly [number, number]>) => {
+  for (const [col, row] of spots) {
+    if (placeDome(ctx.grid, ctx.ground, col, row)) return true;
+  }
+  return false;
 };
 
 export const DESIGN_FAMILIES: DesignFamily[] = [
@@ -154,8 +190,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     decorate(ctx) {
       placeHouse(ctx.grid, ctx.ground, 1, 1);
       if (ctx.rng.chance(0.6)) placeHouse(ctx.grid, ctx.ground, 6, 1);
-      rocks(ctx, 0.05);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.06);
+      scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.05, { solid: true, feature: "hedge" });
       signSomewhere(ctx);
       addNpc(ctx, NPC_ANGLERS);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[2], POKEMON[4]]);
@@ -176,15 +212,14 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "Harvest festival happens whenever the {n}th row ripens.",
     ],
     paintGround(ctx) {
-      paintRect(ctx.ground, "dirt", 1, ctx.rng.range(8, 10), 14, 6);
       paintPath(ctx.ground, "path", 7, 1, 7, 14, 1, ctx.rng);
     },
     decorate(ctx) {
       placeHouse(ctx.grid, ctx.ground, ctx.rng.chance(0.5) ? 1 : 11, 1);
       const rowStep = ctx.rng.pick([2, 3]);
-      for (let row = 9; row <= 14; row += rowStep) {
+      for (let row = 8; row <= 14; row += rowStep) {
         for (let col = 1; col <= 14; col += 2) {
-          if (isClear(ctx.grid, ctx.ground, col, row) && ctx.ground[row][col] === "dirt") {
+          if (isClear(ctx.grid, ctx.ground, col, row) && ctx.ground[row][col] === "grass") {
             placeDecor(ctx.grid, col, row, "shrub-1", { solid: true, feature: "berry-bush" });
           }
         }
@@ -273,8 +308,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       placeHouse(ctx.grid, ctx.ground, 6, 1);
       const flower = flowerOf(ctx.rng);
       for (let col = 2; col <= 13; col += 1) {
-        if (isClear(ctx.grid, ctx.ground, col, 11)) placeDecor(ctx.grid, col, 11, flower[0]);
-        if (isClear(ctx.grid, ctx.ground, col, 13)) placeDecor(ctx.grid, col, 13, flower[0]);
+        if (isClear(ctx.grid, ctx.ground, col, 11) && ctx.ground[11][col] === "grass") placeDecor(ctx.grid, col, 11, flower[0]);
+        if (isClear(ctx.grid, ctx.ground, col, 13) && ctx.ground[13][col] === "grass") placeDecor(ctx.grid, col, 13, flower[0]);
       }
       hedgeLine(ctx.grid, ctx.ground, 1, 5, 1, 14);
       hedgeLine(ctx.grid, ctx.ground, 14, 5, 14, 14);
@@ -304,8 +339,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     decorate(ctx) {
       if (ctx.rng.chance(0.7)) placeHouse(ctx.grid, ctx.ground, 1, 1);
       if (ctx.rng.chance(0.7)) placeHouse(ctx.grid, ctx.ground, 11, 10);
-      placeSign(ctx.grid, 5, 5);
-      placeSign(ctx.grid, 10, 10);
+      placeSign(ctx.grid, ctx.ground, 5, 5);
+      placeSign(ctx.grid, ctx.ground, 10, 10);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.05);
       addNpc(ctx);
       addNpc(ctx, NPC_RUNNERS);
@@ -334,7 +369,6 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       placeHouse(ctx.grid, ctx.ground, 2, 3);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.1);
       hedgeLine(ctx.grid, ctx.ground, 0, 10, 8, 10, { gapAt: 3 });
-      rocks(ctx, 0.03);
       addNpc(ctx);
       if (ctx.rng.chance(0.5)) addPokemon(ctx, [POKEMON[3]]);
     },
@@ -365,7 +399,6 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       scatter(ctx.grid, ctx.ground, ctx.rng, flower, 0.22);
       hedgeLine(ctx.grid, ctx.ground, 0, 0, 15, 0);
       hedgeLine(ctx.grid, ctx.ground, 0, 15, 15, 15, { gapAt: ctx.rng.range(6, 9) });
-      rocks(ctx, 0.03);
       addNpc(ctx);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[3], POKEMON[1]]);
     },
@@ -403,7 +436,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
           if (!(gapSide === 3 && row === gapAt)) hedgeLine(ctx.grid, ctx.ground, max, row, max, row);
         }
       }
-      placeHiddenItem(ctx.grid, 8, 8);
+      placeHiddenItem(ctx.grid, ctx.ground, 8, 8);
       if (ctx.rng.chance(0.5)) addPokemon(ctx, [POKEMON[5]], 7);
     },
   },
@@ -472,7 +505,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     blurbs: [
       "The grass is tall, the Pokémon are taller. Bring Poké Balls.",
       "Rangers count {n} rustles per minute here on a calm day.",
-      "A {pokemon} runs an unofficial toll booth at the second ledge.",
+      "A {pokemon} runs an unofficial toll booth at the trailhead.",
     ],
     paintGround(ctx) {
       paintPath(ctx.ground, "path", 0, 12, 15, 12, 1, ctx.rng);
@@ -481,7 +514,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 4, 4, 4);
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 11, 6, 4);
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 6, 9, 3);
-      placeLedgeRow(ctx.grid, ctx.ground, 13, 2, ctx.rng.range(8, 13));
+      scatterTrees(ctx, 0.04);
       signSomewhere(ctx);
       addPokemon(ctx);
       addPokemon(ctx);
@@ -506,7 +539,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       paintPath(ctx.ground, "path", 1, 14, ctx.rng.range(6, 9), ctx.rng.range(6, 9), 1, ctx.rng);
     },
     decorate(ctx) {
-      rocks(ctx, 0.05);
+      scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.05, { solid: true, feature: "hedge" });
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.12);
       scatterTrees(ctx, 0.06);
       addNpc(ctx);
@@ -548,10 +581,10 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     tags: ["shrine", "ancient", "forest-wall", "mystic"],
     names: {
       adjectives: ["Mossgrown", "Ancient", "Elder", "Silent", "Rooted", "Hallowed", "Old-growth", "Sacred"],
-      nouns: ["Shrine", "Altar", "Sanctum", "Stones", "Circle", "Rest", "Heart", "Seat"],
+      nouns: ["Shrine", "Altar", "Sanctum", "Ring", "Circle", "Rest", "Heart", "Seat"],
     },
     blurbs: [
-      "The stones were arranged before the trees arrived. The trees grew around them respectfully.",
+      "The ring was planted before the forest arrived. The forest grew around it respectfully.",
       "Offerings left overnight are gone by morning. Tooth marks suggest gratitude.",
       "A {pokemon} tends this place, or possibly haunts it. Reviews vary.",
     ],
@@ -560,14 +593,14 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 3, gapChance: 0.05 });
-      // ring of stones around the shrine heart
+      // sacred ring of clipped hedges around the shrine heart
       const ring = [[6, 6], [8, 5], [10, 6], [11, 8], [10, 10], [6, 10], [5, 8]] as const;
       for (const [col, row] of ring) {
-        if (isClear(ctx.grid, ctx.ground, col, row)) {
-          placeDecor(ctx.grid, col, row, "rock-1", { solid: true, feature: "shrine-stone" });
+        if (isClear(ctx.grid, ctx.ground, col, row) && ctx.ground[row][col] === "grass") {
+          placeDecor(ctx.grid, col, row, "shrub-1", { solid: true, feature: "shrine-hedge" });
         }
       }
-      placeHiddenItem(ctx.grid, 8, 8);
+      placeHiddenItem(ctx.grid, ctx.ground, 8, 8);
       if (ctx.rng.chance(0.8)) addPokemon(ctx, [POKEMON[3], POKEMON[0]], 5);
       if (ctx.rng.chance(0.4)) addNpc(ctx, NPC_MYSTERIOUS, 4);
     },
@@ -620,13 +653,15 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A {pokemon} supervises all axe work from a safe branch.",
     ],
     paintGround(ctx) {
-      paintBlob(ctx.ground, "dirt", ctx.rng.range(6, 9), ctx.rng.range(6, 9), 4, ctx.rng);
-      paintPath(ctx.ground, "dirt", 8, 15, 8, 8, 1, ctx.rng);
+      paintBlob(ctx.ground, "dirt", ctx.rng.range(7, 8), ctx.rng.range(9, 10), 3, ctx.rng);
+      paintPath(ctx.ground, "dirt", 8, 15, 8, 10, 1, ctx.rng);
     },
     decorate(ctx) {
       treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 2, gapChance: 0.12 });
-      placeHouse(ctx.grid, ctx.ground, ctx.rng.pick([3, 9]), 3);
-      rocks(ctx, 0.04, ["dirt", "grass"]);
+      for (const [col, row] of [[3, 2], [9, 2], [6, 2]] as const) {
+        if (placeHouse(ctx.grid, ctx.ground, col, row)) break;
+      }
+      scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.06, { solid: true, feature: "hedge" });
       addNpc(ctx);
       if (ctx.rng.chance(0.5)) addPokemon(ctx, [POKEMON[0], POKEMON[5]]);
     },
@@ -653,13 +688,12 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 2, gapChance: 0.3 });
       scatterTrees(ctx, 0.12);
       signSomewhere(ctx);
-      placeLedgeRow(ctx.grid, ctx.ground, ctx.rng.pick([4, 11]), 1, 6);
       addNpc(ctx, NPC_RUNNERS);
       hiddenSomewhere(ctx);
     },
   },
 
-  // --- mountain ------------------------------------------------------------
+  // --- mountain (full-bleed rocky biome) -----------------------------------
   {
     id: "legendary-cave",
     label: "Legendary cave",
@@ -675,22 +709,18 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "Legends say a {pokemon} guards the mouth. Legends undersell it.",
     ],
     paintGround(ctx) {
-      paintBlob(ctx.ground, "dirt", 8, 4, 5, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      placeMountain(ctx.grid, ctx.ground, 3, 1);
-      placeMountain(ctx.grid, ctx.ground, 10, 1);
-      placeMountain(ctx.grid, ctx.ground, 6, 0);
-      placeCave(ctx.grid, ctx.ground, 7, 4);
-      const pillars = [[4, 8], [11, 8], [3, 11], [12, 11], [6, 13], [9, 13]] as const;
-      for (const [col, row] of pillars) {
-        if (ctx.rng.chance(0.8) && isClear(ctx.grid, ctx.ground, col, row)) {
-          placeDecor(ctx.grid, col, row, "rock-1", { solid: true, feature: "shrine-stone" });
-        }
-      }
-      placeLedgeRow(ctx.grid, ctx.ground, 10, 5, 10);
-      placeHiddenItem(ctx.grid, 8, 12);
-      addPokemon(ctx, [POKEMON[3], POKEMON[0], POKEMON[2]], 5);
+      domeSomewhere(ctx, [[ctx.rng.pick([5, 6, 7]), 1]]);
+      if (ctx.rng.chance(0.7)) domeSomewhere(ctx, [[1, 2], [2, 1]]);
+      if (ctx.rng.chance(0.7)) domeSomewhere(ctx, [[12, 2], [11, 1]]);
+      placeLedgeRow(ctx.grid, ctx.ground, 9, ctx.rng.range(3, 5), ctx.rng.range(10, 12));
+      boulders(ctx, 0.07);
+      scree(ctx, 0.1);
+      rockySignSomewhere(ctx);
+      hiddenSomewhere(ctx);
+      addPokemon(ctx, [POKEMON[3], POKEMON[0], POKEMON[2]], 4);
       if (ctx.rng.chance(0.4)) addNpc(ctx, NPC_MYSTERIOUS, 4);
     },
   },
@@ -709,23 +739,26 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "The password changes daily. It is always the boss's {pokemon}'s name.",
     ],
     paintGround(ctx) {
-      paintBlob(ctx.ground, "dirt", ctx.rng.range(7, 9), ctx.rng.range(6, 8), 6, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 1, gapChance: 0.15 });
-      placeMountain(ctx.grid, ctx.ground, 2, 2);
-      placeMountain(ctx.grid, ctx.ground, 11, 2);
-      placeCave(ctx.grid, ctx.ground, ctx.rng.pick([6, 7]), 3);
-      // rock "barricades" funnel visitors through one gap
-      const barrier = ctx.rng.range(8, 10);
+      domeSomewhere(ctx, [[ctx.rng.pick([6, 7]), 1]]);
+      // boulder barricade funnels visitors through one gap
+      const barrier = ctx.rng.range(7, 9);
+      const gap = ctx.rng.range(4, 11);
       for (let col = 1; col <= 14; col += 1) {
-        if (col === ctx.rng.range(4, 11)) continue;
-        if (ctx.rng.chance(0.55) && isClear(ctx.grid, ctx.ground, col, barrier)) {
-          placeDecor(ctx.grid, col, barrier, "rock-1", { solid: true, feature: "barricade" });
+        if (Math.abs(col - gap) <= 0) continue;
+        if (ctx.rng.chance(0.6) && isClear(ctx.grid, ctx.ground, col, barrier)) {
+          placeDecor(ctx.grid, col, barrier, ctx.rng.pick(["rock-1", "boulder-mossy-1"]), {
+            solid: true,
+            feature: "barricade",
+          });
         }
       }
-      placeSign(ctx.grid, ctx.rng.range(3, 12), barrier + 2);
-      placeHiddenItem(ctx.grid, ctx.rng.range(2, 13), ctx.rng.range(12, 14));
+      scree(ctx, 0.08);
+      placeRockySign(ctx.grid, ctx.ground, ctx.rng.range(3, 12), barrier + 2);
+      hiddenSomewhere(ctx);
+      hiddenSomewhere(ctx);
       addNpc(ctx, NPC_MYSTERIOUS, 3);
       addNpc(ctx, NPC_MYSTERIOUS, 3);
       if (ctx.rng.chance(0.5)) addPokemon(ctx, [POKEMON[5]]);
@@ -746,16 +779,15 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A {pokemon} has claimed the best viewpoint and takes bribes in berries.",
     ],
     paintGround(ctx) {
-      paintPath(ctx.ground, "dirt", ctx.rng.range(2, 5), 15, ctx.rng.range(10, 13), 0, 2, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      placeMountain(ctx.grid, ctx.ground, 0, 0);
-      placeMountain(ctx.grid, ctx.ground, 12, 4);
       placeLedgeRow(ctx.grid, ctx.ground, 4, 1, ctx.rng.range(9, 14));
       placeLedgeRow(ctx.grid, ctx.ground, 8, ctx.rng.range(2, 6), 14);
       placeLedgeRow(ctx.grid, ctx.ground, 12, 1, ctx.rng.range(9, 14));
-      rocks(ctx, 0.08, ["grass", "dirt"]);
-      signSomewhere(ctx);
+      boulders(ctx, 0.06);
+      scree(ctx, 0.12);
+      rockySignSomewhere(ctx);
       addNpc(ctx);
       hiddenSomewhere(ctx);
     },
@@ -781,8 +813,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       paintPath(ctx.ground, "path", 1, 2, 13, 2, 1, ctx.rng);
     },
     decorate(ctx) {
-      placeMountain(ctx.grid, ctx.ground, ctx.rng.pick([0, 12]), 12);
-      rocks(ctx, 0.09);
+      scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.08, { solid: true, feature: "hedge" });
+      scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.08);
       addNpc(ctx);
       addNpc(ctx);
       if (ctx.rng.chance(0.7)) addPokemon(ctx, [POKEMON[2], POKEMON[1]]);
@@ -803,13 +835,13 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A {pokemon} keeps stealing the shiniest ore. Morale is complicated.",
     ],
     paintGround(ctx) {
-      paintBlob(ctx.ground, "dirt", 8, 8, 7, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      placeMountain(ctx.grid, ctx.ground, 1, 1);
-      placeCave(ctx.grid, ctx.ground, ctx.rng.range(9, 12), 2);
-      rocks(ctx, 0.18, ["dirt", "grass"]);
-      signSomewhere(ctx);
+      domeSomewhere(ctx, [[ctx.rng.range(9, 12), 2], [2, 2]]);
+      boulders(ctx, 0.12);
+      scree(ctx, 0.16);
+      rockySignSomewhere(ctx);
       addNpc(ctx);
       hiddenSomewhere(ctx);
       hiddenSomewhere(ctx);
@@ -830,16 +862,16 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A stationed {pokemon} rates every sunrise. Today: 9/10.",
     ],
     paintGround(ctx) {
-      paintPath(ctx.ground, "dirt", 8, 15, 8, 3, 1, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      placeMountain(ctx.grid, ctx.ground, 1, 8);
-      placeMountain(ctx.grid, ctx.ground, 12, 8);
+      domeSomewhere(ctx, [[ctx.rng.pick([1, 2]), 10], [12, 10]]);
       placeLedgeRow(ctx.grid, ctx.ground, 6, 1, 6);
       placeLedgeRow(ctx.grid, ctx.ground, 6, 10, 14);
       placeLedgeRow(ctx.grid, ctx.ground, 11, 2, 13);
-      placeSign(ctx.grid, ctx.rng.pick([7, 9]), 2);
-      rocks(ctx, 0.06);
+      placeRockySign(ctx.grid, ctx.ground, ctx.rng.pick([7, 9]), 2);
+      boulders(ctx, 0.05);
+      scree(ctx, 0.08);
       addNpc(ctx);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[4]]);
     },
@@ -865,8 +897,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       paintPath(ctx.ground, "path", 1, 14, 4, 10, 1, ctx.rng);
     },
     decorate(ctx) {
-      rocks(ctx, 0.05);
       scatterTrees(ctx, 0.05);
+      scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.04, { solid: true, feature: "hedge" });
       signSomewhere(ctx);
       addNpc(ctx, NPC_ANGLERS);
       addNpc(ctx, NPC_ANGLERS);
@@ -897,7 +929,6 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       scatterTrees(ctx, 0.07);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.06);
       signSomewhere(ctx);
-      placeLedgeRow(ctx.grid, ctx.ground, 12, 1, 4);
       addNpc(ctx, NPC_RUNNERS);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[2], POKEMON[4]]);
     },
@@ -907,6 +938,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     label: "Tiny island",
     biome: "waterside",
     tags: ["island", "isolated", "secret", "water"],
+    waterFallback: "sand",
     names: {
       adjectives: ["Lonely", "One-Tree", "Castaway", "Pocket", "Faraway", "Bottlecap", "Sandollar", "Forgotten"],
       nouns: ["Island", "Isle", "Atoll", "Speck", "Outcrop", "Key", "Sandbar", "Islet"],
@@ -917,16 +949,14 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A message in a bottle washed up here asking for {n} more bottles.",
     ],
     paintGround(ctx) {
-      for (let row = 0; row < DESIGN_GRID; row += 1) {
-        for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = "water";
-      }
+      fillGround(ctx, "water");
       paintBlob(ctx.ground, "sand", 8, 8, ctx.rng.range(3, 4), ctx.rng);
-      paintBlob(ctx.ground, "grass", 8, 7, 2, ctx.rng);
+      paintBlob(ctx.ground, "grass", 8, 7, 2.5, ctx.rng);
     },
     decorate(ctx) {
-      const treeSpot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass", "sand"], margin: 5 });
+      const treeSpot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass"], margin: 4 });
       if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, treePick(ctx.rng), { solid: true, feature: "tree" });
-      rocks(ctx, 0.06, ["sand"]);
+      scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.1);
       hiddenSomewhere(ctx);
       if (ctx.rng.chance(0.8)) addPokemon(ctx, [POKEMON[4], POKEMON[2]], 5);
     },
@@ -954,7 +984,6 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     decorate(ctx) {
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.16);
       hedgeLine(ctx.grid, ctx.ground, 0, 0, 15, 0, { gapAt: ctx.rng.range(5, 10) });
-      rocks(ctx, 0.04);
       addNpc(ctx);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[2], POKEMON[3]]);
     },
@@ -964,6 +993,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     label: "Wailord watch",
     biome: "waterside",
     tags: ["coast", "watching", "sand", "wild"],
+    waterFallback: "sand",
     names: {
       adjectives: ["Spyglass", "Horizon", "Bluewater", "Openreach", "Longwave", "Saltspray", "Tidechart", "Whalesong"],
       nouns: ["Watch", "Point", "Bluff", "Overlook", "Shore", "Vigil", "Lookout", "Head"],
@@ -980,8 +1010,8 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       paintRect(ctx.ground, "sand", 0, 7, DESIGN_GRID, 3);
     },
     decorate(ctx) {
-      rocks(ctx, 0.08, ["sand"]);
       scatterTrees(ctx, 0.05);
+      scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.05);
       signSomewhere(ctx);
       addNpc(ctx);
       addPokemon(ctx, [POKEMON[4]]);
@@ -989,12 +1019,12 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     },
   },
 
-  // --- desert --------------------------------------------------------------
+  // --- desert & badlands ---------------------------------------------------
   {
     id: "desert-ruin",
     label: "Desert ruin",
     biome: "desert",
-    tags: ["ruins", "ancient", "sand", "mystery"],
+    tags: ["ruins", "ancient", "badlands", "mystery"],
     names: {
       adjectives: ["Sunblasted", "Half-buried", "Crumbled", "Regi", "Glyphic", "Weathered", "Toppled", "Silent"],
       nouns: ["Ruin", "Temple", "Colonnade", "Foundation", "Monument", "Rubble", "Chambers", "Walls"],
@@ -1005,23 +1035,25 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A napping {pokemon} is the only thing holding one pillar up.",
     ],
     paintGround(ctx) {
-      for (let row = 0; row < DESIGN_GRID; row += 1) {
-        for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = "sand";
-      }
-      paintBlob(ctx.ground, "dirt", 8, 8, 4, ctx.rng);
+      fillGround(ctx, "rocky");
     },
     decorate(ctx) {
       // toppled colonnade rows
-      for (const row of [5, 8, 11]) {
-        for (let col = 4; col <= 11; col += ctx.rng.pick([2, 3])) {
+      for (const row of [4, 7, 10]) {
+        for (let col = 3; col <= 12; col += ctx.rng.pick([2, 3])) {
           if (ctx.rng.chance(0.7) && isClear(ctx.grid, ctx.ground, col, row)) {
-            placeDecor(ctx.grid, col, row, "rock-1", { solid: true, feature: "ruin-pillar" });
+            placeDecor(ctx.grid, col, row, ctx.rng.pick(["rock-1", "boulder-mossy-1"]), {
+              solid: true,
+              feature: "ruin-pillar",
+            });
           }
         }
       }
-      placeCave(ctx.grid, ctx.ground, ctx.rng.range(6, 9), 1);
-      placeSign(ctx.grid, ctx.rng.range(3, 12), 13);
-      placeHiddenItem(ctx.grid, ctx.rng.range(5, 10), ctx.rng.range(7, 10));
+      domeSomewhere(ctx, [[ctx.rng.range(6, 9), 1]]);
+      scree(ctx, 0.08);
+      placeRockySign(ctx.grid, ctx.ground, ctx.rng.range(3, 12), 13);
+      hiddenSomewhere(ctx);
+      hiddenSomewhere(ctx);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[3], POKEMON[5]]);
       if (ctx.rng.chance(0.5)) addNpc(ctx, NPC_MYSTERIOUS);
     },
@@ -1041,16 +1073,13 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "A {pokemon} rents out the best shade spot for {n} berries an hour.",
     ],
     paintGround(ctx) {
-      for (let row = 0; row < DESIGN_GRID; row += 1) {
-        for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = "sand";
-      }
+      fillGround(ctx, "sand");
       paintBlob(ctx.ground, "grass", 8, 8, 4, ctx.rng);
       paintBlob(ctx.ground, "water", 8, 8, 2, ctx.rng);
     },
     decorate(ctx) {
       scatter(ctx.grid, ctx.ground, ctx.rng, ["tree-1"], 0.22, { solid: true, feature: "palm" });
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.08);
-      rocks(ctx, 0.04, ["sand"]);
       addNpc(ctx);
       if (ctx.rng.chance(0.7)) addPokemon(ctx);
       hiddenSomewhere(ctx);
@@ -1071,15 +1100,12 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       "Travellers report {n} mirages daily; one of them waves back.",
     ],
     paintGround(ctx) {
-      for (let row = 0; row < DESIGN_GRID; row += 1) {
-        for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = "sand";
-      }
+      fillGround(ctx, "sand");
       // mirage pockets of impossible green
       paintBlob(ctx.ground, "grass", ctx.rng.range(3, 5), ctx.rng.range(3, 5), 2, ctx.rng);
       paintBlob(ctx.ground, "grass", ctx.rng.range(10, 12), ctx.rng.range(9, 12), 2, ctx.rng);
     },
     decorate(ctx) {
-      rocks(ctx, 0.05, ["sand"]);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.2);
       hiddenSomewhere(ctx);
       hiddenSomewhere(ctx);
@@ -1091,7 +1117,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     id: "scorched-trail",
     label: "Scorched trail",
     biome: "desert",
-    tags: ["trail", "harsh", "ledges", "endurance"],
+    tags: ["trail", "harsh", "dunes", "endurance"],
     names: {
       adjectives: ["Blistering", "Sunbaked", "Cracked", "Shadeless", "Longmile", "Dustchoked", "Simmering", "Parched"],
       nouns: ["Trail", "Track", "Slog", "March", "Stretch", "Crossing", "Route", "Miles"],
@@ -1099,21 +1125,20 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     blurbs: [
       "The sign at the start just says 'bring water' in four languages.",
       "Shade occurs twice daily and is heavily attended.",
-      "A {pokemon} sells route tips at the second ledge. All tips: 'water'.",
+      "A {pokemon} sells route tips at the halfway marker. All tips: 'water'.",
     ],
     paintGround(ctx) {
-      for (let row = 0; row < DESIGN_GRID; row += 1) {
-        for (let col = 0; col < DESIGN_GRID; col += 1) ctx.ground[row][col] = "sand";
-      }
-      paintPath(ctx.ground, "dirt", 0, ctx.rng.range(3, 6), 15, ctx.rng.range(9, 12), 2, ctx.rng);
+      fillGround(ctx, "sand");
+      // a hardy green verge marks the safe trail through the dunes
+      paintPath(ctx.ground, "grass", 0, ctx.rng.range(3, 6), 15, ctx.rng.range(9, 12), 2, ctx.rng);
+      paintBlob(ctx.ground, "grass", ctx.rng.range(11, 13), ctx.rng.range(11, 13), 2, ctx.rng);
     },
     decorate(ctx) {
-      placeLedgeRow(ctx.grid, ctx.ground, ctx.rng.range(4, 6), 2, ctx.rng.range(8, 13));
-      placeLedgeRow(ctx.grid, ctx.ground, ctx.rng.range(10, 12), ctx.rng.range(2, 7), 14);
-      rocks(ctx, 0.07, ["sand", "dirt"]);
       signSomewhere(ctx);
+      scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.06);
       addNpc(ctx, NPC_RUNNERS);
       hiddenSomewhere(ctx);
+      if (ctx.rng.chance(0.5)) addPokemon(ctx, [POKEMON[1], POKEMON[5]]);
     },
   },
 ];
