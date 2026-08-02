@@ -10,6 +10,7 @@ import {
 } from "nitro/h3";
 import {
   createSessionToken,
+  devAdminPreviewSession,
   getSessionSecret,
   POKEWORLD_SESSION_COOKIE,
   POKEWORLD_SESSION_TTL_SECONDS,
@@ -80,11 +81,11 @@ export function clearPokeworldSession(event: H3Event) {
 
 export function readPokeworldSession(event: H3Event): PokeworldSessionView | null {
   const raw = getCookie(event, POKEWORLD_SESSION_COOKIE);
-  if (!raw) return null;
+  if (!raw) return devAdminPreviewSession();
   const claims = verifySessionToken(raw, getSessionSecret());
   if (!claims) {
     clearPokeworldSession(event);
-    return null;
+    return devAdminPreviewSession();
   }
   return toSessionView(claims);
 }

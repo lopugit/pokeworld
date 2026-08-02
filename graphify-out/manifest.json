@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1785674256.3527534,
-    "ast_hash": "7c23858be93fe629ab7d98432823cf04",
+    "mtime": 1785676245.4053488,
+    "ast_hash": "e86c91a7e48268c431b9985a59bb178c",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
@@ -325,9 +325,9 @@
     "semantic_hash": "a9e8e9d39aa1ed4ffc1085b8007f2435"
   },
   "app/src/components/game-ui/StartMenu.tsx": {
-    "mtime": 1785674256.3554058,
-    "ast_hash": "f0f9fb041230834e1cee50dfc2950da7",
-    "semantic_hash": "f0f9fb041230834e1cee50dfc2950da7"
+    "mtime": 1785675962.3352973,
+    "ast_hash": "1f1fa22b44e83287494ac1e39561efd8",
+    "semantic_hash": ""
   },
   "app/src/entry-client.tsx": {
     "mtime": 1785674256.3557374,
@@ -335,8 +335,8 @@
     "semantic_hash": "3e56f4a6029587b4a15a12f190ae759c"
   },
   "app/src/lib/game-rules.ts": {
-    "mtime": 1785674256.3563566,
-    "ast_hash": "f214ab1a567878e6cb5d6442346295e7",
+    "mtime": 1785675893.4754515,
+    "ast_hash": "bbef4c2e97e069e34d46fb8e8153b7ed",
     "semantic_hash": ""
   },
   "app/src/lib/game-zoom.ts": {
@@ -365,9 +365,9 @@
     "semantic_hash": ""
   },
   "app/src/pages/AdminPage.tsx": {
-    "mtime": 1785674256.3579624,
-    "ast_hash": "01e248609799c811cc06ef08f66ad46a",
-    "semantic_hash": "01e248609799c811cc06ef08f66ad46a"
+    "mtime": 1785676151.587459,
+    "ast_hash": "547d1077deac54770c7af0dfc73bc268",
+    "semantic_hash": ""
   },
   "app/src/pages/GamePage.tsx": {
     "mtime": 1785674256.3582435,
@@ -390,8 +390,8 @@
     "semantic_hash": "3d9b31921314dd80093ebcc06e2ef5bd"
   },
   "app/tests/game-rules.test.ts": {
-    "mtime": 1785674256.361191,
-    "ast_hash": "cd90f7760421c5db7f6216bd3489b3f0",
+    "mtime": 1785676134.8184416,
+    "ast_hash": "ab11f7344b0bd7e5af59bd1be77b4dc8",
     "semantic_hash": ""
   },
   "app/tests/game-zoom.test.ts": {
@@ -1315,8 +1315,8 @@
     "semantic_hash": ""
   },
   "docs/LOOP-STATE-pokemon-features.md": {
-    "mtime": 1785674683.0089114,
-    "ast_hash": "557381267a3b1b71e9dc5b48e4ff5cc7",
+    "mtime": 1785676176.163518,
+    "ast_hash": "d12a042f64920d8db100b296400724ef",
     "semantic_hash": ""
   },
   "app/public/sprites/player/boy/down-0.png": {
@@ -9140,8 +9140,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/battle.ts": {
-    "mtime": 1785675418.9423826,
-    "ast_hash": "7b54039b8bfc5baa061f14a5a1348954",
+    "mtime": 1785676780.7273538,
+    "ast_hash": "646a692d01791e6b7c63b4041f68b3af",
     "semantic_hash": ""
   },
   "app/src/lib/encounters.ts": {
@@ -9150,8 +9150,8 @@
     "semantic_hash": ""
   },
   "app/tests/battle.test.ts": {
-    "mtime": 1785675603.316776,
-    "ast_hash": "c52f0b4b77c77d2dbd8de268786777de",
+    "mtime": 1785677003.853674,
+    "ast_hash": "6c300869d183d1bdddbbcea9585a2b64",
     "semantic_hash": ""
   },
   "app/tests/encounters.test.ts": {
@@ -9172,6 +9172,66 @@
   "app/public/design/sheets/emerald-exterior.png": {
     "mtime": 1785674943.630057,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
+    "semantic_hash": ""
+  },
+  ".claude/launch.json": {
+    "mtime": 1785676299.1294491,
+    "ast_hash": "feebf69d8d58baed219bdc734019dc06",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/admin/spawn-rules.delete.ts": {
+    "mtime": 1785675984.5219884,
+    "ast_hash": "d77ae030b8a0fa588ab42dbc76654db1",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/admin/spawn-rules.get.ts": {
+    "mtime": 1785675976.4635172,
+    "ast_hash": "dea60918a5c228e40007f48f7e10edae",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/admin/spawn-rules.put.ts": {
+    "mtime": 1785675980.665453,
+    "ast_hash": "903eb56e7a7ec598aeec8c989216c4e5",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/spawn-rules.get.ts": {
+    "mtime": 1785675973.6546173,
+    "ast_hash": "c7a6954dad46bd010586e751cb6649e2",
+    "semantic_hash": ""
+  },
+  "app/server/services/pokemon/spawn-rules-store.ts": {
+    "mtime": 1785675967.1401873,
+    "ast_hash": "f7b284c326184d9824f18c48e089f983",
+    "semantic_hash": ""
+  },
+  "app/src/components/game-ui/BattleScreen.tsx": {
+    "mtime": 1785676897.5979886,
+    "ast_hash": "2f20a498a3836adc6d36e6dcd443031c",
+    "semantic_hash": ""
+  },
+  "app/src/components/game-ui/PokedexPanel.tsx": {
+    "mtime": 1785676972.5561557,
+    "ast_hash": "4968f5660d140a2cc2954f1ad9040a9c",
+    "semantic_hash": ""
+  },
+  "app/src/components/game-ui/SettingsPanel.tsx": {
+    "mtime": 1785675954.6672053,
+    "ast_hash": "d5a8dbedb9fd458caa564caa513978c3",
+    "semantic_hash": ""
+  },
+  "app/src/lib/spawn-rules-api.ts": {
+    "mtime": 1785676058.7140317,
+    "ast_hash": "f1a77c097f990e875bba3647edb84efa",
+    "semantic_hash": ""
+  },
+  "app/tests/spawn-rules-api.test.ts": {
+    "mtime": 1785676006.6387877,
+    "ast_hash": "7dbc343f3f1900333ac3905a3c6aaa93",
+    "semantic_hash": ""
+  },
+  "app/tests/spawn-rules-client.test.ts": {
+    "mtime": 1785676184.0826151,
+    "ast_hash": "37856c4043eaaea056609ac3fd4c074b",
     "semantic_hash": ""
   }
 }
