@@ -23,7 +23,11 @@ const fieldItem = {
 describe("trainer state", () => {
   it("starts with an Emerald-sprite party, bag, badges, and Box 1", () => {
     const trainer = defaultTrainer();
-    expect(trainer.version).toBe(3);
+    expect(trainer.version).toBe(4);
+    expect(trainer.gender).toBe("boy");
+    // Dex ids resolved for every starter (Treecko 252 leads).
+    expect(trainer.party[0].speciesId).toBe(252);
+    expect(trainer.pokedex.caught).toContain(258);
     expect(trainer.party.map((member) => member.species)).toEqual([
       "TREECKO",
       "RALTS",
@@ -47,8 +51,10 @@ describe("trainer state", () => {
       badges: Array.from({ length: 8 }, (_, index) => ({ id: `badge-${index}`, label: "Badge", earned: index === 0 })),
       pc: [{ id: "mudkip", name: "Mudkip", level: 10, hp: 35, maxHp: 35, status: "healthy", sprite: "emerald-mudkip" }],
     });
-    expect(migrated.version).toBe(3);
+    expect(migrated.version).toBe(4);
     expect(migrated.party[0].species).toBe("TREECKO");
+    expect(migrated.party[0].speciesId).toBe(252);
+    expect(migrated.pokedex.seen).toContain(252);
     expect(migrated.pc[0].species).toBe("MUDKIP");
     expect(migrated.badges[0].earned).toBe(true);
     expect(migrated.bag.items[0].quantity).toBe(2);
@@ -150,7 +156,7 @@ describe("trainer state", () => {
     const trainer = loadTrainer(storage);
     expect(trainer.name).toBe("MAY");
     expect(trainer.party[0].sprite).toBe("emerald-mudkip");
-    expect(JSON.parse(values.get(TRAINER_STORAGE_KEY) ?? "null").version).toBe(3);
+    expect(JSON.parse(values.get(TRAINER_STORAGE_KEY) ?? "null").version).toBe(4);
 
     const changed = toggleBadge(trainer, "stone").state;
     saveTrainer(changed, storage);

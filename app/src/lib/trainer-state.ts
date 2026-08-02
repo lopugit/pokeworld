@@ -1,17 +1,40 @@
 import type { FieldItem } from "./game-rules";
+import {
+  calcStats,
+  expForLevel,
+  getSpecies,
+  levelForExp,
+  speciesByName,
+  type PokemonGender,
+  type StatBlock,
+} from "./pokedex";
 
 export type PocketName = "items" | "pokeballs" | "keyItems";
 export type TrainerItemKind = "heal" | "status" | "utility";
+export type TrainerGender = "boy" | "girl";
+export type StatusCondition =
+  | "healthy"
+  | "poisoned"
+  | "paralyzed"
+  | "asleep"
+  | "burned"
+  | "frozen";
 
 export interface PartyMember {
   id: string;
+  /** National dex number; 0 for legacy members whose species is unknown. */
+  speciesId: number;
   species: string;
   nickname?: string;
   level: number;
+  exp: number;
   hp: number;
   maxHp: number;
+  stats?: StatBlock;
   types: string[];
-  status: "healthy" | "poisoned";
+  status: StatusCondition;
+  gender?: PokemonGender;
+  shiny?: boolean;
   sprite: string;
 }
 
@@ -29,15 +52,22 @@ export interface Badge {
   earned: boolean;
 }
 
+export interface PokedexProgress {
+  seen: number[];
+  caught: number[];
+}
+
 export interface TrainerState {
-  version: 3;
+  version: 4;
   name: string;
+  gender: TrainerGender;
   party: PartyMember[];
   bag: Record<PocketName, BagItem[]>;
   badges: Badge[];
   collectedItems: Record<string, string>;
   pc: PartyMember[];
   pcItems: BagItem[];
+  pokedex: PokedexProgress;
 }
 
 export interface TrainerTransition {
@@ -71,6 +101,14 @@ const speciesSprites: Record<string, string> = {
 };
 
 const emeraldSprites = new Set(Object.values(speciesSprites));
+// Generated battle sprites live under /sprites/pokemon/gen3/.
+const GEN3_SPRITE_PATTERN = /^gen3\/(?:shiny\/)?\d{1,3}$/;
+
+const isKnownSprite = (sprite: string): boolean =>
+  emeraldSprites.has(sprite) || GEN3_SPRITE_PATTERN.test(sprite);
+
+export const spriteForSpecies = (speciesId: number, shiny = false): string =>
+  shiny ? `gen3/shiny/${speciesId}` : `gen3/${speciesId}`;
 
 const speciesTypes: Record<string, string[]> = {
   TREECKO: ["GRASS"],
@@ -81,21 +119,51 @@ const speciesTypes: Record<string, string[]> = {
   RALTS: ["PSYCHIC"],
 };
 
-const partyMember = (
-  id: string,
-  species: string,
-  level: number,
-  hp: number,
-): PartyMember => ({
-  id,
-  species,
-  level,
-  hp,
-  maxHp: hp,
-  types: speciesTypes[species] ?? ["NORMAL"],
-  status: "healthy",
-  sprite: speciesSprites[species] ?? "emerald-zigzagoon",
-});
+const STATUS_VALUES: StatusCondition[] = [
+  "healthy",
+  "poisoned",
+  "paralyzed",
+  "asleep",
+  "burned",
+  "frozen",
+];
+
+export function createPartyMember(options: {
+  id: string;
+  speciesId: number;
+  level: number;
+  gender?: PokemonGender;
+  shiny?: boolean;
+  nickname?: string;
+}): PartyMember {
+  const species = getSpecies(options.speciesId);
+  const level = Math.max(1, Math.min(100, options.level));
+  const stats = species ? calcStats(species.baseStats, level) : undefined;
+  return {
+    id: options.id,
+    speciesId: options.speciesId,
+    species: species?.displayName ?? `#${options.speciesId}`,
+    nickname: options.nickname,
+    level,
+    exp: species ? expForLevel(species.growthRate, level) : 0,
+    hp: stats?.hp ?? 20,
+    maxHp: stats?.hp ?? 20,
+    stats,
+    types: species?.types ?? ["NORMAL"],
+    status: "healthy",
+    gender: options.gender,
+    shiny: options.shiny,
+    sprite: spriteForSpecies(options.speciesId, options.shiny),
+  };
+}
+
+const starterMember = (id: string, name: string, speciesId: number, level: number): PartyMember => {
+  const member = createPartyMember({ id, speciesId, level });
+  // Preserve the classic Emerald party sprites for the original six.
+  member.species = name;
+  member.sprite = speciesSprites[name] ?? member.sprite;
+  return member;
+};
 
 const bagItem = (
   id: string,
@@ -106,14 +174,22 @@ const bagItem = (
 ): BagItem => ({ id, name, quantity, description, kind });
 
 export function defaultTrainer(): TrainerState {
+  const party = [
+    starterMember("treecko", "TREECKO", 252, 12),
+    starterMember("ralts", "RALTS", 280, 9),
+    starterMember("zigzagoon", "ZIGZAGOON", 263, 8),
+  ];
+  const pc = [
+    starterMember("mudkip", "MUDKIP", 258, 10),
+    starterMember("torchic", "TORCHIC", 255, 10),
+    starterMember("wingull", "WINGULL", 278, 7),
+  ];
+  const owned = [...party, ...pc].map((member) => member.speciesId).filter(Boolean);
   return {
-    version: 3,
+    version: 4,
     name: "LOPU",
-    party: [
-      partyMember("treecko", "TREECKO", 12, 38),
-      partyMember("ralts", "RALTS", 9, 29),
-      partyMember("zigzagoon", "ZIGZAGOON", 8, 31),
-    ],
+    gender: "boy",
+    party,
     bag: {
       items: [
         bagItem("potion", "POTION", 3, "Restores 20 HP of one POKéMON.", "heal"),
@@ -127,12 +203,12 @@ export function defaultTrainer(): TrainerState {
     },
     badges: HOENN_BADGES.map((badge) => ({ ...badge, earned: false })),
     collectedItems: {},
-    pc: [
-      partyMember("mudkip", "MUDKIP", 10, 35),
-      partyMember("torchic", "TORCHIC", 10, 34),
-      partyMember("wingull", "WINGULL", 7, 27),
-    ],
+    pc,
     pcItems: [],
+    pokedex: {
+      seen: [...new Set(owned)].sort((a, b) => a - b),
+      caught: [...new Set(owned)].sort((a, b) => a - b),
+    },
   };
 }
 
@@ -141,7 +217,7 @@ const isRecord = (value: unknown): value is Record<string, unknown> =>
 
 const itemKindFor = (id: string): TrainerItemKind => {
   if (id.includes("potion") || id.includes("revive")) return "heal";
-  if (id === "antidote") return "status";
+  if (id === "antidote" || id === "full-heal") return "status";
   return "utility";
 };
 
@@ -149,27 +225,64 @@ const normalizeMember = (value: unknown): PartyMember | null => {
   if (!isRecord(value)) return null;
   const rawSpecies = typeof value.species === "string" ? value.species : value.name;
   if (typeof rawSpecies !== "string" || typeof value.id !== "string") return null;
-  const species = rawSpecies.toUpperCase();
+  const speciesName = rawSpecies.toUpperCase();
   const storedSprite = typeof value.sprite === "string" ? value.sprite : "";
   const maxHp = typeof value.maxHp === "number" && value.maxHp > 0 ? value.maxHp : Number(value.hp);
   if (!Number.isFinite(maxHp) || maxHp <= 0) return null;
   const hp = typeof value.hp === "number" ? Math.max(0, Math.min(value.hp, maxHp)) : maxHp;
+  const level = typeof value.level === "number" && value.level > 0 ? Math.min(100, value.level) : 1;
+
+  // Recover the dex species for legacy members so battles/dex work for them.
+  const storedSpeciesId =
+    typeof value.speciesId === "number" && Number.isInteger(value.speciesId) && value.speciesId > 0
+      ? value.speciesId
+      : undefined;
+  const dexEntry = storedSpeciesId ? getSpecies(storedSpeciesId) : speciesByName(speciesName);
+  const speciesId = dexEntry?.id ?? storedSpeciesId ?? 0;
+
+  const shiny = value.shiny === true;
+  const gender =
+    value.gender === "male" || value.gender === "female" || value.gender === "genderless"
+      ? value.gender
+      : undefined;
+  const exp =
+    typeof value.exp === "number" && value.exp >= 0
+      ? value.exp
+      : dexEntry
+        ? expForLevel(dexEntry.growthRate, level)
+        : 0;
+  const storedStats = isRecord(value.stats) ? (value.stats as unknown as StatBlock) : undefined;
+  const stats =
+    storedStats && Object.values(storedStats).every((stat) => typeof stat === "number")
+      ? storedStats
+      : dexEntry
+        ? calcStats(dexEntry.baseStats, level)
+        : undefined;
+
   return {
     id: value.id,
-    species,
+    speciesId,
+    species: speciesName,
     nickname: typeof value.nickname === "string" ? value.nickname : undefined,
-    level: typeof value.level === "number" && value.level > 0 ? value.level : 1,
+    level,
+    exp,
     hp,
     maxHp,
+    stats,
     types: Array.isArray(value.types)
       ? value.types.filter((type): type is string => typeof type === "string")
-      : speciesTypes[species] ?? ["NORMAL"],
-    status: value.status === "poisoned" ? "poisoned" : "healthy",
+      : dexEntry?.types ?? speciesTypes[speciesName] ?? ["NORMAL"],
+    status: STATUS_VALUES.includes(value.status as StatusCondition)
+      ? (value.status as StatusCondition)
+      : "healthy",
+    gender,
+    shiny: shiny || undefined,
     // Older saves could contain player sprites or arbitrary paths. Only retain
-    // the exact Emerald-version creature sprites that ship with this build.
-    sprite: emeraldSprites.has(storedSprite)
+    // sprites this build actually ships.
+    sprite: isKnownSprite(storedSprite)
       ? storedSprite
-      : speciesSprites[species] ?? "emerald-zigzagoon",
+      : speciesSprites[speciesName] ??
+        (speciesId ? spriteForSpecies(speciesId, shiny) : "emerald-zigzagoon"),
   };
 };
 
@@ -224,16 +337,39 @@ const normalizeCollectedItems = (value: unknown): Record<string, string> => {
   );
 };
 
+const normalizeDexIds = (value: unknown): number[] =>
+  Array.isArray(value)
+    ? [...new Set(
+        value.filter(
+          (id): id is number => typeof id === "number" && Number.isInteger(id) && id > 0,
+        ),
+      )].sort((a, b) => a - b)
+    : [];
+
+const normalizePokedex = (value: unknown, members: PartyMember[]): PokedexProgress => {
+  const record = isRecord(value) ? value : {};
+  const owned = members.map((member) => member.speciesId).filter(Boolean);
+  const seen = new Set([...normalizeDexIds(record.seen), ...owned]);
+  const caught = new Set([...normalizeDexIds(record.caught), ...owned]);
+  for (const id of caught) seen.add(id);
+  return {
+    seen: [...seen].sort((a, b) => a - b),
+    caught: [...caught].sort((a, b) => a - b),
+  };
+};
+
 export function normalizeTrainer(value: unknown): TrainerState {
   const fallback = defaultTrainer();
   if (!isRecord(value)) return fallback;
 
   const party = normalizeMembers(value.party, 6);
   const pc = normalizeMembers(value.pc);
+  const resolvedParty = party.length ? party : fallback.party;
   const common = {
-    version: 3 as const,
+    version: 4 as const,
     name: typeof value.name === "string" && value.name ? value.name : fallback.name,
-    party: party.length ? party : fallback.party,
+    gender: value.gender === "girl" ? ("girl" as const) : ("boy" as const),
+    party: resolvedParty,
     badges: normalizeBadges(value.badges, fallback.badges),
     collectedItems: normalizeCollectedItems(value.collectedItems),
     pcItems: normalizeItems(value.pcItems),
@@ -241,6 +377,7 @@ export function normalizeTrainer(value: unknown): TrainerState {
 
   if (value.version === 2) {
     const flatItems = normalizeItems(value.items);
+    const resolvedPc = pc.length ? pc : fallback.pc;
     return {
       ...common,
       bag: {
@@ -248,12 +385,14 @@ export function normalizeTrainer(value: unknown): TrainerState {
         pokeballs: flatItems.filter((item) => item.id === "poke-ball" || item.id === "pokeball"),
         keyItems: [],
       },
-      pc: pc.length ? pc : fallback.pc,
+      pc: resolvedPc,
+      pokedex: normalizePokedex(value.pokedex, [...resolvedParty, ...resolvedPc]),
     };
   }
 
   const rawBag = isRecord(value.bag) ? value.bag : {};
-  const hasBag = value.version === 1 || value.version === 3;
+  const hasBag = value.version === 1 || value.version === 3 || value.version === 4;
+  const resolvedPc = value.version === 3 || value.version === 4 ? pc : pc.length ? pc : fallback.pc;
   return {
     ...common,
     bag: hasBag
@@ -263,7 +402,8 @@ export function normalizeTrainer(value: unknown): TrainerState {
           keyItems: normalizeItems(rawBag.keyItems),
         }
       : fallback.bag,
-    pc: value.version === 3 ? pc : pc.length ? pc : fallback.pc,
+    pc: resolvedPc,
+    pokedex: normalizePokedex(value.pokedex, [...resolvedParty, ...resolvedPc]),
   };
 }
 
@@ -285,6 +425,21 @@ export function addItemToBag(trainer: TrainerState, item: FieldItem, quantity = 
         },
       ];
   return { ...trainer, bag: { ...trainer.bag, [item.pocket]: nextPocket } };
+}
+
+export function removeBagItem(trainer: TrainerState, itemId: string, quantity = 1): TrainerState {
+  const pockets = (Object.keys(trainer.bag) as PocketName[]).reduce(
+    (bag, pocket) => {
+      bag[pocket] = trainer.bag[pocket]
+        .map((item) =>
+          item.id === itemId ? { ...item, quantity: Math.max(0, item.quantity - quantity) } : item,
+        )
+        .filter((item) => item.quantity > 0);
+      return bag;
+    },
+    {} as Record<PocketName, BagItem[]>,
+  );
+  return { ...trainer, bag: pockets };
 }
 
 export const hasCollected = (trainer: TrainerState, coordKey: string): boolean =>
@@ -309,6 +464,83 @@ const transition = (
   message: string,
 ): TrainerTransition => ({ state, changed, message });
 
+const sortedInsert = (list: number[], id: number): number[] =>
+  list.includes(id) ? list : [...list, id].sort((a, b) => a - b);
+
+export function registerSeen(trainer: TrainerState, speciesId: number): TrainerState {
+  if (!speciesId || trainer.pokedex.seen.includes(speciesId)) return trainer;
+  return {
+    ...trainer,
+    pokedex: { ...trainer.pokedex, seen: sortedInsert(trainer.pokedex.seen, speciesId) },
+  };
+}
+
+export function registerCaught(trainer: TrainerState, speciesId: number): TrainerState {
+  if (!speciesId) return trainer;
+  return {
+    ...trainer,
+    pokedex: {
+      seen: sortedInsert(trainer.pokedex.seen, speciesId),
+      caught: sortedInsert(trainer.pokedex.caught, speciesId),
+    },
+  };
+}
+
+/** Adds a caught Pokémon to the party, overflowing into the PC (Box 1). */
+export function addCaughtPokemon(
+  trainer: TrainerState,
+  member: PartyMember,
+): { state: TrainerState; sentTo: "party" | "pc" } {
+  const registered = registerCaught(trainer, member.speciesId);
+  if (registered.party.length < 6) {
+    return { state: { ...registered, party: [...registered.party, member] }, sentTo: "party" };
+  }
+  return { state: { ...registered, pc: [...registered.pc, member] }, sentTo: "pc" };
+}
+
+export function setTrainerProfile(
+  trainer: TrainerState,
+  profile: { name?: string; gender?: TrainerGender },
+): TrainerState {
+  const name = profile.name?.trim().toUpperCase().slice(0, 7);
+  return {
+    ...trainer,
+    name: name || trainer.name,
+    gender: profile.gender ?? trainer.gender,
+  };
+}
+
+const levelUpMember = (member: PartyMember, levels = 1): PartyMember => {
+  const species = getSpecies(member.speciesId);
+  const level = Math.min(100, member.level + levels);
+  if (!species) return { ...member, level };
+  const stats = calcStats(species.baseStats, level);
+  const hpGain = stats.hp - member.maxHp;
+  return {
+    ...member,
+    level,
+    exp: Math.max(member.exp, expForLevel(species.growthRate, level)),
+    stats,
+    maxHp: stats.hp,
+    hp: Math.min(stats.hp, member.hp + Math.max(0, hpGain)),
+  };
+};
+
+/** Adds experience, applying any level-ups (Gen III growth curves). */
+export function grantExperience(
+  member: PartyMember,
+  amount: number,
+): { member: PartyMember; levelsGained: number } {
+  const species = getSpecies(member.speciesId);
+  if (!species || amount <= 0 || member.level >= 100) return { member, levelsGained: 0 };
+  const exp = member.exp + amount;
+  const level = Math.max(member.level, levelForExp(species.growthRate, exp));
+  const levelsGained = level - member.level;
+  let next = { ...member, exp };
+  if (levelsGained > 0) next = { ...levelUpMember(next, levelsGained), exp };
+  return { member: next, levelsGained };
+}
+
 export function useBagItem(
   state: TrainerState,
   itemId: string,
@@ -323,7 +555,33 @@ export function useBagItem(
   const target = state.party.find((candidate) => candidate.id === memberId);
   if (!item || item.quantity <= 0 || !pocketName) return transition(state, false, "There are none left.");
   if (!target) return transition(state, false, "Choose a party member first.");
+
+  const consume = (bagState: TrainerState): Record<PocketName, BagItem[]> => ({
+    ...bagState.bag,
+    [pocketName]: bagState.bag[pocketName]
+      .map((candidate) =>
+        candidate.id === itemId ? { ...candidate, quantity: candidate.quantity - 1 } : candidate,
+      )
+      .filter((candidate) => candidate.quantity > 0),
+  });
+
+  if (item.id === "rare-candy") {
+    if (target.level >= 100) return transition(state, false, `${target.species} is already level 100.`);
+    const leveled = levelUpMember(target);
+    const party = state.party.map((candidate) => (candidate.id === memberId ? leveled : candidate));
+    return transition(
+      { ...state, party, bag: consume(state) },
+      true,
+      `${target.species} grew to level ${leveled.level}!`,
+    );
+  }
   if (item.kind === "utility") return transition(state, false, `${item.name} is ready for field use.`);
+  if (item.kind === "heal" && !item.id.includes("revive") && target.hp <= 0) {
+    return transition(state, false, `${target.species} has fainted. Use a REVIVE.`);
+  }
+  if (item.kind === "heal" && item.id.includes("revive") && target.hp > 0) {
+    return transition(state, false, `${target.species} hasn't fainted.`);
+  }
   if (item.kind === "heal" && target.hp >= target.maxHp) {
     return transition(state, false, `${target.species} already has full HP.`);
   }
@@ -331,20 +589,20 @@ export function useBagItem(
     return transition(state, false, `${target.species} has no status condition.`);
   }
 
-  const healAmount = item.id === "super-potion" ? 50 : item.id.includes("revive") ? target.maxHp : 20;
+  const healAmount = item.id === "super-potion" ? 50 : item.id.includes("revive") ? Math.ceil(target.maxHp / 2) : 20;
   const party = state.party.map((candidate) => {
     if (candidate.id !== memberId) return candidate;
-    return item.kind === "heal"
-      ? { ...candidate, hp: Math.min(candidate.maxHp, candidate.hp + healAmount) }
-      : { ...candidate, status: "healthy" as const };
+    if (item.kind === "heal") {
+      const base = item.id === "max-revive" ? candidate.maxHp : candidate.hp + healAmount;
+      return { ...candidate, hp: Math.min(candidate.maxHp, Math.max(healAmount, base)) };
+    }
+    return { ...candidate, status: "healthy" as const };
   });
-  const bag = {
-    ...state.bag,
-    [pocketName]: state.bag[pocketName].map((candidate) =>
-      candidate.id === itemId ? { ...candidate, quantity: candidate.quantity - 1 } : candidate,
-    ),
-  };
-  return transition({ ...state, party, bag }, true, `${item.name} used on ${target.species}.`);
+  return transition(
+    { ...state, party, bag: consume(state) },
+    true,
+    `${item.name} used on ${target.species}.`,
+  );
 }
 
 export function setLeadPartyMember(state: TrainerState, memberId: string): TrainerTransition {
