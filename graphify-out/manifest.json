@@ -205,8 +205,8 @@
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1785673179.127399,
-    "ast_hash": "9115da5f83eae40b9157058b71c19316",
+    "mtime": 1785681196.5809853,
+    "ast_hash": "5325527514ccbd7cb91008be6e5568f6",
     "semantic_hash": ""
   },
   "app/server/services/map/legacy/png.ts": {
@@ -485,8 +485,8 @@
     "semantic_hash": "7bffb8df9d070eb63efb24d7ed5b09d4"
   },
   "app/tests/terrain-life.test.ts": {
-    "mtime": 1785673179.1404645,
-    "ast_hash": "8863cf68d9a3c48f95414d348709020c",
+    "mtime": 1785681261.6666384,
+    "ast_hash": "83b9214e4d5146bf3d4cddbdb623877d",
     "semantic_hash": ""
   },
   "app/tests/thingtime-auth.test.ts": {
@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1785677659.1477745,
-    "ast_hash": "0b400a2d4dad6a43f96f7212f266000b",
+    "mtime": 1785681554.705755,
+    "ast_hash": "41b0fd8e831b439840975bce7b4e6ec9",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -1260,8 +1260,8 @@
     "semantic_hash": "a3cb1562105c19717021e5655c3b8d38"
   },
   "app/server/services/map/version.ts": {
-    "mtime": 1785673179.1287913,
-    "ast_hash": "67b2b459f0df53a98a235d1506ce59cb",
+    "mtime": 1785681199.4247975,
+    "ast_hash": "dfa39eb81183fdeb5c78fad03aae0385",
     "semantic_hash": ""
   },
   "app/server/services/thingtime/client.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "docs/LOOP-STATE-design-studio.md": {
-    "mtime": 1785680855.873136,
-    "ast_hash": "1df2eca8366accbd1cd4ba2761ca3363",
+    "mtime": 1785681558.2658026,
+    "ast_hash": "d3e4828e601096908056b90bd861cde7",
     "semantic_hash": ""
   }
 }

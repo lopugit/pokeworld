@@ -4,7 +4,11 @@ import { AnimationSprite } from "./AnimationSprite";
 /** Small pixel-perfect preview for any asset kind. */
 export function SpriteThumb({ item, scale = 3 }: { item: AssetItem; scale?: number }) {
   if (item.kind === "single") {
-    const oversized = item.w > 64 || item.h > 64;
+    const oversized = item.w > 96 || item.h > 96;
+    // Integer-downscale large sprites (e.g. 64×64 battle art) so thumbnails
+    // stay compact and pixel-crisp instead of ballooning to scale× size.
+    const cap = 96;
+    const effectiveScale = Math.max(1, Math.min(scale, Math.floor(cap / Math.max(item.w, item.h))));
     return (
       <img
         src={item.src}
@@ -12,8 +16,12 @@ export function SpriteThumb({ item, scale = 3 }: { item: AssetItem; scale?: numb
         loading="lazy"
         style={
           oversized
-            ? { maxWidth: 96, maxHeight: 96, imageRendering: "pixelated" }
-            : { width: item.w * scale, height: item.h * scale, imageRendering: "pixelated" }
+            ? { maxWidth: cap, maxHeight: cap, imageRendering: "pixelated" }
+            : {
+                width: item.w * effectiveScale,
+                height: item.h * effectiveScale,
+                imageRendering: "pixelated",
+              }
         }
       />
     );

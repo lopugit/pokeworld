@@ -18,8 +18,14 @@ lockedAt: (clear)
       panel in 375 viewport), scrolls, remix + close work, no overflow
 - [x] Mobile visual QA: asset detail modal — loop player animates, pause +
       speed slider wrap cleanly, 36-frame strip flows in rows, modal scrolls
-- [ ] Assets tab deep QA (desktop + mobile): interior/exterior cell grids,
-      category switching, deep scroll into thousands of cells
+- [x] Assets tab deep QA (desktop + mobile): found + fixed 3 real bugs —
+      (1) infinite scroll stalled at ~360 of 3,532 cells (IntersectionObserver
+      only reports changes; observer now recreated per growth so reveal
+      cascades to the full list, verified to 3,532), (2) 64×64 Pokémon
+      sprites rendered as 192px giant cards (~86k-px pages; now integer-capped
+      at 96px, ~7× denser), (3) switching category/search while deep-scrolled
+      stranded the user below the new shorter list (now scrolls to top).
+      Mobile re-verified: growth + zero horizontal overflow at 375px.
 - [ ] Community tab visual QA with real saved content (long names, author
       footers, card layout)
 - [ ] Full-page scroll sweep top→bottom on all tabs, both viewports
@@ -37,6 +43,9 @@ lockedAt: (clear)
 
 ## Log
 
+- 2026-08-03 00:5x — iteration 2 (cron): live-map legality port had landed
+  in between (see checklist). Assets deep QA: 3 visual/UX bugs found + fixed
+  (scroll stall, giant Pokémon cards, stranded scroll). 222/222 tests.
 - 2026-08-03 00:2x — loop armed (session cron 9e990e69, */10). Iteration 1:
   state file created; mobile QA of both detail modals PASSED (no
   overflow/clipping, remix + player controls verified); Vercel production
