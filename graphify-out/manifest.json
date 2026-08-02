@@ -250,9 +250,9 @@
     "semantic_hash": "c1fe64c5bb77b2f4aeb281cc0c02a86a"
   },
   "app/src/App.tsx": {
-    "mtime": 1785673179.129784,
-    "ast_hash": "aedefaf2f9dbfacf7c1c51987d453b82",
-    "semantic_hash": "aedefaf2f9dbfacf7c1c51987d453b82"
+    "mtime": 1785675694.3694212,
+    "ast_hash": "43f526e02c93805de23917f2e33942ab",
+    "semantic_hash": ""
   },
   "app/src/auth/AuthProvider.tsx": {
     "mtime": 1785673179.1299787,
@@ -285,9 +285,9 @@
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
-    "mtime": 1785673179.1312652,
-    "ast_hash": "c525792ab557effbe0c6953e5952b595",
-    "semantic_hash": "c525792ab557effbe0c6953e5952b595"
+    "mtime": 1785675697.3204823,
+    "ast_hash": "b7cf431f0bf69ad644539d6132e24505",
+    "semantic_hash": ""
   },
   "app/src/components/game-ui/BadgesPanel.tsx": {
     "mtime": 1785673179.131573,
@@ -555,13 +555,13 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1785673179.072568,
-    "ast_hash": "a74fa0064ec1c1976b4a057ababba613",
+    "mtime": 1785677659.1477745,
+    "ast_hash": "0b400a2d4dad6a43f96f7212f266000b",
     "semantic_hash": ""
   },
   "app/README.md": {
-    "mtime": 1785673179.0726998,
-    "ast_hash": "6fdca434f79a121102aa7918ee2063aa",
+    "mtime": 1785676372.5216286,
+    "ast_hash": "76124f5ea612c2138c1e8a8a8e4a805d",
     "semantic_hash": ""
   },
   "app/TODO-fallback-map-regeneration.md": {
@@ -1285,13 +1285,13 @@
     "semantic_hash": "da15890126958c856a7326b31ecb5de8"
   },
   "app/public/design/asset-manifest.json": {
-    "mtime": 1785673966.7805634,
-    "ast_hash": "d7e6c027266beba8a64fa0e7384a783d",
+    "mtime": 1785677583.7745688,
+    "ast_hash": "25e7694f0623c2e2de4c84788781ba64",
     "semantic_hash": ""
   },
   "app/scripts/design/build-asset-manifest.mjs": {
-    "mtime": 1785673960.021054,
-    "ast_hash": "eb021dc45a3e4cbddb65695565503172",
+    "mtime": 1785677535.8121607,
+    "ast_hash": "98094ab83d9f00044446f267d3e7fd27",
     "semantic_hash": ""
   },
   "app/src/lib/game-overlay.ts": {
@@ -1305,18 +1305,18 @@
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-character-male.png": {
-    "mtime": 1785673966.583268,
+    "mtime": 1785677583.4703958,
     "ast_hash": "ea113d178bf0b311df317c189bb4178e",
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-exterior.png": {
-    "mtime": 1785673966.5830605,
+    "mtime": 1785677583.469749,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
     "semantic_hash": ""
   },
   "app/src/lib/design/catalog.ts": {
-    "mtime": 1785674784.9316328,
-    "ast_hash": "0bd802da4ac86c42a072b0864214aa85",
+    "mtime": 1785677516.3991375,
+    "ast_hash": "6fb91008ff75b978e8b1090a28c0e07f",
     "semantic_hash": ""
   },
   "app/src/lib/design/entities.ts": {
@@ -1325,8 +1325,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1785675011.8233433,
-    "ast_hash": "b3d7d435981946aae1258904e808c12f",
+    "mtime": 1785677503.0182009,
+    "ast_hash": "2202ada1f28629155f26c7b44d1b5507",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
@@ -1335,8 +1335,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1785675001.6377761,
-    "ast_hash": "18f385325190128d57ba9772da20d93b",
+    "mtime": 1785677271.96334,
+    "ast_hash": "23936f4c8596177c3f74f0cd92c053a4",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -1352,6 +1352,126 @@
   "app/tests/design-catalog.test.ts": {
     "mtime": 1785674808.84427,
     "ast_hash": "02634f5280d4e8506acd3697378a5f07",
+    "semantic_hash": ""
+  },
+  "app/.data/designs.json": {
+    "mtime": 1785676303.7455902,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": ""
+  },
+  "app/scripts/design/build-design-tiles.mjs": {
+    "mtime": 1785677158.2556572,
+    "ast_hash": "bf8a91f56e59ef24871ea551d66c5aac",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/designs.get.ts": {
+    "mtime": 1785675192.0835016,
+    "ast_hash": "5bfef94f95f4a86424988d9be0a59b39",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/designs.post.ts": {
+    "mtime": 1785675197.7066257,
+    "ast_hash": "10d94f7a19299cae9b19368c3278efe8",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/designs/[id].delete.ts": {
+    "mtime": 1785675204.2702022,
+    "ast_hash": "94678001d7e98136465e1a36b0748582",
+    "semantic_hash": ""
+  },
+  "app/server/routes/api/designs/[id].get.ts": {
+    "mtime": 1785675200.7446828,
+    "ast_hash": "58cbec95f2419e416d83bfbeaec11fcf",
+    "semantic_hash": ""
+  },
+  "app/server/services/designs/store.ts": {
+    "mtime": 1785675724.2646196,
+    "ast_hash": "a8cad931f97041b1b90cb580cc90bff5",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/AnimationSprite.tsx": {
+    "mtime": 1785675439.8117347,
+    "ast_hash": "6bcd114d5c83815f4bb04c79ad3aed23",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/AssetBrowser.tsx": {
+    "mtime": 1785675846.4625995,
+    "ast_hash": "8e2a3f3deb20bd99c19fe9510b6ab97b",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/BlockCanvas.tsx": {
+    "mtime": 1785675392.5982025,
+    "ast_hash": "d126e91fb79c8b708850ad9ac2d9d1e0",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/CommunityBrowser.tsx": {
+    "mtime": 1785675846.467761,
+    "ast_hash": "268f0dc7a23160ab3b3341ff90253d58",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/DesignBrowser.tsx": {
+    "mtime": 1785675637.0696397,
+    "ast_hash": "dff4eea84845479276171b2d648a1b56",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/DesignDetailModal.tsx": {
+    "mtime": 1785675846.4652252,
+    "ast_hash": "5f32d6d084a9383d2d277bbea2c06a48",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/SpriteThumb.tsx": {
+    "mtime": 1785675498.9178743,
+    "ast_hash": "52d3218d8d413a74283795e077be730a",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/useInfiniteReveal.ts": {
+    "mtime": 1785675503.874637,
+    "ast_hash": "f001ccb3fb271c3f1e590830d8185445",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/assets.ts": {
+    "mtime": 1785675489.2828548,
+    "ast_hash": "7712b8e9861291f6cbefe5b9ad2240a0",
+    "semantic_hash": ""
+  },
+  "app/src/pages/DesignPage.tsx": {
+    "mtime": 1785675708.3052917,
+    "ast_hash": "04b8052cdb0b799d055f6b22899d0f73",
+    "semantic_hash": ""
+  },
+  "app/tests/design-legality.test.ts": {
+    "mtime": 1785677567.5806057,
+    "ast_hash": "703e764fac171d0f789bd6e74de43971",
+    "semantic_hash": ""
+  },
+  "app/tests/design-store.test.ts": {
+    "mtime": 1785675262.4653668,
+    "ast_hash": "8fc46a8b4f88773494b3ade5ea9bf28d",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/boulder-mossy-1.png": {
+    "mtime": 1785677175.0143414,
+    "ast_hash": "46574344204d7d8c463562681c22c300",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/cave-door-1.png": {
+    "mtime": 1785677175.014077,
+    "ast_hash": "718c3e5ed36439d55888a8e8de7df738",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/rocky-1.png": {
+    "mtime": 1785677175.0130534,
+    "ast_hash": "c3548d8f78d4f712c8dda4f4a07866c9",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/rocky-bumps-1.png": {
+    "mtime": 1785677175.0136857,
+    "ast_hash": "f58cc3302d0b3dceeef8495868394348",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/sign-rocky-1.png": {
+    "mtime": 1785677175.0146143,
+    "ast_hash": "92c49eb245b72cd5263d6436d8d98894",
     "semantic_hash": ""
   }
 }
