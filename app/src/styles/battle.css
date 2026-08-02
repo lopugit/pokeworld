@@ -306,7 +306,7 @@
 }
 
 .pkbt-prompt {
-  flex: 1.1;
+  flex: 0.9;
   min-width: 0;
   border: 0.9cqw solid #a8b8e8;
   border-radius: 1.2cqw;
@@ -320,7 +320,7 @@
 }
 
 .pkbt-actions {
-  flex: 1;
+  flex: 1.4;
   min-width: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -336,10 +336,11 @@
 .pkbt-action {
   display: flex;
   align-items: center;
-  gap: 0.4cqw;
+  gap: 0.3cqw;
   min-width: 0;
   font-family: inherit;
-  font-size: 2.9cqw;
+  /* "POKéMON" must fit a half-width cell without ellipsis. */
+  font-size: 2.5cqw;
   color: #303030;
   text-align: left;
   padding: 0.4cqw 0.2cqw;
@@ -347,10 +348,10 @@
 }
 
 .pkbt-cursor {
-  flex: 0 0 2.6cqw;
-  width: 2.6cqw;
+  flex: 0 0 2.2cqw;
+  width: 2.2cqw;
   color: #c04040;
-  font-size: 2.4cqw;
+  font-size: 2.2cqw;
 }
 
 .pkbt-row-label {
@@ -371,7 +372,7 @@
 }
 
 .pkbt-moves {
-  flex: 1.5;
+  flex: 1.9;
   min-width: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -387,10 +388,11 @@
 .pkbt-move {
   display: flex;
   align-items: center;
-  gap: 0.4cqw;
+  gap: 0.3cqw;
   min-width: 0;
   font-family: inherit;
-  font-size: 2.7cqw;
+  /* Longest Gen III move here is 12 chars (THUNDERSHOCK) per half-width cell. */
+  font-size: 2.2cqw;
   color: #303030;
   text-align: left;
   padding: 0.4cqw 0.2cqw;

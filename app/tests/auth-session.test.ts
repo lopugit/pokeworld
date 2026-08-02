@@ -65,3 +65,24 @@ describe("Pokeworld sessions", () => {
     ).toBe(SECRET);
   });
 });
+
+describe("dev admin preview", () => {
+  it("is off by default, off on public deployments, and on only with the explicit flag", async () => {
+    const { devAdminPreviewSession } = await import("../server/services/auth/session");
+    expect(devAdminPreviewSession({} as NodeJS.ProcessEnv)).toBeNull();
+    expect(
+      devAdminPreviewSession({ POKEWORLD_DEV_ADMIN_PREVIEW: "true", VERCEL: "1" } as NodeJS.ProcessEnv),
+    ).toBeNull();
+    expect(
+      devAdminPreviewSession({
+        POKEWORLD_DEV_ADMIN_PREVIEW: "true",
+        POKEWORLD_PUBLIC_BUILD: "true",
+      } as NodeJS.ProcessEnv),
+    ).toBeNull();
+    const preview = devAdminPreviewSession({
+      POKEWORLD_DEV_ADMIN_PREVIEW: "true",
+    } as NodeJS.ProcessEnv);
+    expect(preview?.isAdmin).toBe(true);
+    expect(preview?.user.username).toBe("dev-admin");
+  });
+});

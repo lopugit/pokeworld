@@ -139,3 +139,23 @@ export function toSessionView(claims: PokeworldSessionClaims): PokeworldSessionV
     user: claims.user,
   };
 }
+
+/**
+ * Local-development admin preview: lets a developer open /admin (and the
+ * admin APIs) without a Thingtime login. Requires the server to be started
+ * with POKEWORLD_DEV_ADMIN_PREVIEW=true, and is ignored entirely on public
+ * deployments (Vercel or POKEWORLD_PUBLIC_BUILD) — the flag cannot enable
+ * admin access anywhere a real audience could reach.
+ */
+export function devAdminPreviewSession(
+  env: NodeJS.ProcessEnv = process.env,
+): PokeworldSessionView | null {
+  if (env.POKEWORLD_DEV_ADMIN_PREVIEW !== "true") return null;
+  if (isPublicDeployment(env)) return null;
+  return {
+    authenticated: true,
+    expiresAt: new Date(Date.now() + POKEWORLD_SESSION_TTL_SECONDS * 1000).toISOString(),
+    isAdmin: true,
+    user: { id: "dev-admin-preview", username: "dev-admin" },
+  };
+}

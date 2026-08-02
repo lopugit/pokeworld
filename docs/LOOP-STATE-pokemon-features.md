@@ -68,10 +68,13 @@ Phase 1 — systems (parallelizable)
 - [x] `src/lib/battle.ts` battle engine + vitest
 - [x] `src/lib/encounters.ts` spawn rules, geofence, defaults, rolls + vitest
 - [x] Trainer state v4 migration + vitest
-- [~] Server spawn-rules service + routes + vitest (agent landed, verifying)
-- [~] `BattleScreen.tsx` + styles (agent in progress)
-- [~] `PokedexPanel.tsx`, `SettingsPanel.tsx`, StartMenu POKéDEX/OPTION (agent landed, verifying)
-- [~] Admin spawn manager UI on /admin (agent landed, verifying)
+- [x] Server spawn-rules service + routes + vitest
+- [x] `BattleScreen.tsx` + styles + battle FX (throw arc, formula-driven
+      wobbles, catch sparkle, break-free burst, lunges/flinch/faint/shake)
+- [x] `PokedexPanel.tsx`, `SettingsPanel.tsx`, StartMenu POKéDEX/OPTION
+- [x] Admin spawn manager UI on /admin (verified live: search, Groudon Uluru
+      default, save round-trip on public endpoint, reset-to-defaults)
+- [x] Dev admin preview (POKEWORLD_DEV_ADMIN_PREVIEW, local only + tests)
 
 Phase 2 — integration
 - [x] Walk animation + camera interpolation in Game.tsx (Brendan/May frames,
@@ -83,14 +86,56 @@ Phase 2 — integration
 - [x] START menu wiring, key routing for new panels (Game.tsx side)
 
 Phase 3 — verification (loop exit criteria)
-- [ ] `pnpm typecheck && pnpm test` green
-- [ ] Browser check (port 3847): walk animation smooth; no sprite clipping;
-      battle UI no overlap/overflow at desktop + mobile widths; settings,
-      pokédex, admin section visually clean; full-page scroll checks
-- [ ] Admin CRUD round-trip verified (rule edit changes encounters)
-- [ ] Merged to main + pushed (repo protocol) — recurring, final push done
-- [ ] Loop closed (CronDelete f41e9b2e) after all above verified
+- [x] `pnpm typecheck && pnpm test` green (202 tests, 34 files)
+- [x] Browser check (worktree dev server :3948 — the shared :3847 checkout
+      was on another agent's branch, deliberately untouched): walk animation,
+      battle UI, settings, pokédex, admin verified at ~370px, 760px and
+      1280px widths; no horizontal overflow on /game (scrollWidth check);
+      battle command/move grids resized so nothing truncates
+- [x] Admin CRUD round-trip verified (Groudon weight edit → public endpoint
+      → reset)
+- [x] Surf verified live via DEV-only `devPond` stamp (fallback world never
+      classifies water): mount ("MUDKIP used SURF!"), water traversal,
+      wild SLOWPOKE water-only encounter, dismount onto grass
+- [x] Merged to main + pushed (repo protocol) — every working state
+- [x] Loop closed (CronDelete f41e9b2e) after all above verified
+
+## COMPLETE
+
+All requested features are implemented, tested (202 vitest cases green) and
+browser-verified; the cron loop is closed. Follow-ups intentionally left
+open (not part of the requested scope): battle-FX freeze-frame screenshots
+of lunge/flinch (transient by design), and a production-map (real imagery)
+surf spot-check whenever the shared :3847 checkout returns to main.
 
 ## Verification log
 
-(append entries here: date, what was verified, result)
+- 2026-08-02 (browser, worktree dev server :3948, mobile-width pane):
+  - Walk sprite renders as Brendan idle/step frames at 2-tile height; gender
+    switch to girl renders May on the map. ✅
+  - Wild encounters trigger in long grass (Electrike/Yanma/Jumpluff/Silcoon/
+    Kirlia/Illumise/Lotad/Exeggcute observed, levels 2-7 per world default);
+    encounters also fired at a second geocode (London) → global fence OK. ✅
+  - Battle: full turns both sides, HP bar colors + transitions, PP decrement,
+    exp gain messages, catch (Yanma + Lotad joined party), ball consumption,
+    dex seen/caught counts, run-away. ✅
+  - Ball FX verified live: arc onto pad + wild absorbed ("You threw a POKE
+    BALL!" frame), break-free burst + reappear (Lotad), caught state (ball
+    resting, "LOTAD was caught!"). ✅
+  - Pokédex: list (????? unseen), silhouette for seen-not-caught, detail view
+    (genus/types/HT/WT, flavor gated on caught). ✅
+  - OPTION: name entry (NIKO), BOY/GIRL cards w/ sprite previews, immediate
+    apply; typing guard fixed (x/Backspace no longer close the panel). ✅
+  - Admin /admin via dev preview: spawn table, filters, Groudon editor shows
+    Uluru circle (−25.3444, 131.0369, 100 km), weight edit → PUT → served on
+    GET /api/spawn-rules → reset removes override. ✅
+  - Layout fixes landed: battle name box (10-char names), POKéMON/move-name
+    truncation in command grids, Pokédex header wrap, OPTION save-row
+    clearance.
+- Deferred / notes:
+  - Surf visual pass needs a water area (fallback-generated test regions had
+    no ponds nearby); surf mount/traverse/dismount + water-biome encounter
+    rules are unit-tested. Check visually on the production map (real
+    imagery water) or a pond region next loop tick.
+  - Attack lunge/flinch FX are transient; verified by code + classes firing,
+    hard to freeze-frame in screenshots.
