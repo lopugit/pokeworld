@@ -86,13 +86,27 @@ Phase 2 — integration
 - [x] START menu wiring, key routing for new panels (Game.tsx side)
 
 Phase 3 — verification (loop exit criteria)
-- [ ] `pnpm typecheck && pnpm test` green
-- [ ] Browser check (port 3847): walk animation smooth; no sprite clipping;
-      battle UI no overlap/overflow at desktop + mobile widths; settings,
-      pokédex, admin section visually clean; full-page scroll checks
-- [ ] Admin CRUD round-trip verified (rule edit changes encounters)
-- [ ] Merged to main + pushed (repo protocol) — recurring, final push done
-- [ ] Loop closed (CronDelete f41e9b2e) after all above verified
+- [x] `pnpm typecheck && pnpm test` green (202 tests, 34 files)
+- [x] Browser check (worktree dev server :3948 — the shared :3847 checkout
+      was on another agent's branch, deliberately untouched): walk animation,
+      battle UI, settings, pokédex, admin verified at ~370px, 760px and
+      1280px widths; no horizontal overflow on /game (scrollWidth check);
+      battle command/move grids resized so nothing truncates
+- [x] Admin CRUD round-trip verified (Groudon weight edit → public endpoint
+      → reset)
+- [x] Surf verified live via DEV-only `devPond` stamp (fallback world never
+      classifies water): mount ("MUDKIP used SURF!"), water traversal,
+      wild SLOWPOKE water-only encounter, dismount onto grass
+- [x] Merged to main + pushed (repo protocol) — every working state
+- [x] Loop closed (CronDelete f41e9b2e) after all above verified
+
+## COMPLETE
+
+All requested features are implemented, tested (202 vitest cases green) and
+browser-verified; the cron loop is closed. Follow-ups intentionally left
+open (not part of the requested scope): battle-FX freeze-frame screenshots
+of lunge/flinch (transient by design), and a production-map (real imagery)
+surf spot-check whenever the shared :3847 checkout returns to main.
 
 ## Verification log
 

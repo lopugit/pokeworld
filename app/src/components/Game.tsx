@@ -1257,6 +1257,40 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     this.storeTileData();
     this.storeBlockData();
     this.ensureWalkableSpawn();
+    this.stampDevPond();
+  }
+
+  // Dev-only: the offline fallback world never classifies water, so surf
+  // can't be exercised there. localStorage "devPond" = "true" stamps a small
+  // pond two tiles east of spawn for visual surf testing. Stripped from
+  // production builds.
+  private devPondStamped = false;
+
+  private stampDevPond() {
+    if (!import.meta.env.DEV || this.devPondStamped) return;
+    if (window.localStorage.getItem("devPond") !== "true") return;
+    const { player } = this.state;
+    const spawnTile = this.tileDb[`${player.x},${player.y}`];
+    if (!spawnTile) return;
+    this.devPondStamped = true;
+    for (let dx = 2; dx <= 5; dx += 1) {
+      for (let dy = -1; dy <= 1; dy += 1) {
+        const mapX = player.x + dx * tileSize;
+        const mapY = player.y + dy * tileSize;
+        const existing = this.tileDb[`${mapX},${mapY}`];
+        if (!existing) continue;
+        this.tileDb[`${mapX},${mapY}`] = {
+          ...existing,
+          img: "pond-5",
+          img2: undefined,
+          feature: undefined,
+          terrain: "water",
+          solid: true,
+          updated: Date.now(),
+        };
+      }
+    }
+    this.setState(({ revision }) => ({ revision: revision + 1 }));
   }
 
   // A fresh load-in (or a restore into a re-generated world) can land the

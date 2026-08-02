@@ -1,7 +1,7 @@
 # Graph Report - pokemon-game-features-105fad  (2026-08-02)
 
 ## Corpus Check
-- 149 files · ~270,614 words
+- 149 files · ~270,895 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `62453d9f`
+- Built from commit: `14db3110`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -638,7 +638,7 @@ Nodes (3): MapBenchmarkResult, node_child_process, node_url
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **503 isolated node(s):** `LOCAL_DEVELOPMENT_SECRET`, `PokeworldSessionClaims`, `NOW`, `BattleMenu`, `BagTab` (+498 more)
+- **503 isolated node(s):** `Requested features (user)`, `Architecture decisions`, `Checklist`, `Verification log`, `LOCAL_DEVELOPMENT_SECRET` (+498 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **139 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -648,12 +648,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
 - **Why does `Game` connect `Game` to `Game.tsx`, `AuthProvider.tsx`?**
-  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `package.json`, `vite`, `client.ts`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `vitest` connect `devDependencies` to `extract-terrain-tiles.mjs`?**
   _High betweenness centrality (0.042) - this node is a cross-community bridge._
-- **What connects `LOCAL_DEVELOPMENT_SECRET`, `PokeworldSessionClaims`, `NOW` to the rest of the system?**
+- **What connects `Requested features (user)`, `Architecture decisions`, `Checklist` to the rest of the system?**
   _507 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.06554019457245264 - nodes in this community are weakly interconnected._

@@ -331,14 +331,74 @@
   },
   "nodes": [
     {
+      "label": "LOOP-STATE-pokemon-features.md",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features",
+      "community": 40,
+      "norm_label": "loop-state-pokemon-features.md"
+    },
+    {
+      "label": "Loop state \u2014 Pok\u00e9mon game features build",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "community": 40,
+      "norm_label": "loop state \u2014 pokemon game features build"
+    },
+    {
+      "label": "Requested features (user)",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features_requested_features_user",
+      "community": 40,
+      "norm_label": "requested features (user)"
+    },
+    {
+      "label": "Architecture decisions",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features_architecture_decisions",
+      "community": 40,
+      "norm_label": "architecture decisions"
+    },
+    {
+      "label": "Checklist",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features_checklist",
+      "community": 40,
+      "norm_label": "checklist"
+    },
+    {
+      "label": "Verification log",
+      "file_type": "document",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "docs_loop_state_pokemon_features_verification_log",
+      "community": 40,
+      "norm_label": "verification log"
+    },
+    {
       "label": "http.ts",
       "file_type": "code",
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_services_auth_http",
       "community": 2,
-      "norm_label": "http.ts"
+      "norm_label": "http.ts",
+      "id": "app_server_services_auth_http"
     },
     {
       "label": "AuthHttpError",
@@ -346,9 +406,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_authhttperror",
       "community": 2,
-      "norm_label": "authhttperror"
+      "norm_label": "authhttperror",
+      "id": "app_server_services_auth_http_authhttperror"
     },
     {
       "label": ".constructor()",
@@ -356,9 +416,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_authhttperror_constructor",
       "community": 2,
-      "norm_label": ".constructor()"
+      "norm_label": ".constructor()",
+      "id": "app_server_services_auth_http_authhttperror_constructor"
     },
     {
       "label": "privateJson()",
@@ -366,9 +426,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_privatejson",
       "community": 2,
-      "norm_label": "privatejson()"
+      "norm_label": "privatejson()",
+      "id": "app_server_services_auth_http_privatejson"
     },
     {
       "label": "requireSameOrigin()",
@@ -376,9 +436,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_requiresameorigin",
       "community": 2,
-      "norm_label": "requiresameorigin()"
+      "norm_label": "requiresameorigin()",
+      "id": "app_server_services_auth_http_requiresameorigin"
     },
     {
       "label": "cookieOptions()",
@@ -386,9 +446,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_cookieoptions",
       "community": 2,
-      "norm_label": "cookieoptions()"
+      "norm_label": "cookieoptions()",
+      "id": "app_server_services_auth_http_cookieoptions"
     },
     {
       "label": "setPokeworldSession()",
@@ -396,9 +456,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_setpokeworldsession",
       "community": 2,
-      "norm_label": "setpokeworldsession()"
+      "norm_label": "setpokeworldsession()",
+      "id": "app_server_services_auth_http_setpokeworldsession"
     },
     {
       "label": "clearPokeworldSession()",
@@ -406,9 +466,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_clearpokeworldsession",
       "community": 2,
-      "norm_label": "clearpokeworldsession()"
+      "norm_label": "clearpokeworldsession()",
+      "id": "app_server_services_auth_http_clearpokeworldsession"
     },
     {
       "label": "readPokeworldSession()",
@@ -416,9 +476,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L82",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_readpokeworldsession",
       "community": 2,
-      "norm_label": "readpokeworldsession()"
+      "norm_label": "readpokeworldsession()",
+      "id": "app_server_services_auth_http_readpokeworldsession"
     },
     {
       "label": "requireAdminSession()",
@@ -426,9 +486,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L93",
       "_origin": "ast",
-      "id": "app_server_services_auth_http_requireadminsession",
       "community": 2,
-      "norm_label": "requireadminsession()"
+      "norm_label": "requireadminsession()",
+      "id": "app_server_services_auth_http_requireadminsession"
     },
     {
       "label": "session.ts",
@@ -436,9 +496,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_server_services_auth_session",
       "community": 2,
-      "norm_label": "session.ts"
+      "norm_label": "session.ts",
+      "id": "app_server_services_auth_session"
     },
     {
       "label": "LOCAL_DEVELOPMENT_SECRET",
@@ -446,9 +506,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_local_development_secret",
       "community": 2,
-      "norm_label": "local_development_secret"
+      "norm_label": "local_development_secret",
+      "id": "app_server_services_auth_session_local_development_secret"
     },
     {
       "label": "PokeworldUser",
@@ -456,9 +516,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_pokeworlduser",
       "community": 2,
-      "norm_label": "pokeworlduser"
+      "norm_label": "pokeworlduser",
+      "id": "app_server_services_auth_session_pokeworlduser"
     },
     {
       "label": "PokeworldSessionClaims",
@@ -466,9 +526,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_pokeworldsessionclaims",
       "community": 2,
-      "norm_label": "pokeworldsessionclaims"
+      "norm_label": "pokeworldsessionclaims",
+      "id": "app_server_services_auth_session_pokeworldsessionclaims"
     },
     {
       "label": "PokeworldSessionView",
@@ -476,9 +536,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_pokeworldsessionview",
       "community": 2,
-      "norm_label": "pokeworldsessionview"
+      "norm_label": "pokeworldsessionview",
+      "id": "app_server_services_auth_session_pokeworldsessionview"
     },
     {
       "label": "isPublicDeployment()",
@@ -486,9 +546,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_ispublicdeployment",
       "community": 2,
-      "norm_label": "ispublicdeployment()"
+      "norm_label": "ispublicdeployment()",
+      "id": "app_server_services_auth_session_ispublicdeployment"
     },
     {
       "label": "getSessionSecret()",
@@ -496,9 +556,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_getsessionsecret",
       "community": 2,
-      "norm_label": "getsessionsecret()"
+      "norm_label": "getsessionsecret()",
+      "id": "app_server_services_auth_session_getsessionsecret"
     },
     {
       "label": "signatureFor()",
@@ -506,9 +566,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_signaturefor",
       "community": 2,
-      "norm_label": "signaturefor()"
+      "norm_label": "signaturefor()",
+      "id": "app_server_services_auth_session_signaturefor"
     },
     {
       "label": "isValidUser()",
@@ -516,9 +576,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_isvaliduser",
       "community": 2,
-      "norm_label": "isvaliduser()"
+      "norm_label": "isvaliduser()",
+      "id": "app_server_services_auth_session_isvaliduser"
     },
     {
       "label": "isValidClaims()",
@@ -526,9 +586,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_isvalidclaims",
       "community": 2,
-      "norm_label": "isvalidclaims()"
+      "norm_label": "isvalidclaims()",
+      "id": "app_server_services_auth_session_isvalidclaims"
     },
     {
       "label": "createSessionToken()",
@@ -536,9 +596,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_createsessiontoken",
       "community": 2,
-      "norm_label": "createsessiontoken()"
+      "norm_label": "createsessiontoken()",
+      "id": "app_server_services_auth_session_createsessiontoken"
     },
     {
       "label": "verifySessionToken()",
@@ -546,9 +606,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L99",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_verifysessiontoken",
       "community": 2,
-      "norm_label": "verifysessiontoken()"
+      "norm_label": "verifysessiontoken()",
+      "id": "app_server_services_auth_session_verifysessiontoken"
     },
     {
       "label": "isPokeworldAdmin()",
@@ -556,9 +616,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L121",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_ispokeworldadmin",
       "community": 2,
-      "norm_label": "ispokeworldadmin()"
+      "norm_label": "ispokeworldadmin()",
+      "id": "app_server_services_auth_session_ispokeworldadmin"
     },
     {
       "label": "toSessionView()",
@@ -566,9 +626,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L134",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_tosessionview",
       "community": 2,
-      "norm_label": "tosessionview()"
+      "norm_label": "tosessionview()",
+      "id": "app_server_services_auth_session_tosessionview"
     },
     {
       "label": "devAdminPreviewSession()",
@@ -576,9 +636,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L150",
       "_origin": "ast",
-      "id": "app_server_services_auth_session_devadminpreviewsession",
       "community": 2,
-      "norm_label": "devadminpreviewsession()"
+      "norm_label": "devadminpreviewsession()",
+      "id": "app_server_services_auth_session_devadminpreviewsession"
     },
     {
       "label": "auth-session.test.ts",
@@ -586,9 +646,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_tests_auth_session_test",
       "community": 2,
-      "norm_label": "auth-session.test.ts"
+      "norm_label": "auth-session.test.ts",
+      "id": "app_tests_auth_session_test"
     },
     {
       "label": "NOW",
@@ -596,9 +656,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "app_tests_auth_session_test_now",
       "community": 2,
-      "norm_label": "now"
+      "norm_label": "now",
+      "id": "app_tests_auth_session_test_now"
     },
     {
       "label": "BattleScreen.tsx",
@@ -2869,66 +2929,6 @@
       "community": 197,
       "norm_label": "jsonresponse()",
       "id": "app_tests_spawn_rules_client_test_jsonresponse"
-    },
-    {
-      "label": "LOOP-STATE-pokemon-features.md",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "loop-state-pokemon-features.md",
-      "id": "docs_loop_state_pokemon_features"
-    },
-    {
-      "label": "Loop state \u2014 Pok\u00e9mon game features build",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "loop state \u2014 pokemon game features build",
-      "id": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build"
-    },
-    {
-      "label": "Requested features (user)",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "requested features (user)",
-      "id": "docs_loop_state_pokemon_features_requested_features_user"
-    },
-    {
-      "label": "Architecture decisions",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "architecture decisions",
-      "id": "docs_loop_state_pokemon_features_architecture_decisions"
-    },
-    {
-      "label": "Checklist",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "checklist",
-      "id": "docs_loop_state_pokemon_features_checklist"
-    },
-    {
-      "label": "Verification log",
-      "file_type": "document",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L94",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "verification log",
-      "id": "docs_loop_state_pokemon_features_verification_log"
     },
     {
       "label": "encounters.ts",
@@ -16778,6 +16778,56 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_loop_state_pokemon_features",
+      "target": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "target": "docs_loop_state_pokemon_features_architecture_decisions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "target": "docs_loop_state_pokemon_features_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "target": "docs_loop_state_pokemon_features_requested_features_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/LOOP-STATE-pokemon-features.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
+      "target": "docs_loop_state_pokemon_features_verification_log",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -16838,9 +16888,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_authhttperror",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_authhttperror"
     },
     {
       "relation": "contains",
@@ -16848,9 +16898,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_clearpokeworldsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_clearpokeworldsession"
     },
     {
       "relation": "contains",
@@ -16858,9 +16908,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_cookieoptions",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_cookieoptions"
     },
     {
       "relation": "contains",
@@ -16868,9 +16918,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_privatejson",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_privatejson"
     },
     {
       "relation": "contains",
@@ -16878,9 +16928,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_readpokeworldsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_readpokeworldsession"
     },
     {
       "relation": "contains",
@@ -16888,9 +16938,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_requireadminsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_requireadminsession"
     },
     {
       "relation": "contains",
@@ -16898,9 +16948,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_requiresameorigin",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_requiresameorigin"
     },
     {
       "relation": "contains",
@@ -16908,9 +16958,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_http_setpokeworldsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_setpokeworldsession"
     },
     {
       "relation": "imports_from",
@@ -16919,9 +16969,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session"
     },
     {
       "relation": "imports",
@@ -16930,9 +16980,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_createsessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_createsessiontoken"
     },
     {
       "relation": "imports",
@@ -16941,9 +16991,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_devadminpreviewsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_devadminpreviewsession"
     },
     {
       "relation": "imports",
@@ -16952,9 +17002,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_getsessionsecret",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_getsessionsecret"
     },
     {
       "relation": "imports",
@@ -16963,9 +17013,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_pokeworldsessionview",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_pokeworldsessionview"
     },
     {
       "relation": "imports",
@@ -16974,9 +17024,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_pokeworlduser",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_pokeworlduser"
     },
     {
       "relation": "imports",
@@ -16985,9 +17035,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_tosessionview",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_tosessionview"
     },
     {
       "relation": "imports",
@@ -16996,9 +17046,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "app_server_services_auth_session_verifysessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_verifysessiontoken"
     },
     {
       "relation": "imports_from",
@@ -17007,9 +17057,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http",
-      "target": "h3",
-      "confidence_score": 1.0
+      "target": "h3"
     },
     {
       "relation": "imports",
@@ -17061,9 +17111,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http_authhttperror",
-      "target": "app_server_services_auth_http_authhttperror_constructor",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_authhttperror_constructor"
     },
     {
       "relation": "imports",
@@ -17160,9 +17210,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http_clearpokeworldsession",
-      "target": "app_server_services_auth_http_cookieoptions",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_cookieoptions"
     },
     {
       "relation": "calls",
@@ -17171,9 +17221,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http_setpokeworldsession",
-      "target": "app_server_services_auth_http_cookieoptions",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_cookieoptions"
     },
     {
       "relation": "imports",
@@ -17248,9 +17298,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http_readpokeworldsession",
-      "target": "app_server_services_auth_http_clearpokeworldsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_clearpokeworldsession"
     },
     {
       "relation": "imports",
@@ -17314,9 +17364,9 @@
       "source_file": "app/server/services/auth/http.ts",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_http_requireadminsession",
-      "target": "app_server_services_auth_http_readpokeworldsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_http_readpokeworldsession"
     },
     {
       "relation": "imports",
@@ -17346,9 +17396,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_createsessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_createsessiontoken"
     },
     {
       "relation": "contains",
@@ -17356,9 +17406,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_devadminpreviewsession",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_devadminpreviewsession"
     },
     {
       "relation": "contains",
@@ -17366,9 +17416,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_getsessionsecret",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_getsessionsecret"
     },
     {
       "relation": "contains",
@@ -17376,9 +17426,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_ispokeworldadmin",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispokeworldadmin"
     },
     {
       "relation": "contains",
@@ -17386,9 +17436,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_ispublicdeployment",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispublicdeployment"
     },
     {
       "relation": "contains",
@@ -17396,9 +17446,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_isvalidclaims",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_isvalidclaims"
     },
     {
       "relation": "contains",
@@ -17406,9 +17456,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_isvaliduser",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_isvaliduser"
     },
     {
       "relation": "contains",
@@ -17416,9 +17466,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_local_development_secret",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_local_development_secret"
     },
     {
       "relation": "contains",
@@ -17426,9 +17476,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworldsessionclaims",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_pokeworldsessionclaims"
     },
     {
       "relation": "contains",
@@ -17436,9 +17486,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworldsessionview",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_pokeworldsessionview"
     },
     {
       "relation": "contains",
@@ -17446,9 +17496,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_pokeworlduser",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_pokeworlduser"
     },
     {
       "relation": "contains",
@@ -17456,9 +17506,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_signaturefor",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_signaturefor"
     },
     {
       "relation": "contains",
@@ -17466,9 +17516,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_tosessionview",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_tosessionview"
     },
     {
       "relation": "contains",
@@ -17476,9 +17526,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "app_server_services_auth_session_verifysessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_verifysessiontoken"
     },
     {
       "relation": "imports_from",
@@ -17498,9 +17548,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session",
-      "target": "node_crypto",
-      "confidence_score": 1.0
+      "target": "node_crypto"
     },
     {
       "relation": "imports_from",
@@ -17509,9 +17559,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session"
     },
     {
       "relation": "imports",
@@ -17542,9 +17592,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_devadminpreviewsession",
-      "target": "app_server_services_auth_session_ispublicdeployment",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispublicdeployment"
     },
     {
       "relation": "calls",
@@ -17553,9 +17603,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_getsessionsecret",
-      "target": "app_server_services_auth_session_ispublicdeployment",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispublicdeployment"
     },
     {
       "relation": "imports",
@@ -17564,9 +17614,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session_getsessionsecret",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_getsessionsecret"
     },
     {
       "relation": "calls",
@@ -17575,9 +17625,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_createsessiontoken",
-      "target": "app_server_services_auth_session_signaturefor",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_signaturefor"
     },
     {
       "relation": "calls",
@@ -17586,9 +17636,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_verifysessiontoken",
-      "target": "app_server_services_auth_session_signaturefor",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_signaturefor"
     },
     {
       "relation": "calls",
@@ -17597,9 +17647,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_createsessiontoken",
-      "target": "app_server_services_auth_session_isvaliduser",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_isvaliduser"
     },
     {
       "relation": "calls",
@@ -17608,9 +17658,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_isvalidclaims",
-      "target": "app_server_services_auth_session_isvaliduser",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_isvaliduser"
     },
     {
       "relation": "calls",
@@ -17619,9 +17669,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_verifysessiontoken",
-      "target": "app_server_services_auth_session_isvalidclaims",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_isvalidclaims"
     },
     {
       "relation": "imports",
@@ -17630,9 +17680,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session_createsessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_createsessiontoken"
     },
     {
       "relation": "imports",
@@ -17641,9 +17691,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session_verifysessiontoken",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_verifysessiontoken"
     },
     {
       "relation": "calls",
@@ -17652,9 +17702,9 @@
       "source_file": "app/server/services/auth/session.ts",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_auth_session_tosessionview",
-      "target": "app_server_services_auth_session_ispokeworldadmin",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispokeworldadmin"
     },
     {
       "relation": "imports",
@@ -17663,9 +17713,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session_ispokeworldadmin",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_ispokeworldadmin"
     },
     {
       "relation": "imports",
@@ -17674,9 +17724,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_server_services_auth_session_tosessionview",
-      "confidence_score": 1.0
+      "target": "app_server_services_auth_session_tosessionview"
     },
     {
       "relation": "contains",
@@ -17684,9 +17734,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "app_tests_auth_session_test_now",
-      "confidence_score": 1.0
+      "target": "app_tests_auth_session_test_now"
     },
     {
       "relation": "imports_from",
@@ -17695,9 +17745,9 @@
       "source_file": "app/tests/auth-session.test.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_auth_session_test",
-      "target": "vitest",
-      "confidence_score": 1.0
+      "target": "vitest"
     },
     {
       "relation": "imports_from",
@@ -22417,56 +22467,6 @@
       "confidence_score": 1.0,
       "source": "app_tests_spawn_rules_client_test",
       "target": "vitest"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "docs_loop_state_pokemon_features",
-      "target": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
-      "target": "docs_loop_state_pokemon_features_architecture_decisions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
-      "target": "docs_loop_state_pokemon_features_checklist"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
-      "target": "docs_loop_state_pokemon_features_requested_features_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/LOOP-STATE-pokemon-features.md",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "docs_loop_state_pokemon_features_loop_state_pok\u00e9mon_game_features_build",
-      "target": "docs_loop_state_pokemon_features_verification_log"
     },
     {
       "relation": "contains",
@@ -42535,5 +42535,5 @@
       "source_file": "/Users/lopu/things/code/lopugit/pokeworld/graphify-out/memory/query_20260719_121030_implement_atomic_global_block_generation_quotas_an.md"
     }
   ],
-  "built_at_commit": "62453d9f3dea5a1809cd67de5446bcf81e3e72dd"
+  "built_at_commit": "14db31102aef270a4a502276571d6ddc98a16f38"
 }
