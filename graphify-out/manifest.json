@@ -9300,13 +9300,13 @@
     "semantic_hash": ""
   },
   "app/src/components/design/SpriteThumb.tsx": {
-    "mtime": 1785675498.9178743,
-    "ast_hash": "52d3218d8d413a74283795e077be730a",
+    "mtime": 1785682130.792287,
+    "ast_hash": "91c33239cc8d199c90af710d19e7b32d",
     "semantic_hash": ""
   },
   "app/src/components/design/useInfiniteReveal.ts": {
-    "mtime": 1785679737.4951348,
-    "ast_hash": "83914561dee88b3c883dfd211500ae51",
+    "mtime": 1785682135.556993,
+    "ast_hash": "74eaaf33c06d0e43564ac21eabe5212a",
     "semantic_hash": ""
   },
   "app/src/lib/design/assets.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "docs/LOOP-STATE-design-studio.md": {
-    "mtime": 1785681558.2658026,
-    "ast_hash": "d3e4828e601096908056b90bd861cde7",
+    "mtime": 1785682295.8505363,
+    "ast_hash": "fbdd85fa195c6cd2c4df2f388f24756c",
     "semantic_hash": ""
   }
 }

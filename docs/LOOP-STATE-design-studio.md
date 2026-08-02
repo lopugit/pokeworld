@@ -26,9 +26,16 @@ lockedAt: (clear)
       at 96px, ~7× denser), (3) switching category/search while deep-scrolled
       stranded the user below the new shorter list (now scrolls to top).
       Mobile re-verified: growth + zero horizontal overflow at 375px.
-- [ ] Community tab visual QA with real saved content (long names, author
-      footers, card layout)
-- [ ] Full-page scroll sweep top→bottom on all tabs, both viewports
+- [x] Community tab visual QA with 31 real saved designs (offline store):
+      pagination to page 2 works, long/64-char names truncate on cards with
+      ellipsis, author footers on all cards, saved-design modal shows author +
+      remix provenance, "Already published — remix it" replaces Save on
+      non-remixed saved designs, no Delete for anonymous viewers. FIXED: an
+      unbroken 64-char name overflowed the modal header — h3 now break-words
+      (wraps to 4 lines), applied to the asset modal too.
+- [x] Full-page scroll sweep top→bottom on all tabs, both viewports: assets
+      (7.7k/14.2k px), designs (9.7k/18.6k px), community (5.0k/9.1k px) at
+      desktop/mobile — growth continues everywhere, zero horizontal overflow.
 - [x] Vercel production check: https://pokeworld.center/design → 308 →
       https://www.pokeworld.center/design 200, asset manifest 200 (deploy of
       `90ac70e` live; lazy world regen quota is a known watch-item)
@@ -43,6 +50,10 @@ lockedAt: (clear)
 
 ## Log
 
+- 2026-08-03 01:1x — iteration 3 (cron): community QA with 31 seeded saves
+  (incl. 64-char + long multi-word names) — 1 glitch found + fixed (modal
+  header overflow on unbroken names → break-words). Full scroll sweep of all
+  tabs × both viewports clean. 222/222 tests. Remaining: final sweep only.
 - 2026-08-03 00:5x — iteration 2 (cron): live-map legality port had landed
   in between (see checklist). Assets deep QA: 3 visual/UX bugs found + fixed
   (scroll stall, giant Pokémon cards, stranded scroll). 222/222 tests.

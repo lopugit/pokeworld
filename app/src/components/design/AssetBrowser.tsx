@@ -36,7 +36,7 @@ function AssetDetailModal({ item, onClose }: { item: AssetItem; onClose: () => v
       >
         <div className="mb-3 flex items-start justify-between gap-3">
           <div>
-            <h3 className="text-lg font-bold text-emerald-300">{item.name}</h3>
+            <h3 className="break-words text-lg font-bold text-emerald-300">{item.name}</h3>
             <p className="text-xs uppercase tracking-wide text-slate-400">
               {categoryLabel(item.category)}
             </p>

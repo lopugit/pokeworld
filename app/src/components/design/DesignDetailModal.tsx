@@ -128,8 +128,8 @@ export function DesignDetailModal({ summary, onClose, onSaved, onDeleted }: Desi
         onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-3 flex items-start justify-between gap-3">
-          <div>
-            <h3 className="text-xl font-bold text-emerald-300">
+          <div className="min-w-0">
+            <h3 className="break-words text-xl font-bold text-emerald-300">
               {remixed ? design.name : summary.name}
               {remixed && <span className="ml-2 rounded bg-amber-500/20 px-2 py-0.5 text-xs font-bold text-amber-300">REMIX</span>}
             </h3>
