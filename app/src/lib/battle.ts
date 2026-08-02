@@ -284,6 +284,8 @@ export interface BattleState {
   runAttempts: number;
   itemsUsed: Record<string, number>;
   caught?: { ball: string; shakes: number };
+  /** Most recent ball throw, for the UI's arc/wobble/sparkle animation. */
+  lastThrow?: { ballId: string; shakes: number; caught: boolean; turn: number };
   turn: number;
 }
 
@@ -668,6 +670,15 @@ export function submitAction(state: BattleState, action: BattleAction, rng: Rng)
         itemsUsed: { ...next.itemsUsed, [action.ballId]: (next.itemsUsed[action.ballId] ?? 0) + 1 },
       };
       const result = catchAttempt(next.wild, action.ballId, rng);
+      next = {
+        ...next,
+        lastThrow: {
+          ballId: action.ballId,
+          shakes: result.caught ? 3 : result.shakes,
+          caught: result.caught,
+          turn: next.turn,
+        },
+      };
       if (result.caught) {
         messages.push("Gotcha!", `${next.wild.name} was caught!`);
         next = { ...next, outcome: "caught", caught: { ball: action.ballId, shakes: 3 } };

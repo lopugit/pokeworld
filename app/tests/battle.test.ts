@@ -143,6 +143,19 @@ describe("catching", () => {
     expect(state.outcome).toBeNull();
     expect(state.itemsUsed["poke-ball"]).toBe(1);
   });
+
+  it("records every throw's computed shake count for the UI animation", () => {
+    // Failed throw on a full-HP legendary: zero shakes pass.
+    let state = startBattle(encounter({ speciesId: 383, level: 50 }));
+    state = submitAction(state, { kind: "ball", ballId: "poke-ball" }, seq(0.999999, 0.5, 0.99, 0.5));
+    expect(state.lastThrow).toMatchObject({ ballId: "poke-ball", caught: false, shakes: 0 });
+
+    // Successful throw always animates the full three wobbles before the click.
+    let catchState = startBattle();
+    catchState = { ...catchState, wild: { ...catchState.wild, hp: 1, status: "asleep" } };
+    catchState = submitAction(catchState, { kind: "ball", ballId: "ultra-ball" }, seq(0, 0, 0, 0));
+    expect(catchState.lastThrow).toMatchObject({ ballId: "ultra-ball", caught: true, shakes: 3 });
+  });
 });
 
 describe("battle outcome application", () => {

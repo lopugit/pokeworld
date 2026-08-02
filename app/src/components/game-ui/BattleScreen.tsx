@@ -51,6 +51,26 @@ const ARROW_KEYS = new Set(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]);
 const A_KEYS = new Set(["z", "Z", " ", "Enter"]);
 const B_KEYS = new Set(["x", "X", "Escape"]);
 
+// Engine break-free flavor lines (battle.ts) — they cue the ball-burst FX.
+const BREAK_FREE_MESSAGES = new Set([
+  "Oh no! The POKéMON broke free!",
+  "Aww! It appeared to be caught!",
+  "Aargh! Almost had it!",
+  "Shoot! It was so close, too!",
+]);
+
+/** Which throw-animation stage the current message narrates. */
+type ThrowStage = "throw" | "burst" | "caught" | null;
+
+/** Transient FX cued by the message currently on screen. */
+interface MessageFx {
+  key: number;
+  lunge?: "player" | "enemy";
+  hit?: "player" | "enemy";
+  shake?: boolean;
+  levelup?: boolean;
+}
+
 const hpPercent = (mon: BattleMon): number =>
   mon.maxHp > 0 ? Math.max(0, Math.min(100, (mon.hp / mon.maxHp) * 100)) : 0;
 
@@ -125,6 +145,66 @@ export function BattleScreen({
   useEffect(() => {
     if (message) lastMessageRef.current = message;
   }, [message]);
+
+  // --- Battle FX ------------------------------------------------------------
+  // The engine resolves a whole turn at once, so animations are cued by the
+  // message currently narrating them: lunges on "used", flinch on the
+  // defender, screen shake on crits/super-effective, level-up glow, and the
+  // ball throw/wobble/sparkle/burst sequence for capture attempts.
+
+  const [fx, setFx] = useState<MessageFx>({ key: 0 });
+  useEffect(() => {
+    if (!message) return;
+    const enemyUsed = message.startsWith(`Wild ${enemy.name} used `);
+    const playerUsed = !enemyUsed && / used [^!]+!$/.test(message);
+    let next: Omit<MessageFx, "key"> | null = null;
+    if (enemyUsed) next = { lunge: "enemy", hit: "player" };
+    else if (playerUsed) next = { lunge: "player", hit: "enemy" };
+    else if (message === "A critical hit!" || message === "It's super effective!") {
+      next = { shake: true };
+    } else if (/grew to LV\. \d+!$/.test(message)) next = { levelup: true };
+    if (next) setFx((current) => ({ ...next, key: current.key + 1 }));
+  }, [message, battle.messages.length, enemy.name]);
+
+  const throwFx = battle.lastThrow;
+  let throwStage: ThrowStage = null;
+  if (throwFx) {
+    if (battle.phase !== "command" && message.startsWith("You threw")) throwStage = "throw";
+    else if (BREAK_FREE_MESSAGES.has(message)) throwStage = "burst";
+    else if (battle.outcome === "caught") throwStage = "caught";
+  }
+
+  // Keep the wild fainted on the ground while the KO narration plays out.
+  const enemyFainted =
+    enemy.hp <= 0 &&
+    (battle.phase === "over" ||
+      message === `Wild ${enemy.name} fainted!` ||
+      / gained \d+ EXP\. Points!$/.test(message) ||
+      /grew to LV\. \d+!$/.test(message));
+  const playerFainted = active.hp <= 0;
+
+  const enemySpriteClass = [
+    "pkbt-sprite",
+    "pkbt-sprite-enemy",
+    throwStage === "throw" ? "pkbt-absorb" : "",
+    throwStage === "caught" ? "pkbt-absorbed" : "",
+    throwStage === "burst" ? "pkbt-reappear" : "",
+    fx.lunge === "enemy" ? "pkbt-lunge-enemy" : "",
+    fx.hit === "enemy" && !throwStage ? "pkbt-hit" : "",
+    enemyFainted && !throwStage ? "pkbt-faint" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const playerSpriteClass = [
+    "pkbt-sprite",
+    "pkbt-sprite-player",
+    fx.lunge === "player" ? "pkbt-lunge-player" : "",
+    fx.hit === "player" ? "pkbt-hit" : "",
+    playerFainted ? "pkbt-faint" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   // Typewriter (same feel as DialogBox, simplified to one message at a time).
   useEffect(() => {
@@ -296,13 +376,15 @@ export function BattleScreen({
 
   return (
     <div className="pkbt-screen">
-      <div className="pkbt-field">
+      <div className={`pkbt-field${fx.shake ? " pkbt-field-shake" : ""}`} key={`field-${fx.shake ? fx.key : "still"}`}>
         <div className="pkbt-pad pkbt-pad-enemy" />
         <div className="pkbt-pad pkbt-pad-player" />
         {enemy.speciesId > 0 ? (
           <img
-            key={`enemy-${enemy.speciesId}-${enemy.shiny ? "s" : "n"}`}
-            className="pkbt-sprite pkbt-sprite-enemy"
+            key={`enemy-${enemy.speciesId}-${enemy.shiny ? "s" : "n"}-${
+              fx.lunge === "enemy" || fx.hit === "enemy" ? fx.key : "fx"
+            }`}
+            className={enemySpriteClass}
             src={spriteUrl(enemy.speciesId, { shiny: enemy.shiny })}
             alt={`Wild ${enemy.name}`}
             onError={(event) => {
@@ -312,14 +394,35 @@ export function BattleScreen({
         ) : null}
         {active.speciesId > 0 ? (
           <img
-            key={`player-${active.speciesId}-${active.shiny ? "s" : "n"}`}
-            className="pkbt-sprite pkbt-sprite-player"
+            key={`player-${active.speciesId}-${active.shiny ? "s" : "n"}-${
+              fx.lunge === "player" || fx.hit === "player" ? fx.key : "fx"
+            }`}
+            className={playerSpriteClass}
             src={spriteUrl(active.speciesId, { back: true, shiny: active.shiny })}
             alt={active.name}
             onError={(event) => {
               event.currentTarget.style.visibility = "hidden";
             }}
           />
+        ) : null}
+        {throwStage && throwFx ? (
+          <div
+            key={`ball-${throwFx.turn}-${throwStage}`}
+            className={`pkbt-ball pkbt-ball-${throwStage}`}
+            style={{ "--pkbt-shakes": Math.max(0, throwFx.shakes) } as React.CSSProperties}
+            aria-hidden="true"
+          >
+            <span className="pkbt-ball-body" />
+            {throwStage === "caught" ? (
+              <>
+                <span className="pkbt-spark pkbt-spark-1">✦</span>
+                <span className="pkbt-spark pkbt-spark-2">✧</span>
+                <span className="pkbt-spark pkbt-spark-3">✦</span>
+                <span className="pkbt-spark pkbt-spark-4">✧</span>
+              </>
+            ) : null}
+            {throwStage === "burst" ? <span className="pkbt-ball-flash" /> : null}
+          </div>
         ) : null}
 
         <div className="pkbt-info pkbt-info-enemy">
@@ -337,7 +440,10 @@ export function BattleScreen({
           ) : null}
         </div>
 
-        <div className="pkbt-info pkbt-info-player">
+        <div
+          className={`pkbt-info pkbt-info-player${fx.levelup ? " pkbt-levelup" : ""}`}
+          key={`pinfo-${fx.levelup ? fx.key : "still"}`}
+        >
           <div className="pkbt-info-top">
             <span className="pkbt-name">{active.name}</span>
             <GenderMark mon={active} />

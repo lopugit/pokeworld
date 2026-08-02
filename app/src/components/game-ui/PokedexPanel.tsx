@@ -62,7 +62,7 @@ export function PokedexPanel({ trainer, onClose }: PokedexPanelProps) {
 
   return (
     <PanelFrame
-      title={`POKéDEX  SEEN ${seen.size}  CAUGHT ${caught.size}`}
+      title="POKéDEX"
       onClose={onClose}
       footer={
         <span>
@@ -72,6 +72,10 @@ export function PokedexPanel({ trainer, onClose }: PokedexPanelProps) {
         </span>
       }
     >
+      <div className="pkmn-dex-counts">
+        <span>SEEN {seen.size}</span>
+        <span>CAUGHT {caught.size}</span>
+      </div>
       {detail ? (
         <div className="pkmn-dex-detail">
           <div className="pkmn-dex-detail-top">

@@ -748,7 +748,9 @@
 .pkmn-opt-body {
   display: flex;
   flex-direction: column;
-  gap: 2.4cqw;
+  gap: 1.8cqw;
+  /* The panel body scrolls; keep the SAVE row clear of the footer edge. */
+  padding-bottom: 1.6cqw;
 }
 
 .pkmn-opt-row {
@@ -846,4 +848,14 @@
 
 .pkmn-opt-saved.visible {
   opacity: 1;
+}
+
+/* Pokédex seen/caught counters (header stays a single short title). */
+.pkmn-dex-counts {
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 0.6cqw 1.6cqw 1cqw;
+  font-size: 2.4cqw;
+  color: #2a5a52;
 }

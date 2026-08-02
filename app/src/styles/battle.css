@@ -101,7 +101,8 @@
   align-items: baseline;
   gap: 0.9cqw;
   min-width: 0;
-  font-size: 2.9cqw;
+  /* Sized so a 10-char Emerald name + gender + LV.100 fits without ellipsis. */
+  font-size: 2.55cqw;
   line-height: 1.2;
 }
 
@@ -134,7 +135,7 @@
 .pkbt-level {
   flex: none;
   margin-left: auto;
-  font-size: 2.5cqw;
+  font-size: 2.3cqw;
   color: #385088;
 }
 
@@ -584,6 +585,207 @@
   color: #c04040;
 }
 
+/* ---------- Battle FX: attacks ---------- */
+
+.pkbt-lunge-player {
+  animation: pkbt-lunge-player 0.45s ease-out;
+}
+
+.pkbt-lunge-enemy {
+  animation: pkbt-lunge-enemy 0.45s ease-out;
+}
+
+@keyframes pkbt-lunge-player {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(9cqw, -5cqw); }
+  60% { transform: translate(-1cqw, 0.5cqw); }
+}
+
+@keyframes pkbt-lunge-enemy {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(-9cqw, 5cqw); }
+  60% { transform: translate(1cqw, -0.5cqw); }
+}
+
+/* Defender flinch: blink + jolt, delayed until the attacker connects. */
+.pkbt-hit {
+  animation: pkbt-hit 0.5s steps(1, end) 0.28s;
+}
+
+@keyframes pkbt-hit {
+  0% { opacity: 1; transform: translate(0, 0); }
+  20% { opacity: 0.25; transform: translate(1.2cqw, 0); }
+  40% { opacity: 1; transform: translate(-1.2cqw, 0); }
+  60% { opacity: 0.25; transform: translate(0.8cqw, 0); }
+  80% { opacity: 1; transform: translate(0, 0); }
+}
+
+.pkbt-field-shake {
+  animation: pkbt-field-shake 0.4s linear;
+}
+
+@keyframes pkbt-field-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-1cqw, 0.6cqw); }
+  40% { transform: translate(1cqw, -0.6cqw); }
+  60% { transform: translate(-0.8cqw, -0.4cqw); }
+  80% { transform: translate(0.8cqw, 0.4cqw); }
+}
+
+.pkbt-faint {
+  animation: pkbt-faint 0.55s ease-in forwards;
+}
+
+@keyframes pkbt-faint {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(45%); opacity: 0; }
+}
+
+.pkbt-levelup {
+  animation: pkbt-levelup 0.9s ease-out;
+}
+
+@keyframes pkbt-levelup {
+  0%, 100% { box-shadow: inset 0 0 0 0.4cqw #a8b8e8, 0 0.5cqw 0 rgba(0, 0, 0, 0.25); }
+  35% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 3cqw 1cqw rgba(255, 214, 90, 0.95); }
+  70% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 1.6cqw 0.5cqw rgba(255, 214, 90, 0.7); }
+}
+
+/* ---------- Battle FX: the ball throw ---------- */
+
+/* Resting spot: centre of the enemy pad. The outer element flies the arc;
+   the inner .pkbt-ball-body wobbles, so the two transforms never fight. */
+.pkbt-ball {
+  position: absolute;
+  top: 24.5cqw;
+  right: 17.5cqw;
+  width: 6cqw;
+  height: 6cqw;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pkbt-ball-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #f8f8f0 0 12%, #303030 13% 19%, transparent 20%),
+    linear-gradient(180deg, #e83838 0 44%, #303030 44% 56%, #f8f8f0 56% 100%);
+  border: 0.45cqw solid #303030;
+  box-shadow: inset -0.7cqw -0.9cqw 0 rgba(0, 0, 0, 0.18), 0 0.5cqw 0.4cqw rgba(0, 0, 0, 0.25);
+  transform-origin: 50% 90%;
+}
+
+/* Stage 1: arc from the player side onto the pad, spinning… */
+.pkbt-ball-throw {
+  animation: pkbt-ball-arc 0.6s cubic-bezier(0.25, 0.7, 0.45, 1) backwards;
+}
+
+@keyframes pkbt-ball-arc {
+  0% { transform: translate(-46cqw, 26cqw) rotate(-540deg) scale(0.8); }
+  55% { transform: translate(-18cqw, -9cqw) rotate(-180deg) scale(1.05); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+/* …then wobble exactly the number of shake checks the Gen III formula passed. */
+.pkbt-ball-throw .pkbt-ball-body {
+  animation: pkbt-ball-wobble 0.7s ease-in-out 1.25s;
+  animation-iteration-count: var(--pkbt-shakes, 1);
+}
+
+@keyframes pkbt-ball-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-24deg) translateX(-0.5cqw); }
+  50% { transform: rotate(0deg); }
+  70% { transform: rotate(24deg) translateX(0.5cqw); }
+}
+
+/* Break free: the ball pops open in a flash. */
+.pkbt-ball-burst {
+  animation: pkbt-ball-gone 0.45s ease-out 0.25s forwards;
+}
+
+.pkbt-ball-flash {
+  position: absolute;
+  inset: -70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 30%, rgba(255, 255, 255, 0) 70%);
+  animation: pkbt-ball-flash 0.45s ease-out forwards;
+}
+
+@keyframes pkbt-ball-flash {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes pkbt-ball-gone {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+
+/* Caught: the ball settles with a click and sparkles. */
+.pkbt-ball-caught .pkbt-ball-body {
+  animation: pkbt-ball-settle 0.5s ease-out;
+  filter: saturate(0.85) brightness(0.96);
+}
+
+@keyframes pkbt-ball-settle {
+  0% { transform: scale(1.15); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+.pkbt-spark {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: #ffd65a;
+  font-size: 3.4cqw;
+  text-shadow: 0 0 0.8cqw rgba(255, 214, 90, 0.9);
+  opacity: 0;
+  animation: pkbt-spark 0.9s ease-out forwards;
+}
+
+.pkbt-spark-1 { animation-delay: 0.15s; --sx: -4.5cqw; --sy: -4cqw; }
+.pkbt-spark-2 { animation-delay: 0.3s; --sx: 4.5cqw; --sy: -3.5cqw; }
+.pkbt-spark-3 { animation-delay: 0.45s; --sx: -3cqw; --sy: 2.5cqw; color: #fff3bd; }
+.pkbt-spark-4 { animation-delay: 0.6s; --sx: 3.5cqw; --sy: 3cqw; color: #fff3bd; }
+
+@keyframes pkbt-spark {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--sx, 3cqw), var(--sy, -3cqw)) scale(1.15); }
+}
+
+/* Enemy absorbed into the ball: white-out shrink toward the ball's spot… */
+.pkbt-absorb {
+  animation: pkbt-absorb 0.5s ease-in 0.55s forwards;
+  transform-origin: 60% 100%;
+}
+
+@keyframes pkbt-absorb {
+  0% { transform: scale(1); filter: none; opacity: 1; }
+  45% { filter: brightness(2.4) saturate(0.2); }
+  100% { transform: scale(0.06) translateY(30%); filter: brightness(3); opacity: 0; }
+}
+
+/* …stays hidden while caught, and pops back out when it breaks free. */
+.pkbt-absorbed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pkbt-reappear {
+  animation: pkbt-reappear 0.4s ease-out 0.3s backwards;
+}
+
+@keyframes pkbt-reappear {
+  0% { transform: scale(0.1); filter: brightness(3); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: scale(1); filter: none; opacity: 1; }
+}
+
 /* ---------- Motion preferences ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -594,5 +796,31 @@
   .pkbt-hp-fill,
   .pkbt-exp-fill {
     transition: none;
+  }
+
+  .pkbt-lunge-player,
+  .pkbt-lunge-enemy,
+  .pkbt-hit,
+  .pkbt-field-shake,
+  .pkbt-levelup,
+  .pkbt-ball-throw,
+  .pkbt-ball-throw .pkbt-ball-body,
+  .pkbt-spark {
+    animation: none;
+  }
+
+  .pkbt-absorb {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .pkbt-reappear {
+    animation: none;
+  }
+
+  .pkbt-faint {
+    animation: none;
+    opacity: 0;
   }
 }
