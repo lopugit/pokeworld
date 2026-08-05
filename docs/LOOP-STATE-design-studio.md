@@ -4,7 +4,7 @@ Cron loop (session job in Claude's design-endpoint session, every 10 min)
 driving the /design world-builder studio to "all feature work complete,
 thoroughly tested, zero visual glitches (no overlaps/overflows)".
 
-status: running
+status: complete
 lockedAt: (clear)
 
 ## Checklist
@@ -45,11 +45,20 @@ lockedAt: (clear)
       (stored blocks lazily regenerate under the daily quota). Verified over
       120 generated blocks (0 violations) + rendered visual check; 222/222
       tests.
-- [ ] Final zero-glitch sweep of /design (all tabs, modals, flows, both
-      viewports) → set `status: complete`, notify, delete cron job
+- [x] Final zero-glitch sweep of /design on the live 3847 server: assets
+      (search, 37-frame animation modal), designs (search, remix ×2 with
+      distinct seeds, REMIX badge, secrets toggle, infinite scroll), community
+      (clean empty state on live Mongo, no errors), mobile deep-scroll of all
+      tabs (up to 30k px) + modal fit — ZERO glitches, zero horizontal
+      overflow, zero console errors. 222/222 tests. Loop complete.
 
 ## Log
 
+- Final iteration (cron backlog collapsed into one run): zero-glitch sweep
+  PASSED on the live server, desktop + mobile. status → complete; cron job
+  9e990e69 deleted. Every checklist item done: studio shipped, tile legality
+  enforced (design + live map), 7 visual/UX bugs found & fixed across QA
+  iterations, 222/222 tests.
 - 2026-08-03 01:1x — iteration 3 (cron): community QA with 31 seeded saves
   (incl. 64-char + long multi-word names) — 1 glitch found + fixed (modal
   header overflow on unbroken names → break-words). Full scroll sweep of all

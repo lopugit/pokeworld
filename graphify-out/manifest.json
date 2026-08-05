@@ -9234,11 +9234,6 @@
     "ast_hash": "37856c4043eaaea056609ac3fd4c074b",
     "semantic_hash": ""
   },
-  "app/.data/designs.json": {
-    "mtime": 1785676303.7455902,
-    "ast_hash": "d751713988987e9331980363e24189ce",
-    "semantic_hash": ""
-  },
   "app/scripts/design/build-design-tiles.mjs": {
     "mtime": 1785677158.2556572,
     "ast_hash": "bf8a91f56e59ef24871ea551d66c5aac",
@@ -9275,8 +9270,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/AssetBrowser.tsx": {
-    "mtime": 1785675846.4625995,
-    "ast_hash": "8e2a3f3deb20bd99c19fe9510b6ab97b",
+    "mtime": 1785682620.2123828,
+    "ast_hash": "02c469019639c569ca980a8b98cd52e3",
     "semantic_hash": ""
   },
   "app/src/components/design/BlockCanvas.tsx": {
@@ -9295,8 +9290,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/DesignDetailModal.tsx": {
-    "mtime": 1785679722.3944626,
-    "ast_hash": "10d9083e0ae7cb6e6a4ba358e983bd5b",
+    "mtime": 1785682618.7903259,
+    "ast_hash": "246ea16ce2765bac98c9fb7354e0c540",
     "semantic_hash": ""
   },
   "app/src/components/design/SpriteThumb.tsx": {
@@ -9395,8 +9390,8 @@
     "semantic_hash": ""
   },
   "docs/LOOP-STATE-design-studio.md": {
-    "mtime": 1785682295.8505363,
-    "ast_hash": "fbdd85fa195c6cd2c4df2f388f24756c",
+    "mtime": 1785682770.7331343,
+    "ast_hash": "555785c1441d88c15a90a42acce1e577",
     "semantic_hash": ""
   }
 }
