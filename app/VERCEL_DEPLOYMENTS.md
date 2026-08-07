@@ -47,7 +47,9 @@ by the Thingtime service identity `@pokeworld-service`.
 Vercel stores `POKEWORLD_SESSION_SECRET` and `THINGTIME_SERVICE_TOKEN` as encrypted server values.
 The service identity owns complete compressed map-block Things and calls Thingtime's atomic quota
 endpoint; the public `VITE_THINGTIME_CLIENT_ID` identifies the Thingtime app without exposing a
-credential.
+credential. The Pokeworld client ID is committed in the repo as the built-in default
+(`app/src/auth/AuthProvider.tsx` + `app/.env.example`), so the Vercel env var is optional and only
+overrides it.
 
 ## Verified migration preview
 

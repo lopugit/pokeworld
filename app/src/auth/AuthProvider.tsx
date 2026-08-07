@@ -9,6 +9,11 @@ import {
 } from "react";
 import { loadThingtimeSdk } from "./thingtime-sdk";
 
+// Public Thingtime app identifier for Pokeworld — safe to ship in the client
+// bundle. VITE_THINGTIME_CLIENT_ID still overrides it for forks or builds
+// registered as a different Thingtime app.
+const DEFAULT_THINGTIME_CLIENT_ID = "ttapp_4dcdfa75-7af9-457f-8bf5-71004f5a785a";
+
 export interface AuthUser {
   id: string;
   username: string;
@@ -137,7 +142,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setBusy(true);
     setError(null);
     try {
-      const clientId = import.meta.env.VITE_THINGTIME_CLIENT_ID?.trim();
+      const clientId = import.meta.env.VITE_THINGTIME_CLIENT_ID?.trim() || DEFAULT_THINGTIME_CLIENT_ID;
       if (!clientId) throw new Error("Thingtime login is not configured for this Pokeworld build");
 
       const sdk = await loadThingtimeSdk();

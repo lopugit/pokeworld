@@ -33,7 +33,9 @@ loopback port. The exact Funnel hostname is allowlisted in `app/vite.config.ts`.
 
 ### Thingtime login
 
-Set `VITE_THINGTIME_CLIENT_ID` to the public `ttapp_…` client ID for the Thingtime app whose origin
+The public Pokeworld client ID (`ttapp_4dcdfa75-7af9-457f-8bf5-71004f5a785a`) is committed as the
+built-in default. Set `VITE_THINGTIME_CLIENT_ID` only to point a fork or separate deployment at a
+different Thingtime app — the `ttapp_…` client ID is public and belongs to the app whose origin
 allowlist contains each exact Pokeworld origin. Set `POKEWORLD_SESSION_SECRET` to a private random
 value of at least 32 characters on every public deployment. Local development uses an ephemeral
 process secret when this variable is omitted, so restarting the local server signs everybody out.
