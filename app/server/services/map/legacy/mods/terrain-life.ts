@@ -345,7 +345,13 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 // preferred family cannot fit near the component, the search degrades tier by
 // tier down to the small cottage before giving up.
 const BUILDING_TIERS = [
-	{ minArea: 72, variants: [{ prefix: 'house-manor', columns: 6, rows: 5 }] },
+	{
+		minArea: 72,
+		variants: [
+			{ prefix: 'house-manor', columns: 6, rows: 5 },
+			{ prefix: 'struct-trick-house', columns: 6, rows: 5 },
+		],
+	},
 	{
 		minArea: 36,
 		variants: [

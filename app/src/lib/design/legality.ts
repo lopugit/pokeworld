@@ -295,7 +295,11 @@ export const FORMATIONS: Formation[] = [
     "Harvested whole from the Route 117 render; grass-backed."),
   buildingFormation("flower-shop", "Pretty Petal flower shop (5×5)", 5, 5, "struct-flower-shop",
     "Harvested whole from the Route 104 render; roadside tree canopies scenery-keyed from its roofline."),
+  buildingFormation("trick-house", "Trick House (6×5)", 6, 5, "struct-trick-house",
+    "Harvested whole from the Route 110 render; grass-backed."),
   // Browser/design-only families (not in the live map's building ladder).
+  buildingFormation("weather-institute", "Weather Institute (9×9)", 9, 9, "struct-weather-institute",
+    "Harvested whole from the Route 119 render; cliff, roadside trees and its sign scenery-keyed."),
   {
     ...buildingFormation("gym-sootopolis", "Sootopolis gym (6×5)", 6, 5, "struct-gym-sootopolis",
       "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),

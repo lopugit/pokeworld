@@ -302,6 +302,8 @@ const BUILDINGS = [
   ["struct-center-sootopolis", "sootopolis-city", 42, 28, 4, 4],
   ["struct-daycare", "route117", 50, 2, 4, 4],
   ["struct-flower-shop", "route104", 3, 14, 5, 5],
+  ["struct-weather-institute", "route119", 1, 25, 9, 9],
+  ["struct-trick-house", "route110", 14, 12, 6, 5],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
@@ -316,6 +318,11 @@ const SCENERY_KEYS = {
   "struct-dept-store": { referenceCells: [[5, 0], [6, 0], [19, 0], [20, 0]], rows: [0] },
   "struct-lighthouse-slateport": { referenceCells: [[29, 51], [30, 51]], rows: [0] },
   "struct-flower-shop": { referenceCells: [[0, 13], [1, 13], [8, 14]], rows: [0] },
+  "struct-weather-institute": {
+    referenceCells: [[4, 21], [8, 22], [0, 31], [0, 32]],
+    rows: [0, 1, 6, 7, 8],
+    eraseCells: [[8, 8]],
+  },
 };
 
 const tilesDir = resolve(appDir, "public/tiles");
@@ -346,6 +353,9 @@ for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
           const key = `${tile.data[offset]},${tile.data[offset + 1]},${tile.data[offset + 2]}`;
           if (sceneryColours.has(key)) tile.data[offset + 3] = 0;
         }
+      }
+      if (sceneryKey?.eraseCells?.some(([cx, cy]) => cx === column && cy === row)) {
+        tile.data.fill(0);
       }
       writeFileSync(resolve(tilesDir, `${id}-${index}.png`), PNG.sync.write(tile));
       index += 1;
