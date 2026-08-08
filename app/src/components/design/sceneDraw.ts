@@ -32,6 +32,78 @@ export interface SceneDrawOptions {
   isCancelled?: () => boolean;
 }
 
+interface SpriteCut {
+  image: HTMLImageElement;
+  sx: number;
+  sy: number;
+  sw: number;
+  sh: number;
+  dw: number;
+  dh: number;
+}
+
+// Battle sprites ship as 64×64 canvases with soft padding; drawn raw they
+// float off-centre and read blurry next to chunky 16px tiles. Trim to the
+// opaque bounding box and downscale by an INTEGER factor to ≤28px so every
+// sprite pixel stays uniform (crisp nearest-neighbour, no half-pixels).
+const spriteCutCache = new Map<string, Promise<SpriteCut | null>>();
+
+function pokemonCut(src: string): Promise<SpriteCut | null> {
+  let cached = spriteCutCache.get(src);
+  if (!cached) {
+    cached = loadImage(src).then((image) => {
+      if (!image) {
+        spriteCutCache.delete(src);
+        return null;
+      }
+      let sx = 0;
+      let sy = 0;
+      let sw = image.width;
+      let sh = image.height;
+      try {
+        const probe = document.createElement("canvas");
+        probe.width = image.width;
+        probe.height = image.height;
+        const context = probe.getContext("2d");
+        if (context) {
+          context.drawImage(image, 0, 0);
+          const data = context.getImageData(0, 0, probe.width, probe.height).data;
+          let minX = probe.width;
+          let minY = probe.height;
+          let maxX = -1;
+          let maxY = -1;
+          for (let y = 0; y < probe.height; y += 1) {
+            for (let x = 0; x < probe.width; x += 1) {
+              if (data[(y * probe.width + x) * 4 + 3] > 16) {
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              }
+            }
+          }
+          if (maxX >= minX && maxY >= minY) {
+            sx = minX;
+            sy = minY;
+            sw = maxX - minX + 1;
+            sh = maxY - minY + 1;
+          }
+        }
+      } catch {
+        // tainted canvas etc. — fall back to the full frame
+      }
+      const factor = Math.max(1, Math.ceil(Math.max(sw, sh) / 28));
+      const dw = Math.max(1, Math.floor(sw / factor));
+      const dh = Math.max(1, Math.floor(sh / factor));
+      // Crop the remainder so each destination pixel maps exactly `factor`
+      // source pixels (uniform decimation).
+      return { image, sx, sy, sw: dw * factor, sh: dh * factor, dw, dh };
+    });
+    spriteCutCache.set(src, cached);
+  }
+  return cached;
+}
+
 /** Paint tiles + entities onto the canvas (which must be sized to
  * cols*TILE × rows*TILE). All loads happen before the first paint so a
  * cancelled draw never leaves a half-painted frame. */
@@ -61,10 +133,10 @@ export async function drawScene(
   const characterSheet = entities.some((entity) => entity.kind === "npc")
     ? await loadImage(CHARACTER_SHEET)
     : null;
-  const pokemonSprites = new Map<string, HTMLImageElement | null>();
+  const pokemonSprites = new Map<string, SpriteCut | null>();
   for (const entity of entities) {
     if (entity.kind === "pokemon" && entity.src) {
-      pokemonSprites.set(entity.src, await loadImage(entity.src));
+      pokemonSprites.set(entity.src, await pokemonCut(entity.src));
     }
   }
   if (isCancelled()) return;
@@ -99,9 +171,19 @@ export async function drawScene(
         h,
       );
     } else if (entity.kind === "pokemon" && entity.src) {
-      const sprite = pokemonSprites.get(entity.src);
-      if (sprite) {
-        context.drawImage(sprite, entity.col * TILE - 8, entity.row * TILE - TILE, 32, 32);
+      const cut = pokemonSprites.get(entity.src);
+      if (cut) {
+        context.drawImage(
+          cut.image,
+          cut.sx,
+          cut.sy,
+          cut.sw,
+          cut.sh,
+          entity.col * TILE + Math.round(TILE / 2 - cut.dw / 2),
+          entity.row * TILE + TILE - cut.dh,
+          cut.dw,
+          cut.dh,
+        );
       }
     }
   }

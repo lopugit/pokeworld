@@ -43,5 +43,8 @@ export function useInfiniteReveal<T>(items: T[], pageSize = 60) {
     visible: items.slice(0, visibleCount),
     hasMore: visibleCount < items.length,
     sentinelRef: setSentinel,
+    /** Manual escape hatch: lets the sentinel double as a load-more button so
+     * reveal never depends solely on IntersectionObserver delivery. */
+    grow,
   };
 }

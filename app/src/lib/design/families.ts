@@ -38,8 +38,9 @@ import {
   placeRockySign,
   placeSign,
   scatter,
+  scatterTrees,
+  SMALL_TREE,
   treeBorder,
-  treePick,
 } from "./paint";
 import type { Rng } from "./rng";
 import { DESIGN_GRID, type BiomeId, type DesignEntity, type DesignTile } from "./types";
@@ -79,11 +80,10 @@ const fillGround = (ctx: SceneContext, kind: Ground) => {
   }
 };
 
-const scatterTrees = (ctx: SceneContext, density: number) =>
-  scatter(ctx.grid, ctx.ground, ctx.rng, [treePick(ctx.rng), treePick(ctx.rng), "tree-1"], density, {
-    solid: true,
-    feature: "tree",
-  });
+// Trees are 2×3 formations now (see paint.placeTree); density maps to a
+// number of placement attempts plus a sprinkle of single-cell small trees.
+const scatterSceneTrees = (ctx: SceneContext, density: number) =>
+  scatterTrees(ctx.grid, ctx.ground, ctx.rng, Math.max(1, Math.round(density * 30)), density * 0.6);
 
 // Rocky-biome texture: walkable scree bumps plus solid boulders.
 // (rock-1 is banned art — its body is pink-cobble-native and can never blend
@@ -541,7 +541,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 4, 4, 4);
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 11, 6, 4);
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, 6, 9, 3);
-      scatterTrees(ctx, 0.04);
+      scatterSceneTrees(ctx, 0.04);
       signSomewhere(ctx);
       addPokemon(ctx);
       addPokemon(ctx);
@@ -568,7 +568,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
     decorate(ctx) {
       scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.05, { solid: true, feature: "hedge" });
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.12);
-      scatterTrees(ctx, 0.06);
+      scatterSceneTrees(ctx, 0.06);
       addNpc(ctx);
       addNpc(ctx);
       if (ctx.rng.chance(0.6)) addPokemon(ctx, [POKEMON[1], POKEMON[5]]);
@@ -593,7 +593,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       const flower = flowerOf(ctx.rng);
       scatter(ctx.grid, ctx.ground, ctx.rng, flower, 0.3);
       longGrassPatch(ctx.grid, ctx.ground, ctx.rng, ctx.rng.range(3, 12), ctx.rng.range(3, 12), 4);
-      scatterTrees(ctx, 0.03);
+      scatterSceneTrees(ctx, 0.03);
       addPokemon(ctx, [POKEMON[3], POKEMON[1], POKEMON[4]]);
       if (ctx.rng.chance(0.4)) addNpc(ctx);
       hiddenSomewhere(ctx);
@@ -658,10 +658,8 @@ export const HAND_FAMILIES: DesignFamily[] = [
       }
     },
     decorate(ctx) {
-      scatter(ctx.grid, ctx.ground, ctx.rng, ["big-tree-8", "big-tree-9", "big-tree-10", "big-tree-7"], 0.45, {
-        solid: true,
-        feature: "forest-wall",
-      });
+      // Dense haunted wood: staggered complete trees + small-tree undergrowth.
+      scatterTrees(ctx.grid, ctx.ground, ctx.rng, 26, 0.1);
       hiddenSomewhere(ctx);
       hiddenSomewhere(ctx);
       if (ctx.rng.chance(0.6)) addNpc(ctx, NPC_MYSTERIOUS);
@@ -688,7 +686,8 @@ export const HAND_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 2, gapChance: 0.12 });
-      for (const [col, row] of [[3, 2], [9, 2], [6, 2]] as const) {
+      // The border's tree course fills rows 0–2, so cabins anchor below it.
+      for (const [col, row] of [[3, 3], [9, 3], [6, 3]] as const) {
         if (placeHouse(ctx.grid, ctx.ground, col, row)) break;
       }
       scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.06, { solid: true, feature: "hedge" });
@@ -716,7 +715,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       treeBorder(ctx.grid, ctx.ground, ctx.rng, { thickness: 2, gapChance: 0.3 });
-      scatterTrees(ctx, 0.12);
+      scatterSceneTrees(ctx, 0.12);
       signSomewhere(ctx);
       addNpc(ctx, NPC_RUNNERS);
       hiddenSomewhere(ctx);
@@ -927,7 +926,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       paintPath(ctx.ground, "path", 1, 14, 4, 10, 1, ctx.rng);
     },
     decorate(ctx) {
-      scatterTrees(ctx, 0.05);
+      scatterSceneTrees(ctx, 0.05);
       scatter(ctx.grid, ctx.ground, ctx.rng, ["shrub-1"], 0.04, { solid: true, feature: "hedge" });
       signSomewhere(ctx);
       addNpc(ctx, NPC_ANGLERS);
@@ -956,7 +955,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       paintRect(ctx.ground, "road", 0, bridgeRow, DESIGN_GRID, 2);
     },
     decorate(ctx) {
-      scatterTrees(ctx, 0.07);
+      scatterSceneTrees(ctx, 0.07);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.06);
       signSomewhere(ctx);
       addNpc(ctx, NPC_RUNNERS);
@@ -985,7 +984,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       const treeSpot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass"], margin: 4 });
-      if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, treePick(ctx.rng), { solid: true, feature: "tree" });
+      if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_TREE, { solid: true, feature: "tree" });
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.1);
       hiddenSomewhere(ctx);
       if (ctx.rng.chance(0.8)) addPokemon(ctx, [POKEMON[4], POKEMON[2]], 5);
@@ -1040,7 +1039,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       paintRect(ctx.ground, "sand", 0, 7, DESIGN_GRID, 3);
     },
     decorate(ctx) {
-      scatterTrees(ctx, 0.05);
+      scatterSceneTrees(ctx, 0.05);
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.05);
       signSomewhere(ctx);
       addNpc(ctx);

@@ -48,9 +48,10 @@ import {
   placeSign,
   placeStructure,
   scatter,
+  scatterTrees,
+  SMALL_TREE,
   STRUCTURES,
   treeBorder,
-  treePick,
   type Ground,
   type GroundMap,
 } from "./paint";
@@ -615,7 +616,7 @@ const PLANNERS: PlannerDef[] = [
           }
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers * (0.7 + rng.next() * 0.6));
           if (trees > 0.015) {
-            scatter(ctx.grid, ctx.ground, rng, [treePick(rng), treePick(rng)], trees, { solid: true, feature: "tree" });
+            scatterTrees(ctx.grid, ctx.ground, rng, Math.max(1, Math.round(trees * 25)), trees * 0.5);
           }
           if (rng.chance(0.5)) hiddenSomewhere(ctx, rng);
           addEntities(ctx, theme, rng, [0, 2], [1, 2]);
@@ -662,7 +663,7 @@ const PLANNERS: PlannerDef[] = [
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           scatter(ctx.grid, ctx.ground, rng, ["shrub-1"], rng.next() * 0.06, { solid: true, feature: "hedge" });
           if (rng.chance(0.4)) {
-            scatter(ctx.grid, ctx.ground, rng, [treePick(rng)], 0.03 + rng.next() * 0.04, { solid: true, feature: "tree" });
+            scatterTrees(ctx.grid, ctx.ground, rng, 1 + rng.int(2), 0.02 + rng.next() * 0.03);
           }
           const signSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
           if (signSpot && rng.chance(0.7)) placeSign(ctx.grid, ctx.ground, signSpot.col, signSpot.row);
@@ -698,7 +699,7 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.lakeside;
           if (theme.id === "village") placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(1, 2), buildings);
-          if (trees > 0.02) scatter(ctx.grid, ctx.ground, rng, [treePick(rng), treePick(rng)], trees, { solid: true, feature: "tree" });
+          if (trees > 0.02) scatterTrees(ctx.grid, ctx.ground, rng, Math.max(1, Math.round(trees * 25)), trees * 0.5);
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           const signSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
           if (signSpot && rng.chance(0.6)) placeSign(ctx.grid, ctx.ground, signSpot.col, signSpot.row);
@@ -732,7 +733,7 @@ const PLANNERS: PlannerDef[] = [
         },
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.coast;
-          scatter(ctx.grid, ctx.ground, rng, [treePick(rng)], 0.02 + rng.next() * 0.04, { solid: true, feature: "tree" });
+          scatterTrees(ctx.grid, ctx.ground, rng, 1, 0.02 + rng.next() * 0.03);
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           const signSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
           if (signSpot && rng.chance(0.6)) placeSign(ctx.grid, ctx.ground, signSpot.col, signSpot.row);
@@ -770,7 +771,7 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES.island;
           const treeSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 3 });
-          if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, treePick(rng), { solid: true, feature: "tree" });
+          if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_TREE, { solid: true, feature: "tree" });
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], 0.06 + rng.next() * 0.08);
           hiddenSomewhere(ctx, rng);
           if (rng.chance(0.8)) addEntities(ctx, theme, rng, [0, 0], [1, 1]);
@@ -876,10 +877,7 @@ const PLANNERS: PlannerDef[] = [
           const theme = THEMES[themeId] ?? THEMES.forest;
           treeBorder(ctx.grid, ctx.ground, rng, { thickness, gapChance });
           if (innerTrees > 0.05) {
-            scatter(ctx.grid, ctx.ground, rng, [treePick(rng), treePick(rng), treePick(rng)], innerTrees, {
-              solid: true,
-              feature: theme.id === "spooky" ? "forest-wall" : "tree",
-            });
+            scatterTrees(ctx.grid, ctx.ground, rng, Math.round(innerTrees * 55), innerTrees * 0.35);
           }
           if (shrine) {
             const ring = [[6, 6], [8, 5], [10, 6], [11, 8], [10, 10], [6, 10], [5, 8]] as const;

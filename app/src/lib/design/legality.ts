@@ -44,10 +44,10 @@ export interface OverlayRule {
 /** Standalone overlay props (multi-tile formations are handled separately). */
 export const OVERLAY_RULES: OverlayRule[] = [
   {
-    pattern: /^(big-tree-\d+|tree-1)$/,
-    label: "Trees",
+    pattern: /^tree-1$/,
+    label: "Small tree",
     grounds: ["grass"],
-    reason: "Tree art carries grass around its trunk.",
+    reason: "The single-cell tree; big trees are 2×3 formations.",
   },
   {
     pattern: /^shrub-1$/,
@@ -102,6 +102,12 @@ export interface BannedTile {
 /** Art that can never compose legally in /design. The validator rejects these
  * outright — which is what retired the old fake ledges for good. */
 export const BANNED_OVERLAYS: BannedTile[] = [
+  {
+    pattern: /^big-tree-(7|8|9|10)$/,
+    label: "Forest-overlap strip slices",
+    reason:
+      "big-tree-9/10 are the hanging fronds of the tree above in the sheet's overlap demo and big-tree-7/8 are its near-empty grass fillers. Standalone they render floating fronds or nothing — the exact cut-off-trees bug. Only the complete 2×3 big-tree formation (5/6, 3/4, 1/2) composes legally.",
+  },
   {
     pattern: /^ledge-(left|middle|right)-1$/,
     label: "Fake ledges",
@@ -222,6 +228,17 @@ export const FORMATIONS: Formation[] = [
     "struct-lodge-log",
     "Two green-roof log huts harvested as one compound; grass-backed.",
   ),
+  {
+    id: "big-tree",
+    label: "Big tree (2×3)",
+    width: 2,
+    height: 3,
+    slots: ["big-tree-5", "big-tree-6", "big-tree-3", "big-tree-4", "big-tree-1", "big-tree-2"],
+    ground: "grass",
+    walkableSlots: [],
+    reason:
+      "The big tree is one 2×3 sprite (crown over trunk). Random single slices were exactly the cut-off trees bug — formation-only now.",
+  },
   {
     id: "dome",
     label: "Mountain dome with cave door (3×3)",
