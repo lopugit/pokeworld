@@ -287,6 +287,10 @@ const BUILDINGS = [
   ["struct-house-lavaridge", "lavaridge-town", 11, 12, 4, 4],
   ["struct-devon-corp", "rustboro-city", 7, 7, 8, 8],
   ["struct-gym-fortree", "fortree-city", 19, 7, 6, 5],
+  ["struct-gym-rustboro", "rustboro-city", 24, 15, 7, 5],
+  ["struct-treehouse", "fortree-city", 31, 0, 3, 6],
+  ["struct-house-lilycove", "lilycove-city", 11, 11, 4, 4],
+  ["struct-dept-store", "lilycove-city", 7, 0, 10, 7],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
@@ -298,6 +302,7 @@ const BUILDINGS = [
 // crop rows only — building palettes never overlap the scenery palettes.
 const SCENERY_KEYS = {
   "struct-battle-tent": { referenceCells: [[3, 1], [2, 2], [6, 2], [1, 1]], rows: [0] },
+  "struct-dept-store": { referenceCells: [[5, 0], [6, 0], [19, 0], [20, 0]], rows: [0] },
 };
 
 const tilesDir = resolve(appDir, "public/tiles");
