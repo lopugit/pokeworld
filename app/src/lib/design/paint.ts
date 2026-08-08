@@ -494,9 +494,12 @@ export function placeRockySign(
 }
 
 /** Invisible hidden item, exactly like the live generator's secret pockets.
- * The overlay copies the ground tile so nothing shows until discovered. */
+ * The overlay copies the ground tile so nothing shows until discovered.
+ * Occupied tiles are left alone — a secret must never overwrite part of a
+ * formation (that is how a tree once lost a slice). */
 export function placeHiddenItem(grid: DesignTile[][], ground: GroundMap, col: number, row: number): void {
   if (!inMap(grid, col, row)) return;
+  if (grid[row][col].img2 || grid[row][col].feature) return;
   const kind = ground[row][col];
   if (kind !== "grass" && kind !== "rocky") return;
   const tile = grid[row][col];
@@ -529,30 +532,101 @@ export function placeBoulderLine(
   }
 }
 
-const TREES = ["big-tree-1", "big-tree-2", "big-tree-3", "big-tree-4", "big-tree-5", "big-tree-6", "big-tree-7", "big-tree-8", "big-tree-9", "big-tree-10"] as const;
+/** The big tree is a 2×3 formation — crown top, crown mid, trunk row —
+ * sliced into big-tree-5/6, 3/4, 1/2 on the sheet (the bottom three rows of
+ * the demo strip). The strip's upper slices are overlap furniture: 9/10 are
+ * the hanging fronds of a tree above, 7/8 are near-empty grass fillers —
+ * both banned standalone (they were the invisible/cut-off "trees").
+ * The small single-cell tree is tree-1. */
+const BIG_TREE_SLICES = [
+  "big-tree-5", "big-tree-6",
+  "big-tree-3", "big-tree-4",
+  "big-tree-1", "big-tree-2",
+] as const;
 
-export function treePick(rng: Rng): string {
-  return rng.pick(TREES);
+export const SMALL_TREE = "tree-1";
+
+/** Place a complete 2×3 big tree anchored at its top-left; grass only. */
+export function placeTree(
+  grid: DesignTile[][],
+  ground: GroundMap,
+  col: number,
+  row: number,
+  feature: string = "tree",
+): boolean {
+  for (let index = 0; index < 6; index += 1) {
+    const c = col + (index % 2);
+    const r = row + Math.floor(index / 2);
+    if (!isClear(grid, ground, c, r)) return false;
+    if (ground[r]?.[c] !== "grass") return false;
+  }
+  for (let index = 0; index < 6; index += 1) {
+    const c = col + (index % 2);
+    const r = row + Math.floor(index / 2);
+    const tile = grid[r][c];
+    tile.img2 = BIG_TREE_SLICES[index];
+    tile.feature = feature;
+    tile.solid = true;
+  }
+  return true;
 }
 
-/** Forest wall around the block edge, with optional carved gaps. */
+/** Scatter complete big trees (attempts at random anchors) plus small
+ * single-cell trees, over grass. */
+export function scatterTrees(
+  grid: DesignTile[][],
+  ground: GroundMap,
+  rng: Rng,
+  bigAttempts: number,
+  smallDensity: number,
+): void {
+  const rows = grid.length;
+  const cols = grid[0]?.length ?? 0;
+  for (let attempt = 0; attempt < bigAttempts; attempt += 1) {
+    const col = rng.range(0, Math.max(0, cols - 2));
+    const row = rng.range(0, Math.max(0, rows - 3));
+    placeTree(grid, ground, col, row);
+  }
+  if (smallDensity > 0) {
+    scatter(grid, ground, rng, [SMALL_TREE], smallDensity, { solid: true, feature: "tree" });
+  }
+}
+
+/** Forest wall around the block edge: courses of complete big trees along
+ * every side, with optional skipped anchors as carved gaps. `thickness` ≥ 3
+ * additionally sprinkles small trees just inside the wall. */
 export function treeBorder(
   grid: DesignTile[][],
   ground: GroundMap,
   rng: Rng,
   options: { thickness?: number; gapChance?: number } = {},
 ): void {
-  const thickness = options.thickness ?? 1;
+  const thickness = options.thickness ?? 2;
   const gapChance = options.gapChance ?? 0;
   const rows = grid.length;
   const cols = grid[0]?.length ?? 0;
-  for (let row = 0; row < rows; row += 1) {
-    for (let col = 0; col < cols; col += 1) {
-      const edgeDistance = Math.min(row, col, rows - 1 - row, cols - 1 - col);
-      if (edgeDistance >= thickness) continue;
-      if (!isClear(grid, ground, col, row) || ground[row][col] !== "grass") continue;
-      if (rng.chance(gapChance)) continue;
-      placeDecor(grid, col, row, treePick(rng), { solid: true, feature: "forest-wall" });
+  const anchors: Array<[number, number]> = [];
+  for (let col = 0; col + 2 <= cols; col += 2) {
+    anchors.push([col, 0]);
+    anchors.push([col, rows - 3]);
+  }
+  for (let row = 3; row + 3 <= rows - 3; row += 3) {
+    anchors.push([0, row]);
+    anchors.push([cols - 2, row]);
+  }
+  for (const [col, row] of anchors) {
+    if (rng.chance(gapChance)) continue;
+    placeTree(grid, ground, col, row, "forest-wall");
+  }
+  if (thickness >= 3) {
+    for (let row = 0; row < rows; row += 1) {
+      for (let col = 0; col < cols; col += 1) {
+        const edgeDistance = Math.min(row, col, rows - 1 - row, cols - 1 - col);
+        if (edgeDistance < 3 || edgeDistance > 3) continue;
+        if (!rng.chance(0.22)) continue;
+        if (!isClear(grid, ground, col, row) || ground[row][col] !== "grass") continue;
+        placeDecor(grid, col, row, SMALL_TREE, { solid: true, feature: "forest-wall" });
+      }
     }
   }
 }

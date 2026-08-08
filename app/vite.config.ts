@@ -34,7 +34,9 @@ export default defineConfig({
       // A production Workflow build emits JavaScript containing "use workflow"
       // into .vercel/. Without these exclusions, the live dev plugin mistakes
       // those generated files for edited source and rebuilds itself in a loop.
-      ignored: ["**/.vercel/**", "**/.output/**", "**/.swc/**", "**/coverage/**"],
+      // .nitro/ is likewise a startup-generated artifact dir — watching it
+      // floods macOS fs.watch during boot (EMFILE crashes on low fd limits).
+      ignored: ["**/.vercel/**", "**/.output/**", "**/.swc/**", "**/coverage/**", "**/.nitro/**"],
     },
   },
 });

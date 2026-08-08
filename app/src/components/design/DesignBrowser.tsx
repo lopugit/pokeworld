@@ -48,7 +48,7 @@ export function DesignBrowser() {
     [query, biome, tag],
   );
   const tags = useMemo(() => catalogTags().slice(0, TOP_TAGS), []);
-  const { visible, hasMore, sentinelRef } = useInfiniteReveal(results, 24);
+  const { visible, hasMore, sentinelRef, grow } = useInfiniteReveal(results, 24);
 
   if (openFamily) {
     return <FamilyVariantsView familyId={openFamily} onBack={() => setOpenFamily(null)} />;
@@ -114,8 +114,14 @@ export function DesignBrowser() {
         </p>
       )}
       {hasMore && (
-        <div ref={sentinelRef} className="py-6 text-center text-sm text-slate-500">
-          Generating more layouts…
+        <div ref={sentinelRef} className="py-6 text-center">
+          <button
+            type="button"
+            onClick={grow}
+            className="rounded-md bg-slate-800 px-5 py-2 text-sm text-slate-400 hover:bg-slate-700 hover:text-slate-200"
+          >
+            Generating more layouts… (tap to load now)
+          </button>
         </div>
       )}
     </div>
