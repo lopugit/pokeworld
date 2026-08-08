@@ -339,11 +339,11 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 // Building sprite families, ordered largest-first. Each detected google-maps
 // building component places exactly ONE structure; the family is chosen from
 // the component's tile area so bigger real-world buildings become bigger
-// sprites. The three larger homes are composed from the red house's own cells
-// (see scripts/map/extract-terrain-tiles.mjs), so the whole ladder shares one
-// proven art style; the Pokémon Centre seasons the mid tier as a landmark.
-// When the preferred family cannot fit near the component, the search degrades
-// tier by tier down to the small cottage before giving up.
+// sprites. The larger homes are composed from the red house's own cells (see
+// scripts/map/extract-terrain-tiles.mjs) and the mid tier mixes in the whole
+// 4x4 Pokémon Center / PokéMart harvests as town landmarks. When the
+// preferred family cannot fit near the component, the search degrades tier by
+// tier down to the small cottage before giving up.
 const BUILDING_TIERS = [
 	{ minArea: 72, variants: [{ prefix: 'house-manor', columns: 6, rows: 5 }] },
 	{ minArea: 36, variants: [{ prefix: 'house-grand', columns: 5, rows: 4 }] },
@@ -351,7 +351,8 @@ const BUILDING_TIERS = [
 		minArea: 18,
 		variants: [
 			{ prefix: 'house-wide', columns: 4, rows: 4 },
-			{ prefix: 'center-red', columns: 3, rows: 4 },
+			{ prefix: 'struct-pokecenter', columns: 4, rows: 4 },
+			{ prefix: 'struct-pokemart', columns: 4, rows: 4 },
 		],
 	},
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },

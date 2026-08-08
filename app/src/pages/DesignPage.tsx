@@ -4,12 +4,14 @@ import { Nav } from "../components/Nav";
 import { AssetBrowser } from "../components/design/AssetBrowser";
 import { CommunityBrowser } from "../components/design/CommunityBrowser";
 import { DesignBrowser } from "../components/design/DesignBrowser";
+import { RulesTab } from "../components/design/RulesTab";
 import { CATALOG_SIZE } from "../lib/design/catalog";
 
 const TABS = [
   { id: "assets", label: "Asset database" },
   { id: "designs", label: "Design browser" },
   { id: "community", label: "Community" },
+  { id: "rules", label: "Rules" },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -62,6 +64,7 @@ export function DesignPage() {
         {tab === "assets" && <AssetBrowser />}
         {tab === "designs" && <DesignBrowser />}
         {tab === "community" && <CommunityBrowser />}
+        {tab === "rules" && <RulesTab />}
       </main>
     </div>
   );

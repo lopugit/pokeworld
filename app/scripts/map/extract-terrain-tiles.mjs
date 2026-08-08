@@ -84,22 +84,6 @@ function writeCellGrid(prefix, grid) {
   }
 }
 
-function writeRegionGrid(prefix, region, columns, rows) {
-  let index = 1;
-  for (let row = 0; row < rows; row += 1) {
-    for (let column = 0; column < columns; column += 1) {
-      const tile = new PNG({ width: 16, height: 16 });
-      for (let y = 0; y < 16; y += 1) {
-        const start = ((row * 16 + y) * region.width + column * 16) * 4;
-        region.data.copy(tile.data, y * 16 * 4, start, start + 16 * 4);
-      }
-      writeFileSync(resolve(outputDir, `${prefix}-${index}.png`), PNG.sync.write(tile));
-      index += 1;
-    }
-  }
-}
-
-
 function writeWaterVariants() {
   const base = PNG.sync.read(readFileSync(resolve(outputDir, "pond-5.png")));
   const highlight = [168, 224, 248, 255];
@@ -130,11 +114,17 @@ writeGrid("house-red", 0, 16, 3, 4);
 // Size-graded building variants: one structure per google-maps building, with
 // the sprite family chosen from the detected footprint's tile area.
 
-// Red-domed Pokémon Centre, 3x4 (complete in the sheet, grass-backed corners).
-// The sheet's Poké Mart was rejected: its top-right roof cell is missing and
-// its ground floor is drawn inset behind a scenery bush, so every repair left
-// a silhouette that reads as half-rendered.
-writeRegionGrid("center-red", cropRegion(0, 144, 3, 4), 3, 4);
+// The mid tier uses the struct-pokecenter/struct-pokemart 4x4 harvests that
+// ship as committed PNGs (the sheet's compact 3-wide mart/centre rips were
+// rejected: missing roof cells and inset ground floors read half-rendered).
+// One repair on top of the committed mart: the sheet bakes a scenery bush
+// into its bottom-left wall corner. The Center shares the same white-wall
+// template, so its complete bottom-left corner cell replaces the mart's,
+// squaring the ground floor. Idempotent (plain file copy).
+writeFileSync(
+  resolve(outputDir, "struct-pokemart-13.png"),
+  readFileSync(resolve(outputDir, "struct-pokecenter-13.png")),
+);
 
 // Larger homes composed from the red house's own modular cells, the way
 // Emerald tiles its bigger buildings: the roof ridge/lattice middles repeat

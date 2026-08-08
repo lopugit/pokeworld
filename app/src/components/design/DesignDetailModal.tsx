@@ -2,7 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "../../auth/AuthProvider";
 import { getDesign, remixSeed } from "../../lib/design/catalog";
 import { BIOME_LABELS, type DesignSummary, type SavedDesign } from "../../lib/design/types";
+import { generateWorld } from "../../lib/design/world";
 import { BlockCanvas } from "./BlockCanvas";
+import { WorldCanvas } from "./WorldCanvas";
 
 type AnyDesignSummary = DesignSummary | SavedDesign;
 
@@ -43,6 +45,18 @@ export function DesignDetailModal({ summary, onClose, onSaved, onDeleted }: Desi
 
   const design = useMemo(() => getDesign(summary.family, seed), [summary.family, seed]);
   const remixed = seed !== summary.seed;
+  const [showWorld, setShowWorld] = useState(false);
+  const world = useMemo(() => {
+    if (!showWorld) return null;
+    // The design in the middle, merged with 8 sibling variants of the same
+    // layout type — deterministic neighbour seeds derived from this seed.
+    const neighbour = (index: number) => ({ family: summary.family, seed: (seed + (index + 1) * 7919) >>> 0 });
+    return generateWorld([
+      [neighbour(0), neighbour(1), neighbour(2)],
+      [neighbour(3), { family: summary.family, seed }, neighbour(4)],
+      [neighbour(5), neighbour(6), neighbour(7)],
+    ]);
+  }, [showWorld, summary.family, seed]);
   const secretCount = useMemo(
     () =>
       design
@@ -232,6 +246,32 @@ export function DesignDetailModal({ summary, onClose, onSaved, onDeleted }: Desi
               the tiny {"{family, seed}"} recipe and rebuild identically anywhere.
             </p>
           </div>
+        </div>
+
+        <div className="mt-5 border-t border-slate-800 pt-4">
+          <button
+            type="button"
+            onClick={() => setShowWorld((current) => !current)}
+            className="rounded-md border border-slate-600 px-3 py-1.5 text-sm font-bold text-slate-300 hover:bg-slate-700"
+          >
+            {showWorld ? "Hide 3×3 world preview" : "Show 3×3 world preview"}
+          </button>
+          {showWorld && world?.ok && (
+            <div className="mt-4">
+              <div className="flex justify-center">
+                <WorldCanvas
+                  world={world}
+                  size="min(84vw, 620px)"
+                  className="rounded-lg border border-slate-700"
+                  label={`${design.name} merged with eight sibling variants`}
+                />
+              </div>
+              <p className="mx-auto mt-2 max-w-xl text-center text-xs text-slate-500">
+                This design (centre) merged with eight sibling variants. Blocks bake together on one
+                supergrid, so paths, shorelines and dunes continue legally across every seam.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

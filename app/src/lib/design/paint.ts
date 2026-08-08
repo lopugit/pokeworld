@@ -375,6 +375,55 @@ function areaOnGround(
   return true;
 }
 
+/** Multi-tile building vocabulary (grass-backed art → grass only). Every
+ * entry is a complete harvested formation; legality.ts mirrors this table so
+ * partial footprints can never validate. */
+export interface StructureKind {
+  id: string;
+  width: number;
+  height: number;
+  /** img2 for slot n (row-major). */
+  tileAt(slot: number): string;
+}
+
+const structure = (id: string, width: number, height: number, prefix: string): StructureKind => ({
+  id,
+  width,
+  height,
+  tileAt: (slot) => `${prefix}-${slot + 1}`,
+});
+
+export const STRUCTURES: Record<string, StructureKind> = {
+  "house-red": structure("house-red", 3, 4, "house-red"),
+  pokecenter: structure("pokecenter", 4, 4, "struct-pokecenter"),
+  pokemart: structure("pokemart", 4, 4, "struct-pokemart"),
+  "contest-hall": structure("contest-hall", 5, 4, "struct-contest-hall"),
+  "tower-white": structure("tower-white", 2, 4, "struct-tower-white"),
+  "lodge-log": structure("lodge-log", 5, 4, "struct-lodge-log"),
+};
+
+/** Place a complete building on clear grass; returns false when it cannot
+ * fit. All buildings share the "house" feature (solid, enterable-looking). */
+export function placeStructure(
+  grid: DesignTile[][],
+  ground: GroundMap,
+  col: number,
+  row: number,
+  kindId: string,
+): boolean {
+  const kind = STRUCTURES[kindId];
+  if (!kind) return false;
+  if (!areaClear(grid, ground, col, row, kind.width, kind.height)) return false;
+  if (!areaOnGround(ground, col, row, kind.width, kind.height, "grass")) return false;
+  for (let index = 0; index < kind.width * kind.height; index += 1) {
+    const tile = grid[row + Math.floor(index / kind.width)][col + (index % kind.width)];
+    tile.img2 = kind.tileAt(index);
+    tile.feature = "house";
+    tile.solid = true;
+  }
+  return true;
+}
+
 /** 3-wide × 4-tall Emerald house (grass-backed art → grass only). */
 export function placeHouse(
   grid: DesignTile[][],
@@ -382,15 +431,7 @@ export function placeHouse(
   col: number,
   row: number,
 ): boolean {
-  if (!areaClear(grid, ground, col, row, 3, 4)) return false;
-  if (!areaOnGround(ground, col, row, 3, 4, "grass")) return false;
-  for (let index = 0; index < 12; index += 1) {
-    const tile = grid[row + Math.floor(index / 3)][col + (index % 3)];
-    tile.img2 = `house-red-${index + 1}`;
-    tile.feature = "house";
-    tile.solid = true;
-  }
-  return true;
+  return placeStructure(grid, ground, col, row, "house-red");
 }
 
 /** 3×3 mossy rock dome with a cave doorway. The mountain-1..9 art ships

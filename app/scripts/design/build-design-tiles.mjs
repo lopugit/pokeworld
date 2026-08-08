@@ -136,3 +136,53 @@ for (const [name, cellX, cellY, needsReground] of HARVEST) {
   fs.writeFileSync(file, PNG.sync.write(tile));
   console.log(`${name}.png ← sheet cell (${cellX}, ${cellY})${needsReground ? " (re-grounded)" : ""}`);
 }
+
+// --- multi-tile structures ---------------------------------------------------
+// Grass-backed buildings verified against the sheet (see the structure survey
+// in the variety-overhaul PR). Tiles emit row-major as struct-<id>-<n>.png.
+// repairs: [destIndex, srcIndex] pairs — copy one slot's pixels over another
+// (fixes single defective sheet cells inside otherwise clean rects).
+const STRUCTURES = [
+  { id: "pokecenter", cx: 0, cy: 9, w: 4, h: 4, repairs: [] },
+  // Sheet defect: the (2,0) roof slot is dark filler — repair from (1,0).
+  { id: "pokemart", cx: 0, cy: 5, w: 4, h: 4, repairs: [[2, 1]] },
+  { id: "contest-hall", cx: 83, cy: 9, w: 5, h: 4, repairs: [] },
+  // The sheet draws a city wall directly above the tower; scrub the brick
+  // band out of the top rows (grey pixels → grass) in the two top slots.
+  { id: "tower-white", cx: 22, cy: 26, w: 2, h: 4, repairs: [], scrubTopRows: [0, 1] },
+  { id: "lodge-log", cx: 64, cy: 49, w: 5, h: 4, repairs: [] },
+];
+
+const grassTile = cellPixels(1, 0);
+// The tower art starts below row 6 in its top slots, so the contaminated
+// band (a city wall drawn directly above in the sheet) is replaced with
+// plain grass wholesale.
+function scrubBrickBand(tile) {
+  for (let y = 0; y <= 6; y += 1) {
+    for (let x = 0; x < 16; x += 1) {
+      const i = (y * 16 + x) * 4;
+      for (let channel = 0; channel < 4; channel += 1) {
+        tile.data[i + channel] = grassTile.data[i + channel];
+      }
+    }
+  }
+}
+
+for (const structure of STRUCTURES) {
+  const tiles = [];
+  for (let index = 0; index < structure.w * structure.h; index += 1) {
+    tiles.push(cellPixels(structure.cx + (index % structure.w), structure.cy + Math.floor(index / structure.w)));
+  }
+  for (const [dest, src] of structure.repairs) {
+    tiles[dest] = new PNG({ width: 16, height: 16 });
+    tiles[src].data.copy(tiles[dest].data);
+  }
+  for (const slot of structure.scrubTopRows ?? []) {
+    scrubBrickBand(tiles[slot]);
+  }
+  tiles.forEach((tile, index) => {
+    const file = path.join(appDir, "public", "tiles", `struct-${structure.id}-${index + 1}.png`);
+    fs.writeFileSync(file, PNG.sync.write(tile));
+  });
+  console.log(`struct-${structure.id}-1..${structure.w * structure.h} ← sheet rect (${structure.cx},${structure.cy}) ${structure.w}x${structure.h}`);
+}

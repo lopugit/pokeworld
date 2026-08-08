@@ -299,8 +299,8 @@ describe("terrain sprite stitching", () => {
     terrainLife.run(medium.state, medium.block);
     const mediumStructures = structuresOf(medium.block);
     expect(mediumStructures).toHaveLength(1);
-    expect(["house-wide", "center-red"]).toContain(mediumStructures[0].kind);
-    expect(mediumStructures[0].tiles).toBe(mediumStructures[0].kind === "house-wide" ? 16 : 12);
+    expect(["house-wide", "struct-pokecenter", "struct-pokemart"]).toContain(mediumStructures[0].kind);
+    expect(mediumStructures[0].tiles).toBe(16);
 
     // A 36-tile footprint yields ONE grand house (5×4).
     const large = makeUniformState("grass", 5, 9);
@@ -395,9 +395,6 @@ describe("terrain sprite stitching", () => {
   });
 
   it("ships exact crops and faithful compositions for every building family", () => {
-    for (let index = 0; index < 12; index += 1) {
-      expectExactEmeraldCrop(`center-red-${index + 1}`, (index % 3) * 16, 144 + Math.floor(index / 3) * 16);
-    }
     expectComposedHouse("house-wide", [
       [1, 2, 2, 3],
       [4, 5, 5, 6],

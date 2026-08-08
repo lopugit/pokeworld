@@ -13,7 +13,7 @@
 // that break the matrix are reported as conflicts instead of rendering an
 // illegal seam.
 
-import { FAMILY_BY_ID } from "./families";
+import { FAMILY_BY_ID } from "./registry";
 import { groundKindOf } from "./legality";
 import { bakeGround, newGrid, newGround, type Ground, type GroundMap } from "./paint";
 import { createRng } from "./rng";

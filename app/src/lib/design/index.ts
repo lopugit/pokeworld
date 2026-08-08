@@ -1,7 +1,9 @@
 export * from "./types";
 export * from "./rng";
 export * from "./entities";
-export { DESIGN_FAMILIES, FAMILY_BY_ID } from "./families";
+export { DESIGN_FAMILIES, FAMILY_BY_ID } from "./registry";
+export { HAND_FAMILIES } from "./families";
+export { GENERATED_FAMILIES, buildGeneratedFamily } from "./families-generated";
 export {
   CATALOG_SIZE,
   catalogTags,

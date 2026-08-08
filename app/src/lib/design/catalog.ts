@@ -3,7 +3,8 @@
 // generated on demand and memoized. Remixing = same family, fresh seed.
 
 import { POKEMON } from "./entities";
-import { DESIGN_FAMILIES, FAMILY_BY_ID, type DesignFamily, type SceneContext } from "./families";
+import type { DesignFamily, SceneContext } from "./families";
+import { DESIGN_FAMILIES, FAMILY_BY_ID } from "./registry";
 import { bakeGround, newGrid, newGround } from "./paint";
 import { createRng } from "./rng";
 import type { DesignSummary, GeneratedDesign } from "./types";
@@ -27,6 +28,14 @@ function nameFor(family: DesignFamily, seed: number): { name: string; descriptio
   return { name, description };
 }
 
+const STRUCTURE_TAGS: Array<[string, string]> = [
+  ["struct-pokecenter", "pokecenter"],
+  ["struct-pokemart", "pokemart"],
+  ["struct-contest-hall", "contest-hall"],
+  ["struct-tower-white", "tower"],
+  ["struct-lodge-log", "lodge"],
+];
+
 function deriveTags(design: Pick<GeneratedDesign, "tiles" | "entities">): string[] {
   const tags = new Set<string>();
   for (const row of design.tiles) {
@@ -35,6 +44,9 @@ function deriveTags(design: Pick<GeneratedDesign, "tiles" | "entities">): string
       if (tile.img?.startsWith("sand")) tags.add("sand");
       if (tile.img?.startsWith("road")) tags.add("roads");
       if (tile.img?.startsWith("path")) tags.add("paths");
+      for (const [prefix, tag] of STRUCTURE_TAGS) {
+        if (tile.img2?.startsWith(prefix)) tags.add(tag);
+      }
       switch (tile.feature) {
         case "house": tags.add("houses"); break;
         case "cave-entrance": tags.add("cave"); break;
