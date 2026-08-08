@@ -719,14 +719,17 @@ if (fs.existsSync(tileAnimDir)) {
     const label = anim.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const tilesetLabel = tileset.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const isNpc = tileset.startsWith("npc-");
+    const isDoor = tileset.startsWith("door-");
     animations.push({
       id: `tileanim:${stem}`,
       name: isNpc
         ? `${tilesetLabel.replace(/^Npc /, "")} walk cycle`
-        : `${label} (${tilesetLabel} tileset)`,
+        : isDoor
+          ? `${tilesetLabel.replace(/^Door /, "")} door`
+          : `${label} (${tilesetLabel} tileset)`,
       category: "animation",
-      fps: isNpc ? 6 : /water|waterfall/.test(anim) ? 8 : 5,
-      tags: ["animation", isNpc ? "npc" : "tileset", tileset, anim, "emerald"],
+      fps: isNpc ? 6 : isDoor ? 8 : /water|waterfall/.test(anim) ? 8 : 5,
+      tags: ["animation", isNpc ? "npc" : isDoor ? "door" : "tileset", tileset, anim, "emerald"],
       frames: frames.map((frame) => frame.src),
       frameSize: [width, height],
     });

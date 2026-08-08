@@ -417,7 +417,7 @@
       "label": "manifest",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L775",
+      "source_location": "L778",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_manifest",
       "community": 44,
@@ -427,7 +427,7 @@
       "label": "outFile",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L784",
+      "source_location": "L787",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_outfile",
       "community": 44,
@@ -437,7 +437,7 @@
       "label": "sizeKb",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L786",
+      "source_location": "L789",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_sizekb",
       "community": 44,
@@ -724,6 +724,26 @@
       "norm_label": "animdir"
     },
     {
+      "label": "WALK_NPCS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L565",
+      "_origin": "ast",
+      "id": "app_scripts_design_fetch_emerald_towns_walk_npcs",
+      "community": 213,
+      "norm_label": "walk_npcs"
+    },
+    {
+      "label": "WALK_SEQUENCE",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L571",
+      "_origin": "ast",
+      "id": "app_scripts_design_fetch_emerald_towns_walk_sequence",
+      "community": 213,
+      "norm_label": "walk_sequence"
+    },
+    {
       "label": "ASSET_PIPELINE_LOOP.md",
       "file_type": "document",
       "source_file": "docs/ASSET_PIPELINE_LOOP.md",
@@ -757,7 +777,7 @@
       "label": "Loop protocol (every iteration)",
       "file_type": "document",
       "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L63",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "docs_asset_pipeline_loop_loop_protocol_every_iteration",
       "community": 228,
@@ -1949,7 +1969,7 @@
       "source_file": "app/src/components/design/DesignBrowser.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 133,
+      "community": 232,
       "norm_label": "designcard()",
       "id": "app_src_components_design_designbrowser_designcard"
     },
@@ -1969,7 +1989,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "scenedraw.ts",
       "id": "app_src_components_design_scenedraw"
     },
@@ -1979,7 +1999,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "imagecache",
       "id": "app_src_components_design_scenedraw_imagecache"
     },
@@ -1989,7 +2009,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "loadimage()",
       "id": "app_src_components_design_scenedraw_loadimage"
     },
@@ -1999,7 +2019,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "scenedrawoptions",
       "id": "app_src_components_design_scenedraw_scenedrawoptions"
     },
@@ -2009,7 +2029,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "spritecut",
       "id": "app_src_components_design_scenedraw_spritecut"
     },
@@ -2019,7 +2039,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "spritecutcache",
       "id": "app_src_components_design_scenedraw_spritecutcache"
     },
@@ -2029,7 +2049,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "pokemoncut()",
       "id": "app_src_components_design_scenedraw_pokemoncut"
     },
@@ -2039,7 +2059,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "drawscene()",
       "id": "app_src_components_design_scenedraw_drawscene"
     },
@@ -2579,7 +2599,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "newground()",
       "id": "app_src_lib_design_paint_newground"
     },
@@ -2589,7 +2609,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "newgrid()",
       "id": "app_src_lib_design_paint_newgrid"
     },
@@ -2639,7 +2659,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 131,
+      "community": 0,
       "norm_label": "neighbours()",
       "id": "app_src_lib_design_paint_neighbours"
     },
@@ -2729,7 +2749,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L303",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "bakeground()",
       "id": "app_src_lib_design_paint_bakeground"
     },
@@ -2799,7 +2819,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L396",
       "_origin": "ast",
-      "community": 24,
+      "community": 0,
       "norm_label": "structures",
       "id": "app_src_lib_design_paint_structures"
     },
@@ -3286,7 +3306,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "build-family-manifest.ts",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest"
@@ -3297,7 +3317,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "generate()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_generate"
@@ -3308,7 +3328,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "cellkey()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_cellkey"
@@ -3319,7 +3339,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "rawidentity()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_rawidentity"
@@ -3330,7 +3350,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "contentidentity()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_contentidentity"
@@ -3341,7 +3361,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "accepted",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_accepted"
@@ -3352,7 +3372,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "familyseeds",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_familyseeds"
@@ -3363,7 +3383,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "rejections",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_rejections"
@@ -3374,7 +3394,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "appdir",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_appdir"
@@ -3385,7 +3405,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "outfile",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_outfile"
@@ -3396,7 +3416,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "blockcanvas.tsx",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas"
@@ -3407,7 +3427,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "blockcanvasprops",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas_blockcanvasprops"
@@ -3418,7 +3438,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 39,
+      "community": 131,
       "norm_label": "blockcanvas()",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas_blockcanvas"
@@ -3484,7 +3504,7 @@
       "source_file": "app/src/components/design/FamilyVariantsView.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 133,
+      "community": 39,
       "norm_label": "familyvariantsview.tsx",
       "community_name": "block-store.ts",
       "id": "app_src_components_design_familyvariantsview"
@@ -3495,7 +3515,7 @@
       "source_file": "app/src/components/design/FamilyVariantsView.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 133,
+      "community": 39,
       "norm_label": "familyvariantsview()",
       "community_name": "block-store.ts",
       "id": "app_src_components_design_familyvariantsview_familyvariantsview"
@@ -3528,7 +3548,7 @@
       "source_file": "app/src/components/design/RulesTab.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 232,
+      "community": 226,
       "norm_label": "rulestab()",
       "community_name": "Mountain Tile 2",
       "id": "app_src_components_design_rulestab_rulestab"
@@ -3660,7 +3680,7 @@
       "source_file": "app/src/lib/design/catalog.ts",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 133,
+      "community": 39,
       "norm_label": "getdesign()",
       "community_name": "block-store.ts",
       "id": "app_src_lib_design_catalog_getdesign"
@@ -3847,7 +3867,7 @@
       "source_file": "app/src/lib/design/world.ts",
       "source_location": "L86",
       "_origin": "ast",
-      "community": 131,
+      "community": 133,
       "norm_label": "generateworld()",
       "community_name": "Mountain Tile 3",
       "id": "app_src_lib_design_world_generateworld"
@@ -3869,7 +3889,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 232,
+      "community": 226,
       "norm_label": "designpage.tsx",
       "community_name": "block-store.ts",
       "id": "app_src_pages_designpage"
@@ -3880,7 +3900,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 232,
+      "community": 226,
       "norm_label": "tabs",
       "community_name": "block-store.ts",
       "id": "app_src_pages_designpage_tabs"
@@ -3891,7 +3911,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 232,
+      "community": 226,
       "norm_label": "tabid",
       "community_name": "block-store.ts",
       "id": "app_src_pages_designpage_tabid"
@@ -3902,7 +3922,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 232,
+      "community": 226,
       "norm_label": "designpage()",
       "community_name": "block-store.ts",
       "id": "app_src_pages_designpage_designpage"
@@ -6399,7 +6419,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.delete.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules.delete.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_delete"
@@ -6410,7 +6430,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_get"
@@ -6421,7 +6441,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.put.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules.put.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_put"
@@ -6432,7 +6452,7 @@
       "source_file": "app/server/routes/api/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_spawn_rules_get"
@@ -6443,7 +6463,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules-store.ts",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store"
@@ -6454,7 +6474,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawnrulescollection()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_spawnrulescollection"
@@ -6465,7 +6485,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "memoryoverrides",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_memoryoverrides"
@@ -6476,7 +6496,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "listspawnoverrides()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_listspawnoverrides"
@@ -6487,7 +6507,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "putspawnoverride()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_putspawnoverride"
@@ -6498,7 +6518,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "deletespawnoverride()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_deletespawnoverride"
@@ -6674,7 +6694,7 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 20,
+      "community": 11,
       "norm_label": "expprogress()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_battlescreen_expprogress"
@@ -6718,7 +6738,7 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 20,
+      "community": 11,
       "norm_label": "battlescreen()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_battlescreen_battlescreen"
@@ -6883,7 +6903,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "battlemove",
       "community_name": "BattleScreen.tsx",
       "id": "app_src_lib_battle_battlemove"
@@ -6894,7 +6914,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "movespec",
       "community_name": "BattleScreen.tsx",
       "id": "app_src_lib_battle_movespec"
@@ -6960,7 +6980,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "movesfor()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_movesfor"
@@ -6982,7 +7002,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L210",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "battlemon",
       "community_name": "BattleScreen.tsx",
       "id": "app_src_lib_battle_battlemon"
@@ -7004,7 +7024,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "battlemonfrommember()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_battlemonfrommember"
@@ -7015,7 +7035,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L251",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "wildmonfromencounter()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_wildmonfromencounter"
@@ -7070,7 +7090,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L299",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "createwildbattle()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_createwildbattle"
@@ -7092,7 +7112,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L322",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "advancemessage()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_advancemessage"
@@ -7290,7 +7310,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L757",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "applybattleoutcome()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_battle_applybattleoutcome"
@@ -7301,7 +7321,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "encounters.ts",
       "community_name": "react",
       "id": "app_src_lib_encounters"
@@ -7356,7 +7376,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "speciesspawnoverride",
       "community_name": "http.ts",
       "id": "app_src_lib_encounters_speciesspawnoverride"
@@ -7367,7 +7387,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "iswatertile()",
       "community_name": "react",
       "id": "app_src_lib_encounters_iswatertile"
@@ -7378,7 +7398,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "islonggrasstile()",
       "community_name": "react",
       "id": "app_src_lib_encounters_islonggrasstile"
@@ -7389,7 +7409,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "encounterbiomefor()",
       "community_name": "react",
       "id": "app_src_lib_encounters_encounterbiomefor"
@@ -7400,7 +7420,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "encounter_step_chance",
       "community_name": "react",
       "id": "app_src_lib_encounters_encounter_step_chance"
@@ -7411,7 +7431,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L89",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "encountertriggered()",
       "community_name": "react",
       "id": "app_src_lib_encounters_encountertriggered"
@@ -7422,7 +7442,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "haversinekm()",
       "community_name": "react",
       "id": "app_src_lib_encounters_haversinekm"
@@ -7433,7 +7453,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "fencecontains()",
       "community_name": "react",
       "id": "app_src_lib_encounters_fencecontains"
@@ -7444,7 +7464,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L116",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "cave_species",
       "community_name": "react",
       "id": "app_src_lib_encounters_cave_species"
@@ -7455,7 +7475,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L126",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "defaultbiomesfor()",
       "community_name": "react",
       "id": "app_src_lib_encounters_defaultbiomesfor"
@@ -7466,7 +7486,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L139",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "legendaryhome",
       "community_name": "react",
       "id": "app_src_lib_encounters_legendaryhome"
@@ -7477,7 +7497,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L148",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "legendary_homes",
       "community_name": "react",
       "id": "app_src_lib_encounters_legendary_homes"
@@ -7488,7 +7508,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L175",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "defaultruleid()",
       "community_name": "react",
       "id": "app_src_lib_encounters_defaultruleid"
@@ -7499,7 +7519,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L178",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "defaultrulesfor()",
       "community_name": "react",
       "id": "app_src_lib_encounters_defaultrulesfor"
@@ -7510,7 +7530,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L212",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "defaultspawnrules()",
       "community_name": "react",
       "id": "app_src_lib_encounters_defaultspawnrules"
@@ -7521,7 +7541,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L217",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "mergespawnrules()",
       "community_name": "react",
       "id": "app_src_lib_encounters_mergespawnrules"
@@ -7532,7 +7552,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L227",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "isvalidfence()",
       "community_name": "react",
       "id": "app_src_lib_encounters_isvalidfence"
@@ -7543,7 +7563,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L245",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "normalizespawnrule()",
       "community_name": "react",
       "id": "app_src_lib_encounters_normalizespawnrule"
@@ -7554,7 +7574,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L291",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "normalizespawnoverride()",
       "community_name": "http.ts",
       "id": "app_src_lib_encounters_normalizespawnoverride"
@@ -7565,7 +7585,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L306",
       "_origin": "ast",
-      "community": 136,
+      "community": 27,
       "norm_label": "encounterresult",
       "community_name": "Mountain Tile 6",
       "id": "app_src_lib_encounters_encounterresult"
@@ -7576,7 +7596,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L314",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "matchingrules()",
       "community_name": "react",
       "id": "app_src_lib_encounters_matchingrules"
@@ -7587,7 +7607,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L329",
       "_origin": "ast",
-      "community": 11,
+      "community": 200,
       "norm_label": "rollencounter()",
       "community_name": "react",
       "id": "app_src_lib_encounters_rollencounter"
@@ -7961,7 +7981,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "basestats",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_basestats"
@@ -7983,7 +8003,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 136,
+      "community": 27,
       "norm_label": "pokemongender",
       "community_name": "Mountain Tile 6",
       "id": "app_src_lib_pokedex_pokemongender"
@@ -8027,7 +8047,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "allspecies()",
       "community_name": "react",
       "id": "app_src_lib_pokedex_allspecies"
@@ -8038,7 +8058,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "getspecies()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_getspecies"
@@ -8049,7 +8069,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "speciesbyname()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_speciesbyname"
@@ -8071,7 +8091,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "statblock",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_statblock"
@@ -8082,7 +8102,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "calcstats()",
       "community_name": "battle.ts",
       "id": "app_src_lib_pokedex_calcstats"
@@ -8093,7 +8113,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L84",
       "_origin": "ast",
-      "community": 200,
+      "community": 11,
       "norm_label": "expforlevel()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_expforlevel"
@@ -8104,7 +8124,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "levelforexp()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_levelforexp"
@@ -8115,7 +8135,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L117",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "expgainfordefeat()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_expgainfordefeat"
@@ -8126,7 +8146,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 11,
+      "community": 200,
       "norm_label": "rng",
       "community_name": "react",
       "id": "app_src_lib_pokedex_rng"
@@ -8137,7 +8157,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L125",
       "_origin": "ast",
-      "community": 11,
+      "community": 200,
       "norm_label": "rollgender()",
       "community_name": "react",
       "id": "app_src_lib_pokedex_rollgender"
@@ -8148,7 +8168,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L134",
       "_origin": "ast",
-      "community": 11,
+      "community": 200,
       "norm_label": "rollshiny()",
       "community_name": "react",
       "id": "app_src_lib_pokedex_rollshiny"
@@ -8280,7 +8300,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "statuscondition",
       "community_name": "BattleScreen.tsx",
       "id": "app_src_lib_trainer_state_statuscondition"
@@ -8291,7 +8311,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "partymember",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_partymember"
@@ -8302,7 +8322,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 26,
+      "community": 20,
       "norm_label": "bagitem",
       "community_name": "BattleScreen.tsx",
       "id": "app_src_lib_trainer_state_bagitem"
@@ -8401,7 +8421,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "isknownsprite()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_isknownsprite"
@@ -8412,7 +8432,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "spriteforspecies()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_spriteforspecies"
@@ -8445,7 +8465,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L131",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "createpartymember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_createpartymember"
@@ -8456,7 +8476,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L160",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "startermember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_startermember"
@@ -8467,7 +8487,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "defaulttrainer()",
       "community_name": "battle.ts",
       "id": "app_src_lib_trainer_state_defaulttrainer"
@@ -8500,7 +8520,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L224",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "normalizemember()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_normalizemember"
@@ -8610,7 +8630,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L430",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "removebagitem()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_removebagitem"
@@ -8654,7 +8674,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L467",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "sortedinsert()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_sortedinsert"
@@ -8665,7 +8685,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L470",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "registerseen()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_registerseen"
@@ -8676,7 +8696,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L478",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "registercaught()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_registercaught"
@@ -8687,7 +8707,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L490",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "addcaughtpokemon()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_addcaughtpokemon"
@@ -8709,7 +8729,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L513",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "levelupmember()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_levelupmember"
@@ -8720,7 +8740,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L530",
       "_origin": "ast",
-      "community": 26,
+      "community": 11,
       "norm_label": "grantexperience()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_grantexperience"
@@ -9050,7 +9070,7 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "battle.test.ts",
       "community_name": "battle.ts",
       "id": "app_tests_battle_test"
@@ -9061,7 +9081,7 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "seq()",
       "community_name": "battle.ts",
       "id": "app_tests_battle_test_seq"
@@ -9072,7 +9092,7 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "encounter()",
       "community_name": "battle.ts",
       "id": "app_tests_battle_test_encounter"
@@ -9083,7 +9103,7 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 27,
+      "community": 11,
       "norm_label": "startbattle()",
       "community_name": "battle.ts",
       "id": "app_tests_battle_test_startbattle"
@@ -9094,7 +9114,7 @@
       "source_file": "app/tests/encounters.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "encounters.test.ts",
       "community_name": "react",
       "id": "app_tests_encounters_test"
@@ -9105,7 +9125,7 @@
       "source_file": "app/tests/encounters.test.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "tile()",
       "community_name": "react",
       "id": "app_tests_encounters_test_tile"
@@ -9116,7 +9136,7 @@
       "source_file": "app/tests/encounters.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "seq()",
       "community_name": "react",
       "id": "app_tests_encounters_test_seq"
@@ -9127,7 +9147,7 @@
       "source_file": "app/tests/encounters.test.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 11,
+      "community": 136,
       "norm_label": "uluru",
       "community_name": "react",
       "id": "app_tests_encounters_test_uluru"
@@ -9204,7 +9224,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "spawn-rules-api.test.ts",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test"
@@ -9215,7 +9235,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "customrule()",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test_customrule"
@@ -9226,7 +9246,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 206,
+      "community": 136,
       "norm_label": "overridefor()",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test_overridefor"
@@ -10111,7 +10131,7 @@
       "source_file": "app/package.json",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 10,
+      "community": 242,
       "norm_label": "@types/node",
       "community_name": ".initialize",
       "id": "app_package_devdependencies_types_node"
@@ -10177,7 +10197,7 @@
       "source_file": "app/package.json",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 10,
+      "community": 201,
       "norm_label": "jiti",
       "community_name": "jiti",
       "id": "app_package_devdependencies_jiti"
@@ -10199,7 +10219,7 @@
       "source_file": "app/package.json",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 10,
+      "community": 206,
       "norm_label": "sass",
       "community_name": "sass",
       "id": "app_package_devdependencies_sass"
@@ -11002,7 +11022,7 @@
       "source_file": "app/server/routes/api/health.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "norm_label": "health.get.ts",
       "community_name": "[runId].get.ts",
       "id": "app_server_routes_api_health_get"
@@ -11024,7 +11044,7 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 225,
+      "community": 4,
       "norm_label": "[runid].get.ts",
       "community_name": "Mountain Tile 1",
       "id": "app_server_routes_api_map_jobs_runid_get"
@@ -11035,7 +11055,7 @@
       "source_file": "app/server/routes/api/map-jobs/[runId].get.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 225,
+      "community": 4,
       "norm_label": "storedblocksprogress()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_routes_api_map_jobs_runid_get_storedblocksprogress"
@@ -11277,7 +11297,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "generatemapblock()",
       "community_name": "vitest",
       "id": "app_server_services_map_generate_generatemapblock"
@@ -11376,7 +11396,7 @@
       "source_file": "app/server/services/map/generation-policy.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 205,
+      "community": 2,
       "norm_label": "generationcontrolerror",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_policy_generationcontrolerror"
@@ -11387,7 +11407,7 @@
       "source_file": "app/server/services/map/generation-policy.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 205,
+      "community": 2,
       "norm_label": ".constructor()",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_policy_generationcontrolerror_constructor"
@@ -11827,7 +11847,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L790",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "withoptionalstore()",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_quota_withoptionalstore"
@@ -11838,7 +11858,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L809",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "reservegenerationquota()",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_quota_reservegenerationquota"
@@ -11860,7 +11880,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L840",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "acquiregenerationpermit()",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_quota_acquiregenerationpermit"
@@ -11893,7 +11913,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 225,
+      "community": 198,
       "norm_label": "input.ts",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input"
@@ -11904,7 +11924,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 225,
+      "community": 198,
       "norm_label": "finiteinteger()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input_finiteinteger"
@@ -11915,7 +11935,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 225,
+      "community": 198,
       "norm_label": "parseoffset()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input_parseoffset"
@@ -11926,7 +11946,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 225,
+      "community": 198,
       "norm_label": "parsemapjobinput()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input_parsemapjobinput"
@@ -11937,7 +11957,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 225,
+      "community": 205,
       "norm_label": "coordinatesforinput()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input_coordinatesforinput"
@@ -11948,7 +11968,7 @@
       "source_file": "app/server/services/map/input.ts",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 225,
+      "community": 4,
       "norm_label": "offsetsfromquery()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_input_offsetsfromquery"
@@ -12036,7 +12056,7 @@
       "source_file": "app/server/services/map/legacy/blocks.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 18,
+      "community": 29,
       "norm_label": "toexport()",
       "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_blocks_toexport"
@@ -12179,7 +12199,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 242,
+      "community": 15,
       "norm_label": "getfallbackmap()",
       "community_name": "png.ts",
       "id": "app_server_services_map_legacy_functions_getfallbackmap"
@@ -12278,7 +12298,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L295",
       "_origin": "ast",
-      "community": 242,
+      "community": 15,
       "norm_label": "getmapat()",
       "community_name": "png.ts",
       "id": "app_server_services_map_legacy_functions_getmapat"
@@ -12289,7 +12309,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L300",
       "_origin": "ast",
-      "community": 242,
+      "community": 15,
       "norm_label": "buildgooglestaticmapurl()",
       "community_name": "png.ts",
       "id": "app_server_services_map_legacy_functions_buildgooglestaticmapurl"
@@ -12300,7 +12320,7 @@
       "source_file": "app/server/services/map/legacy/functions.ts",
       "source_location": "L316",
       "_origin": "ast",
-      "community": 242,
+      "community": 15,
       "norm_label": "getmapatwithsource()",
       "community_name": "png.ts",
       "id": "app_server_services_map_legacy_functions_getmapatwithsource"
@@ -12410,7 +12430,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 29,
       "norm_label": "log.ts",
       "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_log"
@@ -12421,7 +12441,7 @@
       "source_file": "app/server/services/map/legacy/log.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 29,
       "norm_label": "log()",
       "community_name": "blocks.ts",
       "id": "app_server_services_map_legacy_log_log"
@@ -12729,7 +12749,7 @@
       "source_file": "app/server/services/map/legacy/png.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 15,
+      "community": 29,
       "norm_label": "rgbatotilecolourdata()",
       "community_name": "png.ts",
       "id": "app_server_services_map_legacy_png_rgbatotilecolourdata"
@@ -12740,7 +12760,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "norm_label": "mongo.ts",
       "community_name": "[runId].get.ts",
       "id": "app_server_services_map_mongo"
@@ -12751,7 +12771,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 201,
+      "community": 28,
       "norm_label": "mongouri()",
       "community_name": "[runId].get.ts",
       "id": "app_server_services_map_mongo_mongouri"
@@ -12762,7 +12782,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "norm_label": "ismongoconfigured()",
       "community_name": "[runId].get.ts",
       "id": "app_server_services_map_mongo_ismongoconfigured"
@@ -12773,7 +12793,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "norm_label": "blockscollection()",
       "community_name": "[runId].get.ts",
       "id": "app_server_services_map_mongo_blockscollection"
@@ -12784,7 +12804,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "norm_label": "getstoredblocks()",
       "community_name": "[runId].get.ts",
       "id": "app_server_services_map_mongo_getstoredblocks"
@@ -12883,7 +12903,7 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 225,
+      "community": 4,
       "norm_label": "findcurrentstoredblocks()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_stored_blocks_findcurrentstoredblocks"
@@ -12905,7 +12925,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 4,
+      "community": 137,
       "norm_label": "terrainkind",
       "community_name": "trainer-state.test.ts",
       "id": "app_server_services_map_terrain_classifier_terrainkind"
@@ -13081,7 +13101,7 @@
       "source_file": "app/server/services/map/terrain-classifier.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 18,
+      "community": 29,
       "norm_label": "summarizeterrain()",
       "community_name": "blocks.ts",
       "id": "app_server_services_map_terrain_classifier_summarizeterrain"
@@ -13345,7 +13365,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 137,
       "norm_label": "types.ts",
       "community_name": "trainer-state.test.ts",
       "id": "app_server_services_map_types"
@@ -13367,7 +13387,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 4,
+      "community": 137,
       "norm_label": "mapsource",
       "community_name": "trainer-state.test.ts",
       "id": "app_server_services_map_types_mapsource"
@@ -13411,7 +13431,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 4,
+      "community": 137,
       "norm_label": "maptile",
       "community_name": "trainer-state.test.ts",
       "id": "app_server_services_map_types_maptile"
@@ -13433,7 +13453,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 4,
+      "community": 225,
       "norm_label": "mapgenerationstepresult",
       "community_name": "vitest",
       "id": "app_server_services_map_types_mapgenerationstepresult"
@@ -13444,7 +13464,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 225,
+      "community": 137,
       "norm_label": "mapgenerationresult",
       "community_name": "vitest",
       "id": "app_server_services_map_types_mapgenerationresult"
@@ -13950,7 +13970,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 232,
+      "community": 32,
       "norm_label": "dialogbox.tsx",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox"
@@ -13961,7 +13981,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 232,
+      "community": 32,
       "norm_label": "dialogboxprops",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox_dialogboxprops"
@@ -13972,7 +13992,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 232,
+      "community": 32,
       "norm_label": "dialogbox()",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox_dialogbox"
@@ -14291,7 +14311,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "map-load.ts",
       "community_name": "persisted-state.ts",
       "id": "app_src_lib_map_load"
@@ -14302,7 +14322,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "blockcoordinates",
       "community_name": "persisted-state.ts",
       "id": "app_src_lib_map_load_blockcoordinates"
@@ -14313,7 +14333,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "blockcoordinatesforworldposition()",
       "community_name": "persisted-state.ts",
       "id": "app_src_lib_map_load_blockcoordinatesforworldposition"
@@ -14324,7 +14344,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "blockkeyforworldposition()",
       "community_name": "persisted-state.ts",
       "id": "app_src_lib_map_load_blockkeyforworldposition"
@@ -14335,7 +14355,7 @@
       "source_file": "app/src/lib/map-load.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "prioritizemappreloadoffsets()",
       "community_name": "persisted-state.ts",
       "id": "app_src_lib_map_load_prioritizemappreloadoffsets"
@@ -14709,7 +14729,7 @@
       "source_file": "app/tests/map-generation.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 225,
       "norm_label": "map-generation.test.ts",
       "community_name": "vitest",
       "id": "app_tests_map_generation_test"
@@ -14731,7 +14751,7 @@
       "source_file": "app/tests/map-load.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 198,
+      "community": 225,
       "norm_label": "map-load.test.ts",
       "community_name": "persisted-state.ts",
       "id": "app_tests_map_load_test"
@@ -14742,7 +14762,7 @@
       "source_file": "app/tests/map-source.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 242,
+      "community": 15,
       "norm_label": "map-source.test.ts",
       "community_name": "png.ts",
       "id": "app_tests_map_source_test"
@@ -15369,7 +15389,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "steps.ts",
       "community_name": "vitest",
       "id": "app_workflows_map_generation_steps"
@@ -15380,7 +15400,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "mapgenerationgateresult",
       "community_name": "vitest",
       "id": "app_workflows_map_generation_steps_mapgenerationgateresult"
@@ -15402,7 +15422,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "generatemapblockstep()",
       "community_name": "vitest",
       "id": "app_workflows_map_generation_steps_generatemapblockstep"
@@ -18503,7 +18523,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "block-store.ts",
       "id": "app_server_services_map_block_store"
@@ -18514,7 +18534,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "mapblockstorageprovider",
       "id": "app_server_services_map_block_store_mapblockstorageprovider"
@@ -18525,7 +18545,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "ismapblockstorageconfigured()",
       "id": "app_server_services_map_block_store_ismapblockstorageconfigured"
@@ -18536,7 +18556,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "mapstorageunavailable()",
       "id": "app_server_services_map_block_store_mapstorageunavailable"
@@ -18547,7 +18567,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 225,
+      "community": 4,
       "community_name": "Mountain Tile 1",
       "norm_label": "getstoredblocks()",
       "id": "app_server_services_map_block_store_getstoredblocks"
@@ -18558,7 +18578,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "putstoredblocks()",
       "id": "app_server_services_map_block_store_putstoredblocks"
@@ -18877,7 +18897,7 @@
       "source_file": "app/server/services/map/thingtime-block-store.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "putthingtimestoredblocks()",
       "id": "app_server_services_map_thingtime_block_store_putthingtimestoredblocks"
@@ -18987,7 +19007,7 @@
       "source_file": "app/tests/block-store.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 201,
+      "community": 4,
       "community_name": "[runId].get.ts",
       "norm_label": "block-store.test.ts",
       "id": "app_tests_block_store_test"
@@ -19947,7 +19967,7 @@
     },
     {
       "file_type": "concept",
-      "community": 201,
+      "community": 7,
       "community_name": "dependencies",
       "norm_label": "",
       "id": "mongodb"
@@ -19968,7 +19988,7 @@
     },
     {
       "file_type": "concept",
-      "community": 232,
+      "community": 32,
       "community_name": "AnimationSprite.tsx",
       "norm_label": "",
       "id": "react"
@@ -20010,7 +20030,7 @@
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 242,
       "community_name": ".initialize",
       "norm_label": "",
       "id": "types_node"
@@ -20052,7 +20072,7 @@
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 201,
       "community_name": "jiti",
       "norm_label": "",
       "id": "jiti"
@@ -20066,7 +20086,7 @@
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 206,
       "community_name": "sass",
       "norm_label": "",
       "id": "sass"
@@ -20094,7 +20114,7 @@
     },
     {
       "file_type": "concept",
-      "community": 198,
+      "community": 225,
       "community_name": "DevKit.tsx",
       "norm_label": "",
       "id": "vitest"
@@ -20171,7 +20191,7 @@
     },
     {
       "file_type": "concept",
-      "community": 22,
+      "community": 4,
       "community_name": "thingtime-block-store.ts",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_version_map_block_version"
@@ -20276,7 +20296,7 @@
     },
     {
       "file_type": "concept",
-      "community": 4,
+      "community": 225,
       "community_name": "Mountain Tile 7",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generate_map_block_version"
@@ -20599,7 +20619,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L775",
+      "source_location": "L778",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_manifest",
@@ -20609,7 +20629,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L784",
+      "source_location": "L787",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_outfile",
@@ -20719,7 +20739,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L786",
+      "source_location": "L789",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_sizekb",
@@ -21217,6 +21237,26 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L565",
+      "weight": 1.0,
+      "source": "app_scripts_design_fetch_emerald_towns",
+      "target": "app_scripts_design_fetch_emerald_towns_walk_npcs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L571",
+      "weight": 1.0,
+      "source": "app_scripts_design_fetch_emerald_towns",
+      "target": "app_scripts_design_fetch_emerald_towns_walk_sequence",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21339,7 +21379,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
       "target": "docs_asset_pipeline_loop_loop_protocol_every_iteration",
@@ -54659,5 +54699,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4de675fbeb9b1cb1cfa0ca37fe4ee44b0f75654b"
+  "built_at_commit": "dcec82accd7a695b5d16d5cc1f449a28e555b810"
 }

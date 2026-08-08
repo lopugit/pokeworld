@@ -598,3 +598,40 @@ for (const name of WALK_NPCS) {
   });
 }
 console.log(`exported ${walkFrameCount} NPC walk-cycle frames`);
+
+// ---------------------------------------------------------------------------
+// Door opening animations: each door_anims pic is 16x32 frames stacked
+// vertically (closed -> opening -> open) with a real palette.
+// ---------------------------------------------------------------------------
+let doorFrameCount = 0;
+try {
+  const doors = await listPretDir("graphics/door_anims");
+  for (const file of doors) {
+    const buffer = await fetchPret(`graphics/door_anims/${file}`);
+    const image = readIndexedPng(buffer);
+    const palette = readPngPalette(buffer);
+    const frameCount = Math.floor(image.height / 32);
+    if (image.width !== 16 || frameCount < 2) continue;
+    const stem = file.replace(/\.png$/, "").replace(/_/g, "-");
+    for (let frame = 0; frame < frameCount; frame += 1) {
+      const out = new PNG({ width: 16, height: 32 });
+      for (let y = 0; y < 32; y += 1) {
+        for (let x = 0; x < 16; x += 1) {
+          const colour = image.indices[(frame * 32 + y) * image.width + x];
+          if (colour === 0) continue;
+          const [r, g, b] = palette[colour] ?? [255, 0, 255];
+          out.data.set([r, g, b, 255], (y * 16 + x) * 4);
+        }
+      }
+      writeFileSync(resolve(animDir, `door-${stem}--open-${frame}.png`), PNG.sync.write(out));
+      doorFrameCount += 1;
+    }
+  }
+} catch (error) {
+  console.warn(`door anims: ${error.message}`);
+}
+console.log(`exported ${doorFrameCount} door animation frames`);
+
+// The Hoenn region map is NOT renderable from data alone: its land tiles
+// reference pokenav UI palettes set up in C source. Skipped by design.
+}

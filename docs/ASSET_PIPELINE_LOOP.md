@@ -53,7 +53,11 @@ sheet before commit (render over grass at 3×+).
 - [x] Wave 2d-4 (COMPLETE — 21 south-facing walk reels for the common
       townsfolk, stand/step sequenced): NPC walk cycles → animation reels for the ~20 most common
       NPCs (frames already in fetched pics; slice all frames not just first).
-- [ ] Wave 2d-5: region map (graphics/pokenav/region_map*.png), emotes
+- [x] Wave 2d-5 (DOORS COMPLETE — 146 frames -> ~49 opening reels for
+      every door in the game. Region map SKIPPED: its land tiles need
+      pokenav UI palettes that exist only in C source. Emotes SKIPPED:
+      not present at any data path — likely baked into event gfx):
+      region map (graphics/pokenav/region_map*.png), emotes
       (graphics/field_effects/pics/emotes*), door animations
       (graphics/door_anims) → props/UI whole objects + door anim reels.
 - [ ] Wave 2d-6: audio — Pokémon cries (sound/direct_sound_samples/cries)
