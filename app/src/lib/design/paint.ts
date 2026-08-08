@@ -120,7 +120,7 @@ export function paintPath(
 
 // --- autotiling (mirror of terrain-life.ts, screen coords) -----------------
 
-interface NeighbourFlags {
+export interface NeighbourFlags {
   north: boolean;
   east: boolean;
   south: boolean;
@@ -145,7 +145,7 @@ function neighbours(ground: GroundMap, col: number, row: number, kind: Ground): 
   };
 }
 
-function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
+export function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
   if (!north && east && south && !west) return 1;
   if (!north && east && south && west) return 2;
   if (!north && !east && south && west) return 3;
@@ -438,23 +438,27 @@ export function placeHiddenItem(grid: DesignTile[][], ground: GroundMap, col: nu
   tile.solid = false;
 }
 
-/** One-way ledge row with proper left/middle/right caps. The ledge art sits
- * on rocky ground, so rows only stamp onto rocky tiles. */
-export function placeLedgeRow(
+/** Boulder ridge: a dotted line of mossy boulders with a guaranteed walkable
+ * gap — the rocky biome's terrace/barrier vocabulary. (The old ledge rows were
+ * built from dome-top crops and rendered as broken cliff crests; the legality
+ * rules now ban that art outright, and ridges took their place.) */
+export function placeBoulderLine(
   grid: DesignTile[][],
   ground: GroundMap,
+  rng: Rng,
   row: number,
   fromCol: number,
   toCol: number,
+  options: { gapAt?: number; density?: number } = {},
 ): void {
+  const gapAt = options.gapAt ?? rng.range(fromCol, toCol);
+  const density = options.density ?? 0.85;
   for (let col = fromCol; col <= toCol; col += 1) {
+    if (col === gapAt) continue;
     if (!isClear(grid, ground, col, row)) continue;
     if (ground[row][col] !== "rocky") continue;
-    const img2 =
-      col === fromCol ? "ledge-left-1" : col === toCol ? "ledge-right-1" : "ledge-middle-1";
-    const tile = grid[row][col];
-    tile.img2 = img2;
-    tile.feature = "ledge";
+    if (!rng.chance(density)) continue;
+    placeDecor(grid, col, row, "boulder-mossy-1", { solid: true, feature: "rock" });
   }
 }
 

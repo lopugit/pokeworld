@@ -38,7 +38,7 @@ function deriveTags(design: Pick<GeneratedDesign, "tiles" | "entities">): string
       switch (tile.feature) {
         case "house": tags.add("houses"); break;
         case "cave-entrance": tags.add("cave"); break;
-        case "ledge": tags.add("ledges"); break;
+        case "rock": case "barricade": case "ruin-pillar": tags.add("boulders"); break;
         case "sign": tags.add("signs"); break;
         case "hidden-item": tags.add("hidden-items"); break;
         case "long-grass": tags.add("long-grass"); break;
