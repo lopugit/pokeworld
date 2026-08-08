@@ -26,9 +26,10 @@ sheet before commit (render over grass at 3×+).
       skipped — soot/sand-backed; COMPLETE: + Sootopolis gym 6x5, stone house,
       mini mart + mini PC — 22 struct families total) (gridded-render coordinate workflow;
       formations + BUILDING_TIERS only where grass-backed + verified).
-- [ ] Wave 2c-2 (IN PROGRESS — DONE: Day Care, flower shop, Weather
-      Institute 9x9, Trick House 6x5 [72+ tier]; Briney cottage deferred;
-      NEXT: Seashore House R109, Lanette + Fossil Maniac R114, then tick): Day Care (Route 117), Weather Institute
+- [x] Wave 2c-2 (COMPLETE — Day Care, flower shop, Weather Institute 9x9,
+      Trick House 6x5, Seashore House [sand], Fossil Maniac [path],
+      Lanette [medium tier]; Briney cottage = dock structure + New
+      Mauville = bare cave mouth, both skipped): Day Care (Route 117), Weather Institute
       (R119), Trick House (R110), Pretty Petal flower shop (R104), Briney's
       cottage (R104), Seashore House (R109), Lanette's house (R114), Fossil
       Maniac (R114), New Mauville entrance. Route renders already exist in

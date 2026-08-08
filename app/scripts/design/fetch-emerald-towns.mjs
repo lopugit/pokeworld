@@ -304,6 +304,9 @@ const BUILDINGS = [
   ["struct-flower-shop", "route104", 3, 14, 5, 5],
   ["struct-weather-institute", "route119", 1, 25, 9, 9],
   ["struct-trick-house", "route110", 14, 12, 6, 5],
+  ["struct-seashore-house", "route109", 10, 1, 4, 5],
+  ["struct-fossil-house", "route114", 28, 2, 4, 4],
+  ["struct-lanette-house", "route114", 25, 33, 4, 4],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],

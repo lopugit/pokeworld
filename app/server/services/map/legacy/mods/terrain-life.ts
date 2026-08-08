@@ -373,6 +373,7 @@ const BUILDING_TIERS = [
 			{ prefix: 'struct-house-verdanturf', columns: 4, rows: 4 },
 			{ prefix: 'struct-house-lavaridge', columns: 4, rows: 4 },
 			{ prefix: 'struct-daycare', columns: 4, rows: 4 },
+			{ prefix: 'struct-lanette-house', columns: 4, rows: 4 },
 		],
 	},
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },

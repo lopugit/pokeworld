@@ -297,7 +297,19 @@ export const FORMATIONS: Formation[] = [
     "Harvested whole from the Route 104 render; roadside tree canopies scenery-keyed from its roofline."),
   buildingFormation("trick-house", "Trick House (6×5)", 6, 5, "struct-trick-house",
     "Harvested whole from the Route 110 render; grass-backed."),
+  buildingFormation("lanette-house", "Lanette's house (4×4)", 4, 4, "struct-lanette-house",
+    "Harvested whole from the Route 114 render; grass-backed."),
   // Browser/design-only families (not in the live map's building ladder).
+  {
+    ...buildingFormation("seashore-house", "Seashore House (4×5)", 4, 5, "struct-seashore-house",
+      "Harvested whole from the Route 109 render; stands on the beach."),
+    ground: "sand",
+  },
+  {
+    ...buildingFormation("fossil-house", "Fossil Maniac's house (4×4)", 4, 4, "struct-fossil-house",
+      "Harvested whole from the Route 114 render; stands on the mountain path."),
+    ground: "path",
+  },
   buildingFormation("weather-institute", "Weather Institute (9×9)", 9, 9, "struct-weather-institute",
     "Harvested whole from the Route 119 render; cliff, roadside trees and its sign scenery-keyed."),
   {
