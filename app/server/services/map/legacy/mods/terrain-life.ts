@@ -351,6 +351,7 @@ const BUILDING_TIERS = [
 		variants: [
 			{ prefix: 'house-grand', columns: 5, rows: 4 },
 			{ prefix: 'struct-house-littleroot', columns: 5, rows: 5 },
+			{ prefix: 'struct-flower-shop', columns: 5, rows: 5 },
 		],
 	},
 	{
@@ -365,6 +366,7 @@ const BUILDING_TIERS = [
 			{ prefix: 'struct-shop-mauville', columns: 3, rows: 4 },
 			{ prefix: 'struct-house-verdanturf', columns: 4, rows: 4 },
 			{ prefix: 'struct-house-lavaridge', columns: 4, rows: 4 },
+			{ prefix: 'struct-daycare', columns: 4, rows: 4 },
 		],
 	},
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },

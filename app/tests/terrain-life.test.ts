@@ -307,6 +307,7 @@ describe("terrain sprite stitching", () => {
       "struct-shop-mauville": 12,
       "struct-house-verdanturf": 16,
       "struct-house-lavaridge": 16,
+      "struct-daycare": 16,
     };
     const mediumStructures = structuresOf(medium.block);
     expect(mediumStructures).toHaveLength(1);
@@ -317,6 +318,7 @@ describe("terrain sprite stitching", () => {
     const LARGE_SIZES: Record<string, number> = {
       "house-grand": 20,
       "struct-house-littleroot": 25,
+      "struct-flower-shop": 25,
     };
     const large = makeUniformState("grass", 5, 9);
     paintBuilding(large.block, 3, 11, 11, 14);

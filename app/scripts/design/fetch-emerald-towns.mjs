@@ -300,6 +300,8 @@ const BUILDINGS = [
   ["struct-house-sootopolis", "sootopolis-city", 8, 13, 3, 4],
   ["struct-mart-sootopolis", "sootopolis-city", 16, 26, 4, 4],
   ["struct-center-sootopolis", "sootopolis-city", 42, 28, 4, 4],
+  ["struct-daycare", "route117", 50, 2, 4, 4],
+  ["struct-flower-shop", "route104", 3, 14, 5, 5],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
@@ -313,6 +315,7 @@ const SCENERY_KEYS = {
   "struct-battle-tent": { referenceCells: [[3, 1], [2, 2], [6, 2], [1, 1]], rows: [0] },
   "struct-dept-store": { referenceCells: [[5, 0], [6, 0], [19, 0], [20, 0]], rows: [0] },
   "struct-lighthouse-slateport": { referenceCells: [[29, 51], [30, 51]], rows: [0] },
+  "struct-flower-shop": { referenceCells: [[0, 13], [1, 13], [8, 14]], rows: [0] },
 };
 
 const tilesDir = resolve(appDir, "public/tiles");

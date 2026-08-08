@@ -291,6 +291,10 @@ export const FORMATIONS: Formation[] = [
     "Harvested whole from the Lavaridge Town render; grass-backed."),
   buildingFormation("house-lavaridge", "Lavaridge herb house (4×4)", 4, 4, "struct-house-lavaridge",
     "Harvested whole from the Lavaridge Town render; grass-backed."),
+  buildingFormation("daycare", "Pokémon Day Care (4×4)", 4, 4, "struct-daycare",
+    "Harvested whole from the Route 117 render; grass-backed."),
+  buildingFormation("flower-shop", "Pretty Petal flower shop (5×5)", 5, 5, "struct-flower-shop",
+    "Harvested whole from the Route 104 render; roadside tree canopies scenery-keyed from its roofline."),
   // Browser/design-only families (not in the live map's building ladder).
   {
     ...buildingFormation("gym-sootopolis", "Sootopolis gym (6×5)", 6, 5, "struct-gym-sootopolis",
