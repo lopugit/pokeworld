@@ -3,6 +3,17 @@ import { AnimationSprite } from "./AnimationSprite";
 
 /** Small pixel-perfect preview for any asset kind. */
 export function SpriteThumb({ item, scale = 3 }: { item: AssetItem; scale?: number }) {
+  if (item.kind === "single" && item.src.endsWith(".m4a")) {
+    return (
+      <span
+        aria-hidden
+        className="flex items-center justify-center rounded bg-slate-700 text-2xl"
+        style={{ width: 48, height: 48 }}
+      >
+        🔊
+      </span>
+    );
+  }
   if (item.kind === "single") {
     const oversized = item.w > 96 || item.h > 96;
     // Integer-downscale large sprites (e.g. 64×64 battle art) so thumbnails

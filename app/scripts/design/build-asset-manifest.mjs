@@ -424,6 +424,25 @@ if (fs.existsSync(interiorScanDir)) {
   }
 }
 
+// Pokémon cries (AAC audio decoded from pret sound samples).
+const criesScanDir = path.join(publicDir, "audio", "cries");
+if (fs.existsSync(criesScanDir)) {
+  for (const file of fs.readdirSync(criesScanDir).filter((name) => name.endsWith(".m4a")).sort()) {
+    const stem = file.replace(/\.m4a$/, "");
+    const label = stem.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `cry:${stem}`,
+      name: `${label} cry`,
+      src: `/audio/cries/${file}`,
+      w: 32,
+      h: 32,
+      category: "audio",
+      tags: ["audio", "cry", "pokemon", "whole-object", stem],
+      usage: "Pokémon cry converted from pret/pokeemerald sound samples (AAC).",
+    });
+  }
+}
+
 // ---------------------------------------------------------------------------
 // 2. Sheets — copy source spritesheets into public/design/sheets.
 // ---------------------------------------------------------------------------

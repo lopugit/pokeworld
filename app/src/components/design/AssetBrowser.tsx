@@ -53,6 +53,8 @@ function AssetDetailModal({ item, onClose }: { item: AssetItem; onClose: () => v
         <div className="flex min-h-32 items-center justify-center rounded-lg bg-slate-800/80 p-6">
           {item.kind === "animation" ? (
             <AnimationSprite animation={item.animation} scale={5} playing={playing} fpsOverride={fps} />
+          ) : item.kind === "single" && item.src.endsWith(".m4a") ? (
+            <audio controls autoPlay src={item.src} className="w-full" />
           ) : (
             <SpriteThumb item={item} scale={6} />
           )}

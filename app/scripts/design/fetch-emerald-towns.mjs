@@ -12,6 +12,7 @@
 // are u16 with the metatile id in the low 10 bits. Palette colour 0 is
 // transparent on both layers.
 
+import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -632,6 +633,38 @@ try {
 }
 console.log(`exported ${doorFrameCount} door animation frames`);
 
+// ---------------------------------------------------------------------------
+// Pokémon cries: 388 .aif samples converted to web-friendly AAC (.m4a) via
+// ffmpeg. Skipped gracefully when ffmpeg is unavailable.
+// ---------------------------------------------------------------------------
+const criesDir = resolve(appDir, "public/audio/cries");
+mkdirSync(criesDir, { recursive: true });
+let cryCount = 0;
+try {
+  execFileSync("ffmpeg", ["-version"], { stdio: "ignore" });
+  const cries = (await listPretDir("sound/direct_sound_samples/cries")).filter((f) => /\.(aif|wav)$/.test(f));
+  for (const file of cries) {
+    const outFile = resolve(criesDir, file.replace(/\.(aif|wav)$/, ".m4a"));
+    if (existsSync(outFile)) {
+      cryCount += 1;
+      continue;
+    }
+    try {
+      await fetchPret(`sound/direct_sound_samples/cries/${file}`);
+      execFileSync("ffmpeg", [
+        "-y", "-loglevel", "error",
+        "-i", resolve(pretDir, `sound/direct_sound_samples/cries/${file}`),
+        "-c:a", "aac", "-b:a", "64k", outFile,
+      ], { stdio: "ignore" });
+      cryCount += 1;
+    } catch {
+      console.warn(`cry ${file}: fetch/convert failed, skipped`);
+    }
+  }
+} catch {
+  console.warn("ffmpeg unavailable — cries skipped");
+}
+console.log(`converted ${cryCount} Pokémon cries into public/audio/cries/`);
+
 // The Hoenn region map is NOT renderable from data alone: its land tiles
 // reference pokenav UI palettes set up in C source. Skipped by design.
-}
