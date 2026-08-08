@@ -297,18 +297,32 @@ describe("terrain sprite stitching", () => {
     const medium = makeUniformState("grass", 4, 9);
     paintBuilding(medium.block, 1, 5, 1, 5);
     terrainLife.run(medium.state, medium.block);
+    const MEDIUM_SIZES: Record<string, number> = {
+      "house-wide": 16,
+      "struct-pokecenter": 16,
+      "struct-pokemart": 16,
+      "struct-house-mossdeep": 16,
+      "struct-house-wood": 16,
+      "struct-house-berry": 16,
+      "struct-shop-mauville": 12,
+    };
     const mediumStructures = structuresOf(medium.block);
     expect(mediumStructures).toHaveLength(1);
-    expect(["house-wide", "struct-pokecenter", "struct-pokemart"]).toContain(mediumStructures[0].kind);
-    expect(mediumStructures[0].tiles).toBe(16);
+    expect(Object.keys(MEDIUM_SIZES)).toContain(mediumStructures[0].kind);
+    expect(mediumStructures[0].tiles).toBe(MEDIUM_SIZES[mediumStructures[0].kind]);
 
-    // A 36-tile footprint yields ONE grand house (5×4).
+    // A 36-tile footprint yields ONE large house (5×4 or 5×5).
+    const LARGE_SIZES: Record<string, number> = {
+      "house-grand": 20,
+      "struct-house-littleroot": 25,
+    };
     const large = makeUniformState("grass", 5, 9);
     paintBuilding(large.block, 3, 11, 11, 14);
     terrainLife.run(large.state, large.block);
     const largeStructures = structuresOf(large.block);
     expect(largeStructures).toHaveLength(1);
-    expect(largeStructures[0]).toEqual({ kind: "house-grand", tiles: 20 });
+    expect(Object.keys(LARGE_SIZES)).toContain(largeStructures[0].kind);
+    expect(largeStructures[0].tiles).toBe(LARGE_SIZES[largeStructures[0].kind]);
 
     // A former 3-house mega-footprint (96 tiles) now yields ONE manor (6×5).
     const grand = makeUniformState("grass", 7, 9);

@@ -46,6 +46,17 @@ const TILE_FAMILIES = [
   ["struct-contest-hall-", "building", "Contest hall"],
   ["struct-tower-white-", "building", "White tower"],
   ["struct-lodge-log-", "building", "Log lodge"],
+  ["struct-house-littleroot-", "building", "Littleroot house"],
+  ["struct-lab-birch-", "building", "Birch's lab"],
+  ["struct-gym-petalburg-", "building", "Petalburg gym"],
+  ["struct-house-berry-", "building", "Berry-garden house"],
+  ["struct-gym-mauville-", "building", "Mauville gym"],
+  ["struct-shop-mauville-", "building", "Mauville shop"],
+  ["struct-house-mossdeep-", "building", "Mossdeep house"],
+  ["struct-gym-mossdeep-", "building", "Mossdeep gym"],
+  ["struct-spacecenter-", "building", "Mossdeep space centre"],
+  ["struct-house-wood-", "building", "Wooden route house"],
+  ["struct-hut-pacifidlog-", "building", "Pacifidlog stilt hut"],
   ["mountain-", "terrain", "Mountain face"],
   ["cave-door-", "terrain", "Cave doorway"],
   ["cave-", "terrain", "Cave mouth"],
@@ -223,6 +234,83 @@ for (const character of ["boy", "girl"]) {
         usage: "Directional walk frame rendered on the live map.",
       });
     }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 1b. Whole objects — every multi-tile formation stitched into one browsable
+// image under public/design/composed/, plus the full pret town renders. These
+// carry the "whole-object" tag; the asset browser splits each category into
+// whole objects vs individual tiles on it. Keep FORMATION_SHAPES in sync with
+// src/lib/design/legality.ts (a vitest asserts parity).
+// ---------------------------------------------------------------------------
+
+export const FORMATION_SHAPES = [
+  ["house-red", "house-red", 3, 4, "building", "Red-roof house"],
+  ["house-wide", "house-wide", 4, 4, "building", "Wide red-roof house"],
+  ["house-grand", "house-grand", 5, 4, "building", "Grand red-roof house"],
+  ["house-manor", "house-manor", 6, 5, "building", "Red-roof manor"],
+  ["pokecenter", "struct-pokecenter", 4, 4, "building", "Pokémon Center"],
+  ["pokemart", "struct-pokemart", 4, 4, "building", "PokéMart"],
+  ["contest-hall", "struct-contest-hall", 5, 4, "building", "Contest hall"],
+  ["tower-white", "struct-tower-white", 2, 4, "building", "White tower"],
+  ["lodge-log", "struct-lodge-log", 5, 4, "building", "Log lodge pair"],
+  ["house-littleroot", "struct-house-littleroot", 5, 5, "building", "Littleroot house"],
+  ["lab-birch", "struct-lab-birch", 7, 5, "building", "Birch's lab"],
+  ["gym-petalburg", "struct-gym-petalburg", 6, 5, "building", "Petalburg gym"],
+  ["house-berry", "struct-house-berry", 4, 4, "building", "Berry-garden house"],
+  ["gym-mauville", "struct-gym-mauville", 7, 5, "building", "Mauville gym"],
+  ["shop-mauville", "struct-shop-mauville", 3, 4, "building", "Mauville shop"],
+  ["house-mossdeep", "struct-house-mossdeep", 4, 4, "building", "Mossdeep house"],
+  ["gym-mossdeep", "struct-gym-mossdeep", 4, 4, "building", "Mossdeep gym"],
+  ["spacecenter", "struct-spacecenter", 9, 8, "building", "Mossdeep space centre"],
+  ["house-wood", "struct-house-wood", 4, 4, "building", "Wooden route house"],
+  ["hut-pacifidlog", "struct-hut-pacifidlog", 5, 7, "building", "Pacifidlog stilt hut"],
+  ["big-tree", "big-tree", 2, 3, "vegetation", "Big tree", [5, 6, 3, 4, 1, 2]],
+];
+
+const composedDir = path.join(designDir, "composed");
+fs.mkdirSync(composedDir, { recursive: true });
+for (const [id, prefix, w, h, category, label, slotOrder] of FORMATION_SHAPES) {
+  const composed = new PNG({ width: w * 16, height: h * 16 });
+  for (let index = 0; index < w * h; index += 1) {
+    const tileNumber = slotOrder ? slotOrder[index] : index + 1;
+    const tile = readPng(path.join(tilesDir, `${prefix}-${tileNumber}.png`));
+    for (let y = 0; y < 16; y += 1) {
+      const from = y * 16 * 4;
+      const to = ((Math.floor(index / w) * 16 + y) * composed.width + (index % w) * 16) * 4;
+      tile.data.copy(composed.data, to, from, from + 16 * 4);
+    }
+  }
+  fs.writeFileSync(path.join(composedDir, `${id}.png`), PNG.sync.write(composed));
+  singles.push({
+    id: `whole:${id}`,
+    name: label,
+    src: `/design/composed/${id}.png`,
+    w: w * 16,
+    h: h * 16,
+    category,
+    tags: [category, "whole-object", "formation", id],
+    usage: `Complete ${w}×${h} formation — composed from the ${prefix}-* tiles.`,
+  });
+}
+
+const townsSheetDir = path.join(sheetsDir, "towns");
+if (fs.existsSync(townsSheetDir)) {
+  for (const file of fs.readdirSync(townsSheetDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(townsSheetDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `town:${stem}`,
+      name: label,
+      src: `/design/sheets/towns/${file}`,
+      w: width,
+      h: height,
+      category: "town",
+      tags: ["town", "whole-object", "map", "emerald", stem],
+      usage: "Full town render from pret/pokeemerald data (tiles + palettes + metatiles + layout).",
+    });
   }
 }
 

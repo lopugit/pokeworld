@@ -346,13 +346,23 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 // tier down to the small cottage before giving up.
 const BUILDING_TIERS = [
 	{ minArea: 72, variants: [{ prefix: 'house-manor', columns: 6, rows: 5 }] },
-	{ minArea: 36, variants: [{ prefix: 'house-grand', columns: 5, rows: 4 }] },
+	{
+		minArea: 36,
+		variants: [
+			{ prefix: 'house-grand', columns: 5, rows: 4 },
+			{ prefix: 'struct-house-littleroot', columns: 5, rows: 5 },
+		],
+	},
 	{
 		minArea: 18,
 		variants: [
 			{ prefix: 'house-wide', columns: 4, rows: 4 },
 			{ prefix: 'struct-pokecenter', columns: 4, rows: 4 },
 			{ prefix: 'struct-pokemart', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-mossdeep', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-wood', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-berry', columns: 4, rows: 4 },
+			{ prefix: 'struct-shop-mauville', columns: 3, rows: 4 },
 		],
 	},
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },
