@@ -9310,8 +9310,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/catalog.ts": {
-    "mtime": 1786153664.523081,
-    "ast_hash": "d0177b2be5102748ddb87e2c2410923e",
+    "mtime": 1786154118.9973938,
+    "ast_hash": "ebeabec4c19a8c187f082fed46e78a83",
     "semantic_hash": ""
   },
   "app/src/lib/design/entities.ts": {
@@ -9325,13 +9325,13 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
-    "mtime": 1786150423.8395944,
-    "ast_hash": "e35646d4400953b8fe95cdb5689f4d9b",
+    "mtime": 1786154242.5605578,
+    "ast_hash": "d6d4721f2210a20aaaa920c1e2874b3d",
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1786153621.6726866,
-    "ast_hash": "09e28ed6f2bf6abe74c6686e0a7af12c",
+    "mtime": 1786154189.9098709,
+    "ast_hash": "8834bf0e6548676095fc2e618f2233af",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9397,6 +9397,21 @@
   "app/src/lib/design/legality.ts": {
     "mtime": 1786153614.8389878,
     "ast_hash": "ef64c433047790862f3ddb2cca1dccfe",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/world.ts": {
+    "mtime": 1786154225.4655223,
+    "ast_hash": "bb8d95c54a0c8f3d19857fa34020e861",
+    "semantic_hash": ""
+  },
+  "app/tests/design-world.test.ts": {
+    "mtime": 1786154263.8958704,
+    "ast_hash": "705f9ef7fc69e85541ab6e799201a4d9",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/LEGALITY.md": {
+    "mtime": 1786153937.3648417,
+    "ast_hash": "d13a14a7b83619c28a1a5d3217b0b543",
     "semantic_hash": ""
   }
 }

@@ -49,6 +49,9 @@ export interface SceneContext {
   ground: GroundMap;
   grid: DesignTile[][];
   entities: DesignEntity[];
+  /** Seed-chosen dihedral frame, set by paintGround for decorate to reuse
+   * (world generation carries it across the two phases). */
+  frame?: unknown;
 }
 
 export interface DesignFamily {
@@ -152,7 +155,7 @@ const domeSomewhere = (ctx: SceneContext, spots: ReadonlyArray<readonly [number,
   return false;
 };
 
-export const DESIGN_FAMILIES: DesignFamily[] = [
+export const HAND_FAMILIES: DesignFamily[] = [
   // --- villages ------------------------------------------------------------
   {
     id: "hoenn-village",
@@ -1170,4 +1173,4 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
   },
 ];
 
-export const FAMILY_BY_ID = new Map(DESIGN_FAMILIES.map((family) => [family.id, family]));
+// The combined registry (hand-built + generated) lives in registry.ts.

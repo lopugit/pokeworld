@@ -3,7 +3,8 @@
 // generated on demand and memoized. Remixing = same family, fresh seed.
 
 import { POKEMON } from "./entities";
-import { DESIGN_FAMILIES, FAMILY_BY_ID, type DesignFamily, type SceneContext } from "./families";
+import type { DesignFamily, SceneContext } from "./families";
+import { DESIGN_FAMILIES, FAMILY_BY_ID } from "./registry";
 import { bakeGround, newGrid, newGround } from "./paint";
 import { createRng } from "./rng";
 import type { DesignSummary, GeneratedDesign } from "./types";
