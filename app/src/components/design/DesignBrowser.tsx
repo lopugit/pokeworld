@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { CATALOG_SIZE, catalogTags, getDesign, searchCatalog } from "../../lib/design/catalog";
 import { BIOME_LABELS, type BiomeId, type DesignSummary } from "../../lib/design/types";
 import { BlockCanvas } from "./BlockCanvas";
-import { DesignDetailModal } from "./DesignDetailModal";
+import { FamilyVariantsView } from "./FamilyVariantsView";
 import { useInfiniteReveal } from "./useInfiniteReveal";
 
 const BIOMES = Object.keys(BIOME_LABELS) as BiomeId[];
@@ -35,12 +35,13 @@ export function DesignCard({
   );
 }
 
-/** The 500 curated, infinitely-scrolling, searchable example designs. */
+/** The 500 fixed layout types — one card per layout; click through to browse
+ * that layout's endless seed variants. */
 export function DesignBrowser() {
   const [query, setQuery] = useState("");
   const [biome, setBiome] = useState<BiomeId | null>(null);
   const [tag, setTag] = useState<string | null>(null);
-  const [selected, setSelected] = useState<DesignSummary | null>(null);
+  const [openFamily, setOpenFamily] = useState<string | null>(null);
 
   const results = useMemo(
     () => searchCatalog({ query, biome: biome ?? undefined, tag: tag ?? undefined }),
@@ -49,6 +50,10 @@ export function DesignBrowser() {
   const tags = useMemo(() => catalogTags().slice(0, TOP_TAGS), []);
   const { visible, hasMore, sentinelRef } = useInfiniteReveal(results, 24);
 
+  if (openFamily) {
+    return <FamilyVariantsView familyId={openFamily} onBack={() => setOpenFamily(null)} />;
+  }
+
   return (
     <div>
       <div className="mb-4 flex flex-col gap-3">
@@ -56,7 +61,7 @@ export function DesignBrowser() {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder={`Search ${CATALOG_SIZE} example designs — “legendary cave”, “village”, “hidden”…`}
+          placeholder={`Search ${CATALOG_SIZE} layout types — “legendary cave”, “village”, “island”…`}
           className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
           aria-label="Search designs"
         />
@@ -86,30 +91,33 @@ export function DesignBrowser() {
       </div>
 
       <p className="mb-3 text-sm text-slate-400">
-        {results.length} of {CATALOG_SIZE} designs
+        {results.length} of {CATALOG_SIZE} layout types
         {biome ? ` · ${BIOME_LABELS[biome]}` : ""}
         {tag ? ` · #${tag}` : ""}
         {query ? ` · “${query}”` : ""}
-        {" — every one remixable"}
+        {" — every layout has endless seed variants"}
       </p>
 
       <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
         {visible.map((summary) => (
-          <DesignCard key={summary.id} summary={summary} onOpen={() => setSelected(summary)} />
+          <DesignCard
+            key={summary.id}
+            summary={summary}
+            footer="∞ variants — click to browse"
+            onOpen={() => setOpenFamily(summary.family)}
+          />
         ))}
       </div>
       {results.length === 0 && (
         <p className="py-10 text-center text-slate-500">
-          No designs match — try “garden”, “cave”, “hideout”, “island”…
+          No layouts match — try “garden”, “cave”, “hideout”, “island”…
         </p>
       )}
       {hasMore && (
         <div ref={sentinelRef} className="py-6 text-center text-sm text-slate-500">
-          Generating more designs…
+          Generating more layouts…
         </div>
       )}
-
-      {selected && <DesignDetailModal summary={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }

@@ -44,10 +44,11 @@ import {
   placeDecor,
   placeDome,
   placeHiddenItem,
-  placeHouse,
   placeRockySign,
   placeSign,
+  placeStructure,
   scatter,
+  STRUCTURES,
   treeBorder,
   treePick,
   type Ground,
@@ -423,15 +424,42 @@ function hiddenSomewhere(ctx: SceneContext, rng: Rng) {
   }
 }
 
-/** Try to place count houses from a shuffled slot list (plan-space anchors). */
-function placeHouses(ctx: SceneContext, frame: Frame, rng: Rng, slots: ReadonlyArray<readonly [number, number]>, count: number): number {
+/** Try to place count buildings from a shuffled slot list (plan-space
+ * anchors), drawing each building's kind from the family's palette. */
+function placeBuildings(
+  ctx: SceneContext,
+  frame: Frame,
+  rng: Rng,
+  slots: ReadonlyArray<readonly [number, number]>,
+  count: number,
+  kinds: readonly string[] = ["house-red"],
+): number {
   let placed = 0;
   for (const [col, row] of rng.shuffle(slots)) {
     if (placed >= count) break;
-    const [c, r] = mapAnchor(frame, col, row, 3, 4);
-    if (placeHouse(ctx.grid, ctx.ground, c, r)) placed += 1;
+    const kind = STRUCTURES[rng.pick(kinds)] ?? STRUCTURES["house-red"];
+    const [c, r] = mapAnchor(frame, col, row, kind.width, kind.height);
+    if (placeStructure(ctx.grid, ctx.ground, c, r, kind.id)) placed += 1;
   }
   return placed;
+}
+
+/** Family-fixed building palette: which building types this layout uses.
+ * Weighted toward the classic red house; civic buildings appear in a
+ * minority of families so each one stays a landmark. */
+function pickBuildingSet(famRng: Rng, themeId: string): string[] {
+  const civic = ["pokecenter", "pokemart", "contest-hall", "tower-white"];
+  if (themeId === "village") {
+    const set = ["house-red"];
+    if (famRng.chance(0.55)) set.push(famRng.pick(civic));
+    if (famRng.chance(0.25)) set.push(famRng.pick(civic));
+    return set;
+  }
+  if (themeId === "fishing") return famRng.chance(0.4) ? ["house-red", "tower-white"] : ["house-red"];
+  if (themeId === "farm" || themeId === "ranch") return famRng.chance(0.45) ? ["house-red", "lodge-log"] : ["house-red"];
+  if (themeId === "forest" || themeId === "spooky") return ["lodge-log", "house-red"];
+  if (themeId === "garden") return famRng.chance(0.3) ? ["house-red", "contest-hall"] : ["house-red"];
+  return ["house-red"];
 }
 
 function placeDomes(ctx: SceneContext, frame: Frame, rng: Rng, slots: ReadonlyArray<readonly [number, number]>, count: number): number {
@@ -469,6 +497,7 @@ const PLANNERS: PlannerDef[] = [
       const houseCount: [number, number] = [famRng.range(1, 2), famRng.range(2, 3)];
       const flowers = 0.03 + famRng.next() * 0.09;
       const hedge = famRng.chance(0.5);
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           const jc = Math.max(2, Math.min(13, crossCol + rng.range(-1, 1)));
@@ -479,7 +508,7 @@ const PLANNERS: PlannerDef[] = [
         },
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.village;
-          placeHouses(ctx, frame, rng, HOUSE_SLOTS, rng.range(houseCount[0], houseCount[1]));
+          placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(houseCount[0], houseCount[1]), buildings);
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers + rng.next() * 0.04);
           if (hedge && rng.chance(0.8)) {
             const [x1, y1] = mapPoint(frame, 0, 15);
@@ -504,6 +533,7 @@ const PLANNERS: PlannerDef[] = [
       const stem = famRng.pick([0, 1, 2, 3]);
       const houseInside = famRng.chance(0.6);
       const flowers = 0.05 + famRng.next() * 0.12;
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           const jitter = rng.range(-1, 0);
@@ -522,7 +552,7 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.garden;
           const slots = houseInside ? ([[7, 6], [7, 9]] as const) : HOUSE_SLOTS;
-          placeHouses(ctx, frame, rng, slots, rng.range(1, 2));
+          placeBuildings(ctx, frame, rng, slots, rng.range(1, 2), buildings);
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           if (rng.chance(0.6)) {
             longGrassPatch(ctx.grid, ctx.ground, rng, rng.range(3, 12), rng.range(3, 12), rng.range(2, 3));
@@ -548,6 +578,7 @@ const PLANNERS: PlannerDef[] = [
       const hedges = famRng.chance(0.45);
       const hedgeRows: ReadonlyArray<number> = famRng.chance(0.5) ? [5, 10] : [6, 12];
       const berryRows = famRng.chance(0.3);
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           if (trail) {
@@ -558,7 +589,7 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.meadow;
           if (theme.id === "ranch" || theme.id === "farm") {
-            placeHouses(ctx, frame, rng, HOUSE_SLOTS, rng.range(0, 1));
+            placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(0, 1), buildings);
           }
           if (hedges) {
             for (const row of hedgeRows) {
@@ -606,6 +637,7 @@ const PLANNERS: PlannerDef[] = [
       const shorePath = famRng.chance(0.7);
       const pathKind: Ground = famRng.chance(0.6) ? "path" : "dirt";
       const flowers = 0.03 + famRng.next() * 0.08;
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           for (let index = 0; index < lakes; index += 1) {
@@ -625,7 +657,7 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.lakeside;
           if (theme.id === "village" || rng.chance(0.4)) {
-            placeHouses(ctx, frame, rng, HOUSE_SLOTS, rng.range(1, 2));
+            placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(1, 2), buildings);
           }
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           scatter(ctx.grid, ctx.ground, rng, ["shrub-1"], rng.next() * 0.06, { solid: true, feature: "hedge" });
@@ -651,6 +683,7 @@ const PLANNERS: PlannerDef[] = [
       const doubleBridge = famRng.chance(0.25);
       const flowers = 0.03 + famRng.next() * 0.07;
       const trees = famRng.next() * 0.09;
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           const pos = Math.max(2, Math.min(12, riverPos + rng.range(-1, 1)));
@@ -664,7 +697,7 @@ const PLANNERS: PlannerDef[] = [
         },
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.lakeside;
-          if (theme.id === "village") placeHouses(ctx, frame, rng, HOUSE_SLOTS, rng.range(1, 2));
+          if (theme.id === "village") placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(1, 2), buildings);
           if (trees > 0.02) scatter(ctx.grid, ctx.ground, rng, [treePick(rng), treePick(rng)], trees, { solid: true, feature: "tree" });
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           const signSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
@@ -684,6 +717,7 @@ const PLANNERS: PlannerDef[] = [
       const beachRows = famRng.range(2, 3);
       const grassPath = famRng.chance(0.5);
       const flowers = 0.02 + famRng.next() * 0.05;
+      const coastBuildings = famRng.chance(0.4) ? ["tower-white", "house-red"] : ["house-red"];
       return {
         waterFallback: "sand" as Ground,
         paint(ground, rng) {
@@ -702,7 +736,9 @@ const PLANNERS: PlannerDef[] = [
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           const signSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
           if (signSpot && rng.chance(0.6)) placeSign(ctx.grid, ctx.ground, signSpot.col, signSpot.row);
-          if (rng.chance(0.4)) placeHouses(ctx, frame, rng, [[3, 12], [8, 12], [12, 12]] as const, 1);
+          if (rng.chance(0.4)) {
+            placeBuildings(ctx, frame, rng, [[3, 12], [8, 12], [12, 12]] as const, 1, coastBuildings);
+          }
           addEntities(ctx, theme, rng, [1, 2], [1, 2]);
         },
       };
@@ -818,6 +854,7 @@ const PLANNERS: PlannerDef[] = [
       const trail = famRng.pick(["stem", "cross", "wander", "none"]);
       const shrine = famRng.chance(0.3);
       const flowers = famRng.next() * 0.12;
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           if (trail === "stem") {
@@ -855,7 +892,7 @@ const PLANNERS: PlannerDef[] = [
             const [hc, hr] = mapPoint(frame, 8, 8);
             placeHiddenItem(ctx.grid, ctx.ground, hc, hr);
           }
-          if (theme.id === "village") placeHouses(ctx, frame, rng, [[7, 4], [4, 7], [10, 7]] as const, 1);
+          if (theme.id === "village") placeBuildings(ctx, frame, rng, [[7, 4], [4, 7], [10, 7]] as const, 1, buildings);
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], flowers);
           if (rng.chance(0.5)) {
             longGrassPatch(ctx.grid, ctx.ground, rng, rng.range(4, 11), rng.range(4, 11), rng.range(2, 3));
@@ -930,6 +967,7 @@ const PLANNERS: PlannerDef[] = [
       const offset = famRng.range(1, 3);
       const flowers = 0.04 + famRng.next() * 0.1;
       const berries = famRng.chance(0.5);
+      const buildings = pickBuildingSet(famRng, themeId);
       return {
         paint(ground, rng) {
           for (let row = offset + rng.range(0, 1); row < DESIGN_GRID; row += step) {
@@ -938,7 +976,7 @@ const PLANNERS: PlannerDef[] = [
         },
         decorate(ctx, frame, rng) {
           const theme = THEMES[themeId] ?? THEMES.farm;
-          placeHouses(ctx, frame, rng, HOUSE_SLOTS, rng.range(0, 1));
+          placeBuildings(ctx, frame, rng, HOUSE_SLOTS, rng.range(0, 1), buildings);
           if (berries) {
             scatter(ctx.grid, ctx.ground, rng, ["shrub-1"], 0.12 + rng.next() * 0.1, { solid: true, feature: "berry-bush" });
           }

@@ -21,7 +21,7 @@ describe("design family registry", () => {
       .update(DESIGN_FAMILIES.map((family) => family.id).join("\n"))
       .digest("hex");
     // Update this hash ONLY when appending new families — never on renames.
-    expect(digest).toBe("0fa04bf0b502df64ac597739f7c1cfa9bfae5074399c2c391cb8191cd38100bc");
+    expect(digest).toBe("f631fb25def94337e05b254ad34b157e1806d388715e032736d2684fbc5df1c3");
   });
 
   it("generated families expose real per-seed variety", () => {

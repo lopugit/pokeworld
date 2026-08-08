@@ -9310,8 +9310,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/catalog.ts": {
-    "mtime": 1786154118.9973938,
-    "ast_hash": "ebeabec4c19a8c187f082fed46e78a83",
+    "mtime": 1786154801.6620038,
+    "ast_hash": "e7dd9d9f9c8607b40c31dcf826b1290c",
     "semantic_hash": ""
   },
   "app/src/lib/design/entities.ts": {
@@ -9320,13 +9320,13 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1786153662.388716,
-    "ast_hash": "5e958071c8075e8760276055f72be117",
+    "mtime": 1786154795.8140957,
+    "ast_hash": "ee45b2238750e2c69c1292c147a40ea8",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
-    "mtime": 1786154242.5605578,
-    "ast_hash": "d6d4721f2210a20aaaa920c1e2874b3d",
+    "mtime": 1786154804.8620627,
+    "ast_hash": "1b736b94f6f4b6c989408983b4afb634",
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
@@ -9400,8 +9400,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
-    "mtime": 1786154225.4655223,
-    "ast_hash": "bb8d95c54a0c8f3d19857fa34020e861",
+    "mtime": 1786154803.0094738,
+    "ast_hash": "888ecb43cff8c2d83584fe18deb5492b",
     "semantic_hash": ""
   },
   "app/tests/design-world.test.ts": {
@@ -9412,6 +9412,31 @@
   "app/src/lib/design/LEGALITY.md": {
     "mtime": 1786153937.3648417,
     "ast_hash": "d13a14a7b83619c28a1a5d3217b0b543",
+    "semantic_hash": ""
+  },
+  "app/scripts/design/build-family-manifest.ts": {
+    "mtime": 1786154833.874223,
+    "ast_hash": "aee54facaa6f3e4a1b7286bdf20d2891",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/families-generated.manifest.json": {
+    "mtime": 1786154883.3346612,
+    "ast_hash": "f51db31573a9c92d07457e7eba91ebe5",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/families-generated.ts": {
+    "mtime": 1786154878.509575,
+    "ast_hash": "903bc3f13a49d8461039c9795c99db6a",
+    "semantic_hash": ""
+  },
+  "app/src/lib/design/registry.ts": {
+    "mtime": 1786154799.3774195,
+    "ast_hash": "f61fd31d82fb19fccd7b8b0dec780d05",
+    "semantic_hash": ""
+  },
+  "app/tests/design-registry.test.ts": {
+    "mtime": 1786154986.5691874,
+    "ast_hash": "ad1a34bfdfa0c358c720668b717342a3",
     "semantic_hash": ""
   }
 }

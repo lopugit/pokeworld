@@ -155,17 +155,73 @@ export interface Formation {
   reason: string;
 }
 
+const buildingFormation = (
+  id: string,
+  label: string,
+  width: number,
+  height: number,
+  prefix: string,
+  reason: string,
+): Formation => ({
+  id,
+  label,
+  width,
+  height,
+  slots: Array.from({ length: width * height }, (_, index) => `${prefix}-${index + 1}`),
+  ground: "grass",
+  walkableSlots: [],
+  reason,
+});
+
 export const FORMATIONS: Formation[] = [
-  {
-    id: "house-red",
-    label: "Red-roof house (3×4)",
-    width: 3,
-    height: 4,
-    slots: Array.from({ length: 12 }, (_, index) => `house-red-${index + 1}`),
-    ground: "grass",
-    walkableSlots: [],
-    reason: "The house was drawn as one 3×4 block on grass; any partial subset shows sheared walls.",
-  },
+  buildingFormation(
+    "house-red",
+    "Red-roof house (3×4)",
+    3,
+    4,
+    "house-red",
+    "The house was drawn as one 3×4 block on grass; any partial subset shows sheared walls.",
+  ),
+  buildingFormation(
+    "pokecenter",
+    "Pokémon Center (4×4)",
+    4,
+    4,
+    "struct-pokecenter",
+    "Harvested whole from the sheet's town set; grass-backed.",
+  ),
+  buildingFormation(
+    "pokemart",
+    "PokéMart (4×4)",
+    4,
+    4,
+    "struct-pokemart",
+    "Harvested whole (one defective sheet roof slot repaired from its neighbour); grass-backed.",
+  ),
+  buildingFormation(
+    "contest-hall",
+    "Contest hall (5×4)",
+    5,
+    4,
+    "struct-contest-hall",
+    "Harvested whole from the sheet's plaza set; grass-backed.",
+  ),
+  buildingFormation(
+    "tower-white",
+    "White tower (2×4)",
+    2,
+    4,
+    "struct-tower-white",
+    "Harvested whole; the sheet's city-wall band above it is scrubbed to grass.",
+  ),
+  buildingFormation(
+    "lodge-log",
+    "Log lodge pair (5×4)",
+    5,
+    4,
+    "struct-lodge-log",
+    "Two green-roof log huts harvested as one compound; grass-backed.",
+  ),
   {
     id: "dome",
     label: "Mountain dome with cave door (3×3)",
