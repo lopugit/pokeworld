@@ -324,21 +324,48 @@ if (fs.existsSync(townsSheetDir)) {
   }
 }
 
-const npcScanDir = path.join(publicDir, "sprites", "npcs");
-if (fs.existsSync(npcScanDir)) {
-  for (const file of fs.readdirSync(npcScanDir).filter((name) => name.endsWith(".png")).sort()) {
-    const { width, height } = readPng(path.join(npcScanDir, file));
+// Sprite folders decoded from pret object-event data (embedded palettes).
+const SPRITE_SCANS = [
+  ["npcs", "npc", "character", ["character", "npc", "overworld"], "NPC overworld sprite decoded from pret/pokeemerald object-event data."],
+  ["overworld-pokemon", "owmon", "pokemon", ["pokemon", "overworld", "mini"], "Overworld Pokémon mini decoded from pret/pokeemerald object-event data."],
+  ["objects", "object", "prop", ["prop", "object", "overworld"], "Overworld object decoded from pret/pokeemerald object-event data."],
+];
+for (const [dir, idPrefix, category, baseTags, usage] of SPRITE_SCANS) {
+  const scanDir = path.join(publicDir, "sprites", dir);
+  if (!fs.existsSync(scanDir)) continue;
+  for (const file of fs.readdirSync(scanDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(scanDir, file));
     const stem = file.replace(/\.png$/, "");
     const label = stem.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     singles.push({
-      id: `npc:${stem}`,
+      id: `${idPrefix}:${stem}`,
       name: label,
-      src: `/sprites/npcs/${file}`,
+      src: `/sprites/${dir}/${file}`,
       w: width,
       h: height,
-      category: "character",
-      tags: ["character", "npc", "whole-object", "overworld", stem],
-      usage: "NPC overworld sprite decoded from pret/pokeemerald object-event data (embedded palette).",
+      category,
+      tags: [...baseTags, "whole-object", stem],
+      usage,
+    });
+  }
+}
+
+// Interior room renders (whole rooms from pret layouts).
+const interiorScanDir = path.join(sheetsDir, "interiors");
+if (fs.existsSync(interiorScanDir)) {
+  for (const file of fs.readdirSync(interiorScanDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(interiorScanDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `room:${stem}`,
+      name: label,
+      src: `/design/sheets/interiors/${file}`,
+      w: width,
+      h: height,
+      category: "interior",
+      tags: ["interior", "room", "whole-object", "map", stem],
+      usage: "Full interior room render from pret/pokeemerald data (tiles + palettes + metatiles + layout).",
     });
   }
 }

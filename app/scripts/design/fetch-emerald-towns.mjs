@@ -223,6 +223,47 @@ for (const [layoutId, slug] of TOWNS) {
 console.log("towns rendered to public/design/sheets/towns/");
 
 // ---------------------------------------------------------------------------
+// Render EVERY other layout in the game: routes and outdoor special areas
+// join the towns dir; indoor rooms (primary tileset gTileset_Building) render
+// into sheets/interiors/. Layouts whose data fails to fetch are skipped.
+// ---------------------------------------------------------------------------
+const interiorsDir = resolve(appDir, "public/design/sheets/interiors");
+mkdirSync(interiorsDir, { recursive: true });
+const renderedSlugs = new Set(TOWNS.map(([, slug]) => slug));
+const layoutSlug = (id) => id.replace(/^LAYOUT_/, "").toLowerCase().replace(/_/g, "-");
+let outdoorCount = 0;
+let interiorCount = 0;
+for (const layout of layoutsJson.layouts) {
+  if (!layout?.id || !layout.blockdata_filepath) continue;
+  const slug = layoutSlug(layout.id);
+  if (renderedSlugs.has(slug)) continue;
+  if (/unused|test|prototype/i.test(layout.id)) continue;
+  const indoor = layout.primary_tileset === "gTileset_Building";
+  try {
+    const primary = await loadTileset(layout.primary_tileset, true);
+    const secondary = await loadTileset(layout.secondary_tileset, false);
+    const mapBin = await fetchPret(layout.blockdata_filepath.replace(/^\/?/, ""));
+    const width = Number(layout.width);
+    const height = Number(layout.height);
+    if (!width || !height || width * height > 120 * 120) continue;
+    const out = new PNG({ width: width * 16, height: height * 16 });
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width; x += 1) {
+        const value = mapBin.readUInt16LE((y * width + x) * 2);
+        drawMetatile(out, x * 16, y * 16, value & 0x3ff, primary, secondary);
+      }
+    }
+    writeFileSync(resolve(indoor ? interiorsDir : townsDir, `${slug}.png`), PNG.sync.write(out));
+    renderedSlugs.add(slug);
+    if (indoor) interiorCount += 1;
+    else outdoorCount += 1;
+  } catch (error) {
+    console.warn(`layout ${layout.id}: ${error.message}`);
+  }
+}
+console.log(`rendered ${outdoorCount} more outdoor layouts and ${interiorCount} interiors`);
+
+// ---------------------------------------------------------------------------
 // Whole-building harvest: crop complete structures from the town renders into
 // 16px tile families under public/tiles/ (struct-<id>-1..N, row-major). All
 // coordinates are in metatile cells, snapped to the game's own building
@@ -269,17 +310,53 @@ console.log(`harvested ${BUILDINGS.length} whole crops into public/tiles/`);
 // The first frame (standing, facing camera) of each becomes a character asset
 // under public/sprites/npcs/.
 // ---------------------------------------------------------------------------
-const NPCS = [
-  "boy_1", "boy_2", "boy_3", "girl_1", "girl_2", "girl_3", "little_boy",
-  "little_girl", "man_1", "man_2", "man_3", "man_4", "man_5", "woman_1",
-  "woman_2", "woman_3", "woman_4", "woman_5", "old_man_1", "old_man_2",
-  "old_woman_1", "old_woman_2", "fat_man", "ninja_boy", "twin", "tuber_m",
-  "tuber_f", "camper", "picnicker", "hiker", "fisherman", "scientist_1",
-  "rich_boy", "pokefan_m", "pokefan_f", "gentleman", "maniac", "reporter_m",
-  "reporter_f", "beauty", "lass", "youngster", "bug_catcher", "psychic_m",
-  "black_belt", "teacher", "sailor", "nurse", "item_ball", "cook",
-  "expert_m", "expert_f", "gameboy_kid", "school_kid_m", "school_kid_f",
+// Enumerate pret's object-event pic folders via the GitHub contents API once
+// (listings are cached into map-assets/pret/listings/, committed, so re-runs
+// are offline). Every PNG in these folders decodes with the same embedded-
+// palette reader.
+const PIC_SOURCES = [
+  // [pret dir, output dir, filename prefix]
+  ["graphics/object_events/pics/people", "npcs", ""],
+  ["graphics/object_events/pics/people/gym_leaders", "npcs", "leader_"],
+  ["graphics/object_events/pics/people/elite_four", "npcs", "elite_"],
+  ["graphics/object_events/pics/people/frontier_brains", "npcs", "brain_"],
+  ["graphics/object_events/pics/people/team_aqua", "npcs", "aqua_"],
+  ["graphics/object_events/pics/people/team_magma", "npcs", "magma_"],
+  ["graphics/object_events/pics/pokemon", "overworld-pokemon", ""],
+  ["graphics/object_events/pics/misc", "objects", ""],
+  ["graphics/object_events/pics/berry_trees", "objects", "berry_tree_"],
+  ["graphics/object_events/pics/dolls", "objects", "doll_"],
+  ["graphics/object_events/pics/cushions", "objects", "cushion_"],
 ];
+
+async function listPretDir(relPath) {
+  const cacheFile = resolve(pretDir, "listings", `${relPath.replace(/\//g, "__")}.json`);
+  if (existsSync(cacheFile)) return JSON.parse(readFileSync(cacheFile, "utf8"));
+  const response = await fetch(`https://api.github.com/repos/pret/pokeemerald/contents/${relPath}`, {
+    headers: { accept: "application/vnd.github+json" },
+  });
+  if (!response.ok) throw new Error(`list ${relPath}: HTTP ${response.status}`);
+  const names = (await response.json())
+    .filter((entry) => entry.type === "file" && entry.name.endsWith(".png"))
+    .map((entry) => entry.name);
+  mkdirSync(dirname(cacheFile), { recursive: true });
+  writeFileSync(cacheFile, JSON.stringify(names));
+  return names;
+}
+
+const NPCS = [];
+for (const [dir, outDir, prefix] of PIC_SOURCES) {
+  let names;
+  try {
+    names = await listPretDir(dir);
+  } catch (error) {
+    console.warn(`listing ${dir} failed (${error.message}), skipped`);
+    continue;
+  }
+  for (const file of names) {
+    NPCS.push({ path: `${dir}/${file}`, outDir, name: `${prefix}${file.replace(/\.png$/, "")}` });
+  }
+}
 
 function readPngPalette(buffer) {
   let offset = 8;
@@ -302,23 +379,23 @@ function readPngPalette(buffer) {
   throw new Error("PNG has no PLTE");
 }
 
-const npcDir = resolve(appDir, "public/sprites/npcs");
-mkdirSync(npcDir, { recursive: true });
-let npcCount = 0;
-for (const name of NPCS) {
+let picCount = 0;
+for (const entry of NPCS) {
   let buffer;
   try {
-    buffer = await fetchPret(`graphics/object_events/pics/people/${name}.png`);
+    buffer = await fetchPret(entry.path);
   } catch {
-    console.warn(`npc ${name}: not found upstream, skipped`);
+    console.warn(`pic ${entry.path}: not found upstream, skipped`);
     continue;
   }
   const image = readIndexedPng(buffer);
   const palette = readPngPalette(buffer);
-  // People pics store 16x32 frames side by side; the first frame is the
-  // south-facing standing pose.
-  const frameWidth = Math.min(image.width, 16);
-  const frameHeight = Math.min(image.height, 32);
+  // Frames sit side by side: people are 16x32, minis 16x16; anything taller
+  // than 32px (boats, the truck, big dolls) is treated as one square-ish
+  // frame. The first frame is the south-facing standing pose.
+  const frameWidth =
+    image.height > 32 ? image.width : Math.min(image.width, image.height === 32 ? 16 : image.height);
+  const frameHeight = image.height;
   const out = new PNG({ width: frameWidth, height: frameHeight });
   for (let y = 0; y < frameHeight; y += 1) {
     for (let x = 0; x < frameWidth; x += 1) {
@@ -328,7 +405,9 @@ for (const name of NPCS) {
       out.data.set([r, g, b, 255], (y * frameWidth + x) * 4);
     }
   }
-  writeFileSync(resolve(npcDir, `${name}.png`), PNG.sync.write(out));
-  npcCount += 1;
+  const outDir = resolve(appDir, "public/sprites", entry.outDir);
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(resolve(outDir, `${entry.name}.png`), PNG.sync.write(out));
+  picCount += 1;
 }
-console.log(`decoded ${npcCount} NPC sprites into public/sprites/npcs/`);
+console.log(`decoded ${picCount} object-event sprites (people/pokemon/objects)`);
