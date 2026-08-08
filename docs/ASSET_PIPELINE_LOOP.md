@@ -19,9 +19,10 @@ sheet before commit (render over grass at 3×+).
 - [ ] Wave 2c-1: building harvests from town renders: Rustboro, Sootopolis,
       Fortree (tree houses), Lilycove (dept store, motel), Slateport,
       Lavaridge, Fallarbor, Verdanturf
-      (DONE: Verdanturf battle-tent + house, Lavaridge gym + herb house;
-      Fallarbor/Dewford skipped — soot/sand-backed; NEXT: Rustboro,
-      Sootopolis, Fortree, Lilycove, Slateport) (gridded-render coordinate workflow;
+      (DONE: Verdanturf battle-tent + house, Lavaridge gym + herb house,
+      Devon Corp 8x8 + Fortree gym; Fallarbor/Dewford skipped —
+      soot/sand-backed; RETRY with region views: gym-rustboro (left-cut),
+      treehouse (box missed); NEXT: Sootopolis, Lilycove, Slateport) (gridded-render coordinate workflow;
       formations + BUILDING_TIERS only where grass-backed + verified).
 - [ ] Wave 2c-2: route landmarks: Day Care (Route 117), Weather Institute
       (R119), Trick House (R110), Pretty Petal flower shop (R104), Briney's

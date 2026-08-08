@@ -285,6 +285,8 @@ const BUILDINGS = [
   ["struct-house-verdanturf", "verdanturf-town", 8, 11, 4, 4],
   ["struct-gym-lavaridge", "lavaridge-town", 2, 11, 6, 5],
   ["struct-house-lavaridge", "lavaridge-town", 11, 12, 4, 4],
+  ["struct-devon-corp", "rustboro-city", 7, 7, 8, 8],
+  ["struct-gym-fortree", "fortree-city", 19, 7, 6, 5],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],

@@ -292,6 +292,13 @@ export const FORMATIONS: Formation[] = [
   buildingFormation("house-lavaridge", "Lavaridge herb house (4×4)", 4, 4, "struct-house-lavaridge",
     "Harvested whole from the Lavaridge Town render; grass-backed."),
   // Browser/design-only families (not in the live map's building ladder).
+  {
+    ...buildingFormation("devon-corp", "Devon Corporation (8×8)", 8, 8, "struct-devon-corp",
+      "Harvested whole from the Rustboro City render; stands on the city's paving."),
+    ground: "road",
+  },
+  buildingFormation("gym-fortree", "Fortree gym (6×5)", 6, 5, "struct-gym-fortree",
+    "Harvested whole from the Fortree City render; grass-backed."),
   buildingFormation("museum-stone", "Stone museum (3×5)", 3, 5, "museum-stone",
     "Harvested whole from the exterior sheet's stone hall; grass-backed."),
   buildingFormation("gallery-stone", "Stone gallery (4×5)", 4, 5, "gallery-stone",
