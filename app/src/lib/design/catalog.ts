@@ -62,7 +62,7 @@ export function generateDesign(familyId: string, seed: number): GeneratedDesign 
   const rng = createRng(family.id, seed);
   const ctx: SceneContext = { rng, ground: newGround(), grid: newGrid(), entities: [] };
   family.paintGround(ctx);
-  bakeGround(ctx.grid, ctx.ground, rng, family.waterFallback ?? "grass");
+  bakeGround(ctx.grid, ctx.ground, family.waterFallback ?? "grass");
   family.decorate(ctx);
   const { name, description } = nameFor(family, seed);
   const derived = deriveTags({ tiles: ctx.grid, entities: ctx.entities });
