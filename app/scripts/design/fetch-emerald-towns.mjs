@@ -240,6 +240,9 @@ const BUILDINGS = [
   ["struct-spacecenter", "mossdeep-city", 60, 8, 9, 8],
   ["struct-house-wood", "oldale-town", 4, 4, 4, 4],
   ["struct-hut-pacifidlog", "pacifidlog-town", 0, 9, 5, 7],
+  // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
+  // sheet's forest-overlap demo and can never compose into a whole tree).
+  ["tree-grand", "littleroot-town", 18, 2, 2, 2],
 ];
 
 const tilesDir = resolve(appDir, "public/tiles");
@@ -258,4 +261,74 @@ for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
     }
   }
 }
-console.log(`harvested ${BUILDINGS.length} whole buildings into public/tiles/`);
+console.log(`harvested ${BUILDINGS.length} whole crops into public/tiles/`);
+
+// ---------------------------------------------------------------------------
+// NPC overworld sprites: pret ships object-event pics as indexed PNGs with
+// their REAL palettes embedded, so decoding is direct (colour 0 transparent).
+// The first frame (standing, facing camera) of each becomes a character asset
+// under public/sprites/npcs/.
+// ---------------------------------------------------------------------------
+const NPCS = [
+  "boy_1", "boy_2", "boy_3", "girl_1", "girl_2", "girl_3", "little_boy",
+  "little_girl", "man_1", "man_2", "man_3", "man_4", "man_5", "woman_1",
+  "woman_2", "woman_3", "woman_4", "woman_5", "old_man_1", "old_man_2",
+  "old_woman_1", "old_woman_2", "fat_man", "ninja_boy", "twin", "tuber_m",
+  "tuber_f", "camper", "picnicker", "hiker", "fisherman", "scientist_1",
+  "rich_boy", "pokefan_m", "pokefan_f", "gentleman", "maniac", "reporter_m",
+  "reporter_f", "beauty", "lass", "youngster", "bug_catcher", "psychic_m",
+  "black_belt", "teacher", "sailor", "nurse", "item_ball", "cook",
+  "expert_m", "expert_f", "gameboy_kid", "school_kid_m", "school_kid_f",
+];
+
+function readPngPalette(buffer) {
+  let offset = 8;
+  while (offset < buffer.length) {
+    const length = buffer.readUInt32BE(offset);
+    const type = buffer.toString("ascii", offset + 4, offset + 8);
+    if (type === "PLTE") {
+      const colours = [];
+      for (let index = 0; index < length / 3; index += 1) {
+        colours.push([
+          buffer[offset + 8 + index * 3],
+          buffer[offset + 8 + index * 3 + 1],
+          buffer[offset + 8 + index * 3 + 2],
+        ]);
+      }
+      return colours;
+    }
+    offset += 12 + length;
+  }
+  throw new Error("PNG has no PLTE");
+}
+
+const npcDir = resolve(appDir, "public/sprites/npcs");
+mkdirSync(npcDir, { recursive: true });
+let npcCount = 0;
+for (const name of NPCS) {
+  let buffer;
+  try {
+    buffer = await fetchPret(`graphics/object_events/pics/people/${name}.png`);
+  } catch {
+    console.warn(`npc ${name}: not found upstream, skipped`);
+    continue;
+  }
+  const image = readIndexedPng(buffer);
+  const palette = readPngPalette(buffer);
+  // People pics store 16x32 frames side by side; the first frame is the
+  // south-facing standing pose.
+  const frameWidth = Math.min(image.width, 16);
+  const frameHeight = Math.min(image.height, 32);
+  const out = new PNG({ width: frameWidth, height: frameHeight });
+  for (let y = 0; y < frameHeight; y += 1) {
+    for (let x = 0; x < frameWidth; x += 1) {
+      const colour = image.indices[y * image.width + x];
+      if (colour === 0) continue;
+      const [r, g, b] = palette[colour] ?? [255, 0, 255];
+      out.data.set([r, g, b, 255], (y * frameWidth + x) * 4);
+    }
+  }
+  writeFileSync(resolve(npcDir, `${name}.png`), PNG.sync.write(out));
+  npcCount += 1;
+}
+console.log(`decoded ${npcCount} NPC sprites into public/sprites/npcs/`);

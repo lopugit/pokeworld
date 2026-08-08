@@ -283,6 +283,20 @@ export const FORMATIONS: Formation[] = [
       "Harvested whole from the Pacifidlog Town render; its platform floats on open water."),
     ground: "water",
   },
+  // Browser/design-only families (not in the live map's building ladder).
+  buildingFormation("museum-stone", "Stone museum (3×5)", 3, 5, "museum-stone",
+    "Harvested whole from the exterior sheet's stone hall; grass-backed."),
+  buildingFormation("gallery-stone", "Stone gallery (4×5)", 4, 5, "gallery-stone",
+    "Composed from the stone museum's modular bays as one 4×5 block."),
+  buildingFormation("grand-stone", "Grand stone hall (5×6)", 5, 6, "grand-stone",
+    "Composed from the stone museum's modular bays as one 5×6 block."),
+  buildingFormation("brick-flat", "Brick block (4×3)", 4, 3, "brick-flat",
+    "Harvested whole from the exterior sheet; background over its parapet is keyed to show the ground."),
+  {
+    ...buildingFormation("tree-grand", "Big canopy tree (2×2)", 2, 2, "tree-grand",
+      "A free-standing 2×2 canopy tree harvested from the Littleroot Town render."),
+    ground: "grass",
+  },
   {
     id: "big-tree",
     label: "Big tree (2×3)",

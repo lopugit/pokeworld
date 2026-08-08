@@ -34,9 +34,10 @@ const TILE_FAMILIES = [
   ["grass-", "vegetation", "Long grass"],
   ["grass", "vegetation", "Grass"],
   ["big-tree-", "vegetation", "Big tree"],
-  ["tree-", "vegetation", "Tree"],
-  ["shrub-", "vegetation", "Shrub"],
-  ["flower-", "vegetation", "Flower bed"],
+  ["tree-grand-", "vegetation", "Big tree"],
+  ["tree-", "vegetation", "Tree", true],
+  ["shrub-", "vegetation", "Shrub", true],
+  ["flower-", "vegetation", "Flower bed", true],
   ["house-red-", "building", "Red-roof house"],
   ["house-wide-", "building", "Wide red-roof house"],
   ["house-grand-", "building", "Grand red-roof house"],
@@ -63,16 +64,20 @@ const TILE_FAMILIES = [
   ["ledge-left-", "terrain", "Ledge (left cap)"],
   ["ledge-middle-", "terrain", "Ledge (middle)"],
   ["ledge-right-", "terrain", "Ledge (right cap)"],
-  ["rock-", "terrain", "Boulder"],
+  ["rock-", "terrain", "Boulder", true],
   ["path-", "ground", "Dirt path"],
   ["road-", "ground", "Road"],
   ["sand-", "ground", "Sand"],
-  ["route-sign-", "prop", "Route sign"],
-  ["field-item-", "prop", "Field item"],
+  ["route-sign-", "prop", "Route sign", true],
+  ["field-item-", "prop", "Field item", true],
   ["rocky-bumps-", "terrain", "Rocky scree"],
   ["rocky-", "ground", "Rocky ground"],
-  ["boulder-mossy-", "terrain", "Mossy boulder"],
-  ["sign-rocky-", "prop", "Rocky-ground sign"],
+  ["boulder-mossy-", "terrain", "Mossy boulder", true],
+  ["sign-rocky-", "prop", "Rocky-ground sign", true],
+  ["museum-stone-", "building", "Stone museum"],
+  ["gallery-stone-", "building", "Stone gallery"],
+  ["grand-stone-", "building", "Grand stone hall"],
+  ["brick-flat-", "building", "Brick block"],
 ];
 
 const AUTOTILE_POSITIONS = {
@@ -84,7 +89,7 @@ const AUTOTILE_POSITIONS = {
 };
 
 function tileFamily(stem) {
-  for (const [prefix, category, label] of TILE_FAMILIES) {
+  for (const [prefix, category, label, whole] of TILE_FAMILIES) {
     if (stem === prefix || stem.startsWith(prefix)) {
       const suffix = stem.slice(prefix.length);
       const n = Number(suffix);
@@ -95,6 +100,7 @@ function tileFamily(stem) {
       }
       const tags = [category, prefix.replace(/-$/, "")];
       if (autotiled) tags.push("autotile");
+      if (whole) tags.push("whole-object");
       return { category, name, tags };
     }
   }
@@ -266,7 +272,11 @@ export const FORMATION_SHAPES = [
   ["spacecenter", "struct-spacecenter", 9, 8, "building", "Mossdeep space centre"],
   ["house-wood", "struct-house-wood", 4, 4, "building", "Wooden route house"],
   ["hut-pacifidlog", "struct-hut-pacifidlog", 5, 7, "building", "Pacifidlog stilt hut"],
-  ["big-tree", "big-tree", 2, 3, "vegetation", "Big tree", [5, 6, 3, 4, 1, 2]],
+  ["big-tree", "tree-grand", 2, 2, "vegetation", "Big tree"],
+  ["museum-stone", "museum-stone", 3, 5, "building", "Stone museum"],
+  ["gallery-stone", "gallery-stone", 4, 5, "building", "Stone gallery"],
+  ["grand-stone", "grand-stone", 5, 6, "building", "Grand stone hall"],
+  ["brick-flat", "brick-flat", 4, 3, "building", "Brick block"],
 ];
 
 const composedDir = path.join(designDir, "composed");
@@ -310,6 +320,25 @@ if (fs.existsSync(townsSheetDir)) {
       category: "town",
       tags: ["town", "whole-object", "map", "emerald", stem],
       usage: "Full town render from pret/pokeemerald data (tiles + palettes + metatiles + layout).",
+    });
+  }
+}
+
+const npcScanDir = path.join(publicDir, "sprites", "npcs");
+if (fs.existsSync(npcScanDir)) {
+  for (const file of fs.readdirSync(npcScanDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(npcScanDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `npc:${stem}`,
+      name: label,
+      src: `/sprites/npcs/${file}`,
+      w: width,
+      h: height,
+      category: "character",
+      tags: ["character", "npc", "whole-object", "overworld", stem],
+      usage: "NPC overworld sprite decoded from pret/pokeemerald object-event data (embedded palette).",
     });
   }
 }

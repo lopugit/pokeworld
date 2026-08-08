@@ -140,7 +140,13 @@ function buildDatabase(manifest: AssetManifest): AssetDatabase {
       name: single.name,
       category: mergedCategory(single.category),
       tags: single.tags,
-      whole: single.tags.includes("whole-object"),
+      // A "whole object" is anything that is a complete visual thing on its
+      // own: composed formations, standalone props (even 1-tile flowers),
+      // town maps, and every character / Pokémon sprite. Autotile pieces,
+      // formation part-tiles and sheet cells are "individual tiles".
+      whole:
+        single.tags.includes("whole-object") ||
+        ["pokemon", "character", "town"].includes(mergedCategory(single.category)),
       search: `${single.name} ${single.category} ${single.tags.join(" ")} ${single.src}`.toLowerCase(),
       src: single.src,
       w: single.w,
@@ -155,6 +161,7 @@ function buildDatabase(manifest: AssetManifest): AssetDatabase {
       id: animation.id,
       name: animation.name,
       category: "animation",
+      whole: true,
       tags: animation.tags,
       search: `${animation.name} animation ${animation.category} ${animation.tags.join(" ")}`.toLowerCase(),
       animation,

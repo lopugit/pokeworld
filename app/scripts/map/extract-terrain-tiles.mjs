@@ -146,6 +146,54 @@ writeCellGrid("house-grand", [
   [H(7), H(8), H(8), H(8), H(9)],
   [H(10), H(11), wallMiddle, wallMiddle, H(12)],
 ]);
+// Browser-only families (asset database / design formations — not in the live
+// map's building ladder): the stone museum family and the flat-roofed brick
+// block. The brick's parapet has sheet background peeking over its rounded
+// corners; a shallow flood from the top edge keys it out without touching the
+// facade's navy outline (same colour), stopping above the first art line.
+const museumRegion = cropRegion(640, 272, 3, 5);
+const M = (tileNumber) => cellOf(museumRegion, 3, tileNumber);
+writeCellGrid("museum-stone", [
+  [M(1), M(2), M(3)],
+  [M(4), M(5), M(6)],
+  [M(7), M(8), M(9)],
+  [M(10), M(11), M(12)],
+  [M(13), M(14), M(15)],
+]);
+writeCellGrid("gallery-stone", [0, 1, 2, 3, 4].map((row) =>
+  [0, 1, 1, 2].map((column) => M(row * 3 + column + 1))));
+writeCellGrid("grand-stone", [0, 1, 2, 2, 3, 4].map((row) =>
+  [0, 1, 1, 1, 2].map((column) => M(row * 3 + column + 1))));
+
+const brickRegion = cropRegion(1152, 0, 4, 3);
+{
+  const [r, g, b] = [64, 72, 104];
+  const width = brickRegion.width;
+  const matches = (x, y) => {
+    const index = (y * width + x) * 4;
+    return brickRegion.data[index] === r && brickRegion.data[index + 1] === g && brickRegion.data[index + 2] === b;
+  };
+  const queue = [];
+  const seen = new Uint8Array(width * 3);
+  for (let x = 0; x < width; x += 1) if (matches(x, 0)) { seen[x] = 1; queue.push([x, 0]); }
+  while (queue.length) {
+    const [x, y] = queue.pop();
+    brickRegion.data[(y * width + x) * 4 + 3] = 0;
+    for (const [nx, ny] of [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]]) {
+      if (nx < 0 || ny < 0 || nx >= width || ny >= 3) continue;
+      if (seen[ny * width + nx] || !matches(nx, ny)) continue;
+      seen[ny * width + nx] = 1;
+      queue.push([nx, ny]);
+    }
+  }
+}
+const B = (tileNumber) => cellOf(brickRegion, 4, tileNumber);
+writeCellGrid("brick-flat", [
+  [B(1), B(2), B(3), B(4)],
+  [B(5), B(6), B(7), B(8)],
+  [B(9), B(10), B(11), B(12)],
+]);
+
 writeCellGrid("house-manor", [
   [H(1), H(2), H(2), H(2), H(2), H(3)],
   [H(4), H(5), H(5), H(5), H(5), H(6)],
