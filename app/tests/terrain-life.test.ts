@@ -99,49 +99,36 @@ function readTile(name: string) {
   return tile;
 }
 
-// keyable: filler colours the extractor may have turned transparent — those
-// pixels must be fully transparent and match a listed source colour exactly.
-function expectEmeraldCrop(
-  name: string,
-  sourceX: number,
-  sourceY: number,
-  keyable: Array<readonly [number, number, number]> = [],
-) {
+function expectExactEmeraldCrop(name: string, sourceX: number, sourceY: number) {
   const source = readEmeraldSheet();
   const tile = readTile(name);
   for (let y = 0; y < 16; y += 1) {
     for (let x = 0; x < 16; x += 1) {
       const sourceOffset = ((sourceY + y) * source.width + sourceX + x) * 4;
       const tileOffset = (y * tile.width + x) * 4;
-      const sourcePixel = source.data.subarray(sourceOffset, sourceOffset + 4);
-      const tilePixel = tile.data.subarray(tileOffset, tileOffset + 4);
-      const keyed =
-        tilePixel[3] === 0 &&
-        keyable.some(
-          ([r, g, b]) => sourcePixel[0] === r && sourcePixel[1] === g && sourcePixel[2] === b,
-        );
-      if (keyed) continue;
-      expect(tilePixel, `${name} pixel ${x},${y}`).toEqual(sourcePixel);
+      expect(
+        tile.data.subarray(tileOffset, tileOffset + 4),
+        `${name} pixel ${x},${y}`,
+      ).toEqual(source.data.subarray(sourceOffset, sourceOffset + 4));
     }
   }
 }
 
-const expectExactEmeraldCrop = (name: string, sourceX: number, sourceY: number) =>
-  expectEmeraldCrop(name, sourceX, sourceY);
-
-// Composed families reuse another family's tiles per a column/row plan.
-function expectComposedFamily(
-  prefix: string,
-  sourcePrefix: string,
-  sourceColumns: number,
-  columnPlan: number[],
-  rowPlan: number[],
-) {
-  rowPlan.forEach((sourceRow, row) => {
-    columnPlan.forEach((sourceColumn, column) => {
-      const tile = readTile(`${prefix}-${row * columnPlan.length + column + 1}`);
-      const sourceTile = readTile(`${sourcePrefix}-${sourceRow * sourceColumns + sourceColumn + 1}`);
-      expect(tile.data.equals(sourceTile.data), `${prefix} cell ${column},${row}`).toBe(true);
+// The composed house families reuse house-red's own cells per an explicit
+// plan: positive n = house-red-n verbatim, 0 = the synthesized plain wall
+// (right half of house-red-10 joined to the left half of house-red-12).
+function expectComposedHouse(prefix: string, plan: number[][]) {
+  const houseTiles = Array.from({ length: 12 }, (_, index) => readTile(`house-red-${index + 1}`));
+  const wall = Buffer.alloc(16 * 16 * 4);
+  for (let y = 0; y < 16; y += 1) {
+    houseTiles[9].data.copy(wall, y * 16 * 4, (y * 16 + 8) * 4, (y * 16 + 16) * 4);
+    houseTiles[11].data.copy(wall, (y * 16 + 8) * 4, y * 16 * 4, (y * 16 + 8) * 4);
+  }
+  plan.forEach((rowPlan, row) => {
+    rowPlan.forEach((sourceTile, column) => {
+      const tile = readTile(`${prefix}-${row * rowPlan.length + column + 1}`);
+      const expected = sourceTile === 0 ? wall : houseTiles[sourceTile - 1].data;
+      expect(tile.data.equals(expected), `${prefix} cell ${column},${row}`).toBe(true);
     });
   });
 }
@@ -306,38 +293,30 @@ describe("terrain sprite stitching", () => {
       });
     };
 
-    // A former 2-house footprint (25 tiles) now yields ONE mid-tier shop.
+    // A former 2-house footprint (25 tiles) now yields ONE mid-tier building.
     const medium = makeUniformState("grass", 4, 9);
     paintBuilding(medium.block, 1, 5, 1, 5);
     terrainLife.run(medium.state, medium.block);
     const mediumStructures = structuresOf(medium.block);
     expect(mediumStructures).toHaveLength(1);
-    expect(["mart-blue", "center-red"]).toContain(mediumStructures[0].kind);
-    expect(mediumStructures[0].tiles).toBe(12);
+    expect(["house-wide", "center-red"]).toContain(mediumStructures[0].kind);
+    expect(mediumStructures[0].tiles).toBe(mediumStructures[0].kind === "house-wide" ? 16 : 12);
 
-    // A wide 36-tile footprint prefers the wide brick block (4×3).
-    const wide = makeUniformState("grass", 5, 9);
-    paintBuilding(wide.block, 3, 11, 11, 14);
-    terrainLife.run(wide.state, wide.block);
-    const wideStructures = structuresOf(wide.block);
-    expect(wideStructures).toHaveLength(1);
-    expect(wideStructures[0]).toEqual({ kind: "brick-flat", tiles: 12 });
+    // A 36-tile footprint yields ONE grand house (5×4).
+    const large = makeUniformState("grass", 5, 9);
+    paintBuilding(large.block, 3, 11, 11, 14);
+    terrainLife.run(large.state, large.block);
+    const largeStructures = structuresOf(large.block);
+    expect(largeStructures).toHaveLength(1);
+    expect(largeStructures[0]).toEqual({ kind: "house-grand", tiles: 20 });
 
-    // A tall 36-tile footprint prefers the tall stone museum (3×5).
-    const tall = makeUniformState("grass", 6, 9);
-    paintBuilding(tall.block, 12, 15, 1, 9);
-    terrainLife.run(tall.state, tall.block);
-    const tallStructures = structuresOf(tall.block);
-    expect(tallStructures).toHaveLength(1);
-    expect(tallStructures[0]).toEqual({ kind: "museum-stone", tiles: 15 });
-
-    // A former 3-house mega-footprint (96 tiles) now yields ONE grand hall.
+    // A former 3-house mega-footprint (96 tiles) now yields ONE manor (6×5).
     const grand = makeUniformState("grass", 7, 9);
     paintBuilding(grand.block, 0, 15, 0, 5);
     terrainLife.run(grand.state, grand.block);
     const grandStructures = structuresOf(grand.block);
     expect(grandStructures).toHaveLength(1);
-    expect(grandStructures[0]).toEqual({ kind: "grand-stone", tiles: 30 });
+    expect(grandStructures[0]).toEqual({ kind: "house-manor", tiles: 30 });
   });
 
   it("fills open ground with deterministic structures while protecting the spawn landing", () => {
@@ -415,31 +394,29 @@ describe("terrain sprite stitching", () => {
     expectExactEmeraldCrop("sign-rocky-1", 864, 32);
   });
 
-  it("ships exact (or background-keyed) crops for every building family", () => {
-    const MART_FILLER = [[24, 40, 80]] as const;
-    const PARAPET_FILLER = [[64, 72, 104]] as const;
+  it("ships exact crops and faithful compositions for every building family", () => {
     for (let index = 0; index < 12; index += 1) {
-      const column = index % 3;
-      const row = Math.floor(index / 3);
-      expectEmeraldCrop(`mart-blue-${index + 1}`, column * 16, 80 + row * 16, [...MART_FILLER]);
-      expectExactEmeraldCrop(`center-red-${index + 1}`, column * 16, 144 + row * 16);
+      expectExactEmeraldCrop(`center-red-${index + 1}`, (index % 3) * 16, 144 + Math.floor(index / 3) * 16);
     }
-    for (let index = 0; index < 15; index += 1) {
-      expectExactEmeraldCrop(`museum-stone-${index + 1}`, 640 + (index % 3) * 16, 272 + Math.floor(index / 3) * 16);
-    }
-    for (let index = 0; index < 12; index += 1) {
-      expectEmeraldCrop(
-        `brick-flat-${index + 1}`,
-        1152 + (index % 4) * 16,
-        Math.floor(index / 4) * 16,
-        [...PARAPET_FILLER],
-      );
-    }
-    // the shallow parapet keying must never strip the facade's navy outline
-    const brickWall = readTile("brick-flat-5");
-    expect(brickWall.data[3], "wall outline pixel must stay opaque").toBe(255);
-    expectComposedFamily("gallery-stone", "museum-stone", 3, [0, 1, 1, 2], [0, 1, 2, 3, 4]);
-    expectComposedFamily("grand-stone", "museum-stone", 3, [0, 1, 1, 1, 2], [0, 1, 2, 2, 3, 4]);
+    expectComposedHouse("house-wide", [
+      [1, 2, 2, 3],
+      [4, 5, 5, 6],
+      [7, 8, 8, 9],
+      [10, 11, 0, 12],
+    ]);
+    expectComposedHouse("house-grand", [
+      [1, 2, 2, 2, 3],
+      [4, 5, 5, 5, 6],
+      [7, 8, 8, 8, 9],
+      [10, 11, 0, 0, 12],
+    ]);
+    expectComposedHouse("house-manor", [
+      [1, 2, 2, 2, 2, 3],
+      [4, 5, 5, 5, 5, 6],
+      [4, 5, 5, 5, 5, 6],
+      [7, 8, 8, 8, 8, 9],
+      [10, 11, 0, 0, 0, 12],
+    ]);
   });
 
   it("stitches mountains and caves on rocky ground with a walkable doorway", () => {

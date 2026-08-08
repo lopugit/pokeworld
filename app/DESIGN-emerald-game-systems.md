@@ -78,7 +78,7 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 | `field-item`        | `field-item-N`         | Solid until collected via A-press facing it. Item is seeded from coords (`hashUnit(mapX, mapY, 'field-item')`), goes to BAG, overlay hidden afterwards, collection persisted client-side by world coord key. |
 | `sign`              | `route-sign-N`         | A-press shows seeded signpost dialog. |
 | `cave-entrance`     | `cave-N` / `cave-door-1` | A-press shows cave dialog (interiors: future iteration). `cave-door-1` fills the mountain-8 slot of 3×3 mountains. |
-| `house`             | `{house-red,mart-blue,center-red,brick-flat,museum-stone,gallery-stone,grand-stone}-N` | A-press on a door row shows flavor dialog. One structure per detected google-maps building; the family (and so the footprint, 3×4 up to 5×6) scales with the detected building's tile area. `houseKind` carries the family prefix. |
+| `house`             | `{house-red,house-wide,house-grand,house-manor,center-red}-N` | A-press on a door row shows flavor dialog. One structure per detected google-maps building; the family (and so the footprint, 3×4 up to 6×5) scales with the detected building's tile area. `houseKind` carries the family prefix. |
 | `long-grass`        | `grass-2`              | Reserved for wild encounters (future). |
 | any tile            |                        | `solid: true` blocks movement. A missing tile inside a loaded block stays walkable, but an absent destination block is a hard streaming boundary until it arrives. |
 

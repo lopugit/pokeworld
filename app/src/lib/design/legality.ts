@@ -186,18 +186,14 @@ export const FORMATIONS: Formation[] = [
   // The live map's size-graded building families (one structure per detected
   // google-maps building). Same completeness rule as the red house: each was
   // harvested or composed as one block on grass.
-  buildingFormation("mart-blue", "Blue-roof mart (3×4)", 3, 4,
-    "The Poké Mart storefront was harvested as one 3×4 block on grass (its filler sheet cell keyed transparent)."),
   buildingFormation("center-red", "Red-dome centre (3×4)", 3, 4,
     "The Pokémon Centre was harvested as one 3×4 block on grass."),
-  buildingFormation("brick-flat", "Brick block (4×3)", 4, 3,
-    "The flat-roofed brick block was harvested as one 4×3 block; background over its parapet is keyed to show the ground."),
-  buildingFormation("museum-stone", "Stone museum (3×5)", 3, 5,
-    "The stone museum hall was harvested as one 3×5 block on grass."),
-  buildingFormation("gallery-stone", "Stone gallery (4×5)", 4, 5,
-    "Composed from the museum's modular bays as one 4×5 block; partial subsets shear the colonnade."),
-  buildingFormation("grand-stone", "Grand stone hall (5×6)", 5, 6,
-    "Composed from the museum's modular bays as one 5×6 block; partial subsets shear the colonnade."),
+  buildingFormation("house-wide", "Wide red-roof house (4×4)", 4, 4,
+    "Composed from the red house's own cells as one 4×4 block; partial subsets shear the roof lattice."),
+  buildingFormation("house-grand", "Grand red-roof house (5×4)", 5, 4,
+    "Composed from the red house's own cells as one 5×4 block; partial subsets shear the roof lattice."),
+  buildingFormation("house-manor", "Red-roof manor (6×5)", 6, 5,
+    "Composed from the red house's own cells as one 6×5 block; partial subsets shear the roof lattice."),
   {
     id: "dome",
     label: "Mountain dome with cave door (3×3)",

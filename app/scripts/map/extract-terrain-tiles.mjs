@@ -48,48 +48,40 @@ function cropRegion(left, top, columns, rows) {
   return region;
 }
 
-// The sheet pads irregular building silhouettes with filler that must become
-// transparent so the map's base grass shows through. Two cases, kept narrow
-// because the sheet's dark navy [64,72,104] doubles as the art's outline
-// colour and must never be stripped from building edges:
-//  - keyColour: a colour unique to filler inside the region (the Mart's empty
-//    top-right cell uses [24,40,80], which appears nowhere in its art).
-//  - keyTopBackground: shallow flood from the top border only, for background
-//    peeking over a rounded parapet; maxDepth stays above the first art line.
-function keyColour(region, [r, g, b]) {
-  for (let index = 0; index < region.data.length; index += 4) {
-    if (region.data[index] === r && region.data[index + 1] === g && region.data[index + 2] === b) {
-      region.data[index + 3] = 0;
-    }
+// 16x16 cell helpers for repairing and recomposing building sprites.
+function cellOf(region, columns, tileNumber) {
+  const cell = Buffer.alloc(16 * 16 * 4);
+  const column = (tileNumber - 1) % columns;
+  const row = Math.floor((tileNumber - 1) / columns);
+  for (let y = 0; y < 16; y += 1) {
+    const start = ((row * 16 + y) * region.width + column * 16) * 4;
+    region.data.copy(cell, y * 16 * 4, start, start + 16 * 4);
   }
-  return region;
+  return cell;
 }
 
-function keyTopBackground(region, [r, g, b], maxDepth) {
-  const { width, data } = region;
-  const matches = (x, y) => {
-    const index = (y * width + x) * 4;
-    return data[index] === r && data[index + 1] === g && data[index + 2] === b;
-  };
-  const seen = new Uint8Array(width * maxDepth);
-  const queue = [];
-  for (let x = 0; x < width; x += 1) {
-    if (matches(x, 0)) {
-      seen[x] = 1;
-      queue.push([x, 0]);
+// left half from `left`'s right side, right half from `right`'s left side —
+// joins two edge tiles' interior wall pixels into one seamless middle tile.
+function joinHalves(left, right) {
+  const output = Buffer.alloc(left.length);
+  for (let y = 0; y < 16; y += 1) {
+    left.copy(output, y * 16 * 4, (y * 16 + 8) * 4, (y * 16 + 16) * 4);
+    right.copy(output, (y * 16 + 8) * 4, y * 16 * 4, (y * 16 + 8) * 4);
+  }
+  return output;
+}
+
+// Write a family from an explicit cell grid (each entry a 16x16 RGBA buffer).
+function writeCellGrid(prefix, grid) {
+  let index = 1;
+  for (const row of grid) {
+    for (const cell of row) {
+      const tile = new PNG({ width: 16, height: 16 });
+      cell.copy(tile.data);
+      writeFileSync(resolve(outputDir, `${prefix}-${index}.png`), PNG.sync.write(tile));
+      index += 1;
     }
   }
-  while (queue.length) {
-    const [x, y] = queue.pop();
-    data[(y * width + x) * 4 + 3] = 0;
-    for (const [nextX, nextY] of [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]]) {
-      if (nextX < 0 || nextY < 0 || nextX >= width || nextY >= maxDepth) continue;
-      if (seen[nextY * width + nextX] || !matches(nextX, nextY)) continue;
-      seen[nextY * width + nextX] = 1;
-      queue.push([nextX, nextY]);
-    }
-  }
-  return region;
 }
 
 function writeRegionGrid(prefix, region, columns, rows) {
@@ -107,22 +99,6 @@ function writeRegionGrid(prefix, region, columns, rows) {
   }
 }
 
-// Larger buildings are composed from another building's modular bays: Emerald
-// facades tile horizontally per 16px column and vertically per 16px storey, so
-// repeating interior bays yields wider and taller blocks with clean seams.
-function composeBuilding(prefix, sourceRegion, sourceColumns, columnPlan, rowPlan) {
-  const composed = new PNG({ width: columnPlan.length * 16, height: rowPlan.length * 16 });
-  rowPlan.forEach((sourceRow, row) => {
-    columnPlan.forEach((sourceColumn, column) => {
-      for (let y = 0; y < 16; y += 1) {
-        const from = ((sourceRow * 16 + y) * sourceColumns * 16 + sourceColumn * 16) * 4;
-        const to = ((row * 16 + y) * composed.width + column * 16) * 4;
-        sourceRegion.data.copy(composed.data, to, from, from + 16 * 4);
-      }
-    });
-  });
-  writeRegionGrid(prefix, composed, columnPlan.length, rowPlan.length);
-}
 
 function writeWaterVariants() {
   const base = PNG.sync.read(readFileSync(resolve(outputDir, "pond-5.png")));
@@ -153,22 +129,40 @@ writeGrid("house-red", 0, 16, 3, 4);
 
 // Size-graded building variants: one structure per google-maps building, with
 // the sprite family chosen from the detected footprint's tile area.
-// Blue-roofed Poké Mart storefront, 3x4 (its top-right sheet cell is filler).
-writeRegionGrid("mart-blue", keyColour(cropRegion(0, 80, 3, 4), [24, 40, 80]), 3, 4);
-// Red-domed Pokémon Centre, 3x4 (grass-backed corners, nothing to key).
+
+// Red-domed Pokémon Centre, 3x4 (complete in the sheet, grass-backed corners).
+// The sheet's Poké Mart was rejected: its top-right roof cell is missing and
+// its ground floor is drawn inset behind a scenery bush, so every repair left
+// a silhouette that reads as half-rendered.
 writeRegionGrid("center-red", cropRegion(0, 144, 3, 4), 3, 4);
-// Flat-roofed brick block, 4x3; background peeks over the parapet's rounded
-// top corners and between its posts, and the first interior art line sits at
-// y=3, so the top flood must stop above it.
-writeRegionGrid("brick-flat", keyTopBackground(cropRegion(1152, 0, 4, 3), [64, 72, 104], 3), 4, 3);
-// Stone museum hall with a flat skylight roof, 3x5 (grass-backed, no filler).
-const museumRegion = cropRegion(640, 272, 3, 5);
-writeRegionGrid("museum-stone", museumRegion, 3, 5);
-// Wider and taller stone halls composed from the museum's modular bays:
-// column bays = [left pilaster, windowed bay, right pilaster], and the
-// arch-window storey (row 2) repeats vertically for the grandest hall.
-composeBuilding("gallery-stone", museumRegion, 3, [0, 1, 1, 2], [0, 1, 2, 3, 4]);
-composeBuilding("grand-stone", museumRegion, 3, [0, 1, 1, 1, 2], [0, 1, 2, 2, 3, 4]);
+
+// Larger homes composed from the red house's own modular cells, the way
+// Emerald tiles its bigger buildings: the roof ridge/lattice middles repeat
+// horizontally, the dark-lattice storey stacks for taller roofs, and a plain
+// wall middle is joined from the two wall corners' interior halves. Grass
+// stays baked only on the outermost caps, so every seam is opaque wall/roof.
+const houseRegion = cropRegion(0, 16, 3, 4);
+const H = (tileNumber) => cellOf(houseRegion, 3, tileNumber);
+const wallMiddle = joinHalves(H(10), H(12));
+writeCellGrid("house-wide", [
+  [H(1), H(2), H(2), H(3)],
+  [H(4), H(5), H(5), H(6)],
+  [H(7), H(8), H(8), H(9)],
+  [H(10), H(11), wallMiddle, H(12)],
+]);
+writeCellGrid("house-grand", [
+  [H(1), H(2), H(2), H(2), H(3)],
+  [H(4), H(5), H(5), H(5), H(6)],
+  [H(7), H(8), H(8), H(8), H(9)],
+  [H(10), H(11), wallMiddle, wallMiddle, H(12)],
+]);
+writeCellGrid("house-manor", [
+  [H(1), H(2), H(2), H(2), H(2), H(3)],
+  [H(4), H(5), H(5), H(5), H(5), H(6)],
+  [H(4), H(5), H(5), H(5), H(5), H(6)],
+  [H(7), H(8), H(8), H(8), H(8), H(9)],
+  [H(10), H(11), wallMiddle, wallMiddle, wallMiddle, H(12)],
+]);
 
 // A natural rock formation aligned to a 3x3 tile footprint.
 writeGrid("mountain", 768, 64, 3, 3);

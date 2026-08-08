@@ -338,24 +338,19 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 
 // Building sprite families, ordered largest-first. Each detected google-maps
 // building component places exactly ONE structure; the family is chosen from
-// the component's tile area (and aspect, where a tier offers both a wide and a
-// tall silhouette) so bigger real-world buildings become bigger sprites. When
-// the preferred family cannot fit near the component, the search degrades tier
-// by tier down to the small cottage before giving up.
+// the component's tile area so bigger real-world buildings become bigger
+// sprites. The three larger homes are composed from the red house's own cells
+// (see scripts/map/extract-terrain-tiles.mjs), so the whole ladder shares one
+// proven art style; the Pokémon Centre seasons the mid tier as a landmark.
+// When the preferred family cannot fit near the component, the search degrades
+// tier by tier down to the small cottage before giving up.
 const BUILDING_TIERS = [
-	{ minArea: 96, variants: [{ prefix: 'grand-stone', columns: 5, rows: 6 }] },
-	{ minArea: 60, variants: [{ prefix: 'gallery-stone', columns: 4, rows: 5 }] },
-	{
-		minArea: 36,
-		variants: [
-			{ prefix: 'brick-flat', columns: 4, rows: 3, aspect: 'wide' },
-			{ prefix: 'museum-stone', columns: 3, rows: 5, aspect: 'tall' },
-		],
-	},
+	{ minArea: 72, variants: [{ prefix: 'house-manor', columns: 6, rows: 5 }] },
+	{ minArea: 36, variants: [{ prefix: 'house-grand', columns: 5, rows: 4 }] },
 	{
 		minArea: 18,
 		variants: [
-			{ prefix: 'mart-blue', columns: 3, rows: 4 },
+			{ prefix: 'house-wide', columns: 4, rows: 4 },
 			{ prefix: 'center-red', columns: 3, rows: 4 },
 		],
 	},
@@ -366,11 +361,6 @@ const chooseBuildingVariant = (tier, component, block) => {
 	if (tier.variants.length === 1) return tier.variants[0]
 	const xs = component.map(tile => tile.x)
 	const ys = component.map(sourceY)
-	const width = Math.max(...xs) - Math.min(...xs) + 1
-	const height = Math.max(...ys) - Math.min(...ys) + 1
-	const byAspect = tier.variants.find(variant =>
-		variant.aspect === (width >= height ? 'wide' : 'tall'))
-	if (byAspect) return byAspect
 	const roll = hashUnit(
 		block.x * BLOCK_TILES + Math.min(...xs),
 		block.y * BLOCK_TILES + Math.min(...ys),
