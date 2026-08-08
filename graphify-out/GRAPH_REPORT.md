@@ -1,7 +1,7 @@
 # Graph Report - design-map-themes-review-cb860f-33fe92  (2026-08-09)
 
 ## Corpus Check
-- 203 files · ~2,489,033 words
+- 203 files · ~2,493,650 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7117c53d`
+- Built from commit: `d6a69301`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

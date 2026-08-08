@@ -293,6 +293,31 @@ export const FORMATIONS: Formation[] = [
     "Harvested whole from the Lavaridge Town render; grass-backed."),
   // Browser/design-only families (not in the live map's building ladder).
   {
+    ...buildingFormation("battle-tent-slateport", "Slateport Battle Tent (4×5)", 4, 5, "struct-battle-tent-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("museum-slateport", "Slateport museum (6×5)", 6, 5, "struct-museum-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("center-slateport", "Slateport Pokémon Center (4×4)", 4, 4, "struct-center-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("shipyard-slateport", "Stern's shipyard (7×6)", 7, 6, "struct-shipyard-slateport",
+      "Harvested whole from the Slateport City render; stands on the dockside."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("lighthouse-slateport", "Slateport lighthouse (3×4)", 3, 4, "struct-lighthouse-slateport",
+      "Harvested whole from the Slateport City render; plaza wall keyed from its tip."),
+    ground: "road",
+  },
+  {
     ...buildingFormation("gym-rustboro", "Rustboro gym (7×5)", 7, 5, "struct-gym-rustboro",
       "Harvested whole from the Rustboro City render; stands on the city's paving."),
     ground: "road",

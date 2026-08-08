@@ -291,6 +291,11 @@ const BUILDINGS = [
   ["struct-treehouse", "fortree-city", 31, 0, 3, 6],
   ["struct-house-lilycove", "lilycove-city", 11, 11, 4, 4],
   ["struct-dept-store", "lilycove-city", 7, 0, 10, 7],
+  ["struct-battle-tent-slateport", "slateport-city", 8, 8, 4, 5],
+  ["struct-museum-slateport", "slateport-city", 2, 22, 6, 5],
+  ["struct-center-slateport", "slateport-city", 18, 16, 4, 4],
+  ["struct-shipyard-slateport", "slateport-city", 24, 32, 7, 6],
+  ["struct-lighthouse-slateport", "slateport-city", 32, 51, 3, 4],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
@@ -303,6 +308,7 @@ const BUILDINGS = [
 const SCENERY_KEYS = {
   "struct-battle-tent": { referenceCells: [[3, 1], [2, 2], [6, 2], [1, 1]], rows: [0] },
   "struct-dept-store": { referenceCells: [[5, 0], [6, 0], [19, 0], [20, 0]], rows: [0] },
+  "struct-lighthouse-slateport": { referenceCells: [[29, 51], [30, 51]], rows: [0] },
 };
 
 const tilesDir = resolve(appDir, "public/tiles");

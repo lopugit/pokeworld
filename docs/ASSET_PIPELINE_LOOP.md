@@ -21,8 +21,9 @@ sheet before commit (render over grass at 3×+).
       Lavaridge, Fallarbor, Verdanturf
       (DONE: Verdanturf battle-tent + house, Lavaridge gym + herb house,
       Devon Corp 8x8 + Fortree gym, Rustboro gym 7x5, Fortree treehouse 3x6,
-      Lilycove house 4x4 + department store 10x7; Fallarbor/Dewford skipped —
-      soot/sand-backed; NEXT: Sootopolis, Slateport) (gridded-render coordinate workflow;
+      Lilycove house 4x4 + department store 10x7, Slateport battle tent +
+      museum + compact PC + shipyard + lighthouse; Fallarbor/Dewford
+      skipped — soot/sand-backed; NEXT: Sootopolis, then tick this box) (gridded-render coordinate workflow;
       formations + BUILDING_TIERS only where grass-backed + verified).
 - [ ] Wave 2c-2: route landmarks: Day Care (Route 117), Weather Institute
       (R119), Trick House (R110), Pretty Petal flower shop (R104), Briney's
