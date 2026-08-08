@@ -555,3 +555,46 @@ for (const [base, slug] of ANIM_TILESETS) {
   }
 }
 console.log(`decoded ${animCount} tileset animation frames into public/design/anim/`);
+
+// ---------------------------------------------------------------------------
+// NPC walk cycles: people pics hold 16x32 frames side by side in the pret
+// order [stand S, stand N, stand E, walk S1, walk S2, walk N1, walk N2,
+// walk E1, walk E2]. Export the south-facing cycle (stand, step, stand,
+// step) as file-per-frame reels for the design player.
+// ---------------------------------------------------------------------------
+const WALK_NPCS = [
+  "boy_1", "boy_2", "boy_3", "girl_1", "girl_2", "girl_3", "little_boy",
+  "little_girl", "man_1", "man_2", "man_3", "woman_1", "woman_2", "woman_3",
+  "old_man_1", "old_woman_1", "lass", "youngster", "hiker", "fisherman",
+  "camper", "picnicker", "beauty", "sailor", "ninja_boy", "black_belt",
+];
+const WALK_SEQUENCE = [0, 3, 0, 4];
+let walkFrameCount = 0;
+for (const name of WALK_NPCS) {
+  let buffer;
+  try {
+    buffer = await fetchPret(`graphics/object_events/pics/people/${name}.png`);
+  } catch {
+    continue;
+  }
+  const image = readIndexedPng(buffer);
+  const palette = readPngPalette(buffer);
+  if (image.width < 80 || image.height !== 32) continue;
+  WALK_SEQUENCE.forEach((frameIndex, outIndex) => {
+    const out = new PNG({ width: 16, height: 32 });
+    for (let y = 0; y < 32; y += 1) {
+      for (let x = 0; x < 16; x += 1) {
+        const colour = image.indices[y * image.width + frameIndex * 16 + x];
+        if (colour === 0) continue;
+        const [r, g, b] = palette[colour] ?? [255, 0, 255];
+        out.data.set([r, g, b, 255], (y * 16 + x) * 4);
+      }
+    }
+    writeFileSync(
+      resolve(animDir, `npc-${name.replace(/_/g, "-")}--walk-${outIndex}.png`),
+      PNG.sync.write(out),
+    );
+    walkFrameCount += 1;
+  });
+}
+console.log(`exported ${walkFrameCount} NPC walk-cycle frames`);

@@ -718,12 +718,15 @@ if (fs.existsSync(tileAnimDir)) {
     const { width, height } = readPng(path.join(tileAnimDir, `${stem}-0.png`));
     const label = anim.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const tilesetLabel = tileset.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const isNpc = tileset.startsWith("npc-");
     animations.push({
       id: `tileanim:${stem}`,
-      name: `${label} (${tilesetLabel} tileset)`,
+      name: isNpc
+        ? `${tilesetLabel.replace(/^Npc /, "")} walk cycle`
+        : `${label} (${tilesetLabel} tileset)`,
       category: "animation",
-      fps: /water|waterfall/.test(anim) ? 8 : 5,
-      tags: ["animation", "tileset", tileset, anim, "emerald"],
+      fps: isNpc ? 6 : /water|waterfall/.test(anim) ? 8 : 5,
+      tags: ["animation", isNpc ? "npc" : "tileset", tileset, anim, "emerald"],
       frames: frames.map((frame) => frame.src),
       frameSize: [width, height],
     });

@@ -50,7 +50,8 @@ sheet before commit (render over grass at 3×+).
       tileset animation frames (data/tilesets/*/*/anim/**) →
       stitch per-animation frame reels into manifest `animations` (like the
       existing character walk reels) so /design plays them whole.
-- [ ] Wave 2d-4: NPC walk cycles → animation reels for the ~20 most common
+- [x] Wave 2d-4 (COMPLETE — 21 south-facing walk reels for the common
+      townsfolk, stand/step sequenced): NPC walk cycles → animation reels for the ~20 most common
       NPCs (frames already in fetched pics; slice all frames not just first).
 - [ ] Wave 2d-5: region map (graphics/pokenav/region_map*.png), emotes
       (graphics/field_effects/pics/emotes*), door animations
