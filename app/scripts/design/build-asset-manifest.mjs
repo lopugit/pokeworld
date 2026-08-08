@@ -380,6 +380,7 @@ if (fs.existsSync(townsSheetDir)) {
 const SPRITE_SCANS = [
   ["npcs", "npc", "character", ["character", "npc", "overworld"], "NPC overworld sprite decoded from pret/pokeemerald object-event data."],
   ["trainers", "trainer", "character", ["character", "trainer", "portrait", "battle"], "Trainer battle portrait decoded from pret/pokeemerald trainer graphics."],
+  ["items", "item", "item", ["item", "icon", "bag"], "Item icon decoded from pret/pokeemerald item graphics."],
   ["overworld-pokemon", "owmon", "pokemon", ["pokemon", "overworld", "mini"], "Overworld Pokémon mini decoded from pret/pokeemerald object-event data."],
   ["objects", "object", "prop", ["prop", "object", "overworld"], "Overworld object decoded from pret/pokeemerald object-event data."],
 ];

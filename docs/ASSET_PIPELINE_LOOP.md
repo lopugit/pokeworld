@@ -40,7 +40,9 @@ sheet before commit (render over grass at 3×+).
       palettes/*.pal — map pic→palette from src/data/trainer_graphics/
       front_pic_tables or by same-name .pal convention) → whole-object
       Characters ("portrait" tag).
-- [ ] Wave 2d-2: item + berry icons (graphics/items/icons/*.png + .pal same
+- [x] Wave 2d-2 (COMPLETE — 218 item icons incl. all balls, medicine,
+      TMs/HMs, berries, key items; embedded palettes, new Items category):
+      item + berry icons (graphics/items/icons/*.png + .pal same
       name) → new "Items" category, whole objects.
 - [ ] Wave 2d-3: tileset animation frames (data/tilesets/*/*/anim/**) →
       stitch per-animation frame reels into manifest `animations` (like the

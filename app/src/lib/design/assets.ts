@@ -104,6 +104,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   misc: "Misc",
   rock: "Rock & cave",
   town: "Town maps",
+  item: "Items",
   interior: "Interiors",
   animation: "Animations",
 };

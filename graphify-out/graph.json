@@ -247,7 +247,7 @@
       "label": "interiorScanDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L406",
+      "source_location": "L407",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_interiorscandir",
       "community": 44,
@@ -257,7 +257,7 @@
       "label": "EXTERIOR_SRC",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L429",
+      "source_location": "L430",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_exterior_src",
       "community": 44,
@@ -267,7 +267,7 @@
       "label": "CHARACTER_SRC",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L430",
+      "source_location": "L431",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_character_src",
       "community": 44,
@@ -277,7 +277,7 @@
       "label": "sheetSize()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L435",
+      "source_location": "L436",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_sheetsize",
       "community": 44,
@@ -287,7 +287,7 @@
       "label": "sheets",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L440",
+      "source_location": "L441",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_sheets",
       "community": 44,
@@ -297,7 +297,7 @@
       "label": "classifyCell()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L468",
+      "source_location": "L469",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_classifycell",
       "community": 44,
@@ -307,7 +307,7 @@
       "label": "cellHash()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L509",
+      "source_location": "L510",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_cellhash",
       "community": 44,
@@ -317,7 +317,7 @@
       "label": "CELL_CATEGORIES",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L518",
+      "source_location": "L519",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_cell_categories",
       "community": 44,
@@ -327,7 +327,7 @@
       "label": "sliceSheet()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L520",
+      "source_location": "L521",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_slicesheet",
       "community": 44,
@@ -337,7 +337,7 @@
       "label": "exSlice",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L565",
+      "source_location": "L566",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_exslice",
       "community": 44,
@@ -347,7 +347,7 @@
       "label": "inSlice",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L569",
+      "source_location": "L570",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_inslice",
       "community": 44,
@@ -357,7 +357,7 @@
       "label": "detectIslands()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L580",
+      "source_location": "L581",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_detectislands",
       "community": 44,
@@ -367,7 +367,7 @@
       "label": "CHARACTER_BANDS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L626",
+      "source_location": "L627",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_character_bands",
       "community": 44,
@@ -377,7 +377,7 @@
       "label": "CHARACTER_EXCLUSIONS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L640",
+      "source_location": "L641",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_character_exclusions",
       "community": 44,
@@ -387,7 +387,7 @@
       "label": "characterAnimations()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L642",
+      "source_location": "L643",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_characteranimations",
       "community": 44,
@@ -397,7 +397,7 @@
       "label": "animations",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L701",
+      "source_location": "L702",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_animations",
       "community": 44,
@@ -407,7 +407,7 @@
       "label": "manifest",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L745",
+      "source_location": "L746",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_manifest",
       "community": 44,
@@ -417,7 +417,7 @@
       "label": "outFile",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L754",
+      "source_location": "L755",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_outfile",
       "community": 44,
@@ -427,7 +427,7 @@
       "label": "sizeKb",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L756",
+      "source_location": "L757",
       "_origin": "ast",
       "id": "app_scripts_design_build_asset_manifest_sizekb",
       "community": 44,
@@ -657,7 +657,7 @@
       "label": "listPretDir()",
       "file_type": "code",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L395",
+      "source_location": "L397",
       "_origin": "ast",
       "id": "app_scripts_design_fetch_emerald_towns_listpretdir",
       "community": 213,
@@ -667,7 +667,7 @@
       "label": "NPCS",
       "file_type": "code",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L410",
+      "source_location": "L412",
       "_origin": "ast",
       "id": "app_scripts_design_fetch_emerald_towns_npcs",
       "community": 213,
@@ -677,791 +677,11 @@
       "label": "readPngPalette()",
       "file_type": "code",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L424",
+      "source_location": "L426",
       "_origin": "ast",
       "id": "app_scripts_design_fetch_emerald_towns_readpngpalette",
       "community": 213,
       "norm_label": "readpngpalette()"
-    },
-    {
-      "label": "terrain-life.ts",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life",
-      "community": 3,
-      "norm_label": "terrain-life.ts"
-    },
-    {
-      "label": "tileKey()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "community": 3,
-      "norm_label": "tilekey()"
-    },
-    {
-      "label": "sourceY()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "community": 3,
-      "norm_label": "sourcey()"
-    },
-    {
-      "label": "hashUnit()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "community": 3,
-      "norm_label": "hashunit()"
-    },
-    {
-      "label": "lerp()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_lerp",
-      "community": 3,
-      "norm_label": "lerp()"
-    },
-    {
-      "label": "smoothstep()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_smoothstep",
-      "community": 3,
-      "norm_label": "smoothstep()"
-    },
-    {
-      "label": "coarseNoise()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "community": 3,
-      "norm_label": "coarsenoise()"
-    },
-    {
-      "label": "getAutotileIndex()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "community": 3,
-      "norm_label": "getautotileindex()"
-    },
-    {
-      "label": "getWaterTileName()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "community": 3,
-      "norm_label": "getwatertilename()"
-    },
-    {
-      "label": "terrainOf()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "community": 3,
-      "norm_label": "terrainof()"
-    },
-    {
-      "label": "isWalkableGround()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_iswalkableground",
-      "community": 3,
-      "norm_label": "iswalkableground()"
-    },
-    {
-      "label": "isGreen()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "community": 3,
-      "norm_label": "isgreen()"
-    },
-    {
-      "label": "getTile()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L70",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "community": 3,
-      "norm_label": "gettile()"
-    },
-    {
-      "label": "getOffsetTile()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L71",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "community": 3,
-      "norm_label": "getoffsettile()"
-    },
-    {
-      "label": "sameTerrainAt()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L72",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "community": 3,
-      "norm_label": "sameterrainat()"
-    },
-    {
-      "label": "neighbourTerrain()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L77",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "community": 3,
-      "norm_label": "neighbourterrain()"
-    },
-    {
-      "label": "blockTiles()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L88",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_blocktiles",
-      "community": 3,
-      "norm_label": "blocktiles()"
-    },
-    {
-      "label": "SPAWN_ROUTE_TERRAINS",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L99",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains",
-      "community": 3,
-      "norm_label": "spawn_route_terrains"
-    },
-    {
-      "label": "SPAWN_BRIDGE_TERRAINS",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L100",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains",
-      "community": 3,
-      "norm_label": "spawn_bridge_terrains"
-    },
-    {
-      "label": "setTerrain()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L102",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "community": 3,
-      "norm_label": "setterrain()"
-    },
-    {
-      "label": "findSpawnPath()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L118",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "community": 3,
-      "norm_label": "findspawnpath()"
-    },
-    {
-      "label": "carveSpawnPath()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L147",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "community": 3,
-      "norm_label": "carvespawnpath()"
-    },
-    {
-      "label": "sharedPortal()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L154",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_sharedportal",
-      "community": 3,
-      "norm_label": "sharedportal()"
-    },
-    {
-      "label": "waterBridgeSide()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L155",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside",
-      "community": 3,
-      "norm_label": "waterbridgeside()"
-    },
-    {
-      "label": "WATER_BRIDGE_NEIGHBOURS",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L156",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours",
-      "community": 3,
-      "norm_label": "water_bridge_neighbours"
-    },
-    {
-      "label": "ensureSpawnRoute()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L163",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "community": 3,
-      "norm_label": "ensurespawnroute()"
-    },
-    {
-      "label": "waterAt()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L219",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_waterat",
-      "community": 3,
-      "norm_label": "waterat()"
-    },
-    {
-      "label": "smoothWater()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L225",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "community": 3,
-      "norm_label": "smoothwater()"
-    },
-    {
-      "label": "resetBaseSprites()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L263",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites",
-      "community": 3,
-      "norm_label": "resetbasesprites()"
-    },
-    {
-      "label": "stitchSurfaces()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L282",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "community": 3,
-      "norm_label": "stitchsurfaces()"
-    },
-    {
-      "label": "buildingComponents()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L296",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "community": 3,
-      "norm_label": "buildingcomponents()"
-    },
-    {
-      "label": "footprintAt()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L327",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "community": 3,
-      "norm_label": "footprintat()"
-    },
-    {
-      "label": "BUILDING_TIERS",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L347",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_building_tiers",
-      "community": 3,
-      "norm_label": "building_tiers"
-    },
-    {
-      "label": "chooseBuildingVariant()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L382",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant",
-      "community": 3,
-      "norm_label": "choosebuildingvariant()"
-    },
-    {
-      "label": "findStructureAnchor()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L394",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor",
-      "community": 3,
-      "norm_label": "findstructureanchor()"
-    },
-    {
-      "label": "applyRockyApron()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L423",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "community": 3,
-      "norm_label": "applyrockyapron()"
-    },
-    {
-      "label": "stitchHouses()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L442",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "community": 3,
-      "norm_label": "stitchhouses()"
-    },
-    {
-      "label": "stitchMountains()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L473",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "community": 3,
-      "norm_label": "stitchmountains()"
-    },
-    {
-      "label": "isCentralLanding()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L506",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "community": 3,
-      "norm_label": "iscentrallanding()"
-    },
-    {
-      "label": "buildReservedGround()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L508",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "community": 3,
-      "norm_label": "buildreservedground()"
-    },
-    {
-      "label": "stitchCave()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L526",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "community": 3,
-      "norm_label": "stitchcave()"
-    },
-    {
-      "label": "addLine()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L561",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addline",
-      "community": 3,
-      "norm_label": "addline()"
-    },
-    {
-      "label": "stitchSecretGrove()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L575",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "community": 3,
-      "norm_label": "stitchsecretgrove()"
-    },
-    {
-      "label": "stitchLedges()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L667",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "community": 3,
-      "norm_label": "stitchledges()"
-    },
-    {
-      "label": "addSigns()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L698",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "community": 3,
-      "norm_label": "addsigns()"
-    },
-    {
-      "label": "stitchWorldStructure()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L728",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "community": 3,
-      "norm_label": "stitchworldstructure()"
-    },
-    {
-      "label": "addForestClusters()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L803",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "community": 3,
-      "norm_label": "addforestclusters()"
-    },
-    {
-      "label": "flowerBedAt()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L830",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_flowerbedat",
-      "community": 3,
-      "norm_label": "flowerbedat()"
-    },
-    {
-      "label": "inMeadow()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L845",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_inmeadow",
-      "community": 3,
-      "norm_label": "inmeadow()"
-    },
-    {
-      "label": "addLife()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L848",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "community": 3,
-      "norm_label": "addlife()"
-    },
-    {
-      "label": "terrainLife()",
-      "file_type": "code",
-      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
-      "source_location": "L906",
-      "_origin": "ast",
-      "id": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "community": 3,
-      "norm_label": "terrainlife()"
-    },
-    {
-      "label": "legality.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality",
-      "community": 132,
-      "norm_label": "legality.ts"
-    },
-    {
-      "label": "GroundKind",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkind",
-      "community": 132,
-      "norm_label": "groundkind"
-    },
-    {
-      "label": "groundKindOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkindof",
-      "community": 132,
-      "norm_label": "groundkindof()"
-    },
-    {
-      "label": "OverlayRule",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlayrule",
-      "community": 132,
-      "norm_label": "overlayrule"
-    },
-    {
-      "label": "OVERLAY_RULES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlay_rules",
-      "community": 132,
-      "norm_label": "overlay_rules"
-    },
-    {
-      "label": "BannedTile",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L96",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_bannedtile",
-      "community": 132,
-      "norm_label": "bannedtile"
-    },
-    {
-      "label": "BANNED_OVERLAYS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L104",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_overlays",
-      "community": 132,
-      "norm_label": "banned_overlays"
-    },
-    {
-      "label": "BANNED_GROUND",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L141",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_ground",
-      "community": 132,
-      "norm_label": "banned_ground"
-    },
-    {
-      "label": "Formation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L150",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation",
-      "community": 132,
-      "norm_label": "formation"
-    },
-    {
-      "label": "buildingFormation()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L164",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_buildingformation",
-      "community": 132,
-      "norm_label": "buildingformation()"
-    },
-    {
-      "label": "FORMATIONS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L182",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formations",
-      "community": 132,
-      "norm_label": "formations"
-    },
-    {
-      "label": "FORMATION_PART",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L425",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation_part",
-      "community": 132,
-      "norm_label": "formation_part"
-    },
-    {
-      "label": "Violation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L432",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_violation",
-      "community": 132,
-      "norm_label": "violation"
-    },
-    {
-      "label": "Grid",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L439",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_grid",
-      "community": 132,
-      "norm_label": "grid"
-    },
-    {
-      "label": "inGrid()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L441",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_ingrid",
-      "community": 132,
-      "norm_label": "ingrid()"
-    },
-    {
-      "label": "flagsFor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L446",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_flagsfor",
-      "community": 132,
-      "norm_label": "flagsfor()"
-    },
-    {
-      "label": "expectedPond()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L460",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_expectedpond",
-      "community": 132,
-      "norm_label": "expectedpond()"
-    },
-    {
-      "label": "validateDesign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L478",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_validatedesign",
-      "community": 132,
-      "norm_label": "validatedesign()"
-    },
-    {
-      "label": "formatViolations()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L661",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formatviolations",
-      "community": 133,
-      "norm_label": "formatviolations()"
-    },
-    {
-      "label": "terrain-life.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test",
-      "community": 3,
-      "norm_label": "terrain-life.test.ts"
-    },
-    {
-      "label": "CARDINAL_CASES",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_cardinal_cases",
-      "community": 3,
-      "norm_label": "cardinal_cases"
-    },
-    {
-      "label": "makeState()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_makestate",
-      "community": 3,
-      "norm_label": "makestate()"
-    },
-    {
-      "label": "makeUniformState()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_makeuniformstate",
-      "community": 3,
-      "norm_label": "makeuniformstate()"
-    },
-    {
-      "label": "readEmeraldSheet()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L82",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_reademeraldsheet",
-      "community": 3,
-      "norm_label": "reademeraldsheet()"
-    },
-    {
-      "label": "readTile()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L93",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_readtile",
-      "community": 3,
-      "norm_label": "readtile()"
-    },
-    {
-      "label": "expectExactEmeraldCrop()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L102",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_expectexactemeraldcrop",
-      "community": 3,
-      "norm_label": "expectexactemeraldcrop()"
-    },
-    {
-      "label": "expectComposedHouse()",
-      "file_type": "code",
-      "source_file": "app/tests/terrain-life.test.ts",
-      "source_location": "L120",
-      "_origin": "ast",
-      "id": "app_tests_terrain_life_test_expectcomposedhouse",
-      "community": 3,
-      "norm_label": "expectcomposedhouse()"
     },
     {
       "label": "ASSET_PIPELINE_LOOP.md",
@@ -1497,11 +717,791 @@
       "label": "Loop protocol (every iteration)",
       "file_type": "document",
       "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L56",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "docs_asset_pipeline_loop_loop_protocol_every_iteration",
       "community": 228,
       "norm_label": "loop protocol (every iteration)"
+    },
+    {
+      "label": "terrain-life.ts",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "terrain-life.ts",
+      "id": "app_server_services_map_legacy_mods_terrain_life"
+    },
+    {
+      "label": "tileKey()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "tilekey()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_tilekey"
+    },
+    {
+      "label": "sourceY()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "sourcey()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sourcey"
+    },
+    {
+      "label": "hashUnit()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "hashunit()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_hashunit"
+    },
+    {
+      "label": "lerp()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "lerp()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_lerp"
+    },
+    {
+      "label": "smoothstep()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "smoothstep()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_smoothstep"
+    },
+    {
+      "label": "coarseNoise()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "coarsenoise()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_coarsenoise"
+    },
+    {
+      "label": "getAutotileIndex()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "getautotileindex()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
+    },
+    {
+      "label": "getWaterTileName()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L50",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "getwatertilename()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getwatertilename"
+    },
+    {
+      "label": "terrainOf()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L66",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "terrainof()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_terrainof"
+    },
+    {
+      "label": "isWalkableGround()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L67",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "iswalkableground()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_iswalkableground"
+    },
+    {
+      "label": "isGreen()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "isgreen()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_isgreen"
+    },
+    {
+      "label": "getTile()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L70",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "gettile()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_gettile"
+    },
+    {
+      "label": "getOffsetTile()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L71",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "getoffsettile()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
+    },
+    {
+      "label": "sameTerrainAt()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L72",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "sameterrainat()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sameterrainat"
+    },
+    {
+      "label": "neighbourTerrain()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L77",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "neighbourterrain()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain"
+    },
+    {
+      "label": "blockTiles()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L88",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "blocktiles()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_blocktiles"
+    },
+    {
+      "label": "SPAWN_ROUTE_TERRAINS",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L99",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "spawn_route_terrains",
+      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains"
+    },
+    {
+      "label": "SPAWN_BRIDGE_TERRAINS",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L100",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "spawn_bridge_terrains",
+      "id": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains"
+    },
+    {
+      "label": "setTerrain()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L102",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "setterrain()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_setterrain"
+    },
+    {
+      "label": "findSpawnPath()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L118",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "findspawnpath()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_findspawnpath"
+    },
+    {
+      "label": "carveSpawnPath()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L147",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "carvespawnpath()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath"
+    },
+    {
+      "label": "sharedPortal()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L154",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "sharedportal()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_sharedportal"
+    },
+    {
+      "label": "waterBridgeSide()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L155",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "waterbridgeside()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside"
+    },
+    {
+      "label": "WATER_BRIDGE_NEIGHBOURS",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L156",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "water_bridge_neighbours",
+      "id": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours"
+    },
+    {
+      "label": "ensureSpawnRoute()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L163",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "ensurespawnroute()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute"
+    },
+    {
+      "label": "waterAt()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L219",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "waterat()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_waterat"
+    },
+    {
+      "label": "smoothWater()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L225",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "smoothwater()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_smoothwater"
+    },
+    {
+      "label": "resetBaseSprites()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L263",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "resetbasesprites()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites"
+    },
+    {
+      "label": "stitchSurfaces()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L282",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchsurfaces()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces"
+    },
+    {
+      "label": "buildingComponents()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L296",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "buildingcomponents()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents"
+    },
+    {
+      "label": "footprintAt()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L327",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "footprintat()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_footprintat"
+    },
+    {
+      "label": "BUILDING_TIERS",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L347",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "building_tiers",
+      "id": "app_server_services_map_legacy_mods_terrain_life_building_tiers"
+    },
+    {
+      "label": "chooseBuildingVariant()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L382",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "choosebuildingvariant()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant"
+    },
+    {
+      "label": "findStructureAnchor()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L394",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "findstructureanchor()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor"
+    },
+    {
+      "label": "applyRockyApron()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L423",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "applyrockyapron()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron"
+    },
+    {
+      "label": "stitchHouses()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L442",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchhouses()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchhouses"
+    },
+    {
+      "label": "stitchMountains()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L473",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchmountains()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchmountains"
+    },
+    {
+      "label": "isCentralLanding()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L506",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "iscentrallanding()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
+    },
+    {
+      "label": "buildReservedGround()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L508",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "buildreservedground()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_buildreservedground"
+    },
+    {
+      "label": "stitchCave()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L526",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchcave()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchcave"
+    },
+    {
+      "label": "addLine()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L561",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addline()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addline"
+    },
+    {
+      "label": "stitchSecretGrove()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L575",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchsecretgrove()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove"
+    },
+    {
+      "label": "stitchLedges()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L667",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchledges()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchledges"
+    },
+    {
+      "label": "addSigns()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L698",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addsigns()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addsigns"
+    },
+    {
+      "label": "stitchWorldStructure()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L728",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "stitchworldstructure()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure"
+    },
+    {
+      "label": "addForestClusters()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L803",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addforestclusters()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addforestclusters"
+    },
+    {
+      "label": "flowerBedAt()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L830",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "flowerbedat()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_flowerbedat"
+    },
+    {
+      "label": "inMeadow()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L845",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "inmeadow()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_inmeadow"
+    },
+    {
+      "label": "addLife()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L848",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addlife()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_addlife"
+    },
+    {
+      "label": "terrainLife()",
+      "file_type": "code",
+      "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
+      "source_location": "L906",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "terrainlife()",
+      "id": "app_server_services_map_legacy_mods_terrain_life_terrainlife"
+    },
+    {
+      "label": "legality.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "legality.ts",
+      "id": "app_src_lib_design_legality"
+    },
+    {
+      "label": "GroundKind",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "groundkind",
+      "id": "app_src_lib_design_legality_groundkind"
+    },
+    {
+      "label": "groundKindOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "groundkindof()",
+      "id": "app_src_lib_design_legality_groundkindof"
+    },
+    {
+      "label": "OverlayRule",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlayrule",
+      "id": "app_src_lib_design_legality_overlayrule"
+    },
+    {
+      "label": "OVERLAY_RULES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlay_rules",
+      "id": "app_src_lib_design_legality_overlay_rules"
+    },
+    {
+      "label": "BannedTile",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L96",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "bannedtile",
+      "id": "app_src_lib_design_legality_bannedtile"
+    },
+    {
+      "label": "BANNED_OVERLAYS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L104",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_overlays",
+      "id": "app_src_lib_design_legality_banned_overlays"
+    },
+    {
+      "label": "BANNED_GROUND",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L141",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_ground",
+      "id": "app_src_lib_design_legality_banned_ground"
+    },
+    {
+      "label": "Formation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L150",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation",
+      "id": "app_src_lib_design_legality_formation"
+    },
+    {
+      "label": "buildingFormation()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L164",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "buildingformation()",
+      "id": "app_src_lib_design_legality_buildingformation"
+    },
+    {
+      "label": "FORMATIONS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L182",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formations",
+      "id": "app_src_lib_design_legality_formations"
+    },
+    {
+      "label": "FORMATION_PART",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L425",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation_part",
+      "id": "app_src_lib_design_legality_formation_part"
+    },
+    {
+      "label": "Violation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L432",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "violation",
+      "id": "app_src_lib_design_legality_violation"
+    },
+    {
+      "label": "Grid",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L439",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "grid",
+      "id": "app_src_lib_design_legality_grid"
+    },
+    {
+      "label": "inGrid()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L441",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "ingrid()",
+      "id": "app_src_lib_design_legality_ingrid"
+    },
+    {
+      "label": "flagsFor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L446",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "flagsfor()",
+      "id": "app_src_lib_design_legality_flagsfor"
+    },
+    {
+      "label": "expectedPond()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L460",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "expectedpond()",
+      "id": "app_src_lib_design_legality_expectedpond"
+    },
+    {
+      "label": "validateDesign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L478",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "validatedesign()",
+      "id": "app_src_lib_design_legality_validatedesign"
+    },
+    {
+      "label": "formatViolations()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L661",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "formatviolations()",
+      "id": "app_src_lib_design_legality_formatviolations"
+    },
+    {
+      "label": "terrain-life.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "terrain-life.test.ts",
+      "id": "app_tests_terrain_life_test"
+    },
+    {
+      "label": "CARDINAL_CASES",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "cardinal_cases",
+      "id": "app_tests_terrain_life_test_cardinal_cases"
+    },
+    {
+      "label": "makeState()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "makestate()",
+      "id": "app_tests_terrain_life_test_makestate"
+    },
+    {
+      "label": "makeUniformState()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "makeuniformstate()",
+      "id": "app_tests_terrain_life_test_makeuniformstate"
+    },
+    {
+      "label": "readEmeraldSheet()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "reademeraldsheet()",
+      "id": "app_tests_terrain_life_test_reademeraldsheet"
+    },
+    {
+      "label": "readTile()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L93",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "readtile()",
+      "id": "app_tests_terrain_life_test_readtile"
+    },
+    {
+      "label": "expectExactEmeraldCrop()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L102",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "expectexactemeraldcrop()",
+      "id": "app_tests_terrain_life_test_expectexactemeraldcrop"
+    },
+    {
+      "label": "expectComposedHouse()",
+      "file_type": "code",
+      "source_file": "app/tests/terrain-life.test.ts",
+      "source_location": "L120",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "expectcomposedhouse()",
+      "id": "app_tests_terrain_life_test_expectcomposedhouse"
     },
     {
       "label": "extract-terrain-tiles.mjs",
@@ -20359,7 +20359,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L701",
+      "source_location": "L702",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_animations",
@@ -20389,7 +20389,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L518",
+      "source_location": "L519",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_cell_categories",
@@ -20399,7 +20399,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L509",
+      "source_location": "L510",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_cellhash",
@@ -20409,7 +20409,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L626",
+      "source_location": "L627",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_character_bands",
@@ -20419,7 +20419,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L640",
+      "source_location": "L641",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_character_exclusions",
@@ -20429,7 +20429,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L430",
+      "source_location": "L431",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_character_src",
@@ -20439,7 +20439,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L642",
+      "source_location": "L643",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_characteranimations",
@@ -20449,7 +20449,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L468",
+      "source_location": "L469",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_classifycell",
@@ -20479,7 +20479,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L580",
+      "source_location": "L581",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_detectislands",
@@ -20499,7 +20499,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L565",
+      "source_location": "L566",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_exslice",
@@ -20509,7 +20509,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L429",
+      "source_location": "L430",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_exterior_src",
@@ -20539,7 +20539,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L569",
+      "source_location": "L570",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_inslice",
@@ -20549,7 +20549,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L406",
+      "source_location": "L407",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_interiorscandir",
@@ -20559,7 +20559,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L745",
+      "source_location": "L746",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_manifest",
@@ -20569,7 +20569,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L754",
+      "source_location": "L755",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_outfile",
@@ -20639,7 +20639,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L440",
+      "source_location": "L441",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_sheets",
@@ -20659,7 +20659,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L435",
+      "source_location": "L436",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_sheetsize",
@@ -20679,7 +20679,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L756",
+      "source_location": "L757",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_sizekb",
@@ -20699,7 +20699,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L520",
+      "source_location": "L521",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest",
       "target": "app_scripts_design_build_asset_manifest_slicesheet",
@@ -20835,7 +20835,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L643",
+      "source_location": "L644",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_characteranimations",
       "target": "app_scripts_design_build_asset_manifest_readpng",
@@ -20846,7 +20846,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L436",
+      "source_location": "L437",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_sheetsize",
       "target": "app_scripts_design_build_asset_manifest_readpng",
@@ -20857,7 +20857,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L521",
+      "source_location": "L522",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_slicesheet",
       "target": "app_scripts_design_build_asset_manifest_readpng",
@@ -20868,7 +20868,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L538",
+      "source_location": "L539",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_slicesheet",
       "target": "app_scripts_design_build_asset_manifest_classifycell",
@@ -20879,7 +20879,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L547",
+      "source_location": "L548",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_slicesheet",
       "target": "app_scripts_design_build_asset_manifest_cellhash",
@@ -20890,7 +20890,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L644",
+      "source_location": "L645",
       "weight": 1.0,
       "source": "app_scripts_design_build_asset_manifest_characteranimations",
       "target": "app_scripts_design_build_asset_manifest_detectislands",
@@ -20980,7 +20980,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L395",
+      "source_location": "L397",
       "weight": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
       "target": "app_scripts_design_fetch_emerald_towns_listpretdir",
@@ -21000,7 +21000,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L410",
+      "source_location": "L412",
       "weight": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
       "target": "app_scripts_design_fetch_emerald_towns_npcs",
@@ -21050,7 +21050,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L424",
+      "source_location": "L426",
       "weight": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
       "target": "app_scripts_design_fetch_emerald_towns_readpngpalette",
@@ -21236,6 +21236,36 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_asset_pipeline_loop",
+      "target": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
+      "target": "docs_asset_pipeline_loop_checklist_tick_commit_as_each_lands_loop_stops_when_all_ticked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
+      "target": "docs_asset_pipeline_loop_loop_protocol_every_iteration",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21252,9 +21282,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L803",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addforestclusters"
     },
     {
       "relation": "contains",
@@ -21262,9 +21292,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L848",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addlife"
     },
     {
       "relation": "contains",
@@ -21272,9 +21302,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L561",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addline",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addline"
     },
     {
       "relation": "contains",
@@ -21282,9 +21312,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L698",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addsigns"
     },
     {
       "relation": "contains",
@@ -21292,9 +21322,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L423",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron"
     },
     {
       "relation": "contains",
@@ -21302,9 +21332,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_blocktiles",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_blocktiles"
     },
     {
       "relation": "contains",
@@ -21312,9 +21342,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L347",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_building_tiers",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_building_tiers"
     },
     {
       "relation": "contains",
@@ -21322,9 +21352,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L296",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents"
     },
     {
       "relation": "contains",
@@ -21332,9 +21362,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L508",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_buildreservedground"
     },
     {
       "relation": "contains",
@@ -21342,9 +21372,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath"
     },
     {
       "relation": "contains",
@@ -21352,9 +21382,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant"
     },
     {
       "relation": "contains",
@@ -21362,9 +21392,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise"
     },
     {
       "relation": "contains",
@@ -21372,9 +21402,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute"
     },
     {
       "relation": "contains",
@@ -21382,9 +21412,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_findspawnpath"
     },
     {
       "relation": "contains",
@@ -21392,9 +21422,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L394",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor"
     },
     {
       "relation": "contains",
@@ -21402,9 +21432,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L830",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_flowerbedat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_flowerbedat"
     },
     {
       "relation": "contains",
@@ -21412,9 +21442,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L327",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "contains",
@@ -21422,9 +21452,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
     },
     {
       "relation": "contains",
@@ -21432,9 +21462,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "relation": "contains",
@@ -21442,9 +21472,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_gettile"
     },
     {
       "relation": "contains",
@@ -21452,9 +21482,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename"
     },
     {
       "relation": "contains",
@@ -21462,9 +21492,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "contains",
@@ -21472,9 +21502,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L845",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_inmeadow",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_inmeadow"
     },
     {
       "relation": "contains",
@@ -21482,9 +21512,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L506",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "relation": "contains",
@@ -21492,9 +21522,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "relation": "contains",
@@ -21502,9 +21532,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iswalkableground",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_iswalkableground"
     },
     {
       "relation": "contains",
@@ -21512,9 +21542,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_lerp",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_lerp"
     },
     {
       "relation": "contains",
@@ -21522,9 +21552,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain"
     },
     {
       "relation": "contains",
@@ -21532,9 +21562,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L263",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites"
     },
     {
       "relation": "contains",
@@ -21542,9 +21572,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat"
     },
     {
       "relation": "contains",
@@ -21552,9 +21582,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain"
     },
     {
       "relation": "contains",
@@ -21562,9 +21592,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sharedportal",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sharedportal"
     },
     {
       "relation": "contains",
@@ -21572,9 +21602,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_smoothstep",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_smoothstep"
     },
     {
       "relation": "contains",
@@ -21582,9 +21612,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_smoothwater"
     },
     {
       "relation": "contains",
@@ -21592,9 +21622,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "contains",
@@ -21602,9 +21632,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_spawn_bridge_terrains"
     },
     {
       "relation": "contains",
@@ -21612,9 +21642,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_spawn_route_terrains"
     },
     {
       "relation": "contains",
@@ -21622,9 +21652,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L526",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchcave"
     },
     {
       "relation": "contains",
@@ -21632,9 +21662,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L442",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchhouses"
     },
     {
       "relation": "contains",
@@ -21642,9 +21672,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L667",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchledges"
     },
     {
       "relation": "contains",
@@ -21652,9 +21682,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L473",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchmountains"
     },
     {
       "relation": "contains",
@@ -21662,9 +21692,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove"
     },
     {
       "relation": "contains",
@@ -21672,9 +21702,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L282",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces"
     },
     {
       "relation": "contains",
@@ -21682,9 +21712,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L728",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure"
     },
     {
       "relation": "indirect_call",
@@ -21693,9 +21723,9 @@
       "source_location": "L952",
       "weight": 1.0,
       "context": "collection",
+      "confidence_score": 0.5,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "confidence_score": 0.5
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainlife"
     },
     {
       "relation": "contains",
@@ -21703,9 +21733,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "contains",
@@ -21713,9 +21743,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "contains",
@@ -21723,9 +21753,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_water_bridge_neighbours"
     },
     {
       "relation": "contains",
@@ -21733,9 +21763,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_waterat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_waterat"
     },
     {
       "relation": "contains",
@@ -21743,9 +21773,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life",
-      "target": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside"
     },
     {
       "relation": "imports_from",
@@ -21765,9 +21795,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_server_services_map_legacy_mods_terrain_life",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life"
     },
     {
       "relation": "calls",
@@ -21776,9 +21806,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L805",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21787,9 +21817,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L850",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21798,9 +21828,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L564",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addline",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21809,9 +21839,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L703",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21820,9 +21850,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21831,9 +21861,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L315",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21842,9 +21872,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L518",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21853,9 +21883,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21864,9 +21894,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21875,9 +21905,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L331",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21886,9 +21916,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21897,9 +21927,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L633",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21908,9 +21938,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L749",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_tilekey"
     },
     {
       "relation": "calls",
@@ -21919,9 +21949,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L805",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -21930,9 +21960,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L850",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -21941,9 +21971,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L703",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -21952,9 +21982,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L314",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -21963,9 +21993,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L515",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "indirect_call",
@@ -21974,9 +22004,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L385",
       "weight": 1.0,
+      "confidence_score": 0.5,
       "source": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 0.5
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "indirect_call",
@@ -21985,9 +22015,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 0.5,
       "source": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 0.5
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -21996,9 +22026,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L506",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -22007,9 +22037,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L643",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -22018,9 +22048,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L749",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sourcey"
     },
     {
       "relation": "calls",
@@ -22029,9 +22059,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L853",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22040,9 +22070,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L709",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22051,9 +22081,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L386",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22062,9 +22092,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22073,9 +22103,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L833",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_flowerbedat",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22084,9 +22114,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22095,9 +22125,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_sharedportal",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22106,9 +22136,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L541",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22117,9 +22147,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L677",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22128,9 +22158,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L485",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22139,9 +22169,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L589",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22150,9 +22180,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L741",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22161,9 +22191,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L936",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22172,9 +22202,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_waterbridgeside",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "imports",
@@ -22183,9 +22213,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_hashunit"
     },
     {
       "relation": "calls",
@@ -22194,9 +22224,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "target": "app_server_services_map_legacy_mods_terrain_life_lerp",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_lerp"
     },
     {
       "relation": "calls",
@@ -22205,9 +22235,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "target": "app_server_services_map_legacy_mods_terrain_life_smoothstep",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_smoothstep"
     },
     {
       "relation": "calls",
@@ -22216,9 +22246,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L818",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise"
     },
     {
       "relation": "calls",
@@ -22227,9 +22257,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L846",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_inmeadow",
-      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_coarsenoise"
     },
     {
       "relation": "calls",
@@ -22238,9 +22268,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
     },
     {
       "relation": "calls",
@@ -22249,9 +22279,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
     },
     {
       "relation": "imports",
@@ -22260,9 +22290,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getautotileindex"
     },
     {
       "relation": "calls",
@@ -22271,9 +22301,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename"
     },
     {
       "relation": "imports",
@@ -22282,9 +22312,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getwatertilename"
     },
     {
       "relation": "calls",
@@ -22293,9 +22323,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L806",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22304,9 +22334,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L852",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22315,9 +22345,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L704",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22326,9 +22356,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L432",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22337,9 +22367,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L512",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22348,9 +22378,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22359,9 +22389,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22370,9 +22400,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22381,9 +22411,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22392,9 +22422,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22403,9 +22433,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L229",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22414,9 +22444,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L484",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22425,9 +22455,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_terrainof"
     },
     {
       "relation": "calls",
@@ -22436,9 +22466,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L807",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "relation": "calls",
@@ -22447,9 +22477,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L864",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "relation": "calls",
@@ -22458,9 +22488,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L704",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "relation": "calls",
@@ -22469,9 +22499,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L513",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_isgreen"
     },
     {
       "relation": "calls",
@@ -22480,9 +22510,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_blocktiles",
-      "target": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_gettile"
     },
     {
       "relation": "calls",
@@ -22491,9 +22521,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "target": "app_server_services_map_legacy_mods_terrain_life_gettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_gettile"
     },
     {
       "relation": "calls",
@@ -22502,9 +22532,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L809",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "relation": "calls",
@@ -22513,9 +22543,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L866",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "relation": "calls",
@@ -22524,9 +22554,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "relation": "calls",
@@ -22535,9 +22565,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L252",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_getoffsettile"
     },
     {
       "relation": "calls",
@@ -22546,9 +22576,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat"
     },
     {
       "relation": "calls",
@@ -22557,9 +22587,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_waterat",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sameterrainat"
     },
     {
       "relation": "calls",
@@ -22568,9 +22598,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain"
     },
     {
       "relation": "calls",
@@ -22579,9 +22609,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L286",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_neighbourterrain"
     },
     {
       "relation": "calls",
@@ -22590,9 +22620,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L907",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_blocktiles",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_blocktiles"
     },
     {
       "relation": "calls",
@@ -22601,9 +22631,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain"
     },
     {
       "relation": "calls",
@@ -22612,9 +22642,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain"
     },
     {
       "relation": "calls",
@@ -22623,9 +22653,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_setterrain"
     },
     {
       "relation": "calls",
@@ -22634,9 +22664,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_findspawnpath",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_findspawnpath"
     },
     {
       "relation": "calls",
@@ -22645,9 +22675,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_carvespawnpath"
     },
     {
       "relation": "calls",
@@ -22656,9 +22686,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L197",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_sharedportal",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_sharedportal"
     },
     {
       "relation": "indirect_call",
@@ -22667,9 +22697,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 0.5,
       "source": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "confidence_score": 0.5
+      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "relation": "calls",
@@ -22678,9 +22708,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L910",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_ensurespawnroute"
     },
     {
       "relation": "calls",
@@ -22689,9 +22719,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L911",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_smoothwater"
     },
     {
       "relation": "calls",
@@ -22700,9 +22730,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L912",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_resetbasesprites"
     },
     {
       "relation": "calls",
@@ -22711,9 +22741,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L913",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsurfaces"
     },
     {
       "relation": "calls",
@@ -22722,9 +22752,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L443",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "target": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_buildingcomponents"
     },
     {
       "relation": "calls",
@@ -22733,9 +22763,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L410",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22744,9 +22774,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L533",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22755,9 +22785,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L673",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22766,9 +22796,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L480",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22777,9 +22807,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L581",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22788,9 +22818,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L734",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_footprintat"
     },
     {
       "relation": "calls",
@@ -22799,9 +22829,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L452",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "target": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_choosebuildingvariant"
     },
     {
       "relation": "calls",
@@ -22810,9 +22840,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L453",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "target": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_findstructureanchor"
     },
     {
       "relation": "calls",
@@ -22821,9 +22851,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L557",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron"
     },
     {
       "relation": "calls",
@@ -22832,9 +22862,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L501",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_applyrockyapron"
     },
     {
       "relation": "calls",
@@ -22843,9 +22873,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L929",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchhouses",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchhouses"
     },
     {
       "relation": "calls",
@@ -22854,9 +22884,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L931",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchmountains",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchmountains"
     },
     {
       "relation": "calls",
@@ -22865,9 +22895,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L871",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "relation": "calls",
@@ -22876,9 +22906,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L704",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "relation": "calls",
@@ -22887,9 +22917,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L522",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_iscentrallanding"
     },
     {
       "relation": "calls",
@@ -22898,9 +22928,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L932",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_buildreservedground",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_buildreservedground"
     },
     {
       "relation": "calls",
@@ -22909,9 +22939,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L930",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchcave",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchcave"
     },
     {
       "relation": "calls",
@@ -22920,9 +22950,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L626",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addline",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addline"
     },
     {
       "relation": "calls",
@@ -22931,9 +22961,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L934",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchsecretgrove"
     },
     {
       "relation": "calls",
@@ -22942,9 +22972,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L939",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchledges",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchledges"
     },
     {
       "relation": "calls",
@@ -22953,9 +22983,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L940",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addsigns",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addsigns"
     },
     {
       "relation": "calls",
@@ -22964,9 +22994,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L935",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_stitchworldstructure"
     },
     {
       "relation": "calls",
@@ -22975,9 +23005,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L941",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addforestclusters",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addforestclusters"
     },
     {
       "relation": "calls",
@@ -22986,9 +23016,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L858",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_flowerbedat",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_flowerbedat"
     },
     {
       "relation": "calls",
@@ -22997,9 +23027,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L892",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_inmeadow",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_inmeadow"
     },
     {
       "relation": "calls",
@@ -23008,9 +23038,9 @@
       "source_file": "app/server/services/map/legacy/mods/terrain-life.ts",
       "source_location": "L942",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_server_services_map_legacy_mods_terrain_life_terrainlife",
-      "target": "app_server_services_map_legacy_mods_terrain_life_addlife",
-      "confidence_score": 1.0
+      "target": "app_server_services_map_legacy_mods_terrain_life_addlife"
     },
     {
       "relation": "imports_from",
@@ -23051,9 +23081,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_ground"
     },
     {
       "relation": "contains",
@@ -23061,9 +23091,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_overlays",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_overlays"
     },
     {
       "relation": "contains",
@@ -23071,9 +23101,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_bannedtile",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_bannedtile"
     },
     {
       "relation": "contains",
@@ -23081,9 +23111,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_buildingformation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_buildingformation"
     },
     {
       "relation": "contains",
@@ -23101,9 +23131,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L460",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "contains",
@@ -23111,9 +23141,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L446",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "contains",
@@ -23121,9 +23151,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation"
     },
     {
       "relation": "contains",
@@ -23131,9 +23161,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L425",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation_part",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation_part"
     },
     {
       "relation": "contains",
@@ -23141,9 +23171,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formations"
     },
     {
       "relation": "contains",
@@ -23151,9 +23181,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L661",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formatviolations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formatviolations"
     },
     {
       "relation": "contains",
@@ -23161,9 +23191,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L439",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_grid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_grid"
     },
     {
       "relation": "contains",
@@ -23171,9 +23201,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkind",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkind"
     },
     {
       "relation": "contains",
@@ -23181,9 +23211,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "contains",
@@ -23191,9 +23221,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L441",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "contains",
@@ -23201,9 +23231,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlay_rules",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlay_rules"
     },
     {
       "relation": "contains",
@@ -23211,9 +23241,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlayrule",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlayrule"
     },
     {
       "relation": "contains",
@@ -23221,9 +23251,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L478",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_validatedesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_validatedesign"
     },
     {
       "relation": "contains",
@@ -23231,9 +23261,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L432",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_violation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_violation"
     },
     {
       "relation": "imports_from",
@@ -23264,9 +23294,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L498",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "imports",
@@ -23341,9 +23371,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "calls",
@@ -23352,9 +23382,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L510",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "calls",
@@ -23363,9 +23393,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L550",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "imports",
@@ -23450,9 +23480,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_cardinal_cases",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_cardinal_cases"
     },
     {
       "relation": "contains",
@@ -23460,9 +23490,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_expectcomposedhouse",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_expectcomposedhouse"
     },
     {
       "relation": "contains",
@@ -23470,9 +23500,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_expectexactemeraldcrop",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_expectexactemeraldcrop"
     },
     {
       "relation": "contains",
@@ -23480,9 +23510,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_makestate",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_makestate"
     },
     {
       "relation": "contains",
@@ -23490,9 +23520,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_makeuniformstate",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_makeuniformstate"
     },
     {
       "relation": "contains",
@@ -23500,9 +23530,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_reademeraldsheet",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_reademeraldsheet"
     },
     {
       "relation": "contains",
@@ -23510,9 +23540,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "app_tests_terrain_life_test_readtile",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_readtile"
     },
     {
       "relation": "imports_from",
@@ -23521,9 +23551,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "node_fs",
-      "confidence_score": 1.0
+      "target": "node_fs"
     },
     {
       "relation": "imports_from",
@@ -23532,9 +23562,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "pngjs",
-      "confidence_score": 1.0
+      "target": "pngjs"
     },
     {
       "relation": "imports_from",
@@ -23543,9 +23573,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test",
-      "target": "vitest",
-      "confidence_score": 1.0
+      "target": "vitest"
     },
     {
       "relation": "calls",
@@ -23554,9 +23584,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test_expectexactemeraldcrop",
-      "target": "app_tests_terrain_life_test_reademeraldsheet",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_reademeraldsheet"
     },
     {
       "relation": "calls",
@@ -23565,39 +23595,9 @@
       "source_file": "app/tests/terrain-life.test.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_tests_terrain_life_test_expectexactemeraldcrop",
-      "target": "app_tests_terrain_life_test_readtile",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_asset_pipeline_loop",
-      "target": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
-      "target": "docs_asset_pipeline_loop_checklist_tick_commit_as_each_lands_loop_stops_when_all_ticked",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/ASSET_PIPELINE_LOOP.md",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "docs_asset_pipeline_loop_asset_pipeline_completion_loop_durable_state",
-      "target": "docs_asset_pipeline_loop_loop_protocol_every_iteration",
-      "confidence_score": 1.0
+      "target": "app_tests_terrain_life_test_readtile"
     },
     {
       "relation": "contains",
@@ -54579,5 +54579,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "98aa590378743b48a2ff72a7f93e47fb8441a298"
+  "built_at_commit": "0bf9572dcc517b64b2c8ab87345d9d9d68c2bdfe"
 }
