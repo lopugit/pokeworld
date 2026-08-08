@@ -1,16 +1,15 @@
-# Graph Report - design-map-themes-review-cb860f-33fe92  (2026-08-08)
+# Graph Report - .  (2026-08-08)
 
 ## Corpus Check
-- 189 files · ~323,409 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 1799 nodes · 3194 edges · 241 communities (103 shown, 138 thin omitted)
+- 1799 nodes · 3194 edges · 240 communities (102 shown, 138 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 46 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca25cb28`
+- Built from commit: `8f55d984`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -279,7 +278,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (241 total, 138 thin omitted)
+## Communities (240 total, 138 thin omitted)
 
 ### Community 0 - "generate.ts"
 Cohesion: 0.09
@@ -687,7 +686,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
-- **Why does `Game` connect `Game` to `postcss`, `AuthProvider.tsx`, `Game.tsx`, `.action`, `HomePage.tsx`, `App.tsx`, `design-legality.test.ts`?**
+- **Why does `Game` connect `Game` to `AuthProvider.tsx`, `Game.tsx`, `.action`, `HomePage.tsx`, `App.tsx`, `design-legality.test.ts`?**
   _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `autoprefixer`, `package.json`, `jiti`, `vite`, `sass`, `.initialize`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
@@ -698,4 +697,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `generate.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.08602150537634409 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
-  _Cohesion score 0.13157894736842105 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
