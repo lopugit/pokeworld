@@ -16813,5 +16813,10 @@
     "mtime": 1786198817.34792,
     "ast_hash": "60009a7c34c59f611ce00c1ab252de01",
     "semantic_hash": ""
+  },
+  "docs/ASSET_PIPELINE_LOOP.md": {
+    "mtime": 1786199451.8819916,
+    "ast_hash": "c05ecdb0023fa5c957de65495955b59b",
+    "semantic_hash": ""
   }
 }

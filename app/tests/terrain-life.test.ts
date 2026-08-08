@@ -305,6 +305,8 @@ describe("terrain sprite stitching", () => {
       "struct-house-wood": 16,
       "struct-house-berry": 16,
       "struct-shop-mauville": 12,
+      "struct-house-verdanturf": 16,
+      "struct-house-lavaridge": 16,
     };
     const mediumStructures = structuresOf(medium.block);
     expect(mediumStructures).toHaveLength(1);

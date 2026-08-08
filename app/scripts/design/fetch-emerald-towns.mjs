@@ -281,14 +281,38 @@ const BUILDINGS = [
   ["struct-spacecenter", "mossdeep-city", 60, 8, 9, 8],
   ["struct-house-wood", "oldale-town", 4, 4, 4, 4],
   ["struct-hut-pacifidlog", "pacifidlog-town", 0, 9, 5, 7],
+  ["struct-battle-tent", "verdanturf-town", 1, 3, 5, 5],
+  ["struct-house-verdanturf", "verdanturf-town", 8, 11, 4, 4],
+  ["struct-gym-lavaridge", "lavaridge-town", 2, 11, 6, 5],
+  ["struct-house-lavaridge", "lavaridge-town", 11, 12, 4, 4],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
 ];
 
+// Some buildings stand against scenery (the Battle Tent's dome tip overlaps
+// Verdanturf's cliff). For those, every colour found in a pure-scenery
+// reference cell of the same render is keyed to transparent within the listed
+// crop rows only — building palettes never overlap the scenery palettes.
+const SCENERY_KEYS = {
+  "struct-battle-tent": { referenceCells: [[3, 1], [2, 2], [6, 2], [1, 1]], rows: [0] },
+};
+
 const tilesDir = resolve(appDir, "public/tiles");
 for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
   const source = PNG.sync.read(readFileSync(resolve(townsDir, `${town}.png`)));
+  const sceneryKey = SCENERY_KEYS[id];
+  const sceneryColours = new Set();
+  if (sceneryKey) {
+    for (const [refX, refY] of sceneryKey.referenceCells) {
+      for (let y = 0; y < 16; y += 1) {
+        for (let x = 0; x < 16; x += 1) {
+          const at = ((refY * 16 + y) * source.width + refX * 16 + x) * 4;
+          sceneryColours.add(`${source.data[at]},${source.data[at + 1]},${source.data[at + 2]}`);
+        }
+      }
+    }
+  }
   let index = 1;
   for (let row = 0; row < cellsTall; row += 1) {
     for (let column = 0; column < cellsWide; column += 1) {
@@ -296,6 +320,12 @@ for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
       for (let y = 0; y < 16; y += 1) {
         const from = (((cellY + row) * 16 + y) * source.width + (cellX + column) * 16) * 4;
         source.data.copy(tile.data, y * 16 * 4, from, from + 16 * 4);
+      }
+      if (sceneryKey?.rows.includes(row)) {
+        for (let offset = 0; offset < tile.data.length; offset += 4) {
+          const key = `${tile.data[offset]},${tile.data[offset + 1]},${tile.data[offset + 2]}`;
+          if (sceneryColours.has(key)) tile.data[offset + 3] = 0;
+        }
       }
       writeFileSync(resolve(tilesDir, `${id}-${index}.png`), PNG.sync.write(tile));
       index += 1;
