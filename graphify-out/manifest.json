@@ -20,8 +20,8 @@
     "semantic_hash": "dc07dc2f61cc5b8617047d736f46e9aa"
   },
   "app/scripts/map/extract-terrain-tiles.mjs": {
-    "mtime": 1786153908.2158215,
-    "ast_hash": "0bedf6715c141de97dba77c282cd1975",
+    "mtime": 1786177585.7939444,
+    "ast_hash": "6e8f8e260a6416600443a9ef6e7b1b0e",
     "semantic_hash": ""
   },
   "app/scripts/map/generate-map.mjs": {
@@ -205,8 +205,8 @@
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1786154018.7594235,
-    "ast_hash": "ea2d61abe5798807f5268479fd5f1e67",
+    "mtime": 1786177604.092312,
+    "ast_hash": "37f885416e7115146d93ef6b9f4ee733",
     "semantic_hash": ""
   },
   "app/server/services/map/legacy/png.ts": {
@@ -485,8 +485,8 @@
     "semantic_hash": "7bffb8df9d070eb63efb24d7ed5b09d4"
   },
   "app/tests/terrain-life.test.ts": {
-    "mtime": 1786154192.1627185,
-    "ast_hash": "ffe85994b65f2d7451d009b2da0b01e4",
+    "mtime": 1786177687.0617473,
+    "ast_hash": "c6199d26beebecfe8bd80cb18e156cd2",
     "semantic_hash": ""
   },
   "app/tests/thingtime-auth.test.ts": {
@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1786154053.3088877,
-    "ast_hash": "ccb31c2f6cda946335d9b32d8e18d827",
+    "mtime": 1786177637.875986,
+    "ast_hash": "c8f5cf1428cd49a47a56582aca469ac7",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -850,62 +850,62 @@
     "semantic_hash": "baf13e693208611ba6ec919fe68593e2"
   },
   "app/public/tiles/house-red-1.png": {
-    "mtime": 1786153918.0631166,
+    "mtime": 1786177494.9720876,
     "ast_hash": "60652eb7841e040e2eea84ce71043a93",
     "semantic_hash": "60652eb7841e040e2eea84ce71043a93"
   },
   "app/public/tiles/house-red-10.png": {
-    "mtime": 1786153918.0658243,
+    "mtime": 1786177494.9744368,
     "ast_hash": "013e93f63aae2f6fb181292276893bcd",
     "semantic_hash": "013e93f63aae2f6fb181292276893bcd"
   },
   "app/public/tiles/house-red-11.png": {
-    "mtime": 1786153918.0659862,
+    "mtime": 1786177494.9745734,
     "ast_hash": "93c65739e0538062fd4773cd50d176c3",
     "semantic_hash": "93c65739e0538062fd4773cd50d176c3"
   },
   "app/public/tiles/house-red-12.png": {
-    "mtime": 1786153918.0661314,
+    "mtime": 1786177494.9747024,
     "ast_hash": "2724661671b1217ee043d110a346a752",
     "semantic_hash": "2724661671b1217ee043d110a346a752"
   },
   "app/public/tiles/house-red-2.png": {
-    "mtime": 1786153918.0635226,
+    "mtime": 1786177494.9725225,
     "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82"
   },
   "app/public/tiles/house-red-3.png": {
-    "mtime": 1786153918.0637977,
+    "mtime": 1786177494.9728177,
     "ast_hash": "be132a3726084c042912c6131f3ee746",
     "semantic_hash": "be132a3726084c042912c6131f3ee746"
   },
   "app/public/tiles/house-red-4.png": {
-    "mtime": 1786153918.064175,
+    "mtime": 1786177494.9731612,
     "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
     "semantic_hash": "a30ff242cb5446a89cc89f48d9882213"
   },
   "app/public/tiles/house-red-5.png": {
-    "mtime": 1786153918.064773,
+    "mtime": 1786177494.9734242,
     "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": "172946d04f5e2b7662d7fc65cb8734d5"
   },
   "app/public/tiles/house-red-6.png": {
-    "mtime": 1786153918.065033,
+    "mtime": 1786177494.9735994,
     "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
     "semantic_hash": "b6f8e247e3b771cb17255d1f6eef88e3"
   },
   "app/public/tiles/house-red-7.png": {
-    "mtime": 1786153918.0652306,
+    "mtime": 1786177494.9737597,
     "ast_hash": "4d33c8270a08203ca540f187f9b83550",
     "semantic_hash": "4d33c8270a08203ca540f187f9b83550"
   },
   "app/public/tiles/house-red-8.png": {
-    "mtime": 1786153918.0653994,
+    "mtime": 1786177494.9739254,
     "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": "36f822650895c57171532481ee224ab7"
   },
   "app/public/tiles/house-red-9.png": {
-    "mtime": 1786153918.0655901,
+    "mtime": 1786177494.9740875,
     "ast_hash": "f3414598cd710fb1435750bee155c185",
     "semantic_hash": "f3414598cd710fb1435750bee155c185"
   },
@@ -930,48 +930,48 @@
     "semantic_hash": "67843c995750d7e9b292f1c36c2ffc8a"
   },
   "app/public/tiles/mountain-1.png": {
-    "mtime": 1786154860.6013432,
-    "ast_hash": "0c37fc257fee6e681fdb5a1232b7d458",
+    "mtime": 1786177494.986815,
+    "ast_hash": "1c4c5715bd58100803261eb23af366fa",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-2.png": {
-    "mtime": 1786154860.601681,
-    "ast_hash": "584a0455d95767ff22ad95c1fc0a7e06",
+    "mtime": 1786177494.9869328,
+    "ast_hash": "f34671313fae5c1ea450a79e38b01396",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-3.png": {
-    "mtime": 1786154860.601965,
-    "ast_hash": "34323a0756dacf538e8ce6ac14339277",
+    "mtime": 1786177494.9870372,
+    "ast_hash": "956f9d35d63b9e0b36639b98d5a032a6",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-4.png": {
-    "mtime": 1786154860.6021924,
-    "ast_hash": "608aca14b101b8bb887166a656ec686d",
+    "mtime": 1786177494.9871383,
+    "ast_hash": "b778e1b26a8edc093ef415ed3c0eaf3f",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-5.png": {
-    "mtime": 1786153918.081953,
+    "mtime": 1786177494.9873958,
     "ast_hash": "52576a804961df2973295a8940f3664c",
     "semantic_hash": "52576a804961df2973295a8940f3664c"
   },
   "app/public/tiles/mountain-6.png": {
-    "mtime": 1786154860.6027646,
-    "ast_hash": "8785a6ad017fc8091618c89848fe0837",
+    "mtime": 1786177494.9874983,
+    "ast_hash": "be248a153fedc37fe20b2d79472ee692",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-7.png": {
-    "mtime": 1786154860.6031628,
-    "ast_hash": "c82e7777e7fedd7f74008b5383f60a44",
+    "mtime": 1786177494.9877262,
+    "ast_hash": "d52b78371eb99f621ddb32667d55d969",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-8.png": {
-    "mtime": 1786153918.0822544,
+    "mtime": 1786177494.9878235,
     "ast_hash": "a93c18e08f4ad0925a6ce6334c9e3b78",
     "semantic_hash": "a93c18e08f4ad0925a6ce6334c9e3b78"
   },
   "app/public/tiles/mountain-9.png": {
-    "mtime": 1786154860.6034672,
-    "ast_hash": "91c08e82f8f7d9d01d199be0d05999dc",
+    "mtime": 1786177494.9879353,
+    "ast_hash": "d0213287d60c2633b3ad3d3775f26e39",
     "semantic_hash": ""
   },
   "app/public/tiles/path-1.png": {
@@ -1095,22 +1095,22 @@
     "semantic_hash": "b7be4b9af0bf02a1660a67f32ec3534a"
   },
   "app/public/tiles/pond-center-1.png": {
-    "mtime": 1786153918.0837574,
+    "mtime": 1786177494.9894056,
     "ast_hash": "0fe0b10ce7de06da9abf12c2daf8d8aa",
     "semantic_hash": "0fe0b10ce7de06da9abf12c2daf8d8aa"
   },
   "app/public/tiles/pond-center-2.png": {
-    "mtime": 1786153918.0840385,
+    "mtime": 1786177494.989632,
     "ast_hash": "995a845f3e8ac239e1e14ff55ee9de66",
     "semantic_hash": "995a845f3e8ac239e1e14ff55ee9de66"
   },
   "app/public/tiles/pond-center-3.png": {
-    "mtime": 1786153918.0843053,
+    "mtime": 1786177494.9898148,
     "ast_hash": "c7e5cbf2176dca0726eb65d8d0bfc600",
     "semantic_hash": "c7e5cbf2176dca0726eb65d8d0bfc600"
   },
   "app/public/tiles/pond-center-4.png": {
-    "mtime": 1786153918.0845103,
+    "mtime": 1786177494.9899986,
     "ast_hash": "e53715392e3c6ec2a6e9ab08b69fea36",
     "semantic_hash": "e53715392e3c6ec2a6e9ab08b69fea36"
   },
@@ -1160,7 +1160,7 @@
     "semantic_hash": "05e558b200882fe67051af29a92bca52"
   },
   "app/public/tiles/rock-1.png": {
-    "mtime": 1786153918.0825994,
+    "mtime": 1786177494.98818,
     "ast_hash": "01fb5b9d2084b941783bcd3daaa8cde9",
     "semantic_hash": "01fb5b9d2084b941783bcd3daaa8cde9"
   },
@@ -1260,8 +1260,8 @@
     "semantic_hash": "a3cb1562105c19717021e5655c3b8d38"
   },
   "app/server/services/map/version.ts": {
-    "mtime": 1786154041.8609364,
-    "ast_hash": "e022e552a72f96ac1ca2aa01cf9ad7b4",
+    "mtime": 1786177616.7759237,
+    "ast_hash": "eeddafb996a8146d69ddcb86ce0170e4",
     "semantic_hash": ""
   },
   "app/server/services/thingtime/client.ts": {
@@ -9130,13 +9130,13 @@
     "semantic_hash": ""
   },
   "app/public/design/asset-manifest.json": {
-    "mtime": 1786154205.4738111,
-    "ast_hash": "2079738c33d1806889ada6c75e3b72d6",
+    "mtime": 1786177697.4082384,
+    "ast_hash": "345e89d21583a0ad8ba901b39a549bd6",
     "semantic_hash": ""
   },
   "app/scripts/design/build-asset-manifest.mjs": {
-    "mtime": 1786154060.840889,
-    "ast_hash": "72489b36f4920a612824b78f928b8306",
+    "mtime": 1786177627.522815,
+    "ast_hash": "a6bc9f847eb2499b4dbaf751638c0937",
     "semantic_hash": ""
   },
   "app/src/lib/battle.ts": {
@@ -9165,18 +9165,18 @@
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-character-male.png": {
-    "mtime": 1786154205.1523757,
+    "mtime": 1786177697.1042771,
     "ast_hash": "ea113d178bf0b311df317c189bb4178e",
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-exterior.png": {
-    "mtime": 1786154205.1517515,
+    "mtime": 1786177697.103556,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
     "semantic_hash": ""
   },
   ".claude/launch.json": {
-    "mtime": 1786154371.058385,
-    "ast_hash": "ac7af04b69a4296e2dc0401966b85cdb",
+    "mtime": 1786177958.9159646,
+    "ast_hash": "202cdb1266ef54072bb01cbec65b2f6e",
     "semantic_hash": ""
   },
   "app/server/routes/api/admin/spawn-rules.delete.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/legality.ts": {
-    "mtime": 1786154925.6540697,
-    "ast_hash": "61ed7afd390855bacaa6167117ea08a3",
+    "mtime": 1786177624.3370075,
+    "ast_hash": "135f866540e3adff1207118367b694b7",
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
@@ -9414,509 +9414,394 @@
     "ast_hash": "d13a14a7b83619c28a1a5d3217b0b543",
     "semantic_hash": ""
   },
-  "app/public/tiles/brick-flat-1.png": {
-    "mtime": 1786153918.0712693,
-    "ast_hash": "ce3c98fa125003db141f057fd82bbe09",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-10.png": {
-    "mtime": 1786153918.072477,
-    "ast_hash": "fad931ebf34de7f363bd77b15f0fb391",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-11.png": {
-    "mtime": 1786153918.072608,
-    "ast_hash": "dd313dd0aa35e6e3765252c86bb8b390",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-12.png": {
-    "mtime": 1786153918.0727055,
-    "ast_hash": "8d01463ab5551a8609b562641f185bf5",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-2.png": {
-    "mtime": 1786153918.0715172,
-    "ast_hash": "e3d3fd66d085bed14e7534879832babc",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-3.png": {
-    "mtime": 1786153918.0716584,
-    "ast_hash": "e3d3fd66d085bed14e7534879832babc",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-4.png": {
-    "mtime": 1786153918.07178,
-    "ast_hash": "126285f7d2b988949fcb870aaef98122",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-5.png": {
-    "mtime": 1786153918.071902,
-    "ast_hash": "1713de157459f72aabd35abc26a4ea24",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-6.png": {
-    "mtime": 1786153918.072019,
-    "ast_hash": "031f4b37b0d298372bbe4bb8d13b3267",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-7.png": {
-    "mtime": 1786153918.072141,
-    "ast_hash": "fa4c8b8ef510efdc12c5bbac47f54945",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-8.png": {
-    "mtime": 1786153918.0722814,
-    "ast_hash": "66baa4535d6a38bd9d96262bd74adcba",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/brick-flat-9.png": {
-    "mtime": 1786153918.0723798,
-    "ast_hash": "e91076afc04ebebfd59acefa9246bb99",
-    "semantic_hash": ""
-  },
   "app/public/tiles/center-red-1.png": {
-    "mtime": 1786153918.0691814,
+    "mtime": 1786177494.9775932,
     "ast_hash": "a4a1b7deb7d12c3eaebbe458c816a678",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-10.png": {
-    "mtime": 1786153918.070414,
+    "mtime": 1786177494.9786046,
     "ast_hash": "d7dd856667fd7cbae91e6758441c9fb8",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-11.png": {
-    "mtime": 1786153918.0705638,
+    "mtime": 1786177494.9787028,
     "ast_hash": "691d48b875157ee4a6b4e9c0d739effa",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-12.png": {
-    "mtime": 1786153918.0706913,
+    "mtime": 1786177494.9788,
     "ast_hash": "e42988531964b866a347906a3883c060",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-2.png": {
-    "mtime": 1786153918.0692892,
+    "mtime": 1786177494.9777026,
     "ast_hash": "b325921c8374ed39e3f67d93c2f8013d",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-3.png": {
-    "mtime": 1786153918.069393,
+    "mtime": 1786177494.977802,
     "ast_hash": "74d6c6585b3fae1326fbb54a3cc8b2c2",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-4.png": {
-    "mtime": 1786153918.0694928,
+    "mtime": 1786177494.9779112,
     "ast_hash": "614472720fb9e4c72947cb6d3ef22c61",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-5.png": {
-    "mtime": 1786153918.0695999,
+    "mtime": 1786177494.978018,
     "ast_hash": "e65744e061b57ecc98d3048037dbd936",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-6.png": {
-    "mtime": 1786153918.0697205,
+    "mtime": 1786177494.9781299,
     "ast_hash": "0eb7d5081e6225e7bb9fcc5f3d0071cc",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-7.png": {
-    "mtime": 1786153918.069843,
+    "mtime": 1786177494.9782398,
     "ast_hash": "6557813aaf0e47bb111740091fe66c08",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-8.png": {
-    "mtime": 1786153918.069953,
+    "mtime": 1786177494.978356,
     "ast_hash": "c16d2a7898244d454d725ee051902503",
     "semantic_hash": ""
   },
   "app/public/tiles/center-red-9.png": {
-    "mtime": 1786153918.070139,
+    "mtime": 1786177494.9784927,
     "ast_hash": "d814126ffbdf24f2252fd224db0a9bf2",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-1.png": {
-    "mtime": 1786153918.0752058,
-    "ast_hash": "fd6252156a1fad4992c15fca18b32b9d",
+  "app/public/tiles/house-grand-1.png": {
+    "mtime": 1786177494.9807527,
+    "ast_hash": "60652eb7841e040e2eea84ce71043a93",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-10.png": {
-    "mtime": 1786153918.0761704,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-grand-10.png": {
+    "mtime": 1786177494.9817529,
+    "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-11.png": {
-    "mtime": 1786153918.0762656,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-grand-11.png": {
+    "mtime": 1786177494.981859,
+    "ast_hash": "4d33c8270a08203ca540f187f9b83550",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-12.png": {
-    "mtime": 1786153918.076462,
-    "ast_hash": "758b4c73831b80c673b3392153005f71",
+  "app/public/tiles/house-grand-12.png": {
+    "mtime": 1786177494.9819965,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-13.png": {
-    "mtime": 1786153918.076599,
-    "ast_hash": "b96072dc7d291cff0db7704e2724fcd0",
+  "app/public/tiles/house-grand-13.png": {
+    "mtime": 1786177494.9821143,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-14.png": {
-    "mtime": 1786153918.0767264,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-grand-14.png": {
+    "mtime": 1786177494.982233,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-15.png": {
-    "mtime": 1786153918.0768778,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-grand-15.png": {
+    "mtime": 1786177494.9823322,
+    "ast_hash": "f3414598cd710fb1435750bee155c185",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-16.png": {
-    "mtime": 1786153918.0770159,
-    "ast_hash": "9c10d310d819d868a4100717ebe1b0e3",
+  "app/public/tiles/house-grand-16.png": {
+    "mtime": 1786177494.9824302,
+    "ast_hash": "013e93f63aae2f6fb181292276893bcd",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-17.png": {
-    "mtime": 1786153918.077123,
-    "ast_hash": "b3584d423a366e98852da9c56288e6dc",
+  "app/public/tiles/house-grand-17.png": {
+    "mtime": 1786177494.9826074,
+    "ast_hash": "93c65739e0538062fd4773cd50d176c3",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-18.png": {
-    "mtime": 1786153918.0772269,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
+  "app/public/tiles/house-grand-18.png": {
+    "mtime": 1786177494.9827132,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-19.png": {
-    "mtime": 1786153918.0773227,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
+  "app/public/tiles/house-grand-19.png": {
+    "mtime": 1786177494.9828215,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-2.png": {
-    "mtime": 1786153918.0753155,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
+  "app/public/tiles/house-grand-2.png": {
+    "mtime": 1786177494.980855,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-20.png": {
-    "mtime": 1786153918.0774498,
-    "ast_hash": "1aa6a50ab06078a8d33d8f82082a27ba",
+  "app/public/tiles/house-grand-20.png": {
+    "mtime": 1786177494.9829755,
+    "ast_hash": "2724661671b1217ee043d110a346a752",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-3.png": {
-    "mtime": 1786153918.0754669,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
+  "app/public/tiles/house-grand-3.png": {
+    "mtime": 1786177494.9809659,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-4.png": {
-    "mtime": 1786153918.0755703,
-    "ast_hash": "d8a302f479dd448d6707ee8cad2ebb21",
+  "app/public/tiles/house-grand-4.png": {
+    "mtime": 1786177494.9810655,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-5.png": {
-    "mtime": 1786153918.0756679,
-    "ast_hash": "11f4b1a93ea2d1636d1d8e742966fe06",
+  "app/public/tiles/house-grand-5.png": {
+    "mtime": 1786177494.9811828,
+    "ast_hash": "be132a3726084c042912c6131f3ee746",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-6.png": {
-    "mtime": 1786153918.0757647,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
+  "app/public/tiles/house-grand-6.png": {
+    "mtime": 1786177494.9813087,
+    "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-7.png": {
-    "mtime": 1786153918.0758688,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
+  "app/public/tiles/house-grand-7.png": {
+    "mtime": 1786177494.98144,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-8.png": {
-    "mtime": 1786153918.0759737,
-    "ast_hash": "062de444f73238ada9eda377d72a9078",
+  "app/public/tiles/house-grand-8.png": {
+    "mtime": 1786177494.9815528,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/gallery-stone-9.png": {
-    "mtime": 1786153918.0760744,
-    "ast_hash": "dd7d2c610f981768d62efc6508c5b7af",
+  "app/public/tiles/house-grand-9.png": {
+    "mtime": 1786177494.9816554,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-1.png": {
-    "mtime": 1786153918.0776608,
-    "ast_hash": "fd6252156a1fad4992c15fca18b32b9d",
+  "app/public/tiles/house-manor-1.png": {
+    "mtime": 1786177494.9831433,
+    "ast_hash": "60652eb7841e040e2eea84ce71043a93",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-10.png": {
-    "mtime": 1786153918.0785341,
-    "ast_hash": "062de444f73238ada9eda377d72a9078",
+  "app/public/tiles/house-manor-10.png": {
+    "mtime": 1786177494.9843338,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-11.png": {
-    "mtime": 1786153918.0786421,
-    "ast_hash": "dd7d2c610f981768d62efc6508c5b7af",
+  "app/public/tiles/house-manor-11.png": {
+    "mtime": 1786177494.9844425,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-12.png": {
-    "mtime": 1786153918.078753,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-12.png": {
+    "mtime": 1786177494.9845517,
+    "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-13.png": {
-    "mtime": 1786153918.0788503,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-13.png": {
+    "mtime": 1786177494.9846516,
+    "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-14.png": {
-    "mtime": 1786153918.0789695,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-14.png": {
+    "mtime": 1786177494.9847481,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-15.png": {
-    "mtime": 1786153918.0790703,
-    "ast_hash": "758b4c73831b80c673b3392153005f71",
+  "app/public/tiles/house-manor-15.png": {
+    "mtime": 1786177494.9848475,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-16.png": {
-    "mtime": 1786153918.0791814,
-    "ast_hash": "dd7d2c610f981768d62efc6508c5b7af",
+  "app/public/tiles/house-manor-16.png": {
+    "mtime": 1786177494.984949,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-17.png": {
-    "mtime": 1786153918.0792756,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-17.png": {
+    "mtime": 1786177494.9850507,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-18.png": {
-    "mtime": 1786153918.0794344,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-18.png": {
+    "mtime": 1786177494.9851515,
+    "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-19.png": {
-    "mtime": 1786153918.079526,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
+  "app/public/tiles/house-manor-19.png": {
+    "mtime": 1786177494.9852786,
+    "ast_hash": "4d33c8270a08203ca540f187f9b83550",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-2.png": {
-    "mtime": 1786153918.0777593,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
+  "app/public/tiles/house-manor-2.png": {
+    "mtime": 1786177494.983251,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-20.png": {
-    "mtime": 1786153918.0796206,
-    "ast_hash": "758b4c73831b80c673b3392153005f71",
+  "app/public/tiles/house-manor-20.png": {
+    "mtime": 1786177494.9854019,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-21.png": {
-    "mtime": 1786153918.0797255,
-    "ast_hash": "b96072dc7d291cff0db7704e2724fcd0",
+  "app/public/tiles/house-manor-21.png": {
+    "mtime": 1786177494.9855096,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-22.png": {
-    "mtime": 1786153918.079826,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-manor-22.png": {
+    "mtime": 1786177494.9856274,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-23.png": {
-    "mtime": 1786153918.079921,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-manor-23.png": {
+    "mtime": 1786177494.98579,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-24.png": {
-    "mtime": 1786153918.080026,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-manor-24.png": {
+    "mtime": 1786177494.9859014,
+    "ast_hash": "f3414598cd710fb1435750bee155c185",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-25.png": {
-    "mtime": 1786153918.0801308,
-    "ast_hash": "9c10d310d819d868a4100717ebe1b0e3",
+  "app/public/tiles/house-manor-25.png": {
+    "mtime": 1786177494.986013,
+    "ast_hash": "013e93f63aae2f6fb181292276893bcd",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-26.png": {
-    "mtime": 1786153918.0802343,
-    "ast_hash": "b3584d423a366e98852da9c56288e6dc",
+  "app/public/tiles/house-manor-26.png": {
+    "mtime": 1786177494.9861312,
+    "ast_hash": "93c65739e0538062fd4773cd50d176c3",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-27.png": {
-    "mtime": 1786153918.080332,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
+  "app/public/tiles/house-manor-27.png": {
+    "mtime": 1786177494.9862375,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-28.png": {
-    "mtime": 1786153918.08084,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
+  "app/public/tiles/house-manor-28.png": {
+    "mtime": 1786177494.986355,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-29.png": {
-    "mtime": 1786153918.0809913,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
+  "app/public/tiles/house-manor-29.png": {
+    "mtime": 1786177494.986447,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-3.png": {
-    "mtime": 1786153918.077856,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
+  "app/public/tiles/house-manor-3.png": {
+    "mtime": 1786177494.9833553,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-30.png": {
-    "mtime": 1786153918.0811257,
-    "ast_hash": "1aa6a50ab06078a8d33d8f82082a27ba",
+  "app/public/tiles/house-manor-30.png": {
+    "mtime": 1786177494.986541,
+    "ast_hash": "2724661671b1217ee043d110a346a752",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-4.png": {
-    "mtime": 1786153918.0779521,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
+  "app/public/tiles/house-manor-4.png": {
+    "mtime": 1786177494.9834666,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-5.png": {
-    "mtime": 1786153918.0780447,
-    "ast_hash": "d8a302f479dd448d6707ee8cad2ebb21",
+  "app/public/tiles/house-manor-5.png": {
+    "mtime": 1786177494.9835825,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-6.png": {
-    "mtime": 1786153918.0781503,
-    "ast_hash": "11f4b1a93ea2d1636d1d8e742966fe06",
+  "app/public/tiles/house-manor-6.png": {
+    "mtime": 1786177494.9837132,
+    "ast_hash": "be132a3726084c042912c6131f3ee746",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-7.png": {
-    "mtime": 1786153918.078241,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
+  "app/public/tiles/house-manor-7.png": {
+    "mtime": 1786177494.9838927,
+    "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-8.png": {
-    "mtime": 1786153918.0783365,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
+  "app/public/tiles/house-manor-8.png": {
+    "mtime": 1786177494.9840467,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/grand-stone-9.png": {
-    "mtime": 1786153918.0784328,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
+  "app/public/tiles/house-manor-9.png": {
+    "mtime": 1786177494.9841855,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-1.png": {
-    "mtime": 1786153918.0667286,
-    "ast_hash": "257b6a9642760862960be5ff228ecfbb",
+  "app/public/tiles/house-wide-1.png": {
+    "mtime": 1786177494.9790747,
+    "ast_hash": "60652eb7841e040e2eea84ce71043a93",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-10.png": {
-    "mtime": 1786153918.0687418,
-    "ast_hash": "15e9b1a293ff13b6c6be3cda61633576",
+  "app/public/tiles/house-wide-10.png": {
+    "mtime": 1786177494.9799857,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-11.png": {
-    "mtime": 1786153918.0688808,
-    "ast_hash": "691d48b875157ee4a6b4e9c0d739effa",
+  "app/public/tiles/house-wide-11.png": {
+    "mtime": 1786177494.9800916,
+    "ast_hash": "36f822650895c57171532481ee224ab7",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-12.png": {
-    "mtime": 1786153918.0689957,
-    "ast_hash": "620259cc964653d985bea86367d8b8f1",
+  "app/public/tiles/house-wide-12.png": {
+    "mtime": 1786177494.980187,
+    "ast_hash": "f3414598cd710fb1435750bee155c185",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-2.png": {
-    "mtime": 1786153918.0670638,
-    "ast_hash": "0c1e14915f612cb66e05d0696c6b1846",
+  "app/public/tiles/house-wide-13.png": {
+    "mtime": 1786177494.9802923,
+    "ast_hash": "013e93f63aae2f6fb181292276893bcd",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-3.png": {
-    "mtime": 1786153918.067231,
-    "ast_hash": "51e9a6e3ce12bea336806684d1b287c6",
+  "app/public/tiles/house-wide-14.png": {
+    "mtime": 1786177494.9803884,
+    "ast_hash": "93c65739e0538062fd4773cd50d176c3",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-4.png": {
-    "mtime": 1786153918.0674322,
-    "ast_hash": "57c2987a8f68239225ee72a3cf28f889",
+  "app/public/tiles/house-wide-15.png": {
+    "mtime": 1786177494.9804802,
+    "ast_hash": "ac151e7261370d8131f02fe426cde70a",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-5.png": {
-    "mtime": 1786153918.067599,
-    "ast_hash": "5a942d841500e25e11e9125a93081f0a",
+  "app/public/tiles/house-wide-16.png": {
+    "mtime": 1786177494.980608,
+    "ast_hash": "2724661671b1217ee043d110a346a752",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-6.png": {
-    "mtime": 1786153918.0677435,
-    "ast_hash": "1adc25c87b911e8a142c9d471b90bbce",
+  "app/public/tiles/house-wide-2.png": {
+    "mtime": 1786177494.9791832,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-7.png": {
-    "mtime": 1786153918.068325,
-    "ast_hash": "aae7a1faabfb0c8df008b8c31b98b862",
+  "app/public/tiles/house-wide-3.png": {
+    "mtime": 1786177494.979281,
+    "ast_hash": "6f6448f7e9c86f2b1c07a8bb9c5daf82",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-8.png": {
-    "mtime": 1786153918.068491,
-    "ast_hash": "0ce42e273128ca2fef29180a56428a59",
+  "app/public/tiles/house-wide-4.png": {
+    "mtime": 1786177494.9793763,
+    "ast_hash": "be132a3726084c042912c6131f3ee746",
     "semantic_hash": ""
   },
-  "app/public/tiles/mart-blue-9.png": {
-    "mtime": 1786153918.06862,
-    "ast_hash": "d8a050a6841f5dd464b56a70897d36f8",
+  "app/public/tiles/house-wide-5.png": {
+    "mtime": 1786177494.979478,
+    "ast_hash": "a30ff242cb5446a89cc89f48d9882213",
     "semantic_hash": ""
   },
-  "app/public/tiles/museum-stone-1.png": {
-    "mtime": 1786153918.073021,
-    "ast_hash": "fd6252156a1fad4992c15fca18b32b9d",
+  "app/public/tiles/house-wide-6.png": {
+    "mtime": 1786177494.9795816,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/museum-stone-10.png": {
-    "mtime": 1786153918.0741937,
-    "ast_hash": "b96072dc7d291cff0db7704e2724fcd0",
+  "app/public/tiles/house-wide-7.png": {
+    "mtime": 1786177494.979683,
+    "ast_hash": "172946d04f5e2b7662d7fc65cb8734d5",
     "semantic_hash": ""
   },
-  "app/public/tiles/museum-stone-11.png": {
-    "mtime": 1786153918.074295,
-    "ast_hash": "67eadece2a2339364558bbcda1c8d7af",
+  "app/public/tiles/house-wide-8.png": {
+    "mtime": 1786177494.97979,
+    "ast_hash": "b6f8e247e3b771cb17255d1f6eef88e3",
     "semantic_hash": ""
   },
-  "app/public/tiles/museum-stone-12.png": {
-    "mtime": 1786153918.074407,
-    "ast_hash": "9c10d310d819d868a4100717ebe1b0e3",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-13.png": {
-    "mtime": 1786153918.0745103,
-    "ast_hash": "b3584d423a366e98852da9c56288e6dc",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-14.png": {
-    "mtime": 1786153918.0746994,
-    "ast_hash": "e60e61c3713ed15d4224add36c8ae233",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-15.png": {
-    "mtime": 1786153918.0748153,
-    "ast_hash": "1aa6a50ab06078a8d33d8f82082a27ba",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-2.png": {
-    "mtime": 1786153918.073121,
-    "ast_hash": "0c90cdd93e52329dbeb04fab517168c1",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-3.png": {
-    "mtime": 1786153918.0732203,
-    "ast_hash": "d8a302f479dd448d6707ee8cad2ebb21",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-4.png": {
-    "mtime": 1786153918.0733352,
-    "ast_hash": "11f4b1a93ea2d1636d1d8e742966fe06",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-5.png": {
-    "mtime": 1786153918.0734413,
-    "ast_hash": "709182ee8d3ae5388ee7c147d8d7dbe1",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-6.png": {
-    "mtime": 1786153918.0735455,
-    "ast_hash": "062de444f73238ada9eda377d72a9078",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-7.png": {
-    "mtime": 1786153918.0736463,
-    "ast_hash": "dd7d2c610f981768d62efc6508c5b7af",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-8.png": {
-    "mtime": 1786153918.07375,
-    "ast_hash": "452c6a448dc7eb929af3246d70af6470",
-    "semantic_hash": ""
-  },
-  "app/public/tiles/museum-stone-9.png": {
-    "mtime": 1786153918.074089,
-    "ast_hash": "758b4c73831b80c673b3392153005f71",
+  "app/public/tiles/house-wide-9.png": {
+    "mtime": 1786177494.9798899,
+    "ast_hash": "4d33c8270a08203ca540f187f9b83550",
     "semantic_hash": ""
   }
 }
