@@ -930,47 +930,47 @@
     "semantic_hash": "67843c995750d7e9b292f1c36c2ffc8a"
   },
   "app/public/tiles/mountain-1.png": {
-    "mtime": 1786153336.9234443,
+    "mtime": 1786155499.0160835,
     "ast_hash": "0c37fc257fee6e681fdb5a1232b7d458",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-2.png": {
-    "mtime": 1786153336.923667,
+    "mtime": 1786155499.0163054,
     "ast_hash": "584a0455d95767ff22ad95c1fc0a7e06",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-3.png": {
-    "mtime": 1786153336.9240463,
+    "mtime": 1786155499.0165715,
     "ast_hash": "34323a0756dacf538e8ce6ac14339277",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-4.png": {
-    "mtime": 1786153336.9244938,
+    "mtime": 1786155499.0168102,
     "ast_hash": "608aca14b101b8bb887166a656ec686d",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-5.png": {
-    "mtime": 1786153336.9248533,
+    "mtime": 1786155499.01701,
     "ast_hash": "52576a804961df2973295a8940f3664c",
     "semantic_hash": "52576a804961df2973295a8940f3664c"
   },
   "app/public/tiles/mountain-6.png": {
-    "mtime": 1786153336.9252234,
+    "mtime": 1786155499.0171635,
     "ast_hash": "8785a6ad017fc8091618c89848fe0837",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-7.png": {
-    "mtime": 1786153336.9254336,
+    "mtime": 1786155499.0173404,
     "ast_hash": "c82e7777e7fedd7f74008b5383f60a44",
     "semantic_hash": ""
   },
   "app/public/tiles/mountain-8.png": {
-    "mtime": 1786153336.9263735,
+    "mtime": 1786155499.0178618,
     "ast_hash": "a93c18e08f4ad0925a6ce6334c9e3b78",
     "semantic_hash": "a93c18e08f4ad0925a6ce6334c9e3b78"
   },
   "app/public/tiles/mountain-9.png": {
-    "mtime": 1786153336.9266121,
+    "mtime": 1786155499.018035,
     "ast_hash": "91c08e82f8f7d9d01d199be0d05999dc",
     "semantic_hash": ""
   },
@@ -1160,7 +1160,7 @@
     "semantic_hash": "05e558b200882fe67051af29a92bca52"
   },
   "app/public/tiles/rock-1.png": {
-    "mtime": 1786153336.9230685,
+    "mtime": 1786155499.0157611,
     "ast_hash": "01fb5b9d2084b941783bcd3daaa8cde9",
     "semantic_hash": "01fb5b9d2084b941783bcd3daaa8cde9"
   },
@@ -9235,8 +9235,8 @@
     "semantic_hash": ""
   },
   "app/scripts/design/build-design-tiles.mjs": {
-    "mtime": 1786153312.9926562,
-    "ast_hash": "fb6db123fba6cb83f6c1ca49eb411dc5",
+    "mtime": 1786155493.588437,
+    "ast_hash": "4da1ca27177dbd5d32ead852018e4592",
     "semantic_hash": ""
   },
   "app/server/routes/api/designs.get.ts": {
@@ -9275,8 +9275,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/BlockCanvas.tsx": {
-    "mtime": 1786150423.8311317,
-    "ast_hash": "f29f9f826ef7ba890e7fdf4263d304d2",
+    "mtime": 1786155181.2159424,
+    "ast_hash": "f5418158cdf3ac9db4586eb3047e3dbd",
     "semantic_hash": ""
   },
   "app/src/components/design/CommunityBrowser.tsx": {
@@ -9285,13 +9285,13 @@
     "semantic_hash": ""
   },
   "app/src/components/design/DesignBrowser.tsx": {
-    "mtime": 1786150423.8317442,
-    "ast_hash": "dff4eea84845479276171b2d648a1b56",
+    "mtime": 1786155266.0445015,
+    "ast_hash": "c8292419a93f4321711ff7b4b82f5d76",
     "semantic_hash": ""
   },
   "app/src/components/design/DesignDetailModal.tsx": {
-    "mtime": 1786150423.8320432,
-    "ast_hash": "246ea16ce2765bac98c9fb7354e0c540",
+    "mtime": 1786155328.0043108,
+    "ast_hash": "53190370e65dedf77303573927ed165a",
     "semantic_hash": ""
   },
   "app/src/components/design/SpriteThumb.tsx": {
@@ -9310,8 +9310,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/catalog.ts": {
-    "mtime": 1786154801.6620038,
-    "ast_hash": "e7dd9d9f9c8607b40c31dcf826b1290c",
+    "mtime": 1786155624.8102908,
+    "ast_hash": "5168500dd246978fdcc22d9fe74694d6",
     "semantic_hash": ""
   },
   "app/src/lib/design/entities.ts": {
@@ -9330,8 +9330,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1786154189.9098709,
-    "ast_hash": "8834bf0e6548676095fc2e618f2233af",
+    "mtime": 1786155594.2348802,
+    "ast_hash": "28e1ebb6d20d1eb2908fd18ddf1b4a5e",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9345,8 +9345,8 @@
     "semantic_hash": ""
   },
   "app/src/pages/DesignPage.tsx": {
-    "mtime": 1786150423.855927,
-    "ast_hash": "04b8052cdb0b799d055f6b22899d0f73",
+    "mtime": 1786155304.8807364,
+    "ast_hash": "6e7dff290f29ad0ba6d1925a33a751b7",
     "semantic_hash": ""
   },
   "app/tests/design-catalog.test.ts": {
@@ -9365,27 +9365,27 @@
     "semantic_hash": ""
   },
   "app/public/tiles/boulder-mossy-1.png": {
-    "mtime": 1786153336.922635,
+    "mtime": 1786155499.0153496,
     "ast_hash": "46574344204d7d8c463562681c22c300",
     "semantic_hash": ""
   },
   "app/public/tiles/cave-door-1.png": {
-    "mtime": 1786153336.922302,
+    "mtime": 1786155499.0150993,
     "ast_hash": "718c3e5ed36439d55888a8e8de7df738",
     "semantic_hash": ""
   },
   "app/public/tiles/rocky-1.png": {
-    "mtime": 1786153336.9210267,
+    "mtime": 1786155499.0142512,
     "ast_hash": "c3548d8f78d4f712c8dda4f4a07866c9",
     "semantic_hash": ""
   },
   "app/public/tiles/rocky-bumps-1.png": {
-    "mtime": 1786153336.9216769,
+    "mtime": 1786155499.014761,
     "ast_hash": "f58cc3302d0b3dceeef8495868394348",
     "semantic_hash": ""
   },
   "app/public/tiles/sign-rocky-1.png": {
-    "mtime": 1786153336.9228745,
+    "mtime": 1786155499.0155706,
     "ast_hash": "92c49eb245b72cd5263d6436d8d98894",
     "semantic_hash": ""
   },
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/legality.ts": {
-    "mtime": 1786153614.8389878,
-    "ast_hash": "ef64c433047790862f3ddb2cca1dccfe",
+    "mtime": 1786155601.8508205,
+    "ast_hash": "b7a91f67b6571692f78a6af048216bb7",
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
@@ -9420,13 +9420,13 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families-generated.manifest.json": {
-    "mtime": 1786154883.3346612,
-    "ast_hash": "f51db31573a9c92d07457e7eba91ebe5",
+    "mtime": 1786155681.3368547,
+    "ast_hash": "4ceb537d8fc6695477c03a21858b9ffb",
     "semantic_hash": ""
   },
   "app/src/lib/design/families-generated.ts": {
-    "mtime": 1786154878.509575,
-    "ast_hash": "903bc3f13a49d8461039c9795c99db6a",
+    "mtime": 1786155659.0435076,
+    "ast_hash": "20e1b20ba57b70547057f0cf95469319",
     "semantic_hash": ""
   },
   "app/src/lib/design/registry.ts": {
@@ -9435,8 +9435,428 @@
     "semantic_hash": ""
   },
   "app/tests/design-registry.test.ts": {
-    "mtime": 1786154986.5691874,
-    "ast_hash": "ad1a34bfdfa0c358c720668b717342a3",
+    "mtime": 1786155681.9291406,
+    "ast_hash": "9115715c0404ad5960ac879cfc010c16",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/FamilyVariantsView.tsx": {
+    "mtime": 1786155754.1549644,
+    "ast_hash": "ad02603b9fadf641ba643e5f0ede6462",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/RulesTab.tsx": {
+    "mtime": 1786155298.770003,
+    "ast_hash": "26de4bef5704c1699b9f66848774c656",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/WorldCanvas.tsx": {
+    "mtime": 1786155185.8464632,
+    "ast_hash": "2231b6148b7f9013b69a129f56f1504a",
+    "semantic_hash": ""
+  },
+  "app/src/components/design/sceneDraw.ts": {
+    "mtime": 1786155166.7136269,
+    "ast_hash": "c5cdc1a2400e5eae396b8e9b95e5008c",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-1.png": {
+    "mtime": 1786155499.0231915,
+    "ast_hash": "8cd8dad663a6c96c4fe3e1083717c3be",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-10.png": {
+    "mtime": 1786155499.0240984,
+    "ast_hash": "24dbe09c174ff83ea19b96646c77b3af",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-11.png": {
+    "mtime": 1786155499.0241933,
+    "ast_hash": "2396c094553f831ca18e897dbb42c6eb",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-12.png": {
+    "mtime": 1786155499.0242808,
+    "ast_hash": "84ee7442bf3f20f0c8fe15ea9ce0a54f",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-13.png": {
+    "mtime": 1786155499.0243747,
+    "ast_hash": "29ae882e535550c7a451f1de7ce8aa60",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-14.png": {
+    "mtime": 1786155499.0244534,
+    "ast_hash": "ba95de98cf5b53e2f60593d0516bf276",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-15.png": {
+    "mtime": 1786155499.024558,
+    "ast_hash": "9674cbb7e0ca1dce3e00a97ce7567b29",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-16.png": {
+    "mtime": 1786155499.024653,
+    "ast_hash": "4924dd2cc1f025fe2b527a7660e39575",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-17.png": {
+    "mtime": 1786155499.0247326,
+    "ast_hash": "63e93acee215de747caf8f95b9812a8d",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-18.png": {
+    "mtime": 1786155499.0248137,
+    "ast_hash": "5f1f174ad963656cc929113cefe28c7c",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-19.png": {
+    "mtime": 1786155499.0249107,
+    "ast_hash": "7d8770d8f790dde602d0d21f57b53af0",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-2.png": {
+    "mtime": 1786155499.0232804,
+    "ast_hash": "e7386577e2015a6f9199074ff511fe0c",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-20.png": {
+    "mtime": 1786155499.0252016,
+    "ast_hash": "b5272044b96aefad13f9721a504dc751",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-3.png": {
+    "mtime": 1786155499.0233653,
+    "ast_hash": "974b6de638dabcf4eec3fe3de4eac50a",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-4.png": {
+    "mtime": 1786155499.0234785,
+    "ast_hash": "b725470a766317fa3fc6cfc37c5120f4",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-5.png": {
+    "mtime": 1786155499.0236406,
+    "ast_hash": "32ae359bf866326c696e7f1351a242d7",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-6.png": {
+    "mtime": 1786155499.0237405,
+    "ast_hash": "4c7d001ba54689098b97e192afe94edd",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-7.png": {
+    "mtime": 1786155499.0238366,
+    "ast_hash": "e5671665ffd563f94efea21d08f90b61",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-8.png": {
+    "mtime": 1786155499.0239305,
+    "ast_hash": "1d2443c35ef95a3efceac52efb214f90",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-contest-hall-9.png": {
+    "mtime": 1786155499.0240169,
+    "ast_hash": "c39438b7e12055e65cbcfa31d321f62a",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-1.png": {
+    "mtime": 1786155499.026604,
+    "ast_hash": "92a33ffadc1e7cbc3f98b847ee8f1687",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-10.png": {
+    "mtime": 1786155499.0273676,
+    "ast_hash": "27b5c923262873e0ae2225e905c460c2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-11.png": {
+    "mtime": 1786155499.0274525,
+    "ast_hash": "95ccf2e9d613aaa9707ce118b5058d54",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-12.png": {
+    "mtime": 1786155499.0275366,
+    "ast_hash": "c8ad6244b327ec29c642e196a581a3bb",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-13.png": {
+    "mtime": 1786155499.0276206,
+    "ast_hash": "6788eb10ba8d39fa2a3061c03f14a034",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-14.png": {
+    "mtime": 1786155499.0277207,
+    "ast_hash": "e8dff7d2e1557d987d0d7244f1068a37",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-15.png": {
+    "mtime": 1786155499.0278053,
+    "ast_hash": "cb5063122db1ba610dcbc4342d582c97",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-16.png": {
+    "mtime": 1786155499.0278912,
+    "ast_hash": "861bc6bb889c9781bb5d70815bd6764c",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-17.png": {
+    "mtime": 1786155499.0279741,
+    "ast_hash": "bc51b78dd3bb9724078e6825a9ad94c2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-18.png": {
+    "mtime": 1786155499.02806,
+    "ast_hash": "6a1a198ba41275ed3cd94fa2aca5ac68",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-19.png": {
+    "mtime": 1786155499.0282197,
+    "ast_hash": "6f0449ff0f052ef78bfed55cbd0f5932",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-2.png": {
+    "mtime": 1786155499.0266962,
+    "ast_hash": "bfd72a1c8b73142102383ef19565788d",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-20.png": {
+    "mtime": 1786155499.0282996,
+    "ast_hash": "a57d136723d08faecadd879b535b3802",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-3.png": {
+    "mtime": 1786155499.0267904,
+    "ast_hash": "5bb27cee8fc8be1b89756a119b24add1",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-4.png": {
+    "mtime": 1786155499.0268805,
+    "ast_hash": "164f48d0039d9c6493ded69167ae45f2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-5.png": {
+    "mtime": 1786155499.0269637,
+    "ast_hash": "ccdd7ecedcae1112b2aabf3da07ddf74",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-6.png": {
+    "mtime": 1786155499.0270455,
+    "ast_hash": "9b95a5bc30bb5c240db56a5066ece413",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-7.png": {
+    "mtime": 1786155499.027124,
+    "ast_hash": "4457652b9a23bbae636adeff11b04cd0",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-8.png": {
+    "mtime": 1786155499.027206,
+    "ast_hash": "44b0d300e2bca8e7ca1507f52b89231a",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-lodge-log-9.png": {
+    "mtime": 1786155499.0272856,
+    "ast_hash": "69ea03f1686b17d8b96802dadfd1f737",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-1.png": {
+    "mtime": 1786155499.0185146,
+    "ast_hash": "a4a1b7deb7d12c3eaebbe458c816a678",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-10.png": {
+    "mtime": 1786155499.0200667,
+    "ast_hash": "c16d2a7898244d454d725ee051902503",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-11.png": {
+    "mtime": 1786155499.0201695,
+    "ast_hash": "d814126ffbdf24f2252fd224db0a9bf2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-12.png": {
+    "mtime": 1786155499.0202804,
+    "ast_hash": "52bbd0b6de3334023e572615fef74318",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-13.png": {
+    "mtime": 1786155499.0203726,
+    "ast_hash": "d7dd856667fd7cbae91e6758441c9fb8",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-14.png": {
+    "mtime": 1786155499.0204816,
+    "ast_hash": "691d48b875157ee4a6b4e9c0d739effa",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-15.png": {
+    "mtime": 1786155499.020597,
+    "ast_hash": "e42988531964b866a347906a3883c060",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-16.png": {
+    "mtime": 1786155499.0207992,
+    "ast_hash": "bf5af293c2fcfa7940544e1bca92b5bc",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-2.png": {
+    "mtime": 1786155499.0187752,
+    "ast_hash": "b325921c8374ed39e3f67d93c2f8013d",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-3.png": {
+    "mtime": 1786155499.0190248,
+    "ast_hash": "74d6c6585b3fae1326fbb54a3cc8b2c2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-4.png": {
+    "mtime": 1786155499.0192454,
+    "ast_hash": "7e94472d4bea3de6291bb875667103b6",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-5.png": {
+    "mtime": 1786155499.0194063,
+    "ast_hash": "614472720fb9e4c72947cb6d3ef22c61",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-6.png": {
+    "mtime": 1786155499.0196047,
+    "ast_hash": "e65744e061b57ecc98d3048037dbd936",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-7.png": {
+    "mtime": 1786155499.0197499,
+    "ast_hash": "0eb7d5081e6225e7bb9fcc5f3d0071cc",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-8.png": {
+    "mtime": 1786155499.0198722,
+    "ast_hash": "3f7311b759455b1f6fdb25e9e994d207",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokecenter-9.png": {
+    "mtime": 1786155499.0199704,
+    "ast_hash": "6557813aaf0e47bb111740091fe66c08",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-1.png": {
+    "mtime": 1786155499.021214,
+    "ast_hash": "257b6a9642760862960be5ff228ecfbb",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-10.png": {
+    "mtime": 1786155499.0221884,
+    "ast_hash": "0ce42e273128ca2fef29180a56428a59",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-11.png": {
+    "mtime": 1786155499.0223093,
+    "ast_hash": "d8a050a6841f5dd464b56a70897d36f8",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-12.png": {
+    "mtime": 1786155499.0224156,
+    "ast_hash": "027a2a9f157c54b97e3c8a1c54aa5553",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-13.png": {
+    "mtime": 1786155499.0225258,
+    "ast_hash": "15e9b1a293ff13b6c6be3cda61633576",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-14.png": {
+    "mtime": 1786155499.0226312,
+    "ast_hash": "691d48b875157ee4a6b4e9c0d739effa",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-15.png": {
+    "mtime": 1786155499.0227437,
+    "ast_hash": "620259cc964653d985bea86367d8b8f1",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-16.png": {
+    "mtime": 1786155499.022858,
+    "ast_hash": "95402e6d6a03fa3ce09be1d59b27f0cc",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-2.png": {
+    "mtime": 1786155499.0213177,
+    "ast_hash": "0c1e14915f612cb66e05d0696c6b1846",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-3.png": {
+    "mtime": 1786155499.0214236,
+    "ast_hash": "0c1e14915f612cb66e05d0696c6b1846",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-4.png": {
+    "mtime": 1786155499.0215166,
+    "ast_hash": "946cd6d5d49958b3623c71d825173d66",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-5.png": {
+    "mtime": 1786155499.0216143,
+    "ast_hash": "57c2987a8f68239225ee72a3cf28f889",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-6.png": {
+    "mtime": 1786155499.0217168,
+    "ast_hash": "5a942d841500e25e11e9125a93081f0a",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-7.png": {
+    "mtime": 1786155499.021821,
+    "ast_hash": "1adc25c87b911e8a142c9d471b90bbce",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-8.png": {
+    "mtime": 1786155499.0219636,
+    "ast_hash": "fe3b52592239e468c02a9c815de33b40",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-pokemart-9.png": {
+    "mtime": 1786155499.022068,
+    "ast_hash": "aae7a1faabfb0c8df008b8c31b98b862",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-1.png": {
+    "mtime": 1786155499.0255094,
+    "ast_hash": "d1035ad28d41ac9f6221ed3054abeb68",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-2.png": {
+    "mtime": 1786155499.0256145,
+    "ast_hash": "c67849b7781c502ad488a06fbd77ed6f",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-3.png": {
+    "mtime": 1786155499.0257351,
+    "ast_hash": "10852da996b6f8955eba299db76f4d6e",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-4.png": {
+    "mtime": 1786155499.0258503,
+    "ast_hash": "b2d6c100d56560d10c65bc4f14cb9f50",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-5.png": {
+    "mtime": 1786155499.025943,
+    "ast_hash": "4c5d9af50e24778b67ce18b7a34683f2",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-6.png": {
+    "mtime": 1786155499.026032,
+    "ast_hash": "a5437b7951989a769b599a682f27f782",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-7.png": {
+    "mtime": 1786155499.026126,
+    "ast_hash": "5ba69eeb9fc56f7dfd62b4b2c353c3d7",
+    "semantic_hash": ""
+  },
+  "app/public/tiles/struct-tower-white-8.png": {
+    "mtime": 1786155499.026216,
+    "ast_hash": "27e28b73314122bfe7eb8fb70f29097b",
     "semantic_hash": ""
   }
 }
