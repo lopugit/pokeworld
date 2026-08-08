@@ -386,6 +386,8 @@ const PIC_SOURCES = [
   ["graphics/object_events/pics/people/team_aqua", "npcs", "aqua_"],
   ["graphics/object_events/pics/people/team_magma", "npcs", "magma_"],
   ["graphics/object_events/pics/pokemon", "overworld-pokemon", ""],
+  ["graphics/trainers/front_pics", "trainers", ""],
+  ["graphics/trainers/back_pics", "trainers", "back_"],
   ["graphics/object_events/pics/misc", "objects", ""],
   ["graphics/object_events/pics/berry_trees", "objects", "berry_tree_"],
   ["graphics/object_events/pics/dolls", "objects", "doll_"],

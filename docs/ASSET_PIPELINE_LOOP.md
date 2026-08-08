@@ -34,7 +34,9 @@ sheet before commit (render over grass at 3×+).
       cottage (R104), Seashore House (R109), Lanette's house (R114), Fossil
       Maniac (R114), New Mauville entrance. Route renders already exist in
       app/public/design/sheets/towns/.
-- [ ] Wave 2d-1: trainer battle portraits (graphics/trainers/front_pics +
+- [x] Wave 2d-1 (COMPLETE — 101 portraits incl. all gym leaders, Elite
+      Four, Wallace, Steven, Archie/Maxie, player backs; embedded palettes,
+      no mapping needed): trainer battle portraits (graphics/trainers/front_pics +
       palettes/*.pal — map pic→palette from src/data/trainer_graphics/
       front_pic_tables or by same-name .pal convention) → whole-object
       Characters ("portrait" tag).
