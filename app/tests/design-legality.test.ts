@@ -18,7 +18,7 @@ const isWater = (grid: Grid, col: number, row: number) => {
 
 // img2 prefix → ground bases its art is legal on.
 const DECOR_LEGALITY: Array<[RegExp, (base: string) => boolean]> = [
-  [/^(big-tree-|tree-|shrub-|flower-|grass-2$|house-red-|route-sign-1$)/, (base) => base === "grass"],
+  [/^(big-tree-|tree-|shrub-|flower-|grass-2$|house-red-|mart-blue-|center-red-|brick-flat-|museum-stone-|gallery-stone-|grand-stone-|route-sign-1$)/, (base) => base === "grass"],
   [/^(mountain-|cave-door-|ledge-|rock-1$|boulder-mossy-|rocky-bumps-|sign-rocky-)/, (base) => base === "rocky-1"],
   // hidden items copy their ground tile
   [/^grass$/, (base) => base === "grass"],
