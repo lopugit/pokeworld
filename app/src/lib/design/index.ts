@@ -11,3 +11,6 @@ export {
   remixSeed,
   searchCatalog,
 } from "./catalog";
+export { formatViolations, validateDesign } from "./legality";
+export { compatibleFamilies, familyGroundProfile, generateWorld } from "./world";
+export type { GeneratedWorld, WorldConflict, WorldEntity } from "./world";

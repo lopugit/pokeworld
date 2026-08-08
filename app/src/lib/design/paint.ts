@@ -1,22 +1,27 @@
-// Painting toolkit for 16×16 design dioramas. Mirrors the live map
+// Painting toolkit for Emerald-style design dioramas. Mirrors the live map
 // generator's tile conventions (legacy/mods/terrain-life.ts) so designs read
 // exactly like real Pokéworld blocks:
 //   - autotile index 1–9 (path-/road-/sand-/pond-) with 5 = centre
-//   - pond inner corners 20–23, narrow channels 24/25, pond-center ripples
-//   - houses 3×4 (house-red-1..12), mountains 3×3, caves 2×2 (cave-4 = mouth)
+//   - pond inner corners 20/21, narrow channels 24/25, pond-center ripples
+//   - houses 3×4 (house-red-1..12), dome 3×3 with cave-door-1 in slot 8
 // Grids here are screen-order (row 0 = top); the server's "north" neighbour is
 // therefore row - 1.
+//
+// Every helper derives dimensions from the arrays it receives, so the same
+// toolkit paints a single 16×16 block or a multi-block world supergrid
+// (world.ts) — baking a supergrid in one pass is what makes neighbouring
+// blocks merge with legal, continuous shorelines and paths.
 
 import type { Rng } from "./rng";
 import { DESIGN_GRID, type DesignTile } from "./types";
 
 // Ground kinds and the legality rules that keep dioramas looking like real
-// Emerald maps. Every decoration tile was drawn on a specific ground and has
-// that ground baked into its background, so props may only be placed on the
-// ground family they were drawn for:
+// Emerald maps (machine-checked by legality.ts). Every decoration tile was
+// drawn on a specific ground and has that ground baked into its background,
+// so props may only be placed on the ground family they were drawn for:
 //   grass  → trees, shrubs, flowers, long grass, houses, route signs
-//   rocky  → mountains/domes, cave doors, ledges, rocks, boulders, scree,
-//            rocky signs (the mauve "mountain ground" biome)
+//   rocky  → domes, cave doors, boulders, scree, rocky signs (full-bleed
+//            scenes only; no rocky↔grass transition art exists)
 //   sand   → bare dunes (props of other families are illegal here)
 // Water shorelines additionally follow the live generator's smoothing rules
 // so the pond autotile can always close its circuits.
@@ -27,14 +32,15 @@ export type GroundMap = Ground[][];
 export const inBounds = (col: number, row: number) =>
   col >= 0 && row >= 0 && col < DESIGN_GRID && row < DESIGN_GRID;
 
-export function newGround(base: Ground = "grass"): GroundMap {
-  return Array.from({ length: DESIGN_GRID }, () => Array.from({ length: DESIGN_GRID }, () => base));
+const inMap = (map: ArrayLike<ArrayLike<unknown>>, col: number, row: number) =>
+  row >= 0 && col >= 0 && row < map.length && col < (map[row]?.length ?? 0);
+
+export function newGround(base: Ground = "grass", width = DESIGN_GRID, height = DESIGN_GRID): GroundMap {
+  return Array.from({ length: height }, () => Array.from({ length: width }, () => base));
 }
 
-export function newGrid(): DesignTile[][] {
-  return Array.from({ length: DESIGN_GRID }, () =>
-    Array.from({ length: DESIGN_GRID }, () => ({}) as DesignTile),
-  );
+export function newGrid(width = DESIGN_GRID, height = DESIGN_GRID): DesignTile[][] {
+  return Array.from({ length: height }, () => Array.from({ length: width }, () => ({}) as DesignTile));
 }
 
 // --- ground painting -------------------------------------------------------
@@ -48,8 +54,8 @@ export function paintBlob(
   rng: Rng,
 ): void {
   const wobble = Array.from({ length: 16 }, () => 0.72 + rng.next() * 0.55);
-  for (let row = 0; row < DESIGN_GRID; row += 1) {
-    for (let col = 0; col < DESIGN_GRID; col += 1) {
+  for (let row = 0; row < ground.length; row += 1) {
+    for (let col = 0; col < ground[row].length; col += 1) {
       const dx = col - centerCol;
       const dy = row - centerRow;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -70,7 +76,7 @@ export function paintRect(
 ): void {
   for (let r = row; r < row + height; r += 1) {
     for (let c = col; c < col + width; c += 1) {
-      if (inBounds(c, r)) ground[r][c] = kind;
+      if (inMap(ground, c, r)) ground[r][c] = kind;
     }
   }
 }
@@ -90,7 +96,7 @@ export function paintPath(
   const stamp = (col: number, row: number) => {
     for (let dr = 0; dr < width; dr += 1) {
       for (let dc = 0; dc < width; dc += 1) {
-        if (inBounds(col + dc, row + dr)) ground[row + dr][col + dc] = kind;
+        if (inMap(ground, col + dc, row + dr)) ground[row + dr][col + dc] = kind;
       }
     }
   };
@@ -120,7 +126,7 @@ export function paintPath(
 
 // --- autotiling (mirror of terrain-life.ts, screen coords) -----------------
 
-interface NeighbourFlags {
+export interface NeighbourFlags {
   north: boolean;
   east: boolean;
   south: boolean;
@@ -132,7 +138,7 @@ interface NeighbourFlags {
 }
 
 function neighbours(ground: GroundMap, col: number, row: number, kind: Ground): NeighbourFlags {
-  const same = (c: number, r: number) => !inBounds(c, r) || ground[r][c] === kind;
+  const same = (c: number, r: number) => !inMap(ground, c, r) || ground[r][c] === kind;
   return {
     north: same(col, row - 1),
     east: same(col + 1, row),
@@ -145,7 +151,7 @@ function neighbours(ground: GroundMap, col: number, row: number, kind: Ground): 
   };
 }
 
-function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
+export function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
   if (!north && east && south && !west) return 1;
   if (!north && east && south && west) return 2;
   if (!north && !east && south && west) return 3;
@@ -157,7 +163,15 @@ function autotileIndex({ north, east, south, west }: NeighbourFlags): number {
   return 5;
 }
 
-function waterTileName(flags: NeighbourFlags, ripple: () => number): string {
+/** Deterministic, position-hashed ripple pick so baking needs no RNG stream —
+ * a block bakes identically standalone and inside a world supergrid. */
+export function rippleIndex(col: number, row: number): number {
+  let h = Math.imul(col + 1, 0x9e3779b1) ^ Math.imul(row + 1, 0x85ebca77);
+  h ^= h >>> 13;
+  return 1 + ((h >>> 0) % 4);
+}
+
+function waterTileName(flags: NeighbourFlags, col: number, row: number): string {
   const { north, east, south, west, northWest, northEast } = flags;
   if (north && south && east && west) {
     if (!northWest) return "pond-20";
@@ -167,16 +181,15 @@ function waterTileName(flags: NeighbourFlags, ripple: () => number): string {
     // water renders a floating bar. smoothWater fills SW/SE notches instead,
     // and any residual case renders as open water (a subtle missing nub
     // beats a broken bank).
-    return `pond-center-${1 + Math.floor(ripple() * 4)}`;
+    return `pond-center-${rippleIndex(col, row)}`;
   }
   if (north && south && east && !west && !flags.northWest && !flags.southWest) return "pond-25";
   if (north && south && !east && west && !flags.northEast && !flags.southEast) return "pond-24";
   return `pond-${autotileIndex(flags)}`;
 }
 
-// "dirt" bakes with the path autotile family: grass-dirt-2 is a speckled
-// transition tile, while path-1..9 is the actual bare-earth vocabulary the
-// live map uses for dirt clearings and trails.
+// "dirt" bakes with the path autotile family: path-1..9 is the actual
+// bare-earth vocabulary the live map uses for dirt clearings and trails.
 const GROUND_PREFIX: Partial<Record<Ground, string>> = {
   path: "path",
   road: "road",
@@ -190,12 +203,17 @@ const GROUND_PREFIX: Partial<Record<Ground, string>> = {
  * pond autotile cannot draw a closed shoreline. Offending tiles revert to
  * `fallback` ground. Out-of-bounds counts as water, like the server's
  * missing-neighbour rule. */
-export function smoothWater(ground: GroundMap, fallback: Ground = "grass"): void {
-  const water = (col: number, row: number) => !inBounds(col, row) || ground[row][col] === "water";
+export type GroundFallback = Ground | ((col: number, row: number) => Ground);
+
+const fallbackAt = (fallback: GroundFallback, col: number, row: number): Ground =>
+  typeof fallback === "function" ? fallback(col, row) : fallback;
+
+export function smoothWater(ground: GroundMap, fallback: GroundFallback = "grass"): void {
+  const water = (col: number, row: number) => !inMap(ground, col, row) || ground[row][col] === "water";
   for (let pass = 0; pass < 40; pass += 1) {
     let changed = false;
-    for (let row = 0; row < DESIGN_GRID; row += 1) {
-      for (let col = 0; col < DESIGN_GRID; col += 1) {
+    for (let row = 0; row < ground.length; row += 1) {
+      for (let col = 0; col < ground[row].length; col += 1) {
         if (ground[row][col] !== "water") continue;
         const north = water(col, row - 1);
         const south = water(col, row + 1);
@@ -221,7 +239,7 @@ export function smoothWater(ground: GroundMap, fallback: Ground = "grass"): void
           (!south && !east && southEast) ||
           (!south && !west && southWest);
         if (!inWaterSquare || (surrounded && landDiagonals >= 2) || kissingCorner) {
-          ground[row][col] = fallback;
+          ground[row][col] = fallbackAt(fallback, col, row);
           changed = true;
           continue;
         }
@@ -230,11 +248,17 @@ export function smoothWater(ground: GroundMap, fallback: Ground = "grass"): void
         // with water — the shoreline smooths instead of needing the nub. Only
         // plain fallback ground may flood; paths/roads stay dry (a residual
         // notch just renders as open water).
-        if (surrounded && !southWest && inBounds(col - 1, row + 1) && ground[row + 1][col - 1] === fallback) {
+        if (
+          surrounded && !southWest && inMap(ground, col - 1, row + 1) &&
+          ground[row + 1][col - 1] === fallbackAt(fallback, col - 1, row + 1)
+        ) {
           ground[row + 1][col - 1] = "water";
           changed = true;
         }
-        if (surrounded && !southEast && inBounds(col + 1, row + 1) && ground[row + 1][col + 1] === fallback) {
+        if (
+          surrounded && !southEast && inMap(ground, col + 1, row + 1) &&
+          ground[row + 1][col + 1] === fallbackAt(fallback, col + 1, row + 1)
+        ) {
           ground[row + 1][col + 1] = "water";
           changed = true;
         }
@@ -251,16 +275,16 @@ function absorbIsolatedSpecks(ground: GroundMap): void {
   const familyOf = (kind: Ground) => (kind === "dirt" ? "path" : kind);
   for (let pass = 0; pass < 8; pass += 1) {
     let changed = false;
-    for (let row = 0; row < DESIGN_GRID; row += 1) {
-      for (let col = 0; col < DESIGN_GRID; col += 1) {
+    for (let row = 0; row < ground.length; row += 1) {
+      for (let col = 0; col < ground[row].length; col += 1) {
         const kind = ground[row][col];
         if (!GROUND_PREFIX[kind]) continue;
         const family = familyOf(kind);
         const cardinals: Array<Ground | null> = [
-          inBounds(col, row - 1) ? ground[row - 1][col] : null,
-          inBounds(col, row + 1) ? ground[row + 1][col] : null,
-          inBounds(col - 1, row) ? ground[row][col - 1] : null,
-          inBounds(col + 1, row) ? ground[row][col + 1] : null,
+          inMap(ground, col, row - 1) ? ground[row - 1][col] : null,
+          inMap(ground, col, row + 1) ? ground[row + 1][col] : null,
+          inMap(ground, col - 1, row) ? ground[row][col - 1] : null,
+          inMap(ground, col + 1, row) ? ground[row][col + 1] : null,
         ];
         if (cardinals.some((value) => value === null || familyOf(value) === family)) continue;
         const waterCount = cardinals.filter((value) => value === "water").length;
@@ -273,12 +297,13 @@ function absorbIsolatedSpecks(ground: GroundMap): void {
 }
 
 /** Bake the ground layer into tiles (img + water solidity). Runs the water
- * smoothing rules first so shorelines are always legal. */
+ * smoothing rules first so shorelines are always legal. Deterministic and
+ * RNG-free: the same ground map always bakes to the same tiles, whether it is
+ * a standalone block or a slice of a world supergrid. */
 export function bakeGround(
   grid: DesignTile[][],
   ground: GroundMap,
-  rng: Rng,
-  waterFallback: Ground = "grass",
+  waterFallback: GroundFallback = "grass",
 ): void {
   // Smoothing and speck absorption can each expose new work for the other
   // (absorbed water reopens shoreline checks; smoothing fallback can strand a
@@ -288,8 +313,8 @@ export function bakeGround(
     absorbIsolatedSpecks(ground);
   }
   smoothWater(ground, waterFallback);
-  for (let row = 0; row < DESIGN_GRID; row += 1) {
-    for (let col = 0; col < DESIGN_GRID; col += 1) {
+  for (let row = 0; row < ground.length; row += 1) {
+    for (let col = 0; col < ground[row].length; col += 1) {
       const kind = ground[row][col];
       const tile = grid[row][col];
       if (kind === "grass") {
@@ -297,7 +322,7 @@ export function bakeGround(
       } else if (kind === "rocky") {
         tile.img = "rocky-1";
       } else if (kind === "water") {
-        tile.img = waterTileName(neighbours(ground, col, row, "water"), () => rng.next());
+        tile.img = waterTileName(neighbours(ground, col, row, "water"), col, row);
         tile.solid = true;
       } else {
         const prefix = GROUND_PREFIX[kind];
@@ -311,7 +336,7 @@ export function bakeGround(
 
 export function isClear(grid: DesignTile[][], ground: GroundMap, col: number, row: number): boolean {
   return (
-    inBounds(col, row) &&
+    inMap(grid, col, row) &&
     !grid[row][col].img2 &&
     !grid[row][col].feature &&
     ground[row][col] !== "water"
@@ -344,7 +369,7 @@ function areaOnGround(
 ): boolean {
   for (let r = row; r < row + height; r += 1) {
     for (let c = col; c < col + width; c += 1) {
-      if (!inBounds(c, r) || ground[r][c] !== kind) return false;
+      if (!inMap(ground, c, r) || ground[r][c] !== kind) return false;
     }
   }
   return true;
@@ -368,10 +393,11 @@ export function placeHouse(
   return true;
 }
 
-/** 3×3 mossy rock dome with a cave doorway. The mountain-1..9 art carries the
- * rocky biome's mauve ground in its background, so domes are legal on rocky
- * ground only. mountain-8's slot (an unpainted hole in the source sheet) is
- * filled by the harvested cave-door-1 tile, which doubles as the entrance. */
+/** 3×3 mossy rock dome with a cave doorway. The mountain-1..9 art ships
+ * re-grounded onto the beige speckle (build-design-tiles.mjs), so domes are
+ * legal on rocky ground only. mountain-8's slot (an unpainted hole in the
+ * source sheet) is filled by the harvested cave-door-1 tile, which doubles as
+ * the entrance. */
 export function placeDome(
   grid: DesignTile[][],
   ground: GroundMap,
@@ -402,7 +428,7 @@ export function placeDecor(
   img2: string,
   options: { solid?: boolean; feature?: string } = {},
 ): void {
-  if (!inBounds(col, row)) return;
+  if (!inMap(grid, col, row)) return;
   const tile = grid[row][col];
   tile.img2 = img2;
   if (options.solid) tile.solid = true;
@@ -411,7 +437,7 @@ export function placeDecor(
 
 /** Route sign (grass-backed art → grass only). */
 export function placeSign(grid: DesignTile[][], ground: GroundMap, col: number, row: number): void {
-  if (!inBounds(col, row) || ground[row][col] !== "grass") return;
+  if (!inMap(grid, col, row) || ground[row][col] !== "grass") return;
   placeDecor(grid, col, row, "route-sign-1", { solid: true, feature: "sign" });
 }
 
@@ -422,14 +448,14 @@ export function placeRockySign(
   col: number,
   row: number,
 ): void {
-  if (!inBounds(col, row) || ground[row][col] !== "rocky") return;
+  if (!inMap(grid, col, row) || ground[row][col] !== "rocky") return;
   placeDecor(grid, col, row, "sign-rocky-1", { solid: true, feature: "sign" });
 }
 
 /** Invisible hidden item, exactly like the live generator's secret pockets.
  * The overlay copies the ground tile so nothing shows until discovered. */
 export function placeHiddenItem(grid: DesignTile[][], ground: GroundMap, col: number, row: number): void {
-  if (!inBounds(col, row)) return;
+  if (!inMap(grid, col, row)) return;
   const kind = ground[row][col];
   if (kind !== "grass" && kind !== "rocky") return;
   const tile = grid[row][col];
@@ -438,23 +464,27 @@ export function placeHiddenItem(grid: DesignTile[][], ground: GroundMap, col: nu
   tile.solid = false;
 }
 
-/** One-way ledge row with proper left/middle/right caps. The ledge art sits
- * on rocky ground, so rows only stamp onto rocky tiles. */
-export function placeLedgeRow(
+/** Boulder ridge: a dotted line of mossy boulders with a guaranteed walkable
+ * gap — the rocky biome's terrace/barrier vocabulary. (The old ledge rows were
+ * built from dome-top crops and rendered as broken cliff crests; the legality
+ * rules now ban that art outright, and ridges took their place.) */
+export function placeBoulderLine(
   grid: DesignTile[][],
   ground: GroundMap,
+  rng: Rng,
   row: number,
   fromCol: number,
   toCol: number,
+  options: { gapAt?: number; density?: number } = {},
 ): void {
+  const gapAt = options.gapAt ?? rng.range(fromCol, toCol);
+  const density = options.density ?? 0.85;
   for (let col = fromCol; col <= toCol; col += 1) {
+    if (col === gapAt) continue;
     if (!isClear(grid, ground, col, row)) continue;
     if (ground[row][col] !== "rocky") continue;
-    const img2 =
-      col === fromCol ? "ledge-left-1" : col === toCol ? "ledge-right-1" : "ledge-middle-1";
-    const tile = grid[row][col];
-    tile.img2 = img2;
-    tile.feature = "ledge";
+    if (!rng.chance(density)) continue;
+    placeDecor(grid, col, row, "boulder-mossy-1", { solid: true, feature: "rock" });
   }
 }
 
@@ -473,9 +503,11 @@ export function treeBorder(
 ): void {
   const thickness = options.thickness ?? 1;
   const gapChance = options.gapChance ?? 0;
-  for (let row = 0; row < DESIGN_GRID; row += 1) {
-    for (let col = 0; col < DESIGN_GRID; col += 1) {
-      const edgeDistance = Math.min(row, col, DESIGN_GRID - 1 - row, DESIGN_GRID - 1 - col);
+  const rows = grid.length;
+  const cols = grid[0]?.length ?? 0;
+  for (let row = 0; row < rows; row += 1) {
+    for (let col = 0; col < cols; col += 1) {
+      const edgeDistance = Math.min(row, col, rows - 1 - row, cols - 1 - col);
       if (edgeDistance >= thickness) continue;
       if (!isClear(grid, ground, col, row) || ground[row][col] !== "grass") continue;
       if (rng.chance(gapChance)) continue;
@@ -494,8 +526,8 @@ export function scatter(
   options: { on?: Ground[]; solid?: boolean; feature?: string } = {},
 ): void {
   const allowed = options.on ?? ["grass"];
-  for (let row = 0; row < DESIGN_GRID; row += 1) {
-    for (let col = 0; col < DESIGN_GRID; col += 1) {
+  for (let row = 0; row < grid.length; row += 1) {
+    for (let col = 0; col < grid[row].length; col += 1) {
       if (!allowed.includes(ground[row][col])) continue;
       if (!isClear(grid, ground, col, row)) continue;
       if (!rng.chance(density)) continue;
@@ -516,8 +548,8 @@ export function longGrassPatch(
   centerRow: number,
   radius: number,
 ): void {
-  for (let row = 0; row < DESIGN_GRID; row += 1) {
-    for (let col = 0; col < DESIGN_GRID; col += 1) {
+  for (let row = 0; row < grid.length; row += 1) {
+    for (let col = 0; col < grid[row].length; col += 1) {
       const dx = col - centerCol;
       const dy = row - centerRow;
       if (Math.sqrt(dx * dx + dy * dy) > radius * (0.75 + rng.next() * 0.4)) continue;
@@ -558,9 +590,11 @@ export function findClearSpot(
 ): { col: number; row: number } | null {
   const margin = options.margin ?? 1;
   const allowed = options.allowGround ?? ["grass", "path", "road", "sand", "dirt", "rocky"];
+  const rows = grid.length;
+  const cols = grid[0]?.length ?? 0;
   for (let attempt = 0; attempt < 60; attempt += 1) {
-    const col = rng.range(margin, DESIGN_GRID - 1 - margin);
-    const row = rng.range(margin, DESIGN_GRID - 1 - margin);
+    const col = rng.range(margin, cols - 1 - margin);
+    const row = rng.range(margin, rows - 1 - margin);
     if (!isClear(grid, ground, col, row)) continue;
     if (!allowed.includes(ground[row][col])) continue;
     if (grid[row][col].feature) continue;

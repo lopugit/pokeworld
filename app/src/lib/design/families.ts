@@ -31,10 +31,10 @@ import {
   paintPath,
   paintRect,
   placeDecor,
+  placeBoulderLine,
   placeDome,
   placeHiddenItem,
   placeHouse,
-  placeLedgeRow,
   placeRockySign,
   placeSign,
   scatter,
@@ -83,6 +83,8 @@ const scatterTrees = (ctx: SceneContext, density: number) =>
   });
 
 // Rocky-biome texture: walkable scree bumps plus solid boulders.
+// (rock-1 is banned art — its body is pink-cobble-native and can never blend
+// with the beige speckle ground; boulder-mossy-1 is the legal boulder.)
 const scree = (ctx: SceneContext, density: number) =>
   scatter(ctx.grid, ctx.ground, ctx.rng, ["rocky-bumps-1"], density, {
     on: ["rocky"],
@@ -90,7 +92,7 @@ const scree = (ctx: SceneContext, density: number) =>
   });
 
 const boulders = (ctx: SceneContext, density: number) =>
-  scatter(ctx.grid, ctx.ground, ctx.rng, ["rock-1", "boulder-mossy-1"], density, {
+  scatter(ctx.grid, ctx.ground, ctx.rng, ["boulder-mossy-1"], density, {
     on: ["rocky"],
     solid: true,
     feature: "rock",
@@ -740,7 +742,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       domeSomewhere(ctx, [[ctx.rng.pick([5, 6, 7]), 1]]);
       if (ctx.rng.chance(0.7)) domeSomewhere(ctx, [[1, 2], [2, 1]]);
       if (ctx.rng.chance(0.7)) domeSomewhere(ctx, [[12, 2], [11, 1]]);
-      placeLedgeRow(ctx.grid, ctx.ground, 9, ctx.rng.range(3, 5), ctx.rng.range(10, 12));
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 9, ctx.rng.range(3, 5), ctx.rng.range(10, 12));
       boulders(ctx, 0.07);
       scree(ctx, 0.1);
       rockySignSomewhere(ctx);
@@ -774,7 +776,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       for (let col = 1; col <= 14; col += 1) {
         if (Math.abs(col - gap) <= 0) continue;
         if (ctx.rng.chance(0.6) && isClear(ctx.grid, ctx.ground, col, barrier)) {
-          placeDecor(ctx.grid, col, barrier, ctx.rng.pick(["rock-1", "boulder-mossy-1"]), {
+          placeDecor(ctx.grid, col, barrier, "boulder-mossy-1", {
             solid: true,
             feature: "barricade",
           });
@@ -793,13 +795,13 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     id: "mountain-pass",
     label: "Mountain pass",
     biome: "mountain",
-    tags: ["ledges", "climb", "route", "rocky"],
+    tags: ["terraces", "climb", "route", "rocky"],
     names: {
       adjectives: ["Jagged", "Windswept", "Switchback", "Highstep", "Craggy", "Bouldered", "Scree", "Cliffside"],
       nouns: ["Pass", "Ascent", "Climb", "Steps", "Ridge", "Traverse", "Gap", "Saddle"],
     },
     blurbs: [
-      "Three ledges up, one hop down, repeat until scenic.",
+      "Three boulder terraces up, one scramble down, repeat until scenic.",
       "The wind here files formal complaints about hikers' hats.",
       "A {pokemon} has claimed the best viewpoint and takes bribes in berries.",
     ],
@@ -807,9 +809,9 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       fillGround(ctx, "rocky");
     },
     decorate(ctx) {
-      placeLedgeRow(ctx.grid, ctx.ground, 4, 1, ctx.rng.range(9, 14));
-      placeLedgeRow(ctx.grid, ctx.ground, 8, ctx.rng.range(2, 6), 14);
-      placeLedgeRow(ctx.grid, ctx.ground, 12, 1, ctx.rng.range(9, 14));
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 4, 1, ctx.rng.range(9, 14));
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 8, ctx.rng.range(2, 6), 14);
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 12, 1, ctx.rng.range(9, 14));
       boulders(ctx, 0.06);
       scree(ctx, 0.12);
       rockySignSomewhere(ctx);
@@ -876,7 +878,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     id: "summit-lookout",
     label: "Summit lookout",
     biome: "mountain",
-    tags: ["summit", "view", "ledges", "sign"],
+    tags: ["summit", "view", "terraces", "sign"],
     names: {
       adjectives: ["Skyline", "Cloudbrush", "Highmark", "Vantage", "Aerie", "Topmost", "Farview", "Overlook"],
       nouns: ["Lookout", "Summit", "Peak", "Crown", "Perch", "Point", "Height", "Watch"],
@@ -891,9 +893,9 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       domeSomewhere(ctx, [[ctx.rng.pick([1, 2]), 10], [12, 10]]);
-      placeLedgeRow(ctx.grid, ctx.ground, 6, 1, 6);
-      placeLedgeRow(ctx.grid, ctx.ground, 6, 10, 14);
-      placeLedgeRow(ctx.grid, ctx.ground, 11, 2, 13);
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 6, 1, 6, { gapAt: -1 });
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 6, 10, 14, { gapAt: -1 });
+      placeBoulderLine(ctx.grid, ctx.ground, ctx.rng, 11, 2, 13);
       placeRockySign(ctx.grid, ctx.ground, ctx.rng.pick([7, 9]), 2);
       boulders(ctx, 0.05);
       scree(ctx, 0.08);
@@ -1067,7 +1069,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       for (const row of [4, 7, 10]) {
         for (let col = 3; col <= 12; col += ctx.rng.pick([2, 3])) {
           if (ctx.rng.chance(0.7) && isClear(ctx.grid, ctx.ground, col, row)) {
-            placeDecor(ctx.grid, col, row, ctx.rng.pick(["rock-1", "boulder-mossy-1"]), {
+            placeDecor(ctx.grid, col, row, "boulder-mossy-1", {
               solid: true,
               feature: "ruin-pillar",
             });

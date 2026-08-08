@@ -38,7 +38,7 @@ function deriveTags(design: Pick<GeneratedDesign, "tiles" | "entities">): string
       switch (tile.feature) {
         case "house": tags.add("houses"); break;
         case "cave-entrance": tags.add("cave"); break;
-        case "ledge": tags.add("ledges"); break;
+        case "rock": case "barricade": case "ruin-pillar": tags.add("boulders"); break;
         case "sign": tags.add("signs"); break;
         case "hidden-item": tags.add("hidden-items"); break;
         case "long-grass": tags.add("long-grass"); break;
@@ -62,7 +62,7 @@ export function generateDesign(familyId: string, seed: number): GeneratedDesign 
   const rng = createRng(family.id, seed);
   const ctx: SceneContext = { rng, ground: newGround(), grid: newGrid(), entities: [] };
   family.paintGround(ctx);
-  bakeGround(ctx.grid, ctx.ground, rng, family.waterFallback ?? "grass");
+  bakeGround(ctx.grid, ctx.ground, family.waterFallback ?? "grass");
   family.decorate(ctx);
   const { name, description } = nameFor(family, seed);
   const derived = deriveTags({ tiles: ctx.grid, entities: ctx.entities });
