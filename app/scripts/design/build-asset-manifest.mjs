@@ -702,6 +702,34 @@ function characterAnimations(file) {
 
 const animations = characterAnimations(CHARACTER_SRC);
 
+// Tileset animation reels decoded from pret anim dirs (file-per-frame).
+const tileAnimDir = path.join(designDir, "anim");
+if (fs.existsSync(tileAnimDir)) {
+  const groups = new Map();
+  for (const file of fs.readdirSync(tileAnimDir).filter((name) => name.endsWith(".png")).sort()) {
+    const match = /^(.+)-(\d+)\.png$/.exec(file);
+    if (!match) continue;
+    if (!groups.has(match[1])) groups.set(match[1], []);
+    groups.get(match[1]).push({ index: Number(match[2]), src: `/design/anim/${file}` });
+  }
+  for (const [stem, frames] of [...groups.entries()].sort()) {
+    frames.sort((a, b) => a.index - b.index);
+    const [tileset, anim] = stem.split("--");
+    const { width, height } = readPng(path.join(tileAnimDir, `${stem}-0.png`));
+    const label = anim.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const tilesetLabel = tileset.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    animations.push({
+      id: `tileanim:${stem}`,
+      name: `${label} (${tilesetLabel} tileset)`,
+      category: "animation",
+      fps: /water|waterfall/.test(anim) ? 8 : 5,
+      tags: ["animation", "tileset", tileset, anim, "emerald"],
+      frames: frames.map((frame) => frame.src),
+      frameSize: [width, height],
+    });
+  }
+}
+
 // Directional walk cycles from the player sprite sets.
 for (const [character, directions] of Object.entries(playerFrames)) {
   for (const [direction, frames] of Object.entries(directions)) {

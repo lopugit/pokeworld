@@ -477,3 +477,81 @@ for (const entry of NPCS) {
   picCount += 1;
 }
 console.log(`decoded ${picCount} object-event sprites (people/pokemon/objects)`);
+
+// ---------------------------------------------------------------------------
+// Tileset animation frames: each anim dir holds numbered frame PNGs with real
+// palettes. Decoded frame-per-file into public/design/anim/ so the manifest
+// can serve them as playable reels.
+// ---------------------------------------------------------------------------
+const ANIM_TILESETS = [
+  ["data/tilesets/primary/general/anim", "general"],
+  ["data/tilesets/secondary/lavaridge/anim", "lavaridge"],
+  ["data/tilesets/secondary/mauville/anim", "mauville"],
+  ["data/tilesets/secondary/rustboro/anim", "rustboro"],
+  ["data/tilesets/secondary/sootopolis/anim", "sootopolis"],
+  ["data/tilesets/secondary/slateport/anim", "slateport"],
+  ["data/tilesets/secondary/ever_grande/anim", "ever-grande"],
+  ["data/tilesets/secondary/dewford/anim", "dewford"],
+  ["data/tilesets/secondary/pacifidlog/anim", "pacifidlog"],
+  ["data/tilesets/secondary/underwater/anim", "underwater"],
+  ["data/tilesets/secondary/battle_frontier_outside_west/anim", "battle-frontier"],
+];
+
+async function listPretSubdirs(relPath) {
+  const cacheFile = resolve(pretDir, "listings", `${relPath.replace(/\//g, "__")}__dirs.json`);
+  if (existsSync(cacheFile)) return JSON.parse(readFileSync(cacheFile, "utf8"));
+  const response = await fetch(`https://api.github.com/repos/pret/pokeemerald/contents/${relPath}`, {
+    headers: { accept: "application/vnd.github+json" },
+  });
+  if (!response.ok) throw new Error(`list ${relPath}: HTTP ${response.status}`);
+  const names = (await response.json()).filter((entry) => entry.type === "dir").map((entry) => entry.name);
+  mkdirSync(dirname(cacheFile), { recursive: true });
+  writeFileSync(cacheFile, JSON.stringify(names));
+  return names;
+}
+
+const animDir = resolve(appDir, "public/design/anim");
+mkdirSync(animDir, { recursive: true });
+let animCount = 0;
+for (const [base, slug] of ANIM_TILESETS) {
+  let anims;
+  try {
+    anims = await listPretSubdirs(base);
+  } catch {
+    continue;
+  }
+  for (const anim of anims) {
+    let frames;
+    try {
+      frames = (await listPretDir(`${base}/${anim}`)).sort(
+        (a, b) => Number.parseInt(a) - Number.parseInt(b),
+      );
+    } catch {
+      continue;
+    }
+    let frameIndex = 0;
+    for (const frame of frames) {
+      let buffer;
+      try {
+        buffer = await fetchPret(`${base}/${anim}/${frame}`);
+      } catch {
+        continue;
+      }
+      const image = readIndexedPng(buffer);
+      const palette = readPngPalette(buffer);
+      const out = new PNG({ width: image.width, height: image.height });
+      for (let y = 0; y < image.height; y += 1) {
+        for (let x = 0; x < image.width; x += 1) {
+          const colour = image.indices[y * image.width + x];
+          if (colour === 0) continue;
+          const [r, g, b] = palette[colour] ?? [255, 0, 255];
+          out.data.set([r, g, b, 255], (y * image.width + x) * 4);
+        }
+      }
+      writeFileSync(resolve(animDir, `${slug}--${anim.replace(/_/g, "-")}-${frameIndex}.png`), PNG.sync.write(out));
+      frameIndex += 1;
+      animCount += 1;
+    }
+  }
+}
+console.log(`decoded ${animCount} tileset animation frames into public/design/anim/`);

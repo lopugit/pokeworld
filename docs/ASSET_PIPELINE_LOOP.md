@@ -44,7 +44,10 @@ sheet before commit (render over grass at 3×+).
       TMs/HMs, berries, key items; embedded palettes, new Items category):
       item + berry icons (graphics/items/icons/*.png + .pal same
       name) → new "Items" category, whole objects.
-- [ ] Wave 2d-3: tileset animation frames (data/tilesets/*/*/anim/**) →
+- [x] Wave 2d-3 (COMPLETE — 101 frames → 18 reels: water/flower/waterfall/
+      shore edges + town anims incl. Mauville lights, Sootopolis stripes,
+      frontier flags; playable in the existing file-per-frame player):
+      tileset animation frames (data/tilesets/*/*/anim/**) →
       stitch per-animation frame reels into manifest `animations` (like the
       existing character walk reels) so /design plays them whole.
 - [ ] Wave 2d-4: NPC walk cycles → animation reels for the ~20 most common
