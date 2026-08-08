@@ -296,6 +296,10 @@ const BUILDINGS = [
   ["struct-center-slateport", "slateport-city", 18, 16, 4, 4],
   ["struct-shipyard-slateport", "slateport-city", 24, 32, 7, 6],
   ["struct-lighthouse-slateport", "slateport-city", 32, 51, 3, 4],
+  ["struct-gym-sootopolis", "sootopolis-city", 28, 28, 6, 5],
+  ["struct-house-sootopolis", "sootopolis-city", 8, 13, 3, 4],
+  ["struct-mart-sootopolis", "sootopolis-city", 16, 26, 4, 4],
+  ["struct-center-sootopolis", "sootopolis-city", 42, 28, 4, 4],
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],

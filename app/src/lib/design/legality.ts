@@ -293,6 +293,26 @@ export const FORMATIONS: Formation[] = [
     "Harvested whole from the Lavaridge Town render; grass-backed."),
   // Browser/design-only families (not in the live map's building ladder).
   {
+    ...buildingFormation("gym-sootopolis", "Sootopolis gym (6×5)", 6, 5, "struct-gym-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("house-sootopolis", "Sootopolis stone house (3×4)", 3, 4, "struct-house-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("mart-sootopolis", "Sootopolis mart (4×4)", 4, 4, "struct-mart-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("center-sootopolis", "Sootopolis Pokémon Center (4×4)", 4, 4, "struct-center-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
     ...buildingFormation("battle-tent-slateport", "Slateport Battle Tent (4×5)", 4, 5, "struct-battle-tent-slateport",
       "Harvested whole from the Slateport City render; stands on the harbour plaza."),
     ground: "road",
