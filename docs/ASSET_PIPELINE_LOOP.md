@@ -60,10 +60,17 @@ sheet before commit (render over grass at 3×+).
       region map (graphics/pokenav/region_map*.png), emotes
       (graphics/field_effects/pics/emotes*), door animations
       (graphics/door_anims) → props/UI whole objects + door anim reels.
-- [ ] Wave 2d-6: audio — Pokémon cries (sound/direct_sound_samples/cries)
+- [x] Wave 2d-6 (COMPLETE — all 388 Pokémon cries converted .wav→.m4a via
+      ffmpeg into a new Audio category with an in-browser player. Music
+      midis SKIPPED per checklist terms: no fluidsynth/timidity on this
+      machine for soundfont rendering): audio — Pokémon cries (sound/direct_sound_samples/cries)
       converted .aif→.mp3/.ogg under app/public/audio/cries/ + manifest
       "audio" entries with a /design player. Music (midi) optional; skip if
       conversion tooling unavailable — note plainly instead.
+
+## LOOP COMPLETE 2026-08-09 — every box ticked. Final state: 4,282 singles,
+7,656 sheet cells, 101 animation reels, 388 cries, 27 whole-building
+families, 16 towns + 193 outdoor + 165 interior renders, all committed.
 
 ## Loop protocol (every iteration)
 
