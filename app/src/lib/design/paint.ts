@@ -574,8 +574,12 @@ export function placeTree(
   return true;
 }
 
-/** Scatter complete big trees (attempts at random anchors) plus small
- * complete shrubs, over grass. */
+/** Scatter complete big trees (attempts at random anchors), then fill the
+ * former small-tree density with MORE real 2×2 trees — falling back to a
+ * complete shrub only where a whole tree no longer fits. (The old small
+ * tree, tree-1, was a banned half-crop; replacing it with shrubs alone
+ * collapsed tree density across the catalog, so the density pass must
+ * plant real trees first.) */
 export function scatterTrees(
   grid: DesignTile[][],
   ground: GroundMap,
@@ -591,7 +595,16 @@ export function scatterTrees(
     placeTree(grid, ground, col, row);
   }
   if (smallDensity > 0) {
-    scatter(grid, ground, rng, [SMALL_SHRUB], smallDensity, { solid: true, feature: "shrub" });
+    for (let row = 0; row < rows; row += 1) {
+      for (let col = 0; col < cols; col += 1) {
+        if (ground[row]?.[col] !== "grass") continue;
+        if (!isClear(grid, ground, col, row)) continue;
+        if (!rng.chance(smallDensity)) continue;
+        if (!placeTree(grid, ground, col, row)) {
+          placeDecor(grid, col, row, SMALL_SHRUB, { solid: true, feature: "shrub" });
+        }
+      }
+    }
   }
 }
 
@@ -628,7 +641,9 @@ export function treeBorder(
         if (edgeDistance < 3 || edgeDistance > 3) continue;
         if (!rng.chance(0.22)) continue;
         if (!isClear(grid, ground, col, row) || ground[row][col] !== "grass") continue;
-        placeDecor(grid, col, row, SMALL_SHRUB, { solid: true, feature: "forest-wall" });
+        if (!placeTree(grid, ground, col, row, "forest-wall")) {
+          placeDecor(grid, col, row, SMALL_SHRUB, { solid: true, feature: "forest-wall" });
+        }
       }
     }
   }
