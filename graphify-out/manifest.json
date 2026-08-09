@@ -9320,8 +9320,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1786178769.0173178,
-    "ast_hash": "d0886ef0dcb5ea7540d63fd209396891",
+    "mtime": 1786255993.9770842,
+    "ast_hash": "78e550b58c9ecb9fef12b1fc0021b55d",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
@@ -9330,8 +9330,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1786251995.4561338,
-    "ast_hash": "a63d0a7d3502a2fde3150642a2732462",
+    "mtime": 1786255948.6062727,
+    "ast_hash": "f3c3bb25184d32b5db11eb8059187f8b",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/legality.ts": {
-    "mtime": 1786251995.4600804,
-    "ast_hash": "4c8ad15e1c439bc8d160cfd374ffdbda",
+    "mtime": 1786256006.0059924,
+    "ast_hash": "ede78e9fef4aa84bc615366e8ddeac16",
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
@@ -9425,8 +9425,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families-generated.ts": {
-    "mtime": 1786178769.0159602,
-    "ast_hash": "380364c4d6eabe47a7cc277ac6f5b216",
+    "mtime": 1786255993.977521,
+    "ast_hash": "48cc97218281d4ab7fe2e1ecd735b4dc",
     "semantic_hash": ""
   },
   "app/src/lib/design/registry.ts": {
@@ -30190,8 +30190,8 @@
     "semantic_hash": ""
   },
   "docs/DESIGN_FIX_LOOP.md": {
-    "mtime": 1786253397.7524292,
-    "ast_hash": "83b7635beb9f5bebc86e6d89ddf5349a",
+    "mtime": 1786256162.2069716,
+    "ast_hash": "d83e802afc55df3c35ac40dad84d740d",
     "semantic_hash": ""
   }
 }

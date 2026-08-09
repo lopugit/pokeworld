@@ -4,6 +4,466 @@
   "graph": {},
   "nodes": [
     {
+      "label": "families-generated.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated",
+      "community": 0,
+      "norm_label": "families-generated.ts"
+    },
+    {
+      "label": "Frame",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_frame",
+      "community": 0,
+      "norm_label": "frame"
+    },
+    {
+      "label": "mapPoint()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_mappoint",
+      "community": 0,
+      "norm_label": "mappoint()"
+    },
+    {
+      "label": "applyFrame()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_applyframe",
+      "community": 0,
+      "norm_label": "applyframe()"
+    },
+    {
+      "label": "mapAnchor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_mapanchor",
+      "community": 0,
+      "norm_label": "mapanchor()"
+    },
+    {
+      "label": "ThemePack",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_themepack",
+      "community": 0,
+      "norm_label": "themepack"
+    },
+    {
+      "label": "STARTERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_starters",
+      "community": 0,
+      "norm_label": "starters"
+    },
+    {
+      "label": "FIELD_POKEMON",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_field_pokemon",
+      "community": 0,
+      "norm_label": "field_pokemon"
+    },
+    {
+      "label": "THEMES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_themes",
+      "community": 0,
+      "norm_label": "themes"
+    },
+    {
+      "label": "Plan",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L377",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_plan",
+      "community": 19,
+      "norm_label": "plan"
+    },
+    {
+      "label": ".paint()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L382",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_plan_paint",
+      "community": 19,
+      "norm_label": ".paint()"
+    },
+    {
+      "label": ".decorate()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L384",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_plan_decorate",
+      "community": 19,
+      "norm_label": ".decorate()"
+    },
+    {
+      "label": "PlannerDef",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L387",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_plannerdef",
+      "community": 218,
+      "norm_label": "plannerdef"
+    },
+    {
+      "label": ".build()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L391",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_plannerdef_build",
+      "community": 218,
+      "norm_label": ".build()"
+    },
+    {
+      "label": "flowerOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L396",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_flowerof",
+      "community": 0,
+      "norm_label": "flowerof()"
+    },
+    {
+      "label": "addEntities()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L398",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_addentities",
+      "community": 0,
+      "norm_label": "addentities()"
+    },
+    {
+      "label": "hiddenSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L419",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_hiddensomewhere",
+      "community": 0,
+      "norm_label": "hiddensomewhere()"
+    },
+    {
+      "label": "placeBuildings()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L431",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_placebuildings",
+      "community": 0,
+      "norm_label": "placebuildings()"
+    },
+    {
+      "label": "pickBuildingSet()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L452",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_pickbuildingset",
+      "community": 0,
+      "norm_label": "pickbuildingset()"
+    },
+    {
+      "label": "placeDomes()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L467",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_placedomes",
+      "community": 0,
+      "norm_label": "placedomes()"
+    },
+    {
+      "label": "HOUSE_SLOTS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L478",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_house_slots",
+      "community": 0,
+      "norm_label": "house_slots"
+    },
+    {
+      "label": "DOME_SLOTS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L481",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_dome_slots",
+      "community": 0,
+      "norm_label": "dome_slots"
+    },
+    {
+      "label": "PLANNERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L487",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_planners",
+      "community": 0,
+      "norm_label": "planners"
+    },
+    {
+      "label": "TOTAL_WEIGHT",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1002",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_total_weight",
+      "community": 0,
+      "norm_label": "total_weight"
+    },
+    {
+      "label": "TERRAIN_LABEL",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1006",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_terrain_label",
+      "community": 0,
+      "norm_label": "terrain_label"
+    },
+    {
+      "label": "buildGeneratedFamily()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1021",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_buildgeneratedfamily",
+      "community": 218,
+      "norm_label": "buildgeneratedfamily()"
+    },
+    {
+      "label": "GENERATED_FAMILIES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1076",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_generated_generated_families",
+      "community": 133,
+      "norm_label": "generated_families"
+    },
+    {
+      "label": "families.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families",
+      "community": 0,
+      "norm_label": "families.ts"
+    },
+    {
+      "label": "SceneContext",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_scenecontext",
+      "community": 19,
+      "norm_label": "scenecontext"
+    },
+    {
+      "label": "DesignFamily",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_designfamily",
+      "community": 19,
+      "norm_label": "designfamily"
+    },
+    {
+      "label": ".paintGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_designfamily_paintground",
+      "community": 19,
+      "norm_label": ".paintground()"
+    },
+    {
+      "label": ".decorate()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_designfamily_decorate",
+      "community": 19,
+      "norm_label": ".decorate()"
+    },
+    {
+      "label": "FLOWERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_flowers",
+      "community": 0,
+      "norm_label": "flowers"
+    },
+    {
+      "label": "flowerOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_flowerof",
+      "community": 0,
+      "norm_label": "flowerof()"
+    },
+    {
+      "label": "fillGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_fillground",
+      "community": 0,
+      "norm_label": "fillground()"
+    },
+    {
+      "label": "scatterSceneTrees()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_scatterscenetrees",
+      "community": 0,
+      "norm_label": "scatterscenetrees()"
+    },
+    {
+      "label": "scree()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_scree",
+      "community": 0,
+      "norm_label": "scree()"
+    },
+    {
+      "label": "boulders()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_boulders",
+      "community": 0,
+      "norm_label": "boulders()"
+    },
+    {
+      "label": "freeEntitySpot()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_freeentityspot",
+      "community": 0,
+      "norm_label": "freeentityspot()"
+    },
+    {
+      "label": "addNpc()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_addnpc",
+      "community": 0,
+      "norm_label": "addnpc()"
+    },
+    {
+      "label": "addPokemon()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_addpokemon",
+      "community": 0,
+      "norm_label": "addpokemon()"
+    },
+    {
+      "label": "signSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_signsomewhere",
+      "community": 0,
+      "norm_label": "signsomewhere()"
+    },
+    {
+      "label": "rockySignSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_rockysignsomewhere",
+      "community": 0,
+      "norm_label": "rockysignsomewhere()"
+    },
+    {
+      "label": "hiddenSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_hiddensomewhere",
+      "community": 0,
+      "norm_label": "hiddensomewhere()"
+    },
+    {
+      "label": "domeSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_domesomewhere",
+      "community": 199,
+      "norm_label": "domesomewhere()"
+    },
+    {
+      "label": "HAND_FAMILIES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L159",
+      "_origin": "ast",
+      "id": "app_src_lib_design_families_hand_families",
+      "community": 133,
+      "norm_label": "hand_families"
+    },
+    {
       "label": "legality.ts",
       "file_type": "code",
       "source_file": "app/src/lib/design/legality.ts",
@@ -30,7 +490,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_src_lib_design_legality_groundkindof",
-      "community": 132,
+      "community": 133,
       "norm_label": "groundkindof()"
     },
     {
@@ -57,7 +517,7 @@
       "label": "BannedTile",
       "file_type": "code",
       "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L96",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "app_src_lib_design_legality_bannedtile",
       "community": 132,
@@ -67,7 +527,7 @@
       "label": "BANNED_OVERLAYS",
       "file_type": "code",
       "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L104",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "app_src_lib_design_legality_banned_overlays",
       "community": 132,
@@ -200,7 +660,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_src_lib_design_paint",
-      "community": 0,
+      "community": 199,
       "norm_label": "paint.ts"
     },
     {
@@ -230,7 +690,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_inbounds",
-      "community": 0,
+      "community": 199,
       "norm_label": "inbounds()"
     },
     {
@@ -310,7 +770,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_neighbours",
-      "community": 0,
+      "community": 199,
       "norm_label": "neighbours()"
     },
     {
@@ -320,7 +780,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_autotileindex",
-      "community": 132,
+      "community": 199,
       "norm_label": "autotileindex()"
     },
     {
@@ -330,7 +790,7 @@
       "source_location": "L168",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_rippleindex",
-      "community": 0,
+      "community": 199,
       "norm_label": "rippleindex()"
     },
     {
@@ -340,7 +800,7 @@
       "source_location": "L174",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_watertilename",
-      "community": 0,
+      "community": 199,
       "norm_label": "watertilename()"
     },
     {
@@ -350,7 +810,7 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_ground_prefix",
-      "community": 0,
+      "community": 199,
       "norm_label": "ground_prefix"
     },
     {
@@ -360,7 +820,7 @@
       "source_location": "L206",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_groundfallback",
-      "community": 0,
+      "community": 199,
       "norm_label": "groundfallback"
     },
     {
@@ -370,7 +830,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_fallbackat",
-      "community": 0,
+      "community": 199,
       "norm_label": "fallbackat()"
     },
     {
@@ -380,7 +840,7 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_smoothwater",
-      "community": 0,
+      "community": 199,
       "norm_label": "smoothwater()"
     },
     {
@@ -390,7 +850,7 @@
       "source_location": "L274",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_absorbisolatedspecks",
-      "community": 0,
+      "community": 199,
       "norm_label": "absorbisolatedspecks()"
     },
     {
@@ -400,7 +860,7 @@
       "source_location": "L303",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_bakeground",
-      "community": 133,
+      "community": 199,
       "norm_label": "bakeground()"
     },
     {
@@ -420,7 +880,7 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_areaclear",
-      "community": 0,
+      "community": 199,
       "norm_label": "areaclear()"
     },
     {
@@ -430,7 +890,7 @@
       "source_location": "L362",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_areaonground",
-      "community": 0,
+      "community": 199,
       "norm_label": "areaonground()"
     },
     {
@@ -440,7 +900,7 @@
       "source_location": "L381",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_structurekind",
-      "community": 0,
+      "community": 199,
       "norm_label": "structurekind"
     },
     {
@@ -450,7 +910,7 @@
       "source_location": "L386",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_structurekind_tileat",
-      "community": 0,
+      "community": 199,
       "norm_label": ".tileat()"
     },
     {
@@ -460,7 +920,7 @@
       "source_location": "L389",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_structure",
-      "community": 0,
+      "community": 199,
       "norm_label": "structure()"
     },
     {
@@ -480,7 +940,7 @@
       "source_location": "L407",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_placestructure",
-      "community": 0,
+      "community": 199,
       "norm_label": "placestructure()"
     },
     {
@@ -490,7 +950,7 @@
       "source_location": "L428",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_placehouse",
-      "community": 0,
+      "community": 199,
       "norm_label": "placehouse()"
     },
     {
@@ -500,7 +960,7 @@
       "source_location": "L442",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_placedome",
-      "community": 0,
+      "community": 199,
       "norm_label": "placedome()"
     },
     {
@@ -557,17 +1017,17 @@
       "label": "BIG_TREE_SLICES",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L541",
+      "source_location": "L545",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_big_tree_slices",
-      "community": 0,
+      "community": 199,
       "norm_label": "big_tree_slices"
     },
     {
       "label": "placeTree()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L549",
+      "source_location": "L553",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_placetree",
       "community": 0,
@@ -577,7 +1037,7 @@
       "label": "scatterTrees()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L575",
+      "source_location": "L579",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_scattertrees",
       "community": 0,
@@ -587,7 +1047,7 @@
       "label": "treeBorder()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L597",
+      "source_location": "L601",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_treeborder",
       "community": 0,
@@ -597,7 +1057,7 @@
       "label": "scatter()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L634",
+      "source_location": "L638",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_scatter",
       "community": 0,
@@ -607,7 +1067,7 @@
       "label": "longGrassPatch()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L657",
+      "source_location": "L661",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_longgrasspatch",
       "community": 0,
@@ -617,7 +1077,7 @@
       "label": "hedgeLine()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L679",
+      "source_location": "L683",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_hedgeline",
       "community": 0,
@@ -627,21 +1087,11 @@
       "label": "findClearSpot()",
       "file_type": "code",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L699",
+      "source_location": "L703",
       "_origin": "ast",
       "id": "app_src_lib_design_paint_findclearspot",
       "community": 0,
       "norm_label": "findclearspot()"
-    },
-    {
-      "label": "render-samples.test.ts",
-      "file_type": "code",
-      "source_file": "app/tests/render-samples.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_tests_render_samples_test",
-      "community": 222,
-      "norm_label": "render-samples.test.ts"
     },
     {
       "label": "DESIGN_FIX_LOOP.md",
@@ -667,7 +1117,7 @@
       "label": "Protocol (each iteration)",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L15",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "docs_design_fix_loop_protocol_each_iteration",
       "community": 227,
@@ -677,11 +1127,31 @@
       "label": "Checklist",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L26",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "docs_design_fix_loop_checklist",
       "community": 227,
       "norm_label": "checklist"
+    },
+    {
+      "label": "Phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
+      "community": 227,
+      "norm_label": "phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review"
+    },
+    {
+      "label": "render-samples.test.ts",
+      "file_type": "code",
+      "source_file": "app/tests/render-samples.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 222,
+      "norm_label": "render-samples.test.ts",
+      "id": "app_tests_render_samples_test"
     },
     {
       "label": "ASSET_PIPELINE_LOOP.md",
@@ -2509,7 +2979,7 @@
       "source_file": "app/src/components/design/DesignBrowser.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 232,
+      "community": 133,
       "norm_label": "designcard()",
       "id": "app_src_components_design_designbrowser_designcard"
     },
@@ -2529,7 +2999,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "scenedraw.ts",
       "id": "app_src_components_design_scenedraw"
     },
@@ -2539,7 +3009,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "imagecache",
       "id": "app_src_components_design_scenedraw_imagecache"
     },
@@ -2549,7 +3019,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "loadimage()",
       "id": "app_src_components_design_scenedraw_loadimage"
     },
@@ -2559,7 +3029,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "scenedrawoptions",
       "id": "app_src_components_design_scenedraw_scenedrawoptions"
     },
@@ -2569,7 +3039,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "spritecut",
       "id": "app_src_components_design_scenedraw_spritecut"
     },
@@ -2579,7 +3049,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "spritecutcache",
       "id": "app_src_components_design_scenedraw_spritecutcache"
     },
@@ -2589,7 +3059,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "pokemoncut()",
       "id": "app_src_components_design_scenedraw_pokemoncut"
     },
@@ -2599,7 +3069,7 @@
       "source_file": "app/src/components/design/sceneDraw.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "drawscene()",
       "id": "app_src_components_design_scenedraw_drawscene"
     },
@@ -2624,472 +3094,12 @@
       "id": "app_src_components_design_useinfinitereveal_useinfinitereveal"
     },
     {
-      "label": "families-generated.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "families-generated.ts",
-      "id": "app_src_lib_design_families_generated"
-    },
-    {
-      "label": "Frame",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L63",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "frame",
-      "id": "app_src_lib_design_families_generated_frame"
-    },
-    {
-      "label": "mapPoint()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L67",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "mappoint()",
-      "id": "app_src_lib_design_families_generated_mappoint"
-    },
-    {
-      "label": "applyFrame()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "applyframe()",
-      "id": "app_src_lib_design_families_generated_applyframe"
-    },
-    {
-      "label": "mapAnchor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L92",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "mapanchor()",
-      "id": "app_src_lib_design_families_generated_mapanchor"
-    },
-    {
-      "label": "ThemePack",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L102",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "themepack",
-      "id": "app_src_lib_design_families_generated_themepack"
-    },
-    {
-      "label": "STARTERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L113",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "starters",
-      "id": "app_src_lib_design_families_generated_starters"
-    },
-    {
-      "label": "FIELD_POKEMON",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L114",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "field_pokemon",
-      "id": "app_src_lib_design_families_generated_field_pokemon"
-    },
-    {
-      "label": "THEMES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L116",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "themes",
-      "id": "app_src_lib_design_families_generated_themes"
-    },
-    {
-      "label": "Plan",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L376",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "plan",
-      "id": "app_src_lib_design_families_generated_plan"
-    },
-    {
-      "label": ".paint()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L381",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": ".paint()",
-      "id": "app_src_lib_design_families_generated_plan_paint"
-    },
-    {
-      "label": ".decorate()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L383",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": ".decorate()",
-      "id": "app_src_lib_design_families_generated_plan_decorate"
-    },
-    {
-      "label": "PlannerDef",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L386",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "plannerdef",
-      "id": "app_src_lib_design_families_generated_plannerdef"
-    },
-    {
-      "label": ".build()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L390",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": ".build()",
-      "id": "app_src_lib_design_families_generated_plannerdef_build"
-    },
-    {
-      "label": "flowerOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L395",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "flowerof()",
-      "id": "app_src_lib_design_families_generated_flowerof"
-    },
-    {
-      "label": "addEntities()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L397",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "addentities()",
-      "id": "app_src_lib_design_families_generated_addentities"
-    },
-    {
-      "label": "hiddenSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L418",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "hiddensomewhere()",
-      "id": "app_src_lib_design_families_generated_hiddensomewhere"
-    },
-    {
-      "label": "placeBuildings()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L430",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "placebuildings()",
-      "id": "app_src_lib_design_families_generated_placebuildings"
-    },
-    {
-      "label": "pickBuildingSet()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L451",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "pickbuildingset()",
-      "id": "app_src_lib_design_families_generated_pickbuildingset"
-    },
-    {
-      "label": "placeDomes()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L466",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "placedomes()",
-      "id": "app_src_lib_design_families_generated_placedomes"
-    },
-    {
-      "label": "HOUSE_SLOTS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L477",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "house_slots",
-      "id": "app_src_lib_design_families_generated_house_slots"
-    },
-    {
-      "label": "DOME_SLOTS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L480",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "dome_slots",
-      "id": "app_src_lib_design_families_generated_dome_slots"
-    },
-    {
-      "label": "PLANNERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L486",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "planners",
-      "id": "app_src_lib_design_families_generated_planners"
-    },
-    {
-      "label": "TOTAL_WEIGHT",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L994",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "total_weight",
-      "id": "app_src_lib_design_families_generated_total_weight"
-    },
-    {
-      "label": "TERRAIN_LABEL",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L998",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "terrain_label",
-      "id": "app_src_lib_design_families_generated_terrain_label"
-    },
-    {
-      "label": "buildGeneratedFamily()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1013",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "buildgeneratedfamily()",
-      "id": "app_src_lib_design_families_generated_buildgeneratedfamily"
-    },
-    {
-      "label": "GENERATED_FAMILIES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1068",
-      "_origin": "ast",
-      "community": 133,
-      "norm_label": "generated_families",
-      "id": "app_src_lib_design_families_generated_generated_families"
-    },
-    {
-      "label": "families.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "families.ts",
-      "id": "app_src_lib_design_families"
-    },
-    {
-      "label": "SceneContext",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "scenecontext",
-      "id": "app_src_lib_design_families_scenecontext"
-    },
-    {
-      "label": "DesignFamily",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L58",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "designfamily",
-      "id": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "label": ".paintGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L67",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": ".paintground()",
-      "id": "app_src_lib_design_families_designfamily_paintground"
-    },
-    {
-      "label": ".decorate()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L68",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": ".decorate()",
-      "id": "app_src_lib_design_families_designfamily_decorate"
-    },
-    {
-      "label": "FLOWERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L71",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "flowers",
-      "id": "app_src_lib_design_families_flowers"
-    },
-    {
-      "label": "flowerOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L75",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "flowerof()",
-      "id": "app_src_lib_design_families_flowerof"
-    },
-    {
-      "label": "fillGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "fillground()",
-      "id": "app_src_lib_design_families_fillground"
-    },
-    {
-      "label": "scatterSceneTrees()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L85",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "scatterscenetrees()",
-      "id": "app_src_lib_design_families_scatterscenetrees"
-    },
-    {
-      "label": "scree()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L91",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "scree()",
-      "id": "app_src_lib_design_families_scree"
-    },
-    {
-      "label": "boulders()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L97",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "boulders()",
-      "id": "app_src_lib_design_families_boulders"
-    },
-    {
-      "label": "freeEntitySpot()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L105",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "freeentityspot()",
-      "id": "app_src_lib_design_families_freeentityspot"
-    },
-    {
-      "label": "addNpc()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L116",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "addnpc()",
-      "id": "app_src_lib_design_families_addnpc"
-    },
-    {
-      "label": "addPokemon()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L121",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "addpokemon()",
-      "id": "app_src_lib_design_families_addpokemon"
-    },
-    {
-      "label": "signSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L126",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "signsomewhere()",
-      "id": "app_src_lib_design_families_signsomewhere"
-    },
-    {
-      "label": "rockySignSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L131",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "rockysignsomewhere()",
-      "id": "app_src_lib_design_families_rockysignsomewhere"
-    },
-    {
-      "label": "hiddenSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L136",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "hiddensomewhere()",
-      "id": "app_src_lib_design_families_hiddensomewhere"
-    },
-    {
-      "label": "domeSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L151",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "domesomewhere()",
-      "id": "app_src_lib_design_families_domesomewhere"
-    },
-    {
-      "label": "HAND_FAMILIES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L158",
-      "_origin": "ast",
-      "community": 133,
-      "norm_label": "hand_families",
-      "id": "app_src_lib_design_families_hand_families"
-    },
-    {
       "label": "design-registry.test.ts",
       "file_type": "code",
       "source_file": "app/tests/design-registry.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 208,
+      "community": 4,
       "norm_label": "design-registry.test.ts",
       "id": "app_tests_design_registry_test"
     },
@@ -3406,7 +3416,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "build-family-manifest.ts",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest"
@@ -3428,7 +3438,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "cellkey()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_cellkey"
@@ -3439,7 +3449,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "rawidentity()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_rawidentity"
@@ -3450,7 +3460,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "contentidentity()",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_contentidentity"
@@ -3461,7 +3471,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "accepted",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_accepted"
@@ -3472,7 +3482,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "familyseeds",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_familyseeds"
@@ -3483,7 +3493,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "rejections",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_rejections"
@@ -3494,7 +3504,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "appdir",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_appdir"
@@ -3505,7 +3515,7 @@
       "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 133,
+      "community": 218,
       "norm_label": "outfile",
       "community_name": "Mountain Tile 3",
       "id": "app_scripts_design_build_family_manifest_outfile"
@@ -3516,7 +3526,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "blockcanvas.tsx",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas"
@@ -3527,7 +3537,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "blockcanvasprops",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas_blockcanvasprops"
@@ -3538,7 +3548,7 @@
       "source_file": "app/src/components/design/BlockCanvas.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 199,
+      "community": 39,
       "norm_label": "blockcanvas()",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_blockcanvas_blockcanvas"
@@ -3604,7 +3614,7 @@
       "source_file": "app/src/components/design/FamilyVariantsView.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 39,
+      "community": 133,
       "norm_label": "familyvariantsview.tsx",
       "community_name": "block-store.ts",
       "id": "app_src_components_design_familyvariantsview"
@@ -3615,7 +3625,7 @@
       "source_file": "app/src/components/design/FamilyVariantsView.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 39,
+      "community": 133,
       "norm_label": "familyvariantsview()",
       "community_name": "block-store.ts",
       "id": "app_src_components_design_familyvariantsview_familyvariantsview"
@@ -3780,7 +3790,7 @@
       "source_file": "app/src/lib/design/catalog.ts",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 39,
+      "community": 133,
       "norm_label": "getdesign()",
       "community_name": "block-store.ts",
       "id": "app_src_lib_design_catalog_getdesign"
@@ -3978,7 +3988,7 @@
       "source_file": "app/src/lib/design/world.ts",
       "source_location": "L180",
       "_origin": "ast",
-      "community": 132,
+      "community": 133,
       "norm_label": "bakedgroundkind()",
       "community_name": "Mountain Tile 2",
       "id": "app_src_lib_design_world_bakedgroundkind"
@@ -4990,7 +5000,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L206",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": "isfinitenumber()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_isfinitenumber"
@@ -5012,7 +5022,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L305",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".componentdidmount()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_componentdidmount"
@@ -5023,7 +5033,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L312",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".loadspawnruleoverrides()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_loadspawnruleoverrides"
@@ -5034,7 +5044,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L332",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".preloadplayerframes()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_preloadplayerframes"
@@ -5056,7 +5066,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L355",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".setstateasync()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_setstateasync"
@@ -5067,7 +5077,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L358",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".initialize()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_initialize"
@@ -5078,7 +5088,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L369",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".getlocation()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_getlocation"
@@ -5089,7 +5099,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L409",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".initializegame()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_initializegame"
@@ -5100,7 +5110,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L436",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".initializemap()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_initializemap"
@@ -5111,7 +5121,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L477",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".initializeplayer()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_initializeplayer"
@@ -5122,7 +5132,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L503",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".withupdatedplayerblock()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_withupdatedplayerblock"
@@ -5133,7 +5143,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L518",
       "_origin": "ast",
-      "community": 243,
+      "community": 1,
       "norm_label": ".maploadingsnapshot()",
       "community_name": ".action",
       "id": "app_src_components_game_game_maploadingsnapshot"
@@ -5144,7 +5154,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L535",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".syncmaploading()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_syncmaploading"
@@ -5155,7 +5165,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L539",
       "_origin": "ast",
-      "community": 243,
+      "community": 1,
       "norm_label": ".waitfordestinationblock()",
       "community_name": ".action",
       "id": "app_src_components_game_game_waitfordestinationblock"
@@ -5166,7 +5176,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L582",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".onkeydown()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_onkeydown"
@@ -5177,7 +5187,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L662",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".setui()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_setui"
@@ -5199,7 +5209,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L671",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".togglemenu()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_togglemenu"
@@ -5210,7 +5220,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L676",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".opendialog()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_opendialog"
@@ -5221,7 +5231,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L680",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".advancedialog()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_advancedialog"
@@ -5232,7 +5242,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L686",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".closedialog()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_closedialog"
@@ -5243,7 +5253,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L688",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".selectmenuitem()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_selectmenuitem"
@@ -5254,7 +5264,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L710",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".pressa()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_pressa"
@@ -5265,7 +5275,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L729",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".pressb()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_pressb"
@@ -5298,7 +5308,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L772",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".onbattlemessage()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_onbattlemessage"
@@ -5309,7 +5319,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L778",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".onbattlefinish()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_onbattlefinish"
@@ -5320,7 +5330,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L788",
       "_origin": "ast",
-      "community": 224,
+      "community": 1,
       "norm_label": ".interact()",
       "community_name": "App.tsx",
       "id": "app_src_components_game_game_interact"
@@ -5331,7 +5341,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L859",
       "_origin": "ast",
-      "community": 243,
+      "community": 1,
       "norm_label": ".action()",
       "community_name": ".action",
       "id": "app_src_components_game_game_action"
@@ -5353,7 +5363,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L996",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".resizegame()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_resizegame"
@@ -5364,7 +5374,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1010",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".restoreboardwidth()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_restoreboardwidth"
@@ -5452,7 +5462,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1104",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".getblocks()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_getblocks"
@@ -5463,7 +5473,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1195",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".receiveblocks()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_receiveblocks"
@@ -5474,7 +5484,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1222",
       "_origin": "ast",
-      "community": 243,
+      "community": 1,
       "norm_label": ".retrymapload()",
       "community_name": ".action",
       "id": "app_src_components_game_game_retrymapload"
@@ -5485,7 +5495,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1238",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".processblocks()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_processblocks"
@@ -5496,7 +5506,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1269",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".stampdevpond()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_stampdevpond"
@@ -5507,7 +5517,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1301",
       "_origin": "ast",
-      "community": 218,
+      "community": 1,
       "norm_label": ".ensurewalkablespawn()",
       "community_name": "HomePage.tsx",
       "id": "app_src_components_game_game_ensurewalkablespawn"
@@ -5518,7 +5528,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1331",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".loadimage()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_loadimage"
@@ -5529,7 +5539,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1342",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".storetiledata()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_storetiledata"
@@ -5540,7 +5550,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1350",
       "_origin": "ast",
-      "community": 234,
+      "community": 1,
       "norm_label": ".storeblockdata()",
       "community_name": "design-legality.test.ts",
       "id": "app_src_components_game_game_storeblockdata"
@@ -5551,7 +5561,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1356",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".renderloop()",
       "community_name": "Game",
       "id": "app_src_components_game_game_renderloop"
@@ -5562,7 +5572,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1362",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".rendercanvas()",
       "community_name": "Game",
       "id": "app_src_components_game_game_rendercanvas"
@@ -5573,7 +5583,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1493",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".drawgoogleblocks()",
       "community_name": "Game",
       "id": "app_src_components_game_game_drawgoogleblocks"
@@ -5584,7 +5594,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1507",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".drawoverlaydivider()",
       "community_name": "Game",
       "id": "app_src_components_game_game_drawoverlaydivider"
@@ -5639,7 +5649,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1587",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".tileshouldrender()",
       "community_name": "Game",
       "id": "app_src_components_game_game_tileshouldrender"
@@ -5650,7 +5660,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1598",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".blockshouldrender()",
       "community_name": "Game",
       "id": "app_src_components_game_game_blockshouldrender"
@@ -5661,7 +5671,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1603",
       "_origin": "ast",
-      "community": 240,
+      "community": 1,
       "norm_label": ".converty()",
       "community_name": "Game",
       "id": "app_src_components_game_game_converty"
@@ -6497,7 +6507,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.delete.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules.delete.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_delete"
@@ -6508,7 +6518,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_get"
@@ -6519,7 +6529,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.put.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules.put.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_admin_spawn_rules_put"
@@ -6530,7 +6540,7 @@
       "source_file": "app/server/routes/api/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "http.ts",
       "id": "app_server_routes_api_spawn_rules_get"
@@ -6541,7 +6551,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules-store.ts",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store"
@@ -6552,7 +6562,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawnrulescollection()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_spawnrulescollection"
@@ -6563,7 +6573,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "memoryoverrides",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_memoryoverrides"
@@ -6574,7 +6584,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "listspawnoverrides()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_listspawnoverrides"
@@ -6585,7 +6595,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "putspawnoverride()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_putspawnoverride"
@@ -6596,7 +6606,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "deletespawnoverride()",
       "community_name": "http.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_deletespawnoverride"
@@ -6816,7 +6826,7 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "battlescreen()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_battlescreen_battlescreen"
@@ -6827,7 +6837,7 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 200,
+      "community": 224,
       "norm_label": "pokedexpanel.tsx",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_pokedexpanel"
@@ -6838,7 +6848,7 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 32,
+      "community": 224,
       "norm_label": "pokedexpanelprops",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops"
@@ -6849,7 +6859,7 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 200,
+      "community": 224,
       "norm_label": "dexno()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_pokedexpanel_dexno"
@@ -6860,7 +6870,7 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 200,
+      "community": 224,
       "norm_label": "pokedexpanel()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_pokedexpanel_pokedexpanel"
@@ -7058,7 +7068,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "movesfor()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_movesfor"
@@ -7102,7 +7112,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "battlemonfrommember()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_battlemonfrommember"
@@ -7113,7 +7123,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L251",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "wildmonfromencounter()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_wildmonfromencounter"
@@ -7168,7 +7178,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L299",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "createwildbattle()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_createwildbattle"
@@ -7289,7 +7299,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L458",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "grantbattleexp()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_grantbattleexp"
@@ -7454,7 +7464,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "speciesspawnoverride",
       "community_name": "http.ts",
       "id": "app_src_lib_encounters_speciesspawnoverride"
@@ -7652,7 +7662,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L291",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "normalizespawnoverride()",
       "community_name": "http.ts",
       "id": "app_src_lib_encounters_normalizespawnoverride"
@@ -7663,7 +7673,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L306",
       "_origin": "ast",
-      "community": 136,
+      "community": 27,
       "norm_label": "encounterresult",
       "community_name": "Mountain Tile 6",
       "id": "app_src_lib_encounters_encounterresult"
@@ -8059,7 +8069,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "basestats",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_basestats"
@@ -8070,7 +8080,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 200,
+      "community": 224,
       "norm_label": "pokedexentry",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_pokedexentry"
@@ -8081,7 +8091,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 136,
+      "community": 27,
       "norm_label": "pokemongender",
       "community_name": "Mountain Tile 6",
       "id": "app_src_lib_pokedex_pokemongender"
@@ -8158,7 +8168,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 200,
+      "community": 224,
       "norm_label": "spriteurl()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_spriteurl"
@@ -8169,7 +8179,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "statblock",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_statblock"
@@ -8213,7 +8223,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L117",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "expgainfordefeat()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_expgainfordefeat"
@@ -8389,7 +8399,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 32,
+      "community": 27,
       "norm_label": "partymember",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_partymember"
@@ -8708,7 +8718,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L430",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "removebagitem()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_removebagitem"
@@ -9302,7 +9312,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "spawn-rules-api.test.ts",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test"
@@ -9313,7 +9323,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "customrule()",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test_customrule"
@@ -9324,7 +9334,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 2,
+      "community": 136,
       "norm_label": "overridefor()",
       "community_name": "http.ts",
       "id": "app_tests_spawn_rules_api_test_overridefor"
@@ -11331,7 +11341,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 28,
       "norm_label": "generate.ts",
       "community_name": "vitest",
       "id": "app_server_services_map_generate"
@@ -11342,7 +11352,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 4,
+      "community": 28,
       "norm_label": "createlegacyblockshandler",
       "community_name": "vitest",
       "id": "app_server_services_map_generate_createlegacyblockshandler"
@@ -11353,7 +11363,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "blockshandler",
       "community_name": "vitest",
       "id": "app_server_services_map_generate_blockshandler"
@@ -11375,7 +11385,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "generatemapblock()",
       "community_name": "vitest",
       "id": "app_server_services_map_generate_generatemapblock"
@@ -11419,7 +11429,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 137,
+      "community": 205,
       "norm_label": "generationpermitid()",
       "community_name": "trainer-state.test.ts",
       "id": "app_server_services_map_generation_job_generationpermitid"
@@ -11441,7 +11451,7 @@
       "source_file": "app/server/services/map/generation-job.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 198,
+      "community": 137,
       "norm_label": "preparemapgenerationjob()",
       "community_name": "Mountain Tile 1",
       "id": "app_server_services_map_generation_job_preparemapgenerationjob"
@@ -11936,7 +11946,7 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L809",
       "_origin": "ast",
-      "community": 205,
+      "community": 137,
       "norm_label": "reservegenerationquota()",
       "community_name": "vitest",
       "id": "app_server_services_map_generation_quota_reservegenerationquota"
@@ -12970,7 +12980,7 @@
       "source_file": "app/server/services/map/stored-blocks.ts",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "findcompletedstoredblocks()",
       "community_name": "Mountain Tile 7",
       "id": "app_server_services_map_stored_blocks_findcompletedstoredblocks"
@@ -13850,7 +13860,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "banner.tsx",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_components_banner"
@@ -13861,7 +13871,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "bannerlink",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_components_banner_bannerlink"
@@ -13872,7 +13882,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "bannerprops",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_components_banner_bannerprops"
@@ -13883,7 +13893,7 @@
       "source_file": "app/src/components/Banner.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "banner()",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_components_banner_banner"
@@ -14048,7 +14058,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 232,
       "norm_label": "dialogbox.tsx",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox"
@@ -14059,7 +14069,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 32,
+      "community": 232,
       "norm_label": "dialogboxprops",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox_dialogboxprops"
@@ -14070,7 +14080,7 @@
       "source_file": "app/src/components/game-ui/DialogBox.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 32,
+      "community": 232,
       "norm_label": "dialogbox()",
       "community_name": "AnimationSprite.tsx",
       "id": "app_src_components_game_ui_dialogbox_dialogbox"
@@ -14576,7 +14586,7 @@
       "source_file": "app/src/pages/HomePage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "homepage.tsx",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_pages_homepage"
@@ -14587,7 +14597,7 @@
       "source_file": "app/src/pages/HomePage.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 225,
+      "community": 203,
       "norm_label": "homepage()",
       "community_name": "AuthProvider.tsx",
       "id": "app_src_pages_homepage_homepage"
@@ -15500,7 +15510,7 @@
       "source_file": "app/workflows/map-generation/steps.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 205,
+      "community": 28,
       "norm_label": "generatemapblockstep()",
       "community_name": "vitest",
       "id": "app_workflows_map_generation_steps_generatemapblockstep"
@@ -18645,7 +18655,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 28,
+      "community": 198,
       "community_name": "Mountain Tile 1",
       "norm_label": "getstoredblocks()",
       "id": "app_server_services_map_block_store_getstoredblocks"
@@ -18953,7 +18963,7 @@
       "source_file": "app/server/services/map/thingtime-block-store.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 28,
+      "community": 22,
       "community_name": "thingtime-block-store.ts",
       "norm_label": "getthingtimestoredblocks()",
       "id": "app_server_services_map_thingtime_block_store_getthingtimestoredblocks"
@@ -18975,7 +18985,7 @@
       "source_file": "app/server/services/map/thingtime-block-store.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 28,
+      "community": 22,
       "community_name": "[runId].get.ts",
       "norm_label": "putthingtimestoredblocks()",
       "id": "app_server_services_map_thingtime_block_store_putthingtimestoredblocks"
@@ -20066,7 +20076,7 @@
     },
     {
       "file_type": "concept",
-      "community": 32,
+      "community": 232,
       "community_name": "AnimationSprite.tsx",
       "norm_label": "",
       "id": "react"
@@ -20192,7 +20202,7 @@
     },
     {
       "file_type": "concept",
-      "community": 208,
+      "community": 4,
       "community_name": "DevKit.tsx",
       "norm_label": "",
       "id": "vitest"
@@ -20262,7 +20272,7 @@
     },
     {
       "file_type": "concept",
-      "community": 208,
+      "community": 4,
       "community_name": "map-source.ts",
       "norm_label": "",
       "id": "node_crypto"
@@ -20498,6 +20508,1469 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/build-family-manifest.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_scripts_design_build_family_manifest",
+      "target": "app_src_lib_design_families_generated"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_designfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L398",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_addentities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_applyframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1021",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_buildgeneratedfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_dome_slots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_field_pokemon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L396",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_flowerof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_frame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1076",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_generated_families",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L419",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_hiddensomewhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L478",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_house_slots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_mapanchor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_mappoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L452",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_pickbuildingset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L431",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_placebuildings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L467",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_placedomes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L387",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_plannerdef",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L487",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_planners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_starters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1006",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_terrain_label",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_themepack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_themes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1002",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_generated_total_weight",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_families_scenecontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_ground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_groundmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_hedgeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_isclear",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_longgrasspatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_newground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_paintblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_paintpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_paintrect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placeboulderline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placedecor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placedome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placehiddenitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placerockysign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placesign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placestructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_placetree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_scatter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_scattertrees",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_structures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated",
+      "target": "app_src_lib_design_paint_treeborder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/index.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_index",
+      "target": "app_src_lib_design_families_generated"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/registry.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_registry",
+      "target": "app_src_lib_design_families_generated"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_applyframe",
+      "target": "app_src_lib_design_families_generated_mappoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_mapanchor",
+      "target": "app_src_lib_design_families_generated_mappoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L443",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_placebuildings",
+      "target": "app_src_lib_design_families_generated_mapanchor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L471",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_placedomes",
+      "target": "app_src_lib_design_families_generated_mapanchor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L384",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plan",
+      "target": "app_src_lib_design_families_generated_plan_decorate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L382",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plan",
+      "target": "app_src_lib_design_families_generated_plan_paint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L380",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plan",
+      "target": "app_src_lib_design_paint_ground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L382",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plan_paint",
+      "target": "app_src_lib_design_paint_groundmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L384",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plan_decorate",
+      "target": "app_src_lib_design_families_scenecontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L391",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_plannerdef",
+      "target": "app_src_lib_design_families_generated_plannerdef_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1036",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_buildgeneratedfamily",
+      "target": "app_src_lib_design_families_generated_plannerdef_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L401",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_addentities",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L421",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_hiddensomewhere",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L424",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_hiddensomewhere",
+      "target": "app_src_lib_design_paint_placehiddenitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L444",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_placebuildings",
+      "target": "app_src_lib_design_paint_placestructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L472",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_generated_placedomes",
+      "target": "app_src_lib_design_paint_placedome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-family-manifest.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_scripts_design_build_family_manifest",
+      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/index.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_index",
+      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/index.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_index",
+      "target": "app_src_lib_design_families_generated_generated_families"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/registry.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_registry",
+      "target": "app_src_lib_design_families_generated_generated_families"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-family-manifest.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_scripts_design_build_family_manifest",
+      "target": "app_src_lib_design_families"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/catalog.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_catalog",
+      "target": "app_src_lib_design_families"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_addnpc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_addpokemon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_boulders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_designfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_domesomewhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_fillground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_flowerof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_flowers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_freeentityspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_hand_families",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_hiddensomewhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_rockysignsomewhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_scatterscenetrees",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_scenecontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_scree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_families_signsomewhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_ground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_groundmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_hedgeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_isclear",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_longgrasspatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_paintblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_paintpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_paintrect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placeboulderline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placedecor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placedome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placehiddenitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placehouse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placerockysign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placesign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_placetree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_scatter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_scattertrees",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families",
+      "target": "app_src_lib_design_paint_treeborder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/index.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_index",
+      "target": "app_src_lib_design_families"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/registry.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_registry",
+      "target": "app_src_lib_design_families"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/catalog.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_catalog",
+      "target": "app_src_lib_design_families_scenecontext"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_scenecontext",
+      "target": "app_src_lib_design_paint_groundmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-family-manifest.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_scripts_design_build_family_manifest",
+      "target": "app_src_lib_design_families_designfamily"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/catalog.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_catalog",
+      "target": "app_src_lib_design_families_designfamily"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_designfamily",
+      "target": "app_src_lib_design_families_designfamily_decorate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_designfamily",
+      "target": "app_src_lib_design_families_designfamily_paintground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_designfamily",
+      "target": "app_src_lib_design_paint_ground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/registry.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_registry",
+      "target": "app_src_lib_design_families_designfamily"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_scatterscenetrees",
+      "target": "app_src_lib_design_paint_scattertrees",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_scree",
+      "target": "app_src_lib_design_paint_scatter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_boulders",
+      "target": "app_src_lib_design_paint_scatter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_addnpc",
+      "target": "app_src_lib_design_families_freeentityspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_addpokemon",
+      "target": "app_src_lib_design_families_freeentityspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_freeentityspot",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_signsomewhere",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_signsomewhere",
+      "target": "app_src_lib_design_paint_placesign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_rockysignsomewhere",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_rockysignsomewhere",
+      "target": "app_src_lib_design_paint_placerockysign",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_hiddensomewhere",
+      "target": "app_src_lib_design_paint_findclearspot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_hiddensomewhere",
+      "target": "app_src_lib_design_paint_placehiddenitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "app_src_lib_design_families_domesomewhere",
+      "target": "app_src_lib_design_paint_placedome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-family-manifest.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_scripts_design_build_family_manifest",
+      "target": "app_src_lib_design_families_hand_families"
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/index.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_index",
+      "target": "app_src_lib_design_families_hand_families"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/lib/design/registry.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_lib_design_registry",
+      "target": "app_src_lib_design_families_hand_families"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-family-manifest.ts",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -20540,7 +22013,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L104",
+      "source_location": "L98",
       "weight": 1.0,
       "source": "app_src_lib_design_legality",
       "target": "app_src_lib_design_legality_banned_overlays",
@@ -20550,7 +22023,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L96",
+      "source_location": "L90",
       "weight": 1.0,
       "source": "app_src_lib_design_legality",
       "target": "app_src_lib_design_legality_bannedtile",
@@ -21003,28 +22476,6 @@
       "target": "app_src_lib_design_paint"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
@@ -21078,7 +22529,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L541",
+      "source_location": "L545",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_big_tree_slices",
@@ -21098,7 +22549,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L699",
+      "source_location": "L703",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_findclearspot",
@@ -21148,7 +22599,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L679",
+      "source_location": "L683",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_hedgeline",
@@ -21188,7 +22639,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L657",
+      "source_location": "L661",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_longgrasspatch",
@@ -21348,7 +22799,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L549",
+      "source_location": "L553",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_placetree",
@@ -21368,7 +22819,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L634",
+      "source_location": "L638",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_scatter",
@@ -21378,7 +22829,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L575",
+      "source_location": "L579",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_scattertrees",
@@ -21428,7 +22879,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L597",
+      "source_location": "L601",
       "weight": 1.0,
       "source": "app_src_lib_design_paint",
       "target": "app_src_lib_design_paint_treeborder",
@@ -21459,100 +22910,12 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_ground"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_paint_ground"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_ground"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L379",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_paint_ground"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/world.ts",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_src_lib_design_world",
       "target": "app_src_lib_design_paint_ground"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_groundmap"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_groundmap"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L381",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plan_paint",
-      "target": "app_src_lib_design_paint_groundmap"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_scenecontext",
-      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "imports",
@@ -21712,17 +23075,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_newground"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/world.ts",
       "source_location": "L18",
       "weight": 1.0,
@@ -21828,72 +23180,6 @@
       "weight": 1.0,
       "source": "app_src_lib_design_world_generateworld",
       "target": "app_src_lib_design_paint_newgrid"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintblob"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintblob"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintrect"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintrect"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintpath"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintpath"
     },
     {
       "relation": "calls",
@@ -22050,28 +23336,6 @@
       "target": "app_src_lib_design_paint_bakeground"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_isclear"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_isclear"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -22087,7 +23351,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L712",
+      "source_location": "L716",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_findclearspot",
       "target": "app_src_lib_design_paint_isclear",
@@ -22098,7 +23362,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L693",
+      "source_location": "L697",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
       "target": "app_src_lib_design_paint_isclear",
@@ -22109,7 +23373,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L670",
+      "source_location": "L674",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_longgrasspatch",
       "target": "app_src_lib_design_paint_isclear",
@@ -22131,7 +23395,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L559",
+      "source_location": "L563",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_placetree",
       "target": "app_src_lib_design_paint_isclear",
@@ -22142,7 +23406,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L646",
+      "source_location": "L650",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_scatter",
       "target": "app_src_lib_design_paint_isclear",
@@ -22153,7 +23417,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L626",
+      "source_location": "L630",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
       "target": "app_src_lib_design_paint_isclear",
@@ -22225,39 +23489,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_structures"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placestructure"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L443",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_placebuildings",
-      "target": "app_src_lib_design_paint_placestructure"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -22269,88 +23500,11 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placehouse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placedome"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L153",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_domesomewhere",
-      "target": "app_src_lib_design_paint_placedome"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placedome"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L471",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_placedomes",
-      "target": "app_src_lib_design_paint_placedome"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placedecor"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placedecor"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L694",
+      "source_location": "L698",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
       "target": "app_src_lib_design_paint_placedecor",
@@ -22394,7 +23548,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L648",
+      "source_location": "L652",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_scatter",
       "target": "app_src_lib_design_paint_placedecor",
@@ -22405,150 +23559,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L627",
+      "source_location": "L631",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
       "target": "app_src_lib_design_paint_placedecor",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placesign"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placesign"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L128",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_signsomewhere",
-      "target": "app_src_lib_design_paint_placesign"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placerockysign"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placerockysign"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L133",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_rockysignsomewhere",
-      "target": "app_src_lib_design_paint_placerockysign"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placehiddenitem"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placehiddenitem"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L423",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_hiddensomewhere",
-      "target": "app_src_lib_design_paint_placehiddenitem"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L146",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_hiddensomewhere",
-      "target": "app_src_lib_design_paint_placehiddenitem"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placeboulderline"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placeboulderline"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L587",
+      "source_location": "L591",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
       "target": "app_src_lib_design_paint_placetree",
@@ -22559,285 +23581,21 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L618",
+      "source_location": "L622",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
       "target": "app_src_lib_design_paint_placetree",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_scattertrees"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_scattertrees"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L86",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_scatterscenetrees",
-      "target": "app_src_lib_design_paint_scattertrees"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L590",
+      "source_location": "L594",
       "weight": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
       "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_treeborder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_treeborder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_scatter"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L98",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_boulders",
-      "target": "app_src_lib_design_paint_scatter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_scatter"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_scree",
-      "target": "app_src_lib_design_paint_scatter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_longgrasspatch"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_longgrasspatch"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_hedgeline"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_hedgeline"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_freeentityspot",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L400",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_addentities",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L420",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_hiddensomewhere",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_hiddensomewhere",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L132",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_rockysignsomewhere",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_signsomewhere",
-      "target": "app_src_lib_design_paint_findclearspot"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/render-samples.test.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_tests_render_samples_test",
-      "target": "node_fs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/render-samples.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "app_tests_render_samples_test",
-      "target": "pngjs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/tests/render-samples.test.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "app_tests_render_samples_test",
-      "target": "vitest",
       "confidence_score": 1.0
     },
     {
@@ -22854,7 +23612,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L26",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "docs_design_fix_loop_design_fix_loop_durable_state",
       "target": "docs_design_fix_loop_checklist",
@@ -22864,11 +23622,54 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L15",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
+      "target": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "docs_design_fix_loop_design_fix_loop_durable_state",
       "target": "docs_design_fix_loop_protocol_each_iteration",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/render-samples.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_render_samples_test",
+      "target": "node_fs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/render-samples.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_render_samples_test",
+      "target": "pngjs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/tests/render-samples.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_tests_render_samples_test",
+      "target": "vitest"
     },
     {
       "relation": "contains",
@@ -26693,765 +27494,6 @@
       "confidence_score": 1.0,
       "source": "app_src_components_design_useinfinitereveal",
       "target": "react"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-family-manifest.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_family_manifest",
-      "target": "app_src_lib_design_families_generated"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L397",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_addentities"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_applyframe"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1013",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L480",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_dome_slots"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_field_pokemon"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L395",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_flowerof"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_frame"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1068",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_generated_families"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L418",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_hiddensomewhere"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L477",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_house_slots"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_mapanchor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_mappoint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L451",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_pickbuildingset"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L430",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_placebuildings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L466",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_placedomes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L376",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_plan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L386",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_plannerdef"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L486",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_planners"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L113",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_starters"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L998",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_terrain_label"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L102",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_themepack"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L116",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_themes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L994",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_total_weight"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_scenecontext"
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/index.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_index",
-      "target": "app_src_lib_design_families_generated"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/registry.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_registry",
-      "target": "app_src_lib_design_families_generated"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_applyframe",
-      "target": "app_src_lib_design_families_generated_mappoint"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L93",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_mapanchor",
-      "target": "app_src_lib_design_families_generated_mappoint"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L442",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_placebuildings",
-      "target": "app_src_lib_design_families_generated_mapanchor"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L470",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_placedomes",
-      "target": "app_src_lib_design_families_generated_mapanchor"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L383",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_families_generated_plan_decorate"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L381",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_families_generated_plan_paint"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L383",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plan_decorate",
-      "target": "app_src_lib_design_families_scenecontext"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L390",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_plannerdef",
-      "target": "app_src_lib_design_families_generated_plannerdef_build"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1028",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_generated_buildgeneratedfamily",
-      "target": "app_src_lib_design_families_generated_plannerdef_build"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-family-manifest.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_family_manifest",
-      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
-    },
-    {
-      "relation": "re_exports",
-      "context": "re-export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/index.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_index",
-      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
-    },
-    {
-      "relation": "re_exports",
-      "context": "re-export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/index.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_index",
-      "target": "app_src_lib_design_families_generated_generated_families"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/registry.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_registry",
-      "target": "app_src_lib_design_families_generated_generated_families"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-family-manifest.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_family_manifest",
-      "target": "app_src_lib_design_families"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/catalog.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_catalog",
-      "target": "app_src_lib_design_families"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L116",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_addnpc"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L121",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_addpokemon"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_boulders"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_domesomewhere"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_fillground"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_flowerof"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_flowers"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_freeentityspot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L158",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_hand_families"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L136",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_hiddensomewhere"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L131",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_rockysignsomewhere"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scatterscenetrees"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scenecontext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scree"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L126",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_signsomewhere"
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/index.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_index",
-      "target": "app_src_lib_design_families"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/registry.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_registry",
-      "target": "app_src_lib_design_families"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/catalog.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_catalog",
-      "target": "app_src_lib_design_families_scenecontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-family-manifest.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_family_manifest",
-      "target": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/catalog.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_catalog",
-      "target": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_families_designfamily_decorate"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_families_designfamily_paintground"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/registry.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_registry",
-      "target": "app_src_lib_design_families_designfamily"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_addnpc",
-      "target": "app_src_lib_design_families_freeentityspot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L122",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_families_addpokemon",
-      "target": "app_src_lib_design_families_freeentityspot"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-family-manifest.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_family_manifest",
-      "target": "app_src_lib_design_families_hand_families"
-    },
-    {
-      "relation": "re_exports",
-      "context": "re-export",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/index.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_index",
-      "target": "app_src_lib_design_families_hand_families"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/lib/design/registry.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_lib_design_registry",
-      "target": "app_src_lib_design_families_hand_families"
     },
     {
       "relation": "imports_from",
@@ -54980,5 +55022,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ce726c40496e078dde6c790463de932d75d044dd"
+  "built_at_commit": "31a760def542a845ae0abc635e9e5fa0863912c7"
 }
