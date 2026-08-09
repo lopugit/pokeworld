@@ -1,12 +1,14 @@
 # Design-fix loop — durable state
 
-**STATUS: REOPENED — PHASE 2 (2026-08-09).** Nikolaj found broken trees in
-the live modal (forest-crossing "Sundappled Trailfork" seed 0) after phase 1
-declared clean: crown-less half-trees. Phase-1 gaps: 10px sheets made
-tree-1's half-tree art read as bushes, and the live scan only caught
-magenta, not bad art. Phase 2 = root-cause fix (done: tree-1 banned) + full
-re-review of all 500 at RENDER_PX=20 for ALL asset classes; the
-edge-clipped-trees KEEP decision is OVERTURNED (was tree-1 all along).
+**STATUS: PHASE 2 COMPLETE (2026-08-09).** Root cause of Nikolaj's broken
+trees: tree-1 was a half-tree crop (canopy sliced at tile top over a trunk),
+scattered standalone and as fake palms — now BANNED; scatters use shrub-1,
+island one-tree spots place real tree-grand 2×2s. ("Edge-clipped trees" were
+tree-1 art all along — resolved by the ban.) All 500 families re-reviewed
+clean at RENDER_PX=20 across 42 sheets, all asset classes. Live app
+re-verified post-fix (500/500 thumbnails pixel-scanned clean + the exact
+user-reported modal). Ford crossings accepted; bridge-tile harvest logged
+as a follow-up chip. PR #14 + memory updated; cron job deleted.
 
 Goal: every /design family checked for broken/ugly sprites and fixed at the
 root cause. Trigger: the Haunted Grove (and siblings) rendered "big trees"
@@ -94,7 +96,7 @@ visually before committing fixes; magenta cells mark missing overlay art.
       modal matches the harness render layout-for-layout (same trees,
       shrubs, sign, paths); both consume the same generateDesign and draw
       img then img2.
-- [ ] Full re-review at RENDER_PX=20, 12 families per sheet, ALL asset
+- [x] Full re-review at RENDER_PX=20, 12 families per sheet, ALL asset
       classes (trees, walls, buildings, water/ledges, shorelines, paths,
       signs, NPCs, items). Tick ranges as reviewed:
       (reviewed: 0:12 clean, 12:12 clean, 24:12 clean — post-fix trees/
@@ -109,18 +111,23 @@ visually before committing fixes; magenta cells mark missing overlay art.
       252:12 … 312:12 (6 batches) all clean — contest halls, fountain
       pairs, twin-pool layouts, dunes verges correct;
       324:12 … 384:12 (6 batches) all clean — river junctions, Mossdeep
-      structs, lakesides, pond strips correct.
-      Pending: 396:12 … 492:12 (final 9 batches).)
-      FOLLOW-UP CANDIDATE (decide before completion): river crossings are
-      bare path tiles over water (a ford) — no bridge-deck art exists in
-      the vault; harvesting one is an asset task, not a paint bug.
+      structs, lakesides, pond strips correct;
+      396:12 … 492:12 (final 9 batches) all clean — fountain pairs,
+      triple centers, 2-story houses, mart pairs, fords, dunes correct.
+      ALL 500 FAMILIES RE-REVIEWED CLEAN AT 20px.)
+      Ford crossings DECIDED: accepted for this loop — coherent art, no
+      glitch; real bridge-deck tiles were never harvested. Logged as a
+      spawn-task chip ("Harvest Emerald bridge tiles") for a future
+      asset-pipeline task, same precedent as the cliff-strip roadmap item.
 - [x] Browser-verify the user's exact family (forest-crossing modal) on the
       rebuilt 3949 app — DONE post-rebuild: SW unregistered, fresh bundle
       confirmed (Rules tab lists the Half-tree crop ban), Sundappled
       Trailfork seed-0 modal screenshot shows complete trees + shrubs.
       Vercel preview rebuilds from the pushed branch (hard-refresh past
       the SW there too).
-- [ ] Final: PR #14 body note, pokeworld-design-studio memory update,
-      PHASE 2 COMPLETE + CronDelete.
+- [x] Final: PR #14 body note, pokeworld-design-studio memory update,
+      PHASE 2 COMPLETE + CronDelete. (Post-sweep live re-verify: all 500
+      thumbnail canvases pixel-scanned on the post-fix build — 0 magenta,
+      0 blank; forest-crossing family view clean.)
 
 Lock: (none)
