@@ -35,7 +35,9 @@ const TILE_FAMILIES = [
   ["grass", "vegetation", "Grass"],
   ["big-tree-", "vegetation", "Big tree"],
   ["tree-grand-", "vegetation", "Big tree"],
-  ["tree-", "vegetation", "Tree", true],
+  // tree-1 is a bottom-half crop of a taller tree (banned in designs) —
+  // an individual sheet slice, NOT a whole object.
+  ["tree-", "vegetation", "Half-tree crop (banned)"],
   ["shrub-", "vegetation", "Shrub", true],
   ["flower-", "vegetation", "Flower bed", true],
   ["house-red-", "building", "Red-roof house"],

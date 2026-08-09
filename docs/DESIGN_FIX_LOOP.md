@@ -119,6 +119,16 @@ visually before committing fixes; magenta cells mark missing overlay art.
       glitch; real bridge-deck tiles were never harvested. Logged as a
       spawn-task chip ("Harvest Emerald bridge tiles") for a future
       asset-pipeline task, same precedent as the cliff-strip roadmap item.
+
+ADDENDUM (post-completion, Nikolaj-reported): banning tree-1 had swapped
+every former small-tree scatter for shrubs — tree DENSITY collapsed across
+the catalog (bushes everywhere, no trees). Restored: scatterTrees' density
+pass and treeBorder's inner sprinkle now plant real tree-grand 2×2s first
+and fall back to shrub-1 only where a whole tree doesn't fit. Verified on
+forest-crossing/secret-meadow/safari-thicket/berry-grove + a generated
+batch: proper tree-rich layouts, all crowns complete. Also relabeled the
+asset-DB entry: tree-1 now lists as "Half-tree crop (banned)" under
+Individual tiles & sprites, not Whole objects (manifest rebuilt).
 - [x] Browser-verify the user's exact family (forest-crossing modal) on the
       rebuilt 3949 app — DONE post-rebuild: SW unregistered, fresh bundle
       confirmed (Rules tab lists the Half-tree crop ban), Sundappled
