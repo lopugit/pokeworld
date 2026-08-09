@@ -4,1034 +4,14 @@
   "graph": {},
   "nodes": [
     {
-      "label": "fetch-emerald-towns.mjs",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns",
-      "community": 213,
-      "norm_label": "fetch-emerald-towns.mjs"
-    },
-    {
-      "label": "scriptDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_scriptdir",
-      "community": 213,
-      "norm_label": "scriptdir"
-    },
-    {
-      "label": "appDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_appdir",
-      "community": 213,
-      "norm_label": "appdir"
-    },
-    {
-      "label": "pretDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_pretdir",
-      "community": 213,
-      "norm_label": "pretdir"
-    },
-    {
-      "label": "townsDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_townsdir",
-      "community": 213,
-      "norm_label": "townsdir"
-    },
-    {
-      "label": "TOWNS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_towns",
-      "community": 213,
-      "norm_label": "towns"
-    },
-    {
-      "label": "fetchPret()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_fetchpret",
-      "community": 213,
-      "norm_label": "fetchpret()"
-    },
-    {
-      "label": "readIndexedPng()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_readindexedpng",
-      "community": 213,
-      "norm_label": "readindexedpng()"
-    },
-    {
-      "label": "parseJascPalette()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L122",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_parsejascpalette",
-      "community": 213,
-      "norm_label": "parsejascpalette()"
-    },
-    {
-      "label": "tilesetSlug()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L132",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_tilesetslug",
-      "community": 213,
-      "norm_label": "tilesetslug()"
-    },
-    {
-      "label": "tilesetCache",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L138",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_tilesetcache",
-      "community": 213,
-      "norm_label": "tilesetcache"
-    },
-    {
-      "label": "loadTileset()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L139",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "community": 213,
-      "norm_label": "loadtileset()"
-    },
-    {
-      "label": "drawMetatile()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L160",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_drawmetatile",
-      "community": 213,
-      "norm_label": "drawmetatile()"
-    },
-    {
-      "label": "layoutsJson",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L200",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_layoutsjson",
-      "community": 213,
-      "norm_label": "layoutsjson"
-    },
-    {
-      "label": "layoutById",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L201",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_layoutbyid",
-      "community": 213,
-      "norm_label": "layoutbyid"
-    },
-    {
-      "label": "interiorsDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L231",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_interiorsdir",
-      "community": 213,
-      "norm_label": "interiorsdir"
-    },
-    {
-      "label": "renderedSlugs",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L233",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_renderedslugs",
-      "community": 213,
-      "norm_label": "renderedslugs"
-    },
-    {
-      "label": "layoutSlug()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L234",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_layoutslug",
-      "community": 213,
-      "norm_label": "layoutslug()"
-    },
-    {
-      "label": "BUILDINGS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L273",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_buildings",
-      "community": 213,
-      "norm_label": "buildings"
-    },
-    {
-      "label": "SCENERY_KEYS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L327",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_scenery_keys",
-      "community": 213,
-      "norm_label": "scenery_keys"
-    },
-    {
-      "label": "tilesDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L345",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_tilesdir",
-      "community": 213,
-      "norm_label": "tilesdir"
-    },
-    {
-      "label": "PIC_SOURCES",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L396",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_pic_sources",
-      "community": 213,
-      "norm_label": "pic_sources"
-    },
-    {
-      "label": "listPretDir()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L414",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_listpretdir",
-      "community": 213,
-      "norm_label": "listpretdir()"
-    },
-    {
-      "label": "NPCS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L429",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_npcs",
-      "community": 213,
-      "norm_label": "npcs"
-    },
-    {
-      "label": "readPngPalette()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L443",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_readpngpalette",
-      "community": 213,
-      "norm_label": "readpngpalette()"
-    },
-    {
-      "label": "ANIM_TILESETS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L502",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_anim_tilesets",
-      "community": 213,
-      "norm_label": "anim_tilesets"
-    },
-    {
-      "label": "listPretSubdirs()",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L516",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_listpretsubdirs",
-      "community": 213,
-      "norm_label": "listpretsubdirs()"
-    },
-    {
-      "label": "animDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L529",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_animdir",
-      "community": 213,
-      "norm_label": "animdir"
-    },
-    {
-      "label": "WALK_NPCS",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L581",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_walk_npcs",
-      "community": 213,
-      "norm_label": "walk_npcs"
-    },
-    {
-      "label": "WALK_SEQUENCE",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L587",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_walk_sequence",
-      "community": 213,
-      "norm_label": "walk_sequence"
-    },
-    {
-      "label": "criesDir",
-      "file_type": "code",
-      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
-      "source_location": "L655",
-      "_origin": "ast",
-      "id": "app_scripts_design_fetch_emerald_towns_criesdir",
-      "community": 213,
-      "norm_label": "criesdir"
-    },
-    {
-      "label": "legality.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality",
-      "community": 132,
-      "norm_label": "legality.ts"
-    },
-    {
-      "label": "GroundKind",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkind",
-      "community": 132,
-      "norm_label": "groundkind"
-    },
-    {
-      "label": "groundKindOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkindof",
-      "community": 132,
-      "norm_label": "groundkindof()"
-    },
-    {
-      "label": "OverlayRule",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlayrule",
-      "community": 132,
-      "norm_label": "overlayrule"
-    },
-    {
-      "label": "OVERLAY_RULES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlay_rules",
-      "community": 132,
-      "norm_label": "overlay_rules"
-    },
-    {
-      "label": "BannedTile",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L97",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_bannedtile",
-      "community": 132,
-      "norm_label": "bannedtile"
-    },
-    {
-      "label": "BANNED_OVERLAYS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L105",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_overlays",
-      "community": 132,
-      "norm_label": "banned_overlays"
-    },
-    {
-      "label": "BANNED_GROUND",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L148",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_ground",
-      "community": 132,
-      "norm_label": "banned_ground"
-    },
-    {
-      "label": "Formation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L157",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation",
-      "community": 132,
-      "norm_label": "formation"
-    },
-    {
-      "label": "buildingFormation()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L171",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_buildingformation",
-      "community": 132,
-      "norm_label": "buildingformation()"
-    },
-    {
-      "label": "FORMATIONS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L189",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formations",
-      "community": 132,
-      "norm_label": "formations"
-    },
-    {
-      "label": "FORMATION_PART",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L421",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation_part",
-      "community": 132,
-      "norm_label": "formation_part"
-    },
-    {
-      "label": "Violation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L428",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_violation",
-      "community": 132,
-      "norm_label": "violation"
-    },
-    {
-      "label": "Grid",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L435",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_grid",
-      "community": 132,
-      "norm_label": "grid"
-    },
-    {
-      "label": "inGrid()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L437",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_ingrid",
-      "community": 132,
-      "norm_label": "ingrid()"
-    },
-    {
-      "label": "flagsFor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L442",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_flagsfor",
-      "community": 132,
-      "norm_label": "flagsfor()"
-    },
-    {
-      "label": "expectedPond()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L456",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_expectedpond",
-      "community": 132,
-      "norm_label": "expectedpond()"
-    },
-    {
-      "label": "validateDesign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L474",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_validatedesign",
-      "community": 132,
-      "norm_label": "validatedesign()"
-    },
-    {
-      "label": "formatViolations()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L661",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formatviolations",
-      "community": 132,
-      "norm_label": "formatviolations()"
-    },
-    {
-      "label": "paint.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint",
-      "community": 131,
-      "norm_label": "paint.ts"
-    },
-    {
-      "label": "Ground",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_ground",
-      "community": 19,
-      "norm_label": "ground"
-    },
-    {
-      "label": "GroundMap",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_groundmap",
-      "community": 19,
-      "norm_label": "groundmap"
-    },
-    {
-      "label": "inBounds()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_inbounds",
-      "community": 131,
-      "norm_label": "inbounds()"
-    },
-    {
-      "label": "inMap()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_inmap",
-      "community": 131,
-      "norm_label": "inmap()"
-    },
-    {
-      "label": "newGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_newground",
-      "community": 133,
-      "norm_label": "newground()"
-    },
-    {
-      "label": "newGrid()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_newgrid",
-      "community": 133,
-      "norm_label": "newgrid()"
-    },
-    {
-      "label": "paintBlob()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintblob",
-      "community": 0,
-      "norm_label": "paintblob()"
-    },
-    {
-      "label": "paintRect()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L69",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintrect",
-      "community": 131,
-      "norm_label": "paintrect()"
-    },
-    {
-      "label": "paintPath()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L85",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintpath",
-      "community": 0,
-      "norm_label": "paintpath()"
-    },
-    {
-      "label": "NeighbourFlags",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L129",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_neighbourflags",
-      "community": 132,
-      "norm_label": "neighbourflags"
-    },
-    {
-      "label": "neighbours()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_neighbours",
-      "community": 131,
-      "norm_label": "neighbours()"
-    },
-    {
-      "label": "autotileIndex()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L154",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_autotileindex",
-      "community": 132,
-      "norm_label": "autotileindex()"
-    },
-    {
-      "label": "rippleIndex()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L168",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_rippleindex",
-      "community": 131,
-      "norm_label": "rippleindex()"
-    },
-    {
-      "label": "waterTileName()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L174",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_watertilename",
-      "community": 131,
-      "norm_label": "watertilename()"
-    },
-    {
-      "label": "GROUND_PREFIX",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L193",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_ground_prefix",
-      "community": 131,
-      "norm_label": "ground_prefix"
-    },
-    {
-      "label": "GroundFallback",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L206",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_groundfallback",
-      "community": 131,
-      "norm_label": "groundfallback"
-    },
-    {
-      "label": "fallbackAt()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L208",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_fallbackat",
-      "community": 131,
-      "norm_label": "fallbackat()"
-    },
-    {
-      "label": "smoothWater()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L211",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_smoothwater",
-      "community": 131,
-      "norm_label": "smoothwater()"
-    },
-    {
-      "label": "absorbIsolatedSpecks()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L274",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_absorbisolatedspecks",
-      "community": 131,
-      "norm_label": "absorbisolatedspecks()"
-    },
-    {
-      "label": "BRIDGEABLE",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L307",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_bridgeable",
-      "community": 131,
-      "norm_label": "bridgeable"
-    },
-    {
-      "label": "DeckCell",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L309",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_deckcell",
-      "community": 131,
-      "norm_label": "deckcell"
-    },
-    {
-      "label": "planBridgeDecks()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L321",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_planbridgedecks",
-      "community": 131,
-      "norm_label": "planbridgedecks()"
-    },
-    {
-      "label": "bakeGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L367",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_bakeground",
-      "community": 133,
-      "norm_label": "bakeground()"
-    },
-    {
-      "label": "isClear()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L411",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_isclear",
-      "community": 0,
-      "norm_label": "isclear()"
-    },
-    {
-      "label": "areaClear()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L420",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_areaclear",
-      "community": 131,
-      "norm_label": "areaclear()"
-    },
-    {
-      "label": "areaOnGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L436",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_areaonground",
-      "community": 131,
-      "norm_label": "areaonground()"
-    },
-    {
-      "label": "StructureKind",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L455",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structurekind",
-      "community": 131,
-      "norm_label": "structurekind"
-    },
-    {
-      "label": ".tileAt()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L460",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structurekind_tileat",
-      "community": 131,
-      "norm_label": ".tileat()"
-    },
-    {
-      "label": "structure()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L463",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structure",
-      "community": 131,
-      "norm_label": "structure()"
-    },
-    {
-      "label": "STRUCTURES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L470",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structures",
-      "community": 131,
-      "norm_label": "structures"
-    },
-    {
-      "label": "placeStructure()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L481",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placestructure",
-      "community": 131,
-      "norm_label": "placestructure()"
-    },
-    {
-      "label": "placeHouse()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L502",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placehouse",
-      "community": 131,
-      "norm_label": "placehouse()"
-    },
-    {
-      "label": "placeDome()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L516",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placedome",
-      "community": 131,
-      "norm_label": "placedome()"
-    },
-    {
-      "label": "placeDecor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L539",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placedecor",
-      "community": 0,
-      "norm_label": "placedecor()"
-    },
-    {
-      "label": "placeSign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L554",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placesign",
-      "community": 0,
-      "norm_label": "placesign()"
-    },
-    {
-      "label": "placeRockySign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L560",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placerockysign",
-      "community": 0,
-      "norm_label": "placerockysign()"
-    },
-    {
-      "label": "placeHiddenItem()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L574",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placehiddenitem",
-      "community": 0,
-      "norm_label": "placehiddenitem()"
-    },
-    {
-      "label": "placeBoulderLine()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L589",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placeboulderline",
-      "community": 0,
-      "norm_label": "placeboulderline()"
-    },
-    {
-      "label": "BIG_TREE_SLICES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L619",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_big_tree_slices",
-      "community": 131,
-      "norm_label": "big_tree_slices"
-    },
-    {
-      "label": "placeTree()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L627",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placetree",
-      "community": 0,
-      "norm_label": "placetree()"
-    },
-    {
-      "label": "scatterTrees()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L657",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_scattertrees",
-      "community": 0,
-      "norm_label": "scattertrees()"
-    },
-    {
-      "label": "treeBorder()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L688",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_treeborder",
-      "community": 0,
-      "norm_label": "treeborder()"
-    },
-    {
-      "label": "scatter()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L727",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_scatter",
-      "community": 0,
-      "norm_label": "scatter()"
-    },
-    {
-      "label": "longGrassPatch()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L750",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_longgrasspatch",
-      "community": 0,
-      "norm_label": "longgrasspatch()"
-    },
-    {
-      "label": "hedgeLine()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L772",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_hedgeline",
-      "community": 0,
-      "norm_label": "hedgeline()"
-    },
-    {
-      "label": "findClearSpot()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L792",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_findclearspot",
-      "community": 0,
-      "norm_label": "findclearspot()"
-    },
-    {
-      "label": "DESIGN_FIX_LOOP.md",
-      "file_type": "document",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_design_fix_loop",
-      "community": 227,
-      "norm_label": "design_fix_loop.md"
-    },
-    {
-      "label": "Design-fix loop \u2014 durable state",
-      "file_type": "document",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "community": 227,
-      "norm_label": "design-fix loop \u2014 durable state"
-    },
-    {
-      "label": "Protocol (each iteration)",
-      "file_type": "document",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "docs_design_fix_loop_protocol_each_iteration",
-      "community": 227,
-      "norm_label": "protocol (each iteration)"
-    },
-    {
-      "label": "Checklist",
-      "file_type": "document",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L36",
-      "_origin": "ast",
-      "id": "docs_design_fix_loop_checklist",
-      "community": 227,
-      "norm_label": "checklist"
-    },
-    {
-      "label": "Phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review",
-      "file_type": "document",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L83",
-      "_origin": "ast",
-      "id": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
-      "community": 227,
-      "norm_label": "phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review"
-    },
-    {
       "label": "build-asset-manifest.mjs",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest",
       "community": 44,
-      "norm_label": "build-asset-manifest.mjs",
-      "id": "app_scripts_design_build_asset_manifest"
+      "norm_label": "build-asset-manifest.mjs"
     },
     {
       "label": "appDir",
@@ -1039,9 +19,9 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L16",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_appdir",
       "community": 44,
-      "norm_label": "appdir",
-      "id": "app_scripts_design_build_asset_manifest_appdir"
+      "norm_label": "appdir"
     },
     {
       "label": "publicDir",
@@ -1049,9 +29,9 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L17",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_publicdir",
       "community": 44,
-      "norm_label": "publicdir",
-      "id": "app_scripts_design_build_asset_manifest_publicdir"
+      "norm_label": "publicdir"
     },
     {
       "label": "designDir",
@@ -1059,9 +39,9 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L18",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_designdir",
       "community": 44,
-      "norm_label": "designdir",
-      "id": "app_scripts_design_build_asset_manifest_designdir"
+      "norm_label": "designdir"
     },
     {
       "label": "sheetsDir",
@@ -1069,9 +49,9 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_sheetsdir",
       "community": 44,
-      "norm_label": "sheetsdir",
-      "id": "app_scripts_design_build_asset_manifest_sheetsdir"
+      "norm_label": "sheetsdir"
     },
     {
       "label": "readPng()",
@@ -1079,9 +59,9 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_readpng",
       "community": 44,
-      "norm_label": "readpng()",
-      "id": "app_scripts_design_build_asset_manifest_readpng"
+      "norm_label": "readpng()"
     },
     {
       "label": "TILE_FAMILIES",
@@ -1089,389 +69,1409 @@
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
       "source_location": "L30",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_tile_families",
       "community": 44,
-      "norm_label": "tile_families",
-      "id": "app_scripts_design_build_asset_manifest_tile_families"
+      "norm_label": "tile_families"
     },
     {
       "label": "AUTOTILE_POSITIONS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L111",
+      "source_location": "L115",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_autotile_positions",
       "community": 44,
-      "norm_label": "autotile_positions",
-      "id": "app_scripts_design_build_asset_manifest_autotile_positions"
+      "norm_label": "autotile_positions"
     },
     {
       "label": "tileFamily()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L119",
+      "source_location": "L123",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_tilefamily",
       "community": 44,
-      "norm_label": "tilefamily()",
-      "id": "app_scripts_design_build_asset_manifest_tilefamily"
+      "norm_label": "tilefamily()"
     },
     {
       "label": "SKIP_TILES",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L138",
+      "source_location": "L142",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_skip_tiles",
       "community": 44,
-      "norm_label": "skip_tiles",
-      "id": "app_scripts_design_build_asset_manifest_skip_tiles"
+      "norm_label": "skip_tiles"
     },
     {
       "label": "singles",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L140",
+      "source_location": "L144",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_singles",
       "community": 44,
-      "norm_label": "singles",
-      "id": "app_scripts_design_build_asset_manifest_singles"
+      "norm_label": "singles"
     },
     {
       "label": "tilesDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L142",
+      "source_location": "L146",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_tilesdir",
       "community": 44,
-      "norm_label": "tilesdir",
-      "id": "app_scripts_design_build_asset_manifest_tilesdir"
+      "norm_label": "tilesdir"
     },
     {
       "label": "spritesDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L160",
+      "source_location": "L164",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_spritesdir",
       "community": 44,
-      "norm_label": "spritesdir",
-      "id": "app_scripts_design_build_asset_manifest_spritesdir"
+      "norm_label": "spritesdir"
     },
     {
       "label": "pokemonDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L177",
+      "source_location": "L181",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_pokemondir",
       "community": 44,
-      "norm_label": "pokemondir",
-      "id": "app_scripts_design_build_asset_manifest_pokemondir"
+      "norm_label": "pokemondir"
     },
     {
       "label": "pokedex",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L197",
+      "source_location": "L201",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_pokedex",
       "community": 44,
-      "norm_label": "pokedex",
-      "id": "app_scripts_design_build_asset_manifest_pokedex"
+      "norm_label": "pokedex"
     },
     {
       "label": "dexById",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L200",
+      "source_location": "L204",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_dexbyid",
       "community": 44,
-      "norm_label": "dexbyid",
-      "id": "app_scripts_design_build_asset_manifest_dexbyid"
+      "norm_label": "dexbyid"
     },
     {
       "label": "titleCase()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L201",
+      "source_location": "L205",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_titlecase",
       "community": 44,
-      "norm_label": "titlecase()",
-      "id": "app_scripts_design_build_asset_manifest_titlecase"
+      "norm_label": "titlecase()"
     },
     {
       "label": "GEN3_VARIANTS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L203",
+      "source_location": "L207",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_gen3_variants",
       "community": 44,
-      "norm_label": "gen3_variants",
-      "id": "app_scripts_design_build_asset_manifest_gen3_variants"
+      "norm_label": "gen3_variants"
     },
     {
       "label": "PLAYER_DIRECTIONS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L245",
+      "source_location": "L249",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_player_directions",
       "community": 44,
-      "norm_label": "player_directions",
-      "id": "app_scripts_design_build_asset_manifest_player_directions"
+      "norm_label": "player_directions"
     },
     {
       "label": "playerFrames",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L246",
+      "source_location": "L250",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_playerframes",
       "community": 44,
-      "norm_label": "playerframes",
-      "id": "app_scripts_design_build_asset_manifest_playerframes"
+      "norm_label": "playerframes"
     },
     {
       "label": "FORMATION_SHAPES",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L282",
+      "source_location": "L286",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_formation_shapes",
       "community": 44,
-      "norm_label": "formation_shapes",
-      "id": "app_scripts_design_build_asset_manifest_formation_shapes"
+      "norm_label": "formation_shapes"
     },
     {
       "label": "composedDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L336",
+      "source_location": "L340",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_composeddir",
       "community": 44,
-      "norm_label": "composeddir",
-      "id": "app_scripts_design_build_asset_manifest_composeddir"
+      "norm_label": "composeddir"
     },
     {
       "label": "townsSheetDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L362",
+      "source_location": "L366",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_townssheetdir",
       "community": 44,
-      "norm_label": "townssheetdir",
-      "id": "app_scripts_design_build_asset_manifest_townssheetdir"
+      "norm_label": "townssheetdir"
     },
     {
       "label": "SPRITE_SCANS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L382",
+      "source_location": "L386",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_sprite_scans",
       "community": 44,
-      "norm_label": "sprite_scans",
-      "id": "app_scripts_design_build_asset_manifest_sprite_scans"
+      "norm_label": "sprite_scans"
     },
     {
       "label": "interiorScanDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L410",
+      "source_location": "L414",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_interiorscandir",
       "community": 44,
-      "norm_label": "interiorscandir",
-      "id": "app_scripts_design_build_asset_manifest_interiorscandir"
+      "norm_label": "interiorscandir"
     },
     {
       "label": "criesScanDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L430",
+      "source_location": "L434",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_criesscandir",
       "community": 44,
-      "norm_label": "criesscandir",
-      "id": "app_scripts_design_build_asset_manifest_criesscandir"
+      "norm_label": "criesscandir"
     },
     {
       "label": "EXTERIOR_SRC",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L452",
+      "source_location": "L456",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_exterior_src",
       "community": 44,
-      "norm_label": "exterior_src",
-      "id": "app_scripts_design_build_asset_manifest_exterior_src"
+      "norm_label": "exterior_src"
     },
     {
       "label": "CHARACTER_SRC",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L453",
+      "source_location": "L457",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_character_src",
       "community": 44,
-      "norm_label": "character_src",
-      "id": "app_scripts_design_build_asset_manifest_character_src"
+      "norm_label": "character_src"
     },
     {
       "label": "sheetSize()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L458",
+      "source_location": "L462",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_sheetsize",
       "community": 44,
-      "norm_label": "sheetsize()",
-      "id": "app_scripts_design_build_asset_manifest_sheetsize"
+      "norm_label": "sheetsize()"
     },
     {
       "label": "sheets",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L463",
+      "source_location": "L467",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_sheets",
       "community": 44,
-      "norm_label": "sheets",
-      "id": "app_scripts_design_build_asset_manifest_sheets"
+      "norm_label": "sheets"
     },
     {
       "label": "classifyCell()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L491",
+      "source_location": "L495",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_classifycell",
       "community": 44,
-      "norm_label": "classifycell()",
-      "id": "app_scripts_design_build_asset_manifest_classifycell"
+      "norm_label": "classifycell()"
     },
     {
       "label": "cellHash()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L532",
+      "source_location": "L536",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_cellhash",
       "community": 44,
-      "norm_label": "cellhash()",
-      "id": "app_scripts_design_build_asset_manifest_cellhash"
+      "norm_label": "cellhash()"
     },
     {
       "label": "CELL_CATEGORIES",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L541",
+      "source_location": "L545",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_cell_categories",
       "community": 44,
-      "norm_label": "cell_categories",
-      "id": "app_scripts_design_build_asset_manifest_cell_categories"
+      "norm_label": "cell_categories"
     },
     {
       "label": "sliceSheet()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L543",
+      "source_location": "L547",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_slicesheet",
       "community": 44,
-      "norm_label": "slicesheet()",
-      "id": "app_scripts_design_build_asset_manifest_slicesheet"
+      "norm_label": "slicesheet()"
     },
     {
       "label": "exSlice",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L588",
+      "source_location": "L592",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_exslice",
       "community": 44,
-      "norm_label": "exslice",
-      "id": "app_scripts_design_build_asset_manifest_exslice"
+      "norm_label": "exslice"
     },
     {
       "label": "inSlice",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L592",
+      "source_location": "L596",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_inslice",
       "community": 44,
-      "norm_label": "inslice",
-      "id": "app_scripts_design_build_asset_manifest_inslice"
+      "norm_label": "inslice"
     },
     {
       "label": "detectIslands()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L603",
+      "source_location": "L607",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_detectislands",
       "community": 44,
-      "norm_label": "detectislands()",
-      "id": "app_scripts_design_build_asset_manifest_detectislands"
+      "norm_label": "detectislands()"
     },
     {
       "label": "CHARACTER_BANDS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L649",
+      "source_location": "L653",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_character_bands",
       "community": 44,
-      "norm_label": "character_bands",
-      "id": "app_scripts_design_build_asset_manifest_character_bands"
+      "norm_label": "character_bands"
     },
     {
       "label": "CHARACTER_EXCLUSIONS",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L663",
+      "source_location": "L667",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_character_exclusions",
       "community": 44,
-      "norm_label": "character_exclusions",
-      "id": "app_scripts_design_build_asset_manifest_character_exclusions"
+      "norm_label": "character_exclusions"
     },
     {
       "label": "characterAnimations()",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L665",
+      "source_location": "L669",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_characteranimations",
       "community": 44,
-      "norm_label": "characteranimations()",
-      "id": "app_scripts_design_build_asset_manifest_characteranimations"
+      "norm_label": "characteranimations()"
     },
     {
       "label": "animations",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L724",
+      "source_location": "L728",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_animations",
       "community": 44,
-      "norm_label": "animations",
-      "id": "app_scripts_design_build_asset_manifest_animations"
+      "norm_label": "animations"
     },
     {
       "label": "tileAnimDir",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L727",
+      "source_location": "L731",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_tileanimdir",
       "community": 44,
-      "norm_label": "tileanimdir",
-      "id": "app_scripts_design_build_asset_manifest_tileanimdir"
+      "norm_label": "tileanimdir"
     },
     {
       "label": "manifest",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L802",
+      "source_location": "L806",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_manifest",
       "community": 44,
-      "norm_label": "manifest",
-      "id": "app_scripts_design_build_asset_manifest_manifest"
+      "norm_label": "manifest"
     },
     {
       "label": "outFile",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L811",
+      "source_location": "L815",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_outfile",
       "community": 44,
-      "norm_label": "outfile",
-      "id": "app_scripts_design_build_asset_manifest_outfile"
+      "norm_label": "outfile"
     },
     {
       "label": "sizeKb",
       "file_type": "code",
       "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L813",
+      "source_location": "L817",
       "_origin": "ast",
+      "id": "app_scripts_design_build_asset_manifest_sizekb",
       "community": 44,
-      "norm_label": "sizekb",
-      "id": "app_scripts_design_build_asset_manifest_sizekb"
+      "norm_label": "sizekb"
+    },
+    {
+      "label": "fetch-emerald-towns.mjs",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "fetch-emerald-towns.mjs",
+      "id": "app_scripts_design_fetch_emerald_towns"
+    },
+    {
+      "label": "scriptDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "scriptdir",
+      "id": "app_scripts_design_fetch_emerald_towns_scriptdir"
+    },
+    {
+      "label": "appDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "appdir",
+      "id": "app_scripts_design_fetch_emerald_towns_appdir"
+    },
+    {
+      "label": "pretDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "pretdir",
+      "id": "app_scripts_design_fetch_emerald_towns_pretdir"
+    },
+    {
+      "label": "townsDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "townsdir",
+      "id": "app_scripts_design_fetch_emerald_towns_townsdir"
+    },
+    {
+      "label": "TOWNS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "towns",
+      "id": "app_scripts_design_fetch_emerald_towns_towns"
+    },
+    {
+      "label": "fetchPret()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L50",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "fetchpret()",
+      "id": "app_scripts_design_fetch_emerald_towns_fetchpret"
+    },
+    {
+      "label": "readIndexedPng()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L65",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "readindexedpng()",
+      "id": "app_scripts_design_fetch_emerald_towns_readindexedpng"
+    },
+    {
+      "label": "parseJascPalette()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L122",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "parsejascpalette()",
+      "id": "app_scripts_design_fetch_emerald_towns_parsejascpalette"
+    },
+    {
+      "label": "tilesetSlug()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L132",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "tilesetslug()",
+      "id": "app_scripts_design_fetch_emerald_towns_tilesetslug"
+    },
+    {
+      "label": "tilesetCache",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L138",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "tilesetcache",
+      "id": "app_scripts_design_fetch_emerald_towns_tilesetcache"
+    },
+    {
+      "label": "loadTileset()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L139",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "loadtileset()",
+      "id": "app_scripts_design_fetch_emerald_towns_loadtileset"
+    },
+    {
+      "label": "drawMetatile()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L160",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "drawmetatile()",
+      "id": "app_scripts_design_fetch_emerald_towns_drawmetatile"
+    },
+    {
+      "label": "layoutsJson",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L200",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "layoutsjson",
+      "id": "app_scripts_design_fetch_emerald_towns_layoutsjson"
+    },
+    {
+      "label": "layoutById",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L201",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "layoutbyid",
+      "id": "app_scripts_design_fetch_emerald_towns_layoutbyid"
+    },
+    {
+      "label": "interiorsDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L231",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "interiorsdir",
+      "id": "app_scripts_design_fetch_emerald_towns_interiorsdir"
+    },
+    {
+      "label": "renderedSlugs",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L233",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "renderedslugs",
+      "id": "app_scripts_design_fetch_emerald_towns_renderedslugs"
+    },
+    {
+      "label": "layoutSlug()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L234",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "layoutslug()",
+      "id": "app_scripts_design_fetch_emerald_towns_layoutslug"
+    },
+    {
+      "label": "BUILDINGS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L273",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "buildings",
+      "id": "app_scripts_design_fetch_emerald_towns_buildings"
+    },
+    {
+      "label": "SCENERY_KEYS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L327",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "scenery_keys",
+      "id": "app_scripts_design_fetch_emerald_towns_scenery_keys"
+    },
+    {
+      "label": "tilesDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L345",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "tilesdir",
+      "id": "app_scripts_design_fetch_emerald_towns_tilesdir"
+    },
+    {
+      "label": "PIC_SOURCES",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L396",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "pic_sources",
+      "id": "app_scripts_design_fetch_emerald_towns_pic_sources"
+    },
+    {
+      "label": "listPretDir()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L414",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "listpretdir()",
+      "id": "app_scripts_design_fetch_emerald_towns_listpretdir"
+    },
+    {
+      "label": "NPCS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L429",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "npcs",
+      "id": "app_scripts_design_fetch_emerald_towns_npcs"
+    },
+    {
+      "label": "readPngPalette()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L443",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "readpngpalette()",
+      "id": "app_scripts_design_fetch_emerald_towns_readpngpalette"
+    },
+    {
+      "label": "ANIM_TILESETS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L502",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "anim_tilesets",
+      "id": "app_scripts_design_fetch_emerald_towns_anim_tilesets"
+    },
+    {
+      "label": "listPretSubdirs()",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L516",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "listpretsubdirs()",
+      "id": "app_scripts_design_fetch_emerald_towns_listpretsubdirs"
+    },
+    {
+      "label": "animDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L529",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "animdir",
+      "id": "app_scripts_design_fetch_emerald_towns_animdir"
+    },
+    {
+      "label": "WALK_NPCS",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L581",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "walk_npcs",
+      "id": "app_scripts_design_fetch_emerald_towns_walk_npcs"
+    },
+    {
+      "label": "WALK_SEQUENCE",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L587",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "walk_sequence",
+      "id": "app_scripts_design_fetch_emerald_towns_walk_sequence"
+    },
+    {
+      "label": "criesDir",
+      "file_type": "code",
+      "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
+      "source_location": "L655",
+      "_origin": "ast",
+      "community": 213,
+      "norm_label": "criesdir",
+      "id": "app_scripts_design_fetch_emerald_towns_criesdir"
+    },
+    {
+      "label": "legality.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "legality.ts",
+      "id": "app_src_lib_design_legality"
+    },
+    {
+      "label": "GroundKind",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "groundkind",
+      "id": "app_src_lib_design_legality_groundkind"
+    },
+    {
+      "label": "groundKindOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "groundkindof()",
+      "id": "app_src_lib_design_legality_groundkindof"
+    },
+    {
+      "label": "OverlayRule",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlayrule",
+      "id": "app_src_lib_design_legality_overlayrule"
+    },
+    {
+      "label": "OVERLAY_RULES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlay_rules",
+      "id": "app_src_lib_design_legality_overlay_rules"
+    },
+    {
+      "label": "BannedTile",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L97",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "bannedtile",
+      "id": "app_src_lib_design_legality_bannedtile"
+    },
+    {
+      "label": "BANNED_OVERLAYS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L105",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_overlays",
+      "id": "app_src_lib_design_legality_banned_overlays"
+    },
+    {
+      "label": "BANNED_GROUND",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L148",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_ground",
+      "id": "app_src_lib_design_legality_banned_ground"
+    },
+    {
+      "label": "Formation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L157",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation",
+      "id": "app_src_lib_design_legality_formation"
+    },
+    {
+      "label": "buildingFormation()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L171",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "buildingformation()",
+      "id": "app_src_lib_design_legality_buildingformation"
+    },
+    {
+      "label": "FORMATIONS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L189",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formations",
+      "id": "app_src_lib_design_legality_formations"
+    },
+    {
+      "label": "FORMATION_PART",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L421",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation_part",
+      "id": "app_src_lib_design_legality_formation_part"
+    },
+    {
+      "label": "Violation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L428",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "violation",
+      "id": "app_src_lib_design_legality_violation"
+    },
+    {
+      "label": "Grid",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L435",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "grid",
+      "id": "app_src_lib_design_legality_grid"
+    },
+    {
+      "label": "inGrid()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L437",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "ingrid()",
+      "id": "app_src_lib_design_legality_ingrid"
+    },
+    {
+      "label": "flagsFor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L442",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "flagsfor()",
+      "id": "app_src_lib_design_legality_flagsfor"
+    },
+    {
+      "label": "expectedPond()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L456",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "expectedpond()",
+      "id": "app_src_lib_design_legality_expectedpond"
+    },
+    {
+      "label": "validateDesign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L474",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "validatedesign()",
+      "id": "app_src_lib_design_legality_validatedesign"
+    },
+    {
+      "label": "formatViolations()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L661",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formatviolations()",
+      "id": "app_src_lib_design_legality_formatviolations"
+    },
+    {
+      "label": "paint.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "paint.ts",
+      "id": "app_src_lib_design_paint"
+    },
+    {
+      "label": "Ground",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "ground",
+      "id": "app_src_lib_design_paint_ground"
+    },
+    {
+      "label": "GroundMap",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "groundmap",
+      "id": "app_src_lib_design_paint_groundmap"
+    },
+    {
+      "label": "inBounds()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "inbounds()",
+      "id": "app_src_lib_design_paint_inbounds"
+    },
+    {
+      "label": "inMap()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "inmap()",
+      "id": "app_src_lib_design_paint_inmap"
+    },
+    {
+      "label": "newGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "newground()",
+      "id": "app_src_lib_design_paint_newground"
+    },
+    {
+      "label": "newGrid()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L42",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "newgrid()",
+      "id": "app_src_lib_design_paint_newgrid"
+    },
+    {
+      "label": "paintBlob()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "paintblob()",
+      "id": "app_src_lib_design_paint_paintblob"
+    },
+    {
+      "label": "paintRect()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "paintrect()",
+      "id": "app_src_lib_design_paint_paintrect"
+    },
+    {
+      "label": "paintPath()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L85",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "paintpath()",
+      "id": "app_src_lib_design_paint_paintpath"
+    },
+    {
+      "label": "NeighbourFlags",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L129",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "neighbourflags",
+      "id": "app_src_lib_design_paint_neighbourflags"
+    },
+    {
+      "label": "neighbours()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L140",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "neighbours()",
+      "id": "app_src_lib_design_paint_neighbours"
+    },
+    {
+      "label": "autotileIndex()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L154",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "autotileindex()",
+      "id": "app_src_lib_design_paint_autotileindex"
+    },
+    {
+      "label": "rippleIndex()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L168",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "rippleindex()",
+      "id": "app_src_lib_design_paint_rippleindex"
+    },
+    {
+      "label": "waterTileName()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L174",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "watertilename()",
+      "id": "app_src_lib_design_paint_watertilename"
+    },
+    {
+      "label": "GROUND_PREFIX",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L193",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "ground_prefix",
+      "id": "app_src_lib_design_paint_ground_prefix"
+    },
+    {
+      "label": "GroundFallback",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L206",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "groundfallback",
+      "id": "app_src_lib_design_paint_groundfallback"
+    },
+    {
+      "label": "fallbackAt()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L208",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "fallbackat()",
+      "id": "app_src_lib_design_paint_fallbackat"
+    },
+    {
+      "label": "smoothWater()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L211",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "smoothwater()",
+      "id": "app_src_lib_design_paint_smoothwater"
+    },
+    {
+      "label": "absorbIsolatedSpecks()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L274",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "absorbisolatedspecks()",
+      "id": "app_src_lib_design_paint_absorbisolatedspecks"
+    },
+    {
+      "label": "BRIDGEABLE",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L307",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "bridgeable",
+      "id": "app_src_lib_design_paint_bridgeable"
+    },
+    {
+      "label": "DeckCell",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L309",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "deckcell",
+      "id": "app_src_lib_design_paint_deckcell"
+    },
+    {
+      "label": "planBridgeDecks()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L321",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "planbridgedecks()",
+      "id": "app_src_lib_design_paint_planbridgedecks"
+    },
+    {
+      "label": "bakeGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L367",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "bakeground()",
+      "id": "app_src_lib_design_paint_bakeground"
+    },
+    {
+      "label": "isClear()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L411",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "isclear()",
+      "id": "app_src_lib_design_paint_isclear"
+    },
+    {
+      "label": "areaClear()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L420",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "areaclear()",
+      "id": "app_src_lib_design_paint_areaclear"
+    },
+    {
+      "label": "areaOnGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L436",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "areaonground()",
+      "id": "app_src_lib_design_paint_areaonground"
+    },
+    {
+      "label": "StructureKind",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L455",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "structurekind",
+      "id": "app_src_lib_design_paint_structurekind"
+    },
+    {
+      "label": ".tileAt()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L460",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": ".tileat()",
+      "id": "app_src_lib_design_paint_structurekind_tileat"
+    },
+    {
+      "label": "structure()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L463",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "structure()",
+      "id": "app_src_lib_design_paint_structure"
+    },
+    {
+      "label": "STRUCTURES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L470",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "structures",
+      "id": "app_src_lib_design_paint_structures"
+    },
+    {
+      "label": "placeStructure()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L481",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "placestructure()",
+      "id": "app_src_lib_design_paint_placestructure"
+    },
+    {
+      "label": "placeHouse()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L502",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "placehouse()",
+      "id": "app_src_lib_design_paint_placehouse"
+    },
+    {
+      "label": "placeDome()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L516",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "placedome()",
+      "id": "app_src_lib_design_paint_placedome"
+    },
+    {
+      "label": "placeDecor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L539",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placedecor()",
+      "id": "app_src_lib_design_paint_placedecor"
+    },
+    {
+      "label": "placeSign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L554",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placesign()",
+      "id": "app_src_lib_design_paint_placesign"
+    },
+    {
+      "label": "placeRockySign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L560",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placerockysign()",
+      "id": "app_src_lib_design_paint_placerockysign"
+    },
+    {
+      "label": "placeHiddenItem()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L574",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placehiddenitem()",
+      "id": "app_src_lib_design_paint_placehiddenitem"
+    },
+    {
+      "label": "placeBoulderLine()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L589",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placeboulderline()",
+      "id": "app_src_lib_design_paint_placeboulderline"
+    },
+    {
+      "label": "BIG_TREE_SLICES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L619",
+      "_origin": "ast",
+      "community": 131,
+      "norm_label": "big_tree_slices",
+      "id": "app_src_lib_design_paint_big_tree_slices"
+    },
+    {
+      "label": "placeTree()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L627",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placetree()",
+      "id": "app_src_lib_design_paint_placetree"
+    },
+    {
+      "label": "scatterTrees()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L657",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scattertrees()",
+      "id": "app_src_lib_design_paint_scattertrees"
+    },
+    {
+      "label": "treeBorder()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L688",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "treeborder()",
+      "id": "app_src_lib_design_paint_treeborder"
+    },
+    {
+      "label": "scatter()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L727",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scatter()",
+      "id": "app_src_lib_design_paint_scatter"
+    },
+    {
+      "label": "longGrassPatch()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L750",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "longgrasspatch()",
+      "id": "app_src_lib_design_paint_longgrasspatch"
+    },
+    {
+      "label": "hedgeLine()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L772",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hedgeline()",
+      "id": "app_src_lib_design_paint_hedgeline"
+    },
+    {
+      "label": "findClearSpot()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L792",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "findclearspot()",
+      "id": "app_src_lib_design_paint_findclearspot"
+    },
+    {
+      "label": "DESIGN_FIX_LOOP.md",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 227,
+      "norm_label": "design_fix_loop.md",
+      "id": "docs_design_fix_loop"
+    },
+    {
+      "label": "Design-fix loop \u2014 durable state",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 227,
+      "norm_label": "design-fix loop \u2014 durable state",
+      "id": "docs_design_fix_loop_design_fix_loop_durable_state"
+    },
+    {
+      "label": "Protocol (each iteration)",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 227,
+      "norm_label": "protocol (each iteration)",
+      "id": "docs_design_fix_loop_protocol_each_iteration"
+    },
+    {
+      "label": "Checklist",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "community": 227,
+      "norm_label": "checklist",
+      "id": "docs_design_fix_loop_checklist"
+    },
+    {
+      "label": "Phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review",
+      "file_type": "document",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "community": 227,
+      "norm_label": "phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review",
+      "id": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review"
     },
     {
       "label": "families-generated.ts",
@@ -20536,12 +20536,573 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L728",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_animations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_appdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_autotile_positions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L545",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_cell_categories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L536",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_cellhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L653",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_character_bands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L667",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_character_exclusions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L457",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_character_src",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L669",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_characteranimations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L495",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_classifycell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L340",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_composeddir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L434",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_criesscandir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_designdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L607",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_detectislands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_dexbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L592",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_exslice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L456",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_exterior_src",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L286",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_formation_shapes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_gen3_variants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L596",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_inslice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L414",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_interiorscandir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L806",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_manifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L815",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_outfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L249",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_player_directions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L250",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_playerframes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_pokedex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_pokemondir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_publicdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_readpng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L467",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_sheets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_sheetsdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L462",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_sheetsize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_singles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L817",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_sizekb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_skip_tiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L547",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_slicesheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L386",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_sprite_scans",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_spritesdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_tile_families",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L731",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_tileanimdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_tilefamily",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_tilesdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_titlecase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L366",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "app_scripts_design_build_asset_manifest_townssheetdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "node_crypto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "node_fs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "node_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "node_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest",
+      "target": "pngjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L670",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_characteranimations",
+      "target": "app_scripts_design_build_asset_manifest_readpng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L463",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_sheetsize",
+      "target": "app_scripts_design_build_asset_manifest_readpng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L548",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_slicesheet",
+      "target": "app_scripts_design_build_asset_manifest_readpng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L565",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_slicesheet",
+      "target": "app_scripts_design_build_asset_manifest_classifycell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L574",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_slicesheet",
+      "target": "app_scripts_design_build_asset_manifest_cellhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/scripts/design/build-asset-manifest.mjs",
+      "source_location": "L671",
+      "weight": 1.0,
+      "source": "app_scripts_design_build_asset_manifest_characteranimations",
+      "target": "app_scripts_design_build_asset_manifest_detectislands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L502",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_anim_tilesets",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_anim_tilesets"
     },
     {
       "relation": "contains",
@@ -20549,9 +21110,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L529",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_animdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_animdir"
     },
     {
       "relation": "contains",
@@ -20559,9 +21120,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_appdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_appdir"
     },
     {
       "relation": "contains",
@@ -20569,9 +21130,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_buildings",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_buildings"
     },
     {
       "relation": "contains",
@@ -20579,9 +21140,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L655",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_criesdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_criesdir"
     },
     {
       "relation": "contains",
@@ -20589,9 +21150,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_drawmetatile",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_drawmetatile"
     },
     {
       "relation": "contains",
@@ -20599,9 +21160,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_fetchpret",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_fetchpret"
     },
     {
       "relation": "contains",
@@ -20609,9 +21170,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L231",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_interiorsdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_interiorsdir"
     },
     {
       "relation": "contains",
@@ -20619,9 +21180,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_layoutbyid",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_layoutbyid"
     },
     {
       "relation": "contains",
@@ -20629,9 +21190,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_layoutsjson",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_layoutsjson"
     },
     {
       "relation": "contains",
@@ -20639,9 +21200,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L234",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_layoutslug",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_layoutslug"
     },
     {
       "relation": "contains",
@@ -20649,9 +21210,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L414",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_listpretdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_listpretdir"
     },
     {
       "relation": "contains",
@@ -20659,9 +21220,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L516",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_listpretsubdirs",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_listpretsubdirs"
     },
     {
       "relation": "contains",
@@ -20669,9 +21230,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_loadtileset"
     },
     {
       "relation": "contains",
@@ -20679,9 +21240,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L429",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_npcs",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_npcs"
     },
     {
       "relation": "contains",
@@ -20689,9 +21250,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_parsejascpalette",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_parsejascpalette"
     },
     {
       "relation": "contains",
@@ -20699,9 +21260,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_pic_sources",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_pic_sources"
     },
     {
       "relation": "contains",
@@ -20709,9 +21270,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_pretdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_pretdir"
     },
     {
       "relation": "contains",
@@ -20719,9 +21280,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_readindexedpng",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_readindexedpng"
     },
     {
       "relation": "contains",
@@ -20729,9 +21290,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L443",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_readpngpalette",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_readpngpalette"
     },
     {
       "relation": "contains",
@@ -20739,9 +21300,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L233",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_renderedslugs",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_renderedslugs"
     },
     {
       "relation": "contains",
@@ -20749,9 +21310,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L327",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_scenery_keys",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_scenery_keys"
     },
     {
       "relation": "contains",
@@ -20759,9 +21320,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_scriptdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_scriptdir"
     },
     {
       "relation": "contains",
@@ -20769,9 +21330,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L345",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_tilesdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_tilesdir"
     },
     {
       "relation": "contains",
@@ -20779,9 +21340,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_tilesetcache",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_tilesetcache"
     },
     {
       "relation": "contains",
@@ -20789,9 +21350,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_tilesetslug",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_tilesetslug"
     },
     {
       "relation": "contains",
@@ -20799,9 +21360,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_towns",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_towns"
     },
     {
       "relation": "contains",
@@ -20809,9 +21370,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_townsdir",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_townsdir"
     },
     {
       "relation": "contains",
@@ -20819,9 +21380,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L581",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_walk_npcs",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_walk_npcs"
     },
     {
       "relation": "contains",
@@ -20829,9 +21390,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L587",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "app_scripts_design_fetch_emerald_towns_walk_sequence",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_walk_sequence"
     },
     {
       "relation": "imports_from",
@@ -20840,9 +21401,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "node_child_process",
-      "confidence_score": 1.0
+      "target": "node_child_process"
     },
     {
       "relation": "imports_from",
@@ -20851,9 +21412,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "node_fs",
-      "confidence_score": 1.0
+      "target": "node_fs"
     },
     {
       "relation": "imports_from",
@@ -20862,9 +21423,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "node_path",
-      "confidence_score": 1.0
+      "target": "node_path"
     },
     {
       "relation": "imports_from",
@@ -20873,9 +21434,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "node_url",
-      "confidence_score": 1.0
+      "target": "node_url"
     },
     {
       "relation": "imports_from",
@@ -20884,9 +21445,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "node_zlib",
-      "confidence_score": 1.0
+      "target": "node_zlib"
     },
     {
       "relation": "imports_from",
@@ -20895,9 +21456,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns",
-      "target": "pngjs",
-      "confidence_score": 1.0
+      "target": "pngjs"
     },
     {
       "relation": "calls",
@@ -20906,9 +21467,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "target": "app_scripts_design_fetch_emerald_towns_fetchpret",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_fetchpret"
     },
     {
       "relation": "calls",
@@ -20917,9 +21478,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "target": "app_scripts_design_fetch_emerald_towns_readindexedpng",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_readindexedpng"
     },
     {
       "relation": "calls",
@@ -20928,9 +21489,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "target": "app_scripts_design_fetch_emerald_towns_parsejascpalette",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_parsejascpalette"
     },
     {
       "relation": "calls",
@@ -20939,9 +21500,9 @@
       "source_file": "app/scripts/design/fetch-emerald-towns.mjs",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_scripts_design_fetch_emerald_towns_loadtileset",
-      "target": "app_scripts_design_fetch_emerald_towns_tilesetslug",
-      "confidence_score": 1.0
+      "target": "app_scripts_design_fetch_emerald_towns_tilesetslug"
     },
     {
       "relation": "imports_from",
@@ -20982,9 +21543,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_ground"
     },
     {
       "relation": "contains",
@@ -20992,9 +21553,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_overlays",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_overlays"
     },
     {
       "relation": "contains",
@@ -21002,9 +21563,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_bannedtile",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_bannedtile"
     },
     {
       "relation": "contains",
@@ -21012,9 +21573,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_buildingformation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_buildingformation"
     },
     {
       "relation": "contains",
@@ -21032,9 +21593,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L456",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "contains",
@@ -21042,9 +21603,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L442",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "contains",
@@ -21052,9 +21613,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation"
     },
     {
       "relation": "contains",
@@ -21062,9 +21623,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L421",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation_part",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation_part"
     },
     {
       "relation": "contains",
@@ -21072,9 +21633,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formations"
     },
     {
       "relation": "contains",
@@ -21082,9 +21643,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L661",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formatviolations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formatviolations"
     },
     {
       "relation": "contains",
@@ -21092,9 +21653,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L435",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_grid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_grid"
     },
     {
       "relation": "contains",
@@ -21102,9 +21663,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkind",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkind"
     },
     {
       "relation": "contains",
@@ -21112,9 +21673,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "contains",
@@ -21122,9 +21683,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L437",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "contains",
@@ -21132,9 +21693,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlay_rules",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlay_rules"
     },
     {
       "relation": "contains",
@@ -21142,9 +21703,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlayrule",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlayrule"
     },
     {
       "relation": "contains",
@@ -21152,9 +21713,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L474",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_validatedesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_validatedesign"
     },
     {
       "relation": "contains",
@@ -21162,9 +21723,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_violation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_violation"
     },
     {
       "relation": "imports_from",
@@ -21173,9 +21734,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint"
     },
     {
       "relation": "imports",
@@ -21184,9 +21745,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "imports",
@@ -21195,9 +21756,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint_neighbourflags",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbourflags"
     },
     {
       "relation": "imports_from",
@@ -21228,9 +21789,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L494",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "imports",
@@ -21305,9 +21866,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "calls",
@@ -21316,9 +21877,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L506",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "calls",
@@ -21327,9 +21888,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L465",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_expectedpond",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -21338,9 +21899,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L546",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "imports",
@@ -21480,9 +22041,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L274",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_absorbisolatedspecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_absorbisolatedspecks"
     },
     {
       "relation": "contains",
@@ -21490,9 +22051,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L420",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "contains",
@@ -21500,9 +22061,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L436",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "contains",
@@ -21510,9 +22071,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "contains",
@@ -21520,9 +22081,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L367",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_bakeground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_bakeground"
     },
     {
       "relation": "contains",
@@ -21530,9 +22091,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L619",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_big_tree_slices",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_big_tree_slices"
     },
     {
       "relation": "contains",
@@ -21540,9 +22101,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L307",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_bridgeable",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_bridgeable"
     },
     {
       "relation": "contains",
@@ -21550,9 +22111,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L309",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_deckcell",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_deckcell"
     },
     {
       "relation": "contains",
@@ -21560,9 +22121,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_fallbackat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_fallbackat"
     },
     {
       "relation": "contains",
@@ -21570,9 +22131,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L792",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "contains",
@@ -21580,9 +22141,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "contains",
@@ -21590,9 +22151,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_ground_prefix",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground_prefix"
     },
     {
       "relation": "contains",
@@ -21600,9 +22161,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_groundfallback",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundfallback"
     },
     {
       "relation": "contains",
@@ -21610,9 +22171,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "contains",
@@ -21620,9 +22181,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L772",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_hedgeline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_hedgeline"
     },
     {
       "relation": "contains",
@@ -21630,9 +22191,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_inbounds",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inbounds"
     },
     {
       "relation": "contains",
@@ -21640,9 +22201,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "contains",
@@ -21650,9 +22211,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L411",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "contains",
@@ -21660,9 +22221,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L750",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_longgrasspatch",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_longgrasspatch"
     },
     {
       "relation": "contains",
@@ -21670,9 +22231,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_neighbourflags",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbourflags"
     },
     {
       "relation": "contains",
@@ -21680,9 +22241,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_neighbours",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbours"
     },
     {
       "relation": "contains",
@@ -21690,9 +22251,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_newgrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_newgrid"
     },
     {
       "relation": "contains",
@@ -21700,9 +22261,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_newground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_newground"
     },
     {
       "relation": "contains",
@@ -21710,9 +22271,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintblob",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintblob"
     },
     {
       "relation": "contains",
@@ -21720,9 +22281,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintpath"
     },
     {
       "relation": "contains",
@@ -21730,9 +22291,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintrect",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintrect"
     },
     {
       "relation": "contains",
@@ -21740,9 +22301,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L589",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placeboulderline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placeboulderline"
     },
     {
       "relation": "contains",
@@ -21750,9 +22311,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L539",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "contains",
@@ -21760,9 +22321,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L516",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "contains",
@@ -21770,9 +22331,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L574",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "contains",
@@ -21780,9 +22341,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L502",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placehouse",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehouse"
     },
     {
       "relation": "contains",
@@ -21790,9 +22351,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L560",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placerockysign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placerockysign"
     },
     {
       "relation": "contains",
@@ -21800,9 +22361,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L554",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placesign"
     },
     {
       "relation": "contains",
@@ -21810,9 +22371,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L481",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "contains",
@@ -21820,9 +22381,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L627",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "contains",
@@ -21830,9 +22391,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L321",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_planbridgedecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_planbridgedecks"
     },
     {
       "relation": "contains",
@@ -21840,9 +22401,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_rippleindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_rippleindex"
     },
     {
       "relation": "contains",
@@ -21850,9 +22411,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L727",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "contains",
@@ -21860,9 +22421,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L657",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_scattertrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scattertrees"
     },
     {
       "relation": "contains",
@@ -21870,9 +22431,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L211",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_smoothwater"
     },
     {
       "relation": "contains",
@@ -21880,9 +22441,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L463",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structure"
     },
     {
       "relation": "contains",
@@ -21890,9 +22451,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L455",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structurekind",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind"
     },
     {
       "relation": "contains",
@@ -21900,9 +22461,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L470",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structures",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structures"
     },
     {
       "relation": "contains",
@@ -21910,9 +22471,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L688",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_treeborder",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_treeborder"
     },
     {
       "relation": "contains",
@@ -21920,9 +22481,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_watertilename",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_watertilename"
     },
     {
       "relation": "imports_from",
@@ -22052,9 +22613,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_absorbisolatedspecks",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22063,9 +22624,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L446",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_areaonground",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22074,9 +22635,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L413",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_isclear",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22085,9 +22646,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_paintrect",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22096,9 +22657,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L546",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedecor",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22107,9 +22668,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placehiddenitem",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22118,9 +22679,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L566",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placerockysign",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22129,9 +22690,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L555",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placesign",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22140,9 +22701,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L252",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_smoothwater",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "imports",
@@ -22382,9 +22943,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L390",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_neighbours",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbours"
     },
     {
       "relation": "calls",
@@ -22393,9 +22954,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L394",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -22404,9 +22965,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L188",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_watertilename",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -22415,9 +22976,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_watertilename",
-      "target": "app_src_lib_design_paint_rippleindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_rippleindex"
     },
     {
       "relation": "calls",
@@ -22426,9 +22987,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L390",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_watertilename",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_watertilename"
     },
     {
       "relation": "calls",
@@ -22437,9 +22998,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_smoothwater",
-      "target": "app_src_lib_design_paint_fallbackat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_fallbackat"
     },
     {
       "relation": "calls",
@@ -22448,9 +23009,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L377",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_smoothwater"
     },
     {
       "relation": "calls",
@@ -22459,9 +23020,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L378",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_absorbisolatedspecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_absorbisolatedspecks"
     },
     {
       "relation": "calls",
@@ -22470,9 +23031,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L372",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_planbridgedecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_planbridgedecks"
     },
     {
       "relation": "imports",
@@ -22569,9 +23130,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L430",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_areaclear",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22580,9 +23141,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L805",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_findclearspot",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22591,9 +23152,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L786",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22602,9 +23163,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L763",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_longgrasspatch",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22613,9 +23174,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L602",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placeboulderline",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22624,9 +23185,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L637",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placetree",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22635,9 +23196,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L739",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scatter",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22646,9 +23207,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L675",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22657,9 +23218,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L717",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -22668,9 +23229,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L522",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedome",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "calls",
@@ -22679,9 +23240,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L490",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "calls",
@@ -22690,9 +23251,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L523",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedome",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "calls",
@@ -22701,9 +23262,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L491",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "method",
@@ -22711,9 +23272,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L460",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_structurekind",
-      "target": "app_src_lib_design_paint_structurekind_tileat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind_tileat"
     },
     {
       "relation": "calls",
@@ -22722,9 +23283,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L494",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_structurekind_tileat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind_tileat"
     },
     {
       "relation": "imports",
@@ -22766,9 +23327,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L508",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placehouse",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "imports",
@@ -22854,9 +23415,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L787",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22865,9 +23426,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L605",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placeboulderline",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22876,9 +23437,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L567",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placerockysign",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22887,9 +23448,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L556",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placesign",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22898,9 +23459,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L741",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scatter",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22909,9 +23470,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L678",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -22920,9 +23481,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L719",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "imports",
@@ -23085,9 +23646,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L669",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "calls",
@@ -23096,9 +23657,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L709",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "imports",
@@ -23337,9 +23898,9 @@
       "source_file": "docs/DESIGN_FIX_LOOP.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_design_fix_loop",
-      "target": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "confidence_score": 1.0
+      "target": "docs_design_fix_loop_design_fix_loop_durable_state"
     },
     {
       "relation": "contains",
@@ -23347,9 +23908,9 @@
       "source_file": "docs/DESIGN_FIX_LOOP.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_checklist",
-      "confidence_score": 1.0
+      "target": "docs_design_fix_loop_checklist"
     },
     {
       "relation": "contains",
@@ -23357,9 +23918,9 @@
       "source_file": "docs/DESIGN_FIX_LOOP.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
-      "confidence_score": 1.0
+      "target": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review"
     },
     {
       "relation": "contains",
@@ -23367,570 +23928,9 @@
       "source_file": "docs/DESIGN_FIX_LOOP.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_protocol_each_iteration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L724",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_animations"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_appdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L111",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_autotile_positions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L541",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_cell_categories"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L532",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_cellhash"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L649",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_character_bands"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L663",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_character_exclusions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L453",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_character_src"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L665",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_characteranimations"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L491",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_classifycell"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L336",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_composeddir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L430",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_criesscandir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_designdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L603",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_detectislands"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L200",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_dexbyid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L588",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_exslice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L452",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_exterior_src"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L282",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_formation_shapes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L203",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_gen3_variants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L592",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_inslice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L410",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_interiorscandir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L802",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_manifest"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L811",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_outfile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L245",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_player_directions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L246",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_playerframes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L197",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_pokedex"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L177",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_pokemondir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_publicdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_readpng"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L463",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_sheets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_sheetsdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L458",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_sheetsize"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_singles"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L813",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_sizekb"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L138",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_skip_tiles"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L543",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_slicesheet"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L382",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_sprite_scans"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L160",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_spritesdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_tile_families"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L727",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_tileanimdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L119",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_tilefamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L142",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_tilesdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L201",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_titlecase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L362",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "app_scripts_design_build_asset_manifest_townssheetdir"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "node_crypto"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "node_fs"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "node_path"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "node_url"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest",
-      "target": "pngjs"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L666",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_characteranimations",
-      "target": "app_scripts_design_build_asset_manifest_readpng"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L459",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_sheetsize",
-      "target": "app_scripts_design_build_asset_manifest_readpng"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L544",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_slicesheet",
-      "target": "app_scripts_design_build_asset_manifest_readpng"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L561",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_slicesheet",
-      "target": "app_scripts_design_build_asset_manifest_classifycell"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L570",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_slicesheet",
-      "target": "app_scripts_design_build_asset_manifest_cellhash"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/scripts/design/build-asset-manifest.mjs",
-      "source_location": "L667",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_scripts_design_build_asset_manifest_characteranimations",
-      "target": "app_scripts_design_build_asset_manifest_detectislands"
+      "target": "docs_design_fix_loop_protocol_each_iteration"
     },
     {
       "relation": "imports_from",
@@ -55104,5 +55104,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4a9420c951df4b01d9902c3be902c21b30032376"
+  "built_at_commit": "35094d304d89233e723be4e87c8ee13c71a539da"
 }

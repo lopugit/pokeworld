@@ -1,7 +1,7 @@
 # Graph Report - design-map-themes-review-cb860f-33fe92  (2026-08-09)
 
 ## Corpus Check
-- 239 files · ~2,552,050 words
+- 239 files · ~2,552,087 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4a9420c9`
+- Built from commit: `35094d30`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -694,7 +694,7 @@ Nodes (3): Checklist, Log, Loop state — /design studio completion & visual QA
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **646 isolated node(s):** `scriptDir`, `appDir`, `pretDir`, `townsDir`, `TOWNS` (+641 more)
+- **646 isolated node(s):** `appDir`, `publicDir`, `designDir`, `sheetsDir`, `TILE_FAMILIES` (+641 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **139 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -709,7 +709,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Why does `vitest` connect `devDependencies` to `families.ts`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **What connects `scriptDir`, `appDir`, `pretDir` to the rest of the system?**
+- **What connects `appDir`, `publicDir`, `designDir` to the rest of the system?**
   _650 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `generate.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.08687943262411348 - nodes in this community are weakly interconnected._
