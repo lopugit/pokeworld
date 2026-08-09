@@ -29,7 +29,7 @@ visually before committing fixes; magenta cells mark missing overlay art.
       paints the tree-grand 2×2 (real Littleroot canopy tree); all
       big-tree-1..10 slices banned outright. Verified via RENDER_FAMILY=
       haunted contact sheet: proper round trees along the path.
-- [ ] Painter-archetype pass: render one family per distinct painter recipe
+- [x] Painter-archetype pass: render one family per distinct painter recipe
       (grove/maze, village, lakeside, meadow, rocky/dome, orchard, garden…)
       at seed 0 + one high seed; fix any painter-level breakage found.
       (~550 families total — cover by RENDER_RANGE batches of 24:
@@ -47,7 +47,9 @@ visually before committing fixes; magenta cells mark missing overlay art.
       junctions, desert ledges all correct;
       360:24 clean, 384:24 clean, 408:24 clean — 2-story structs,
       fountains, plaza villages all correct; registry pins exactly
-      500 families, so 480:24 is the final batch)
+      500 families, so 480:24 is the final batch;
+      432:24 clean, 456:24 clean, 480:20 clean — ALL 500 families
+      reviewed, zero magenta, zero broken sprites. PASS COMPLETE.)
 - [ ] Seed-variety spot pass: for 5 representative families render seeds
       0/7/31337 and review (mirrors/rotations can expose edge clipping).
 - [ ] Polish check: trees half-clipped at diorama edges (placeTree allows
