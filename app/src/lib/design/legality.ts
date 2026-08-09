@@ -44,12 +44,6 @@ export interface OverlayRule {
 /** Standalone overlay props (multi-tile formations are handled separately). */
 export const OVERLAY_RULES: OverlayRule[] = [
   {
-    pattern: /^tree-1$/,
-    label: "Small tree",
-    grounds: ["grass"],
-    reason: "The single-cell tree; big trees are 2×3 formations.",
-  },
-  {
     pattern: /^shrub-1$/,
     label: "Shrubs & hedges",
     grounds: ["grass"],
@@ -102,6 +96,12 @@ export interface BannedTile {
 /** Art that can never compose legally in /design. The validator rejects these
  * outright — which is what retired the old fake ledges for good. */
 export const BANNED_OVERLAYS: BannedTile[] = [
+  {
+    pattern: /^tree-1$/,
+    label: "Half-tree crop",
+    reason:
+      "tree-1's art is the bottom half of a taller tree — the canopy is sliced flat at the tile's top edge over a trunk. Standalone it renders a crown-less half tree (the reported broken-tree bug: lone trunk-halves in groves, fake 'palms' on beaches, and what looked like edge-clipped trees). shrub-1 is the complete single-cell greenery; anything tree-shaped must be the tree-grand 2×2 formation.",
+  },
   {
     pattern: /^big-tree-\d+$/,
     label: "Forest-overlap strip slices",

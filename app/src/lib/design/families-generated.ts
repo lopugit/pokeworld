@@ -47,9 +47,10 @@ import {
   placeRockySign,
   placeSign,
   placeStructure,
+  placeTree,
   scatter,
   scatterTrees,
-  SMALL_TREE,
+  SMALL_SHRUB,
   STRUCTURES,
   treeBorder,
   type Ground,
@@ -771,7 +772,14 @@ const PLANNERS: PlannerDef[] = [
         decorate(ctx, frame, rng) {
           const theme = THEMES.island;
           const treeSpot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 3 });
-          if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_TREE, { solid: true, feature: "tree" });
+          if (treeSpot) {
+            const planted =
+              placeTree(ctx.grid, ctx.ground, treeSpot.col, treeSpot.row) ||
+              placeTree(ctx.grid, ctx.ground, treeSpot.col - 1, treeSpot.row) ||
+              placeTree(ctx.grid, ctx.ground, treeSpot.col, treeSpot.row - 1) ||
+              placeTree(ctx.grid, ctx.ground, treeSpot.col - 1, treeSpot.row - 1);
+            if (!planted) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_SHRUB, { solid: true, feature: "shrub" });
+          }
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], 0.06 + rng.next() * 0.08);
           hiddenSomewhere(ctx, rng);
           if (rng.chance(0.8)) addEntities(ctx, theme, rng, [0, 0], [1, 1]);
@@ -804,7 +812,7 @@ const PLANNERS: PlannerDef[] = [
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], 0.1 + flowers);
           if (rng.chance(0.4)) {
             const spot = findClearSpot(ctx.grid, ctx.ground, rng, { allowGround: ["grass"], margin: 2 });
-            if (spot) placeDecor(ctx.grid, spot.col, spot.row, "tree-1", { solid: true, feature: "palm" });
+            if (spot) placeDecor(ctx.grid, spot.col, spot.row, SMALL_SHRUB, { solid: true, feature: "shrub" });
           }
           hiddenSomewhere(ctx, rng);
           if (rng.chance(0.6)) hiddenSomewhere(ctx, rng);
@@ -835,7 +843,7 @@ const PLANNERS: PlannerDef[] = [
         },
         decorate(ctx, frame, rng) {
           const theme = THEMES.desert;
-          scatter(ctx.grid, ctx.ground, rng, ["tree-1"], palms, { solid: true, feature: "palm" });
+          scatter(ctx.grid, ctx.ground, rng, [SMALL_SHRUB], palms, { solid: true, feature: "shrub" });
           scatter(ctx.grid, ctx.ground, rng, [flowerOf(rng)], 0.04 + rng.next() * 0.06);
           hiddenSomewhere(ctx, rng);
           addEntities(ctx, theme, rng, [0, 1], [0, 1]);

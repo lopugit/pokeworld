@@ -1,9 +1,12 @@
 # Design-fix loop — durable state
 
-**STATUS: LOOP COMPLETE (2026-08-09).** All 500 families reviewed clean,
-seed pass clean, edge-tree polish decided (KEEP), /design browser-verified
-(all 500 thumbnails pixel-scanned, 0 magenta / 0 blank), PR #14 body and
-pokeworld-design-studio memory updated, cron job deleted.
+**STATUS: REOPENED — PHASE 2 (2026-08-09).** Nikolaj found broken trees in
+the live modal (forest-crossing "Sundappled Trailfork" seed 0) after phase 1
+declared clean: crown-less half-trees. Phase-1 gaps: 10px sheets made
+tree-1's half-tree art read as bushes, and the live scan only caught
+magenta, not bad art. Phase 2 = root-cause fix (done: tree-1 banned) + full
+re-review of all 500 at RENDER_PX=20 for ALL asset classes; the
+edge-clipped-trees KEEP decision is OVERTURNED (was tree-1 all along).
 
 Goal: every /design family checked for broken/ugly sprites and fixed at the
 root cause. Trigger: the Haunted Grove (and siblings) rendered "big trees"
@@ -74,5 +77,29 @@ visually before committing fixes; magenta cells mark missing overlay art.
       village + Legendary cave detail views clean; no console errors. The
       Browser pane hid mid-check, so deep-scroll verification was done via
       DOM/canvas scans instead of screenshots — stronger coverage anyway.)
+
+## Phase 2 (reopened 2026-08-09) — user-found breakage + full re-review
+
+- [x] Root cause 2: tree-1 "small tree" was a HALF-TREE CROP (canopy sliced
+      flat at the tile top edge over a trunk) scattered standalone by
+      scatterTrees/treeBorder and as fake "palms" on beach/dunes/oasis
+      families. Fixed: tree-1 moved to BANNED_OVERLAYS; all scatters now
+      use shrub-1 (complete art, feature "shrub"); tiny-island + generated
+      island "one tree" spots upgraded to a real tree-grand 2×2 with shrub
+      fallback. Verified: forest-crossing/tiny-island/deep-forest-shrine/
+      safari-thicket seed-0 renders at 28px — zero half trees; what looked
+      like "edge-clipped trees" in phase 1 was tree-1 art all along, so the
+      polish item is genuinely resolved by this ban.
+- [ ] Renderer parity: confirm the app modal/thumbnail canvas draws the
+      same img/img2 stack as the vitest harness for one family+seed.
+- [ ] Full re-review at RENDER_PX=20, 12 families per sheet, ALL asset
+      classes (trees, walls, buildings, water/ledges, shorelines, paths,
+      signs, NPCs, items). Tick ranges as reviewed:
+      (pending: 0:12 … 492:12 — 42 batches)
+- [ ] Browser-verify the user's exact family (forest-crossing modal) on the
+      rebuilt 3949 app; note Vercel preview rebuilds from the pushed branch
+      (hard-refresh past the SW there too).
+- [ ] Final: PR #14 body note, pokeworld-design-studio memory update,
+      PHASE 2 COMPLETE + CronDelete.
 
 Lock: (none)

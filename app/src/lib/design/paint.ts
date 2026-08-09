@@ -537,13 +537,17 @@ export function placeBoulderLine(
  * big-tree-1..10 sheet slices are forest-overlap demo fragments: no
  * arrangement of them composes a whole tree, which is exactly why groves
  * built from them looked broken. All slices are banned now.)
- * The small single-cell tree is tree-1. */
+ * tree-1 is banned too: its art is the bottom half of a taller tree —
+ * canopy sliced flat at the tile's top edge over a trunk — so standalone
+ * it renders a crown-less half tree (the reported broken-tree bug). The
+ * only complete single-cell greenery is shrub-1; anything tree-shaped
+ * must be the full tree-grand 2×2. */
 const BIG_TREE_SLICES = [
   "tree-grand-1", "tree-grand-2",
   "tree-grand-3", "tree-grand-4",
 ] as const;
 
-export const SMALL_TREE = "tree-1";
+export const SMALL_SHRUB = "shrub-1";
 
 /** Place a complete 2×2 big tree anchored at its top-left; grass only. */
 export function placeTree(
@@ -571,7 +575,7 @@ export function placeTree(
 }
 
 /** Scatter complete big trees (attempts at random anchors) plus small
- * single-cell trees, over grass. */
+ * complete shrubs, over grass. */
 export function scatterTrees(
   grid: DesignTile[][],
   ground: GroundMap,
@@ -587,7 +591,7 @@ export function scatterTrees(
     placeTree(grid, ground, col, row);
   }
   if (smallDensity > 0) {
-    scatter(grid, ground, rng, [SMALL_TREE], smallDensity, { solid: true, feature: "tree" });
+    scatter(grid, ground, rng, [SMALL_SHRUB], smallDensity, { solid: true, feature: "shrub" });
   }
 }
 
@@ -624,7 +628,7 @@ export function treeBorder(
         if (edgeDistance < 3 || edgeDistance > 3) continue;
         if (!rng.chance(0.22)) continue;
         if (!isClear(grid, ground, col, row) || ground[row][col] !== "grass") continue;
-        placeDecor(grid, col, row, SMALL_TREE, { solid: true, feature: "forest-wall" });
+        placeDecor(grid, col, row, SMALL_SHRUB, { solid: true, feature: "forest-wall" });
       }
     }
   }
