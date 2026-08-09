@@ -36,7 +36,9 @@ visually before committing fixes; magenta cells mark missing overlay art.
       0:24, 24:24, 48:24, … tick ranges here as reviewed:)
       (reviewed: 0:24 clean, 24:24 clean, 48:24 clean — real trees
       propagate everywhere; bridges/shorelines/domes/villages healthy;
-      new struct buildings appear correctly in village families)
+      new struct buildings appear correctly in village families;
+      72:24 clean, 96:24 clean, 120:24 clean — no magenta, tree-grand
+      canopies everywhere, marts/gyms/greenhouses/fountains all render)
 - [ ] Seed-variety spot pass: for 5 representative families render seeds
       0/7/31337 and review (mirrors/rotations can expose edge clipping).
 - [ ] Polish check: trees half-clipped at diorama edges (placeTree allows
