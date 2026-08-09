@@ -34,7 +34,9 @@ visually before committing fixes; magenta cells mark missing overlay art.
       at seed 0 + one high seed; fix any painter-level breakage found.
       (~550 families total — cover by RENDER_RANGE batches of 24:
       0:24, 24:24, 48:24, … tick ranges here as reviewed:)
-      (reviewed: )
+      (reviewed: 0:24 clean, 24:24 clean, 48:24 clean — real trees
+      propagate everywhere; bridges/shorelines/domes/villages healthy;
+      new struct buildings appear correctly in village families)
 - [ ] Seed-variety spot pass: for 5 representative families render seeds
       0/7/31337 and review (mirrors/rotations can expose edge clipping).
 - [ ] Polish check: trees half-clipped at diorama edges (placeTree allows

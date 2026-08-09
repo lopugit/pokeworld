@@ -9330,8 +9330,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1786178769.0184813,
-    "ast_hash": "250ceeac8fb4554aaa7a8aa01fd8ef29",
+    "mtime": 1786251995.4561338,
+    "ast_hash": "a63d0a7d3502a2fde3150642a2732462",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/legality.ts": {
-    "mtime": 1786204152.655253,
-    "ast_hash": "31b4a165b26fc9cac38acdd0b598e621",
+    "mtime": 1786251995.4600804,
+    "ast_hash": "4c8ad15e1c439bc8d160cfd374ffdbda",
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
@@ -30182,6 +30182,16 @@
   "app/public/audio/cries/zubat.m4a": {
     "mtime": 1786207865.8757913,
     "ast_hash": "4810c42f99ca3e8300df92440a4bcea5",
+    "semantic_hash": ""
+  },
+  "app/tests/render-samples.test.ts": {
+    "mtime": 1786252113.8133078,
+    "ast_hash": "8e1ab9d8a8703c00bec823df3dfe0040",
+    "semantic_hash": ""
+  },
+  "docs/DESIGN_FIX_LOOP.md": {
+    "mtime": 1786252161.0384784,
+    "ast_hash": "137be8d16a3dd408cf3a344b62fe99e9",
     "semantic_hash": ""
   }
 }
