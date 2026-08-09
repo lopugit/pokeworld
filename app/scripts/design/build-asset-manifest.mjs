@@ -33,7 +33,8 @@ const TILE_FAMILIES = [
   ["grass-dirt-", "ground", "Grass-dirt blend"],
   ["grass-", "vegetation", "Long grass"],
   ["grass", "vegetation", "Grass"],
-  ["big-tree-", "vegetation", "Big tree"],
+  // big-tree-1..10 are banned forest-overlap demo slices, not tree parts.
+  ["big-tree-", "vegetation", "Forest-overlap slice (banned)"],
   ["tree-grand-", "vegetation", "Big tree"],
   // tree-1 is a bottom-half crop of a taller tree (banned in designs) —
   // an individual sheet slice, NOT a whole object.

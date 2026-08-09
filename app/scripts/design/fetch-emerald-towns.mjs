@@ -308,9 +308,6 @@ const BUILDINGS = [
   ["struct-seashore-house", "route109", 10, 1, 4, 5],
   ["struct-fossil-house", "route114", 28, 2, 4, 4],
   ["struct-lanette-house", "route114", 25, 33, 4, 4],
-  // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
-  // sheet's forest-overlap demo and can never compose into a whole tree).
-  ["tree-grand", "littleroot-town", 18, 2, 2, 2],
   // Pacifidlog plank walkways — the game's only water-spanning foot bridges.
   // Both are single-tile repeating units (bridge-v holds the two plank
   // columns of a north-south crossing, bridge-h the two rails of an
@@ -382,6 +379,25 @@ for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
   }
 }
 console.log(`harvested ${BUILDINGS.length} whole crops into public/tiles/`);
+
+// ---------------------------------------------------------------------------
+// The big round tree comes straight from the general tileset's metatiles
+// (468/469 = crown, 484/485 = trunk). Every town placement overlaps
+// neighbouring trees or the map border, so any render crop slices the crown
+// flat — but the metatile art itself is the complete free-standing tree,
+// grass-backed with its apex margin intact. (big-tree-1..10 remain banned
+// forest-overlap demo slices; tree-1 remains a banned half crop.)
+// ---------------------------------------------------------------------------
+{
+  const general = await loadTileset("gTileset_General", true);
+  const TREE_GRAND_METATILES = [468, 469, 484, 485];
+  TREE_GRAND_METATILES.forEach((metatileId, index) => {
+    const tile = new PNG({ width: 16, height: 16 });
+    drawMetatile(tile, 0, 0, metatileId, general, general);
+    writeFileSync(resolve(tilesDir, `tree-grand-${index + 1}.png`), PNG.sync.write(tile));
+  });
+  console.log("harvested tree-grand 2x2 from general metatiles 468/469/484/485");
+}
 
 // ---------------------------------------------------------------------------
 // NPC overworld sprites: pret ships object-event pics as indexed PNGs with
