@@ -90,15 +90,20 @@ visually before committing fixes; magenta cells mark missing overlay art.
       safari-thicket seed-0 renders at 28px — zero half trees; what looked
       like "edge-clipped trees" in phase 1 was tree-1 art all along, so the
       polish item is genuinely resolved by this ban.
-- [ ] Renderer parity: confirm the app modal/thumbnail canvas draws the
-      same img/img2 stack as the vitest harness for one family+seed.
+- [x] Renderer parity: confirmed — the rebuilt app's forest-crossing seed-0
+      modal matches the harness render layout-for-layout (same trees,
+      shrubs, sign, paths); both consume the same generateDesign and draw
+      img then img2.
 - [ ] Full re-review at RENDER_PX=20, 12 families per sheet, ALL asset
       classes (trees, walls, buildings, water/ledges, shorelines, paths,
       signs, NPCs, items). Tick ranges as reviewed:
       (pending: 0:12 … 492:12 — 42 batches)
-- [ ] Browser-verify the user's exact family (forest-crossing modal) on the
-      rebuilt 3949 app; note Vercel preview rebuilds from the pushed branch
-      (hard-refresh past the SW there too).
+- [x] Browser-verify the user's exact family (forest-crossing modal) on the
+      rebuilt 3949 app — DONE post-rebuild: SW unregistered, fresh bundle
+      confirmed (Rules tab lists the Half-tree crop ban), Sundappled
+      Trailfork seed-0 modal screenshot shows complete trees + shrubs.
+      Vercel preview rebuilds from the pushed branch (hard-refresh past
+      the SW there too).
 - [ ] Final: PR #14 body note, pokeworld-design-studio memory update,
       PHASE 2 COMPLETE + CronDelete.
 
