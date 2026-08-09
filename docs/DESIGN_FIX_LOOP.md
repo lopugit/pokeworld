@@ -103,8 +103,10 @@ visually before committing fixes; magenta cells mark missing overlay art.
       36:12, 48:12, 60:12, 72:12, 84:12, 96:12 all clean — contest hall/
       fountains/twin centers/lake inlets/desert domes correct;
       108:12 … 168:12 (6 batches) all clean — gyms, rowhouses, forest
-      paths, sand lattices, big lakes correct.
-      Pending: 180:12 … 492:12.)
+      paths, sand lattices, big lakes correct;
+      180:12 … 240:12 (6 batches) all clean — greenhouses, gym pairs,
+      mart+pond, farm rows, desert verges correct.
+      Pending: 252:12 … 492:12.)
       FOLLOW-UP CANDIDATE (decide before completion): river crossings are
       bare path tiles over water (a ford) — no bridge-deck art exists in
       the vault; harvesting one is an asset task, not a paint bug.
