@@ -1,5 +1,10 @@
 # Design-fix loop — durable state
 
+**STATUS: LOOP COMPLETE (2026-08-09).** All 500 families reviewed clean,
+seed pass clean, edge-tree polish decided (KEEP), /design browser-verified
+(all 500 thumbnails pixel-scanned, 0 magenta / 0 blank), PR #14 body and
+pokeworld-design-studio memory updated, cron job deleted.
+
 Goal: every /design family checked for broken/ugly sprites and fixed at the
 root cause. Trigger: the Haunted Grove (and siblings) rendered "big trees"
 from the banned-quality big-tree-1..10 overlap slices.
@@ -62,7 +67,12 @@ visually before committing fixes; magenta cells mark missing overlay art.
       behaviour); only the standalone diorama PNG crops it, and it reads
       as photo-crop, not broken art. A forced margin would sterilise
       block seams and invalidate the completed 500-family review.
-- [ ] Final: /design browser check (Design browser tab thumbnails + a few
+- [x] Final: /design browser check (Design browser tab thumbnails + a few
       modals), PR #14 body note, memory update, LOOP COMPLETE + CronDelete.
+      (Built app served on 3949; SW cache hard-refreshed; all 500 thumbnail
+      canvases programmatically pixel-scanned — 0 magenta, 0 blank; Hoenn
+      village + Legendary cave detail views clean; no console errors. The
+      Browser pane hid mid-check, so deep-scroll verification was done via
+      DOM/canvas scans instead of screenshots — stronger coverage anyway.)
 
 Lock: (none)
