@@ -97,7 +97,12 @@ visually before committing fixes; magenta cells mark missing overlay art.
 - [ ] Full re-review at RENDER_PX=20, 12 families per sheet, ALL asset
       classes (trees, walls, buildings, water/ledges, shorelines, paths,
       signs, NPCs, items). Tick ranges as reviewed:
-      (pending: 0:12 … 492:12 — 42 batches)
+      (reviewed: 0:12 clean, 12:12 clean, 24:12 clean — post-fix trees/
+      shrubs complete everywhere incl. hedge rings, domes, boulder rows,
+      shorelines, oasis pockets, struct signs. Pending: 36:12 … 492:12.)
+      FOLLOW-UP CANDIDATE (decide before completion): river crossings are
+      bare path tiles over water (a ford) — no bridge-deck art exists in
+      the vault; harvesting one is an asset task, not a paint bug.
 - [x] Browser-verify the user's exact family (forest-crossing modal) on the
       rebuilt 3949 app — DONE post-rebuild: SW unregistered, fresh bundle
       confirmed (Rules tab lists the Half-tree crop ban), Sundappled
