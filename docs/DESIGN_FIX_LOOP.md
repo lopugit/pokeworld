@@ -50,11 +50,18 @@ visually before committing fixes; magenta cells mark missing overlay art.
       500 families, so 480:24 is the final batch;
       432:24 clean, 456:24 clean, 480:20 clean — ALL 500 families
       reviewed, zero magenta, zero broken sprites. PASS COMPLETE.)
-- [ ] Seed-variety spot pass: for 5 representative families render seeds
+- [x] Seed-variety spot pass: for 5 representative families render seeds
       0/7/31337 and review (mirrors/rotations can expose edge clipping).
-- [ ] Polish check: trees half-clipped at diorama edges (placeTree allows
+      (haunted-grove, hoenn-village, lakeside-hamlet, mountain-pass,
+      orchard-farmstead × seeds 0/7/31337 all clean — layouts vary
+      coherently, ledges/houses/boulders/trees all intact.)
+- [x] Polish check: trees half-clipped at diorama edges (placeTree allows
       row-0 anchors; in-game maps overflow edges, dioramas read it as cut) —
-      decide keep-or-margin and implement.
+      DECIDED: KEEP. In the merged multi-block world the canopy overflows
+      into the neighbour block and looks natural (authentic GBA border
+      behaviour); only the standalone diorama PNG crops it, and it reads
+      as photo-crop, not broken art. A forced margin would sterilise
+      block seams and invalidate the completed 500-family review.
 - [ ] Final: /design browser check (Design browser tab thumbnails + a few
       modals), PR #14 body note, memory update, LOOP COMPLETE + CronDelete.
 
