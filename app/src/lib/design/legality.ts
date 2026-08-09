@@ -50,6 +50,13 @@ export const OVERLAY_RULES: OverlayRule[] = [
     reason: "Shrub art is drawn on plain grass.",
   },
   {
+    pattern: /^bridge-[hv]-1$/,
+    label: "Plank bridges",
+    grounds: ["water"],
+    reason:
+      "Pacifidlog walkway planks (ocean keyed to transparent) span open water only — a deck exists to cross a river or pond, so fords bake into real walkable bridges over continuous water.",
+  },
+  {
     pattern: /^flower-[123]$/,
     label: "Flowers",
     grounds: ["grass"],
@@ -543,8 +550,12 @@ export function validateDesign(grid: Grid): Violation[] {
         if (expected.prefix && !img.startsWith(expected.prefix)) {
           violations.push({ col, row, rule: "water-autotile", detail: `"${img}" should be a "${expected.prefix}*" ripple` });
         }
-        if (!grid[row][col].solid) {
+        const bridged = /^bridge-[hv]-1$/.test(grid[row][col].img2 ?? "");
+        if (!grid[row][col].solid && !bridged) {
           violations.push({ col, row, rule: "water-solidity", detail: "water must be solid" });
+        }
+        if (bridged && grid[row][col].solid) {
+          violations.push({ col, row, rule: "bridge-solidity", detail: "plank bridges are walkable decks" });
         }
       }
     }

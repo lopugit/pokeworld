@@ -115,10 +115,14 @@ visually before committing fixes; magenta cells mark missing overlay art.
       396:12 … 492:12 (final 9 batches) all clean — fountain pairs,
       triple centers, 2-story houses, mart pairs, fords, dunes correct.
       ALL 500 FAMILIES RE-REVIEWED CLEAN AT 20px.)
-      Ford crossings DECIDED: accepted for this loop — coherent art, no
-      glitch; real bridge-deck tiles were never harvested. Logged as a
-      spawn-task chip ("Harvest Emerald bridge tiles") for a future
-      asset-pipeline task, same precedent as the cliff-strip roadmap item.
+      Ford crossings RESOLVED (same day, follow-up task): Pacifidlog plank
+      walkways harvested as bridge-h-1/bridge-v-1 (ocean scenery-keyed to
+      transparent incl. a keyBlues pass for the lap-shadow navy);
+      bakeGround's planBridgeDecks now converts every path/road ford ≤3
+      wide back to continuous water and lays walkable plank decks
+      (solid=false, feature "bridge"; legality: bridges only on water,
+      bridged water exempt from the solidity rule). All fords across the
+      catalog became real bridges in one painter-level pass.
 
 ADDENDUM (post-completion, Nikolaj-reported): banning tree-1 had swapped
 every former small-tree scatter for shrubs — tree DENSITY collapsed across

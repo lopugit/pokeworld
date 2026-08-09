@@ -296,15 +296,80 @@ function absorbIsolatedSpecks(ground: GroundMap): void {
   }
 }
 
-/** Bake the ground layer into tiles (img + water solidity). Runs the water
- * smoothing rules first so shorelines are always legal. Deterministic and
- * RNG-free: the same ground map always bakes to the same tiles, whether it is
- * a standalone block or a slice of a world supergrid. */
+// --- bridges ---------------------------------------------------------------
+
+/** Pacifidlog plank walkways — the vault's only water-spanning foot bridges
+ * (harvested by fetch-emerald-towns.mjs with their ocean water keyed to
+ * transparent, so the design pond water shows through the plank gaps). */
+export const BRIDGE_H = "bridge-h-1";
+export const BRIDGE_V = "bridge-v-1";
+
+const BRIDGEABLE = new Set<Ground>(["path", "road", "dirt"]);
+
+interface DeckCell {
+  col: number;
+  row: number;
+  img: string;
+}
+
+/** A "ford" — path/road ground painted straight across water — becomes a real
+ * bridge: the crossing reverts to continuous water and a plank walkway spans
+ * it (bridge-h rails for east-west crossings, bridge-v planks for
+ * north-south). Only runs ≤3 long convert; anything wider stays a ford. The
+ * detection is RNG-free, and decks apply only where smoothing leaves the cell
+ * as water, so the bake stays deterministic. */
+function planBridgeDecks(ground: GroundMap): DeckCell[] {
+  const water = (c: number, r: number) => inMap(ground, c, r) && ground[r]?.[c] === "water";
+  const walkable = (c: number, r: number) => inMap(ground, c, r) && BRIDGEABLE.has(ground[r][c]);
+  const plan: DeckCell[] = [];
+  const planned = new Set<string>();
+  const push = (col: number, row: number, img: string) => {
+    const key = `${col},${row}`;
+    if (planned.has(key)) return;
+    planned.add(key);
+    plan.push({ col, row, img });
+  };
+  // East-west crossings: a short column-run of walkable ground with water
+  // directly above and below is a road crossing a north-south river.
+  const cols = ground[0]?.length ?? 0;
+  for (let col = 0; col < cols; col += 1) {
+    for (let row = 0; row < ground.length; row += 1) {
+      if (!walkable(col, row) || !water(col, row - 1)) continue;
+      let end = row;
+      while (walkable(col, end + 1)) end += 1;
+      if (end - row + 1 <= 3 && water(col, end + 1)) {
+        for (let r = row; r <= end; r += 1) push(col, r, BRIDGE_H);
+      }
+      row = end;
+    }
+  }
+  // North-south crossings: a short row-run flanked by water west and east.
+  for (let row = 0; row < ground.length; row += 1) {
+    for (let col = 0; col < (ground[row]?.length ?? 0); col += 1) {
+      if (!walkable(col, row) || !water(col - 1, row)) continue;
+      let end = col;
+      while (walkable(end + 1, row)) end += 1;
+      if (end - col + 1 <= 3 && water(end + 1, row)) {
+        for (let c = col; c <= end; c += 1) push(c, row, BRIDGE_V);
+      }
+      col = end;
+    }
+  }
+  for (const cell of plan) ground[cell.row][cell.col] = "water";
+  return plan;
+}
+
+/** Bake the ground layer into tiles (img + water solidity). Converts fords to
+ * plank bridges, then runs the water smoothing rules so shorelines are always
+ * legal. Deterministic and RNG-free: the same ground map always bakes to the
+ * same tiles, whether it is a standalone block or a slice of a world
+ * supergrid. */
 export function bakeGround(
   grid: DesignTile[][],
   ground: GroundMap,
   waterFallback: GroundFallback = "grass",
 ): void {
+  const decks = planBridgeDecks(ground);
   // Smoothing and speck absorption can each expose new work for the other
   // (absorbed water reopens shoreline checks; smoothing fallback can strand a
   // speck) — alternate until stable.
@@ -329,6 +394,15 @@ export function bakeGround(
         tile.img = `${prefix}-${autotileIndex(neighbours(ground, col, row, kind))}`;
       }
     }
+  }
+  // Lay the decks last so they override water solidity; a deck cell that
+  // smoothing reverted to land simply stays land (no bridge to nowhere).
+  for (const deck of decks) {
+    if (ground[deck.row]?.[deck.col] !== "water") continue;
+    const tile = grid[deck.row][deck.col];
+    tile.img2 = deck.img;
+    tile.solid = false;
+    tile.feature = "bridge";
   }
 }
 

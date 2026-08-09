@@ -311,6 +311,13 @@ const BUILDINGS = [
   // A free-standing 2x2 canopy tree (the old big-tree-1..10 slices are the
   // sheet's forest-overlap demo and can never compose into a whole tree).
   ["tree-grand", "littleroot-town", 18, 2, 2, 2],
+  // Pacifidlog plank walkways — the game's only water-spanning foot bridges.
+  // Both are single-tile repeating units (bridge-v holds the two plank
+  // columns of a north-south crossing, bridge-h the two rails of an
+  // east-west one). Their baked ocean water is scenery-keyed to transparent
+  // so the design pond water shows through the plank gaps.
+  ["bridge-v", "pacifidlog-town", 8, 22, 1, 1],
+  ["bridge-h", "pacifidlog-town", 12, 27, 1, 1],
 ];
 
 // Some buildings stand against scenery (the Battle Tent's dome tip overlaps
@@ -327,6 +334,12 @@ const SCENERY_KEYS = {
     rows: [0, 1, 6, 7, 8],
     eraseCells: [[8, 8]],
   },
+  // keyBlues additionally clears every blue-dominant pixel — the walkways'
+  // lap-shadow navy only ever occurs adjacent to structures, so open-water
+  // reference cells can never enumerate it, while the plank art itself is
+  // exclusively browns/creams and survives the blue key untouched.
+  "bridge-v": { referenceCells: [[0, 20], [0, 23], [9, 30]], rows: [0], keyBlues: true },
+  "bridge-h": { referenceCells: [[0, 20], [0, 23], [9, 30]], rows: [0], keyBlues: true },
 };
 
 const tilesDir = resolve(appDir, "public/tiles");
@@ -354,8 +367,10 @@ for (const [id, town, cellX, cellY, cellsWide, cellsTall] of BUILDINGS) {
       }
       if (sceneryKey?.rows.includes(row)) {
         for (let offset = 0; offset < tile.data.length; offset += 4) {
-          const key = `${tile.data[offset]},${tile.data[offset + 1]},${tile.data[offset + 2]}`;
+          const [r, g, b] = [tile.data[offset], tile.data[offset + 1], tile.data[offset + 2]];
+          const key = `${r},${g},${b}`;
           if (sceneryColours.has(key)) tile.data[offset + 3] = 0;
+          else if (sceneryKey.keyBlues && b > r + 30 && b > g + 10) tile.data[offset + 3] = 0;
         }
       }
       if (sceneryKey?.eraseCells?.some(([cx, cy]) => cx === column && cy === row)) {
