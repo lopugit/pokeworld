@@ -40,7 +40,9 @@ visually before committing fixes; magenta cells mark missing overlay art.
       72:24 clean, 96:24 clean, 120:24 clean — no magenta, tree-grand
       canopies everywhere, marts/gyms/greenhouses/fountains all render;
       144:24 clean, 168:24 clean, 192:24 clean — river bridges, complex
-      pond ledges, struct roof/wall variants all correct)
+      pond ledges, struct roof/wall variants all correct;
+      216:24 clean, 240:24 clean, 264:24 clean — greenhouses/gyms/
+      plazas/sand blobs all correct)
 - [ ] Seed-variety spot pass: for 5 representative families render seeds
       0/7/31337 and review (mirrors/rotations can expose edge clipping).
 - [ ] Polish check: trees half-clipped at diorama edges (placeTree allows
