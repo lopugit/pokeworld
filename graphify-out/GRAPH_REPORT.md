@@ -1,7 +1,7 @@
 # Graph Report - design-map-themes-review-cb860f-33fe92  (2026-08-09)
 
 ## Corpus Check
-- 239 files · ~2,550,795 words
+- 239 files · ~2,551,035 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `31a760de`
+- Built from commit: `283199bf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -693,7 +693,7 @@ Nodes (3): Checklist, Log, Loop state — /design studio completion & visual QA
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **644 isolated node(s):** `Frame`, `ThemePack`, `STARTERS`, `FIELD_POKEMON`, `THEMES` (+639 more)
+- **644 isolated node(s):** `Protocol (each iteration)`, `Checklist`, `Phase 2 (reopened 2026-08-09) — user-found breakage + full re-review`, `Frame`, `ThemePack` (+639 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **138 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -708,7 +708,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`, `node_fs`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **What connects `Frame`, `ThemePack`, `STARTERS` to the rest of the system?**
+- **What connects `Protocol (each iteration)`, `Checklist`, `Phase 2 (reopened 2026-08-09) — user-found breakage + full re-review` to the rest of the system?**
   _648 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `generate.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.08313725490196078 - nodes in this community are weakly interconnected._

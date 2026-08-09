@@ -4,1096 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "families-generated.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated",
-      "community": 0,
-      "norm_label": "families-generated.ts"
-    },
-    {
-      "label": "Frame",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_frame",
-      "community": 0,
-      "norm_label": "frame"
-    },
-    {
-      "label": "mapPoint()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_mappoint",
-      "community": 0,
-      "norm_label": "mappoint()"
-    },
-    {
-      "label": "applyFrame()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L82",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_applyframe",
-      "community": 0,
-      "norm_label": "applyframe()"
-    },
-    {
-      "label": "mapAnchor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L93",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_mapanchor",
-      "community": 0,
-      "norm_label": "mapanchor()"
-    },
-    {
-      "label": "ThemePack",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L103",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_themepack",
-      "community": 0,
-      "norm_label": "themepack"
-    },
-    {
-      "label": "STARTERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L114",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_starters",
-      "community": 0,
-      "norm_label": "starters"
-    },
-    {
-      "label": "FIELD_POKEMON",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L115",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_field_pokemon",
-      "community": 0,
-      "norm_label": "field_pokemon"
-    },
-    {
-      "label": "THEMES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L117",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_themes",
-      "community": 0,
-      "norm_label": "themes"
-    },
-    {
-      "label": "Plan",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L377",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_plan",
-      "community": 19,
-      "norm_label": "plan"
-    },
-    {
-      "label": ".paint()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L382",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_plan_paint",
-      "community": 19,
-      "norm_label": ".paint()"
-    },
-    {
-      "label": ".decorate()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L384",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_plan_decorate",
-      "community": 19,
-      "norm_label": ".decorate()"
-    },
-    {
-      "label": "PlannerDef",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L387",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_plannerdef",
-      "community": 218,
-      "norm_label": "plannerdef"
-    },
-    {
-      "label": ".build()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L391",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_plannerdef_build",
-      "community": 218,
-      "norm_label": ".build()"
-    },
-    {
-      "label": "flowerOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L396",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_flowerof",
-      "community": 0,
-      "norm_label": "flowerof()"
-    },
-    {
-      "label": "addEntities()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L398",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_addentities",
-      "community": 0,
-      "norm_label": "addentities()"
-    },
-    {
-      "label": "hiddenSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L419",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_hiddensomewhere",
-      "community": 0,
-      "norm_label": "hiddensomewhere()"
-    },
-    {
-      "label": "placeBuildings()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L431",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_placebuildings",
-      "community": 0,
-      "norm_label": "placebuildings()"
-    },
-    {
-      "label": "pickBuildingSet()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L452",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_pickbuildingset",
-      "community": 0,
-      "norm_label": "pickbuildingset()"
-    },
-    {
-      "label": "placeDomes()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L467",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_placedomes",
-      "community": 0,
-      "norm_label": "placedomes()"
-    },
-    {
-      "label": "HOUSE_SLOTS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L478",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_house_slots",
-      "community": 0,
-      "norm_label": "house_slots"
-    },
-    {
-      "label": "DOME_SLOTS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L481",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_dome_slots",
-      "community": 0,
-      "norm_label": "dome_slots"
-    },
-    {
-      "label": "PLANNERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L487",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_planners",
-      "community": 0,
-      "norm_label": "planners"
-    },
-    {
-      "label": "TOTAL_WEIGHT",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1002",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_total_weight",
-      "community": 0,
-      "norm_label": "total_weight"
-    },
-    {
-      "label": "TERRAIN_LABEL",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1006",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_terrain_label",
-      "community": 0,
-      "norm_label": "terrain_label"
-    },
-    {
-      "label": "buildGeneratedFamily()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1021",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_buildgeneratedfamily",
-      "community": 218,
-      "norm_label": "buildgeneratedfamily()"
-    },
-    {
-      "label": "GENERATED_FAMILIES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families-generated.ts",
-      "source_location": "L1076",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_generated_generated_families",
-      "community": 133,
-      "norm_label": "generated_families"
-    },
-    {
-      "label": "families.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families",
-      "community": 0,
-      "norm_label": "families.ts"
-    },
-    {
-      "label": "SceneContext",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_scenecontext",
-      "community": 19,
-      "norm_label": "scenecontext"
-    },
-    {
-      "label": "DesignFamily",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_designfamily",
-      "community": 19,
-      "norm_label": "designfamily"
-    },
-    {
-      "label": ".paintGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_designfamily_paintground",
-      "community": 19,
-      "norm_label": ".paintground()"
-    },
-    {
-      "label": ".decorate()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L69",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_designfamily_decorate",
-      "community": 19,
-      "norm_label": ".decorate()"
-    },
-    {
-      "label": "FLOWERS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L72",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_flowers",
-      "community": 0,
-      "norm_label": "flowers"
-    },
-    {
-      "label": "flowerOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L76",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_flowerof",
-      "community": 0,
-      "norm_label": "flowerof()"
-    },
-    {
-      "label": "fillGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L78",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_fillground",
-      "community": 0,
-      "norm_label": "fillground()"
-    },
-    {
-      "label": "scatterSceneTrees()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L86",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_scatterscenetrees",
-      "community": 0,
-      "norm_label": "scatterscenetrees()"
-    },
-    {
-      "label": "scree()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L92",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_scree",
-      "community": 0,
-      "norm_label": "scree()"
-    },
-    {
-      "label": "boulders()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L98",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_boulders",
-      "community": 0,
-      "norm_label": "boulders()"
-    },
-    {
-      "label": "freeEntitySpot()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L106",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_freeentityspot",
-      "community": 0,
-      "norm_label": "freeentityspot()"
-    },
-    {
-      "label": "addNpc()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L117",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_addnpc",
-      "community": 0,
-      "norm_label": "addnpc()"
-    },
-    {
-      "label": "addPokemon()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L122",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_addpokemon",
-      "community": 0,
-      "norm_label": "addpokemon()"
-    },
-    {
-      "label": "signSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L127",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_signsomewhere",
-      "community": 0,
-      "norm_label": "signsomewhere()"
-    },
-    {
-      "label": "rockySignSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L132",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_rockysignsomewhere",
-      "community": 0,
-      "norm_label": "rockysignsomewhere()"
-    },
-    {
-      "label": "hiddenSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L137",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_hiddensomewhere",
-      "community": 0,
-      "norm_label": "hiddensomewhere()"
-    },
-    {
-      "label": "domeSomewhere()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L152",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_domesomewhere",
-      "community": 199,
-      "norm_label": "domesomewhere()"
-    },
-    {
-      "label": "HAND_FAMILIES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/families.ts",
-      "source_location": "L159",
-      "_origin": "ast",
-      "id": "app_src_lib_design_families_hand_families",
-      "community": 133,
-      "norm_label": "hand_families"
-    },
-    {
-      "label": "legality.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality",
-      "community": 132,
-      "norm_label": "legality.ts"
-    },
-    {
-      "label": "GroundKind",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkind",
-      "community": 132,
-      "norm_label": "groundkind"
-    },
-    {
-      "label": "groundKindOf()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_groundkindof",
-      "community": 133,
-      "norm_label": "groundkindof()"
-    },
-    {
-      "label": "OverlayRule",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlayrule",
-      "community": 132,
-      "norm_label": "overlayrule"
-    },
-    {
-      "label": "OVERLAY_RULES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_overlay_rules",
-      "community": 132,
-      "norm_label": "overlay_rules"
-    },
-    {
-      "label": "BannedTile",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L90",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_bannedtile",
-      "community": 132,
-      "norm_label": "bannedtile"
-    },
-    {
-      "label": "BANNED_OVERLAYS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L98",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_overlays",
-      "community": 132,
-      "norm_label": "banned_overlays"
-    },
-    {
-      "label": "BANNED_GROUND",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L141",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_banned_ground",
-      "community": 132,
-      "norm_label": "banned_ground"
-    },
-    {
-      "label": "Formation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L150",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation",
-      "community": 132,
-      "norm_label": "formation"
-    },
-    {
-      "label": "buildingFormation()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L164",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_buildingformation",
-      "community": 132,
-      "norm_label": "buildingformation()"
-    },
-    {
-      "label": "FORMATIONS",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L182",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formations",
-      "community": 132,
-      "norm_label": "formations"
-    },
-    {
-      "label": "FORMATION_PART",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L414",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formation_part",
-      "community": 132,
-      "norm_label": "formation_part"
-    },
-    {
-      "label": "Violation",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L421",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_violation",
-      "community": 132,
-      "norm_label": "violation"
-    },
-    {
-      "label": "Grid",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L428",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_grid",
-      "community": 132,
-      "norm_label": "grid"
-    },
-    {
-      "label": "inGrid()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L430",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_ingrid",
-      "community": 132,
-      "norm_label": "ingrid()"
-    },
-    {
-      "label": "flagsFor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L435",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_flagsfor",
-      "community": 132,
-      "norm_label": "flagsfor()"
-    },
-    {
-      "label": "expectedPond()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L449",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_expectedpond",
-      "community": 132,
-      "norm_label": "expectedpond()"
-    },
-    {
-      "label": "validateDesign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L467",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_validatedesign",
-      "community": 132,
-      "norm_label": "validatedesign()"
-    },
-    {
-      "label": "formatViolations()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/legality.ts",
-      "source_location": "L650",
-      "_origin": "ast",
-      "id": "app_src_lib_design_legality_formatviolations",
-      "community": 133,
-      "norm_label": "formatviolations()"
-    },
-    {
-      "label": "paint.ts",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint",
-      "community": 199,
-      "norm_label": "paint.ts"
-    },
-    {
-      "label": "Ground",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_ground",
-      "community": 19,
-      "norm_label": "ground"
-    },
-    {
-      "label": "GroundMap",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_groundmap",
-      "community": 19,
-      "norm_label": "groundmap"
-    },
-    {
-      "label": "inBounds()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_inbounds",
-      "community": 199,
-      "norm_label": "inbounds()"
-    },
-    {
-      "label": "inMap()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_inmap",
-      "community": 0,
-      "norm_label": "inmap()"
-    },
-    {
-      "label": "newGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_newground",
-      "community": 133,
-      "norm_label": "newground()"
-    },
-    {
-      "label": "newGrid()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_newgrid",
-      "community": 133,
-      "norm_label": "newgrid()"
-    },
-    {
-      "label": "paintBlob()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintblob",
-      "community": 0,
-      "norm_label": "paintblob()"
-    },
-    {
-      "label": "paintRect()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L69",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintrect",
-      "community": 0,
-      "norm_label": "paintrect()"
-    },
-    {
-      "label": "paintPath()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L85",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_paintpath",
-      "community": 0,
-      "norm_label": "paintpath()"
-    },
-    {
-      "label": "NeighbourFlags",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L129",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_neighbourflags",
-      "community": 132,
-      "norm_label": "neighbourflags"
-    },
-    {
-      "label": "neighbours()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_neighbours",
-      "community": 199,
-      "norm_label": "neighbours()"
-    },
-    {
-      "label": "autotileIndex()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L154",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_autotileindex",
-      "community": 199,
-      "norm_label": "autotileindex()"
-    },
-    {
-      "label": "rippleIndex()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L168",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_rippleindex",
-      "community": 199,
-      "norm_label": "rippleindex()"
-    },
-    {
-      "label": "waterTileName()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L174",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_watertilename",
-      "community": 199,
-      "norm_label": "watertilename()"
-    },
-    {
-      "label": "GROUND_PREFIX",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L193",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_ground_prefix",
-      "community": 199,
-      "norm_label": "ground_prefix"
-    },
-    {
-      "label": "GroundFallback",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L206",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_groundfallback",
-      "community": 199,
-      "norm_label": "groundfallback"
-    },
-    {
-      "label": "fallbackAt()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L208",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_fallbackat",
-      "community": 199,
-      "norm_label": "fallbackat()"
-    },
-    {
-      "label": "smoothWater()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L211",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_smoothwater",
-      "community": 199,
-      "norm_label": "smoothwater()"
-    },
-    {
-      "label": "absorbIsolatedSpecks()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L274",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_absorbisolatedspecks",
-      "community": 199,
-      "norm_label": "absorbisolatedspecks()"
-    },
-    {
-      "label": "bakeGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L303",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_bakeground",
-      "community": 199,
-      "norm_label": "bakeground()"
-    },
-    {
-      "label": "isClear()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L337",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_isclear",
-      "community": 0,
-      "norm_label": "isclear()"
-    },
-    {
-      "label": "areaClear()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L346",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_areaclear",
-      "community": 199,
-      "norm_label": "areaclear()"
-    },
-    {
-      "label": "areaOnGround()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L362",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_areaonground",
-      "community": 199,
-      "norm_label": "areaonground()"
-    },
-    {
-      "label": "StructureKind",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L381",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structurekind",
-      "community": 199,
-      "norm_label": "structurekind"
-    },
-    {
-      "label": ".tileAt()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L386",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structurekind_tileat",
-      "community": 199,
-      "norm_label": ".tileat()"
-    },
-    {
-      "label": "structure()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L389",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structure",
-      "community": 199,
-      "norm_label": "structure()"
-    },
-    {
-      "label": "STRUCTURES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L396",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_structures",
-      "community": 0,
-      "norm_label": "structures"
-    },
-    {
-      "label": "placeStructure()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L407",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placestructure",
-      "community": 199,
-      "norm_label": "placestructure()"
-    },
-    {
-      "label": "placeHouse()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L428",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placehouse",
-      "community": 199,
-      "norm_label": "placehouse()"
-    },
-    {
-      "label": "placeDome()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L442",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placedome",
-      "community": 199,
-      "norm_label": "placedome()"
-    },
-    {
-      "label": "placeDecor()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L465",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placedecor",
-      "community": 0,
-      "norm_label": "placedecor()"
-    },
-    {
-      "label": "placeSign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L480",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placesign",
-      "community": 0,
-      "norm_label": "placesign()"
-    },
-    {
-      "label": "placeRockySign()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L486",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placerockysign",
-      "community": 0,
-      "norm_label": "placerockysign()"
-    },
-    {
-      "label": "placeHiddenItem()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L500",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placehiddenitem",
-      "community": 0,
-      "norm_label": "placehiddenitem()"
-    },
-    {
-      "label": "placeBoulderLine()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L515",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placeboulderline",
-      "community": 0,
-      "norm_label": "placeboulderline()"
-    },
-    {
-      "label": "BIG_TREE_SLICES",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L545",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_big_tree_slices",
-      "community": 199,
-      "norm_label": "big_tree_slices"
-    },
-    {
-      "label": "placeTree()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L553",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_placetree",
-      "community": 0,
-      "norm_label": "placetree()"
-    },
-    {
-      "label": "scatterTrees()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L579",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_scattertrees",
-      "community": 0,
-      "norm_label": "scattertrees()"
-    },
-    {
-      "label": "treeBorder()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L601",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_treeborder",
-      "community": 0,
-      "norm_label": "treeborder()"
-    },
-    {
-      "label": "scatter()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L638",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_scatter",
-      "community": 0,
-      "norm_label": "scatter()"
-    },
-    {
-      "label": "longGrassPatch()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L661",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_longgrasspatch",
-      "community": 0,
-      "norm_label": "longgrasspatch()"
-    },
-    {
-      "label": "hedgeLine()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L683",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_hedgeline",
-      "community": 0,
-      "norm_label": "hedgeline()"
-    },
-    {
-      "label": "findClearSpot()",
-      "file_type": "code",
-      "source_file": "app/src/lib/design/paint.ts",
-      "source_location": "L703",
-      "_origin": "ast",
-      "id": "app_src_lib_design_paint_findclearspot",
-      "community": 0,
-      "norm_label": "findclearspot()"
-    },
-    {
       "label": "DESIGN_FIX_LOOP.md",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
@@ -1117,7 +27,7 @@
       "label": "Protocol (each iteration)",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "docs_design_fix_loop_protocol_each_iteration",
       "community": 227,
@@ -1127,7 +37,7 @@
       "label": "Checklist",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "docs_design_fix_loop_checklist",
       "community": 227,
@@ -1137,11 +47,1101 @@
       "label": "Phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review",
       "file_type": "document",
       "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L81",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
       "community": 227,
       "norm_label": "phase 2 (reopened 2026-08-09) \u2014 user-found breakage + full re-review"
+    },
+    {
+      "label": "families-generated.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "families-generated.ts",
+      "id": "app_src_lib_design_families_generated"
+    },
+    {
+      "label": "Frame",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "frame",
+      "id": "app_src_lib_design_families_generated_frame"
+    },
+    {
+      "label": "mapPoint()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "mappoint()",
+      "id": "app_src_lib_design_families_generated_mappoint"
+    },
+    {
+      "label": "applyFrame()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "applyframe()",
+      "id": "app_src_lib_design_families_generated_applyframe"
+    },
+    {
+      "label": "mapAnchor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L93",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "mapanchor()",
+      "id": "app_src_lib_design_families_generated_mapanchor"
+    },
+    {
+      "label": "ThemePack",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L103",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "themepack",
+      "id": "app_src_lib_design_families_generated_themepack"
+    },
+    {
+      "label": "STARTERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L114",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "starters",
+      "id": "app_src_lib_design_families_generated_starters"
+    },
+    {
+      "label": "FIELD_POKEMON",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L115",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "field_pokemon",
+      "id": "app_src_lib_design_families_generated_field_pokemon"
+    },
+    {
+      "label": "THEMES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L117",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "themes",
+      "id": "app_src_lib_design_families_generated_themes"
+    },
+    {
+      "label": "Plan",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L377",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "plan",
+      "id": "app_src_lib_design_families_generated_plan"
+    },
+    {
+      "label": ".paint()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L382",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": ".paint()",
+      "id": "app_src_lib_design_families_generated_plan_paint"
+    },
+    {
+      "label": ".decorate()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L384",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": ".decorate()",
+      "id": "app_src_lib_design_families_generated_plan_decorate"
+    },
+    {
+      "label": "PlannerDef",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L387",
+      "_origin": "ast",
+      "community": 218,
+      "norm_label": "plannerdef",
+      "id": "app_src_lib_design_families_generated_plannerdef"
+    },
+    {
+      "label": ".build()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L391",
+      "_origin": "ast",
+      "community": 218,
+      "norm_label": ".build()",
+      "id": "app_src_lib_design_families_generated_plannerdef_build"
+    },
+    {
+      "label": "flowerOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L396",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "flowerof()",
+      "id": "app_src_lib_design_families_generated_flowerof"
+    },
+    {
+      "label": "addEntities()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L398",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "addentities()",
+      "id": "app_src_lib_design_families_generated_addentities"
+    },
+    {
+      "label": "hiddenSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L419",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hiddensomewhere()",
+      "id": "app_src_lib_design_families_generated_hiddensomewhere"
+    },
+    {
+      "label": "placeBuildings()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L431",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placebuildings()",
+      "id": "app_src_lib_design_families_generated_placebuildings"
+    },
+    {
+      "label": "pickBuildingSet()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L452",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "pickbuildingset()",
+      "id": "app_src_lib_design_families_generated_pickbuildingset"
+    },
+    {
+      "label": "placeDomes()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L467",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placedomes()",
+      "id": "app_src_lib_design_families_generated_placedomes"
+    },
+    {
+      "label": "HOUSE_SLOTS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L478",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "house_slots",
+      "id": "app_src_lib_design_families_generated_house_slots"
+    },
+    {
+      "label": "DOME_SLOTS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L481",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "dome_slots",
+      "id": "app_src_lib_design_families_generated_dome_slots"
+    },
+    {
+      "label": "PLANNERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L487",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "planners",
+      "id": "app_src_lib_design_families_generated_planners"
+    },
+    {
+      "label": "TOTAL_WEIGHT",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1002",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "total_weight",
+      "id": "app_src_lib_design_families_generated_total_weight"
+    },
+    {
+      "label": "TERRAIN_LABEL",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1006",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "terrain_label",
+      "id": "app_src_lib_design_families_generated_terrain_label"
+    },
+    {
+      "label": "buildGeneratedFamily()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1021",
+      "_origin": "ast",
+      "community": 218,
+      "norm_label": "buildgeneratedfamily()",
+      "id": "app_src_lib_design_families_generated_buildgeneratedfamily"
+    },
+    {
+      "label": "GENERATED_FAMILIES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families-generated.ts",
+      "source_location": "L1076",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "generated_families",
+      "id": "app_src_lib_design_families_generated_generated_families"
+    },
+    {
+      "label": "families.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "families.ts",
+      "id": "app_src_lib_design_families"
+    },
+    {
+      "label": "SceneContext",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "scenecontext",
+      "id": "app_src_lib_design_families_scenecontext"
+    },
+    {
+      "label": "DesignFamily",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L59",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "designfamily",
+      "id": "app_src_lib_design_families_designfamily"
+    },
+    {
+      "label": ".paintGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": ".paintground()",
+      "id": "app_src_lib_design_families_designfamily_paintground"
+    },
+    {
+      "label": ".decorate()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": ".decorate()",
+      "id": "app_src_lib_design_families_designfamily_decorate"
+    },
+    {
+      "label": "FLOWERS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L72",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "flowers",
+      "id": "app_src_lib_design_families_flowers"
+    },
+    {
+      "label": "flowerOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "flowerof()",
+      "id": "app_src_lib_design_families_flowerof"
+    },
+    {
+      "label": "fillGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "fillground()",
+      "id": "app_src_lib_design_families_fillground"
+    },
+    {
+      "label": "scatterSceneTrees()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L86",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scatterscenetrees()",
+      "id": "app_src_lib_design_families_scatterscenetrees"
+    },
+    {
+      "label": "scree()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L92",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scree()",
+      "id": "app_src_lib_design_families_scree"
+    },
+    {
+      "label": "boulders()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L98",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "boulders()",
+      "id": "app_src_lib_design_families_boulders"
+    },
+    {
+      "label": "freeEntitySpot()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L106",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "freeentityspot()",
+      "id": "app_src_lib_design_families_freeentityspot"
+    },
+    {
+      "label": "addNpc()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L117",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "addnpc()",
+      "id": "app_src_lib_design_families_addnpc"
+    },
+    {
+      "label": "addPokemon()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L122",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "addpokemon()",
+      "id": "app_src_lib_design_families_addpokemon"
+    },
+    {
+      "label": "signSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L127",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "signsomewhere()",
+      "id": "app_src_lib_design_families_signsomewhere"
+    },
+    {
+      "label": "rockySignSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L132",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "rockysignsomewhere()",
+      "id": "app_src_lib_design_families_rockysignsomewhere"
+    },
+    {
+      "label": "hiddenSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L137",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hiddensomewhere()",
+      "id": "app_src_lib_design_families_hiddensomewhere"
+    },
+    {
+      "label": "domeSomewhere()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L152",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "domesomewhere()",
+      "id": "app_src_lib_design_families_domesomewhere"
+    },
+    {
+      "label": "HAND_FAMILIES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/families.ts",
+      "source_location": "L159",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "hand_families",
+      "id": "app_src_lib_design_families_hand_families"
+    },
+    {
+      "label": "legality.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "legality.ts",
+      "id": "app_src_lib_design_legality"
+    },
+    {
+      "label": "GroundKind",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "groundkind",
+      "id": "app_src_lib_design_legality_groundkind"
+    },
+    {
+      "label": "groundKindOf()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "groundkindof()",
+      "id": "app_src_lib_design_legality_groundkindof"
+    },
+    {
+      "label": "OverlayRule",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlayrule",
+      "id": "app_src_lib_design_legality_overlayrule"
+    },
+    {
+      "label": "OVERLAY_RULES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "overlay_rules",
+      "id": "app_src_lib_design_legality_overlay_rules"
+    },
+    {
+      "label": "BannedTile",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L90",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "bannedtile",
+      "id": "app_src_lib_design_legality_bannedtile"
+    },
+    {
+      "label": "BANNED_OVERLAYS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L98",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_overlays",
+      "id": "app_src_lib_design_legality_banned_overlays"
+    },
+    {
+      "label": "BANNED_GROUND",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L141",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "banned_ground",
+      "id": "app_src_lib_design_legality_banned_ground"
+    },
+    {
+      "label": "Formation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L150",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation",
+      "id": "app_src_lib_design_legality_formation"
+    },
+    {
+      "label": "buildingFormation()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L164",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "buildingformation()",
+      "id": "app_src_lib_design_legality_buildingformation"
+    },
+    {
+      "label": "FORMATIONS",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L182",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formations",
+      "id": "app_src_lib_design_legality_formations"
+    },
+    {
+      "label": "FORMATION_PART",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L414",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "formation_part",
+      "id": "app_src_lib_design_legality_formation_part"
+    },
+    {
+      "label": "Violation",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L421",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "violation",
+      "id": "app_src_lib_design_legality_violation"
+    },
+    {
+      "label": "Grid",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L428",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "grid",
+      "id": "app_src_lib_design_legality_grid"
+    },
+    {
+      "label": "inGrid()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L430",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "ingrid()",
+      "id": "app_src_lib_design_legality_ingrid"
+    },
+    {
+      "label": "flagsFor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L435",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "flagsfor()",
+      "id": "app_src_lib_design_legality_flagsfor"
+    },
+    {
+      "label": "expectedPond()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L449",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "expectedpond()",
+      "id": "app_src_lib_design_legality_expectedpond"
+    },
+    {
+      "label": "validateDesign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L467",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "validatedesign()",
+      "id": "app_src_lib_design_legality_validatedesign"
+    },
+    {
+      "label": "formatViolations()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/legality.ts",
+      "source_location": "L650",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "formatviolations()",
+      "id": "app_src_lib_design_legality_formatviolations"
+    },
+    {
+      "label": "paint.ts",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "paint.ts",
+      "id": "app_src_lib_design_paint"
+    },
+    {
+      "label": "Ground",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "ground",
+      "id": "app_src_lib_design_paint_ground"
+    },
+    {
+      "label": "GroundMap",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "groundmap",
+      "id": "app_src_lib_design_paint_groundmap"
+    },
+    {
+      "label": "inBounds()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "inbounds()",
+      "id": "app_src_lib_design_paint_inbounds"
+    },
+    {
+      "label": "inMap()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "inmap()",
+      "id": "app_src_lib_design_paint_inmap"
+    },
+    {
+      "label": "newGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "newground()",
+      "id": "app_src_lib_design_paint_newground"
+    },
+    {
+      "label": "newGrid()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L42",
+      "_origin": "ast",
+      "community": 133,
+      "norm_label": "newgrid()",
+      "id": "app_src_lib_design_paint_newgrid"
+    },
+    {
+      "label": "paintBlob()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "paintblob()",
+      "id": "app_src_lib_design_paint_paintblob"
+    },
+    {
+      "label": "paintRect()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "paintrect()",
+      "id": "app_src_lib_design_paint_paintrect"
+    },
+    {
+      "label": "paintPath()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L85",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "paintpath()",
+      "id": "app_src_lib_design_paint_paintpath"
+    },
+    {
+      "label": "NeighbourFlags",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L129",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "neighbourflags",
+      "id": "app_src_lib_design_paint_neighbourflags"
+    },
+    {
+      "label": "neighbours()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L140",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "neighbours()",
+      "id": "app_src_lib_design_paint_neighbours"
+    },
+    {
+      "label": "autotileIndex()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L154",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "autotileindex()",
+      "id": "app_src_lib_design_paint_autotileindex"
+    },
+    {
+      "label": "rippleIndex()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L168",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "rippleindex()",
+      "id": "app_src_lib_design_paint_rippleindex"
+    },
+    {
+      "label": "waterTileName()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L174",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "watertilename()",
+      "id": "app_src_lib_design_paint_watertilename"
+    },
+    {
+      "label": "GROUND_PREFIX",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L193",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "ground_prefix",
+      "id": "app_src_lib_design_paint_ground_prefix"
+    },
+    {
+      "label": "GroundFallback",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L206",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "groundfallback",
+      "id": "app_src_lib_design_paint_groundfallback"
+    },
+    {
+      "label": "fallbackAt()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L208",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "fallbackat()",
+      "id": "app_src_lib_design_paint_fallbackat"
+    },
+    {
+      "label": "smoothWater()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L211",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "smoothwater()",
+      "id": "app_src_lib_design_paint_smoothwater"
+    },
+    {
+      "label": "absorbIsolatedSpecks()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L274",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "absorbisolatedspecks()",
+      "id": "app_src_lib_design_paint_absorbisolatedspecks"
+    },
+    {
+      "label": "bakeGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L303",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "bakeground()",
+      "id": "app_src_lib_design_paint_bakeground"
+    },
+    {
+      "label": "isClear()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L337",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "isclear()",
+      "id": "app_src_lib_design_paint_isclear"
+    },
+    {
+      "label": "areaClear()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L346",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "areaclear()",
+      "id": "app_src_lib_design_paint_areaclear"
+    },
+    {
+      "label": "areaOnGround()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L362",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "areaonground()",
+      "id": "app_src_lib_design_paint_areaonground"
+    },
+    {
+      "label": "StructureKind",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L381",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "structurekind",
+      "id": "app_src_lib_design_paint_structurekind"
+    },
+    {
+      "label": ".tileAt()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L386",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": ".tileat()",
+      "id": "app_src_lib_design_paint_structurekind_tileat"
+    },
+    {
+      "label": "structure()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L389",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "structure()",
+      "id": "app_src_lib_design_paint_structure"
+    },
+    {
+      "label": "STRUCTURES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L396",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "structures",
+      "id": "app_src_lib_design_paint_structures"
+    },
+    {
+      "label": "placeStructure()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L407",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "placestructure()",
+      "id": "app_src_lib_design_paint_placestructure"
+    },
+    {
+      "label": "placeHouse()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L428",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "placehouse()",
+      "id": "app_src_lib_design_paint_placehouse"
+    },
+    {
+      "label": "placeDome()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L442",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "placedome()",
+      "id": "app_src_lib_design_paint_placedome"
+    },
+    {
+      "label": "placeDecor()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L465",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placedecor()",
+      "id": "app_src_lib_design_paint_placedecor"
+    },
+    {
+      "label": "placeSign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L480",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placesign()",
+      "id": "app_src_lib_design_paint_placesign"
+    },
+    {
+      "label": "placeRockySign()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L486",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placerockysign()",
+      "id": "app_src_lib_design_paint_placerockysign"
+    },
+    {
+      "label": "placeHiddenItem()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L500",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placehiddenitem()",
+      "id": "app_src_lib_design_paint_placehiddenitem"
+    },
+    {
+      "label": "placeBoulderLine()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L515",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placeboulderline()",
+      "id": "app_src_lib_design_paint_placeboulderline"
+    },
+    {
+      "label": "BIG_TREE_SLICES",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L545",
+      "_origin": "ast",
+      "community": 199,
+      "norm_label": "big_tree_slices",
+      "id": "app_src_lib_design_paint_big_tree_slices"
+    },
+    {
+      "label": "placeTree()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L553",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "placetree()",
+      "id": "app_src_lib_design_paint_placetree"
+    },
+    {
+      "label": "scatterTrees()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L579",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scattertrees()",
+      "id": "app_src_lib_design_paint_scattertrees"
+    },
+    {
+      "label": "treeBorder()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L601",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "treeborder()",
+      "id": "app_src_lib_design_paint_treeborder"
+    },
+    {
+      "label": "scatter()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L638",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scatter()",
+      "id": "app_src_lib_design_paint_scatter"
+    },
+    {
+      "label": "longGrassPatch()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L661",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "longgrasspatch()",
+      "id": "app_src_lib_design_paint_longgrasspatch"
+    },
+    {
+      "label": "hedgeLine()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L683",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hedgeline()",
+      "id": "app_src_lib_design_paint_hedgeline"
+    },
+    {
+      "label": "findClearSpot()",
+      "file_type": "code",
+      "source_file": "app/src/lib/design/paint.ts",
+      "source_location": "L703",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "findclearspot()",
+      "id": "app_src_lib_design_paint_findclearspot"
     },
     {
       "label": "render-samples.test.ts",
@@ -20504,6 +20504,46 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_design_fix_loop",
+      "target": "docs_design_fix_loop_design_fix_loop_durable_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
+      "target": "docs_design_fix_loop_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
+      "target": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DESIGN_FIX_LOOP.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
+      "target": "docs_design_fix_loop_protocol_each_iteration",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -20521,9 +20561,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families"
     },
     {
       "relation": "imports",
@@ -20532,9 +20572,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_designfamily",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_designfamily"
     },
     {
       "relation": "contains",
@@ -20542,9 +20582,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L398",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_addentities",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_addentities"
     },
     {
       "relation": "contains",
@@ -20552,9 +20592,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_applyframe",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_applyframe"
     },
     {
       "relation": "contains",
@@ -20562,9 +20602,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L1021",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_buildgeneratedfamily",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_buildgeneratedfamily"
     },
     {
       "relation": "contains",
@@ -20572,9 +20612,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L481",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_dome_slots",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_dome_slots"
     },
     {
       "relation": "contains",
@@ -20582,9 +20622,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_field_pokemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_field_pokemon"
     },
     {
       "relation": "contains",
@@ -20592,9 +20632,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_flowerof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_flowerof"
     },
     {
       "relation": "contains",
@@ -20602,9 +20642,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_frame",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_frame"
     },
     {
       "relation": "contains",
@@ -20612,9 +20652,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L1076",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_generated_families",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_generated_families"
     },
     {
       "relation": "contains",
@@ -20622,9 +20662,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L419",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_hiddensomewhere",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_hiddensomewhere"
     },
     {
       "relation": "contains",
@@ -20632,9 +20672,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L478",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_house_slots",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_house_slots"
     },
     {
       "relation": "contains",
@@ -20642,9 +20682,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_mapanchor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mapanchor"
     },
     {
       "relation": "contains",
@@ -20652,9 +20692,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_mappoint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mappoint"
     },
     {
       "relation": "contains",
@@ -20662,9 +20702,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L452",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_pickbuildingset",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_pickbuildingset"
     },
     {
       "relation": "contains",
@@ -20672,9 +20712,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L431",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_placebuildings",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_placebuildings"
     },
     {
       "relation": "contains",
@@ -20682,9 +20722,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L467",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_placedomes",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_placedomes"
     },
     {
       "relation": "contains",
@@ -20692,9 +20732,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L377",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_plan",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plan"
     },
     {
       "relation": "contains",
@@ -20702,9 +20742,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L387",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_plannerdef",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plannerdef"
     },
     {
       "relation": "contains",
@@ -20712,9 +20752,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L487",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_planners",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_planners"
     },
     {
       "relation": "contains",
@@ -20722,9 +20762,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_starters",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_starters"
     },
     {
       "relation": "contains",
@@ -20732,9 +20772,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L1006",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_terrain_label",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_terrain_label"
     },
     {
       "relation": "contains",
@@ -20742,9 +20782,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_themepack",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_themepack"
     },
     {
       "relation": "contains",
@@ -20752,9 +20792,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_themes",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_themes"
     },
     {
       "relation": "contains",
@@ -20762,9 +20802,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L1002",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_generated_total_weight",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_total_weight"
     },
     {
       "relation": "imports",
@@ -20773,9 +20813,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_families_scenecontext",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_scenecontext"
     },
     {
       "relation": "imports_from",
@@ -20784,9 +20824,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint"
     },
     {
       "relation": "imports",
@@ -20795,9 +20835,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "imports",
@@ -20806,9 +20846,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "imports",
@@ -20817,9 +20857,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "imports",
@@ -20828,9 +20868,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_hedgeline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_hedgeline"
     },
     {
       "relation": "imports",
@@ -20839,9 +20879,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "imports",
@@ -20850,9 +20890,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_longgrasspatch",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_longgrasspatch"
     },
     {
       "relation": "imports",
@@ -20861,9 +20901,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_newground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_newground"
     },
     {
       "relation": "imports",
@@ -20872,9 +20912,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintblob",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintblob"
     },
     {
       "relation": "imports",
@@ -20883,9 +20923,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintpath"
     },
     {
       "relation": "imports",
@@ -20894,9 +20934,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_paintrect",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintrect"
     },
     {
       "relation": "imports",
@@ -20905,9 +20945,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placeboulderline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placeboulderline"
     },
     {
       "relation": "imports",
@@ -20916,9 +20956,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "imports",
@@ -20927,9 +20967,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "imports",
@@ -20938,9 +20978,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "imports",
@@ -20949,9 +20989,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placerockysign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placerockysign"
     },
     {
       "relation": "imports",
@@ -20960,9 +21000,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placesign"
     },
     {
       "relation": "imports",
@@ -20971,9 +21011,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "imports",
@@ -20982,9 +21022,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "imports",
@@ -20993,9 +21033,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "imports",
@@ -21004,9 +21044,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_scattertrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scattertrees"
     },
     {
       "relation": "imports",
@@ -21015,9 +21055,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_structures",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structures"
     },
     {
       "relation": "imports",
@@ -21026,9 +21066,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated",
-      "target": "app_src_lib_design_paint_treeborder",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_treeborder"
     },
     {
       "relation": "re_exports",
@@ -21059,9 +21099,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_applyframe",
-      "target": "app_src_lib_design_families_generated_mappoint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mappoint"
     },
     {
       "relation": "calls",
@@ -21070,9 +21110,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_mapanchor",
-      "target": "app_src_lib_design_families_generated_mappoint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mappoint"
     },
     {
       "relation": "calls",
@@ -21081,9 +21121,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L443",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_placebuildings",
-      "target": "app_src_lib_design_families_generated_mapanchor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mapanchor"
     },
     {
       "relation": "calls",
@@ -21092,9 +21132,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L471",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_placedomes",
-      "target": "app_src_lib_design_families_generated_mapanchor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_mapanchor"
     },
     {
       "relation": "method",
@@ -21102,9 +21142,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L384",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_families_generated_plan_decorate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plan_decorate"
     },
     {
       "relation": "method",
@@ -21112,9 +21152,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_families_generated_plan_paint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plan_paint"
     },
     {
       "relation": "references",
@@ -21123,9 +21163,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L380",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plan",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "references",
@@ -21134,9 +21174,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plan_paint",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "references",
@@ -21145,9 +21185,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L384",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plan_decorate",
-      "target": "app_src_lib_design_families_scenecontext",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_scenecontext"
     },
     {
       "relation": "method",
@@ -21155,9 +21195,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L391",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_plannerdef",
-      "target": "app_src_lib_design_families_generated_plannerdef_build",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plannerdef_build"
     },
     {
       "relation": "calls",
@@ -21166,9 +21206,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L1036",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_buildgeneratedfamily",
-      "target": "app_src_lib_design_families_generated_plannerdef_build",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_generated_plannerdef_build"
     },
     {
       "relation": "calls",
@@ -21177,9 +21217,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L401",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_addentities",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21188,9 +21228,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L421",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_hiddensomewhere",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21199,9 +21239,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L424",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_hiddensomewhere",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "calls",
@@ -21210,9 +21250,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L444",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_placebuildings",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "calls",
@@ -21221,9 +21261,9 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L472",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_generated_placedomes",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "imports",
@@ -21297,9 +21337,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_addnpc",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_addnpc"
     },
     {
       "relation": "contains",
@@ -21307,9 +21347,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_addpokemon",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_addpokemon"
     },
     {
       "relation": "contains",
@@ -21317,9 +21357,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_boulders",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_boulders"
     },
     {
       "relation": "contains",
@@ -21327,9 +21367,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_designfamily",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_designfamily"
     },
     {
       "relation": "contains",
@@ -21337,9 +21377,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_domesomewhere",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_domesomewhere"
     },
     {
       "relation": "contains",
@@ -21347,9 +21387,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_fillground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_fillground"
     },
     {
       "relation": "contains",
@@ -21357,9 +21397,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_flowerof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_flowerof"
     },
     {
       "relation": "contains",
@@ -21367,9 +21407,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_flowers",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_flowers"
     },
     {
       "relation": "contains",
@@ -21377,9 +21417,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_freeentityspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_freeentityspot"
     },
     {
       "relation": "contains",
@@ -21387,9 +21427,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_hand_families",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_hand_families"
     },
     {
       "relation": "contains",
@@ -21397,9 +21437,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_hiddensomewhere",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_hiddensomewhere"
     },
     {
       "relation": "contains",
@@ -21407,9 +21447,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_rockysignsomewhere",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_rockysignsomewhere"
     },
     {
       "relation": "contains",
@@ -21417,9 +21457,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scatterscenetrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_scatterscenetrees"
     },
     {
       "relation": "contains",
@@ -21427,9 +21467,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scenecontext",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_scenecontext"
     },
     {
       "relation": "contains",
@@ -21437,9 +21477,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_scree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_scree"
     },
     {
       "relation": "contains",
@@ -21447,9 +21487,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_families_signsomewhere",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_signsomewhere"
     },
     {
       "relation": "imports_from",
@@ -21458,9 +21498,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint"
     },
     {
       "relation": "imports",
@@ -21469,9 +21509,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "imports",
@@ -21480,9 +21520,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "imports",
@@ -21491,9 +21531,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "imports",
@@ -21502,9 +21542,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_hedgeline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_hedgeline"
     },
     {
       "relation": "imports",
@@ -21513,9 +21553,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "imports",
@@ -21524,9 +21564,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_longgrasspatch",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_longgrasspatch"
     },
     {
       "relation": "imports",
@@ -21535,9 +21575,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintblob",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintblob"
     },
     {
       "relation": "imports",
@@ -21546,9 +21586,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintpath"
     },
     {
       "relation": "imports",
@@ -21557,9 +21597,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_paintrect",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintrect"
     },
     {
       "relation": "imports",
@@ -21568,9 +21608,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placeboulderline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placeboulderline"
     },
     {
       "relation": "imports",
@@ -21579,9 +21619,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "imports",
@@ -21590,9 +21630,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "imports",
@@ -21601,9 +21641,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "imports",
@@ -21612,9 +21652,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placehouse",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehouse"
     },
     {
       "relation": "imports",
@@ -21623,9 +21663,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placerockysign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placerockysign"
     },
     {
       "relation": "imports",
@@ -21634,9 +21674,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placesign"
     },
     {
       "relation": "imports",
@@ -21645,9 +21685,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "imports",
@@ -21656,9 +21696,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "imports",
@@ -21667,9 +21707,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_scattertrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scattertrees"
     },
     {
       "relation": "imports",
@@ -21678,9 +21718,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families",
-      "target": "app_src_lib_design_paint_treeborder",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_treeborder"
     },
     {
       "relation": "re_exports",
@@ -21722,9 +21762,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_scenecontext",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "imports",
@@ -21754,9 +21794,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_families_designfamily_decorate",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_designfamily_decorate"
     },
     {
       "relation": "method",
@@ -21764,9 +21804,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_families_designfamily_paintground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_designfamily_paintground"
     },
     {
       "relation": "references",
@@ -21775,9 +21815,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_designfamily",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "imports",
@@ -21797,9 +21837,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_scatterscenetrees",
-      "target": "app_src_lib_design_paint_scattertrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scattertrees"
     },
     {
       "relation": "calls",
@@ -21808,9 +21848,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_scree",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "calls",
@@ -21819,9 +21859,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_boulders",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "calls",
@@ -21830,9 +21870,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_addnpc",
-      "target": "app_src_lib_design_families_freeentityspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_freeentityspot"
     },
     {
       "relation": "calls",
@@ -21841,9 +21881,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_addpokemon",
-      "target": "app_src_lib_design_families_freeentityspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_families_freeentityspot"
     },
     {
       "relation": "calls",
@@ -21852,9 +21892,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_freeentityspot",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21863,9 +21903,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L128",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_signsomewhere",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21874,9 +21914,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_signsomewhere",
-      "target": "app_src_lib_design_paint_placesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placesign"
     },
     {
       "relation": "calls",
@@ -21885,9 +21925,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_rockysignsomewhere",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21896,9 +21936,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_rockysignsomewhere",
-      "target": "app_src_lib_design_paint_placerockysign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placerockysign"
     },
     {
       "relation": "calls",
@@ -21907,9 +21947,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_hiddensomewhere",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "calls",
@@ -21918,9 +21958,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_hiddensomewhere",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "calls",
@@ -21929,9 +21969,9 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_families_domesomewhere",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "imports",
@@ -22005,9 +22045,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_ground"
     },
     {
       "relation": "contains",
@@ -22015,9 +22055,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_banned_overlays",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_banned_overlays"
     },
     {
       "relation": "contains",
@@ -22025,9 +22065,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_bannedtile",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_bannedtile"
     },
     {
       "relation": "contains",
@@ -22035,9 +22075,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_buildingformation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_buildingformation"
     },
     {
       "relation": "contains",
@@ -22055,9 +22095,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L449",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "contains",
@@ -22065,9 +22105,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L435",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "contains",
@@ -22075,9 +22115,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation"
     },
     {
       "relation": "contains",
@@ -22085,9 +22125,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L414",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formation_part",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formation_part"
     },
     {
       "relation": "contains",
@@ -22095,9 +22135,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formations"
     },
     {
       "relation": "contains",
@@ -22105,9 +22145,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L650",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_formatviolations",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_formatviolations"
     },
     {
       "relation": "contains",
@@ -22115,9 +22155,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_grid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_grid"
     },
     {
       "relation": "contains",
@@ -22125,9 +22165,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkind",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkind"
     },
     {
       "relation": "contains",
@@ -22135,9 +22175,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "contains",
@@ -22145,9 +22185,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L430",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "contains",
@@ -22155,9 +22195,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlay_rules",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlay_rules"
     },
     {
       "relation": "contains",
@@ -22165,9 +22205,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_overlayrule",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_overlayrule"
     },
     {
       "relation": "contains",
@@ -22175,9 +22215,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L467",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_validatedesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_validatedesign"
     },
     {
       "relation": "contains",
@@ -22185,9 +22225,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L421",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_legality_violation",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_violation"
     },
     {
       "relation": "imports_from",
@@ -22196,9 +22236,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint"
     },
     {
       "relation": "imports",
@@ -22207,9 +22247,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "imports",
@@ -22218,9 +22258,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality",
-      "target": "app_src_lib_design_paint_neighbourflags",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbourflags"
     },
     {
       "relation": "imports_from",
@@ -22251,9 +22291,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L487",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_groundkindof",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_groundkindof"
     },
     {
       "relation": "imports",
@@ -22328,9 +22368,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L564",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_ingrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_ingrid"
     },
     {
       "relation": "calls",
@@ -22339,9 +22379,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L499",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_flagsfor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_flagsfor"
     },
     {
       "relation": "calls",
@@ -22350,9 +22390,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L458",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_expectedpond",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -22361,9 +22401,9 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L539",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_legality_validatedesign",
-      "target": "app_src_lib_design_legality_expectedpond",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_legality_expectedpond"
     },
     {
       "relation": "imports",
@@ -22481,9 +22521,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L274",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_absorbisolatedspecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_absorbisolatedspecks"
     },
     {
       "relation": "contains",
@@ -22491,9 +22531,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L346",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "contains",
@@ -22501,9 +22541,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L362",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "contains",
@@ -22511,9 +22551,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "contains",
@@ -22521,9 +22561,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L303",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_bakeground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_bakeground"
     },
     {
       "relation": "contains",
@@ -22531,9 +22571,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L545",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_big_tree_slices",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_big_tree_slices"
     },
     {
       "relation": "contains",
@@ -22541,9 +22581,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_fallbackat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_fallbackat"
     },
     {
       "relation": "contains",
@@ -22551,9 +22591,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L703",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_findclearspot",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_findclearspot"
     },
     {
       "relation": "contains",
@@ -22561,9 +22601,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_ground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground"
     },
     {
       "relation": "contains",
@@ -22571,9 +22611,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_ground_prefix",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_ground_prefix"
     },
     {
       "relation": "contains",
@@ -22581,9 +22621,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_groundfallback",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundfallback"
     },
     {
       "relation": "contains",
@@ -22591,9 +22631,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_groundmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_groundmap"
     },
     {
       "relation": "contains",
@@ -22601,9 +22641,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L683",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_hedgeline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_hedgeline"
     },
     {
       "relation": "contains",
@@ -22611,9 +22651,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_inbounds",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inbounds"
     },
     {
       "relation": "contains",
@@ -22621,9 +22661,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "contains",
@@ -22631,9 +22671,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L337",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "contains",
@@ -22641,9 +22681,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L661",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_longgrasspatch",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_longgrasspatch"
     },
     {
       "relation": "contains",
@@ -22651,9 +22691,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_neighbourflags",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbourflags"
     },
     {
       "relation": "contains",
@@ -22661,9 +22701,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_neighbours",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbours"
     },
     {
       "relation": "contains",
@@ -22671,9 +22711,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_newgrid",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_newgrid"
     },
     {
       "relation": "contains",
@@ -22681,9 +22721,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_newground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_newground"
     },
     {
       "relation": "contains",
@@ -22691,9 +22731,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintblob",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintblob"
     },
     {
       "relation": "contains",
@@ -22701,9 +22741,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintpath",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintpath"
     },
     {
       "relation": "contains",
@@ -22711,9 +22751,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_paintrect",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_paintrect"
     },
     {
       "relation": "contains",
@@ -22721,9 +22761,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L515",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placeboulderline",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placeboulderline"
     },
     {
       "relation": "contains",
@@ -22731,9 +22771,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L465",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "contains",
@@ -22741,9 +22781,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L442",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placedome",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedome"
     },
     {
       "relation": "contains",
@@ -22751,9 +22791,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L500",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placehiddenitem",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehiddenitem"
     },
     {
       "relation": "contains",
@@ -22761,9 +22801,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placehouse",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placehouse"
     },
     {
       "relation": "contains",
@@ -22771,9 +22811,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L486",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placerockysign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placerockysign"
     },
     {
       "relation": "contains",
@@ -22781,9 +22821,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L480",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placesign",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placesign"
     },
     {
       "relation": "contains",
@@ -22791,9 +22831,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L407",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "contains",
@@ -22801,9 +22841,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L553",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "contains",
@@ -22811,9 +22851,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_rippleindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_rippleindex"
     },
     {
       "relation": "contains",
@@ -22821,9 +22861,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L638",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "contains",
@@ -22831,9 +22871,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L579",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_scattertrees",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scattertrees"
     },
     {
       "relation": "contains",
@@ -22841,9 +22881,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L211",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_smoothwater"
     },
     {
       "relation": "contains",
@@ -22851,9 +22891,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L389",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structure"
     },
     {
       "relation": "contains",
@@ -22861,9 +22901,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L381",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structurekind",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind"
     },
     {
       "relation": "contains",
@@ -22871,9 +22911,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_structures",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structures"
     },
     {
       "relation": "contains",
@@ -22881,9 +22921,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L601",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_treeborder",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_treeborder"
     },
     {
       "relation": "contains",
@@ -22891,9 +22931,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint",
-      "target": "app_src_lib_design_paint_watertilename",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_watertilename"
     },
     {
       "relation": "imports_from",
@@ -22935,9 +22975,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_absorbisolatedspecks",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22946,9 +22986,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L372",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_areaonground",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22957,9 +22997,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L339",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_isclear",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22968,9 +23008,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_paintrect",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22979,9 +23019,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L472",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedecor",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -22990,9 +23030,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L501",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placehiddenitem",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -23001,9 +23041,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L492",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placerockysign",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -23012,9 +23052,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L481",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placesign",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "calls",
@@ -23023,9 +23063,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L252",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_smoothwater",
-      "target": "app_src_lib_design_paint_inmap",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_inmap"
     },
     {
       "relation": "imports",
@@ -23188,9 +23228,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L325",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_neighbours",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_neighbours"
     },
     {
       "relation": "calls",
@@ -23199,9 +23239,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L329",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -23210,9 +23250,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L188",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_watertilename",
-      "target": "app_src_lib_design_paint_autotileindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_autotileindex"
     },
     {
       "relation": "calls",
@@ -23221,9 +23261,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_watertilename",
-      "target": "app_src_lib_design_paint_rippleindex",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_rippleindex"
     },
     {
       "relation": "calls",
@@ -23232,9 +23272,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L325",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_watertilename",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_watertilename"
     },
     {
       "relation": "calls",
@@ -23243,9 +23283,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_smoothwater",
-      "target": "app_src_lib_design_paint_fallbackat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_fallbackat"
     },
     {
       "relation": "calls",
@@ -23254,9 +23294,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L312",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_smoothwater",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_smoothwater"
     },
     {
       "relation": "calls",
@@ -23265,9 +23305,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L313",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_bakeground",
-      "target": "app_src_lib_design_paint_absorbisolatedspecks",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_absorbisolatedspecks"
     },
     {
       "relation": "imports",
@@ -23342,9 +23382,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L356",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_areaclear",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23353,9 +23393,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L716",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_findclearspot",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23364,9 +23404,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L697",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23375,9 +23415,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L674",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_longgrasspatch",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23386,9 +23426,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L528",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placeboulderline",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23397,9 +23437,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L563",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placetree",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23408,9 +23448,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L650",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scatter",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23419,9 +23459,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L630",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_isclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_isclear"
     },
     {
       "relation": "calls",
@@ -23430,9 +23470,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L448",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedome",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "calls",
@@ -23441,9 +23481,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L416",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_areaclear",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaclear"
     },
     {
       "relation": "calls",
@@ -23452,9 +23492,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L449",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placedome",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "calls",
@@ -23463,9 +23503,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L417",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_areaonground",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_areaonground"
     },
     {
       "relation": "method",
@@ -23473,9 +23513,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L386",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_structurekind",
-      "target": "app_src_lib_design_paint_structurekind_tileat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind_tileat"
     },
     {
       "relation": "calls",
@@ -23484,9 +23524,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L420",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placestructure",
-      "target": "app_src_lib_design_paint_structurekind_tileat",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_structurekind_tileat"
     },
     {
       "relation": "calls",
@@ -23495,9 +23535,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L434",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placehouse",
-      "target": "app_src_lib_design_paint_placestructure",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placestructure"
     },
     {
       "relation": "calls",
@@ -23506,9 +23546,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L698",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_hedgeline",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23517,9 +23557,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L531",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placeboulderline",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23528,9 +23568,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L493",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placerockysign",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23539,9 +23579,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L482",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_placesign",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23550,9 +23590,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L652",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scatter",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23561,9 +23601,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L631",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_placedecor",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placedecor"
     },
     {
       "relation": "calls",
@@ -23572,9 +23612,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L591",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "calls",
@@ -23583,9 +23623,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L622",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_treeborder",
-      "target": "app_src_lib_design_paint_placetree",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_placetree"
     },
     {
       "relation": "calls",
@@ -23594,49 +23634,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L594",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_lib_design_paint_scattertrees",
-      "target": "app_src_lib_design_paint_scatter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_design_fix_loop",
-      "target": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_checklist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L81",
-      "weight": 1.0,
-      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_phase_2_reopened_2026_08_09_user_found_breakage_full_re_review",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/DESIGN_FIX_LOOP.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "docs_design_fix_loop_design_fix_loop_durable_state",
-      "target": "docs_design_fix_loop_protocol_each_iteration",
-      "confidence_score": 1.0
+      "target": "app_src_lib_design_paint_scatter"
     },
     {
       "relation": "imports_from",
@@ -55022,5 +55022,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "31a760def542a845ae0abc635e9e5fa0863912c7"
+  "built_at_commit": "283199bf8d16c8aa3b1773b38a68f8f7fe713be0"
 }
