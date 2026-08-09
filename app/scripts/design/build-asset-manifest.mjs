@@ -38,6 +38,10 @@ const TILE_FAMILIES = [
   // tree-1 is a bottom-half crop of a taller tree (banned in designs) —
   // an individual sheet slice, NOT a whole object.
   ["tree-", "vegetation", "Half-tree crop (banned)"],
+  // Pacifidlog plank walkways (bridge-h = east-west rails, bridge-v =
+  // north-south planks); water shows through their keyed gaps.
+  ["bridge-h-", "building", "Plank bridge (east-west)", true],
+  ["bridge-v-", "building", "Plank bridge (north-south)", true],
   ["shrub-", "vegetation", "Shrub", true],
   ["flower-", "vegetation", "Flower bed", true],
   ["house-red-", "building", "Red-roof house"],
