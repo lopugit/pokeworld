@@ -101,8 +101,10 @@ visually before committing fixes; magenta cells mark missing overlay art.
       shrubs complete everywhere incl. hedge rings, domes, boulder rows,
       shorelines, oasis pockets, struct signs;
       36:12, 48:12, 60:12, 72:12, 84:12, 96:12 all clean — contest hall/
-      fountains/twin centers/lake inlets/desert domes correct.
-      Pending: 108:12 … 492:12.)
+      fountains/twin centers/lake inlets/desert domes correct;
+      108:12 … 168:12 (6 batches) all clean — gyms, rowhouses, forest
+      paths, sand lattices, big lakes correct.
+      Pending: 180:12 … 492:12.)
       FOLLOW-UP CANDIDATE (decide before completion): river crossings are
       bare path tiles over water (a ford) — no bridge-deck art exists in
       the vault; harvesting one is an asset task, not a paint bug.
