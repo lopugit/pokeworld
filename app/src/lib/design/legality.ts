@@ -103,10 +103,10 @@ export interface BannedTile {
  * outright — which is what retired the old fake ledges for good. */
 export const BANNED_OVERLAYS: BannedTile[] = [
   {
-    pattern: /^big-tree-(7|8|9|10)$/,
+    pattern: /^big-tree-\d+$/,
     label: "Forest-overlap strip slices",
     reason:
-      "big-tree-9/10 are the hanging fronds of the tree above in the sheet's overlap demo and big-tree-7/8 are its near-empty grass fillers. Standalone they render floating fronds or nothing — the exact cut-off-trees bug. Only the complete 2×3 big-tree formation (5/6, 3/4, 1/2) composes legally.",
+      "The big-tree-1..10 crops are slices of the sheet's forest-overlap demo — hanging fronds, half-canopies and grass fillers. No arrangement of them composes a whole tree (this was the broken-grove bug); the real big tree is the tree-grand 2×2 formation harvested from the Littleroot render.",
   },
   {
     pattern: /^ledge-(left|middle|right)-1$/,
@@ -393,17 +393,6 @@ export const FORMATIONS: Formation[] = [
     ...buildingFormation("tree-grand", "Big canopy tree (2×2)", 2, 2, "tree-grand",
       "A free-standing 2×2 canopy tree harvested from the Littleroot Town render."),
     ground: "grass",
-  },
-  {
-    id: "big-tree",
-    label: "Big tree (2×3)",
-    width: 2,
-    height: 3,
-    slots: ["big-tree-5", "big-tree-6", "big-tree-3", "big-tree-4", "big-tree-1", "big-tree-2"],
-    ground: "grass",
-    walkableSlots: [],
-    reason:
-      "The big tree is one 2×3 sprite (crown over trunk). Random single slices were exactly the cut-off trees bug — formation-only now.",
   },
   {
     id: "dome",

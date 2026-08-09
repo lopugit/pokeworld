@@ -532,21 +532,20 @@ export function placeBoulderLine(
   }
 }
 
-/** The big tree is a 2×3 formation — crown top, crown mid, trunk row —
- * sliced into big-tree-5/6, 3/4, 1/2 on the sheet (the bottom three rows of
- * the demo strip). The strip's upper slices are overlap furniture: 9/10 are
- * the hanging fronds of a tree above, 7/8 are near-empty grass fillers —
- * both banned standalone (they were the invisible/cut-off "trees").
+/** The big tree is the tree-grand 2×2 formation — a free-standing canopy
+ * tree harvested whole from the pret Littleroot render. (The old
+ * big-tree-1..10 sheet slices are forest-overlap demo fragments: no
+ * arrangement of them composes a whole tree, which is exactly why groves
+ * built from them looked broken. All slices are banned now.)
  * The small single-cell tree is tree-1. */
 const BIG_TREE_SLICES = [
-  "big-tree-5", "big-tree-6",
-  "big-tree-3", "big-tree-4",
-  "big-tree-1", "big-tree-2",
+  "tree-grand-1", "tree-grand-2",
+  "tree-grand-3", "tree-grand-4",
 ] as const;
 
 export const SMALL_TREE = "tree-1";
 
-/** Place a complete 2×3 big tree anchored at its top-left; grass only. */
+/** Place a complete 2×2 big tree anchored at its top-left; grass only. */
 export function placeTree(
   grid: DesignTile[][],
   ground: GroundMap,
@@ -554,13 +553,13 @@ export function placeTree(
   row: number,
   feature: string = "tree",
 ): boolean {
-  for (let index = 0; index < 6; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     const c = col + (index % 2);
     const r = row + Math.floor(index / 2);
     if (!isClear(grid, ground, c, r)) return false;
     if (ground[r]?.[c] !== "grass") return false;
   }
-  for (let index = 0; index < 6; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     const c = col + (index % 2);
     const r = row + Math.floor(index / 2);
     const tile = grid[r][c];
