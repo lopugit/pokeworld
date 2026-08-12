@@ -79,6 +79,69 @@ function makeUniformState(
   };
 }
 
+type WorldBlocks = ReturnType<typeof makeWorldState>["blocks"];
+
+// A shared multi-block generation state: one world-space tile cache spanning
+// every listed block, the way syncBlocks/scanBlocks expose stored neighbours
+// and same-run siblings to the mods.
+function makeWorldState(blockCoordinates: Array<{ x: number; y: number }>) {
+  const cache: Record<string, Record<string, unknown>> = {};
+  const blocks = blockCoordinates.map(({ x: blockX, y: blockY }) => {
+    const tiles: Array<MapTile & { houseId?: number; houseKind?: string }> = [];
+    for (let x = 0; x < 16; x += 1) {
+      for (let sourceY = 0; sourceY < 16; sourceY += 1) {
+        const tile = {
+          uuid: `${blockX}-${blockY}-${x}-${sourceY}`,
+          blockX,
+          blockY,
+          mapX: blockX * 512 + x * 32,
+          mapY: blockY * 512 + (15 - sourceY) * 32,
+          x,
+          y: 15 - sourceY,
+          terrain: "grass" as MapTile["terrain"],
+        };
+        cache[`${tile.mapX},${tile.mapY}`] = tile;
+        tiles.push(tile);
+      }
+    }
+    return { x: blockX, y: blockY, tiles };
+  });
+  return { blocks, state: { version: "test", tiles: { cache } } };
+}
+
+function paintWorldBuilding(
+  state: ReturnType<typeof makeWorldState>["state"],
+  fromGridX: number,
+  toGridX: number,
+  fromGridY: number,
+  toGridY: number,
+) {
+  for (const tile of Object.values(state.tiles.cache) as MapTile[]) {
+    const gridX = tile.mapX / 32;
+    const gridY = tile.mapY / 32;
+    if (gridX >= fromGridX && gridX <= toGridX && gridY >= fromGridY && gridY <= toGridY) {
+      tile.terrain = "building";
+    }
+  }
+}
+
+// Groups painted house tiles into structures across every block, asserting a
+// single sprite family per structure.
+function worldStructures(blocks: WorldBlocks) {
+  const structures = new Map<string, { kind: string; tiles: number }>();
+  for (const block of blocks) {
+    for (const tile of block.tiles) {
+      if (tile.feature !== "house") continue;
+      const key = `${block.x},${block.y}:${tile.houseId}`;
+      const entry = structures.get(key) ?? { kind: String(tile.houseKind), tiles: 0 };
+      expect(String(tile.houseKind)).toBe(entry.kind);
+      entry.tiles += 1;
+      structures.set(key, entry);
+    }
+  }
+  return [...structures.values()];
+}
+
 function readEmeraldSheet() {
   return PNG.sync.read(
     readFileSync(
@@ -337,6 +400,104 @@ describe("terrain sprite stitching", () => {
     expect(grandStructures).toHaveLength(1);
     expect(["house-manor", "struct-trick-house"]).toContain(grandStructures[0].kind);
     expect(grandStructures[0].tiles).toBe(30);
+  });
+
+  it("places ONE structure for a building whose footprint spans a block seam", () => {
+    const run = (order: number[]) => {
+      const world = makeWorldState([
+        { x: 0, y: 0 },
+        { x: 1, y: 0 },
+      ]);
+      paintWorldBuilding(world.state, 12, 19, 2, 6);
+      for (const index of order) terrainLife.run(world.state, world.blocks[index]);
+      return world;
+    };
+    const houseTilesOf = (blocks: WorldBlocks) =>
+      blocks.flatMap((block) =>
+        block.tiles
+          .filter((tile) => tile.feature === "house")
+          .map((tile) => [tile.mapX, tile.mapY, String(tile.img2)]),
+      );
+
+    // 8×5 building mass across the seam: previously one house per block
+    // slice; now ONE size-matched structure from the 36+ tier.
+    const SEAM_SIZES: Record<string, number> = {
+      "house-grand": 20,
+      "struct-house-littleroot": 25,
+      "struct-flower-shop": 25,
+    };
+    const forward = run([0, 1]);
+    const structures = worldStructures(forward.blocks);
+    expect(structures).toHaveLength(1);
+    expect(Object.keys(SEAM_SIZES)).toContain(structures[0].kind);
+    expect(structures[0].tiles).toBe(SEAM_SIZES[structures[0].kind]);
+
+    // Generation order must not matter.
+    const reverse = run([1, 0]);
+    expect(worldStructures(reverse.blocks)).toEqual(structures);
+    expect(houseTilesOf(reverse.blocks)).toEqual(houseTilesOf(forward.blocks));
+
+    // Stable under the pipeline's edge/regenerate re-stitch passes.
+    terrainLife.run(forward.state, forward.blocks[0]);
+    terrainLife.run(forward.state, forward.blocks[1]);
+    expect(worldStructures(forward.blocks)).toEqual(structures);
+    expect(houseTilesOf(forward.blocks)).toEqual(houseTilesOf(reverse.blocks));
+  });
+
+  it("keeps one structure for a mass spanning three blocks (triple-house regression)", () => {
+    const { state, blocks } = makeWorldState([
+      { x: 0, y: 0 },
+      { x: 1, y: 0 },
+      { x: 2, y: 0 },
+    ]);
+    paintWorldBuilding(state, 8, 40, 1, 4);
+    for (const block of blocks) terrainLife.run(state, block);
+    for (const block of blocks) terrainLife.run(state, block);
+
+    const structures = worldStructures(blocks);
+    expect(structures).toHaveLength(1);
+    expect(["house-manor", "struct-trick-house"]).toContain(structures[0].kind);
+    expect(structures[0].tiles).toBe(30);
+  });
+
+  it("keeps one structure across a vertical (north/south) block seam", () => {
+    const { state, blocks } = makeWorldState([
+      { x: 0, y: 0 },
+      { x: 0, y: 1 },
+    ]);
+    paintWorldBuilding(state, 2, 7, 12, 19);
+    for (const block of blocks) terrainLife.run(state, block);
+    for (const block of blocks) terrainLife.run(state, block);
+
+    const structures = worldStructures(blocks);
+    expect(structures).toHaveLength(1);
+    expect(structures[0].tiles).toBeGreaterThanOrEqual(12);
+  });
+
+  it("converges to one structure when the neighbouring block generates later", () => {
+    const { state, blocks } = makeWorldState([
+      { x: 0, y: 0 },
+      { x: 1, y: 0 },
+    ]);
+    paintWorldBuilding(state, 12, 19, 2, 6);
+    const [west, east] = blocks;
+
+    // The west block first generates alone and only sees its clipped slice.
+    const hidden = new Map<string, unknown>();
+    for (const tile of east.tiles) {
+      const key = `${tile.mapX},${tile.mapY}`;
+      hidden.set(key, state.tiles.cache[key]);
+      delete state.tiles.cache[key];
+    }
+    terrainLife.run(state, west);
+    expect(west.tiles.some((tile) => tile.feature === "house")).toBe(true);
+
+    // The east block lands later; the pipeline re-stitches the west block as
+    // its edge, which resets the stale clipped house and converges the seam.
+    for (const [key, tile] of hidden) state.tiles.cache[key] = tile as Record<string, unknown>;
+    terrainLife.run(state, east);
+    terrainLife.run(state, west);
+    expect(worldStructures(blocks)).toHaveLength(1);
   });
 
   it("fills open ground with deterministic structures while protecting the spawn landing", () => {

@@ -293,35 +293,65 @@ const stitchSurfaces = (state, tiles) => {
 	}
 }
 
-const buildingComponents = tiles => {
-	const byGrid = new Map(tiles.map(tile => [tileKey(tile.x, sourceY(tile)), tile]))
-	const unseen = new Set(
-		tiles.filter(tile => terrainOf(tile) === 'building').map(tile => tileKey(tile.x, sourceY(tile))),
-	)
+// --- world-space building components ---------------------------------------
+// Google building footprints routinely span map-block boundaries, and the
+// classifier can leave diagonal-only joins inside one roof mass. Components
+// are therefore traced in WORLD tile coordinates over every tile the
+// generation state can see (this block, the ring of edge blocks that re-run
+// their mods alongside it, and any stored neighbours), with 8-way
+// connectivity — so one real-world building resolves to ONE component no
+// matter how many blocks it crosses.
+const worldTileAt = (state, gridX, gridY) => getTile(state, gridX * TILE_SIZE, gridY * TILE_SIZE)
+const localIndex = value => ((value % BLOCK_TILES) + BLOCK_TILES) % BLOCK_TILES
+// Every block's central 4x4 landing is flattened to grass by ensureSpawnRoute,
+// but a neighbouring block may not have run yet when this one stitches.
+// Excluding landings from the mask up front keeps the component view
+// identical no matter which block generates first.
+const isCentralLandingWorld = (gridX, gridY) =>
+	localIndex(gridX) >= 6 && localIndex(gridX) <= 9 && localIndex(gridY) >= 6 && localIndex(gridY) <= 9
+const inBuildingMask = (state, gridX, gridY) => {
+	const tile = worldTileAt(state, gridX, gridY)
+	return Boolean(tile) && terrainOf(tile) === 'building' && !isCentralLandingWorld(gridX, gridY)
+}
+
+// Safety valve for pathological masks (airports, malls): a component stops
+// growing here. Blocks more than a couple of seams apart may then disagree
+// about its extent, which at worst yields one structure per far-apart region.
+const WORLD_COMPONENT_LIMIT = 4096
+
+const worldBuildingComponents = (state, tiles) => {
+	const seen = new Set()
 	const components = []
 
-	while (unseen.size) {
-		const start = unseen.values().next().value
-		const queue = [start]
-		const component = []
-		unseen.delete(start)
+	for (const seed of tiles) {
+		const seedX = Math.floor(seed.mapX / TILE_SIZE)
+		const seedY = Math.floor(seed.mapY / TILE_SIZE)
+		const seedKey = tileKey(seedX, seedY)
+		if (seen.has(seedKey) || !inBuildingMask(state, seedX, seedY)) continue
+
+		seen.add(seedKey)
+		const queue = [[seedX, seedY]]
+		const cells = []
 		while (queue.length) {
-			const key = queue.shift()
-			const tile = byGrid.get(key)
-			if (!tile) continue
-			component.push(tile)
-			const x = tile.x
-			const y = sourceY(tile)
-			for (const neighbour of [tileKey(x + 1, y), tileKey(x - 1, y), tileKey(x, y + 1), tileKey(x, y - 1)]) {
-				if (!unseen.has(neighbour)) continue
-				unseen.delete(neighbour)
-				queue.push(neighbour)
+			const [gridX, gridY] = queue.shift()
+			cells.push({ gridX, gridY })
+			if (cells.length >= WORLD_COMPONENT_LIMIT) break
+			for (let offsetY = -1; offsetY <= 1; offsetY++) {
+				for (let offsetX = -1; offsetX <= 1; offsetX++) {
+					if (!offsetX && !offsetY) continue
+					const nextX = gridX + offsetX
+					const nextY = gridY + offsetY
+					const nextKey = tileKey(nextX, nextY)
+					if (seen.has(nextKey) || !inBuildingMask(state, nextX, nextY)) continue
+					seen.add(nextKey)
+					queue.push([nextX, nextY])
+				}
 			}
 		}
-		components.push(component)
+		components.push(cells)
 	}
 
-	return { byGrid, components }
+	return components
 }
 
 const footprintAt = (byGrid, left, top, columns, rows) => {
@@ -379,38 +409,83 @@ const BUILDING_TIERS = [
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },
 ]
 
-const chooseBuildingVariant = (tier, component, block) => {
+const componentBounds = component => {
+	let minX = Infinity
+	let maxX = -Infinity
+	let minY = Infinity
+	let maxY = -Infinity
+	let sumX = 0
+	let sumY = 0
+	for (const { gridX, gridY } of component) {
+		minX = Math.min(minX, gridX)
+		maxX = Math.max(maxX, gridX)
+		minY = Math.min(minY, gridY)
+		maxY = Math.max(maxY, gridY)
+		sumX += gridX
+		sumY += gridY
+	}
+	return { minX, maxX, minY, maxY, centroidX: sumX / component.length, centroidY: sumY / component.length }
+}
+
+const chooseBuildingVariant = (tier, bounds) => {
 	if (tier.variants.length === 1) return tier.variants[0]
-	const xs = component.map(tile => tile.x)
-	const ys = component.map(sourceY)
-	const roll = hashUnit(
-		block.x * BLOCK_TILES + Math.min(...xs),
-		block.y * BLOCK_TILES + Math.min(...ys),
-		'building-style',
-	)
+	// Seeded from the component's own world-space corner so every block that
+	// can see the component rolls the same variant.
+	const roll = hashUnit(bounds.minX, bounds.minY, 'building-style')
 	return tier.variants[Math.floor(roll * tier.variants.length)]
 }
 
-const findStructureAnchor = (byGrid, component, occupied, columns, rows) => {
-	const xs = component.map(tile => tile.x)
-	const ys = component.map(sourceY)
-	const maxLeft = BLOCK_TILES - columns
-	const maxTop = BLOCK_TILES - rows
-	const centerX = Math.max(0, Math.min(maxLeft, Math.round(((Math.min(...xs) + Math.max(...xs)) / 2) - ((columns - 1) / 2))))
-	const centerY = Math.max(0, Math.min(maxTop, Math.round(((Math.min(...ys) + Math.max(...ys)) / 2) - ((rows - 1) / 2))))
+// One deterministic anchor per world-space component. Footprints are laid out
+// from a north-west corner cell (world grid coords, +gridY = north) and must
+// sit entirely inside ONE block: every block that sees the same component
+// derives the same anchor, and only the block that owns it paints — which is
+// what keeps a seam-spanning building down to a single structure.
+const ANCHOR_SEARCH_MARGIN = 4
+
+const findWorldStructureAnchor = (state, block, occupied, bounds, columns, rows) => {
 	const candidates = []
-	for (let top = 0; top <= maxTop; top++) {
-		for (let left = 0; left <= maxLeft; left++) {
-			candidates.push({ left, top, distance: Math.abs(left - centerX) + Math.abs(top - centerY) })
+	for (let top = bounds.maxY + rows + ANCHOR_SEARCH_MARGIN - 1; top >= bounds.minY - ANCHOR_SEARCH_MARGIN; top--) {
+		if (Math.floor((top - rows + 1) / BLOCK_TILES) !== Math.floor(top / BLOCK_TILES)) continue
+		for (let left = bounds.minX - columns - ANCHOR_SEARCH_MARGIN + 1; left <= bounds.maxX + ANCHOR_SEARCH_MARGIN; left++) {
+			if (Math.floor(left / BLOCK_TILES) !== Math.floor((left + columns - 1) / BLOCK_TILES)) continue
+			const ownerX = Math.floor(left / BLOCK_TILES)
+			const ownerY = Math.floor(top / BLOCK_TILES)
+			candidates.push({
+				left,
+				top,
+				ownerX,
+				ownerY,
+				distance: Math.abs(left + ((columns - 1) / 2) - bounds.centroidX)
+					+ Math.abs(top - ((rows - 1) / 2) - bounds.centroidY),
+			})
 		}
 	}
-	candidates.sort((a, b) => a.distance - b.distance || a.top - b.top || a.left - b.left)
+	// Nearest to the component's centroid, ties broken north-then-west so the
+	// ordering is identical from every viewing block.
+	candidates.sort((a, b) => a.distance - b.distance || b.top - a.top || a.left - b.left)
 
+	const mine = block ? `${block.x},${block.y}` : null
 	for (const candidate of candidates) {
-		const footprint = footprintAt(byGrid, candidate.left, candidate.top, columns, rows)
-		if (footprint.length !== columns * rows) continue
-		if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !isWalkableGround(terrainOf(tile)) || isCentralLanding(tile))) continue
-		return { ...candidate, footprint }
+		let valid = true
+		const footprint = []
+		for (let row = 0; row < rows && valid; row++) {
+			for (let column = 0; column < columns; column++) {
+				const gridX = candidate.left + column
+				const gridY = candidate.top - row
+				const tile = worldTileAt(state, gridX, gridY)
+				if (
+					!tile
+					|| !isWalkableGround(terrainOf(tile))
+					|| isCentralLandingWorld(gridX, gridY)
+					|| (`${candidate.ownerX},${candidate.ownerY}` === mine && occupied.has(tileKey(tile.x, sourceY(tile))))
+				) {
+					valid = false
+					break
+				}
+				footprint.push(tile)
+			}
+		}
+		if (valid) return { ...candidate, footprint }
 	}
 	return null
 }
@@ -439,30 +514,44 @@ const applyRockyApron = (byGrid, occupied, left, top, width, height) => {
 	}
 }
 
-const stitchHouses = (tiles, block) => {
-	const { byGrid, components } = buildingComponents(tiles)
+// A structure's anchor may land in ANY block whose tiles are visible in the
+// state cache. Whichever block owns the anchor paints it: blocks generated in
+// the same pass compute the identical anchor from the identical terrain, and
+// a stored neighbour already painted that same anchor when it converged with
+// this seam (its edge re-run sees the full component too), so exactly one
+// structure survives per component.
+const stitchHouses = (state, tiles, block) => {
+	// Deterministic world-space processing order keeps the occupied-set
+	// evolution aligned between blocks that share seam components.
+	const components = worldBuildingComponents(state, tiles)
+		.map(component => ({ component, bounds: componentBounds(component) }))
+		.sort((a, b) => a.bounds.minX - b.bounds.minX || a.bounds.minY - b.bounds.minY)
 	const occupied = new Set()
 	let houseNumber = 0
 
-	for (const component of components.filter(value => value.length >= 3)) {
+	for (const { component, bounds } of components.filter(value => value.component.length >= 3)) {
 		const tierIndex = BUILDING_TIERS.findIndex(tier => component.length >= tier.minArea)
 		// One structure per detected building: try the size-matched family
 		// first, then fall through the smaller tiers until one fits.
 		for (let fallback = tierIndex; fallback < BUILDING_TIERS.length; fallback++) {
-			const variant = chooseBuildingVariant(BUILDING_TIERS[fallback], component, block)
-			const anchor = findStructureAnchor(byGrid, component, occupied, variant.columns, variant.rows)
+			const variant = chooseBuildingVariant(BUILDING_TIERS[fallback], bounds)
+			const anchor = findWorldStructureAnchor(state, block, occupied, bounds, variant.columns, variant.rows)
 			if (!anchor) continue
-			houseNumber += 1
-			anchor.footprint.forEach((tile, index) => {
-				occupied.add(tileKey(tile.x, sourceY(tile)))
-				tile.img = 'grass'
-				tile.img2 = `${variant.prefix}-${index + 1}`
-				tile.feature = 'house'
-				tile.houseId = houseNumber
-				tile.houseKind = variant.prefix
-				tile.houseTile = index + 1
-				tile.solid = true
-			})
+			// Deterministic single owner: every block sharing this component
+			// computes the same anchor, and only the owning block paints it.
+			if (anchor.ownerX === block.x && anchor.ownerY === block.y) {
+				houseNumber += 1
+				anchor.footprint.forEach((tile, index) => {
+					occupied.add(tileKey(tile.x, sourceY(tile)))
+					tile.img = 'grass'
+					tile.img2 = `${variant.prefix}-${index + 1}`
+					tile.feature = 'house'
+					tile.houseId = houseNumber
+					tile.houseKind = variant.prefix
+					tile.houseTile = index + 1
+					tile.solid = true
+				})
+			}
 			break
 		}
 	}
@@ -926,7 +1015,7 @@ const terrainLife = (state, block) => {
 		recipeId: profile.recipeId,
 		recipeCount: WORLD_RECIPE_COUNT,
 	}
-	const occupied = stitchHouses(tiles, block)
+	const occupied = stitchHouses(state, tiles, block)
 	stitchCave(tiles, occupied, block)
 	stitchMountains(tiles, occupied)
 	const { reserved } = buildReservedGround(tiles, occupied)
