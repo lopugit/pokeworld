@@ -12,9 +12,25 @@ import { isThingtimeServiceConfigured } from "../thingtime/client";
 
 export type MapBlockStorageProvider = "inline" | "mongo" | "thingtime";
 
+// Tests exercise the production store-backed generation path (Thingtime, no
+// Mongo) against an in-memory stand-in. Never set outside test code.
+export interface MapBlockStoreOverride {
+  get(coordinates: Array<{ x: number; y: number }>): Promise<MapBlock[]>;
+  put(blocks: MapBlock[]): Promise<void>;
+}
+
+let storeOverrideForTests: MapBlockStoreOverride | null = null;
+
+export function setMapBlockStoreOverrideForTests(
+  store: MapBlockStoreOverride | null,
+): void {
+  storeOverrideForTests = store;
+}
+
 export function mapBlockStorageProvider(
   env: NodeJS.ProcessEnv = process.env,
 ): MapBlockStorageProvider {
+  if (storeOverrideForTests) return "thingtime";
   if (isThingtimeServiceConfigured(env)) return "thingtime";
   if (!isPublicDeployment(env) && isMongoConfigured(env)) return "mongo";
   return "inline";
@@ -39,6 +55,7 @@ function mapStorageUnavailable(cause: unknown): GenerationControlError {
 export async function getStoredBlocks(
   coordinates: Array<{ x: number; y: number }>,
 ): Promise<MapBlock[] | undefined> {
+  if (storeOverrideForTests) return storeOverrideForTests.get(coordinates);
   const provider = mapBlockStorageProvider();
   if (provider === "thingtime") {
     return getThingtimeStoredBlocks(coordinates).catch((error) => {
@@ -50,6 +67,10 @@ export async function getStoredBlocks(
 }
 
 export async function putStoredBlocks(blocks: MapBlock[]): Promise<boolean> {
+  if (storeOverrideForTests) {
+    await storeOverrideForTests.put(blocks);
+    return true;
+  }
   const provider = mapBlockStorageProvider();
   if (provider === "thingtime") {
     await putThingtimeStoredBlocks(blocks).catch((error) => {

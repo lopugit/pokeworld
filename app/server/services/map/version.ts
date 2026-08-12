@@ -10,9 +10,24 @@ import { GOOGLE_MAP_SOURCE_TAG } from "./legacy/coordinates";
 // google-maps building even when its footprint spans block seams (8-way
 // world flood fill + deterministic single-owner anchors), so previously
 // duplicated seam houses and stale mountain/boulder stitches regenerate.
-const TERRAIN_REVISION = "2.8.0000";
+// 2.9.0000: store-backed seam convergence — public (Thingtime, no-Mongo)
+// deployments now load stored neighbours and persist re-stitched edges, so
+// the 2.8 site rule finally converges in production instead of planning
+// sites against per-block truncated masks (which grew one structure per
+// block on every seam-spanning building). Same imagery tag: stored terrain
+// is reused and the migration re-stitches mods-only, without Google fetches.
+const TERRAIN_REVISION = "2.9.0000";
 
 // The Google Static Maps source parameters participate in the version string:
 // changing the world's ground scale (zoom/scale/width) shifts every block
 // coordinate, so it must invalidate every previously stored block too.
 export const MAP_BLOCK_VERSION = `${TERRAIN_REVISION}-${GOOGLE_MAP_SOURCE_TAG}`;
+
+// Blocks whose version carries the same source tag were classified from the
+// same ground imagery: their stored terrain remains valid across terrain
+// revisions, so they can seed mods-only re-stitching instead of a refetch.
+export { GOOGLE_MAP_SOURCE_TAG };
+
+export function sharesMapSourceImagery(version: unknown): boolean {
+  return typeof version === "string" && version.endsWith(`-${GOOGLE_MAP_SOURCE_TAG}`);
+}

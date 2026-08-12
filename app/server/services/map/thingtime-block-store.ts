@@ -6,7 +6,7 @@ import {
   type ThingtimeRequestOptions,
 } from "../thingtime/client";
 import type { MapBlock } from "./types";
-import { MAP_BLOCK_VERSION } from "./version";
+import { MAP_BLOCK_VERSION, sharesMapSourceImagery } from "./version";
 
 export const POKEWORLD_BLOCK_SCHEMA = "PokeworldBlock";
 export const POKEWORLD_BLOCK_WORLD = "earth-v1";
@@ -105,7 +105,8 @@ export function decodeThingtimeBlock(thing: ThingtimeBlockThing): MapBlock {
   if (
     crystal?.schema !== POKEWORLD_BLOCK_SCHEMA ||
     crystal.world !== POKEWORLD_BLOCK_WORLD ||
-    crystal.mapBlockVersion !== MAP_BLOCK_VERSION ||
+    !(crystal.mapBlockVersion === MAP_BLOCK_VERSION ||
+      sharesMapSourceImagery(crystal.mapBlockVersion)) ||
     crystal.payloadEncoding !== POKEWORLD_BLOCK_PAYLOAD_ENCODING ||
     typeof crystal.blockX !== "number" ||
     typeof crystal.blockY !== "number" ||
@@ -156,11 +157,17 @@ async function getThingtimeStoredBlock(
       undefined,
       options,
     );
-    // Version bumps deliberately turn a previous block into a cache miss so
-    // the normal generation path can replace it at the same deterministic ID.
+    // Version bumps still make a previous block regenerate (currentBlockSubset
+    // filters stale tile versions before anything is served), but blocks whose
+    // version shares the current imagery source tag are returned anyway: their
+    // stored terrain classification is still valid, and the generator reuses it
+    // for a quota-free mods-only re-stitch. Blocks from a different ground
+    // scale stay a hard cache miss.
+    const storedVersion = response.thing.crystal?.mapBlockVersion;
     if (
-      typeof response.thing.crystal?.mapBlockVersion === "string" &&
-      response.thing.crystal.mapBlockVersion !== MAP_BLOCK_VERSION
+      typeof storedVersion === "string" &&
+      storedVersion !== MAP_BLOCK_VERSION &&
+      !sharesMapSourceImagery(storedVersion)
     ) {
       return undefined;
     }

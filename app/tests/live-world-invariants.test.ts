@@ -2,6 +2,7 @@ import { MongoClient } from "mongodb";
 import { afterAll, describe, expect, it } from "vitest";
 import terrainLife from "../server/services/map/legacy/mods/terrain-life";
 import { MAP_BLOCK_VERSION } from "../server/services/map/version";
+import { analyzeStructureWorld, formatReport } from "../scripts/map/audit-structure-duplicates.mjs";
 
 // Live-world invariant audit. Opt-in: point POKEWORLD_LIVE_VERIFY at a Mongo
 // deployment whose `blocks` collection holds generated map blocks, e.g.
@@ -9,7 +10,13 @@ import { MAP_BLOCK_VERSION } from "../server/services/map/version";
 // It audits every stored block against the generation contract: current
 // version stamps, deterministic re-generation, and exactly one structure per
 // world-space google-building component. CI has no live world; it skips.
+//
+// HTTP deployments (production stores blocks in Thingtime, not Mongo) are
+// audited through the read-only probe endpoint instead:
+//   POKEWORLD_LIVE_VERIFY_URL="https://pokeworld.center" \
+//     POKEWORLD_LIVE_VERIFY_BLOCK="473289,244292" pnpm --dir app exec vitest run tests/live-world-invariants.test.ts
 const LIVE_URI = process.env.POKEWORLD_LIVE_VERIFY;
+const LIVE_URL = process.env.POKEWORLD_LIVE_VERIFY_URL;
 
 interface StoredTile {
   mapX: number;
@@ -165,5 +172,30 @@ describe.skipIf(!LIVE_URI)("live world invariants", () => {
       }
     }
     expect(replayedHouses).toEqual(storedHouses);
+  });
+});
+
+describe.skipIf(!LIVE_URL)("live deployment structure audit (HTTP probe)", () => {
+  it("shows one structure per google building in the probed region", { timeout: 120_000 }, async () => {
+    const [blockX, blockY] = (process.env.POKEWORLD_LIVE_VERIFY_BLOCK ?? "473289,244292")
+      .split(",")
+      .map(Number);
+    const radius = Number(process.env.POKEWORLD_LIVE_VERIFY_RADIUS ?? 2);
+    const offsets: number[][] = [];
+    for (let y = -radius; y <= radius; y += 1) {
+      for (let x = -radius; x <= radius; x += 1) offsets.push([x, y]);
+    }
+    const response = await fetch(
+      `${LIVE_URL}/api/blocks?blockX=${blockX}&blockY=${blockY}` +
+        `&offsets=${encodeURIComponent(JSON.stringify(offsets))}&regenerate=false&probe=true`,
+    );
+    const payload = (await response.json()) as { blocks?: unknown[]; status?: string };
+    expect(payload.status, "deployment must support the read-only probe").toBe("probe");
+    expect(payload.blocks?.length ?? 0).toBeGreaterThan(0);
+
+    const report = analyzeStructureWorld(payload.blocks);
+    // eslint-disable-next-line no-console -- surfacing the audit summary is the point
+    console.log(formatReport(report, { verbose: true }));
+    expect(report.violations).toEqual([]);
   });
 });

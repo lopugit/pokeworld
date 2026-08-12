@@ -11,7 +11,7 @@ import type {
   MapOffset,
 } from "../../server/services/map/types";
 import {
-  generateMapBlockStep,
+  generateMapBlocksStep,
   prepareMapBlockGenerationStep,
 } from "./steps";
 
@@ -48,7 +48,7 @@ export async function generateMapWorkflow(
   const results: MapGenerationStepResult[] = [];
   const generationOffsets = input.generationOffsets ?? input.offsets;
   for (const batch of mapGenerationBatches(generationOffsets)) {
-    const completed = await Promise.all(
+    const gates = await Promise.all(
       batch.map(async ([offsetX, offsetY]) => {
         const x = input.blockX + offsetX;
         const y = input.blockY + offsetY;
@@ -63,17 +63,26 @@ export async function generateMapWorkflow(
             await sleep(new Date(gate.retryAt));
             continue;
           }
-          if (gate.status === "cached") return { requested: { x, y } };
-          return generateMapBlockStep({
-            x,
-            y,
-            regenerate: input.regenerate,
-            permitId: gate.permitId,
-          });
+          if (gate.status === "cached") return { x, y, cached: true as const };
+          return { x, y, cached: false as const, permitId: gate.permitId };
         }
       }),
     );
-    results.push(...completed);
+    for (const gate of gates) {
+      if (gate.cached) results.push({ requested: { x: gate.x, y: gate.y } });
+    }
+    // One generation step per batch: all its blocks stitch inside one shared
+    // legacy state (converged structure sites across their seams), and batches
+    // stay sequential so store writes to shared edge neighbours never race
+    // within a run.
+    const pending = gates.filter((gate) => !gate.cached);
+    if (pending.length > 0) {
+      const generated = await generateMapBlocksStep({
+        blocks: pending.map(({ x, y, permitId }) => ({ x, y, permitId })),
+        regenerate: input.regenerate,
+      });
+      results.push(...generated);
+    }
   }
   const requested = coordinatesForInput(input);
   const inlineBlocks = results.flatMap((result) =>
