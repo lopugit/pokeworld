@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1786516983.3801298,
-    "ast_hash": "e6300a32d0632691dd290c837294b04a",
+    "mtime": 1786520339.0211983,
+    "ast_hash": "e5f6a2f2b0351eca108b2c65d1a06bd0",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -9175,8 +9175,8 @@
     "semantic_hash": ""
   },
   ".claude/launch.json": {
-    "mtime": 1786516983.379526,
-    "ast_hash": "247a5244570cf64703ec7f8e2214434d",
+    "mtime": 1786520016.4929745,
+    "ast_hash": "4ea5becfa9bd9f53ef4fea316af67535",
     "semantic_hash": ""
   },
   "app/server/routes/api/admin/spawn-rules.delete.ts": {

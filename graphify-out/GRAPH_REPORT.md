@@ -1,7 +1,7 @@
 # Graph Report - merge-branches-claude-guidelines-b19fbf  (2026-08-12)
 
 ## Corpus Check
-- 244 files · ~2,561,081 words
+- 244 files · ~2,561,218 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `782541b6`
+- Built from commit: `73a7afd4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -706,7 +706,7 @@ Nodes (3): Checklist, Log, Loop state — /design studio completion & visual QA
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **662 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+657 more)
+- **662 isolated node(s):** `Division of labour`, `World ground scale & versioning (shared contract)`, `Map block streaming protocol (server → client)`, `Tile feature protocol (server → client)`, `Movement rules (client)` (+657 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **136 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -717,11 +717,11 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
 - **Why does `Game` connect `trainer-state.ts` to `Game.tsx`, `SpriteThumb.tsx`?**
   _High betweenness centrality (0.053) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `functions.ts` to `Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA`, `fetch-character-sprites.mjs`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `terrain-classifier.ts` to `Q: Verify the real Google Static Maps to Pokemon world generation pipeline for user and mock latitude/longitude, including visual Chrome QA`, `vite`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **What connects `name`, `version`, `private` to the rest of the system?**
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `vitest` connect `terrain-classifier.ts` to `game-zoom.test.ts`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **What connects `Division of labour`, `World ground scale & versioning (shared contract)`, `Map block streaming protocol (server → client)` to the rest of the system?**
   _666 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.08145363408521303 - nodes in this community are weakly interconnected._
