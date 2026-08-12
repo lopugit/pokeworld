@@ -10,7 +10,7 @@ import createLegacyBlocksHandlerUntyped from "./legacy/blocks";
 const createLegacyBlocksHandler = createLegacyBlocksHandlerUntyped as (
   version: string,
 ) => (request: { query: Record<string, unknown> }) => Promise<{
-  send: { blocks?: MapBlock[] } | string;
+  send: { blocks?: MapBlock[]; persisted?: boolean } | string;
   status: number;
 }>;
 
@@ -27,19 +27,25 @@ export function isCurrentMapBlock(block: {
   );
 }
 
-export async function generateMapBlock(input: {
-  x: number;
-  y: number;
+// Generates a whole batch through ONE legacy generation state. Every block in
+// the batch (plus each of their stored edge neighbours) stitches against the
+// same world view and is saved by the handler itself, so structure sites
+// converge across the seams inside the batch instead of being planned against
+// per-block truncated masks.
+export async function generateMapBlocks(input: {
+  blocks: Array<{ x: number; y: number; permitId?: string }>;
   regenerate: boolean;
-  permitId?: string;
-}): Promise<MapGenerationStepResult> {
+}): Promise<MapGenerationStepResult[]> {
+  if (input.blocks.length === 0) return [];
   assertRegenerationAllowed(input.regenerate);
-  assertPublicGenerationPermit(input.permitId);
+  for (const block of input.blocks) assertPublicGenerationPermit(block.permitId);
+
+  const anchor = input.blocks[0];
   const response = await blocksHandler({
     query: {
-      blockX: input.x,
-      blockY: input.y,
-      offsets: [[0, 0]],
+      blockX: anchor.x,
+      blockY: anchor.y,
+      offsets: input.blocks.map((block) => [block.x - anchor.x, block.y - anchor.y]),
       regenerate: input.regenerate,
     },
   });
@@ -48,15 +54,34 @@ export async function generateMapBlock(input: {
     throw new Error(typeof response.send === "string" ? response.send : "Map generation failed");
   }
 
-  const target = response.send.blocks?.find((block) => block.x === input.x && block.y === input.y);
-  if (!target) {
-    throw new Error(`Map generation did not return block ${input.x},${input.y}`);
+  const send = response.send;
+  const results: MapGenerationStepResult[] = [];
+  for (const requested of input.blocks) {
+    const target = send.blocks?.find((block) => block.x === requested.x && block.y === requested.y);
+    if (!target) {
+      throw new Error(`Map generation did not return block ${requested.x},${requested.y}`);
+    }
+    // The legacy handler persists through the durable block store (Mongo or
+    // Thingtime) itself — including re-stitched edge neighbours it healed.
+    // Without a durable store the block travels inline with the workflow.
+    const persisted = send.persisted === true ? true : await putStoredBlocks([target]);
+    results.push({
+      requested: { x: requested.x, y: requested.y },
+      ...(persisted ? {} : { inlineBlock: target }),
+    });
   }
+  return results;
+}
 
-  const persisted = await putStoredBlocks([target]);
-
-  return {
-    requested: { x: input.x, y: input.y },
-    ...(persisted ? {} : { inlineBlock: target }),
-  };
+export async function generateMapBlock(input: {
+  x: number;
+  y: number;
+  regenerate: boolean;
+  permitId?: string;
+}): Promise<MapGenerationStepResult> {
+  const [result] = await generateMapBlocks({
+    blocks: [{ x: input.x, y: input.y, permitId: input.permitId }],
+    regenerate: input.regenerate,
+  });
+  return result;
 }

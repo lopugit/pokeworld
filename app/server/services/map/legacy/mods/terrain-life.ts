@@ -260,6 +260,15 @@ const smoothWater = (state, tiles) => {
 	}
 }
 
+// Stitch-specific tile metadata must reset alongside the sprites: a re-stitch
+// that moves or removes a structure would otherwise leave stale houseKind /
+// houseSite (etc.) on tiles that are no longer part of any structure, making
+// re-stitched worlds diverge from freshly generated ones in metadata only.
+const STITCH_METADATA_FIELDS = [
+	'houseId', 'houseKind', 'houseTile', 'houseSite',
+	'caveId', 'caveTile', 'hiddenItem', 'jumpDirection',
+]
+
 const resetBaseSprites = (tiles, version, updated) => {
 	for (const tile of tiles) {
 		const terrain = terrainOf(tile)
@@ -276,6 +285,7 @@ const resetBaseSprites = (tiles, version, updated) => {
 		tile.version = version
 		tile.updated = updated
 		tile.needsSaving = true
+		for (const field of STITCH_METADATA_FIELDS) delete tile[field]
 	}
 }
 
@@ -322,7 +332,8 @@ const inBuildingMask = (state, gridX, gridY) => {
 // a building that fits in the window yields exactly ONE structure no matter
 // how many block seams it crosses, while giant merged masses (city terraces)
 // yield well-spaced structures instead of seam-hugging clones.
-const SITE_WINDOW = 13
+export const SITE_WINDOW = 13
+export const MIN_SITE_CELLS = 3
 const SITE_SCAN_MARGIN = 3
 const ANCHOR_DRIFT = 4
 
@@ -363,7 +374,7 @@ const structureSites = (state, block) => {
 		for (let gridX = fromX; gridX < toX; gridX++) {
 			if (!inBuildingMask(state, gridX, gridY)) continue
 			const local = locallyConnectedMask(state, gridX, gridY)
-			if (local.length < 3) continue
+			if (local.length < MIN_SITE_CELLS) continue
 			if (local.some(([cellX, cellY]) => (cellX !== gridX || cellY !== gridY) && siteRankLess(cellX, cellY, gridX, gridY) < 0)) continue
 			sites.push({ gridX, gridY, size: local.length })
 		}

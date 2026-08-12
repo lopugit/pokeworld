@@ -21,6 +21,7 @@
     "workflow:inspect": "workflow inspect runs",
     "workflow:web": "workflow web",
     "map:generate": "node scripts/map/generate-map.mjs",
+    "audit:structures": "node scripts/map/audit-structure-duplicates.mjs",
     "benchmark:map": "node scripts/benchmark-map-pipeline.mjs"
   },
   "dependencies": {

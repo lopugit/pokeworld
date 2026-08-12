@@ -1,4 +1,4 @@
-import { generateMapBlock } from "../../server/services/map/generate";
+import { generateMapBlock, generateMapBlocks } from "../../server/services/map/generate";
 import { generationPermitId } from "../../server/services/map/generation-job";
 import {
   acquireGenerationPermit,
@@ -56,4 +56,16 @@ export async function generateMapBlockStep(input: {
 }): Promise<MapGenerationStepResult> {
   "use step";
   return generateMapBlock(input);
+}
+
+// A whole batch generates through one shared legacy state so seam-spanning
+// buildings converge on a single structure site. One durable step per batch
+// also serializes the store writes that heal edge neighbours, instead of
+// letting per-block steps race each other over the same seams.
+export async function generateMapBlocksStep(input: {
+  blocks: Array<{ x: number; y: number; permitId?: string }>;
+  regenerate: boolean;
+}): Promise<MapGenerationStepResult[]> {
+  "use step";
+  return generateMapBlocks(input);
 }

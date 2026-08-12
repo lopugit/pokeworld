@@ -317,7 +317,16 @@ function buildGoogleStaticMapUrl(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom, apiKey
 	return url
 }
 
+// Tests inject deterministic synthetic imagery (e.g. building rectangles that
+// span block seams) so the full store-backed generation pipeline runs without
+// Google. Never set outside test code.
+let imageryOverrideForTests
+function setImageryOverrideForTests(override) {
+	imageryOverrideForTests = override
+}
+
 async function getMapAtWithSource(lat, lng, zoom = GOOGLE_MAP_SOURCE.zoom) {
+	if (imageryOverrideForTests) return imageryOverrideForTests(lat, lng, zoom)
 	// No Google key: skip the doomed request and use the bundled 512x512 fallback
 	// map so tile generation works fully offline (dev).
 	if (!mapSource.canUseGoogleStaticMaps()) {
@@ -518,4 +527,4 @@ const getTileSprite2 = (x, y, tileCache, grass) => {
 	return grass ? 'grass' : 'undefined'
 }
 
-export { buildGoogleStaticMapUrl, generateCoordinatesGrid, generateMap, getMapAt, getMapAtWithSource, getTileOffsetColour, getTileOffsetSprite, getTileOffsetSprite2, getTileOffset, getTile, getTileColour, getTileSprite, getTileSprite2 }
+export { buildGoogleStaticMapUrl, generateCoordinatesGrid, generateMap, getMapAt, getMapAtWithSource, getTileOffsetColour, getTileOffsetSprite, getTileOffsetSprite2, getTileOffset, getTile, getTileColour, getTileSprite, getTileSprite2, setImageryOverrideForTests }

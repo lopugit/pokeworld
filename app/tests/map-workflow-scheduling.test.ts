@@ -28,18 +28,22 @@ vi.mock("../workflows/map-generation/steps", () => ({
     }
     return { permitId: `permit:${key}`, status: "ready" };
   },
-  generateMapBlockStep: async (input: { x: number; y: number }) => {
-    const key = `${input.x},${input.y}`;
-    execution.started.push(key);
-    if (key !== execution.centerKey) {
-      execution.neighbourStartedAfterCenter.push(execution.finished.includes(execution.centerKey));
+  // One generation step per batch: every block in the call shares a single
+  // converged legacy state, so "active" now counts blocks within the batch.
+  generateMapBlocksStep: async (input: { blocks: Array<{ x: number; y: number }> }) => {
+    for (const block of input.blocks) {
+      const key = `${block.x},${block.y}`;
+      execution.started.push(key);
+      if (key !== execution.centerKey) {
+        execution.neighbourStartedAfterCenter.push(execution.finished.includes(execution.centerKey));
+      }
     }
-    execution.active += 1;
+    execution.active += input.blocks.length;
     execution.maxActive = Math.max(execution.maxActive, execution.active);
     await new Promise((resolve) => setTimeout(resolve, 2));
-    execution.active -= 1;
-    execution.finished.push(key);
-    return { requested: { x: input.x, y: input.y } };
+    execution.active -= input.blocks.length;
+    for (const block of input.blocks) execution.finished.push(`${block.x},${block.y}`);
+    return input.blocks.map((block) => ({ requested: { x: block.x, y: block.y } }));
   },
 }));
 

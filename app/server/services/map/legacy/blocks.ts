@@ -12,6 +12,11 @@ import { classifyTerrainTiles, summarizeTerrain } from '../terrain-classifier'
 import { normalizeTerrainLayout } from '../terrain-layout'
 import { v4 as uuidv4 } from 'uuid'
 import { rgbaToTileColourData } from './png'
+import {
+	getStoredBlocks as storeGetStoredBlocks,
+	isMapBlockStorageConfigured,
+	putStoredBlocks as storePutStoredBlocks,
+} from '../block-store'
 
 const sortedMods = [...mods].sort((a, b) => a.priority - b.priority)
 const coordinateKey = value => `${value.x},${value.y}`
@@ -173,6 +178,9 @@ const toExport = version => {
 			return {
 				send: {
 					blocks: [...state.blocks.generate, ...state.blocks.edges],
+					// Callers fall back to inline delivery only when no durable
+					// store (Mongo or Thingtime) accepted the generated blocks.
+					persisted: Boolean(client) || isMapBlockStorageConfigured(),
 				},
 				status: 200,
 			}
@@ -266,9 +274,20 @@ const toExport = version => {
 	}
 
 	const syncBlocks = async state => {
-		if (!client) return
-		const coordinates = state.blocks.all.map(block => ({ x: block.x, y: block.y }))
-		const dbBlocks = await state.blockDb.find({ $or: coordinates }).toArray()
+		const blockCoordinates = state.blocks.all.map(block => ({ x: block.x, y: block.y }))
+		let dbBlocks
+		if (client) {
+			dbBlocks = await state.blockDb.find({ $or: blockCoordinates }).toArray()
+		} else if (isMapBlockStorageConfigured()) {
+			// No Mongo (public deployments store blocks in Thingtime): the durable
+			// block store is still the only source of stored neighbours, and the
+			// stitching mods MUST see them — otherwise every block plans structure
+			// sites against a mask truncated at its own edges and each seam-spanning
+			// google building grows one structure per block (the 2.8.x live bug).
+			dbBlocks = await storeGetStoredBlocks(blockCoordinates) || []
+		} else {
+			return
+		}
 		const dbBlocksByCoordinate = new Map(dbBlocks.map(block => [coordinateKey(block), block]))
 
 		for (const block of state.blocks.all) {
@@ -298,6 +317,9 @@ const toExport = version => {
 	const prefetchBlockMaps = state => {
 		for (const block of state.blocks.generate) {
 			if (!block.regenerate && !state.regenerate) continue
+			// After scanBlocks has classified the work, only blocks that actually
+			// need fresh imagery hit Google — mods-only re-stitches reuse terrain.
+			if (state.imagery && !state.imagery.has(coordinateKey(block))) continue
 			const key = coordinateKey(block)
 			if (!state.maps.pending.has(key)) {
 				const pending = functions.getMapAtWithSource(block.lat, block.lng)
@@ -311,6 +333,7 @@ const toExport = version => {
 	}
 
 	const scanBlocks = async state => {
+		state.imagery = new Set()
 		for (const block of state.blocks.generate) {
 			const fallbackNeedsRegeneration = mapSource.shouldRegenerateFallbackBlock(block)
 			if (!block?.tiles || block?.tiles?.length < (16 * 16) || state.regenerate || fallbackNeedsRegeneration || block.tiles.some(tile => tile.version !== state.version)) {
@@ -318,6 +341,18 @@ const toExport = version => {
 					log('Regenerating fallback-derived block from Google Static Maps', block.x, block.y)
 				}
 				block.regenerate = true
+				// A version bump that keeps the same imagery source tag only changes
+				// stitching semantics: the stored terrain classification is still
+				// valid, so the block regenerates mods-only instead of re-buying the
+				// same Google Static Maps image (keeps migrations quota-free).
+				const reusableTerrain = !state.regenerate
+					&& !fallbackNeedsRegeneration
+					&& block?.tiles?.length >= (16 * 16)
+					&& block.tiles.every(tile =>
+						typeof tile.version === 'string'
+						&& tile.version.endsWith(`-${coordinates.GOOGLE_MAP_SOURCE_TAG}`)
+						&& tile.terrain)
+				if (!reusableTerrain) state.imagery.add(coordinateKey(block))
 				const offsets = [
 					[1, 0],
 					[0, 1],
@@ -426,7 +461,7 @@ const toExport = version => {
 	}
 
 	const saveAllBlocks = async state => {
-		if (!client) return
+		if (!client && !isMapBlockStorageConfigured()) return
 		const blocks = [...state.blocks.generate, ...state.blocks.edges]
 		const saveStartTime = Date.now()
 
@@ -440,7 +475,7 @@ const toExport = version => {
 			}
 		}
 
-		if (blocksToSave.length) {
+		if (blocksToSave.length && client) {
 			await state.blockDb.bulkWrite(blocksToSave.map(block => ({
 				updateOne: {
 					filter: { x: block.x, y: block.y },
@@ -448,6 +483,11 @@ const toExport = version => {
 					upsert: true,
 				},
 			})), { ordered: false })
+		} else if (blocksToSave.length) {
+			// Store-backed deployments persist the whole converged set here — the
+			// regenerated targets AND every re-stitched edge neighbour — so the
+			// healed seams survive instead of living only in this response.
+			await storePutStoredBlocks(blocksToSave)
 		}
 
 		const saveEndTime = Date.now()
@@ -460,7 +500,9 @@ const toExport = version => {
 		const proms = []
 		for (const block of state.blocks.generate) {
 			if (block.regenerate) {
-				const prom = generateBlock(state, block)
+				// skipColourData when the stored terrain classification is reusable
+				// (same imagery source tag): the version bump then only re-stitches.
+				const prom = generateBlock(state, block, state.imagery ? !state.imagery.has(coordinateKey(block)) : false)
 				proms.push(prom)
 			}
 		}
