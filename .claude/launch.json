@@ -24,9 +24,10 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": [
         "-c",
-        "cd app && export GOOGLE_API_KEY=\"$(sed -n 's/^GOOGLE_API_KEY=//p' /Users/lopu/things/code/lopugit/pokeworld/app/.env | tr -d '\\\"')\" && export MONGODB_URI='mongodb://127.0.0.1:27317/pokeworld-verify' && pnpm build && PORT=3949 node .output/server/index.mjs"
+        "cd app && export GOOGLE_API_KEY=\"$(sed -n 's/^GOOGLE_API_KEY=//p' /Users/lopu/things/code/lopugit/pokeworld/app/.env | tr -d '\\\"')\" && export MONGODB_URI='mongodb://127.0.0.1:27317/pokeworld-verify' && pnpm build && node .output/server/index.mjs"
       ],
-      "port": 3949
+      "port": 3949,
+      "autoPort": true
     }
   ]
 }

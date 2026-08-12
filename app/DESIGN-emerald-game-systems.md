@@ -52,6 +52,22 @@ metadata the server emits, and unknown features are inert.
   `mapBlockVersion`, and `/api/blocks` + `/api/map-jobs` (+ `/:runId`)
   responses carry `version: MAP_BLOCK_VERSION`, so clients and audits can
   compare served tiles (`tile.version`) against the deployment.
+- Seam stitching is storage-agnostic (2.9): when Mongo is absent the legacy
+  generator syncs stored neighbours and persists re-stitched edges through
+  the block-store abstraction (Thingtime in production), so structure sites
+  converge across block seams on every provider. The workflow generates one
+  batch per durable step (shared legacy state, sequential batches) instead of
+  racing per-block steps over shared edge neighbours.
+- Version bumps that keep the imagery source tag migrate quota-free: stale
+  same-tag blocks are readable from the store and regenerate mods-only,
+  reusing the stored terrain classification instead of refetching Google.
+- `/api/blocks?probe=true` is a strictly read-only stored-block view (never
+  reserves quota or queues generation) for audit tooling. The
+  one-structure-per-google-building invariant is checked end-to-end by
+  `scripts/map/audit-structure-duplicates.mjs` (`pnpm audit:structures`,
+  works against any deployment or a saved dump), by the store-backed
+  convergence test (`tests/structure-sites-convergence.test.ts`), and by
+  `POKEWORLD_LIVE_VERIFY_URL` in `tests/live-world-invariants.test.ts`.
 
 ## Map block streaming protocol (server → client)
 
