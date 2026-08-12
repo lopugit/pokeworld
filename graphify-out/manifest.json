@@ -205,8 +205,8 @@
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1786509737.4449031,
-    "ast_hash": "c9fc76cc181b444ac84642357bace141",
+    "mtime": 1786513853.097841,
+    "ast_hash": "ef31b9e66b28e7cc61044ef82e8ae6d7",
     "semantic_hash": ""
   },
   "app/server/services/map/legacy/png.ts": {
@@ -485,8 +485,8 @@
     "semantic_hash": "7bffb8df9d070eb63efb24d7ed5b09d4"
   },
   "app/tests/terrain-life.test.ts": {
-    "mtime": 1786509821.5864744,
-    "ast_hash": "95bbd66e81f1a3696a7912af0cc31f3a",
+    "mtime": 1786513551.4846432,
+    "ast_hash": "107769f92717d35e85512bb6c9b07688",
     "semantic_hash": ""
   },
   "app/tests/thingtime-auth.test.ts": {
@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1786508437.039925,
-    "ast_hash": "f9410bcac42e3d644363886236a55361",
+    "mtime": 1786513949.364474,
+    "ast_hash": "e6300a32d0632691dd290c837294b04a",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -9175,8 +9175,8 @@
     "semantic_hash": ""
   },
   ".claude/launch.json": {
-    "mtime": 1786508437.0188296,
-    "ast_hash": "5b34820f1e11006bd5709d2f7060a7f1",
+    "mtime": 1786510308.2661388,
+    "ast_hash": "247a5244570cf64703ec7f8e2214434d",
     "semantic_hash": ""
   },
   "app/server/routes/api/admin/spawn-rules.delete.ts": {
@@ -30202,6 +30202,11 @@
   "app/public/tiles/bridge-v-1.png": {
     "mtime": 1786508438.2877147,
     "ast_hash": "0fef0fe127ea34c65cc31626cf073453",
+    "semantic_hash": ""
+  },
+  "app/tests/live-world-invariants.test.ts": {
+    "mtime": 1786513881.6393745,
+    "ast_hash": "472e94c9730e25b33572bb635353d9e5",
     "semantic_hash": ""
   }
 }
