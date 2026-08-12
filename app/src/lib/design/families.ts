@@ -37,9 +37,10 @@ import {
   placeHouse,
   placeRockySign,
   placeSign,
+  placeTree,
   scatter,
   scatterTrees,
-  SMALL_TREE,
+  SMALL_SHRUB,
   treeBorder,
 } from "./paint";
 import type { Rng } from "./rng";
@@ -984,7 +985,14 @@ export const HAND_FAMILIES: DesignFamily[] = [
     },
     decorate(ctx) {
       const treeSpot = findClearSpot(ctx.grid, ctx.ground, ctx.rng, { allowGround: ["grass"], margin: 4 });
-      if (treeSpot) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_TREE, { solid: true, feature: "tree" });
+      if (treeSpot) {
+        const planted =
+          placeTree(ctx.grid, ctx.ground, treeSpot.col, treeSpot.row) ||
+          placeTree(ctx.grid, ctx.ground, treeSpot.col - 1, treeSpot.row) ||
+          placeTree(ctx.grid, ctx.ground, treeSpot.col, treeSpot.row - 1) ||
+          placeTree(ctx.grid, ctx.ground, treeSpot.col - 1, treeSpot.row - 1);
+        if (!planted) placeDecor(ctx.grid, treeSpot.col, treeSpot.row, SMALL_SHRUB, { solid: true, feature: "shrub" });
+      }
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.1);
       hiddenSomewhere(ctx);
       if (ctx.rng.chance(0.8)) addPokemon(ctx, [POKEMON[4], POKEMON[2]], 5);
@@ -1107,7 +1115,7 @@ export const HAND_FAMILIES: DesignFamily[] = [
       paintBlob(ctx.ground, "water", 8, 8, 2, ctx.rng);
     },
     decorate(ctx) {
-      scatter(ctx.grid, ctx.ground, ctx.rng, ["tree-1"], 0.22, { solid: true, feature: "palm" });
+      scatter(ctx.grid, ctx.ground, ctx.rng, [SMALL_SHRUB], 0.22, { solid: true, feature: "shrub" });
       scatter(ctx.grid, ctx.ground, ctx.rng, flowerOf(ctx.rng), 0.08);
       addNpc(ctx);
       if (ctx.rng.chance(0.7)) addPokemon(ctx);

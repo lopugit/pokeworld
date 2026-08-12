@@ -33,27 +33,84 @@ const TILE_FAMILIES = [
   ["grass-dirt-", "ground", "Grass-dirt blend"],
   ["grass-", "vegetation", "Long grass"],
   ["grass", "vegetation", "Grass"],
-  ["big-tree-", "vegetation", "Big tree"],
-  ["tree-", "vegetation", "Tree"],
-  ["shrub-", "vegetation", "Shrub"],
-  ["flower-", "vegetation", "Flower bed"],
+  // big-tree-1..10 are banned forest-overlap demo slices, not tree parts.
+  ["big-tree-", "vegetation", "Forest-overlap slice (banned)"],
+  ["tree-grand-", "vegetation", "Big tree"],
+  // tree-1 is a bottom-half crop of a taller tree (banned in designs) —
+  // an individual sheet slice, NOT a whole object.
+  ["tree-", "vegetation", "Half-tree crop (banned)"],
+  // Pacifidlog plank walkways (bridge-h = east-west rails, bridge-v =
+  // north-south planks); water shows through their keyed gaps.
+  ["bridge-h-", "building", "Plank bridge (east-west)", true],
+  ["bridge-v-", "building", "Plank bridge (north-south)", true],
+  ["shrub-", "vegetation", "Shrub", true],
+  ["flower-", "vegetation", "Flower bed", true],
   ["house-red-", "building", "Red-roof house"],
+  ["house-wide-", "building", "Wide red-roof house"],
+  ["house-grand-", "building", "Grand red-roof house"],
+  ["house-manor-", "building", "Red-roof manor"],
+  ["struct-pokecenter-", "building", "Pokémon Center"],
+  ["struct-pokemart-", "building", "PokéMart"],
+  ["struct-contest-hall-", "building", "Contest hall"],
+  ["struct-tower-white-", "building", "White tower"],
+  ["struct-lodge-log-", "building", "Log lodge"],
+  ["struct-house-littleroot-", "building", "Littleroot house"],
+  ["struct-lab-birch-", "building", "Birch's lab"],
+  ["struct-gym-petalburg-", "building", "Petalburg gym"],
+  ["struct-house-berry-", "building", "Berry-garden house"],
+  ["struct-gym-mauville-", "building", "Mauville gym"],
+  ["struct-shop-mauville-", "building", "Mauville shop"],
+  ["struct-house-mossdeep-", "building", "Mossdeep house"],
+  ["struct-gym-mossdeep-", "building", "Mossdeep gym"],
+  ["struct-spacecenter-", "building", "Mossdeep space centre"],
+  ["struct-house-wood-", "building", "Wooden route house"],
+  ["struct-hut-pacifidlog-", "building", "Pacifidlog stilt hut"],
+  ["struct-battle-tent-", "building", "Battle Tent"],
+  ["struct-house-verdanturf-", "building", "Verdanturf house"],
+  ["struct-gym-lavaridge-", "building", "Lavaridge gym"],
+  ["struct-house-lavaridge-", "building", "Lavaridge herb house"],
+  ["struct-devon-corp-", "building", "Devon Corporation"],
+  ["struct-gym-rustboro-", "building", "Rustboro gym"],
+  ["struct-treehouse-", "building", "Fortree treehouse"],
+  ["struct-house-lilycove-", "building", "Lilycove house"],
+  ["struct-dept-store-", "building", "Lilycove department store"],
+  ["struct-battle-tent-slateport-", "building", "Slateport Battle Tent"],
+  ["struct-museum-slateport-", "building", "Slateport museum"],
+  ["struct-center-slateport-", "building", "Slateport Pokémon Center"],
+  ["struct-shipyard-slateport-", "building", "Stern's shipyard"],
+  ["struct-lighthouse-slateport-", "building", "Slateport lighthouse"],
+  ["struct-gym-sootopolis-", "building", "Sootopolis gym"],
+  ["struct-house-sootopolis-", "building", "Sootopolis stone house"],
+  ["struct-mart-sootopolis-", "building", "Sootopolis mart"],
+  ["struct-center-sootopolis-", "building", "Sootopolis Pokémon Center"],
+  ["struct-daycare-", "building", "Pokémon Day Care"],
+  ["struct-flower-shop-", "building", "Pretty Petal flower shop"],
+  ["struct-weather-institute-", "building", "Weather Institute"],
+  ["struct-trick-house-", "building", "Trick House"],
+  ["struct-seashore-house-", "building", "Seashore House"],
+  ["struct-fossil-house-", "building", "Fossil Maniac's house"],
+  ["struct-lanette-house-", "building", "Lanette's house"],
+  ["struct-gym-fortree-", "building", "Fortree gym"],
   ["mountain-", "terrain", "Mountain face"],
   ["cave-door-", "terrain", "Cave doorway"],
   ["cave-", "terrain", "Cave mouth"],
   ["ledge-left-", "terrain", "Ledge (left cap)"],
   ["ledge-middle-", "terrain", "Ledge (middle)"],
   ["ledge-right-", "terrain", "Ledge (right cap)"],
-  ["rock-", "terrain", "Boulder"],
+  ["rock-", "terrain", "Boulder", true],
   ["path-", "ground", "Dirt path"],
   ["road-", "ground", "Road"],
   ["sand-", "ground", "Sand"],
-  ["route-sign-", "prop", "Route sign"],
-  ["field-item-", "prop", "Field item"],
+  ["route-sign-", "prop", "Route sign", true],
+  ["field-item-", "prop", "Field item", true],
   ["rocky-bumps-", "terrain", "Rocky scree"],
   ["rocky-", "ground", "Rocky ground"],
-  ["boulder-mossy-", "terrain", "Mossy boulder"],
-  ["sign-rocky-", "prop", "Rocky-ground sign"],
+  ["boulder-mossy-", "terrain", "Mossy boulder", true],
+  ["sign-rocky-", "prop", "Rocky-ground sign", true],
+  ["museum-stone-", "building", "Stone museum"],
+  ["gallery-stone-", "building", "Stone gallery"],
+  ["grand-stone-", "building", "Grand stone hall"],
+  ["brick-flat-", "building", "Brick block"],
 ];
 
 const AUTOTILE_POSITIONS = {
@@ -65,7 +122,7 @@ const AUTOTILE_POSITIONS = {
 };
 
 function tileFamily(stem) {
-  for (const [prefix, category, label] of TILE_FAMILIES) {
+  for (const [prefix, category, label, whole] of TILE_FAMILIES) {
     if (stem === prefix || stem.startsWith(prefix)) {
       const suffix = stem.slice(prefix.length);
       const n = Number(suffix);
@@ -76,6 +133,7 @@ function tileFamily(stem) {
       }
       const tags = [category, prefix.replace(/-$/, "")];
       if (autotiled) tags.push("autotile");
+      if (whole) tags.push("whole-object");
       return { category, name, tags };
     }
   }
@@ -215,6 +273,180 @@ for (const character of ["boy", "girl"]) {
         usage: "Directional walk frame rendered on the live map.",
       });
     }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 1b. Whole objects — every multi-tile formation stitched into one browsable
+// image under public/design/composed/, plus the full pret town renders. These
+// carry the "whole-object" tag; the asset browser splits each category into
+// whole objects vs individual tiles on it. Keep FORMATION_SHAPES in sync with
+// src/lib/design/legality.ts (a vitest asserts parity).
+// ---------------------------------------------------------------------------
+
+export const FORMATION_SHAPES = [
+  ["house-red", "house-red", 3, 4, "building", "Red-roof house"],
+  ["house-wide", "house-wide", 4, 4, "building", "Wide red-roof house"],
+  ["house-grand", "house-grand", 5, 4, "building", "Grand red-roof house"],
+  ["house-manor", "house-manor", 6, 5, "building", "Red-roof manor"],
+  ["pokecenter", "struct-pokecenter", 4, 4, "building", "Pokémon Center"],
+  ["pokemart", "struct-pokemart", 4, 4, "building", "PokéMart"],
+  ["contest-hall", "struct-contest-hall", 5, 4, "building", "Contest hall"],
+  ["tower-white", "struct-tower-white", 2, 4, "building", "White tower"],
+  ["lodge-log", "struct-lodge-log", 5, 4, "building", "Log lodge pair"],
+  ["house-littleroot", "struct-house-littleroot", 5, 5, "building", "Littleroot house"],
+  ["lab-birch", "struct-lab-birch", 7, 5, "building", "Birch's lab"],
+  ["gym-petalburg", "struct-gym-petalburg", 6, 5, "building", "Petalburg gym"],
+  ["house-berry", "struct-house-berry", 4, 4, "building", "Berry-garden house"],
+  ["gym-mauville", "struct-gym-mauville", 7, 5, "building", "Mauville gym"],
+  ["shop-mauville", "struct-shop-mauville", 3, 4, "building", "Mauville shop"],
+  ["house-mossdeep", "struct-house-mossdeep", 4, 4, "building", "Mossdeep house"],
+  ["gym-mossdeep", "struct-gym-mossdeep", 4, 4, "building", "Mossdeep gym"],
+  ["spacecenter", "struct-spacecenter", 9, 8, "building", "Mossdeep space centre"],
+  ["house-wood", "struct-house-wood", 4, 4, "building", "Wooden route house"],
+  ["hut-pacifidlog", "struct-hut-pacifidlog", 5, 7, "building", "Pacifidlog stilt hut"],
+  ["battle-tent", "struct-battle-tent", 5, 5, "building", "Battle Tent"],
+  ["house-verdanturf", "struct-house-verdanturf", 4, 4, "building", "Verdanturf house"],
+  ["gym-lavaridge", "struct-gym-lavaridge", 6, 5, "building", "Lavaridge gym"],
+  ["house-lavaridge", "struct-house-lavaridge", 4, 4, "building", "Lavaridge herb house"],
+  ["devon-corp", "struct-devon-corp", 8, 8, "building", "Devon Corporation"],
+  ["gym-rustboro", "struct-gym-rustboro", 7, 5, "building", "Rustboro gym"],
+  ["treehouse", "struct-treehouse", 3, 6, "building", "Fortree treehouse"],
+  ["house-lilycove", "struct-house-lilycove", 4, 4, "building", "Lilycove house"],
+  ["dept-store", "struct-dept-store", 10, 7, "building", "Lilycove department store"],
+  ["battle-tent-slateport", "struct-battle-tent-slateport", 4, 5, "building", "Slateport Battle Tent"],
+  ["museum-slateport", "struct-museum-slateport", 6, 5, "building", "Slateport museum"],
+  ["center-slateport", "struct-center-slateport", 4, 4, "building", "Slateport Pokémon Center"],
+  ["shipyard-slateport", "struct-shipyard-slateport", 7, 6, "building", "Stern's shipyard"],
+  ["lighthouse-slateport", "struct-lighthouse-slateport", 3, 4, "building", "Slateport lighthouse"],
+  ["gym-sootopolis", "struct-gym-sootopolis", 6, 5, "building", "Sootopolis gym"],
+  ["house-sootopolis", "struct-house-sootopolis", 3, 4, "building", "Sootopolis stone house"],
+  ["mart-sootopolis", "struct-mart-sootopolis", 4, 4, "building", "Sootopolis mart"],
+  ["center-sootopolis", "struct-center-sootopolis", 4, 4, "building", "Sootopolis Pokémon Center"],
+  ["daycare", "struct-daycare", 4, 4, "building", "Pokémon Day Care"],
+  ["flower-shop", "struct-flower-shop", 5, 5, "building", "Pretty Petal flower shop"],
+  ["weather-institute", "struct-weather-institute", 9, 9, "building", "Weather Institute"],
+  ["trick-house", "struct-trick-house", 6, 5, "building", "Trick House"],
+  ["seashore-house", "struct-seashore-house", 4, 5, "building", "Seashore House"],
+  ["fossil-house", "struct-fossil-house", 4, 4, "building", "Fossil Maniac's house"],
+  ["lanette-house", "struct-lanette-house", 4, 4, "building", "Lanette's house"],
+  ["gym-fortree", "struct-gym-fortree", 6, 5, "building", "Fortree gym"],
+  ["big-tree", "tree-grand", 2, 2, "vegetation", "Big tree"],
+  ["museum-stone", "museum-stone", 3, 5, "building", "Stone museum"],
+  ["gallery-stone", "gallery-stone", 4, 5, "building", "Stone gallery"],
+  ["grand-stone", "grand-stone", 5, 6, "building", "Grand stone hall"],
+  ["brick-flat", "brick-flat", 4, 3, "building", "Brick block"],
+];
+
+const composedDir = path.join(designDir, "composed");
+fs.mkdirSync(composedDir, { recursive: true });
+for (const [id, prefix, w, h, category, label, slotOrder] of FORMATION_SHAPES) {
+  const composed = new PNG({ width: w * 16, height: h * 16 });
+  for (let index = 0; index < w * h; index += 1) {
+    const tileNumber = slotOrder ? slotOrder[index] : index + 1;
+    const tile = readPng(path.join(tilesDir, `${prefix}-${tileNumber}.png`));
+    for (let y = 0; y < 16; y += 1) {
+      const from = y * 16 * 4;
+      const to = ((Math.floor(index / w) * 16 + y) * composed.width + (index % w) * 16) * 4;
+      tile.data.copy(composed.data, to, from, from + 16 * 4);
+    }
+  }
+  fs.writeFileSync(path.join(composedDir, `${id}.png`), PNG.sync.write(composed));
+  singles.push({
+    id: `whole:${id}`,
+    name: label,
+    src: `/design/composed/${id}.png`,
+    w: w * 16,
+    h: h * 16,
+    category,
+    tags: [category, "whole-object", "formation", id],
+    usage: `Complete ${w}×${h} formation — composed from the ${prefix}-* tiles.`,
+  });
+}
+
+const townsSheetDir = path.join(sheetsDir, "towns");
+if (fs.existsSync(townsSheetDir)) {
+  for (const file of fs.readdirSync(townsSheetDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(townsSheetDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `town:${stem}`,
+      name: label,
+      src: `/design/sheets/towns/${file}`,
+      w: width,
+      h: height,
+      category: "town",
+      tags: ["town", "whole-object", "map", "emerald", stem],
+      usage: "Full town render from pret/pokeemerald data (tiles + palettes + metatiles + layout).",
+    });
+  }
+}
+
+// Sprite folders decoded from pret object-event data (embedded palettes).
+const SPRITE_SCANS = [
+  ["npcs", "npc", "character", ["character", "npc", "overworld"], "NPC overworld sprite decoded from pret/pokeemerald object-event data."],
+  ["trainers", "trainer", "character", ["character", "trainer", "portrait", "battle"], "Trainer battle portrait decoded from pret/pokeemerald trainer graphics."],
+  ["items", "item", "item", ["item", "icon", "bag"], "Item icon decoded from pret/pokeemerald item graphics."],
+  ["overworld-pokemon", "owmon", "pokemon", ["pokemon", "overworld", "mini"], "Overworld Pokémon mini decoded from pret/pokeemerald object-event data."],
+  ["objects", "object", "prop", ["prop", "object", "overworld"], "Overworld object decoded from pret/pokeemerald object-event data."],
+];
+for (const [dir, idPrefix, category, baseTags, usage] of SPRITE_SCANS) {
+  const scanDir = path.join(publicDir, "sprites", dir);
+  if (!fs.existsSync(scanDir)) continue;
+  for (const file of fs.readdirSync(scanDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(scanDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `${idPrefix}:${stem}`,
+      name: label,
+      src: `/sprites/${dir}/${file}`,
+      w: width,
+      h: height,
+      category,
+      tags: [...baseTags, "whole-object", stem],
+      usage,
+    });
+  }
+}
+
+// Interior room renders (whole rooms from pret layouts).
+const interiorScanDir = path.join(sheetsDir, "interiors");
+if (fs.existsSync(interiorScanDir)) {
+  for (const file of fs.readdirSync(interiorScanDir).filter((name) => name.endsWith(".png")).sort()) {
+    const { width, height } = readPng(path.join(interiorScanDir, file));
+    const stem = file.replace(/\.png$/, "");
+    const label = stem.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `room:${stem}`,
+      name: label,
+      src: `/design/sheets/interiors/${file}`,
+      w: width,
+      h: height,
+      category: "interior",
+      tags: ["interior", "room", "whole-object", "map", stem],
+      usage: "Full interior room render from pret/pokeemerald data (tiles + palettes + metatiles + layout).",
+    });
+  }
+}
+
+// Pokémon cries (AAC audio decoded from pret sound samples).
+const criesScanDir = path.join(publicDir, "audio", "cries");
+if (fs.existsSync(criesScanDir)) {
+  for (const file of fs.readdirSync(criesScanDir).filter((name) => name.endsWith(".m4a")).sort()) {
+    const stem = file.replace(/\.m4a$/, "");
+    const label = stem.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    singles.push({
+      id: `cry:${stem}`,
+      name: `${label} cry`,
+      src: `/audio/cries/${file}`,
+      w: 32,
+      h: 32,
+      category: "audio",
+      tags: ["audio", "cry", "pokemon", "whole-object", stem],
+      usage: "Pokémon cry converted from pret/pokeemerald sound samples (AAC).",
+    });
   }
 }
 
@@ -495,6 +727,40 @@ function characterAnimations(file) {
 }
 
 const animations = characterAnimations(CHARACTER_SRC);
+
+// Tileset animation reels decoded from pret anim dirs (file-per-frame).
+const tileAnimDir = path.join(designDir, "anim");
+if (fs.existsSync(tileAnimDir)) {
+  const groups = new Map();
+  for (const file of fs.readdirSync(tileAnimDir).filter((name) => name.endsWith(".png")).sort()) {
+    const match = /^(.+)-(\d+)\.png$/.exec(file);
+    if (!match) continue;
+    if (!groups.has(match[1])) groups.set(match[1], []);
+    groups.get(match[1]).push({ index: Number(match[2]), src: `/design/anim/${file}` });
+  }
+  for (const [stem, frames] of [...groups.entries()].sort()) {
+    frames.sort((a, b) => a.index - b.index);
+    const [tileset, anim] = stem.split("--");
+    const { width, height } = readPng(path.join(tileAnimDir, `${stem}-0.png`));
+    const label = anim.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const tilesetLabel = tileset.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const isNpc = tileset.startsWith("npc-");
+    const isDoor = tileset.startsWith("door-");
+    animations.push({
+      id: `tileanim:${stem}`,
+      name: isNpc
+        ? `${tilesetLabel.replace(/^Npc /, "")} walk cycle`
+        : isDoor
+          ? `${tilesetLabel.replace(/^Door /, "")} door`
+          : `${label} (${tilesetLabel} tileset)`,
+      category: "animation",
+      fps: isNpc ? 6 : isDoor ? 8 : /water|waterfall/.test(anim) ? 8 : 5,
+      tags: ["animation", isNpc ? "npc" : isDoor ? "door" : "tileset", tileset, anim, "emerald"],
+      frames: frames.map((frame) => frame.src),
+      frameSize: [width, height],
+    });
+  }
+}
 
 // Directional walk cycles from the player sprite sets.
 for (const [character, directions] of Object.entries(playerFrames)) {

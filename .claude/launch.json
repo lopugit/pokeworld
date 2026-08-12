@@ -9,6 +9,15 @@
         "ulimit -n 65536; cd app && POKEWORLD_OFFLINE_MAP=true pnpm exec vite dev --port 3948 --host 127.0.0.1"
       ],
       "port": 3948
+    },
+    {
+      "name": "pokeworld-worktree-live",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd app && export GOOGLE_API_KEY=\"$(sed -n 's/^GOOGLE_API_KEY=//p' /Users/lopu/things/code/lopugit/pokeworld/app/.env | tr -d '\\\"')\" && pnpm build && PORT=3949 node .output/server/index.mjs"
+      ],
+      "port": 3949
     }
   ]
 }

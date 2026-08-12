@@ -336,22 +336,79 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 	return footprint
 }
 
-const findHouseAnchor = (byGrid, component, occupied, preferredX) => {
+// Building sprite families, ordered largest-first. Each detected google-maps
+// building component places exactly ONE structure; the family is chosen from
+// the component's tile area so bigger real-world buildings become bigger
+// sprites. The larger homes are composed from the red house's own cells (see
+// scripts/map/extract-terrain-tiles.mjs) and the mid tier mixes in the whole
+// 4x4 Pokémon Center / PokéMart harvests as town landmarks. When the
+// preferred family cannot fit near the component, the search degrades tier by
+// tier down to the small cottage before giving up.
+const BUILDING_TIERS = [
+	{
+		minArea: 72,
+		variants: [
+			{ prefix: 'house-manor', columns: 6, rows: 5 },
+			{ prefix: 'struct-trick-house', columns: 6, rows: 5 },
+		],
+	},
+	{
+		minArea: 36,
+		variants: [
+			{ prefix: 'house-grand', columns: 5, rows: 4 },
+			{ prefix: 'struct-house-littleroot', columns: 5, rows: 5 },
+			{ prefix: 'struct-flower-shop', columns: 5, rows: 5 },
+		],
+	},
+	{
+		minArea: 18,
+		variants: [
+			{ prefix: 'house-wide', columns: 4, rows: 4 },
+			{ prefix: 'struct-pokecenter', columns: 4, rows: 4 },
+			{ prefix: 'struct-pokemart', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-mossdeep', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-wood', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-berry', columns: 4, rows: 4 },
+			{ prefix: 'struct-shop-mauville', columns: 3, rows: 4 },
+			{ prefix: 'struct-house-verdanturf', columns: 4, rows: 4 },
+			{ prefix: 'struct-house-lavaridge', columns: 4, rows: 4 },
+			{ prefix: 'struct-daycare', columns: 4, rows: 4 },
+			{ prefix: 'struct-lanette-house', columns: 4, rows: 4 },
+		],
+	},
+	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },
+]
+
+const chooseBuildingVariant = (tier, component, block) => {
+	if (tier.variants.length === 1) return tier.variants[0]
 	const xs = component.map(tile => tile.x)
 	const ys = component.map(sourceY)
-	const centerX = Math.max(0, Math.min(13, Math.round((preferredX ?? ((Math.min(...xs) + Math.max(...xs)) / 2)) - 1)))
-	const centerY = Math.max(0, Math.min(12, Math.round(((Math.min(...ys) + Math.max(...ys)) / 2) - 1.5)))
+	const roll = hashUnit(
+		block.x * BLOCK_TILES + Math.min(...xs),
+		block.y * BLOCK_TILES + Math.min(...ys),
+		'building-style',
+	)
+	return tier.variants[Math.floor(roll * tier.variants.length)]
+}
+
+const findStructureAnchor = (byGrid, component, occupied, columns, rows) => {
+	const xs = component.map(tile => tile.x)
+	const ys = component.map(sourceY)
+	const maxLeft = BLOCK_TILES - columns
+	const maxTop = BLOCK_TILES - rows
+	const centerX = Math.max(0, Math.min(maxLeft, Math.round(((Math.min(...xs) + Math.max(...xs)) / 2) - ((columns - 1) / 2))))
+	const centerY = Math.max(0, Math.min(maxTop, Math.round(((Math.min(...ys) + Math.max(...ys)) / 2) - ((rows - 1) / 2))))
 	const candidates = []
-	for (let top = 0; top <= 12; top++) {
-		for (let left = 0; left <= 13; left++) {
+	for (let top = 0; top <= maxTop; top++) {
+		for (let left = 0; left <= maxLeft; left++) {
 			candidates.push({ left, top, distance: Math.abs(left - centerX) + Math.abs(top - centerY) })
 		}
 	}
 	candidates.sort((a, b) => a.distance - b.distance || a.top - b.top || a.left - b.left)
 
 	for (const candidate of candidates) {
-		const footprint = footprintAt(byGrid, candidate.left, candidate.top, 3, 4)
-		if (footprint.length !== 12) continue
+		const footprint = footprintAt(byGrid, candidate.left, candidate.top, columns, rows)
+		if (footprint.length !== columns * rows) continue
 		if (footprint.some(tile => occupied.has(tileKey(tile.x, sourceY(tile))) || !isWalkableGround(terrainOf(tile)) || isCentralLanding(tile))) continue
 		return { ...candidate, footprint }
 	}
@@ -382,31 +439,31 @@ const applyRockyApron = (byGrid, occupied, left, top, width, height) => {
 	}
 }
 
-const stitchHouses = tiles => {
+const stitchHouses = (tiles, block) => {
 	const { byGrid, components } = buildingComponents(tiles)
 	const occupied = new Set()
 	let houseNumber = 0
 
 	for (const component of components.filter(value => value.length >= 3)) {
-		const xs = component.map(tile => tile.x)
-		const desired = component.length >= 48 ? 3 : component.length >= 24 ? 2 : 1
-		const preferred = desired === 1
-			? [(Math.min(...xs) + Math.max(...xs)) / 2]
-			: Array.from({ length: desired }, (_, index) => Math.min(...xs) + ((index + 1) / (desired + 1)) * (Math.max(...xs) - Math.min(...xs)))
-
-		for (const preferredX of preferred) {
-			const anchor = findHouseAnchor(byGrid, component, occupied, preferredX)
+		const tierIndex = BUILDING_TIERS.findIndex(tier => component.length >= tier.minArea)
+		// One structure per detected building: try the size-matched family
+		// first, then fall through the smaller tiers until one fits.
+		for (let fallback = tierIndex; fallback < BUILDING_TIERS.length; fallback++) {
+			const variant = chooseBuildingVariant(BUILDING_TIERS[fallback], component, block)
+			const anchor = findStructureAnchor(byGrid, component, occupied, variant.columns, variant.rows)
 			if (!anchor) continue
 			houseNumber += 1
 			anchor.footprint.forEach((tile, index) => {
 				occupied.add(tileKey(tile.x, sourceY(tile)))
 				tile.img = 'grass'
-				tile.img2 = `house-red-${index + 1}`
+				tile.img2 = `${variant.prefix}-${index + 1}`
 				tile.feature = 'house'
 				tile.houseId = houseNumber
+				tile.houseKind = variant.prefix
 				tile.houseTile = index + 1
 				tile.solid = true
 			})
+			break
 		}
 	}
 
@@ -869,7 +926,7 @@ const terrainLife = (state, block) => {
 		recipeId: profile.recipeId,
 		recipeCount: WORLD_RECIPE_COUNT,
 	}
-	const occupied = stitchHouses(tiles)
+	const occupied = stitchHouses(tiles, block)
 	stitchCave(tiles, occupied, block)
 	stitchMountains(tiles, occupied)
 	const { reserved } = buildReservedGround(tiles, occupied)
