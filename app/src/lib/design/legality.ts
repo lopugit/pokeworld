@@ -44,16 +44,17 @@ export interface OverlayRule {
 /** Standalone overlay props (multi-tile formations are handled separately). */
 export const OVERLAY_RULES: OverlayRule[] = [
   {
-    pattern: /^tree-1$/,
-    label: "Small tree",
-    grounds: ["grass"],
-    reason: "The single-cell tree; big trees are 2×3 formations.",
-  },
-  {
     pattern: /^shrub-1$/,
     label: "Shrubs & hedges",
     grounds: ["grass"],
     reason: "Shrub art is drawn on plain grass.",
+  },
+  {
+    pattern: /^bridge-[hv]-1$/,
+    label: "Plank bridges",
+    grounds: ["water"],
+    reason:
+      "Pacifidlog walkway planks (ocean keyed to transparent) span open water only — a deck exists to cross a river or pond, so fords bake into real walkable bridges over continuous water.",
   },
   {
     pattern: /^flower-[123]$/,
@@ -103,10 +104,16 @@ export interface BannedTile {
  * outright — which is what retired the old fake ledges for good. */
 export const BANNED_OVERLAYS: BannedTile[] = [
   {
-    pattern: /^big-tree-(7|8|9|10)$/,
+    pattern: /^tree-1$/,
+    label: "Half-tree crop",
+    reason:
+      "tree-1's art is the bottom half of a taller tree — the canopy is sliced flat at the tile's top edge over a trunk. Standalone it renders a crown-less half tree (the reported broken-tree bug: lone trunk-halves in groves, fake 'palms' on beaches, and what looked like edge-clipped trees). shrub-1 is the complete single-cell greenery; anything tree-shaped must be the tree-grand 2×2 formation.",
+  },
+  {
+    pattern: /^big-tree-\d+$/,
     label: "Forest-overlap strip slices",
     reason:
-      "big-tree-9/10 are the hanging fronds of the tree above in the sheet's overlap demo and big-tree-7/8 are its near-empty grass fillers. Standalone they render floating fronds or nothing — the exact cut-off-trees bug. Only the complete 2×3 big-tree formation (5/6, 3/4, 1/2) composes legally.",
+      "The big-tree-1..10 crops are slices of the sheet's forest-overlap demo — hanging fronds, half-canopies and grass fillers. No arrangement of them composes a whole tree (this was the broken-grove bug); the real big tree is the tree-grand 2×2 formation harvested from the Littleroot render.",
   },
   {
     pattern: /^ledge-(left|middle|right)-1$/,
@@ -228,16 +235,171 @@ export const FORMATIONS: Formation[] = [
     "struct-lodge-log",
     "Two green-roof log huts harvested as one compound; grass-backed.",
   ),
+  // Larger homes composed from the red house's own cells for the live map's
+  // size-graded building ladder (one structure per detected google-maps
+  // building). Same completeness rule: partial subsets shear the roof lattice.
+  buildingFormation(
+    "house-wide",
+    "Wide red-roof house (4×4)",
+    4,
+    4,
+    "house-wide",
+    "Composed from the red house's own cells as one 4×4 block on grass.",
+  ),
+  buildingFormation(
+    "house-grand",
+    "Grand red-roof house (5×4)",
+    5,
+    4,
+    "house-grand",
+    "Composed from the red house's own cells as one 5×4 block on grass.",
+  ),
+  buildingFormation(
+    "house-manor",
+    "Red-roof manor (6×5)",
+    6,
+    5,
+    "house-manor",
+    "Composed from the red house's own cells as one 6×5 block on grass.",
+  ),
+  // Whole buildings harvested from pret/pokeemerald town renders (real game
+  // data: tiles + palettes + metatiles + layouts) by scripts/design/
+  // fetch-emerald-towns.mjs. Coordinates verified against gridded renders.
+  buildingFormation("house-littleroot", "Littleroot house (5×5)", 5, 5, "struct-house-littleroot",
+    "Harvested whole from the Littleroot Town render; grass-backed."),
+  buildingFormation("lab-birch", "Birch's lab (7×5)", 7, 5, "struct-lab-birch",
+    "Harvested whole from the Littleroot Town render; grass-backed."),
+  buildingFormation("gym-petalburg", "Petalburg gym (6×5)", 6, 5, "struct-gym-petalburg",
+    "Harvested whole from the Petalburg City render; grass-backed."),
+  buildingFormation("house-berry", "Berry-garden house (4×4)", 4, 4, "struct-house-berry",
+    "Harvested whole from the Petalburg City render; grass-backed."),
+  buildingFormation("gym-mauville", "Mauville gym (7×5)", 7, 5, "struct-gym-mauville",
+    "Harvested whole from the Mauville City render; grass-backed."),
+  buildingFormation("shop-mauville", "Mauville shop (3×4)", 3, 4, "struct-shop-mauville",
+    "Harvested whole from the Mauville City render; grass-backed."),
+  buildingFormation("house-mossdeep", "Mossdeep house (4×4)", 4, 4, "struct-house-mossdeep",
+    "Harvested whole from the Mossdeep City render; grass-backed."),
+  buildingFormation("gym-mossdeep", "Mossdeep gym (4×4)", 4, 4, "struct-gym-mossdeep",
+    "Harvested whole from the Mossdeep City render; grass-backed."),
+  buildingFormation("spacecenter", "Mossdeep space centre (9×8)", 9, 8, "struct-spacecenter",
+    "Harvested whole from the Mossdeep City render; grass-backed."),
+  buildingFormation("house-wood", "Wooden route house (4×4)", 4, 4, "struct-house-wood",
+    "Harvested whole from the Oldale Town render; grass-backed."),
   {
-    id: "big-tree",
-    label: "Big tree (2×3)",
-    width: 2,
-    height: 3,
-    slots: ["big-tree-5", "big-tree-6", "big-tree-3", "big-tree-4", "big-tree-1", "big-tree-2"],
+    ...buildingFormation("hut-pacifidlog", "Pacifidlog stilt hut (5×7)", 5, 7, "struct-hut-pacifidlog",
+      "Harvested whole from the Pacifidlog Town render; its platform floats on open water."),
+    ground: "water",
+  },
+  buildingFormation("battle-tent", "Battle Tent (5×5)", 5, 5, "struct-battle-tent",
+    "Harvested whole from the Verdanturf Town render; cliff scenery keyed from its dome tip."),
+  buildingFormation("house-verdanturf", "Verdanturf house (4×4)", 4, 4, "struct-house-verdanturf",
+    "Harvested whole from the Verdanturf Town render; grass-backed."),
+  buildingFormation("gym-lavaridge", "Lavaridge gym (6×5)", 6, 5, "struct-gym-lavaridge",
+    "Harvested whole from the Lavaridge Town render; grass-backed."),
+  buildingFormation("house-lavaridge", "Lavaridge herb house (4×4)", 4, 4, "struct-house-lavaridge",
+    "Harvested whole from the Lavaridge Town render; grass-backed."),
+  buildingFormation("daycare", "Pokémon Day Care (4×4)", 4, 4, "struct-daycare",
+    "Harvested whole from the Route 117 render; grass-backed."),
+  buildingFormation("flower-shop", "Pretty Petal flower shop (5×5)", 5, 5, "struct-flower-shop",
+    "Harvested whole from the Route 104 render; roadside tree canopies scenery-keyed from its roofline."),
+  buildingFormation("trick-house", "Trick House (6×5)", 6, 5, "struct-trick-house",
+    "Harvested whole from the Route 110 render; grass-backed."),
+  buildingFormation("lanette-house", "Lanette's house (4×4)", 4, 4, "struct-lanette-house",
+    "Harvested whole from the Route 114 render; grass-backed."),
+  // Browser/design-only families (not in the live map's building ladder).
+  {
+    ...buildingFormation("seashore-house", "Seashore House (4×5)", 4, 5, "struct-seashore-house",
+      "Harvested whole from the Route 109 render; stands on the beach."),
+    ground: "sand",
+  },
+  {
+    ...buildingFormation("fossil-house", "Fossil Maniac's house (4×4)", 4, 4, "struct-fossil-house",
+      "Harvested whole from the Route 114 render; stands on the mountain path."),
+    ground: "path",
+  },
+  buildingFormation("weather-institute", "Weather Institute (9×9)", 9, 9, "struct-weather-institute",
+    "Harvested whole from the Route 119 render; cliff, roadside trees and its sign scenery-keyed."),
+  {
+    ...buildingFormation("gym-sootopolis", "Sootopolis gym (6×5)", 6, 5, "struct-gym-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("house-sootopolis", "Sootopolis stone house (3×4)", 3, 4, "struct-house-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("mart-sootopolis", "Sootopolis mart (4×4)", 4, 4, "struct-mart-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("center-sootopolis", "Sootopolis Pokémon Center (4×4)", 4, 4, "struct-center-sootopolis",
+      "Harvested whole from the Sootopolis City render; stands on the crater's stone terraces."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("battle-tent-slateport", "Slateport Battle Tent (4×5)", 4, 5, "struct-battle-tent-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("museum-slateport", "Slateport museum (6×5)", 6, 5, "struct-museum-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("center-slateport", "Slateport Pokémon Center (4×4)", 4, 4, "struct-center-slateport",
+      "Harvested whole from the Slateport City render; stands on the harbour plaza."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("shipyard-slateport", "Stern's shipyard (7×6)", 7, 6, "struct-shipyard-slateport",
+      "Harvested whole from the Slateport City render; stands on the dockside."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("lighthouse-slateport", "Slateport lighthouse (3×4)", 3, 4, "struct-lighthouse-slateport",
+      "Harvested whole from the Slateport City render; plaza wall keyed from its tip."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("gym-rustboro", "Rustboro gym (7×5)", 7, 5, "struct-gym-rustboro",
+      "Harvested whole from the Rustboro City render; stands on the city's paving."),
+    ground: "road",
+  },
+  buildingFormation("treehouse", "Fortree treehouse (3×6)", 3, 6, "struct-treehouse",
+    "Harvested whole from the Fortree City render; canopy crown to fern-covered stilts."),
+  {
+    ...buildingFormation("house-lilycove", "Lilycove house (4×4)", 4, 4, "struct-house-lilycove",
+      "Harvested whole from the Lilycove City render; stands on the city's paving."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("dept-store", "Lilycove department store (10×7)", 10, 7, "struct-dept-store",
+      "Harvested whole from the Lilycove City render; back-fence scenery keyed from its roofline."),
+    ground: "road",
+  },
+  {
+    ...buildingFormation("devon-corp", "Devon Corporation (8×8)", 8, 8, "struct-devon-corp",
+      "Harvested whole from the Rustboro City render; stands on the city's paving."),
+    ground: "road",
+  },
+  buildingFormation("gym-fortree", "Fortree gym (6×5)", 6, 5, "struct-gym-fortree",
+    "Harvested whole from the Fortree City render; grass-backed."),
+  buildingFormation("museum-stone", "Stone museum (3×5)", 3, 5, "museum-stone",
+    "Harvested whole from the exterior sheet's stone hall; grass-backed."),
+  buildingFormation("gallery-stone", "Stone gallery (4×5)", 4, 5, "gallery-stone",
+    "Composed from the stone museum's modular bays as one 4×5 block."),
+  buildingFormation("grand-stone", "Grand stone hall (5×6)", 5, 6, "grand-stone",
+    "Composed from the stone museum's modular bays as one 5×6 block."),
+  buildingFormation("brick-flat", "Brick block (4×3)", 4, 3, "brick-flat",
+    "Harvested whole from the exterior sheet; background over its parapet is keyed to show the ground."),
+  {
+    ...buildingFormation("tree-grand", "Big canopy tree (2×2)", 2, 2, "tree-grand",
+      "A free-standing 2×2 canopy tree harvested from the Littleroot Town render."),
     ground: "grass",
-    walkableSlots: [],
-    reason:
-      "The big tree is one 2×3 sprite (crown over trunk). Random single slices were exactly the cut-off trees bug — formation-only now.",
   },
   {
     id: "dome",
@@ -388,8 +550,12 @@ export function validateDesign(grid: Grid): Violation[] {
         if (expected.prefix && !img.startsWith(expected.prefix)) {
           violations.push({ col, row, rule: "water-autotile", detail: `"${img}" should be a "${expected.prefix}*" ripple` });
         }
-        if (!grid[row][col].solid) {
+        const bridged = /^bridge-[hv]-1$/.test(grid[row][col].img2 ?? "");
+        if (!grid[row][col].solid && !bridged) {
           violations.push({ col, row, rule: "water-solidity", detail: "water must be solid" });
+        }
+        if (bridged && grid[row][col].solid) {
+          violations.push({ col, row, rule: "bridge-solidity", detail: "plank bridges are walkable decks" });
         }
       }
     }

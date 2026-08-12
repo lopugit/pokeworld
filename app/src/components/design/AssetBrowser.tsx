@@ -53,6 +53,8 @@ function AssetDetailModal({ item, onClose }: { item: AssetItem; onClose: () => v
         <div className="flex min-h-32 items-center justify-center rounded-lg bg-slate-800/80 p-6">
           {item.kind === "animation" ? (
             <AnimationSprite animation={item.animation} scale={5} playing={playing} fpsOverride={fps} />
+          ) : item.kind === "single" && item.src.endsWith(".m4a") ? (
+            <audio controls autoPlay src={item.src} className="w-full" />
           ) : (
             <SpriteThumb item={item} scale={6} />
           )}
@@ -170,7 +172,12 @@ export function AssetBrowser() {
   }, []);
 
   const results = useMemo(
-    () => (database ? searchAssets(database, query, category) : []),
+    () =>
+      database
+        ? searchAssets(database, query, category).sort(
+            (a, b) => Number(b.whole ?? false) - Number(a.whole ?? false),
+          )
+        : [],
     [database, query, category],
   );
   const { visible, hasMore, sentinelRef } = useInfiniteReveal(results, 120);
@@ -220,22 +227,36 @@ export function AssetBrowser() {
         {query ? ` matching “${query}”` : ""}
       </p>
 
-      <div className="flex flex-wrap gap-2">
-        {visible.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => setSelected(item)}
-            title={item.name}
-            className="flex min-h-20 min-w-20 flex-col items-center justify-end gap-1 rounded-lg border border-slate-700 bg-slate-800/70 p-2 hover:border-emerald-500 hover:bg-slate-700/80"
-          >
-            <SpriteThumb item={item} scale={3} />
-            {item.kind !== "cell" && (
-              <span className="max-w-28 truncate text-[10px] text-slate-400">{item.name}</span>
+      {[
+        { label: "Whole objects", items: visible.filter((item) => item.whole) },
+        { label: "Individual tiles & sprites", items: visible.filter((item) => !item.whole) },
+      ]
+        .filter((group) => group.items.length > 0)
+        .map((group, index, groups) => (
+          <div key={group.label} className={index > 0 ? "mt-6" : ""}>
+            {groups.length > 1 && (
+              <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+                {group.label}
+              </h3>
             )}
-          </button>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setSelected(item)}
+                  title={item.name}
+                  className="flex min-h-20 min-w-20 flex-col items-center justify-end gap-1 rounded-lg border border-slate-700 bg-slate-800/70 p-2 hover:border-emerald-500 hover:bg-slate-700/80"
+                >
+                  <SpriteThumb item={item} scale={3} />
+                  {item.kind !== "cell" && (
+                    <span className="max-w-28 truncate text-[10px] text-slate-400">{item.name}</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
-      </div>
       {hasMore && (
         <div ref={sentinelRef} className="py-6 text-center text-sm text-slate-500">
           Loading more assets…

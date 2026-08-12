@@ -48,6 +48,10 @@ metadata the server emits, and unknown features are inert.
 - Lazy full-world regeneration consumes the public daily generation quota
   (default 500 blocks/UTC day). `POKEWORLD_GENERATION_DAILY_LIMIT` widens it
   temporarily during a migration window.
+- The deployment's algorithm version is observable: `/api/health` reports
+  `mapBlockVersion`, and `/api/blocks` + `/api/map-jobs` (+ `/:runId`)
+  responses carry `version: MAP_BLOCK_VERSION`, so clients and audits can
+  compare served tiles (`tile.version`) against the deployment.
 
 ## Map block streaming protocol (server → client)
 
@@ -78,7 +82,7 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 | `field-item`        | `field-item-N`         | Solid until collected via A-press facing it. Item is seeded from coords (`hashUnit(mapX, mapY, 'field-item')`), goes to BAG, overlay hidden afterwards, collection persisted client-side by world coord key. |
 | `sign`              | `route-sign-N`         | A-press shows seeded signpost dialog. |
 | `cave-entrance`     | `cave-N` / `cave-door-1` | A-press shows cave dialog (interiors: future iteration). `cave-door-1` fills the mountain-8 slot of 3×3 mountains. |
-| `house`             | `house-red-N`          | A-press on a door row shows flavor dialog. |
+| `house`             | `{house-red,house-wide,house-grand,house-manor,struct-pokecenter,struct-pokemart}-N` | A-press on a door row shows flavor dialog. One structure per structure SITE: sites are hash-minimum cells of the world-space building mask (8-way, computed over `state.tiles.cache` so a google building spanning block seams still yields exactly one structure; window 13 tiles, influence ≤ 1 block ring = the edge re-stitch healing radius). The family (footprint 3×4 up to 6×5) scales with the site's locally connected building area. `houseKind` carries the family prefix, `houseSite` the world grid cell (`"gx,gy"`) that owns the structure. |
 | `long-grass`        | `grass-2`              | Reserved for wild encounters (future). |
 | any tile            |                        | `solid: true` blocks movement. A missing tile inside a loaded block stays walkable, but an absent destination block is a hard streaming boundary until it arrives. |
 

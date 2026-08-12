@@ -8,6 +8,7 @@ import {
   hasEveryRequestedBlock,
 } from "../../../services/map/stored-blocks";
 import type { MapGenerationResult } from "../../../services/map/types";
+import { MAP_BLOCK_VERSION } from "../../../services/map/version";
 import { errorResponse, jsonResponse } from "../../../utils/http";
 
 // Workflow run bookkeeping can report "running" long after every requested
@@ -56,14 +57,15 @@ export default defineEventHandler(async (event) => {
           runId,
           status: completed ? "completed" : status,
           source: stored.blocks.length > 0 ? "stored-blocks-progress" : undefined,
+          version: MAP_BLOCK_VERSION,
         });
       }
-      return jsonResponse({ blocks: [], runId, status });
+      return jsonResponse({ blocks: [], runId, status, version: MAP_BLOCK_VERSION });
     }
 
     const result = (await run.returnValue) as MapGenerationResult;
     const blocks = result.inlineBlocks ?? (await getStoredBlocks(result.requested)) ?? [];
-    return jsonResponse({ blocks, requested: result.requested, runId, status });
+    return jsonResponse({ blocks, requested: result.requested, runId, status, version: MAP_BLOCK_VERSION });
   } catch (error) {
     return errorResponse(error, generationControlStatus(error, 500));
   }

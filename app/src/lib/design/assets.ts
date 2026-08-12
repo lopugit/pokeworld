@@ -47,7 +47,7 @@ export interface AssetManifest {
   animations: ManifestAnimation[];
 }
 
-export type AssetItem =
+export type AssetItem = { whole?: boolean } & (
   | {
       kind: "single";
       id: string;
@@ -83,7 +83,8 @@ export type AssetItem =
       tags: string[];
       search: string;
       animation: ManifestAnimation;
-    };
+    }
+);
 
 export interface AssetDatabase {
   items: AssetItem[];
@@ -96,16 +97,22 @@ const CATEGORY_LABELS: Record<string, string> = {
   vegetation: "Vegetation",
   ground: "Ground & paths",
   terrain: "Terrain",
-  building: "Buildings",
+  building: "Buildings & structures",
   prop: "Props & signs",
   character: "Characters",
   pokemon: "Pokémon",
   misc: "Misc",
   rock: "Rock & cave",
-  structure: "Structures",
+  town: "Town maps",
+  item: "Items",
+  audio: "Audio",
   interior: "Interiors",
   animation: "Animations",
 };
+
+// The exterior sheet's auto-classified "structure" cells and the shipped
+// building tiles are one browsing concern — a single merged category.
+const mergedCategory = (category: string) => (category === "structure" ? "building" : category);
 
 export const categoryLabel = (id: string) => CATEGORY_LABELS[id] ?? id;
 
@@ -133,8 +140,15 @@ function buildDatabase(manifest: AssetManifest): AssetDatabase {
       kind: "single",
       id: single.id,
       name: single.name,
-      category: single.category,
+      category: mergedCategory(single.category),
       tags: single.tags,
+      // A "whole object" is anything that is a complete visual thing on its
+      // own: composed formations, standalone props (even 1-tile flowers),
+      // town maps, and every character / Pokémon sprite. Autotile pieces,
+      // formation part-tiles and sheet cells are "individual tiles".
+      whole:
+        single.tags.includes("whole-object") ||
+        ["pokemon", "character", "town"].includes(mergedCategory(single.category)),
       search: `${single.name} ${single.category} ${single.tags.join(" ")} ${single.src}`.toLowerCase(),
       src: single.src,
       w: single.w,
@@ -149,6 +163,7 @@ function buildDatabase(manifest: AssetManifest): AssetDatabase {
       id: animation.id,
       name: animation.name,
       category: "animation",
+      whole: true,
       tags: animation.tags,
       search: `${animation.name} animation ${animation.category} ${animation.tags.join(" ")}`.toLowerCase(),
       animation,
@@ -161,7 +176,7 @@ function buildDatabase(manifest: AssetManifest): AssetDatabase {
     const isInterior = sheet.id === "in";
     for (const [x, y, categoryIndex] of cells) {
       const heuristic = manifest.cellCategories[categoryIndex] ?? "structure";
-      const category = isInterior ? "interior" : heuristic;
+      const category = isInterior ? "interior" : mergedCategory(heuristic);
       const name = `${isInterior ? "Interior" : "Exterior"} tile (${x}, ${y})`;
       items.push({
         kind: "cell",

@@ -7,6 +7,7 @@ import {
 } from "../../services/map/generation-job";
 import { generationControlStatus } from "../../services/map/generation-policy";
 import { parseMapJobInput } from "../../services/map/input";
+import { MAP_BLOCK_VERSION } from "../../services/map/version";
 import { errorResponse, jsonResponse } from "../../utils/http";
 
 export default defineEventHandler(async (event) => {
@@ -19,6 +20,7 @@ export default defineEventHandler(async (event) => {
         blocks: prepared.blocks,
         requested: prepared.requested,
         status: "completed",
+        version: MAP_BLOCK_VERSION,
       });
     }
 
@@ -35,6 +37,7 @@ export default defineEventHandler(async (event) => {
         requested: prepared.requested,
         runId: run.runId,
         status: "queued",
+        version: MAP_BLOCK_VERSION,
       },
       { status: 202 },
     );
