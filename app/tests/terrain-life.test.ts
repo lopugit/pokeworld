@@ -444,20 +444,48 @@ describe("terrain sprite stitching", () => {
     expect(houseTilesOf(forward.blocks)).toEqual(houseTilesOf(reverse.blocks));
   });
 
-  it("keeps one structure for a mass spanning three blocks (triple-house regression)", () => {
-    const { state, blocks } = makeWorldState([
-      { x: 0, y: 0 },
-      { x: 1, y: 0 },
-      { x: 2, y: 0 },
-    ]);
-    paintWorldBuilding(state, 8, 40, 1, 4);
-    for (const block of blocks) terrainLife.run(state, block);
-    for (const block of blocks) terrainLife.run(state, block);
+  it("spaces structures out on a mass spanning three blocks (triple-house regression)", () => {
+    const run = (order: number[]) => {
+      const world = makeWorldState([
+        { x: 0, y: 0 },
+        { x: 1, y: 0 },
+        { x: 2, y: 0 },
+      ]);
+      paintWorldBuilding(world.state, 8, 40, 1, 4);
+      for (const index of order) terrainLife.run(world.state, world.blocks[index]);
+      for (const index of order) terrainLife.run(world.state, world.blocks[index]);
+      return world;
+    };
 
-    const structures = worldStructures(blocks);
-    expect(structures).toHaveLength(1);
-    expect(["house-manor", "struct-trick-house"]).toContain(structures[0].kind);
-    expect(structures[0].tiles).toBe(30);
+    const forward = run([0, 1, 2]);
+    const structures = worldStructures(forward.blocks);
+    // A 33x4 merged terrace no longer yields one clone per block slice
+    // crammed against the seams: hash-minimum sites thin the mass to a
+    // handful of manor-tier structures at least SITE_WINDOW+1 tiles apart
+    // (typically just one).
+    expect(structures.length).toBeGreaterThanOrEqual(1);
+    expect(structures.length).toBeLessThanOrEqual(3);
+    for (const structure of structures) {
+      expect(["house-manor", "struct-trick-house"]).toContain(structure.kind);
+      expect(structure.tiles).toBe(30);
+    }
+    const centers = forward.blocks.flatMap((block) =>
+      block.tiles.filter((tile) => tile.feature === "house" && tile.houseTile === 1),
+    );
+    for (const first of centers) {
+      for (const second of centers) {
+        if (first === second) continue;
+        const distance = Math.max(
+          Math.abs(first.mapX - second.mapX) / 32,
+          Math.abs(first.mapY - second.mapY) / 32,
+        );
+        expect(distance).toBeGreaterThanOrEqual(6);
+      }
+    }
+
+    // Generation order must not matter.
+    const reverse = run([2, 1, 0]);
+    expect(worldStructures(reverse.blocks)).toEqual(structures);
   });
 
   it("keeps one structure across a vertical (north/south) block seam", () => {

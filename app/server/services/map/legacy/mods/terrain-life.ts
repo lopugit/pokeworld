@@ -293,20 +293,18 @@ const stitchSurfaces = (state, tiles) => {
 	}
 }
 
-// --- world-space building components ---------------------------------------
+// --- world-space structure sites --------------------------------------------
 // Google building footprints routinely span map-block boundaries, and the
-// classifier can leave diagonal-only joins inside one roof mass. Components
-// are therefore traced in WORLD tile coordinates over every tile the
+// classifier can leave diagonal-only joins inside one roof mass. Structures
+// are therefore planned in WORLD tile coordinates over every tile the
 // generation state can see (this block, the ring of edge blocks that re-run
-// their mods alongside it, and any stored neighbours), with 8-way
-// connectivity — so one real-world building resolves to ONE component no
-// matter how many blocks it crosses.
+// their mods alongside it, and stored neighbours), with 8-way connectivity.
 const worldTileAt = (state, gridX, gridY) => getTile(state, gridX * TILE_SIZE, gridY * TILE_SIZE)
 const localIndex = value => ((value % BLOCK_TILES) + BLOCK_TILES) % BLOCK_TILES
 // Every block's central 4x4 landing is flattened to grass by ensureSpawnRoute,
 // but a neighbouring block may not have run yet when this one stitches.
-// Excluding landings from the mask up front keeps the component view
-// identical no matter which block generates first.
+// Excluding landings from the mask up front keeps the mask view identical no
+// matter which block generates first.
 const isCentralLandingWorld = (gridX, gridY) =>
 	localIndex(gridX) >= 6 && localIndex(gridX) <= 9 && localIndex(gridY) >= 6 && localIndex(gridY) <= 9
 const inBuildingMask = (state, gridX, gridY) => {
@@ -314,44 +312,63 @@ const inBuildingMask = (state, gridX, gridY) => {
 	return Boolean(tile) && terrainOf(tile) === 'building' && !isCentralLandingWorld(gridX, gridY)
 }
 
-// Safety valve for pathological masks (airports, malls): a component stops
-// growing here. Blocks more than a couple of seams apart may then disagree
-// about its extent, which at worst yields one structure per far-apart region.
-const WORLD_COMPONENT_LIMIT = 4096
+// A structure SITE is a building-mask cell whose seeded hash is the minimum
+// among the mask cells it can reach inside a SITE_WINDOW box (its "locally
+// connected" building). The rule has strictly local support: everything a
+// site decision reads lies within SITE_WINDOW + SITE_SCAN_MARGIN = 16 tiles
+// = ONE block ring, which is exactly the ring regenerateEdgeBlocks re-runs.
+// A later neighbour can therefore always heal earlier partial-view stitches,
+// and no two same-building sites can sit closer than SITE_WINDOW + 1 tiles —
+// a building that fits in the window yields exactly ONE structure no matter
+// how many block seams it crosses, while giant merged masses (city terraces)
+// yield well-spaced structures instead of seam-hugging clones.
+const SITE_WINDOW = 13
+const SITE_SCAN_MARGIN = 3
+const ANCHOR_DRIFT = 4
 
-const worldBuildingComponents = (state, tiles) => {
-	const seen = new Set()
-	const components = []
+const siteRankLess = (aX, aY, bX, bY) => {
+	const aHash = hashUnit(aX, aY, 'structure-site')
+	const bHash = hashUnit(bX, bY, 'structure-site')
+	return aHash - bHash || aX - bX || aY - bY
+}
 
-	for (const seed of tiles) {
-		const seedX = Math.floor(seed.mapX / TILE_SIZE)
-		const seedY = Math.floor(seed.mapY / TILE_SIZE)
-		const seedKey = tileKey(seedX, seedY)
-		if (seen.has(seedKey) || !inBuildingMask(state, seedX, seedY)) continue
-
-		seen.add(seedKey)
-		const queue = [[seedX, seedY]]
-		const cells = []
-		while (queue.length) {
-			const [gridX, gridY] = queue.shift()
-			cells.push({ gridX, gridY })
-			if (cells.length >= WORLD_COMPONENT_LIMIT) break
-			for (let offsetY = -1; offsetY <= 1; offsetY++) {
-				for (let offsetX = -1; offsetX <= 1; offsetX++) {
-					if (!offsetX && !offsetY) continue
-					const nextX = gridX + offsetX
-					const nextY = gridY + offsetY
-					const nextKey = tileKey(nextX, nextY)
-					if (seen.has(nextKey) || !inBuildingMask(state, nextX, nextY)) continue
-					seen.add(nextKey)
-					queue.push([nextX, nextY])
-				}
+const locallyConnectedMask = (state, gridX, gridY) => {
+	const cells = [[gridX, gridY]]
+	const seen = new Set([tileKey(gridX, gridY)])
+	for (let index = 0; index < cells.length; index++) {
+		const [cellX, cellY] = cells[index]
+		for (let offsetY = -1; offsetY <= 1; offsetY++) {
+			for (let offsetX = -1; offsetX <= 1; offsetX++) {
+				if (!offsetX && !offsetY) continue
+				const nextX = cellX + offsetX
+				const nextY = cellY + offsetY
+				if (Math.abs(nextX - gridX) > SITE_WINDOW || Math.abs(nextY - gridY) > SITE_WINDOW) continue
+				const key = tileKey(nextX, nextY)
+				if (seen.has(key) || !inBuildingMask(state, nextX, nextY)) continue
+				seen.add(key)
+				cells.push([nextX, nextY])
 			}
 		}
-		components.push(cells)
 	}
+	return cells
+}
 
-	return components
+const structureSites = (state, block) => {
+	const sites = []
+	const fromX = block.x * BLOCK_TILES - SITE_SCAN_MARGIN
+	const toX = (block.x + 1) * BLOCK_TILES + SITE_SCAN_MARGIN
+	const fromY = block.y * BLOCK_TILES - SITE_SCAN_MARGIN
+	const toY = (block.y + 1) * BLOCK_TILES + SITE_SCAN_MARGIN
+	for (let gridY = fromY; gridY < toY; gridY++) {
+		for (let gridX = fromX; gridX < toX; gridX++) {
+			if (!inBuildingMask(state, gridX, gridY)) continue
+			const local = locallyConnectedMask(state, gridX, gridY)
+			if (local.length < 3) continue
+			if (local.some(([cellX, cellY]) => (cellX !== gridX || cellY !== gridY) && siteRankLess(cellX, cellY, gridX, gridY) < 0)) continue
+			sites.push({ gridX, gridY, size: local.length })
+		}
+	}
+	return sites.sort((a, b) => a.gridX - b.gridX || a.gridY - b.gridY)
 }
 
 const footprintAt = (byGrid, left, top, columns, rows) => {
@@ -366,13 +383,13 @@ const footprintAt = (byGrid, left, top, columns, rows) => {
 	return footprint
 }
 
-// Building sprite families, ordered largest-first. Each detected google-maps
-// building component places exactly ONE structure; the family is chosen from
-// the component's tile area so bigger real-world buildings become bigger
+// Building sprite families, ordered largest-first. Each structure site places
+// exactly ONE structure; the family is chosen from the site's locally
+// connected building area so bigger real-world buildings become bigger
 // sprites. The larger homes are composed from the red house's own cells (see
 // scripts/map/extract-terrain-tiles.mjs) and the mid tier mixes in the whole
 // 4x4 Pokémon Center / PokéMart harvests as town landmarks. When the
-// preferred family cannot fit near the component, the search degrades tier by
+// preferred family cannot fit near the site, the search degrades tier by
 // tier down to the small cottage before giving up.
 const BUILDING_TIERS = [
 	{
@@ -409,59 +426,44 @@ const BUILDING_TIERS = [
 	{ minArea: 0, variants: [{ prefix: 'house-red', columns: 3, rows: 4 }] },
 ]
 
-const componentBounds = component => {
-	let minX = Infinity
-	let maxX = -Infinity
-	let minY = Infinity
-	let maxY = -Infinity
-	let sumX = 0
-	let sumY = 0
-	for (const { gridX, gridY } of component) {
-		minX = Math.min(minX, gridX)
-		maxX = Math.max(maxX, gridX)
-		minY = Math.min(minY, gridY)
-		maxY = Math.max(maxY, gridY)
-		sumX += gridX
-		sumY += gridY
-	}
-	return { minX, maxX, minY, maxY, centroidX: sumX / component.length, centroidY: sumY / component.length }
-}
-
-const chooseBuildingVariant = (tier, bounds) => {
+const chooseBuildingVariant = (tier, site) => {
 	if (tier.variants.length === 1) return tier.variants[0]
-	// Seeded from the component's own world-space corner so every block that
-	// can see the component rolls the same variant.
-	const roll = hashUnit(bounds.minX, bounds.minY, 'building-style')
+	// Seeded from the site's own world cell so every block that can see the
+	// site rolls the same variant.
+	const roll = hashUnit(site.gridX, site.gridY, 'building-style')
 	return tier.variants[Math.floor(roll * tier.variants.length)]
 }
 
-// One deterministic anchor per world-space component. Footprints are laid out
-// from a north-west corner cell (world grid coords, +gridY = north) and must
-// sit entirely inside ONE block: every block that sees the same component
-// derives the same anchor, and only the block that owns it paints — which is
-// what keeps a seam-spanning building down to a single structure.
-const ANCHOR_SEARCH_MARGIN = 4
-
-const findWorldStructureAnchor = (state, block, occupied, bounds, columns, rows) => {
+// One deterministic anchor per structure site. Footprints are laid out from a
+// north-west corner cell (world grid coords, +gridY = north), must sit
+// entirely inside ONE block, and their centre may drift at most ANCHOR_DRIFT
+// tiles from the site: every block that sees the site derives the same
+// anchor, and only the block that owns it paints — which is what keeps a
+// seam-spanning building down to a single structure.
+const findSiteAnchor = (state, block, occupied, site, columns, rows) => {
+	const halfColumns = (columns - 1) / 2
+	const halfRows = (rows - 1) / 2
 	const candidates = []
-	for (let top = bounds.maxY + rows + ANCHOR_SEARCH_MARGIN - 1; top >= bounds.minY - ANCHOR_SEARCH_MARGIN; top--) {
+	for (let top = Math.ceil(site.gridY + ANCHOR_DRIFT + halfRows); top >= Math.floor(site.gridY - ANCHOR_DRIFT + halfRows); top--) {
 		if (Math.floor((top - rows + 1) / BLOCK_TILES) !== Math.floor(top / BLOCK_TILES)) continue
-		for (let left = bounds.minX - columns - ANCHOR_SEARCH_MARGIN + 1; left <= bounds.maxX + ANCHOR_SEARCH_MARGIN; left++) {
+		for (let left = Math.ceil(site.gridX - ANCHOR_DRIFT - halfColumns); left <= Math.floor(site.gridX + ANCHOR_DRIFT - halfColumns); left++) {
 			if (Math.floor(left / BLOCK_TILES) !== Math.floor((left + columns - 1) / BLOCK_TILES)) continue
-			const ownerX = Math.floor(left / BLOCK_TILES)
-			const ownerY = Math.floor(top / BLOCK_TILES)
+			const distance = Math.max(
+				Math.abs(left + halfColumns - site.gridX),
+				Math.abs(top - halfRows - site.gridY),
+			)
+			if (distance > ANCHOR_DRIFT) continue
 			candidates.push({
 				left,
 				top,
-				ownerX,
-				ownerY,
-				distance: Math.abs(left + ((columns - 1) / 2) - bounds.centroidX)
-					+ Math.abs(top - ((rows - 1) / 2) - bounds.centroidY),
+				distance,
+				ownerX: Math.floor(left / BLOCK_TILES),
+				ownerY: Math.floor(top / BLOCK_TILES),
 			})
 		}
 	}
-	// Nearest to the component's centroid, ties broken north-then-west so the
-	// ordering is identical from every viewing block.
+	// Nearest to the site, ties broken north-then-west so the ordering is
+	// identical from every viewing block.
 	candidates.sort((a, b) => a.distance - b.distance || b.top - a.top || a.left - b.left)
 
 	const mine = block ? `${block.x},${block.y}` : null
@@ -514,30 +516,24 @@ const applyRockyApron = (byGrid, occupied, left, top, width, height) => {
 	}
 }
 
-// A structure's anchor may land in ANY block whose tiles are visible in the
-// state cache. Whichever block owns the anchor paints it: blocks generated in
-// the same pass compute the identical anchor from the identical terrain, and
-// a stored neighbour already painted that same anchor when it converged with
-// this seam (its edge re-run sees the full component too), so exactly one
-// structure survives per component.
+// A site's anchor may land in ANY block whose tiles are visible in the state
+// cache. Whichever block owns the anchor paints it: blocks generated in the
+// same pass compute the identical anchor from the identical terrain, and a
+// stored neighbour already painted that same anchor when its own stitching
+// converged with this seam, so exactly one structure survives per site.
 const stitchHouses = (state, tiles, block) => {
-	// Deterministic world-space processing order keeps the occupied-set
-	// evolution aligned between blocks that share seam components.
-	const components = worldBuildingComponents(state, tiles)
-		.map(component => ({ component, bounds: componentBounds(component) }))
-		.sort((a, b) => a.bounds.minX - b.bounds.minX || a.bounds.minY - b.bounds.minY)
 	const occupied = new Set()
 	let houseNumber = 0
 
-	for (const { component, bounds } of components.filter(value => value.component.length >= 3)) {
-		const tierIndex = BUILDING_TIERS.findIndex(tier => component.length >= tier.minArea)
-		// One structure per detected building: try the size-matched family
-		// first, then fall through the smaller tiers until one fits.
+	for (const site of structureSites(state, block)) {
+		const tierIndex = BUILDING_TIERS.findIndex(tier => site.size >= tier.minArea)
+		// One structure per site: try the size-matched family first, then fall
+		// through the smaller tiers until one fits.
 		for (let fallback = tierIndex; fallback < BUILDING_TIERS.length; fallback++) {
-			const variant = chooseBuildingVariant(BUILDING_TIERS[fallback], bounds)
-			const anchor = findWorldStructureAnchor(state, block, occupied, bounds, variant.columns, variant.rows)
+			const variant = chooseBuildingVariant(BUILDING_TIERS[fallback], site)
+			const anchor = findSiteAnchor(state, block, occupied, site, variant.columns, variant.rows)
 			if (!anchor) continue
-			// Deterministic single owner: every block sharing this component
+			// Deterministic single owner: every block that sees this site
 			// computes the same anchor, and only the owning block paints it.
 			if (anchor.ownerX === block.x && anchor.ownerY === block.y) {
 				houseNumber += 1
@@ -549,6 +545,7 @@ const stitchHouses = (state, tiles, block) => {
 					tile.houseId = houseNumber
 					tile.houseKind = variant.prefix
 					tile.houseTile = index + 1
+					tile.houseSite = `${site.gridX},${site.gridY}`
 					tile.solid = true
 				})
 			}
