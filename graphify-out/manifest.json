@@ -9130,13 +9130,13 @@
     "semantic_hash": ""
   },
   "app/public/design/asset-manifest.json": {
-    "mtime": 1786261652.3467994,
-    "ast_hash": "2ea8542da71f5c1adc1eaacdd8ddefd8",
+    "mtime": 1786508591.8669372,
+    "ast_hash": "e9f12c2f78176fa9d3b554e670345e60",
     "semantic_hash": ""
   },
   "app/scripts/design/build-asset-manifest.mjs": {
-    "mtime": 1786261639.2193222,
-    "ast_hash": "ea4547ec113e1e5c9b7fd6fa79cecf16",
+    "mtime": 1786263512.704467,
+    "ast_hash": "5d05f255cf744ef6ad2ce1b4ab86f9a9",
     "semantic_hash": ""
   },
   "app/src/lib/battle.ts": {
@@ -9165,12 +9165,12 @@
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-character-male.png": {
-    "mtime": 1786261652.04501,
+    "mtime": 1786508591.5062323,
     "ast_hash": "ea113d178bf0b311df317c189bb4178e",
     "semantic_hash": ""
   },
   "app/public/design/sheets/emerald-exterior.png": {
-    "mtime": 1786261652.0447848,
+    "mtime": 1786508591.5055523,
     "ast_hash": "921c1cff32371087c93c5c4c0bb43cd8",
     "semantic_hash": ""
   },
@@ -10195,8 +10195,8 @@
     "semantic_hash": ""
   },
   "app/scripts/design/fetch-emerald-towns.mjs": {
-    "mtime": 1786261287.7732925,
-    "ast_hash": "27dd4e68f4cb0e9475b59e8e04579457",
+    "mtime": 1786264171.596367,
+    "ast_hash": "7fee8de488b7d73dac16671fada11d1e",
     "semantic_hash": ""
   },
   "app/map-assets/pret/data/tilesets/primary/general/tiles.png": {
@@ -10270,107 +10270,107 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/big-tree.png": {
-    "mtime": 1786261650.1122046,
-    "ast_hash": "ae5c7d7cb77849ad410f5ace62d089b8",
+    "mtime": 1786508588.2636733,
+    "ast_hash": "74a81dc842c1c77b225009bdc82959f5",
     "semantic_hash": ""
   },
   "app/public/design/composed/contest-hall.png": {
-    "mtime": 1786261650.0458186,
+    "mtime": 1786508588.16097,
     "ast_hash": "6f906b827b720dee4786a2a1864de051",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-mauville.png": {
-    "mtime": 1786261650.0569217,
+    "mtime": 1786508588.1774635,
     "ast_hash": "f28976709706e08a2c7ba8cf86fca216",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-mossdeep.png": {
-    "mtime": 1786261650.0595145,
+    "mtime": 1786508588.181663,
     "ast_hash": "af535c7cd2f9b652015ee9a077d0e8e6",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-petalburg.png": {
-    "mtime": 1786261650.0533185,
+    "mtime": 1786508588.1733432,
     "ast_hash": "d154a877fb2284d581d45c28ed2820db",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-berry.png": {
-    "mtime": 1786261650.0547886,
+    "mtime": 1786508588.1747649,
     "ast_hash": "30dd7fd17cb3c9d846b6de2c3e07043c",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-grand.png": {
-    "mtime": 1786261650.0405426,
+    "mtime": 1786508588.152803,
     "ast_hash": "3a138105b01a31337bb8d395f5f43e2b",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-littleroot.png": {
-    "mtime": 1786261650.0494926,
+    "mtime": 1786508588.1660576,
     "ast_hash": "fbfe5883d11f5158e589bea65647def4",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-manor.png": {
-    "mtime": 1786261650.04219,
+    "mtime": 1786508588.1561086,
     "ast_hash": "355f3ce9710c6cb165010bca21d3ac89",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-mossdeep.png": {
-    "mtime": 1786261650.0586503,
+    "mtime": 1786508588.1800408,
     "ast_hash": "719a3ec455d2ef17212cc9cc46903e15",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-red.png": {
-    "mtime": 1786261650.0377202,
+    "mtime": 1786508588.1474545,
     "ast_hash": "93479997cbf69766124a6beb40d27dba",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-wide.png": {
-    "mtime": 1786261650.0391965,
+    "mtime": 1786508588.1497161,
     "ast_hash": "c8b120d19ea071f91353b3dcf964676e",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-wood.png": {
-    "mtime": 1786261650.064144,
+    "mtime": 1786508588.1894999,
     "ast_hash": "8debe9b034db1793695ef3821afab28e",
     "semantic_hash": ""
   },
   "app/public/design/composed/hut-pacifidlog.png": {
-    "mtime": 1786261650.0665336,
+    "mtime": 1786508588.192897,
     "ast_hash": "9d798851ef27e0eb207c02876a579ee4",
     "semantic_hash": ""
   },
   "app/public/design/composed/lab-birch.png": {
-    "mtime": 1786261650.051682,
+    "mtime": 1786508588.1704247,
     "ast_hash": "1c960f50df89b6e2c7f731c7636322e7",
     "semantic_hash": ""
   },
   "app/public/design/composed/lodge-log.png": {
-    "mtime": 1786261650.0478287,
+    "mtime": 1786508588.1638765,
     "ast_hash": "68f76e6de11d0c62f5203cfdc8f89449",
     "semantic_hash": ""
   },
   "app/public/design/composed/pokecenter.png": {
-    "mtime": 1786261650.0431802,
+    "mtime": 1786508588.157784,
     "ast_hash": "4ee5ec842dd0d0361526b101023ae977",
     "semantic_hash": ""
   },
   "app/public/design/composed/pokemart.png": {
-    "mtime": 1786261650.0441146,
+    "mtime": 1786508588.159241,
     "ast_hash": "e388606a52edc6207a01807af5df23a9",
     "semantic_hash": ""
   },
   "app/public/design/composed/shop-mauville.png": {
-    "mtime": 1786261650.0577517,
+    "mtime": 1786508588.17848,
     "ast_hash": "95c04130ad795d2d7ca06c6369b66f91",
     "semantic_hash": ""
   },
   "app/public/design/composed/spacecenter.png": {
-    "mtime": 1786261650.0630116,
+    "mtime": 1786508588.187613,
     "ast_hash": "87e3b9e8d80212bb4ad0b1456dcb78eb",
     "semantic_hash": ""
   },
   "app/public/design/composed/tower-white.png": {
-    "mtime": 1786261650.046548,
+    "mtime": 1786508588.1618028,
     "ast_hash": "36270d6242eb79ba2d08512ea9b0dce7",
     "semantic_hash": ""
   },
@@ -12235,22 +12235,22 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/brick-flat.png": {
-    "mtime": 1786261650.117191,
+    "mtime": 1786508588.2703419,
     "ast_hash": "4d051c7485b2a6061666f243d557dde3",
     "semantic_hash": ""
   },
   "app/public/design/composed/gallery-stone.png": {
-    "mtime": 1786261650.1144602,
+    "mtime": 1786508588.2665503,
     "ast_hash": "230b23cfc8bdf8b3ea1a455857fac8c5",
     "semantic_hash": ""
   },
   "app/public/design/composed/grand-stone.png": {
-    "mtime": 1786261650.1164434,
+    "mtime": 1786508588.2691574,
     "ast_hash": "8b2a93651419a4d8d1bd763227f9f787",
     "semantic_hash": ""
   },
   "app/public/design/composed/museum-stone.png": {
-    "mtime": 1786261650.1132188,
+    "mtime": 1786508588.2649581,
     "ast_hash": "66e0ea13841af89d786ea3c7e967e842",
     "semantic_hash": ""
   },
@@ -12880,22 +12880,22 @@
     "semantic_hash": ""
   },
   "app/public/tiles/tree-grand-1.png": {
-    "mtime": 1786207744.7654407,
+    "mtime": 1786264844.9680347,
     "ast_hash": "7df60562fbb77b10ec8dce15e7c5d58b",
     "semantic_hash": ""
   },
   "app/public/tiles/tree-grand-2.png": {
-    "mtime": 1786207744.7655556,
+    "mtime": 1786264844.9684846,
     "ast_hash": "5e0ea845b1286fa962e4c16b1eb55efc",
     "semantic_hash": ""
   },
   "app/public/tiles/tree-grand-3.png": {
-    "mtime": 1786207744.7656505,
-    "ast_hash": "aca044f1fe6d0dda3fa091c733144fdf",
+    "mtime": 1786264844.9688497,
+    "ast_hash": "368ae0a23b5dba05f263172d991766c8",
     "semantic_hash": ""
   },
   "app/public/tiles/tree-grand-4.png": {
-    "mtime": 1786207744.765741,
+    "mtime": 1786264844.9692125,
     "ast_hash": "d494f1ce29f3023ae653f2837b0876db",
     "semantic_hash": ""
   },
@@ -16820,22 +16820,22 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/battle-tent.png": {
-    "mtime": 1786261650.0679593,
+    "mtime": 1786508588.1982336,
     "ast_hash": "65ee5e6089a2badc8b276f61e07c4e73",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-lavaridge.png": {
-    "mtime": 1786261650.0709293,
+    "mtime": 1786508588.2023783,
     "ast_hash": "81f130efc2a28d1932914efb5e12197d",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-lavaridge.png": {
-    "mtime": 1786261650.0720568,
+    "mtime": 1786508588.2038903,
     "ast_hash": "30dd7fd17cb3c9d846b6de2c3e07043c",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-verdanturf.png": {
-    "mtime": 1786261650.0688658,
+    "mtime": 1786508588.2000232,
     "ast_hash": "7318f1afd9dcc85e88f18176cbc014e2",
     "semantic_hash": ""
   },
@@ -17275,12 +17275,12 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/devon-corp.png": {
-    "mtime": 1786261650.076056,
+    "mtime": 1786508588.209618,
     "ast_hash": "c1c424d02d67f9b06d2a585c69e81ead",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-fortree.png": {
-    "mtime": 1786261650.1118205,
+    "mtime": 1786508588.263092,
     "ast_hash": "c930fb6095b395a7745db8cde89e956f",
     "semantic_hash": ""
   },
@@ -17755,22 +17755,22 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/dept-store.png": {
-    "mtime": 1786261650.084016,
+    "mtime": 1786508588.2232177,
     "ast_hash": "6f798cc62a722ac826cefc620538201c",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-rustboro.png": {
-    "mtime": 1786261650.0783415,
+    "mtime": 1786508588.2127671,
     "ast_hash": "f6611c68853d7b246650ddc7af578fee",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-lilycove.png": {
-    "mtime": 1786261650.0805666,
+    "mtime": 1786508588.2168503,
     "ast_hash": "72984525b14e2e7e49575f54591e3d72",
     "semantic_hash": ""
   },
   "app/public/design/composed/treehouse.png": {
-    "mtime": 1786261650.079583,
+    "mtime": 1786508588.214916,
     "ast_hash": "645658e1a46059ef311025d3ea3e3078",
     "semantic_hash": ""
   },
@@ -18470,27 +18470,27 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/battle-tent-slateport.png": {
-    "mtime": 1786261650.085154,
+    "mtime": 1786508588.2256799,
     "ast_hash": "3a84dc6b5f1e239e144bb73fee043a35",
     "semantic_hash": ""
   },
   "app/public/design/composed/center-slateport.png": {
-    "mtime": 1786261650.0887194,
+    "mtime": 1786508588.229611,
     "ast_hash": "6d8371cffb6c4dfcc6e7bf445f05dc3c",
     "semantic_hash": ""
   },
   "app/public/design/composed/lighthouse-slateport.png": {
-    "mtime": 1786261650.092013,
+    "mtime": 1786508588.2336252,
     "ast_hash": "7e46518df2ce49e5b5783045f499a9e0",
     "semantic_hash": ""
   },
   "app/public/design/composed/museum-slateport.png": {
-    "mtime": 1786261650.086805,
+    "mtime": 1786508588.2282872,
     "ast_hash": "d1a9fe800a0862f30792dd10ef49e2c0",
     "semantic_hash": ""
   },
   "app/public/design/composed/shipyard-slateport.png": {
-    "mtime": 1786261650.0911777,
+    "mtime": 1786508588.2325788,
     "ast_hash": "e28c3c226d0c715c0a85bb3f08fc0032",
     "semantic_hash": ""
   },
@@ -19095,22 +19095,22 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/center-sootopolis.png": {
-    "mtime": 1786261650.0965843,
+    "mtime": 1786508588.2409196,
     "ast_hash": "6cb5440ee984d7d4c6d1db153b738dfe",
     "semantic_hash": ""
   },
   "app/public/design/composed/gym-sootopolis.png": {
-    "mtime": 1786261650.0937088,
+    "mtime": 1786508588.2364352,
     "ast_hash": "9b0b8a97228619e25b13e2ffd81b2c6d",
     "semantic_hash": ""
   },
   "app/public/design/composed/house-sootopolis.png": {
-    "mtime": 1786261650.0945022,
+    "mtime": 1786508588.2376478,
     "ast_hash": "bb5215f9e37879873073b3784647fcaf",
     "semantic_hash": ""
   },
   "app/public/design/composed/mart-sootopolis.png": {
-    "mtime": 1786261650.0954385,
+    "mtime": 1786508588.2391472,
     "ast_hash": "93d4300e6991f4fdd064892eadbf9376",
     "semantic_hash": ""
   },
@@ -19485,12 +19485,12 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/daycare.png": {
-    "mtime": 1786261650.0977912,
+    "mtime": 1786508588.2425213,
     "ast_hash": "30dd7fd17cb3c9d846b6de2c3e07043c",
     "semantic_hash": ""
   },
   "app/public/design/composed/flower-shop.png": {
-    "mtime": 1786261650.0995123,
+    "mtime": 1786508588.244683,
     "ast_hash": "50e1cfe9672cfeccd6ae4601b1954d9d",
     "semantic_hash": ""
   },
@@ -19700,12 +19700,12 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/trick-house.png": {
-    "mtime": 1786261650.1068165,
+    "mtime": 1786508588.2552972,
     "ast_hash": "4faf0e7ad6b5d73bdb9ec21e67b81622",
     "semantic_hash": ""
   },
   "app/public/design/composed/weather-institute.png": {
-    "mtime": 1786261650.1045802,
+    "mtime": 1786508588.252505,
     "ast_hash": "da9f9ebcfd3e281b47f8bd9dddf95504",
     "semantic_hash": ""
   },
@@ -20265,17 +20265,17 @@
     "semantic_hash": ""
   },
   "app/public/design/composed/fossil-house.png": {
-    "mtime": 1786261650.1090944,
+    "mtime": 1786508588.2583802,
     "ast_hash": "3b7e6d687cfa7e57929228cfd295f82f",
     "semantic_hash": ""
   },
   "app/public/design/composed/lanette-house.png": {
-    "mtime": 1786261650.110066,
+    "mtime": 1786508588.2599914,
     "ast_hash": "8f44c0b7be20f1887ead7b2080463a0a",
     "semantic_hash": ""
   },
   "app/public/design/composed/seashore-house.png": {
-    "mtime": 1786261650.1080945,
+    "mtime": 1786508588.2569258,
     "ast_hash": "a50a57a21ebdb66b2e1fd06313d06498",
     "semantic_hash": ""
   },
