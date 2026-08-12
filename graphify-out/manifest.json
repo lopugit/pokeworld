@@ -515,9 +515,9 @@
     "semantic_hash": "2a5e5dfe8f5200dc9e1cbedb390e6ee3"
   },
   "app/vite.config.ts": {
-    "mtime": 1786150423.9448564,
-    "ast_hash": "a922b690260002633aa5823d20e0361e",
-    "semantic_hash": "a922b690260002633aa5823d20e0361e"
+    "mtime": 1786177909.6208677,
+    "ast_hash": "7f6aa9218e04dc576018fc4ff06ea0db",
+    "semantic_hash": ""
   },
   "app/vitest.config.ts": {
     "mtime": 1786150423.945306,
@@ -9175,8 +9175,8 @@
     "semantic_hash": ""
   },
   ".claude/launch.json": {
-    "mtime": 1786150422.285181,
-    "ast_hash": "7054b97586196c97bb98d5e1328dfa8e",
+    "mtime": 1786177832.348806,
+    "ast_hash": "1e36ba56e987459959349ed74f0460f6",
     "semantic_hash": ""
   },
   "app/server/routes/api/admin/spawn-rules.delete.ts": {
@@ -9285,8 +9285,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/DesignBrowser.tsx": {
-    "mtime": 1786155266.0445015,
-    "ast_hash": "c8292419a93f4321711ff7b4b82f5d76",
+    "mtime": 1786178317.9781456,
+    "ast_hash": "74b9666cb6ad8d139753e6516fec18e4",
     "semantic_hash": ""
   },
   "app/src/components/design/DesignDetailModal.tsx": {
@@ -9300,8 +9300,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/useInfiniteReveal.ts": {
-    "mtime": 1786150423.832809,
-    "ast_hash": "74eaaf33c06d0e43564ac21eabe5212a",
+    "mtime": 1786178312.7066736,
+    "ast_hash": "ab159c66f3d23d9e8c5c9d1b9843f7c8",
     "semantic_hash": ""
   },
   "app/src/lib/design/assets.ts": {
@@ -9320,8 +9320,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families.ts": {
-    "mtime": 1786154795.8140957,
-    "ast_hash": "ee45b2238750e2c69c1292c147a40ea8",
+    "mtime": 1786177330.0509858,
+    "ast_hash": "d0886ef0dcb5ea7540d63fd209396891",
     "semantic_hash": ""
   },
   "app/src/lib/design/index.ts": {
@@ -9330,8 +9330,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/paint.ts": {
-    "mtime": 1786155594.2348802,
-    "ast_hash": "28e1ebb6d20d1eb2908fd18ddf1b4a5e",
+    "mtime": 1786177528.2764075,
+    "ast_hash": "250ceeac8fb4554aaa7a8aa01fd8ef29",
     "semantic_hash": ""
   },
   "app/src/lib/design/rng.ts": {
@@ -9395,8 +9395,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/legality.ts": {
-    "mtime": 1786155601.8508205,
-    "ast_hash": "b7a91f67b6571692f78a6af048216bb7",
+    "mtime": 1786177528.2768092,
+    "ast_hash": "52bf3d6044b96cb33121d43c8a3c58a8",
     "semantic_hash": ""
   },
   "app/src/lib/design/world.ts": {
@@ -9420,13 +9420,13 @@
     "semantic_hash": ""
   },
   "app/src/lib/design/families-generated.manifest.json": {
-    "mtime": 1786155681.3368547,
-    "ast_hash": "4ceb537d8fc6695477c03a21858b9ffb",
+    "mtime": 1786177635.707055,
+    "ast_hash": "7cc6846621ca1192ac5892bf3d7c98e9",
     "semantic_hash": ""
   },
   "app/src/lib/design/families-generated.ts": {
-    "mtime": 1786155659.0435076,
-    "ast_hash": "20e1b20ba57b70547057f0cf95469319",
+    "mtime": 1786177177.6182692,
+    "ast_hash": "380364c4d6eabe47a7cc277ac6f5b216",
     "semantic_hash": ""
   },
   "app/src/lib/design/registry.ts": {
@@ -9435,8 +9435,8 @@
     "semantic_hash": ""
   },
   "app/tests/design-registry.test.ts": {
-    "mtime": 1786155681.9291406,
-    "ast_hash": "9115715c0404ad5960ac879cfc010c16",
+    "mtime": 1786177636.3869185,
+    "ast_hash": "268764807367bb1dfaea5f01d1622478",
     "semantic_hash": ""
   },
   "app/src/components/design/FamilyVariantsView.tsx": {
@@ -9455,8 +9455,8 @@
     "semantic_hash": ""
   },
   "app/src/components/design/sceneDraw.ts": {
-    "mtime": 1786155166.7136269,
-    "ast_hash": "c5cdc1a2400e5eae396b8e9b95e5008c",
+    "mtime": 1786177215.677135,
+    "ast_hash": "34ee63ab6afac91fecf45481eb84acc2",
     "semantic_hash": ""
   },
   "app/public/tiles/struct-contest-hall-1.png": {
