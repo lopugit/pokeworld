@@ -173,21 +173,13 @@ const bagItem = (
   kind: TrainerItemKind,
 ): BagItem => ({ id, name, quantity, description, kind });
 
-export function defaultTrainer(): TrainerState {
-  const party = [
-    starterMember("treecko", "TREECKO", 252, 12),
-    starterMember("ralts", "RALTS", 280, 9),
-    starterMember("zigzagoon", "ZIGZAGOON", 263, 8),
-  ];
-  const pc = [
-    starterMember("mudkip", "MUDKIP", 258, 10),
-    starterMember("torchic", "TORCHIC", 255, 10),
-    starterMember("wingull", "WINGULL", 278, 7),
-  ];
-  const owned = [...party, ...pc].map((member) => member.speciesId).filter(Boolean);
+const freshTrainer = (name: string, party: PartyMember[], pc: PartyMember[]): TrainerState => {
+  const owned = [...new Set([...party, ...pc].map((member) => member.speciesId).filter(Boolean))].sort(
+    (a, b) => a - b,
+  );
   return {
     version: 4,
-    name: "LOPU",
+    name,
     gender: "boy",
     party,
     bag: {
@@ -205,11 +197,51 @@ export function defaultTrainer(): TrainerState {
     collectedItems: {},
     pc,
     pcItems: [],
-    pokedex: {
-      seen: [...new Set(owned)].sort((a, b) => a - b),
-      caught: [...new Set(owned)].sort((a, b) => a - b),
-    },
+    pokedex: { seen: owned, caught: [...owned] },
   };
+};
+
+export function defaultTrainer(): TrainerState {
+  const party = [
+    starterMember("treecko", "TREECKO", 252, 12),
+    starterMember("ralts", "RALTS", 280, 9),
+    starterMember("zigzagoon", "ZIGZAGOON", 263, 8),
+  ];
+  const pc = [
+    starterMember("mudkip", "MUDKIP", 258, 10),
+    starterMember("torchic", "TORCHIC", 255, 10),
+    starterMember("wingull", "WINGULL", 278, 7),
+  ];
+  return freshTrainer("LOPU", party, pc);
+}
+
+/** Kanto starters offered to brand-new trainers: SQUIRTLE, CHARMANDER, BULBASAUR. */
+export const KANTO_STARTER_IDS = [7, 4, 1] as const;
+
+export const STARTER_LEVEL = 5;
+
+/** Nicknames follow the Gen III rules: trimmed, uppercased, at most 10 characters. */
+export const normalizeNickname = (nickname: string | undefined): string | undefined =>
+  nickname?.trim().toUpperCase().slice(0, 10) || undefined;
+
+/**
+ * Placeholder state while a brand-new player is still talking to PROF. OAK —
+ * no Pokémon anywhere until they choose their starter. Never persisted.
+ */
+export function emptyTrainer(): TrainerState {
+  return freshTrainer("TRAINER", [], []);
+}
+
+/** The first save a brand-new player gets: only the starter they chose, nothing else. */
+export function starterTrainer(choice: { speciesId: number; nickname?: string }): TrainerState {
+  const species = getSpecies(choice.speciesId);
+  const starter = createPartyMember({
+    id: species?.name ?? `starter-${choice.speciesId}`,
+    speciesId: choice.speciesId,
+    level: STARTER_LEVEL,
+    nickname: normalizeNickname(choice.nickname),
+  });
+  return freshTrainer("TRAINER", [starter], []);
 }
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
@@ -676,8 +708,7 @@ const readJson = (storage: StorageLike, key: string): unknown => {
   }
 };
 
-export function loadTrainer(storage: StorageLike | null = defaultStorage()): TrainerState {
-  if (!storage) return defaultTrainer();
+const savedTrainerCandidate = (storage: StorageLike): unknown => {
   const candidates: unknown[] = [readJson(storage, TRAINER_STORAGE_KEY)];
   for (const key of LEGACY_TRAINER_STORAGE_KEYS) candidates.push(readJson(storage, key));
   const legacyThings = readJson(storage, LEGACY_THINGS_STORAGE_KEY);
@@ -685,8 +716,23 @@ export function loadTrainer(storage: StorageLike | null = defaultStorage()): Tra
     const things = isRecord(legacyThings.things) ? legacyThings.things : legacyThings;
     candidates.push(things.trainer);
   }
+  // things:v2 always carries a trainer slot, `{}` when untouched — an empty
+  // record holds no save and must not block first-run onboarding.
+  return candidates.find((value) => isRecord(value) && Object.keys(value).length > 0);
+};
 
-  const candidate = candidates.find((value) => isRecord(value));
+/**
+ * True when this browser has any trainer save (current key, legacy keys, or the
+ * interim things:v2 slice). A fresh session has none and goes through the
+ * PROF. OAK starter onboarding before anything is persisted.
+ */
+export function hasSavedTrainer(storage: StorageLike | null = defaultStorage()): boolean {
+  return Boolean(storage && isRecord(savedTrainerCandidate(storage)));
+}
+
+export function loadTrainer(storage: StorageLike | null = defaultStorage()): TrainerState {
+  if (!storage) return defaultTrainer();
+  const candidate = savedTrainerCandidate(storage);
   const trainer = candidate ? normalizeTrainer(candidate) : defaultTrainer();
   try {
     storage.setItem(TRAINER_STORAGE_KEY, JSON.stringify(trainer));

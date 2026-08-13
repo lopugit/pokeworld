@@ -162,6 +162,21 @@ location-bound `things:v2` slices so it survives location changes. The loader
 migrates the earlier v1 record and the interim trainer state stored inside
 `things:v2`.
 
+**First-run onboarding (PROF. OAK).** A browser with no meaningful trainer
+save (no current key, no legacy key, and no non-empty `things:v2` trainer
+slot — the empty `{}` slot `saveThing` always writes does not count) is a
+brand-new player. `Game` renders `OakIntro` before the location prompt and
+map-loading screens: Oak's welcome dialog → a white pick-your-starter screen
+offering exactly SQUIRTLE / CHARMANDER / BULBASAUR (`KANTO_STARTER_IDS`) → an
+optional Gen III-style nickname (trimmed, uppercased, ≤ 10 chars). The
+resulting first save (`starterTrainer`) contains **only** the chosen level-5
+starter — nothing else in the party, PC, or Pokédex. `loadTrainer()` persists
+a default save as a side effect, so it only runs for returning players;
+during onboarding the in-memory placeholder is `emptyTrainer()` (no Pokémon)
+and nothing is persisted until the starter is confirmed. The default
+Emerald-team save (`defaultTrainer`) remains the normalization fallback for
+existing/corrupt saves only.
+
 ```ts
 interface TrainerState {
   version: 3;
@@ -183,6 +198,9 @@ Classic font (already shipped in `public/`, previously unused).
 
 - **DialogBox** — Emerald textbox: cream panel, navy double border,
   typewriter text, blinking ▼, A/B/click advances.
+- **OakIntro** — first-run starter onboarding (own `.oak-intro` container,
+  reuses DialogBox): Oak greeting → white 3-option starter pick → optional
+  nickname → farewell. Game input is suspended until it completes.
 - **StartMenu** — POKéMON / BAG / BADGES / PC / SAVE / EXIT. Enter (START
   button) toggles; arrows navigate; A selects; B closes.
 - **PartyPanel** — exact Emerald-version Pokémon sprites, lead order, level,
