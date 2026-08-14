@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1786081756.1307411,
-    "ast_hash": "25ce27f3794586cb4f72e8f5b96b9e5d",
+    "mtime": 1786686187.4455824,
+    "ast_hash": "28f46c7f10ea67de08252d855aadd12e",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "app/src/lib/trainer-state.ts": {
-    "mtime": 1786081756.1396024,
-    "ast_hash": "c630818e48a7bfca5528526be509f02e",
+    "mtime": 1786684711.7146747,
+    "ast_hash": "318175819e37c3336595d642518cc1c0",
     "semantic_hash": ""
   },
   "app/src/pages/AdminPage.tsx": {
@@ -375,9 +375,9 @@
     "semantic_hash": "ccd00721d625e9c61eb7103f61ef180a"
   },
   "app/src/pages/HomePage.tsx": {
-    "mtime": 1784432153.7840457,
-    "ast_hash": "fcd204f47d263fd2af549ce15432763a",
-    "semantic_hash": "fcd204f47d263fd2af549ce15432763a"
+    "mtime": 1786684711.7151456,
+    "ast_hash": "cc1357190879cc42995cc71a3a02cfc6",
+    "semantic_hash": ""
   },
   "app/src/vite-env.d.ts": {
     "mtime": 1786081756.1425853,
@@ -495,8 +495,8 @@
     "semantic_hash": "3870c239c9d32ea6453d2655780ab069"
   },
   "app/tests/trainer-state.test.ts": {
-    "mtime": 1786081756.1476345,
-    "ast_hash": "1ba0208d79d5823692e7bd00c681ce32",
+    "mtime": 1786684711.716242,
+    "ast_hash": "0bf077f26f6521ee771c41a03a4a2742",
     "semantic_hash": ""
   },
   "app/tests/world-grammar.test.ts": {
@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1786520339.0211983,
-    "ast_hash": "e5f6a2f2b0351eca108b2c65d1a06bd0",
+    "mtime": 1786686229.792473,
+    "ast_hash": "dc86d9afa7f4550f888e18e1749789d1",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -9175,8 +9175,8 @@
     "semantic_hash": ""
   },
   ".claude/launch.json": {
-    "mtime": 1786520016.4929745,
-    "ast_hash": "4ea5becfa9bd9f53ef4fea316af67535",
+    "mtime": 1786686268.7065172,
+    "ast_hash": "fa4346a92c2fbb097c96057c3bbfaf93",
     "semantic_hash": ""
   },
   "app/server/routes/api/admin/spawn-rules.delete.ts": {
@@ -30210,7 +30210,7 @@
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
-    "mtime": 1786516985.4885237,
+    "mtime": 1786684510.2244246,
     "ast_hash": "d603620ce311479ccf796b96607aa145",
     "semantic_hash": ""
   },
@@ -30227,6 +30227,96 @@
   "app/tests/structure-sites-convergence.test.ts": {
     "mtime": 1786519422.7172592,
     "ast_hash": "b95058de8a6c6cf7443c188ba87c060f",
+    "semantic_hash": ""
+  },
+  "app/scripts/intro/build-intro-assets.mjs": {
+    "mtime": 1786685862.4855783,
+    "ast_hash": "2dd419184414f9fdfeb5522366a4b4c5",
+    "semantic_hash": ""
+  },
+  "app/src/components/game-ui/OakIntro.tsx": {
+    "mtime": 1786686709.6497731,
+    "ast_hash": "36291acbca248e0db625c2b34c12bf3b",
+    "semantic_hash": ""
+  },
+  "app/map-assets/pret/graphics/birch_speech/birch.png": {
+    "mtime": 1786685423.688643,
+    "ast_hash": "4974ea52c083270075ff7f4263ed6fad",
+    "semantic_hash": ""
+  },
+  "app/map-assets/pret/graphics/birch_speech/shadow.png": {
+    "mtime": 1786685423.3760073,
+    "ast_hash": "4bb200e854c7e6971b0814ea108297dc",
+    "semantic_hash": ""
+  },
+  "app/map-assets/pret/graphics/starter_choose/pokeball_selection.png": {
+    "mtime": 1786685421.3148801,
+    "ast_hash": "4784deba5ffb61b6f83a1f2c563ae61c",
+    "semantic_hash": ""
+  },
+  "app/map-assets/pret/graphics/starter_choose/starter_circle.png": {
+    "mtime": 1786685421.6712987,
+    "ast_hash": "c9ec08ef54aba93cb6228a0c12ca77de",
+    "semantic_hash": ""
+  },
+  "app/map-assets/pret/graphics/starter_choose/tiles.png": {
+    "mtime": 1786685420.1966271,
+    "ast_hash": "8e4d90362e1455fae1174de26b49b600",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/hand.png": {
+    "mtime": 1786685871.244048,
+    "ast_hash": "fb451cd7e2c3d697e0549e83c25b933e",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/lecture-bg.png": {
+    "mtime": 1786685871.2352207,
+    "ast_hash": "43b23beed9cc5ac4c28ec4303b08eae2",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/oak.png": {
+    "mtime": 1786684711.711258,
+    "ast_hash": "61191c74361c43c0ca68b55dbad7f204",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/pokeball-tilt-a.png": {
+    "mtime": 1786685871.2434843,
+    "ast_hash": "ae935bc42db4c0a522eb3f3f7d2e165f",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/pokeball-tilt-b.png": {
+    "mtime": 1786685871.2437856,
+    "ast_hash": "fd89071be3de001389673368bdb5e4ec",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/pokeball.png": {
+    "mtime": 1786685871.2430034,
+    "ast_hash": "b7138514c66edd25cfb5765921a798dd",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/starter-bg.png": {
+    "mtime": 1786685871.2414026,
+    "ast_hash": "764ade72690a8f6ae6b37bce73917fa0",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/intro/starter-circle.png": {
+    "mtime": 1786685871.2451897,
+    "ast_hash": "2da57468ff7f15f4e02ab5b2d404de5e",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/pokemon/frlg/1.png": {
+    "mtime": 1786684711.7121017,
+    "ast_hash": "ac2f860d72549f3007d4837fece80794",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/pokemon/frlg/4.png": {
+    "mtime": 1786684711.7124991,
+    "ast_hash": "7b83f000492e3dba9ca216e0e335a1f2",
+    "semantic_hash": ""
+  },
+  "app/public/sprites/pokemon/frlg/7.png": {
+    "mtime": 1786684711.7128947,
+    "ast_hash": "71ded5e35317e20a69e28d645872c907",
     "semantic_hash": ""
   }
 }

@@ -162,6 +162,21 @@ location-bound `things:v2` slices so it survives location changes. The loader
 migrates the earlier v1 record and the interim trainer state stored inside
 `things:v2`.
 
+**First-run onboarding (PROF. OAK).** A browser with no meaningful trainer
+save (no current key, no legacy key, and no non-empty `things:v2` trainer
+slot — the empty `{}` slot `saveThing` always writes does not count) is a
+brand-new player. `Game` renders `OakIntro` before the location prompt and
+map-loading screens: Oak's welcome dialog → a white pick-your-starter screen
+offering exactly SQUIRTLE / CHARMANDER / BULBASAUR (`KANTO_STARTER_IDS`) → an
+optional Gen III-style nickname (trimmed, uppercased, ≤ 10 chars). The
+resulting first save (`starterTrainer`) contains **only** the chosen level-5
+starter — nothing else in the party, PC, or Pokédex. `loadTrainer()` persists
+a default save as a side effect, so it only runs for returning players;
+during onboarding the in-memory placeholder is `emptyTrainer()` (no Pokémon)
+and nothing is persisted until the starter is confirmed. The default
+Emerald-team save (`defaultTrainer`) remains the normalization fallback for
+existing/corrupt saves only.
+
 ```ts
 interface TrainerState {
   version: 3;
@@ -183,6 +198,23 @@ Classic font (already shipped in `public/`, previously unused).
 
 - **DialogBox** — Emerald textbox: cream panel, navy double border,
   typewriter text, blinking ▼, A/B/click advances.
+- **OakIntro** — first-run starter onboarding rendered inside the same
+  gameboy shell as the game, on an authentic 240x160 GBA stage
+  (`.oak-intro`, `--px` = one GBA pixel, ≤ 2x integer scale). Both scene
+  backgrounds and all scene sprites are the exact pokeemerald graphics,
+  composed by `scripts/intro/build-intro-assets.mjs` from the vendored data
+  in `map-assets/pret/graphics/{starter_choose,birch_speech}` into
+  `public/sprites/intro/` (lecture-bg, starter-bg, pokeball + tilt frames,
+  hand, starter-circle). Layout follows the decomp: POKé BALLs centered on
+  `sPokeballCoords` (60,64)/(120,88)/(180,64), hand cursor on `sCursorCoords`
+  with the ±8px sine bob, the selected ball looping the 128-frame wiggle
+  anim, the 104x32 species label window at `sStarterLabelCoords` over a
+  43.75% darkened WIN0 band, the white reveal circle + starter growing and
+  sliding to STARTER_PKMN_POS (120,64) with YES/NO in the standard frame at
+  window (24,9), and the professor standing feet-on-platform (ground y=92)
+  on the birch_speech spotlight baked into lecture-bg. Starter fronts stay
+  the face-on FRLG pics in `public/sprites/pokemon/frlg/`. Game input is
+  suspended until onboarding completes.
 - **StartMenu** — POKéMON / BAG / BADGES / PC / SAVE / EXIT. Enter (START
   button) toggles; arrows navigate; A selects; B closes.
 - **PartyPanel** — exact Emerald-version Pokémon sprites, lead order, level,

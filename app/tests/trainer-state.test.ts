@@ -1,13 +1,18 @@
 import { describe, expect, it } from "vitest";
 import {
+  KANTO_STARTER_IDS,
+  STARTER_LEVEL,
   TRAINER_STORAGE_KEY,
   collectFieldItem,
   defaultTrainer,
   depositPartyMember,
+  emptyTrainer,
+  hasSavedTrainer,
   loadTrainer,
   normalizeTrainer,
   saveTrainer,
   setLeadPartyMember,
+  starterTrainer,
   toggleBadge,
   useBagItem,
   withdrawPartyMember,
@@ -161,5 +166,73 @@ describe("trainer state", () => {
     const changed = toggleBadge(trainer, "stone").state;
     saveTrainer(changed, storage);
     expect(loadTrainer(storage).badges[0].earned).toBe(true);
+  });
+
+  const mapStorage = () => {
+    const values = new Map<string, string>();
+    return {
+      getItem: (key: string) => values.get(key) ?? null,
+      setItem: (key: string, value: string) => values.set(key, value),
+      values,
+    };
+  };
+
+  it("treats a fresh browser as a brand-new player until a real save exists", () => {
+    const storage = mapStorage();
+    expect(hasSavedTrainer(storage)).toBe(false);
+
+    // The game persists map/player things (with an untouched trainer slot)
+    // while PROF. OAK is still talking — that must not count as a save.
+    storage.setItem(
+      "things:v2",
+      JSON.stringify({ version: 2, things: { player: { x: 32 }, trainer: {} } }),
+    );
+    expect(hasSavedTrainer(storage)).toBe(false);
+
+    saveTrainer(starterTrainer({ speciesId: 7 }), storage);
+    expect(hasSavedTrainer(storage)).toBe(true);
+  });
+
+  it("recognises legacy saves so returning players skip onboarding", () => {
+    const storage = mapStorage();
+    storage.setItem("pokeworld:trainer:v1", JSON.stringify({ version: 1, name: "MAY" }));
+    expect(hasSavedTrainer(storage)).toBe(true);
+  });
+
+  it("starts brand-new players with only their chosen Kanto starter", () => {
+    // SQUIRTLE, CHARMANDER, BULBASAUR — the three onboarding options.
+    expect([...KANTO_STARTER_IDS]).toEqual([7, 4, 1]);
+
+    const chosen = starterTrainer({ speciesId: 7, nickname: "  bubbles  " });
+    expect(chosen.party).toHaveLength(1);
+    expect(chosen.party[0].species).toBe("SQUIRTLE");
+    expect(chosen.party[0].speciesId).toBe(7);
+    expect(chosen.party[0].level).toBe(STARTER_LEVEL);
+    expect(chosen.party[0].nickname).toBe("BUBBLES");
+    expect(chosen.party[0].sprite).toBe("gen3/7");
+    expect(chosen.pc).toEqual([]);
+    expect(chosen.pokedex.seen).toEqual([7]);
+    expect(chosen.pokedex.caught).toEqual([7]);
+
+    const unnamed = starterTrainer({ speciesId: 1, nickname: "   " });
+    expect(unnamed.party[0].species).toBe("BULBASAUR");
+    expect(unnamed.party[0].nickname).toBeUndefined();
+  });
+
+  it("keeps a starter-only save intact through normalization round-trips", () => {
+    const chosen = starterTrainer({ speciesId: 4 });
+    const roundTripped = normalizeTrainer(JSON.parse(JSON.stringify(chosen)));
+    expect(roundTripped.party.map((member) => member.species)).toEqual(["CHARMANDER"]);
+    expect(roundTripped.pc).toEqual([]);
+    expect(roundTripped.pokedex.seen).toEqual([4]);
+    expect(roundTripped.pokedex.caught).toEqual([4]);
+  });
+
+  it("gives the onboarding placeholder no Pokémon at all", () => {
+    const placeholder = emptyTrainer();
+    expect(placeholder.party).toEqual([]);
+    expect(placeholder.pc).toEqual([]);
+    expect(placeholder.pokedex.seen).toEqual([]);
+    expect(placeholder.pokedex.caught).toEqual([]);
   });
 });

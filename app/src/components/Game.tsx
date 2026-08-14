@@ -28,10 +28,13 @@ import {
 } from "../lib/game-rules";
 import {
   collectFieldItem,
+  emptyTrainer,
   hasCollected,
+  hasSavedTrainer,
   loadTrainer,
   registerSeen,
   saveTrainer,
+  starterTrainer,
   type TrainerState,
 } from "../lib/trainer-state";
 import {
@@ -52,6 +55,7 @@ import {
   type BattleState,
 } from "../lib/battle";
 import { DialogBox } from "./game-ui/DialogBox";
+import { OakIntro, type StarterChoice } from "./game-ui/OakIntro";
 import { MENU_ITEMS, StartMenu, type MenuItemId } from "./game-ui/StartMenu";
 import { PartyPanel } from "./game-ui/PartyPanel";
 import { BagPanel } from "./game-ui/BagPanel";
@@ -196,6 +200,8 @@ interface GameComponentState {
   ui: UiState;
   trainer: TrainerState;
   battle: BattleState | null;
+  /** True while a brand-new player is in the PROF. OAK starter onboarding. */
+  onboarding: boolean;
 }
 
 interface StoredImage {
@@ -204,6 +210,15 @@ interface StoredImage {
 }
 
 const isFiniteNumber = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
+
+// A browser with no trainer save belongs to a brand-new player: PROF. OAK
+// greets them and they pick their one starter before anything is persisted.
+// loadTrainer() writes a default save as a side effect, so it only runs for
+// returning players.
+const bootTrainerState = (): { trainer: TrainerState; onboarding: boolean } =>
+  hasSavedTrainer()
+    ? { trainer: loadTrainer(), onboarding: false }
+    : { trainer: emptyTrainer(), onboarding: true };
 
 export class Game extends Component<Record<string, never>, GameComponentState> {
   override state: GameComponentState = {
@@ -271,7 +286,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       facing: "down",
     },
     ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null },
-    trainer: loadTrainer(),
+    ...bootTrainerState(),
     battle: null,
   };
 
@@ -580,6 +595,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private onKeydown = (event: KeyboardEvent) => {
+    // OakIntro owns all input until the starter is chosen.
+    if (this.state.onboarding) return;
     const moveKeys: Record<string, MoveAction> = {
       ArrowRight: "moveRight",
       ArrowLeft: "moveLeft",
@@ -666,6 +683,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private setTrainer = (trainer: TrainerState) => {
     this.setState({ trainer });
     saveTrainer(trainer);
+  };
+
+  // The chosen starter becomes the player's very first save — one Pokémon,
+  // nothing else in the party, PC, or Pokédex.
+  private completeOnboarding = (choice: StarterChoice) => {
+    const trainer = starterTrainer(choice);
+    this.setState({ trainer, onboarding: false }, () => saveTrainer(trainer));
   };
 
   private toggleMenu = () => {
@@ -1618,6 +1642,23 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
 
   override render() {
     const { game, map, mapLoading, player } = this.state;
+    // New players meet PROF. OAK before anything else — even before the
+    // location prompt or map load resolves (both continue in the background).
+    // The intro plays on the same gameboy shell the game itself renders in.
+    if (this.state.onboarding) {
+      return (
+        <div className="w-full flex flex-col items-center justify-center pb-12">
+          <div
+            className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
+            style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
+          >
+            <div className="flex flex-row justify-center w-full relative">
+              <OakIntro onComplete={this.completeOnboarding} />
+            </div>
+          </div>
+        </div>
+      );
+    }
     if (this.state.locationError) {
       return (
         <div className="w-full flex flex-col items-center justify-center pb-12">

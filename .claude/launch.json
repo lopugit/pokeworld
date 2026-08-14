@@ -2,6 +2,15 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "pokeworld-oak-intro",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "ulimit -n 65536; cd app && POKEWORLD_OFFLINE_MAP=true pnpm exec vite dev --port 3952 --host 127.0.0.1"
+      ],
+      "port": 3952
+    },
+    {
       "name": "pokeworld-worktree",
       "runtimeExecutable": "bash",
       "runtimeArgs": [

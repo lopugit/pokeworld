@@ -1,4 +1,6 @@
 import { Banner } from "../components/Banner";
+import { DevKit } from "../components/DevKit";
+import { Game } from "../components/Game";
 import { Nav } from "../components/Nav";
 
 export function HomePage() {
@@ -7,6 +9,10 @@ export function HomePage() {
       <Nav />
       <main className="w-full flex items-center justify-center">
         <div className="container px-4">
+          {/* The game itself leads the page; new players meet PROF. OAK here. */}
+          <div className="w-full flex items-center justify-center pt-12 pb-4">
+            <Game />
+          </div>
           <Banner
             image="/bannerPic1.png"
             tagline="Introducing the"
@@ -14,7 +20,7 @@ export function HomePage() {
             description="The first AR Pokémon game based on traditional Pokémon play style"
             keywords="fun, pokémon, augmented reality, AR, game, play, pokémon world"
           />
-          <Banner title="Click to Play" links={[{ text: "Play Now", link: "/game" }]} />
+          <Banner title="Full-page mode" links={[{ text: "Play Now", link: "/game" }]} />
           <Banner
             image="/lopudesigns.jpeg"
             imageCircle
@@ -36,6 +42,7 @@ export function HomePage() {
           />
         </div>
       </main>
+      <DevKit />
     </div>
   );
 }
