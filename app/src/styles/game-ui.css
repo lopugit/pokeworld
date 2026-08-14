@@ -862,38 +862,67 @@
 
 /* ---------- PROF. OAK starter onboarding ---------- */
 
-/* Standalone first-run screen: same footprint as the Game Boy display and its
-   own container so the shared cqw-based UI (DialogBox) scales inside it. */
+/* Authentic GBA stage: 240x160 logical pixels, shown at up to 2x inside the
+   gameboy shell. --px is one GBA pixel; scenes position sprites and windows
+   with pokeemerald's own coordinates. */
 .oak-intro {
   position: relative;
-  width: min(520px, calc(100vw - 24px));
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 3 / 2;
   container-type: inline-size;
+  --px: calc(100cqw / 240);
   overflow: hidden;
-  border-radius: 0.75rem;
-  background: #182848;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
+  border-radius: 0.5rem;
+  background: #000000;
   font-family: "Pokemon Classic", monospace;
   color: #303030;
 }
 
-/* Emerald text frame, scoped to the intro: white box ringed light green,
-   deep green, then a dark outline — layered spread shadows round together. */
+/* Scene backgrounds composed from the vendored pokeemerald tiles/tilemaps. */
+.oak-stage-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+/* Emerald message frame at the original textbox rect — outer (8,112)-(232,156),
+   drawn as white box + light-green ring + deep-green ring + dark rim. */
 .oak-intro .pkmn-dialog,
 .oak-question {
+  position: absolute;
+  left: calc(12 * var(--px));
+  top: calc(116 * var(--px));
+  right: auto;
+  bottom: auto;
+  width: calc(216 * var(--px));
+  height: calc(36 * var(--px));
+  min-height: 0;
+  box-sizing: border-box;
+  padding: calc(3 * var(--px)) calc(5 * var(--px));
   background: #ffffff;
   border: none;
-  border-radius: 1.2cqw;
+  border-radius: calc(1.5 * var(--px));
   box-shadow:
-    0 0 0 0.35cqw #2f8058,
-    0 0 0 1.1cqw #86dcb2,
-    0 0 0 1.55cqw #1a4030;
+    0 0 0 calc(1 * var(--px)) #2f8058,
+    0 0 0 calc(3 * var(--px)) #86dcb2,
+    0 0 0 calc(4 * var(--px)) #1a4030;
   color: #484850;
-  text-shadow: 0.28cqw 0.28cqw 0 #d8e0d8;
+  text-shadow: calc(1 * var(--px)) calc(1 * var(--px)) 0 #d8e0d8;
+  font-size: calc(6.2 * var(--px));
+  line-height: calc(14.5 * var(--px));
+  text-align: left;
+  white-space: pre-line;
+  overflow: hidden;
 }
 
 .oak-intro .pkmn-dialog-arrow {
   color: #d84848;
+  right: calc(4 * var(--px));
+  bottom: calc(2 * var(--px));
+  font-size: calc(8 * var(--px));
 }
 
 /* ---------- Lecture scene (greeting / farewell) ---------- */
@@ -905,70 +934,11 @@
   overflow: hidden;
 }
 
-/* Stepped GBA-style gradient bands at the screen edges. */
-.oak-lecture-band {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 9cqw;
-  background: linear-gradient(
-    180deg,
-    #eefcd8 0%,
-    #b8e8a0 22%,
-    #8ad080 22%,
-    #8ad080 44%,
-    #58ac60 44%,
-    #58ac60 66%,
-    #2f7c48 66%,
-    #2f7c48 84%,
-    #175430 84%
-  );
-}
-
-.oak-lecture-band.top {
-  top: 0;
-}
-
-.oak-lecture-band.bottom {
-  bottom: 0;
-  transform: scaleY(-1);
-}
-
-.oak-spotlight {
-  position: absolute;
-  left: 50%;
-  top: 60cqw;
-  width: 64cqw;
-  height: 21cqw;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(closest-side, #fcf4a4 0 82%, #e8d878 83% 96%, transparent 97%);
-}
-
-.oak-lecture-cast {
-  position: absolute;
-  left: 50%;
-  top: 60cqw;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: flex-end;
-  gap: 1cqw;
-}
-
-.oak-lecture-oak {
-  width: 34cqw;
-  height: 34cqw;
-  margin-bottom: -6cqw;
-  transform: translateY(-50%);
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
+/* The professor and his partner stand on the spotlight platform baked into
+   lecture-bg.png; positions come inline from the decomp coordinates. */
+.oak-lecture-oak,
 .oak-lecture-partner {
-  width: 22cqw;
-  height: 22cqw;
-  margin-bottom: -3cqw;
-  transform: translateY(-50%);
+  position: absolute;
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -978,162 +948,191 @@
 .oak-bag-scene {
   position: absolute;
   inset: 0;
-  background: #3f6d49;
+  background: #4a6b39;
   overflow: hidden;
 }
 
-.oak-grass-tufts {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.oak-bag-art {
-  position: absolute;
-  left: 13cqw;
-  top: 4cqw;
-  width: 64cqw;
-  height: 44cqw;
-}
-
+/* 32x32 POKé BALL sprites centered on sPokeballCoords. The selected ball loops
+   the original 128-frame wiggle (tilt frames at GBA frames 16/32). */
 .oak-ball {
   position: absolute;
-  width: 11cqw;
-  height: 11cqw;
   padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
-  filter: drop-shadow(0 0.8cqw 0 rgba(0, 0, 0, 0.3));
 }
 
-.oak-ball img {
+.oak-ball:disabled {
+  cursor: default;
+}
+
+.oak-ball-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.oak-ball-tilt-a,
+.oak-ball-tilt-b {
+  opacity: 0;
+}
+
+.oak-ball.selected .oak-ball-tilt-a {
+  animation: oak-ball-wiggle-a 2.1333s linear infinite;
+}
+
+.oak-ball.selected .oak-ball-tilt-b {
+  animation: oak-ball-wiggle-b 2.1333s linear infinite;
+}
+
+/* sAnim_Pokeball_Moving: two quick shakes, a rest, then two slower shakes —
+   each 1/128 step is one GBA frame at 60fps. */
+@keyframes oak-ball-wiggle-a {
+  0%, 3.124% { opacity: 1; }
+  3.125%, 12.499% { opacity: 0; }
+  12.5%, 15.624% { opacity: 1; }
+  15.625%, 49.999% { opacity: 0; }
+  50%, 56.249% { opacity: 1; }
+  56.25%, 74.999% { opacity: 0; }
+  75%, 81.249% { opacity: 1; }
+  81.25%, 100% { opacity: 0; }
+}
+
+@keyframes oak-ball-wiggle-b {
+  0%, 6.249% { opacity: 0; }
+  6.25%, 9.374% { opacity: 1; }
+  9.375%, 18.749% { opacity: 0; }
+  18.75%, 21.874% { opacity: 1; }
+  21.875%, 62.499% { opacity: 0; }
+  62.5%, 68.749% { opacity: 1; }
+  68.75%, 87.499% { opacity: 0; }
+  87.5%, 93.749% { opacity: 1; }
+  93.75%, 100% { opacity: 0; }
+}
+
+.oak-ball:focus-visible {
+  outline: 2px solid #f4c95d;
+  outline-offset: 2px;
+}
+
+/* White glove cursor: SpriteCB_SelectionHand bobs it on a ±8px sine wave over
+   64 GBA frames. */
+.oak-hand {
+  position: absolute;
+  pointer-events: none;
+  image-rendering: pixelated;
+  animation: oak-hand-bob 1.0667s ease-in-out infinite;
+}
+
+@keyframes oak-hand-bob {
+  0%, 50%, 100% { transform: translateY(0); }
+  25% { transform: translateY(calc(8 * var(--px))); }
+  75% { transform: translateY(calc(-8 * var(--px))); }
+}
+
+/* Species label: 104x32 text window; the WIN0 region around it (4px wider on
+   both sides) darkens the scene by BLDY 7/16 — a 43.75% black overlay. */
+.oak-starter-label {
+  position: absolute;
+  width: calc(112 * var(--px));
+  height: calc(32 * var(--px));
+  background: rgba(0, 0, 0, 0.4375);
+  pointer-events: none;
+  color: #f8f8f8;
+  text-shadow: calc(1 * var(--px)) calc(1 * var(--px)) 0 #6d6d6d;
+}
+
+.oak-starter-label span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* FONT_NARROW genus line — Pokemon Classic is wider than the GBA narrow font,
+   so the longest genus ("TINY TURTLE POKéMON") needs the smaller size. */
+.oak-starter-label-genus {
+  top: calc(4 * var(--px));
+  font-size: calc(5.5 * var(--px));
+}
+
+.oak-starter-label-name {
+  top: calc(18 * var(--px));
+  font-size: calc(8 * var(--px));
+}
+
+/* Reveal: the white starter circle + POKéMON grow from the picked ball and
+   slide to STARTER_PKMN_POS (120,64) — 15 GBA frames of affine + movement. */
+.oak-reveal {
+  position: absolute;
+  animation: oak-reveal-in 0.25s linear both;
+}
+
+@keyframes oak-reveal-in {
+  from { transform: translate(var(--slide-dx), var(--slide-dy)) scale(0.0625); }
+  to { transform: translate(0, 0) scale(1); }
+}
+
+.oak-reveal-circle,
+.oak-reveal-sprite {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
-.oak-ball:hover:not(:disabled),
-.oak-ball:focus-visible {
-  transform: translateY(-0.6cqw);
-}
-
-.oak-ball:focus-visible {
-  outline: 3px solid #f4c95d;
-  outline-offset: 2px;
-}
-
-.oak-hand {
-  position: absolute;
-  width: 9cqw;
-  height: 9cqw;
-  pointer-events: none;
-  filter: drop-shadow(0 0.6cqw 0 rgba(0, 0, 0, 0.35));
-  animation: oak-hand-bob 0.55s steps(2, end) infinite alternate;
-}
-
-@keyframes oak-hand-bob {
-  from { transform: translateY(0); }
-  to { transform: translateY(1.6cqw); }
-}
-
-/* Bottom text strip shared by pick ("Choose a POKéMON.") and confirm. */
-.oak-question {
-  position: absolute;
-  left: 2.5cqw;
-  right: 2.5cqw;
-  bottom: 2.5cqw;
-  min-height: 15cqw;
-  padding: 2.6cqw 3cqw;
-  font-size: 3.4cqw;
-  line-height: 1.65;
-  text-align: left;
-  white-space: pre-line;
-}
-
-.oak-reveal-circle {
-  position: absolute;
-  left: 50%;
-  top: 34cqw;
-  width: 52cqw;
-  height: 52cqw;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 0 0.6cqw rgba(255, 255, 255, 0.4);
-  animation: oak-reveal-pop 0.28s steps(3, end);
-}
-
-@keyframes oak-reveal-pop {
-  from { transform: translate(-50%, -50%) scale(0.4); }
-  to { transform: translate(-50%, -50%) scale(1); }
-}
-
-.oak-reveal-sprite {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 36cqw;
-  height: 36cqw;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
-.oak-genus-banner {
-  position: absolute;
-  left: 0;
-  bottom: 21cqw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.7cqw;
-  pointer-events: none;
-}
-
-.oak-genus-banner span {
-  background: rgba(20, 36, 26, 0.78);
-  color: #f8f8f0;
-  text-shadow: 0.3cqw 0.3cqw 0 rgba(0, 0, 0, 0.5);
-  font-size: 3.2cqw;
-  padding: 0.9cqw 3.2cqw 0.9cqw 2.6cqw;
-}
-
+/* YES/NO menu in the standard frame: window (24,9) tiles, 5x4 content, with
+   the 8px border tiles around it — outer rect (184,64) 56x48. */
 .oak-choice-box {
   position: absolute;
-  right: 2.5cqw;
-  bottom: 21cqw;
+  left: calc(184 * var(--px));
+  top: calc(64 * var(--px));
+  width: calc(56 * var(--px));
+  height: calc(48 * var(--px));
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-width: 22cqw;
+  justify-content: center;
   background: #ffffff;
-  border-radius: 1cqw;
-  box-shadow:
-    0 0 0 0.35cqw #6878a0,
-    0 0 0 0.9cqw #ffffff,
-    0 0 0 1.3cqw #303848;
-  padding: 1.2cqw 1cqw;
+  border: calc(2 * var(--px)) solid #485868;
+  border-radius: calc(1 * var(--px));
+  box-shadow: inset 0 0 0 calc(2 * var(--px)) #a0b0c8;
+  padding: calc(4 * var(--px)) calc(6 * var(--px));
+  animation: oak-appear 0.3s step-end both;
+}
+
+[data-phase="confirm"] .oak-question {
+  animation: oak-appear 0.3s step-end both;
+}
+
+@keyframes oak-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .oak-choice {
   display: flex;
   align-items: center;
-  gap: 0.6cqw;
-  padding: 0.9cqw 1.2cqw;
+  height: calc(16 * var(--px));
+  gap: calc(2 * var(--px));
+  padding: 0;
   border: none;
   background: transparent;
   font-family: inherit;
-  font-size: 3.4cqw;
+  font-size: calc(8 * var(--px));
   color: #484850;
-  text-shadow: 0.28cqw 0.28cqw 0 #d8e0d8;
+  text-shadow: calc(1 * var(--px)) calc(1 * var(--px)) 0 #d8e0d8;
   cursor: pointer;
   text-align: left;
 }
 
 .oak-choice-cursor {
-  width: 3.4cqw;
+  width: calc(8 * var(--px));
   color: #303030;
 }
 
@@ -1219,7 +1218,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .oak-hand,
-  .oak-reveal-circle {
+  .oak-reveal,
+  .oak-ball.selected .oak-ball-tilt-a,
+  .oak-ball.selected .oak-ball-tilt-b,
+  .oak-choice-box,
+  [data-phase="confirm"] .oak-question {
     animation: none;
   }
 }

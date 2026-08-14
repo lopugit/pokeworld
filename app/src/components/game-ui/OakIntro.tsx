@@ -14,24 +14,30 @@ interface OakIntroProps {
 
 type Phase = "greeting" | "pick" | "confirm" | "nickname" | "farewell";
 
+// Each page is at most two lines of ~33 characters — the textbox is the
+// authentic 2-line GBA message window and never scrolls.
 const GREETING_PAGES = [
   "Hello there!\nWelcome to the world of POKéMON!",
   "My name is OAK!\nPeople call me the POKéMON PROF!",
-  "This world is inhabited by creatures called POKéMON!",
-  "For some people, POKéMON are pets. Others use them for fights. Myself... I study POKéMON as a profession.",
-  "Your very own POKéMON legend is about to unfold! A world of dreams and adventures with POKéMON awaits!",
-  "First things first, though! Every TRAINER needs a partner. Go on, pick your very first POKéMON!",
+  "This world is inhabited by\ncreatures called POKéMON!",
+  "For some people, POKéMON are\npets. Others use them for fights.",
+  "Myself... I study POKéMON\nas a profession.",
+  "Your very own POKéMON legend is\nabout to unfold!",
+  "A world of dreams and adventures\nwith POKéMON awaits! Let's go!",
+  "First things first, though!\nEvery TRAINER needs a partner.",
+  "Go on, pick your very first\nPOKéMON!",
 ];
 
 const farewellPages = (species: PokedexEntry, nickname?: string): string[] => {
   const partner = nickname ?? species.displayName;
   const pages = [
-    `So! You want the ${species.types[0]} POKéMON, ${species.displayName}? This POKéMON is really energetic!`,
+    `So! You want the ${species.types[0].toUpperCase()}\nPOKéMON, ${species.displayName}?`,
+    "This POKéMON is really\nenergetic!",
   ];
-  if (nickname) pages.push(`And you named it ${nickname}! What a fitting name for a first partner!`);
+  if (nickname) pages.push(`And you named it ${nickname}!\nWhat a fitting name!`);
   pages.push(
-    `${partner} and you will write your very own POKéMON legend together!`,
-    "Your adventure is about to begin...\nLet's go!",
+    `${partner} and you will write\nyour very own legend together!`,
+    "Your adventure is about to\nbegin... Let's go!",
   );
   return pages;
 };
@@ -40,104 +46,61 @@ const farewellPages = (species: PokedexEntry, nickname?: string): string[] => {
 // gen3 fronts read like PC-box icons at this size — see PR discussion).
 const starterSprite = (speciesId: number) => `/sprites/pokemon/frlg/${speciesId}.png`;
 
-const BALL_SPRITE = "/sprites/intro/poke-ball.png";
+// Assets composed from the vendored pokeemerald graphics by
+// scripts/intro/build-intro-assets.mjs.
+const LECTURE_BG = "/sprites/intro/lecture-bg.png";
+const STARTER_BG = "/sprites/intro/starter-bg.png";
+const BALL_SPRITE = "/sprites/intro/pokeball.png";
+const BALL_TILT_A = "/sprites/intro/pokeball-tilt-a.png";
+const BALL_TILT_B = "/sprites/intro/pokeball-tilt-b.png";
+const HAND_SPRITE = "/sprites/intro/hand.png";
+const CIRCLE_SPRITE = "/sprites/intro/starter-circle.png";
 const OAK_SPRITE = "/sprites/intro/oak.png";
 
-/** Left / centre / right resting spots for the three balls (cqw units). */
-const BALL_SPOTS: Array<{ left: number; top: number }> = [
-  { left: 16, top: 47 },
-  { left: 44.5, top: 60 },
-  { left: 73, top: 47 },
+/** One GBA pixel on the 240x160 stage. */
+const gpx = (n: number) => `calc(${n} * var(--px))`;
+
+// Everything below is positioned with pokeemerald's own coordinates
+// (src/starter_choose.c / src/main_menu.c), on a 240x160 stage.
+/** sPokeballCoords — sprite centers of the three POKé BALLs. */
+const BALL_CENTERS: Array<[number, number]> = [
+  [60, 64],
+  [120, 88],
+  [180, 64],
 ];
+/** sCursorCoords — sprite center of the 32x32 hand cursor per selection. */
+const CURSOR_CENTERS: Array<[number, number]> = [
+  [60, 32],
+  [120, 56],
+  [180, 32],
+];
+/** sStarterLabelCoords * 8 — top-left of the 104x32 species label window. */
+const LABEL_ORIGINS: Array<[number, number]> = [
+  [0, 72],
+  [128, 80],
+  [64, 32],
+];
+/** STARTER_PKMN_POS — where the reveal circle + POKéMON slide to. */
+const REVEAL_CENTER: [number, number] = [120, 64];
+/** Ground line of the spotlight platform (Birch's feet: 64x64 pic at y=60). */
+const PLATFORM_FEET_Y = 92;
+/** oak.png is 80x80 with the art's feet on row 78. */
+const OAK_SIZE = 80;
+const OAK_FEET_OFFSET = 79;
 
-/** Emerald-intro white glove, drawn as crisp pixel rects (1 unit = 1 px). */
-function HandCursor({ style }: { style?: CSSProperties }) {
-  return (
-    <svg
-      className="oak-hand"
-      style={style}
-      viewBox="0 0 18 18"
-      shapeRendering="crispEdges"
-      aria-hidden="true"
-    >
-      {/* cuff */}
-      <rect x="5" y="0" width="9" height="3" fill="#303030" />
-      <rect x="6" y="1" width="7" height="1" fill="#e84040" />
-      {/* mitt with a thumb bump on the left */}
-      <rect x="4" y="3" width="12" height="7" fill="#303030" />
-      <rect x="2" y="5" width="4" height="4" fill="#303030" />
-      <rect x="5" y="3" width="10" height="6" fill="#f8f8f8" />
-      <rect x="3" y="6" width="3" height="2" fill="#f8f8f8" />
-      <rect x="5" y="8" width="10" height="1" fill="#d0d0d8" />
-      {/* pointing finger */}
-      <rect x="8" y="10" width="5" height="7" fill="#303030" />
-      <rect x="9" y="10" width="3" height="6" fill="#f8f8f8" />
-      <rect x="9" y="15" width="3" height="1" fill="#d0d0d8" />
-    </svg>
-  );
-}
-
-/** PROF. OAK's field bag, pixel-drawn to match the Emerald starter scene. */
-function BagArt() {
-  return (
-    <svg className="oak-bag-art" viewBox="0 0 64 44" shapeRendering="crispEdges" aria-hidden="true">
-      {/* shoulder strap: one clean loop lying toward the grass on the right */}
-      <path
-        d="M34 10 C48 -2 62 6 60 20 C59 28 54 34 46 36"
-        fill="none"
-        stroke="#4a3420"
-        strokeWidth="6.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M34 10 C48 -2 62 6 60 20 C59 28 54 34 46 36"
-        fill="none"
-        stroke="#8a6238"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-      />
-      {/* body */}
-      <rect x="4" y="10" width="44" height="30" rx="4" fill="#4a3420" />
-      <rect x="6" y="12" width="40" height="26" rx="3" fill="#b8884e" />
-      <rect x="6" y="12" width="40" height="8" fill="#c99b60" />
-      <rect x="6" y="32" width="40" height="6" fill="#9a6f3c" />
-      {/* flap */}
-      <rect x="8" y="6" width="30" height="14" rx="3" fill="#4a3420" />
-      <rect x="10" y="8" width="26" height="10" rx="2" fill="#d3a86c" />
-      <rect x="10" y="14" width="26" height="2" fill="#b8884e" />
-      {/* clasp */}
-      <rect x="20" y="14" width="8" height="6" fill="#4a3420" />
-      <rect x="21" y="15" width="6" height="4" fill="#e8e0d0" />
-    </svg>
-  );
-}
-
-/** Scattered light grass blades on the dark field, like the Emerald scene. */
-function GrassTufts() {
-  const tufts: Array<[number, number]> = [
-    [6, 22], [88, 18], [12, 66], [80, 74], [30, 84], [62, 88], [4, 44],
-    [92, 46], [24, 36], [70, 30], [46, 26], [55, 78], [16, 90],
-  ];
-  const blade = (x: number, y: number, height: number, lean: number) =>
-    `${x},${y} ${x + lean},${y - height} ${x + lean + 0.9},${y - height + 0.4} ${x + 1.6},${y}`;
-  return (
-    <svg className="oak-grass-tufts" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      {tufts.map(([x, y], index) => (
-        <g key={index} fill={index % 3 ? "#5d9457" : "#6fae64"}>
-          <polygon points={blade(x, y, 3, -0.8)} />
-          <polygon points={blade(x + 2, y, 4.4, 0.2)} />
-          <polygon points={blade(x + 4, y, 3, 1)} />
-        </g>
-      ))}
-    </svg>
-  );
-}
+const spriteBox = (centerX: number, centerY: number, size: number): CSSProperties => ({
+  left: gpx(centerX - size / 2),
+  top: gpx(centerY - size / 2),
+  width: gpx(size),
+  height: gpx(size),
+});
 
 /**
  * First-run onboarding, staged like the original Emerald intro: the professor
- * lecture on the spotlit circle, then his bag with three POKé BALLs on the
- * grass, a floating hand cursor, a white-circle reveal with YES/NO, and an
- * optional nickname before the adventure starts.
+ * lecture on the spotlit circle, then Birch's field bag with the three POKé
+ * BALLs, the floating glove cursor, the white-circle reveal with YES/NO, and
+ * an optional nickname before the adventure starts. Backgrounds and sprites
+ * are the exact pokeemerald graphics; coordinates match the decomp.
  */
 export function OakIntro({ onComplete }: OakIntroProps) {
   const [phase, setPhase] = useState<Phase>("greeting");
@@ -234,26 +197,36 @@ export function OakIntro({ onComplete }: OakIntroProps) {
     onComplete({ speciesId: pickedId, nickname: finalNickname });
   };
 
-  const selectedBall = BALL_SPOTS[ballIndex];
   const inBagScene = phase === "pick" || phase === "confirm";
+  const labelOrigin = LABEL_ORIGINS[ballIndex];
+  const selectedBall = BALL_CENTERS[ballIndex];
 
   return (
     <div className="oak-intro" data-phase={phase}>
       {phase === "greeting" || phase === "farewell" ? (
         <div className="oak-lecture">
-          <div className="oak-lecture-band top" />
-          <div className="oak-lecture-band bottom" />
-          <div className="oak-spotlight" />
-          <div className="oak-lecture-cast">
-            <img className="oak-lecture-oak" src={OAK_SPRITE} alt="PROF. OAK" />
-            {phase === "farewell" && picked ? (
-              <img
-                className="oak-lecture-partner"
-                src={starterSprite(picked.id)}
-                alt={picked.displayName}
-              />
-            ) : null}
-          </div>
+          <img className="oak-stage-bg" src={LECTURE_BG} alt="" />
+          <img
+            className="oak-lecture-oak"
+            src={OAK_SPRITE}
+            alt="PROF. OAK"
+            style={{
+              // Feet on the spotlight platform; centered alone, at Birch's
+              // spot (136, 60) when the partner joins for the farewell.
+              left: gpx((phase === "farewell" ? 136 : 120) - OAK_SIZE / 2),
+              top: gpx(PLATFORM_FEET_Y - OAK_FEET_OFFSET),
+              width: gpx(OAK_SIZE),
+              height: gpx(OAK_SIZE),
+            }}
+          />
+          {phase === "farewell" && picked ? (
+            <img
+              className="oak-lecture-partner"
+              src={starterSprite(picked.id)}
+              alt={picked.displayName}
+              style={spriteBox(100, 75, 64)}
+            />
+          ) : null}
           <DialogBox
             key={phase}
             pages={
@@ -279,43 +252,64 @@ export function OakIntro({ onComplete }: OakIntroProps) {
 
       {inBagScene ? (
         <div className="oak-bag-scene">
-          <GrassTufts />
-          <BagArt />
+          <img className="oak-stage-bg" src={STARTER_BG} alt="" />
           {starters.map((entry, index) => (
             <button
               key={entry.id}
               type="button"
-              className="oak-ball"
-              style={{ left: `${BALL_SPOTS[index].left}cqw`, top: `${BALL_SPOTS[index].top}cqw` }}
+              className={`oak-ball ${phase === "pick" && index === ballIndex ? "selected" : ""}`}
+              style={spriteBox(BALL_CENTERS[index][0], BALL_CENTERS[index][1], 32)}
               disabled={phase === "confirm"}
               onClick={() => openConfirm(index)}
               onPointerEnter={() => phase === "pick" && setBallIndex(index)}
               onFocus={() => setBallIndex(index)}
               aria-label={`POKé BALL containing ${entry.displayName}`}
             >
-              <img src={BALL_SPRITE} alt="" />
+              <img className="oak-ball-frame" src={BALL_SPRITE} alt="" />
+              <img className="oak-ball-frame oak-ball-tilt-a" src={BALL_TILT_A} alt="" />
+              <img className="oak-ball-frame oak-ball-tilt-b" src={BALL_TILT_B} alt="" />
             </button>
           ))}
           {phase === "pick" ? (
-            <HandCursor
-              style={{ left: `${selectedBall.left + 1.5}cqw`, top: `${selectedBall.top - 11}cqw` }}
+            <img
+              className="oak-hand"
+              src={HAND_SPRITE}
+              alt=""
+              style={spriteBox(CURSOR_CENTERS[ballIndex][0], CURSOR_CENTERS[ballIndex][1], 32)}
             />
           ) : null}
-          {phase === "pick" ? (
-            <div className="oak-question">Choose a POKéMON.</div>
+          {phase === "pick" && starters[ballIndex] ? (
+            // The species label: a 104x32 window whose surroundings darken by
+            // BLDY 7/16 inside WIN0 (4px wider than the window on each side).
+            <div
+              className="oak-starter-label"
+              style={{ left: gpx(labelOrigin[0] - 4), top: gpx(labelOrigin[1]) }}
+            >
+              <span className="oak-starter-label-genus">
+                {starters[ballIndex].genus} POKéMON
+              </span>
+              <span className="oak-starter-label-name">{starters[ballIndex].displayName}</span>
+            </div>
           ) : null}
+          {phase === "pick" ? <div className="oak-question">Choose a POKéMON.</div> : null}
           {phase === "confirm" && picked ? (
             <>
-              <div className="oak-reveal-circle">
+              <div
+                className="oak-reveal"
+                style={
+                  {
+                    ...spriteBox(REVEAL_CENTER[0], REVEAL_CENTER[1], 64),
+                    "--slide-dx": gpx(selectedBall[0] - REVEAL_CENTER[0]),
+                    "--slide-dy": gpx(selectedBall[1] - REVEAL_CENTER[1]),
+                  } as CSSProperties
+                }
+              >
+                <img className="oak-reveal-circle" src={CIRCLE_SPRITE} alt="" />
                 <img
                   className="oak-reveal-sprite"
                   src={starterSprite(picked.id)}
                   alt={picked.displayName}
                 />
-              </div>
-              <div className="oak-genus-banner">
-                <span>{picked.genus} POKéMON</span>
-                <span>{picked.displayName}</span>
               </div>
               <div className="oak-choice-box" role="menu" aria-label="Do you choose this POKéMON?">
                 {(["yes", "no"] as const).map((choice) => (

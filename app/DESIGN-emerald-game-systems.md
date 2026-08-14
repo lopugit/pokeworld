@@ -198,15 +198,23 @@ Classic font (already shipped in `public/`, previously unused).
 
 - **DialogBox** — Emerald textbox: cream panel, navy double border,
   typewriter text, blinking ▼, A/B/click advances.
-- **OakIntro** — first-run starter onboarding (own `.oak-intro` container,
-  reuses DialogBox), staged like the Emerald intro: professor lecture on the
-  spotlit circle (banded background, Emerald text frame) → bag scene with the
-  three POKé BALLs on grass and a bobbing hand cursor → white-circle reveal
-  with genus banner and YES/NO → optional nickname → farewell. Scene sprites
-  live in `public/sprites/intro/` (professor, red-recolored ball icon) and
-  `public/sprites/pokemon/frlg/` (face-on starter fronts); the bag, hand, and
-  grass tufts are inline pixel-art SVGs. Game input is suspended until it
-  completes.
+- **OakIntro** — first-run starter onboarding rendered inside the same
+  gameboy shell as the game, on an authentic 240x160 GBA stage
+  (`.oak-intro`, `--px` = one GBA pixel, ≤ 2x integer scale). Both scene
+  backgrounds and all scene sprites are the exact pokeemerald graphics,
+  composed by `scripts/intro/build-intro-assets.mjs` from the vendored data
+  in `map-assets/pret/graphics/{starter_choose,birch_speech}` into
+  `public/sprites/intro/` (lecture-bg, starter-bg, pokeball + tilt frames,
+  hand, starter-circle). Layout follows the decomp: POKé BALLs centered on
+  `sPokeballCoords` (60,64)/(120,88)/(180,64), hand cursor on `sCursorCoords`
+  with the ±8px sine bob, the selected ball looping the 128-frame wiggle
+  anim, the 104x32 species label window at `sStarterLabelCoords` over a
+  43.75% darkened WIN0 band, the white reveal circle + starter growing and
+  sliding to STARTER_PKMN_POS (120,64) with YES/NO in the standard frame at
+  window (24,9), and the professor standing feet-on-platform (ground y=92)
+  on the birch_speech spotlight baked into lecture-bg. Starter fronts stay
+  the face-on FRLG pics in `public/sprites/pokemon/frlg/`. Game input is
+  suspended until onboarding completes.
 - **StartMenu** — POKéMON / BAG / BADGES / PC / SAVE / EXIT. Enter (START
   button) toggles; arrows navigate; A selects; B closes.
 - **PartyPanel** — exact Emerald-version Pokémon sprites, lead order, level,
