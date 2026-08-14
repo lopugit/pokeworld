@@ -199,8 +199,14 @@ Classic font (already shipped in `public/`, previously unused).
 - **DialogBox** — Emerald textbox: cream panel, navy double border,
   typewriter text, blinking ▼, A/B/click advances.
 - **OakIntro** — first-run starter onboarding (own `.oak-intro` container,
-  reuses DialogBox): Oak greeting → white 3-option starter pick → optional
-  nickname → farewell. Game input is suspended until it completes.
+  reuses DialogBox), staged like the Emerald intro: professor lecture on the
+  spotlit circle (banded background, Emerald text frame) → bag scene with the
+  three POKé BALLs on grass and a bobbing hand cursor → white-circle reveal
+  with genus banner and YES/NO → optional nickname → farewell. Scene sprites
+  live in `public/sprites/intro/` (professor, red-recolored ball icon) and
+  `public/sprites/pokemon/frlg/` (face-on starter fronts); the bag, hand, and
+  grass tufts are inline pixel-art SVGs. Game input is suspended until it
+  completes.
 - **StartMenu** — POKéMON / BAG / BADGES / PC / SAVE / EXIT. Enter (START
   button) toggles; arrows navigate; A selects; B closes.
 - **PartyPanel** — exact Emerald-version Pokémon sprites, lead order, level,
