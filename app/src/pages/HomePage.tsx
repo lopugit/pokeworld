@@ -5,14 +5,16 @@ import { Nav } from "../components/Nav";
 
 export function HomePage() {
   return (
-    <div className="w-full bg-green min-h-screen pb-16">
+    <div className="page-flex w-full bg-green min-h-screen pb-16">
       <Nav />
-      <main className="w-full flex items-center justify-center">
+      {/* The game itself leads the page; new players meet PROF. OAK here.
+          On mobile this section goes full-bleed and jumps above the nav so
+          the phone becomes the handheld — see .game-stage in index.css. */}
+      <section className="game-stage w-full flex items-center justify-center pt-12 pb-4">
+        <Game />
+      </section>
+      <main className="w-full flex flex-col items-center justify-center">
         <div className="container px-4">
-          {/* The game itself leads the page; new players meet PROF. OAK here. */}
-          <div className="w-full flex items-center justify-center pt-12 pb-4">
-            <Game />
-          </div>
           <Banner
             image="/bannerPic1.png"
             tagline="Introducing the"

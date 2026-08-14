@@ -310,7 +310,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private resizeInterval?: number;
   private loadedTimer?: number;
   private mounted = false;
-  private boardResize = { active: false, startX: 0, originWidth: 520 };
+  private boardResize = { active: false, startX: 0, originWidth: 520, originBoard: 520 };
   // Wild-encounter tables: defaults immediately, admin overrides merged in
   // once /api/spawn-rules answers (offline play keeps the defaults).
   private spawnRules: SpawnRule[] = defaultSpawnRules();
@@ -1044,6 +1044,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       active: true,
       startX: point.clientX,
       originWidth: this.gameboyRef.current?.offsetWidth || this.state.boardWidth,
+      originBoard: this.state.boardWidth,
     };
     window.addEventListener("mousemove", this.onBoardResize);
     window.addEventListener("mouseup", this.endBoardResize);
@@ -1055,8 +1056,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private onBoardResize = (event: MouseEvent | TouchEvent) => {
     if (!this.boardResize.active) return;
     const point = "touches" in event ? event.touches[0] : event;
-    const next = this.boardResize.originWidth + (point.clientX - this.boardResize.startX) * 2;
-    this.setState({ boardWidth: Math.max(280, Math.min(next, window.innerWidth - 24)) });
+    const nextShell = this.boardResize.originWidth + (point.clientX - this.boardResize.startX) * 2;
+    // boardWidth tracks the screen, while the drag measures the whole shell —
+    // the GBA chrome makes the shell wider than the screen it houses.
+    const scale =
+      this.boardResize.originWidth > 0 ? this.boardResize.originBoard / this.boardResize.originWidth : 1;
+    const next = nextShell * scale;
+    this.setState({ boardWidth: Math.max(280, Math.min(next, (window.innerWidth - 24) * scale)) });
     if (event.cancelable) event.preventDefault();
   };
 
@@ -1640,6 +1646,191 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     );
   }
 
+  /** Handheld chrome shared by every render branch: a Game Boy Advance on
+   *  desktop viewports and a full-viewport Game Boy Color on mobile. The
+   *  breakpoint lives entirely in CSS so window resizes re-skin the shell
+   *  without re-rendering. `screen` fills the display; non-interactive
+   *  branches (onboarding, loading, errors) keep the buttons inert. */
+  private renderShell(
+    screen: React.ReactNode,
+    opts: { interactive?: boolean; wideScreen?: boolean } = {},
+  ) {
+    const interactive = opts.interactive !== false;
+    const { game, ui } = this.state;
+    return (
+      <div
+        ref={this.gameboyRef}
+        className="gameboy"
+        style={{ "--board-width": `${this.state.boardWidth}px` } as React.CSSProperties}
+      >
+        <button
+          type="button"
+          className="gb-shoulder gb-shoulder-l"
+          aria-label="Zoom out"
+          title="Zoom out (L)"
+          disabled={!interactive}
+          onClick={interactive ? () => this.zoom("out") : undefined}
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className="gb-shoulder gb-shoulder-r"
+          aria-label="Zoom in"
+          title="Zoom in (R)"
+          disabled={!interactive}
+          onClick={interactive ? () => this.zoom("in") : undefined}
+        >
+          +
+        </button>
+        <div className="gb-cap gb-cap-l" aria-hidden="true" />
+        <div className="gb-cap gb-cap-r" aria-hidden="true" />
+        <div className="gb-brand" aria-hidden="true">
+          Nintendo
+        </div>
+        <div className="gb-bezel">
+          <div className="gb-power" aria-hidden="true">
+            <i className="gb-power-led" />
+            <em>POWER</em>
+          </div>
+          <div className="gb-glass">
+            <div className={`board-screen${opts.wideScreen ? " board-screen--wide" : ""}`}>{screen}</div>
+          </div>
+          <div className="gb-wordmark gb-wordmark-gba" aria-hidden="true">
+            <b>GAME BOY</b> <span>ADVANCE</span>
+          </div>
+          <div className="gb-wordmark gb-wordmark-gbc" aria-hidden="true">
+            <b>GAME BOY</b>{" "}
+            <span className="gbc-color">
+              <i>C</i>
+              <i>O</i>
+              <i>L</i>
+              <i>O</i>
+              <i>R</i>
+            </span>
+          </div>
+        </div>
+        {interactive ? (
+          <div className="overlay-controls">
+            <button
+              type="button"
+              className={`overlay-chip ${game.overlay ? "overlay-chip-active" : ""}`}
+              aria-pressed={game.overlay}
+              onClick={() => this.setGame({ overlay: !game.overlay })}
+            >
+              MAP
+            </button>
+            {game.overlay ? (
+              <>
+                <input
+                  type="range"
+                  className="overlay-opacity"
+                  min={0}
+                  max={100}
+                  step={5}
+                  value={Math.round(clampOverlayOpacity(game.overlayOpacity) * 100)}
+                  aria-label="Map overlay opacity"
+                  onChange={(event) =>
+                    this.setGame({ overlayOpacity: Number(event.target.value) / 100 })
+                  }
+                />
+                <button
+                  type="button"
+                  className={`overlay-chip ${game.overlaySplit ? "overlay-chip-active" : ""}`}
+                  aria-pressed={game.overlaySplit}
+                  onClick={() => this.setGame({ overlaySplit: !game.overlaySplit })}
+                >
+                  SPLIT
+                </button>
+              </>
+            ) : null}
+          </div>
+        ) : null}
+        <div className="gb-controls">
+          <div className="dpad">
+            <button
+              type="button"
+              aria-label="Move up"
+              className="up"
+              disabled={!interactive}
+              onClick={interactive ? () => this.action("moveUp") : undefined}
+            />
+            <button
+              type="button"
+              aria-label="Move right"
+              className="right"
+              disabled={!interactive}
+              onClick={interactive ? () => this.action("moveRight") : undefined}
+            />
+            <button
+              type="button"
+              aria-label="Move down"
+              className="down"
+              disabled={!interactive}
+              onClick={interactive ? () => this.action("moveDown") : undefined}
+            />
+            <button
+              type="button"
+              aria-label="Move left"
+              className="left"
+              disabled={!interactive}
+              onClick={interactive ? () => this.action("moveLeft") : undefined}
+            />
+            <div className="middle" />
+          </div>
+          <div className="a-b">
+            <button
+              type="button"
+              className="b"
+              aria-label="Back or close"
+              disabled={!interactive}
+              onClick={interactive ? this.pressB : undefined}
+            >
+              B
+            </button>
+            <button
+              type="button"
+              className="a"
+              aria-label="Interact or confirm"
+              disabled={!interactive}
+              onClick={interactive ? this.pressA : undefined}
+            >
+              A
+            </button>
+          </div>
+          <div className="gb-startselect">
+            <button
+              type="button"
+              className="select"
+              data-label="SELECT"
+              aria-label="Toggle debug tools"
+              disabled={!interactive}
+              onClick={interactive ? () => this.setGame({ debug: !game.debug }) : undefined}
+            />
+            <button
+              type="button"
+              className="start"
+              data-label="START"
+              aria-label="Toggle Start menu"
+              aria-pressed={ui.menuOpen}
+              disabled={!interactive}
+              onClick={interactive ? this.toggleMenu : undefined}
+            />
+          </div>
+          <div className="gb-speaker" aria-hidden="true" />
+        </div>
+        {interactive ? (
+          <div
+            className="board-resize-handle"
+            title="Drag to resize the handheld"
+            onMouseDown={this.startBoardResize}
+            onTouchStart={this.startBoardResize}
+          />
+        ) : null}
+      </div>
+    );
+  }
+
   override render() {
     const { game, map, mapLoading, player } = this.state;
     // New players meet PROF. OAK before anything else — even before the
@@ -1647,24 +1838,22 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     // The intro plays on the same gameboy shell the game itself renders in.
     if (this.state.onboarding) {
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div
-            className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
-            style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
-          >
-            <div className="flex flex-row justify-center w-full relative">
-              <OakIntro onComplete={this.completeOnboarding} />
-            </div>
-          </div>
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(<OakIntro onComplete={this.completeOnboarding} />, {
+            interactive: false,
+            wideScreen: true,
+          })}
         </div>
       );
     }
     if (this.state.locationError) {
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div className="text-center text-red">
-            This game does not work without location access, please enable location services and reload the page.
-            <div className="flex w-full pt-4 justify-center">
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(
+            <div className="gb-screen-note">
+              <div className="text-center text-red">
+                This game does not work without location access, please enable location services and reload the page.
+              </div>
               <button
                 type="button"
                 className="flex rounded-md cursor-pointer shadow-md px-5 py-2 text-white bg-grass"
@@ -1675,27 +1864,35 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               >
                 Continue without location
               </button>
-            </div>
-          </div>
+            </div>,
+            { interactive: false },
+          )}
         </div>
       );
     }
 
     if (!game.anyLoaded) {
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div className="loading-container">
-            <img src="/loading.gif" alt="" />
-          </div>
-          <div className="text-lg text-grass">Loading..</div>
-          {this.state.loadError ? <div className="max-w-lg text-center text-red pt-4">{this.state.loadError}</div> : null}
-          <button
-            type="button"
-            className="px-4 py-2 cursor-pointer mt-7 shadow-md text-white bg-grass rounded-md"
-            onClick={this.resetGame}
-          >
-            Reset
-          </button>
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(
+            <div className="gb-screen-note">
+              <div className="loading-container">
+                <img src="/loading.gif" alt="" />
+              </div>
+              <div className="text-lg text-grass">Loading..</div>
+              {this.state.loadError ? (
+                <div className="max-w-lg text-center text-red pt-4">{this.state.loadError}</div>
+              ) : null}
+              <button
+                type="button"
+                className="px-4 py-2 cursor-pointer shadow-md text-white bg-grass rounded-md"
+                onClick={this.resetGame}
+              >
+                Reset
+              </button>
+            </div>,
+            { interactive: false },
+          )}
         </div>
       );
     }
@@ -1704,17 +1901,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const browserTile = this.tileBrowserTile;
     const { ui, trainer } = this.state;
     return (
-      <div className="w-full flex flex-col items-center justify-center pb-12">
+      <div className="game-root w-full flex flex-col items-center justify-center pb-12">
         <div
           className={`w-full flex justify-center ${game.debugPosition ? "flex-row" : "flex-col items-center"}`}
         >
-          <div>
-            <div
-              ref={this.gameboyRef}
-              className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
-              style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
-            >
-              <div className="flex flex-row justify-center w-full board-screen relative">
+          <div className="game-shell-slot">
+            {this.renderShell(
+              <>
                 <canvas
                   ref={this.canvasRef}
                   className={`screen-canvas bg-black rounded-lg ${game.overlay && game.overlaySplit ? "overlay-split-active" : ""}`}
@@ -1800,78 +1993,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                     />
                   ) : null}
                 </div>
-              </div>
-              <div className="overlay-controls w-full flex flex-row items-center justify-center gap-2 pt-3">
-                <button
-                  type="button"
-                  className={`overlay-chip ${game.overlay ? "overlay-chip-active" : ""}`}
-                  aria-pressed={game.overlay}
-                  onClick={() => this.setGame({ overlay: !game.overlay })}
-                >
-                  MAP
-                </button>
-                {game.overlay ? (
-                  <>
-                    <input
-                      type="range"
-                      className="overlay-opacity"
-                      min={0}
-                      max={100}
-                      step={5}
-                      value={Math.round(clampOverlayOpacity(game.overlayOpacity) * 100)}
-                      aria-label="Map overlay opacity"
-                      onChange={(event) =>
-                        this.setGame({ overlayOpacity: Number(event.target.value) / 100 })
-                      }
-                    />
-                    <button
-                      type="button"
-                      className={`overlay-chip ${game.overlaySplit ? "overlay-chip-active" : ""}`}
-                      aria-pressed={game.overlaySplit}
-                      onClick={() => this.setGame({ overlaySplit: !game.overlaySplit })}
-                    >
-                      SPLIT
-                    </button>
-                  </>
-                ) : null}
-              </div>
-              <div className="w-full pt-6 md:pt-10 pb-12">
-                <div className="controls flex flex-row">
-                  <div className="dpad ml-4 md:ml-12">
-                    <button type="button" aria-label="Move up" className="up" onClick={() => this.action("moveUp")} />
-                    <button type="button" aria-label="Move right" className="right" onClick={() => this.action("moveRight")} />
-                    <button type="button" aria-label="Move down" className="down" onClick={() => this.action("moveDown")} />
-                    <button type="button" aria-label="Move left" className="left" onClick={() => this.action("moveLeft")} />
-                    <div className="middle" />
-                  </div>
-                  <div className="ml-auto a-b mr-4 md:mr-12">
-                    <button type="button" className="b" aria-label="Back or close" onClick={this.pressB}>B</button>
-                    <button type="button" className="a" aria-label="Interact or confirm" onClick={this.pressA}>A</button>
-                  </div>
-                </div>
-                <div className="pt-12 md:pt-20" />
-                <div className="start-select">
-                  <button type="button" className="select" onClick={() => this.zoom("out")}>-</button>
-                  <button type="button" className="select" onClick={() => this.zoom("in")}>+</button>
-                  <button type="button" className="select" onClick={() => this.setGame({ debug: !game.debug })}>SELECT</button>
-                  <button
-                    type="button"
-                    className="start"
-                    aria-label="Toggle Start menu"
-                    aria-pressed={ui.menuOpen}
-                    onClick={this.toggleMenu}
-                  >
-                    START
-                  </button>
-                </div>
-              </div>
-              <div
-                className="board-resize-handle"
-                title="Drag to resize the Game Boy"
-                onMouseDown={this.startBoardResize}
-                onTouchStart={this.startBoardResize}
-              />
-            </div>
+              </>,
+            )}
           </div>
           {game.debug ? (
             <div className="flex flex-col md:px-12">

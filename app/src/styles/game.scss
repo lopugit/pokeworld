@@ -1,132 +1,60 @@
-.controls {
-  display: flex;
-  justify-content: space-between;
+/* ================================================================
+   Handheld shells.
+   Desktop (min-width 768px): indigo Game Boy Advance, landscape —
+   proportions and palette matched to the AGB-001 "Indigo" unit.
+   Mobile  (max-width 768px): Game Boy Color filling the whole
+   viewport over a pure black stage — the phone becomes the console.
+   Geometry is shared; each shell sets palette vars + layout in its
+   media block, so a window resize re-skins without re-rendering.
+   ================================================================ */
 
-  .dpad {
-    position: relative;
-    display: inline-block;
-    width: 90px;
-    height: 90px;
-    z-index: 5;
+/* Shell parents form the stacking context so parts with negative z-index
+   (shoulder humps, silver end caps) slide behind the body but still paint
+   above the page background. */
+.game-root {
+  position: relative;
+  z-index: 0;
+}
 
-    > * {
-      width: 33%;
-      height: 33%;
-      position: absolute;
-      background-color: #565e6a;
-      cursor: pointer;
-      padding: 0;
+.gameboy {
+  box-sizing: border-box;
+  position: relative;
 
-      i {
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        height: 100%;
-        font-size: 28px;
-        color: #333a4a;
-        text-shadow: 0 -0.5px 0 #aaa;
-      }
-    }
-
-    .up {
-      top: calc(0% + 4px);
-      left: 33%;
-      border: 4px solid black;
-      border-bottom: 0;
-      border-radius: 5px 5px 0 0;
-      &:active { background: linear-gradient(to top, #565e6a 0%, #333 100%); }
-    }
-    .right {
-      top: 33%;
-      left: calc(66% - 4px);
-      border: 4px solid black;
-      border-left: 0;
-      border-radius: 0 5px 5px 0;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to right, #565e6a 0%, #333 100%); }
-    }
-    .down {
-      top: calc(66% - 4px);
-      left: 33%;
-      border: 4px solid black;
-      border-top: 0;
-      border-radius: 0 0 5px 5px;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to bottom, #565e6a 0%, #333 100%); }
-    }
-    .left {
-      top: 33%;
-      left: calc(0% + 4px);
-      border: 4px solid black;
-      border-right: 0;
-      border-radius: 5px 0 0 5px;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to left, #565e6a 0%, #333 100%); }
-    }
-    .middle {
-      top: 33%;
-      left: 33%;
-      z-index: -5;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 20%;
-        left: 20%;
-        display: inline-block;
-        border: 1px solid #6e737a;
-        background: linear-gradient(to bottom, #6d7075 0%, #6d7075 30%, #23272f 70%, #23272f 100%);
-        border-radius: 50%;
-        height: 60%;
-        width: 60%;
-      }
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  .a-b {
-    position: relative;
-    display: inline-block;
-    width: 120px;
-    height: 90px;
-
-    .a,
-    .b {
-      position: absolute;
-      display: inline-block;
-      font-size: 22px;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 50%;
-      background-color: #2c313e;
-      border-bottom: 2px solid #888;
-      box-shadow: -1px 1px 5px black, 0 0 5px black inset;
-      text-shadow: 0 -1px 1px #888;
-      color: #2c313e;
-      text-align: center;
-      user-select: none;
-      cursor: pointer;
-      transition: box-shadow .1s ease-out, border .1s ease-out, line-height .2s ease-out;
-      &:active { box-shadow: -1px 1px 1px black, 0 0 5px black inset; border-width: 0; line-height: 45px; }
-    }
-    .a { top: 15px; right: 10px; }
-    .b { top: 35px; left: 0; }
+  button {
+    font: inherit;
   }
 }
 
-.gameboy { box-sizing: border-box; }
+/* ---------------- display stack ---------------- */
+
+.gb-glass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+
 .board-screen {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   aspect-ratio: 1;
+  background: #000;
 }
+
 .screen-canvas {
   display: block;
-  flex: 0 0 100%;
-  min-width: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  height: 100%;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 
@@ -136,7 +64,706 @@
   }
 }
 
+/* PROF. OAK's first-run intro drops into the shell display. It keeps its
+   native 240x160 (3:2) aspect and letterboxes on square screens; the glass
+   is black anyway, so the bars vanish. */
+.board-screen > .oak-intro {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Loading / location notes rendered on the display. */
+.gb-screen-note {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 8%;
+  overflow: auto;
+  text-align: center;
+  background: #101828;
+  color: #e8f1ff;
+}
+
+/* ---------------- chrome lettering ---------------- */
+
+.gb-wordmark {
+  pointer-events: none;
+  user-select: none;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-style: italic;
+  line-height: 1;
+  white-space: nowrap;
+  color: #f2f2f7;
+
+  b {
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+
+  span {
+    font-weight: 400;
+    letter-spacing: .28em;
+    margin-left: .4em;
+  }
+}
+
+.gbc-color {
+  letter-spacing: .1em;
+
+  i {
+    font-weight: 800;
+
+    &:nth-child(1) { color: #b04ee0; }
+    &:nth-child(2) { color: #ef4d8e; }
+    &:nth-child(3) { color: #f7b32b; }
+    &:nth-child(4) { color: #56b447; }
+    &:nth-child(5) { color: #2ba6e8; }
+  }
+}
+
+.gb-brand {
+  pointer-events: none;
+  user-select: none;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.gb-power {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+
+  em {
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .14em;
+  }
+}
+
+.gb-power-led {
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #b4ffc8, #35e065 45%, #0e9a38 90%);
+  box-shadow: 0 0 6px 1px rgba(70, 255, 130, .75);
+}
+
+/* ---------------- controls (geometry shared) ---------------- */
+
+.dpad {
+  position: relative;
+  aspect-ratio: 1;
+  z-index: 5;
+  filter: drop-shadow(0 .14em .16em rgba(8, 6, 30, .5));
+
+  > button,
+  > .middle {
+    position: absolute;
+    width: 34%;
+    height: 34%;
+    border: 0;
+    padding: 0;
+    background: linear-gradient(180deg, var(--pad-hi) 0%, var(--pad-face) 55%, var(--pad-lo) 100%);
+    cursor: pointer;
+  }
+
+  .up {
+    top: 0;
+    left: 33%;
+    border-radius: 16% 16% 0 0;
+    box-shadow: inset 0 .08em .06em rgba(255, 255, 255, .35);
+    &:active { background: var(--pad-lo); }
+  }
+  .right {
+    top: 33%;
+    right: 0;
+    border-radius: 0 16% 16% 0;
+    background: linear-gradient(90deg, var(--pad-face) 0%, var(--pad-lo) 100%);
+    &:active { background: var(--pad-lo); }
+  }
+  .down {
+    bottom: 0;
+    left: 33%;
+    border-radius: 0 0 16% 16%;
+    background: linear-gradient(0deg, var(--pad-lo) 0%, var(--pad-face) 100%);
+    box-shadow: inset 0 -.08em .06em rgba(0, 0, 0, .28);
+    &:active { background: var(--pad-lo); }
+  }
+  .left {
+    top: 33%;
+    left: 0;
+    border-radius: 16% 0 0 16%;
+    background: linear-gradient(270deg, var(--pad-face) 0%, var(--pad-lo) 100%);
+    &:active { background: var(--pad-lo); }
+  }
+  .middle {
+    top: 33%;
+    left: 33%;
+    cursor: default;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 14%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 28%, var(--pad-lo) 0%, var(--pad-face) 72%);
+    }
+  }
+}
+
+.a-b {
+  position: relative;
+  z-index: 5;
+
+  button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    aspect-ratio: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-weight: 700;
+    color: var(--ab-text);
+    background: radial-gradient(circle at 34% 28%, var(--ab-hi) 0%, var(--ab-face) 58%, var(--ab-lo) 100%);
+    box-shadow: 0 .14em .18em rgba(8, 6, 30, .45), inset 0 .05em .08em rgba(255, 255, 255, .45);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+    user-select: none;
+    cursor: pointer;
+
+    &:active {
+      transform: translateY(.05em);
+      box-shadow: 0 .07em .09em rgba(8, 6, 30, .45), inset 0 .05em .08em rgba(255, 255, 255, .3);
+    }
+  }
+
+  .a { top: 0; right: 0; }
+  .b { bottom: 0; left: 0; }
+}
+
+.gb-startselect {
+  z-index: 5;
+
+  button {
+    position: relative;
+    display: block;
+    border: 0;
+    padding: 0;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--pill-lo) 0%, var(--pill-hi) 130%);
+    box-shadow:
+      inset 0 .08em .12em rgba(0, 0, 0, .6),
+      inset 0 -.04em .06em rgba(255, 255, 255, .25),
+      0 .05em 0 rgba(255, 255, 255, .18);
+    cursor: pointer;
+
+    &:active { box-shadow: inset 0 .1em .14em rgba(0, 0, 0, .75); }
+
+    &::after {
+      content: attr(data-label);
+      position: absolute;
+      color: var(--label-ink);
+      font-size: .5em;
+      font-weight: 700;
+      letter-spacing: .16em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+  }
+}
+
+.gb-shoulder {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gb-speaker {
+  pointer-events: none;
+}
+
+.board-resize-handle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  border-right: 3px solid rgba(240, 240, 255, .55);
+  border-bottom: 3px solid rgba(240, 240, 255, .55);
+  border-bottom-right-radius: 7px;
+  opacity: .65;
+  touch-action: none;
+  z-index: 6;
+  &:hover { opacity: 1; }
+}
+
+/* ================================================================
+   Desktop shell: Game Boy Advance (indigo)
+   ================================================================ */
+
+@media (min-width: 768px) {
+  .gameboy {
+    --pad-hi: #d8d8e2;
+    --pad-face: #bfbfce;
+    --pad-lo: #8a8aa2;
+    --ab-hi: #e4e4ee;
+    --ab-face: #c6c6d4;
+    --ab-lo: #8f8fa8;
+    --ab-text: #8585a0;
+    --pill-hi: #6a61bd;
+    --pill-lo: #332e6b;
+    --label-ink: rgba(235, 235, 255, .6);
+
+    width: min(
+      calc(var(--board-width, 520px) * 2.5),
+      calc(100vw - 24px),
+      calc((100dvh - 110px) * 1.762)
+    );
+    aspect-ratio: 1.762;
+    font-size: calc(min(var(--board-width, 520px) * 2.5, 100vw - 24px, (100dvh - 110px) * 1.762) * .022);
+    border-radius: 24% / 47%;
+    background:
+      radial-gradient(120% 170% at 30% -8%, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0) 55%),
+      radial-gradient(150% 120% at 50% 118%, rgba(10, 5, 50, .32), rgba(10, 5, 50, 0) 55%),
+      linear-gradient(180deg, #756bcb 0%, #5d55b2 48%, #453e90 100%);
+    box-shadow:
+      inset 0 .08em .1em rgba(255, 255, 255, .3),
+      inset 0 -.12em .3em rgba(15, 8, 55, .35),
+      0 .9em 2.2em rgba(8, 5, 35, .5);
+  }
+
+  /* Regions place themselves straight on the shell. */
+  .gb-controls {
+    display: contents;
+  }
+
+  .gb-bezel {
+    position: absolute;
+    left: 23.5%;
+    right: 23.5%;
+    top: 8.5%;
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 4% 1.8%;
+    border-radius: .8em;
+    background: linear-gradient(150deg, #2e2e38 0%, #17171d 42%, #0d0d12 100%);
+    box-shadow:
+      inset 0 .08em .1em rgba(255, 255, 255, .12),
+      inset 0 -.1em .25em rgba(0, 0, 0, .65),
+      0 .18em .5em rgba(10, 6, 40, .45);
+
+    /* faint diagonal reflection across the glass, like the photo */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(115deg, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, .015) 32%, rgba(255, 255, 255, 0) 46%);
+      pointer-events: none;
+      z-index: 12;
+    }
+  }
+
+  .gb-glass {
+    flex: 1;
+  }
+
+  .gb-bezel .board-screen {
+    height: 100%;
+  }
+
+  /* A 3:2 display window for the intro — the GBA's native shape. */
+  .gb-bezel .board-screen--wide {
+    aspect-ratio: 3 / 2;
+    max-width: 100%;
+  }
+
+  .gb-wordmark-gba {
+    display: block;
+    text-align: center;
+    font-size: .88em;
+    padding-top: .5em;
+  }
+
+  .gb-wordmark-gbc {
+    display: none;
+  }
+
+  .gb-brand {
+    position: absolute;
+    top: 4.4%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .75em;
+    color: rgba(25, 16, 80, .4);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .22);
+  }
+
+  /* LED + label live on the body, just right of the bezel's top corner. */
+  .gb-power {
+    position: absolute;
+    left: 102.5%;
+    top: 5.5%;
+    gap: .35em;
+
+    em {
+      font-size: .42em;
+      color: rgba(235, 235, 255, .55);
+    }
+  }
+
+  .gb-power-led {
+    width: .36em;
+    height: .36em;
+  }
+
+  .dpad {
+    position: absolute;
+    left: 6%;
+    top: 30%;
+    width: 14.5%;
+
+    /* circular recess the D-pad sits in on the real unit */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -13%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(18, 10, 58, .3) 58%, rgba(18, 10, 58, 0) 72%);
+    }
+  }
+
+  .a-b {
+    position: absolute;
+    right: 4.4%;
+    top: 26%;
+    width: 18.5%;
+    aspect-ratio: 1.78;
+    transform: rotate(-8deg);
+
+    button {
+      width: 47%;
+      font-size: 1em;
+    }
+  }
+
+  .gb-startselect {
+    position: absolute;
+    left: 8%;
+    top: 63%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    button {
+      width: 3.4em;
+      height: .9em;
+      transform: rotate(-26deg);
+
+      &::after {
+        right: 112%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  /* L/R humps peeking over the top curve; they carry the zoom pair. */
+  .gb-shoulder {
+    position: absolute;
+    top: 1.2%;
+    width: 12%;
+    height: 6.5%;
+    z-index: -1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: .02em;
+    border-radius: .9em .9em 0 0;
+    background: linear-gradient(180deg, #7a70cc 0%, #514aa4 100%);
+    box-shadow: inset 0 .05em .07em rgba(255, 255, 255, .3);
+    color: rgba(240, 240, 255, .9);
+    font-size: .62em;
+    font-weight: 800;
+    line-height: 1.1;
+
+    &:active {
+      transform: translateY(.1em);
+    }
+  }
+
+  .gb-shoulder-l {
+    left: 8.5%;
+    transform: rotate(-11deg);
+  }
+
+  .gb-shoulder-r {
+    right: 8.5%;
+    transform: rotate(11deg);
+  }
+
+  .gb-cap {
+    position: absolute;
+    top: 7%;
+    bottom: 7%;
+    width: 9%;
+    z-index: -1;
+    border-radius: 2.4em;
+  }
+
+  .gb-cap-l {
+    left: -1.1%;
+    background: linear-gradient(90deg, #e9e9ef 0%, #b6b6c3 100%);
+  }
+
+  .gb-cap-r {
+    right: -1.1%;
+    background: linear-gradient(270deg, #e9e9ef 0%, #b6b6c3 100%);
+  }
+
+  .gb-speaker {
+    position: absolute;
+    right: 6.5%;
+    bottom: 8.5%;
+    width: 10.5%;
+    aspect-ratio: 1.1;
+    transform: rotate(26deg);
+    border-radius: .4em;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(20, 12, 60, .5) 0 .26em,
+      rgba(130, 120, 215, .3) .26em .34em,
+      rgba(20, 12, 60, 0) .34em .74em
+    );
+  }
+
+  .overlay-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 4.5%;
+    transform: translateX(-50%);
+    z-index: 6;
+  }
+
+  .board-resize-handle {
+    right: 2.5%;
+    bottom: 7%;
+  }
+}
+
+/* ================================================================
+   Mobile shell: full-viewport Game Boy Color (teal) on pure black
+   ================================================================ */
+
+@media (max-width: 767.98px) {
+  .gameboy {
+    --pad-hi: #3d3d47;
+    --pad-face: #2a2a32;
+    --pad-lo: #16161c;
+    --ab-hi: #b44a86;
+    --ab-face: #93336a;
+    --ab-lo: #5e1e44;
+    --ab-text: #4b1636;
+    --pill-hi: #3a3a44;
+    --pill-lo: #17171d;
+    --label-ink: rgba(4, 48, 48, .85);
+
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:
+      calc(env(safe-area-inset-top, 0px) + 1.6dvh)
+      4vw
+      calc(env(safe-area-inset-bottom, 0px) + 1.4dvh);
+    font-size: min(4vw, 2.2dvh);
+    background:
+      radial-gradient(130% 80% at 50% -6%, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0) 52%),
+      linear-gradient(168deg, #12bec0 0%, #04a2a4 46%, #027e82 100%);
+  }
+
+  .gb-brand,
+  .gb-cap,
+  .board-resize-handle {
+    display: none;
+  }
+
+  .gb-bezel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4.5vw 9vw 1.2vw;
+    border-radius: 3.5vw 3.5vw 4.5vw 4.5vw;
+    background: linear-gradient(155deg, #24242c 0%, #121216 45%, #0a0a0e 100%);
+    box-shadow:
+      inset 0 .5vw 1vw rgba(255, 255, 255, .09),
+      inset 0 -.7vw 1.5vw rgba(0, 0, 0, .6),
+      0 1vw 3vw rgba(0, 20, 20, .45);
+  }
+
+  .gb-glass {
+    width: 100%;
+  }
+
+  .gb-bezel .board-screen {
+    width: min(100%, 47dvh);
+  }
+
+  .gb-wordmark-gba {
+    display: none;
+  }
+
+  .gb-wordmark-gbc {
+    display: block;
+    padding: 1.8vw 0 1vw;
+    font-size: min(4.6vw, 2.6dvh);
+  }
+
+  .gb-power {
+    position: absolute;
+    left: 2.2vw;
+    top: 36%;
+    flex-direction: column;
+    gap: 1vw;
+
+    em {
+      font-size: 1.7vw;
+      letter-spacing: .1em;
+      color: rgba(255, 255, 255, .4);
+    }
+  }
+
+  .gb-power-led {
+    width: 2vw;
+    height: 2vw;
+    background: radial-gradient(circle at 35% 30%, #ffc4c4, #f04040 45%, #a01010 90%);
+    box-shadow: 0 0 6px 1px rgba(255, 80, 80, .75);
+  }
+
+  .overlay-controls {
+    margin: 1.2dvh 0 .4dvh;
+  }
+
+  .gb-controls {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .dpad {
+    position: absolute;
+    left: 4.5%;
+    top: 14%;
+    width: min(38%, 19dvh);
+  }
+
+  .a-b {
+    position: absolute;
+    right: 3%;
+    top: 11%;
+    width: min(42%, 21dvh);
+    aspect-ratio: 2;
+    transform: rotate(-16deg);
+
+    button {
+      width: 46%;
+      font-size: min(5.4vw, 3dvh);
+    }
+  }
+
+  .gb-startselect {
+    position: absolute;
+    left: 50%;
+    bottom: 13%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 12vw;
+
+    button {
+      width: 11vw;
+      height: 3.2vw;
+      min-height: 13px;
+      transform: rotate(-26deg);
+
+      &::after {
+        left: 50%;
+        top: 140%;
+        transform: translateX(-50%);
+        font-size: 2.6vw;
+      }
+    }
+  }
+
+  /* No shoulders on a GBC — the zoom pair sits by START/SELECT. */
+  .gb-shoulder {
+    position: absolute;
+    bottom: 7.5%;
+    width: min(10vw, 44px);
+    height: min(10vw, 44px);
+    border-radius: 50%;
+    background: linear-gradient(180deg, #3a3a44 0%, #17171d 100%);
+    box-shadow: inset 0 .4vw .5vw rgba(255, 255, 255, .16), 0 .5vw 1vw rgba(0, 25, 25, .4);
+    color: rgba(255, 255, 255, .8);
+    font-size: min(4.6vw, 20px);
+    font-weight: 800;
+    z-index: 5;
+  }
+
+  .gb-shoulder-l { left: 7%; }
+  .gb-shoulder-r { right: 7%; }
+
+  .gb-speaker {
+    position: absolute;
+    right: 6%;
+    bottom: 24%;
+    width: 4.4em;
+    height: 3.2em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: .4em;
+      width: .8em;
+      height: .8em;
+      border-radius: 50%;
+      background: #033d40;
+      box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, .8),
+        1.35em -.8em 0 0 #033d40,
+        2.7em -1.6em 0 0 #033d40,
+        .65em .85em 0 0 #033d40,
+        2em .05em 0 0 #033d40,
+        3.35em -.75em 0 0 #033d40;
+    }
+  }
+}
+
+/* ---------------- map overlay chips ---------------- */
+
 .overlay-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   .overlay-chip {
     padding: 4px 14px;
     border: 2px solid #0b0a1c;
@@ -461,58 +1088,4 @@
   background: #70c0a0;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-}
-
-.board-resize-handle {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  width: 20px;
-  height: 20px;
-  cursor: nwse-resize;
-  border-right: 3px solid #7f8792;
-  border-bottom: 3px solid #7f8792;
-  border-bottom-right-radius: 7px;
-  opacity: .65;
-  touch-action: none;
-  &:hover { opacity: 1; }
-}
-
-.start-select {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-
-  .select,
-  .start {
-    display: inline-block;
-    color: #6b67ed;
-    cursor: pointer;
-    text-shadow: 0 -1px 0 #3436bf;
-    letter-spacing: -1px;
-    width: 60px;
-    height: 40px;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 60px;
-    padding: 0;
-    background: transparent;
-    border: 0;
-
-    &::before {
-      content: "";
-      display: block;
-      margin: 0 auto 5px;
-      width: 30px;
-      height: 10px;
-      border-radius: 40%;
-      background: linear-gradient(to bottom, #0b0a1c 0%, #0b0a1c 30%, #62636c 70%, #62636c 100%);
-      background-repeat: no-repeat;
-      border: 2px solid #0b0a1c;
-      box-shadow: 0 -2px 1px #8482e9;
-      cursor: pointer;
-    }
-    &:active::before { background: linear-gradient(to bottom, #0b0a1c 0%, #0b0a1c 50%, #62636c 100%); }
-  }
 }

@@ -4,15 +4,11 @@ import { Nav } from "../components/Nav";
 
 export function GamePage() {
   return (
-    <div className="w-full bg-green min-h-screen pb-16">
+    <div className="page-flex w-full bg-green min-h-screen pb-16">
       <Nav />
-      <main className="w-full flex items-center justify-center">
-        <div className="container px-2">
-          <div className="w-full flex items-center justify-center pt-12 pb-12">
-            <Game />
-          </div>
-        </div>
-      </main>
+      <section className="game-stage w-full flex items-center justify-center pt-12 pb-12">
+        <Game />
+      </section>
       <DevKit />
     </div>
   );

@@ -24,3 +24,48 @@ button,
 input {
   font: inherit;
 }
+
+/* On mobile the game section becomes the entire first viewport: a pure black
+   stage holding a Game Boy Color that spans full width and full height, so
+   the phone itself reads as the console. Nav and banners scroll underneath. */
+@media (max-width: 767.98px) {
+  body:has(.game-stage) {
+    background: #000;
+  }
+
+  .page-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Console first, nav right beneath it, everything else after. */
+  .page-flex > .game-stage {
+    order: 1;
+  }
+
+  .page-flex > nav {
+    order: 2;
+  }
+
+  .page-flex > main {
+    order: 3;
+  }
+
+  .game-stage {
+    padding: 0;
+    background: #000;
+  }
+
+  .game-stage .game-root {
+    width: 100%;
+    padding: 0;
+  }
+
+  .game-stage .game-root > div {
+    width: 100%;
+  }
+
+  .game-shell-slot {
+    width: 100%;
+  }
+}
