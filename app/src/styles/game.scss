@@ -28,6 +28,9 @@
 
   button {
     font: inherit;
+    /* Immediate taps: no double-tap-zoom delay, no grey tap flash. */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -72,6 +75,14 @@
   max-width: none;
   border-radius: 0;
   box-shadow: none;
+}
+
+/* The nickname step is a regular HTML form, not 240x160 art — give it the
+   whole display and scroll instead of clipping the buttons. */
+.board-screen > .oak-intro[data-phase="nickname"] {
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: auto;
 }
 
 /* Loading / location notes rendered on the display. */
@@ -387,6 +398,11 @@
   .gb-bezel .board-screen--wide {
     aspect-ratio: 3 / 2;
     max-width: 100%;
+  }
+
+  /* …except the nickname form, which needs the square's extra height. */
+  .gb-bezel .board-screen--wide:has(> .oak-intro[data-phase="nickname"]) {
+    aspect-ratio: 1;
   }
 
   .gb-wordmark-gba {

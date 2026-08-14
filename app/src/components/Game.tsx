@@ -364,6 +364,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     document.removeEventListener("keydown", this.onKeydown);
     window.removeEventListener("resize", this.resizeGame);
     this.removeBoardResizeListeners();
+    this.stopDpadHold();
     for (const controller of this.abortControllers) controller.abort();
   }
 
@@ -731,42 +732,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     this.setUi({ menuOpen: false });
   };
 
-  private pressA = () => {
-    const { ui, battle } = this.state;
-    if (battle) {
-      // Hardware A drives the battle's message flow; menus are on-screen.
-      if (battle.phase === "message") this.onBattleMessage();
-      else if (battle.phase === "over") this.onBattleFinish();
-      return;
-    }
-    if (ui.dialog) {
-      this.advanceDialog();
-      return;
-    }
-    if (ui.menuOpen) {
-      this.selectMenuItem(MENU_ITEMS[ui.menuIndex].id);
-      return;
-    }
-    if (!ui.panel) this.interact();
-  };
-
-  private pressB = () => {
-    const { ui, battle } = this.state;
-    if (battle) {
-      if (battle.phase === "message") this.onBattleMessage();
-      else if (battle.phase === "over") this.onBattleFinish();
-      return;
-    }
-    if (ui.dialog) {
-      this.advanceDialog();
-      return;
-    }
-    if (ui.panel) {
-      this.setUi({ panel: null, menuOpen: true });
-      return;
-    }
-    if (ui.menuOpen) this.setUi({ menuOpen: false });
-  };
+  // A/B presses arrive as synthesized "z"/"x" keydowns from the shell (see
+  // sendShellKey), so every keyboard surface handles them uniformly.
 
   // --- Wild battles ---------------------------------------------------------
 
@@ -1646,16 +1613,54 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     );
   }
 
+  /** The shell buttons behave like the physical keyboard: they synthesize
+   *  keydown events on `document`, so whichever surface currently owns the
+   *  keyboard (overworld, START menu, dialogs, PROF. OAK intro, battles)
+   *  responds to them exactly as it does to real keys. */
+  private sendShellKey = (key: string) => {
+    document.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true, cancelable: true }));
+  };
+
+  private dpadHoldTimer: number | null = null;
+  private lastDpadPointerAt = 0;
+
+  private stopDpadHold = () => {
+    if (this.dpadHoldTimer !== null) {
+      window.clearInterval(this.dpadHoldTimer);
+      this.dpadHoldTimer = null;
+    }
+  };
+
+  /** Press-and-hold on the D-pad keeps walking, like holding a real key. */
+  private dpadPointerDown = (key: string) => (event: React.PointerEvent<HTMLButtonElement>) => {
+    // Blocking the default also stops the button from taking focus and from
+    // firing a follow-up compatibility click.
+    event.preventDefault();
+    this.lastDpadPointerAt = Date.now();
+    this.stopDpadHold();
+    this.sendShellKey(key);
+    this.dpadHoldTimer = window.setInterval(() => this.sendShellKey(key), 170);
+  };
+
+  /** Assistive-tech activation arrives as a bare click with no pointer
+   *  sequence; taps were already handled on pointerdown. */
+  private dpadClick = (key: string) => () => {
+    if (Date.now() - this.lastDpadPointerAt < 500) return;
+    this.sendShellKey(key);
+  };
+
   /** Handheld chrome shared by every render branch: a Game Boy Advance on
    *  desktop viewports and a full-viewport Game Boy Color on mobile. The
    *  breakpoint lives entirely in CSS so window resizes re-skin the shell
-   *  without re-rendering. `screen` fills the display; non-interactive
-   *  branches (onboarding, loading, errors) keep the buttons inert. */
+   *  without re-rendering. `screen` fills the display. `chrome` gates the
+   *  in-game extras (MAP overlay chips, resize handle); `controls` enables
+   *  the buttons — off only for loading/error screens. */
   private renderShell(
     screen: React.ReactNode,
-    opts: { interactive?: boolean; wideScreen?: boolean } = {},
+    opts: { chrome?: boolean; controls?: boolean; wideScreen?: boolean } = {},
   ) {
-    const interactive = opts.interactive !== false;
+    const chrome = opts.chrome !== false;
+    const controls = opts.controls !== false;
     const { game, ui } = this.state;
     return (
       <div
@@ -1668,8 +1673,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           className="gb-shoulder gb-shoulder-l"
           aria-label="Zoom out"
           title="Zoom out (L)"
-          disabled={!interactive}
-          onClick={interactive ? () => this.zoom("out") : undefined}
+          disabled={!controls}
+          onClick={controls ? () => this.zoom("out") : undefined}
         >
           −
         </button>
@@ -1678,8 +1683,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           className="gb-shoulder gb-shoulder-r"
           aria-label="Zoom in"
           title="Zoom in (R)"
-          disabled={!interactive}
-          onClick={interactive ? () => this.zoom("in") : undefined}
+          disabled={!controls}
+          onClick={controls ? () => this.zoom("in") : undefined}
         >
           +
         </button>
@@ -1710,7 +1715,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
             </span>
           </div>
         </div>
-        {interactive ? (
+        {chrome ? (
           <div className="overlay-controls">
             <button
               type="button"
@@ -1748,52 +1753,45 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         ) : null}
         <div className="gb-controls">
           <div className="dpad">
-            <button
-              type="button"
-              aria-label="Move up"
-              className="up"
-              disabled={!interactive}
-              onClick={interactive ? () => this.action("moveUp") : undefined}
-            />
-            <button
-              type="button"
-              aria-label="Move right"
-              className="right"
-              disabled={!interactive}
-              onClick={interactive ? () => this.action("moveRight") : undefined}
-            />
-            <button
-              type="button"
-              aria-label="Move down"
-              className="down"
-              disabled={!interactive}
-              onClick={interactive ? () => this.action("moveDown") : undefined}
-            />
-            <button
-              type="button"
-              aria-label="Move left"
-              className="left"
-              disabled={!interactive}
-              onClick={interactive ? () => this.action("moveLeft") : undefined}
-            />
+            {(
+              [
+                ["up", "Move up", "ArrowUp"],
+                ["right", "Move right", "ArrowRight"],
+                ["down", "Move down", "ArrowDown"],
+                ["left", "Move left", "ArrowLeft"],
+              ] as const
+            ).map(([cls, label, key]) => (
+              <button
+                key={cls}
+                type="button"
+                aria-label={label}
+                className={cls}
+                disabled={!controls}
+                onPointerDown={controls ? this.dpadPointerDown(key) : undefined}
+                onPointerUp={this.stopDpadHold}
+                onPointerLeave={this.stopDpadHold}
+                onPointerCancel={this.stopDpadHold}
+                onClick={controls ? this.dpadClick(key) : undefined}
+              />
+            ))}
             <div className="middle" />
           </div>
           <div className="a-b">
             <button
               type="button"
               className="b"
-              aria-label="Back or close"
-              disabled={!interactive}
-              onClick={interactive ? this.pressB : undefined}
+              aria-label="B — back or cancel"
+              disabled={!controls}
+              onClick={controls ? () => this.sendShellKey("x") : undefined}
             >
               B
             </button>
             <button
               type="button"
               className="a"
-              aria-label="Interact or confirm"
-              disabled={!interactive}
-              onClick={interactive ? this.pressA : undefined}
+              aria-label="A — interact or confirm"
+              disabled={!controls}
+              onClick={controls ? () => this.sendShellKey("z") : undefined}
             >
               A
             </button>
@@ -1804,8 +1802,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               className="select"
               data-label="SELECT"
               aria-label="Toggle debug tools"
-              disabled={!interactive}
-              onClick={interactive ? () => this.setGame({ debug: !game.debug }) : undefined}
+              disabled={!controls}
+              onClick={controls ? () => this.setGame({ debug: !game.debug }) : undefined}
             />
             <button
               type="button"
@@ -1813,13 +1811,22 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               data-label="START"
               aria-label="Toggle Start menu"
               aria-pressed={ui.menuOpen}
-              disabled={!interactive}
-              onClick={interactive ? this.toggleMenu : undefined}
+              disabled={!controls}
+              onClick={
+                controls
+                  ? () => {
+                      // START advances the intro like A; in-game it toggles the
+                      // menu (hardware START does nothing during battles).
+                      if (this.state.onboarding) this.sendShellKey("Enter");
+                      else if (!this.state.battle) this.toggleMenu();
+                    }
+                  : undefined
+              }
             />
           </div>
           <div className="gb-speaker" aria-hidden="true" />
         </div>
-        {interactive ? (
+        {chrome ? (
           <div
             className="board-resize-handle"
             title="Drag to resize the handheld"
@@ -1840,7 +1847,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       return (
         <div className="game-root w-full flex flex-col items-center justify-center pb-12">
           {this.renderShell(<OakIntro onComplete={this.completeOnboarding} />, {
-            interactive: false,
+            chrome: false,
             wideScreen: true,
           })}
         </div>
@@ -1865,7 +1872,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                 Continue without location
               </button>
             </div>,
-            { interactive: false },
+            { chrome: false, controls: false },
           )}
         </div>
       );
@@ -1891,7 +1898,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                 Reset
               </button>
             </div>,
-            { interactive: false },
+            { chrome: false, controls: false },
           )}
         </div>
       );
