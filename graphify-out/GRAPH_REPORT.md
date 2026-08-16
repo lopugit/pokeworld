@@ -1,7 +1,7 @@
 # Graph Report - vigilant-ritchie-16f64e  (2026-08-17)
 
 ## Corpus Check
-- 247 files · ~2,566,829 words
+- 247 files · ~2,566,823 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4d826412`
+- Built from commit: `4d2d8fc3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -749,7 +749,7 @@ Nodes (3): MENU_ITEMS, MenuItemId, StartMenuProps
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **677 isolated node(s):** `MenuItemId`, `MENU_ITEMS`, `StartMenuProps`, `defaultCoordinates`, `GameSettings` (+672 more)
+- **677 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+672 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **144 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -759,12 +759,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
 - **Why does `Game` connect `Game` to `.action`, `StartMenu.tsx`, `Game.tsx`, `.processBlocks`, `.onKeydown`, `.renderCanvas`?**
-  _High betweenness centrality (0.070) - this node is a cross-community bridge._
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`, `App.tsx`, `mongo.ts`?**
   _High betweenness centrality (0.042) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `autoprefixer`, `package.json`, `jiti`, `tailwindcss`, `vite`, `postcss`?**
   _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **What connects `MenuItemId`, `MENU_ITEMS`, `StartMenuProps` to the rest of the system?**
+- **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
   _681 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.09259259259259259 - nodes in this community are weakly interconnected._
