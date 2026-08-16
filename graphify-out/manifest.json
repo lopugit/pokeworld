@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1786887155.3243995,
-    "ast_hash": "52d81e4da6cc200fefd0a3360986a3df",
+    "mtime": 1786887996.563415,
+    "ast_hash": "07d884930d36c050b0ee6592aeda2960",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
