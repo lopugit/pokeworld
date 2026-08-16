@@ -325,8 +325,8 @@
     "semantic_hash": "a9e8e9d39aa1ed4ffc1085b8007f2435"
   },
   "app/src/components/game-ui/StartMenu.tsx": {
-    "mtime": 1786883892.3497674,
-    "ast_hash": "1f1fa22b44e83287494ac1e39561efd8",
+    "mtime": 1786888503.1341605,
+    "ast_hash": "a86ffae6322e09749c2e8faa005628df",
     "semantic_hash": ""
   },
   "app/src/entry-client.tsx": {
