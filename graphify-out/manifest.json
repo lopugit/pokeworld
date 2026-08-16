@@ -250,8 +250,8 @@
     "semantic_hash": "c1fe64c5bb77b2f4aeb281cc0c02a86a"
   },
   "app/src/App.tsx": {
-    "mtime": 1786883892.3467472,
-    "ast_hash": "43f526e02c93805de23917f2e33942ab",
+    "mtime": 1786888985.249466,
+    "ast_hash": "bc274688a9f2f8c8c7f7a24fedebae52",
     "semantic_hash": ""
   },
   "app/src/auth/AuthProvider.tsx": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
-    "mtime": 1786883892.3475542,
-    "ast_hash": "b7cf431f0bf69ad644539d6132e24505",
+    "mtime": 1786888988.8865356,
+    "ast_hash": "b81b96afb772220d4ba0c930b2c5f05e",
     "semantic_hash": ""
   },
   "app/src/components/game-ui/BadgesPanel.tsx": {
@@ -370,13 +370,13 @@
     "semantic_hash": ""
   },
   "app/src/pages/GamePage.tsx": {
-    "mtime": 1786884194.1870458,
-    "ast_hash": "9efb1e06650cbb3a61efd999fe108fc4",
+    "mtime": 1786888980.303267,
+    "ast_hash": "907be9170ab59a53c236d748a137982d",
     "semantic_hash": ""
   },
   "app/src/pages/HomePage.tsx": {
-    "mtime": 1786884194.187198,
-    "ast_hash": "4649f8466b8b1a4e500a76fa3d8240ac",
+    "mtime": 1786888973.2529314,
+    "ast_hash": "18a91bc639de79a5f906de6a9cd80c45",
     "semantic_hash": ""
   },
   "app/src/vite-env.d.ts": {
@@ -575,8 +575,8 @@
     "semantic_hash": ""
   },
   "app/index.html": {
-    "mtime": 1786884194.1832082,
-    "ast_hash": "2219cdc4154398b611f5117a07918119",
+    "mtime": 1786889047.1819112,
+    "ast_hash": "eceb58bb87ba5b14ba52b93bf3c252c9",
     "semantic_hash": ""
   },
   "docs/PROCEDURAL_WORLD_ACCEPTANCE.md": {
@@ -30317,6 +30317,11 @@
   "app/public/sprites/pokemon/frlg/7.png": {
     "mtime": 1786884194.185955,
     "ast_hash": "71ded5e35317e20a69e28d645872c907",
+    "semantic_hash": ""
+  },
+  "app/src/pages/AboutPage.tsx": {
+    "mtime": 1786888970.219142,
+    "ast_hash": "6b0c9b55652f5f4fbd8ab8105602488e",
     "semantic_hash": ""
   }
 }

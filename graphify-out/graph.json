@@ -4,14 +4,124 @@
   "graph": {},
   "nodes": [
     {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_app",
+      "community": 203,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "environmentPrefix()",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "app_src_app_environmentprefix",
+      "community": 203,
+      "norm_label": "environmentprefix()"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "app_src_app_app",
+      "community": 253,
+      "norm_label": "app()"
+    },
+    {
+      "label": "Nav.tsx",
+      "file_type": "code",
+      "source_file": "app/src/components/Nav.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_components_nav",
+      "community": 203,
+      "norm_label": "nav.tsx"
+    },
+    {
+      "label": "Nav()",
+      "file_type": "code",
+      "source_file": "app/src/components/Nav.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "app_src_components_nav_nav",
+      "community": 203,
+      "norm_label": "nav()"
+    },
+    {
+      "label": "AboutPage.tsx",
+      "file_type": "code",
+      "source_file": "app/src/pages/AboutPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_pages_aboutpage",
+      "community": 203,
+      "norm_label": "aboutpage.tsx"
+    },
+    {
+      "label": "AboutPage()",
+      "file_type": "code",
+      "source_file": "app/src/pages/AboutPage.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "app_src_pages_aboutpage_aboutpage",
+      "community": 203,
+      "norm_label": "aboutpage()"
+    },
+    {
+      "label": "GamePage.tsx",
+      "file_type": "code",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_pages_gamepage",
+      "community": 203,
+      "norm_label": "gamepage.tsx"
+    },
+    {
+      "label": "GamePage()",
+      "file_type": "code",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_src_pages_gamepage_gamepage",
+      "community": 203,
+      "norm_label": "gamepage()"
+    },
+    {
+      "label": "HomePage.tsx",
+      "file_type": "code",
+      "source_file": "app/src/pages/HomePage.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_pages_homepage",
+      "community": 203,
+      "norm_label": "homepage.tsx"
+    },
+    {
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "app/src/pages/HomePage.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "app_src_pages_homepage_homepage",
+      "community": 203,
+      "norm_label": "homepage()"
+    },
+    {
       "label": "StartMenu.tsx",
       "file_type": "code",
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_startmenu",
-      "community": 208,
-      "norm_label": "startmenu.tsx"
+      "community": 254,
+      "norm_label": "startmenu.tsx",
+      "id": "app_src_components_game_ui_startmenu"
     },
     {
       "label": "MenuItemId",
@@ -19,9 +129,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_startmenu_menuitemid",
-      "community": 208,
-      "norm_label": "menuitemid"
+      "community": 254,
+      "norm_label": "menuitemid",
+      "id": "app_src_components_game_ui_startmenu_menuitemid"
     },
     {
       "label": "MENU_ITEMS",
@@ -29,9 +139,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_startmenu_menu_items",
-      "community": 208,
-      "norm_label": "menu_items"
+      "community": 254,
+      "norm_label": "menu_items",
+      "id": "app_src_components_game_ui_startmenu_menu_items"
     },
     {
       "label": "StartMenuProps",
@@ -39,9 +149,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_startmenu_startmenuprops",
-      "community": 208,
-      "norm_label": "startmenuprops"
+      "community": 254,
+      "norm_label": "startmenuprops",
+      "id": "app_src_components_game_ui_startmenu_startmenuprops"
     },
     {
       "label": "StartMenu()",
@@ -49,9 +159,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "app_src_components_game_ui_startmenu_startmenu",
-      "community": 208,
-      "norm_label": "startmenu()"
+      "community": 254,
+      "norm_label": "startmenu()",
+      "id": "app_src_components_game_ui_startmenu_startmenu"
     },
     {
       "label": "Game.tsx",
@@ -199,7 +309,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L214",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": "isfinitenumber()",
       "id": "app_src_components_game_isfinitenumber"
     },
@@ -229,7 +339,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L323",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".componentdidmount()",
       "id": "app_src_components_game_game_componentdidmount"
     },
@@ -239,7 +349,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L330",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".loadspawnruleoverrides()",
       "id": "app_src_components_game_game_loadspawnruleoverrides"
     },
@@ -249,7 +359,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L350",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".preloadplayerframes()",
       "id": "app_src_components_game_game_preloadplayerframes"
     },
@@ -269,7 +379,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L374",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".setstateasync()",
       "id": "app_src_components_game_game_setstateasync"
     },
@@ -279,7 +389,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L377",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".initialize()",
       "id": "app_src_components_game_game_initialize"
     },
@@ -289,7 +399,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L388",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".getlocation()",
       "id": "app_src_components_game_game_getlocation"
     },
@@ -299,7 +409,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L428",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".initializegame()",
       "id": "app_src_components_game_game_initializegame"
     },
@@ -309,7 +419,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L455",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".initializemap()",
       "id": "app_src_components_game_game_initializemap"
     },
@@ -319,7 +429,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L496",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".initializeplayer()",
       "id": "app_src_components_game_game_initializeplayer"
     },
@@ -329,7 +439,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L522",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".withupdatedplayerblock()",
       "id": "app_src_components_game_game_withupdatedplayerblock"
     },
@@ -339,7 +449,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L537",
       "_origin": "ast",
-      "community": 1,
+      "community": 256,
       "norm_label": ".maploadingsnapshot()",
       "id": "app_src_components_game_game_maploadingsnapshot"
     },
@@ -349,7 +459,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L554",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".syncmaploading()",
       "id": "app_src_components_game_game_syncmaploading"
     },
@@ -359,7 +469,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L558",
       "_origin": "ast",
-      "community": 1,
+      "community": 256,
       "norm_label": ".waitfordestinationblock()",
       "id": "app_src_components_game_game_waitfordestinationblock"
     },
@@ -369,7 +479,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L601",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".onkeydown()",
       "id": "app_src_components_game_game_onkeydown"
     },
@@ -379,7 +489,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L683",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".setui()",
       "id": "app_src_components_game_game_setui"
     },
@@ -409,7 +519,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L699",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".togglemenu()",
       "id": "app_src_components_game_game_togglemenu"
     },
@@ -419,7 +529,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L704",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".opendialog()",
       "id": "app_src_components_game_game_opendialog"
     },
@@ -429,7 +539,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L708",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".advancedialog()",
       "id": "app_src_components_game_game_advancedialog"
     },
@@ -439,7 +549,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L714",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".closedialog()",
       "id": "app_src_components_game_game_closedialog"
     },
@@ -449,7 +559,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L716",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".selectmenuitem()",
       "id": "app_src_components_game_game_selectmenuitem"
     },
@@ -499,7 +609,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L782",
       "_origin": "ast",
-      "community": 1,
+      "community": 250,
       "norm_label": ".interact()",
       "id": "app_src_components_game_game_interact"
     },
@@ -509,7 +619,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L853",
       "_origin": "ast",
-      "community": 1,
+      "community": 256,
       "norm_label": ".action()",
       "id": "app_src_components_game_game_action"
     },
@@ -529,7 +639,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L990",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".resizegame()",
       "id": "app_src_components_game_game_resizegame"
     },
@@ -539,7 +649,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1004",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".restoreboardwidth()",
       "id": "app_src_components_game_game_restoreboardwidth"
     },
@@ -619,7 +729,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1104",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".getblocks()",
       "id": "app_src_components_game_game_getblocks"
     },
@@ -629,7 +739,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1195",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".receiveblocks()",
       "id": "app_src_components_game_game_receiveblocks"
     },
@@ -639,7 +749,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1222",
       "_origin": "ast",
-      "community": 1,
+      "community": 256,
       "norm_label": ".retrymapload()",
       "id": "app_src_components_game_game_retrymapload"
     },
@@ -649,7 +759,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1238",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".processblocks()",
       "id": "app_src_components_game_game_processblocks"
     },
@@ -659,7 +769,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1269",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".stampdevpond()",
       "id": "app_src_components_game_game_stampdevpond"
     },
@@ -669,7 +779,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1301",
       "_origin": "ast",
-      "community": 1,
+      "community": 229,
       "norm_label": ".ensurewalkablespawn()",
       "id": "app_src_components_game_game_ensurewalkablespawn"
     },
@@ -679,7 +789,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1331",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".loadimage()",
       "id": "app_src_components_game_game_loadimage"
     },
@@ -689,7 +799,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1342",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".storetiledata()",
       "id": "app_src_components_game_game_storetiledata"
     },
@@ -699,7 +809,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1350",
       "_origin": "ast",
-      "community": 1,
+      "community": 249,
       "norm_label": ".storeblockdata()",
       "id": "app_src_components_game_game_storeblockdata"
     },
@@ -709,7 +819,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1356",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".renderloop()",
       "id": "app_src_components_game_game_renderloop"
     },
@@ -719,7 +829,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1362",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".rendercanvas()",
       "id": "app_src_components_game_game_rendercanvas"
     },
@@ -729,7 +839,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1493",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".drawgoogleblocks()",
       "id": "app_src_components_game_game_drawgoogleblocks"
     },
@@ -739,7 +849,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1507",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".drawoverlaydivider()",
       "id": "app_src_components_game_game_drawoverlaydivider"
     },
@@ -789,7 +899,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1587",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".tileshouldrender()",
       "id": "app_src_components_game_game_tileshouldrender"
     },
@@ -799,7 +909,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1598",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".blockshouldrender()",
       "id": "app_src_components_game_game_blockshouldrender"
     },
@@ -809,7 +919,7 @@
       "source_file": "app/src/components/Game.tsx",
       "source_location": "L1603",
       "_origin": "ast",
-      "community": 1,
+      "community": 251,
       "norm_label": ".converty()",
       "id": "app_src_components_game_game_converty"
     },
@@ -932,46 +1042,6 @@
       "community": 248,
       "norm_label": "settingspanel()",
       "id": "app_src_components_game_ui_settingspanel_settingspanel"
-    },
-    {
-      "label": "GamePage.tsx",
-      "file_type": "code",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "gamepage.tsx",
-      "id": "app_src_pages_gamepage"
-    },
-    {
-      "label": "GamePage()",
-      "file_type": "code",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "gamepage()",
-      "id": "app_src_pages_gamepage_gamepage"
-    },
-    {
-      "label": "HomePage.tsx",
-      "file_type": "code",
-      "source_file": "app/src/pages/HomePage.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "homepage.tsx",
-      "id": "app_src_pages_homepage"
-    },
-    {
-      "label": "HomePage()",
-      "file_type": "code",
-      "source_file": "app/src/pages/HomePage.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "homepage()",
-      "id": "app_src_pages_homepage_homepage"
     },
     {
       "label": "DESIGN-emerald-game-systems.md",
@@ -1659,7 +1729,7 @@
       "source_file": "app/package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 4,
+      "community": 252,
       "norm_label": "mongodb",
       "id": "app_package_dependencies_mongodb"
     },
@@ -1679,7 +1749,7 @@
       "source_file": "app/package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 222,
+      "community": 198,
       "norm_label": "pngjs",
       "id": "app_package_dependencies_pngjs"
     },
@@ -1709,7 +1779,7 @@
       "source_file": "app/package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 198,
+      "community": 203,
       "norm_label": "react-router",
       "id": "app_package_dependencies_react_router"
     },
@@ -1809,7 +1879,7 @@
       "source_file": "app/package.json",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 10,
+      "community": 257,
       "norm_label": "autoprefixer",
       "id": "app_package_devdependencies_autoprefixer"
     },
@@ -1819,7 +1889,7 @@
       "source_file": "app/package.json",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 10,
+      "community": 258,
       "norm_label": "jiti",
       "id": "app_package_devdependencies_jiti"
     },
@@ -1849,7 +1919,7 @@
       "source_file": "app/package.json",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 10,
+      "community": 259,
       "norm_label": "tailwindcss",
       "id": "app_package_devdependencies_tailwindcss"
     },
@@ -2039,7 +2109,7 @@
       "source_file": "app/server/routes/api/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "blocks.get.ts",
       "id": "app_server_routes_api_blocks_get"
     },
@@ -2129,7 +2199,7 @@
       "source_file": "app/server/services/map/block-store.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 29,
+      "community": 4,
       "norm_label": "getstoredblocks()",
       "id": "app_server_services_map_block_store_getstoredblocks"
     },
@@ -2179,7 +2249,7 @@
       "source_file": "app/server/services/map/generate.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 4,
+      "community": 205,
       "norm_label": "iscurrentmapblock()",
       "id": "app_server_services_map_generate_iscurrentmapblock"
     },
@@ -3319,7 +3389,7 @@
       "source_file": "app/tests/map-workflow-scheduling.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "map-workflow-scheduling.test.ts",
       "id": "app_tests_map_workflow_scheduling_test"
     },
@@ -3329,7 +3399,7 @@
       "source_file": "app/tests/map-workflow-scheduling.test.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "execution",
       "id": "app_tests_map_workflow_scheduling_test_execution"
     },
@@ -3539,7 +3609,7 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "index.ts",
       "id": "app_workflows_map_generation_index"
     },
@@ -3549,7 +3619,7 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "mapgenerationbatches()",
       "id": "app_workflows_map_generation_index_mapgenerationbatches"
     },
@@ -3559,7 +3629,7 @@
       "source_file": "app/workflows/map-generation/index.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "generatemapworkflow()",
       "id": "app_workflows_map_generation_index_generatemapworkflow"
     },
@@ -4959,7 +5029,7 @@
       "source_file": "app/src/lib/design/families-generated.ts",
       "source_location": "L398",
       "_origin": "ast",
-      "community": 0,
+      "community": 19,
       "norm_label": "addentities()",
       "id": "app_src_lib_design_families_generated_addentities"
     },
@@ -5249,7 +5319,7 @@
       "source_file": "app/src/lib/design/families.ts",
       "source_location": "L152",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "domesomewhere()",
       "id": "app_src_lib_design_families_domesomewhere"
     },
@@ -5449,7 +5519,7 @@
       "source_file": "app/src/lib/design/legality.ts",
       "source_location": "L661",
       "_origin": "ast",
-      "community": 132,
+      "community": 133,
       "norm_label": "formatviolations()",
       "id": "app_src_lib_design_legality_formatviolations"
     },
@@ -5459,7 +5529,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "paint.ts",
       "id": "app_src_lib_design_paint"
     },
@@ -5489,7 +5559,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "inbounds()",
       "id": "app_src_lib_design_paint_inbounds"
     },
@@ -5529,7 +5599,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "paintblob()",
       "id": "app_src_lib_design_paint_paintblob"
     },
@@ -5549,7 +5619,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 0,
+      "community": 19,
       "norm_label": "paintpath()",
       "id": "app_src_lib_design_paint_paintpath"
     },
@@ -5569,7 +5639,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 133,
+      "community": 209,
       "norm_label": "neighbours()",
       "id": "app_src_lib_design_paint_neighbours"
     },
@@ -5589,7 +5659,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L168",
       "_origin": "ast",
-      "community": 132,
+      "community": 209,
       "norm_label": "rippleindex()",
       "id": "app_src_lib_design_paint_rippleindex"
     },
@@ -5599,7 +5669,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L174",
       "_origin": "ast",
-      "community": 132,
+      "community": 209,
       "norm_label": "watertilename()",
       "id": "app_src_lib_design_paint_watertilename"
     },
@@ -5609,7 +5679,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L193",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "ground_prefix",
       "id": "app_src_lib_design_paint_ground_prefix"
     },
@@ -5619,7 +5689,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L206",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "groundfallback",
       "id": "app_src_lib_design_paint_groundfallback"
     },
@@ -5629,7 +5699,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L208",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "fallbackat()",
       "id": "app_src_lib_design_paint_fallbackat"
     },
@@ -5639,7 +5709,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L211",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "smoothwater()",
       "id": "app_src_lib_design_paint_smoothwater"
     },
@@ -5649,7 +5719,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L274",
       "_origin": "ast",
-      "community": 133,
+      "community": 209,
       "norm_label": "absorbisolatedspecks()",
       "id": "app_src_lib_design_paint_absorbisolatedspecks"
     },
@@ -5659,7 +5729,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L307",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "bridgeable",
       "id": "app_src_lib_design_paint_bridgeable"
     },
@@ -5669,7 +5739,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L309",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "deckcell",
       "id": "app_src_lib_design_paint_deckcell"
     },
@@ -5679,7 +5749,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L321",
       "_origin": "ast",
-      "community": 133,
+      "community": 209,
       "norm_label": "planbridgedecks()",
       "id": "app_src_lib_design_paint_planbridgedecks"
     },
@@ -5689,7 +5759,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L367",
       "_origin": "ast",
-      "community": 133,
+      "community": 209,
       "norm_label": "bakeground()",
       "id": "app_src_lib_design_paint_bakeground"
     },
@@ -5709,7 +5779,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L420",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "areaclear()",
       "id": "app_src_lib_design_paint_areaclear"
     },
@@ -5719,7 +5789,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L436",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "areaonground()",
       "id": "app_src_lib_design_paint_areaonground"
     },
@@ -5729,7 +5799,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L455",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "structurekind",
       "id": "app_src_lib_design_paint_structurekind"
     },
@@ -5739,7 +5809,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L460",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": ".tileat()",
       "id": "app_src_lib_design_paint_structurekind_tileat"
     },
@@ -5749,7 +5819,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L463",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "structure()",
       "id": "app_src_lib_design_paint_structure"
     },
@@ -5759,7 +5829,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L470",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "structures",
       "id": "app_src_lib_design_paint_structures"
     },
@@ -5769,7 +5839,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L481",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "placestructure()",
       "id": "app_src_lib_design_paint_placestructure"
     },
@@ -5779,7 +5849,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L502",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "placehouse()",
       "id": "app_src_lib_design_paint_placehouse"
     },
@@ -5789,7 +5859,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L516",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "placedome()",
       "id": "app_src_lib_design_paint_placedome"
     },
@@ -5849,7 +5919,7 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L619",
       "_origin": "ast",
-      "community": 0,
+      "community": 209,
       "norm_label": "big_tree_slices",
       "id": "app_src_lib_design_paint_big_tree_slices"
     },
@@ -5929,7 +5999,7 @@
       "source_file": "app/tests/generation-job.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 231,
+      "community": 245,
       "norm_label": "generation-job.test.ts",
       "id": "app_tests_generation_job_test"
     },
@@ -5939,7 +6009,7 @@
       "source_file": "app/tests/generation-job.test.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 231,
+      "community": 245,
       "norm_label": "input",
       "id": "app_tests_generation_job_test_input"
     },
@@ -6201,7 +6271,7 @@
       "source_file": "app/src/components/design/DesignBrowser.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 133,
+      "community": 208,
       "norm_label": "designcard()",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_designbrowser_designcard"
@@ -6630,7 +6700,7 @@
       "source_file": "app/src/components/design/RulesTab.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 132,
+      "community": 208,
       "norm_label": "rulestab()",
       "community_name": "DesignPage.tsx",
       "id": "app_src_components_design_rulestab_rulestab"
@@ -6828,7 +6898,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 132,
+      "community": 208,
       "norm_label": "designpage.tsx",
       "community_name": "DesignPage.tsx",
       "id": "app_src_pages_designpage"
@@ -6839,7 +6909,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 132,
+      "community": 208,
       "norm_label": "tabs",
       "community_name": "DesignPage.tsx",
       "id": "app_src_pages_designpage_tabs"
@@ -6850,7 +6920,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 132,
+      "community": 208,
       "norm_label": "tabid",
       "community_name": "DesignPage.tsx",
       "id": "app_src_pages_designpage_tabid"
@@ -6861,7 +6931,7 @@
       "source_file": "app/src/pages/DesignPage.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 203,
+      "community": 208,
       "norm_label": "designpage()",
       "community_name": "DesignPage.tsx",
       "id": "app_src_pages_designpage_designpage"
@@ -7235,7 +7305,7 @@
       "source_file": "app/tests/design-legality.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 132,
+      "community": 133,
       "norm_label": "design-legality.test.ts",
       "community_name": "index.ts",
       "id": "app_tests_design_legality_test"
@@ -7576,7 +7646,7 @@
       "source_file": "app/src/auth/AuthProvider.tsx",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 203,
+      "community": 239,
       "norm_label": "authprovider()",
       "community_name": "App.tsx",
       "id": "app_src_auth_authprovider_authprovider"
@@ -7587,7 +7657,7 @@
       "source_file": "app/src/auth/AuthProvider.tsx",
       "source_location": "L196",
       "_origin": "ast",
-      "community": 209,
+      "community": 239,
       "norm_label": "useauth()",
       "community_name": "AuthControls.tsx",
       "id": "app_src_auth_authprovider_useauth"
@@ -8302,7 +8372,7 @@
       "source_file": "app/src/components/design/CommunityBrowser.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 133,
+      "community": 255,
       "norm_label": "communitybrowser.tsx",
       "community_name": "DesignDetailModal.tsx",
       "id": "app_src_components_design_communitybrowser"
@@ -8313,7 +8383,7 @@
       "source_file": "app/src/components/design/CommunityBrowser.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 133,
+      "community": 255,
       "norm_label": "biomes",
       "community_name": "DesignDetailModal.tsx",
       "id": "app_src_components_design_communitybrowser_biomes"
@@ -8324,7 +8394,7 @@
       "source_file": "app/src/components/design/CommunityBrowser.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 133,
+      "community": 255,
       "norm_label": "designpagepayload",
       "community_name": "DesignDetailModal.tsx",
       "id": "app_src_components_design_communitybrowser_designpagepayload"
@@ -8335,7 +8405,7 @@
       "source_file": "app/src/components/design/CommunityBrowser.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 133,
+      "community": 255,
       "norm_label": "communitybrowser()",
       "community_name": "DesignDetailModal.tsx",
       "id": "app_src_components_design_communitybrowser_communitybrowser"
@@ -8709,7 +8779,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.delete.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules.delete.ts",
       "community_name": "encounters.ts",
       "id": "app_server_routes_api_admin_spawn_rules_delete"
@@ -8720,7 +8790,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "encounters.ts",
       "id": "app_server_routes_api_admin_spawn_rules_get"
@@ -8731,7 +8801,7 @@
       "source_file": "app/server/routes/api/admin/spawn-rules.put.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules.put.ts",
       "community_name": "encounters.ts",
       "id": "app_server_routes_api_admin_spawn_rules_put"
@@ -8742,7 +8812,7 @@
       "source_file": "app/server/routes/api/spawn-rules.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules.get.ts",
       "community_name": "encounters.ts",
       "id": "app_server_routes_api_spawn_rules_get"
@@ -8753,7 +8823,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules-store.ts",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store"
@@ -8764,7 +8834,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawnrulescollection()",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_spawnrulescollection"
@@ -8775,7 +8845,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "memoryoverrides",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_memoryoverrides"
@@ -8786,7 +8856,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "listspawnoverrides()",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_listspawnoverrides"
@@ -8797,7 +8867,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "putspawnoverride()",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_putspawnoverride"
@@ -8808,7 +8878,7 @@
       "source_file": "app/server/services/pokemon/spawn-rules-store.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "deletespawnoverride()",
       "community_name": "encounters.ts",
       "id": "app_server_services_pokemon_spawn_rules_store_deletespawnoverride"
@@ -8984,7 +9054,7 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 7,
+      "community": 200,
       "norm_label": "expprogress()",
       "community_name": "pokedex.ts",
       "id": "app_src_components_game_ui_battlescreen_expprogress"
@@ -9028,7 +9098,7 @@
       "source_file": "app/src/components/game-ui/BattleScreen.tsx",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 7,
+      "community": 200,
       "norm_label": "battlescreen()",
       "community_name": "battle.ts",
       "id": "app_src_components_game_ui_battlescreen_battlescreen"
@@ -9050,7 +9120,7 @@
       "source_file": "app/src/components/game-ui/PokedexPanel.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 32,
+      "community": 200,
       "norm_label": "pokedexpanelprops",
       "community_name": "trainer-state.test.ts",
       "id": "app_src_components_game_ui_pokedexpanel_pokedexpanelprops"
@@ -9402,7 +9472,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L458",
       "_origin": "ast",
-      "community": 200,
+      "community": 27,
       "norm_label": "grantbattleexp()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_battle_grantbattleexp"
@@ -9435,7 +9505,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L510",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "catchattempt()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_catchattempt"
@@ -9501,7 +9571,7 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L757",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "applybattleoutcome()",
       "community_name": "battle.ts",
       "id": "app_src_lib_battle_applybattleoutcome"
@@ -9556,7 +9626,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 136,
+      "community": 28,
       "norm_label": "spawnrule",
       "community_name": "battle.ts",
       "id": "app_src_lib_encounters_spawnrule"
@@ -9567,7 +9637,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "speciesspawnoverride",
       "community_name": "encounters.ts",
       "id": "app_src_lib_encounters_speciesspawnoverride"
@@ -9622,7 +9692,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L89",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "norm_label": "encountertriggered()",
       "community_name": "encounters.ts",
       "id": "app_src_lib_encounters_encountertriggered"
@@ -9765,7 +9835,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L291",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "normalizespawnoverride()",
       "community_name": "encounters.ts",
       "id": "app_src_lib_encounters_normalizespawnoverride"
@@ -9776,7 +9846,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L306",
       "_origin": "ast",
-      "community": 136,
+      "community": 28,
       "norm_label": "encounterresult",
       "community_name": "battle.ts",
       "id": "app_src_lib_encounters_encounterresult"
@@ -9798,7 +9868,7 @@
       "source_file": "app/src/lib/encounters.ts",
       "source_location": "L329",
       "_origin": "ast",
-      "community": 28,
+      "community": 200,
       "norm_label": "rollencounter()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_encounters_rollencounter"
@@ -10194,7 +10264,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 136,
+      "community": 28,
       "norm_label": "pokemongender",
       "community_name": "battle.ts",
       "id": "app_src_lib_pokedex_pokemongender"
@@ -10249,7 +10319,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 7,
+      "community": 200,
       "norm_label": "getspecies()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_getspecies"
@@ -10260,7 +10330,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "speciesbyname()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_speciesbyname"
@@ -10304,7 +10374,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L84",
       "_origin": "ast",
-      "community": 7,
+      "community": 200,
       "norm_label": "expforlevel()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_expforlevel"
@@ -10337,7 +10407,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 27,
+      "community": 200,
       "norm_label": "rng",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_rng"
@@ -10348,7 +10418,7 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L125",
       "_origin": "ast",
-      "community": 28,
+      "community": 200,
       "norm_label": "rollgender()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_pokedex_rollgender"
@@ -10612,7 +10682,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "isknownsprite()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_isknownsprite"
@@ -10623,7 +10693,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "spriteforspecies()",
       "community_name": "battle.ts",
       "id": "app_src_lib_trainer_state_spriteforspecies"
@@ -10656,7 +10726,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L131",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "createpartymember()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_createpartymember"
@@ -10667,7 +10737,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L160",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "startermember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_startermember"
@@ -10711,7 +10781,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L224",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "normalizemember()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_normalizemember"
@@ -10821,7 +10891,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L430",
       "_origin": "ast",
-      "community": 7,
+      "community": 26,
       "norm_label": "removebagitem()",
       "community_name": "battle.ts",
       "id": "app_src_lib_trainer_state_removebagitem"
@@ -10854,7 +10924,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L461",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "transition()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_transition"
@@ -10920,7 +10990,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L513",
       "_origin": "ast",
-      "community": 7,
+      "community": 32,
       "norm_label": "levelupmember()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_levelupmember"
@@ -10931,7 +11001,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L530",
       "_origin": "ast",
-      "community": 7,
+      "community": 200,
       "norm_label": "grantexperience()",
       "community_name": "pokedex.ts",
       "id": "app_src_lib_trainer_state_grantexperience"
@@ -10942,7 +11012,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L544",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "usebagitem()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_usebagitem"
@@ -10953,7 +11023,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L608",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "setleadpartymember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_setleadpartymember"
@@ -10964,7 +11034,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L618",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "togglebadge()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_togglebadge"
@@ -10975,7 +11045,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L631",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "depositpartymember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_depositpartymember"
@@ -10986,7 +11056,7 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L646",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "withdrawpartymember()",
       "community_name": "trainer-state.ts",
       "id": "app_src_lib_trainer_state_withdrawpartymember"
@@ -11239,7 +11309,7 @@
       "source_file": "app/src/pages/AdminPage.tsx",
       "source_location": "L159",
       "_origin": "ast",
-      "community": 203,
+      "community": 136,
       "norm_label": "adminpage()",
       "community_name": "App.tsx",
       "id": "app_src_pages_adminpage_adminpage"
@@ -11415,7 +11485,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "spawn-rules-api.test.ts",
       "community_name": "encounters.ts",
       "id": "app_tests_spawn_rules_api_test"
@@ -11426,7 +11496,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "customrule()",
       "community_name": "encounters.ts",
       "id": "app_tests_spawn_rules_api_test_customrule"
@@ -11437,7 +11507,7 @@
       "source_file": "app/tests/spawn-rules-api.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 229,
+      "community": 136,
       "norm_label": "overridefor()",
       "community_name": "encounters.ts",
       "id": "app_tests_spawn_rules_api_test_overridefor"
@@ -11470,7 +11540,7 @@
       "source_file": "app/tests/trainer-state.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "trainer-state.test.ts",
       "community_name": "trainer-state.ts",
       "id": "app_tests_trainer_state_test"
@@ -11481,7 +11551,7 @@
       "source_file": "app/tests/trainer-state.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 26,
+      "community": 32,
       "norm_label": "fielditem",
       "community_name": "trainer-state.ts",
       "id": "app_tests_trainer_state_test_fielditem"
@@ -11518,61 +11588,6 @@
       "norm_label": "[id].delete.ts",
       "community_name": "store.ts",
       "id": "app_server_routes_api_designs_id_delete"
-    },
-    {
-      "label": "App.tsx",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "app.tsx",
-      "community_name": "App.tsx",
-      "id": "app_src_app"
-    },
-    {
-      "label": "environmentPrefix()",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "environmentprefix()",
-      "community_name": "App.tsx",
-      "id": "app_src_app_environmentprefix"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "app()",
-      "community_name": "App.tsx",
-      "id": "app_src_app_app"
-    },
-    {
-      "label": "Nav.tsx",
-      "file_type": "code",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "nav.tsx",
-      "community_name": "AuthControls.tsx",
-      "id": "app_src_components_nav"
-    },
-    {
-      "label": "Nav()",
-      "file_type": "code",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "nav()",
-      "community_name": "DevKit.tsx",
-      "id": "app_src_components_nav_nav"
     },
     {
       "label": "design-store.test.ts",
@@ -12685,7 +12700,7 @@
       "source_file": "app/server/routes/v1/blocks.get.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 205,
+      "community": 245,
       "norm_label": "blocks.get.ts",
       "community_name": "block-lat-lng.get.ts",
       "id": "app_server_routes_v1_blocks_get"
@@ -13972,7 +13987,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 252,
       "norm_label": "mongo.ts",
       "community_name": "block-store.ts",
       "id": "app_server_services_map_mongo"
@@ -13983,7 +13998,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 4,
+      "community": 252,
       "norm_label": "mongouri()",
       "community_name": "block-store.ts",
       "id": "app_server_services_map_mongo_mongouri"
@@ -13994,7 +14009,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 4,
+      "community": 252,
       "norm_label": "ismongoconfigured()",
       "community_name": "block-store.ts",
       "id": "app_server_services_map_mongo_ismongoconfigured"
@@ -14005,7 +14020,7 @@
       "source_file": "app/server/services/map/mongo.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 4,
+      "community": 252,
       "norm_label": "blockscollection()",
       "community_name": "block-store.ts",
       "id": "app_server_services_map_mongo_blockscollection"
@@ -14665,7 +14680,7 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 231,
+      "community": 205,
       "norm_label": "mapgenerationstepresult",
       "community_name": "generate.ts",
       "id": "app_server_services_map_types_mapgenerationstepresult"
@@ -14951,7 +14966,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 209,
+      "community": 239,
       "norm_label": "authcontrols.tsx",
       "community_name": "AuthControls.tsx",
       "id": "app_src_components_authcontrols"
@@ -14962,7 +14977,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 209,
+      "community": 239,
       "norm_label": "useravatar()",
       "community_name": "AuthControls.tsx",
       "id": "app_src_components_authcontrols_useravatar"
@@ -14973,7 +14988,7 @@
       "source_file": "app/src/components/AuthControls.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 209,
+      "community": 239,
       "norm_label": "authcontrols()",
       "community_name": "AuthControls.tsx",
       "id": "app_src_components_authcontrols_authcontrols"
@@ -15358,7 +15373,7 @@
       "source_file": "app/src/entry-client.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 203,
+      "community": 253,
       "norm_label": "entry-client.tsx",
       "community_name": "App.tsx",
       "id": "app_src_entry_client"
@@ -15369,7 +15384,7 @@
       "source_file": "app/src/entry-client.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 203,
+      "community": 253,
       "norm_label": "root",
       "community_name": "App.tsx",
       "id": "app_src_entry_client_root"
@@ -15875,7 +15890,7 @@
       "source_file": "app/tests/map-generation.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 231,
+      "community": 205,
       "norm_label": "map-generation.test.ts",
       "community_name": "generate.ts",
       "id": "app_tests_map_generation_test"
@@ -20780,7 +20795,7 @@
     },
     {
       "file_type": "concept",
-      "community": 4,
+      "community": 252,
       "community_name": "dependencies",
       "norm_label": "",
       "id": "mongodb"
@@ -20815,7 +20830,7 @@
     },
     {
       "file_type": "concept",
-      "community": 209,
+      "community": 203,
       "community_name": "AuthControls.tsx",
       "norm_label": "",
       "id": "react_router"
@@ -20878,14 +20893,14 @@
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 257,
       "community_name": "autoprefixer",
       "norm_label": "",
       "id": "autoprefixer"
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 258,
       "community_name": "jiti",
       "norm_label": "",
       "id": "jiti"
@@ -20906,7 +20921,7 @@
     },
     {
       "file_type": "concept",
-      "community": 10,
+      "community": 259,
       "community_name": "devDependencies",
       "norm_label": "",
       "id": "tailwindcss"
@@ -20927,7 +20942,7 @@
     },
     {
       "file_type": "concept",
-      "community": 231,
+      "community": 133,
       "community_name": "map-load.ts",
       "norm_label": "",
       "id": "vitest"
@@ -21053,21 +21068,21 @@
     },
     {
       "file_type": "concept",
-      "community": 203,
+      "community": 253,
       "community_name": "App.tsx",
       "norm_label": "",
       "id": "preamble"
     },
     {
       "file_type": "concept",
-      "community": 203,
+      "community": 253,
       "community_name": "App.tsx",
       "norm_label": "",
       "id": "client"
     },
     {
       "file_type": "concept",
-      "community": 203,
+      "community": 253,
       "community_name": "App.tsx",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_src_styles_index_css"
@@ -21109,7 +21124,7 @@
     },
     {
       "file_type": "concept",
-      "community": 231,
+      "community": 205,
       "community_name": "generate.ts",
       "norm_label": "",
       "id": "users_lopu_things_code_lopugit_pokeworld_app_server_services_map_generate_map_block_version"
@@ -21242,12 +21257,259 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_app_environmentprefix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/entry-client.tsx",
+      "source_location": "L4",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_src_app",
+      "target": "app_src_entry_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_aboutpage_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_gamepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_gamepage_gamepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "app_src_pages_homepage_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_src_app",
+      "target": "react_router",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/entry-client.tsx",
+      "source_location": "L4",
+      "weight": 1,
+      "confidence_score": 1,
+      "source": "app_src_app_app",
+      "target": "app_src_entry_client"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Nav.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_src_components_nav",
+      "target": "app_src_components_nav_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/components/Nav.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_src_components_nav",
+      "target": "react_router",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/AboutPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_src_pages_aboutpage",
+      "target": "app_src_components_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_src_pages_gamepage",
+      "target": "app_src_components_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/HomePage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_src_pages_homepage",
+      "target": "app_src_components_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/AboutPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_src_pages_aboutpage",
+      "target": "app_src_components_nav_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_src_pages_gamepage",
+      "target": "app_src_components_nav_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/HomePage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_src_pages_homepage",
+      "target": "app_src_components_nav_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/AboutPage.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_src_pages_aboutpage",
+      "target": "app_src_pages_aboutpage_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/GamePage.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_src_pages_gamepage",
+      "target": "app_src_pages_gamepage_gamepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/pages/HomePage.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_src_pages_homepage",
+      "target": "app_src_pages_homepage_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_startmenu",
-      "target": "app_src_components_game_ui_startmenu_menu_items",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_startmenu_menu_items"
     },
     {
       "relation": "contains",
@@ -21255,9 +21517,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_startmenu",
-      "target": "app_src_components_game_ui_startmenu_menuitemid",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_startmenu_menuitemid"
     },
     {
       "relation": "contains",
@@ -21265,9 +21527,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_startmenu",
-      "target": "app_src_components_game_ui_startmenu_startmenu",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_startmenu_startmenu"
     },
     {
       "relation": "contains",
@@ -21275,9 +21537,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_startmenu",
-      "target": "app_src_components_game_ui_startmenu_startmenuprops",
-      "confidence_score": 1.0
+      "target": "app_src_components_game_ui_startmenu_startmenuprops"
     },
     {
       "relation": "imports_from",
@@ -21286,9 +21548,9 @@
       "source_file": "app/src/components/game-ui/StartMenu.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_src_components_game_ui_startmenu",
-      "target": "react",
-      "confidence_score": 1.0
+      "target": "react"
     },
     {
       "relation": "contains",
@@ -21460,28 +21722,6 @@
       "confidence_score": 1.0,
       "source": "app_src_components_game",
       "target": "react"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_gamepage",
-      "target": "app_src_components_game"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/HomePage.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_homepage",
-      "target": "app_src_components_game"
     },
     {
       "relation": "calls",
@@ -22209,28 +22449,6 @@
       "target": "app_src_components_game_game_zoom"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_gamepage",
-      "target": "app_src_components_game_game"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/HomePage.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_homepage",
-      "target": "app_src_components_game_game"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -22930,70 +23148,6 @@
       "confidence_score": 1.0,
       "source": "app_src_components_game_ui_settingspanel",
       "target": "react"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_pages_gamepage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/GamePage.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_gamepage",
-      "target": "app_src_pages_gamepage_gamepage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_pages_gamepage_gamepage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_pages_homepage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/pages/HomePage.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_homepage",
-      "target": "app_src_pages_homepage_homepage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_pages_homepage_homepage"
     },
     {
       "relation": "contains",
@@ -35270,17 +35424,6 @@
       "target": "app_src_lib_design_index"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_designpage",
-      "target": "app_src_app"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/pages/DesignPage.tsx",
@@ -35331,17 +35474,6 @@
       "confidence_score": 1.0,
       "source": "app_src_pages_designpage",
       "target": "react_router"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_pages_designpage_designpage",
-      "target": "app_src_app"
     },
     {
       "relation": "contains",
@@ -36081,17 +36213,6 @@
       "target": "app_vercel_deployments_verified_thingtime_database_preview"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L3",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_auth_authprovider",
-      "target": "app_src_app"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/auth/AuthProvider.tsx",
@@ -36274,17 +36395,6 @@
       "confidence_score": 1.0,
       "source": "app_src_auth_authprovider_parsesession",
       "target": "app_src_auth_authprovider_sessionrequest"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L3",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_auth_authprovider_authprovider",
-      "target": "app_src_app"
     },
     {
       "relation": "imports",
@@ -44555,17 +44665,6 @@
       "target": "app_tests_trainer_state_test"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L4",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_pages_adminpage",
-      "target": "app_src_app"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/pages/AdminPage.tsx",
@@ -44801,17 +44900,6 @@
       "confidence_score": 1.0,
       "source": "app_src_pages_adminpage_fencelabel",
       "target": "app_src_pages_adminpage_rulesummary"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L4",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_pages_adminpage_adminpage",
-      "target": "app_src_app"
     },
     {
       "relation": "contains",
@@ -45083,113 +45171,6 @@
       "confidence_score": 1.0,
       "source": "app_server_routes_api_designs_id_delete",
       "target": "h3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L16",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_app_app"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L8",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_app_environmentprefix"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/entry-client.tsx",
-      "source_location": "L4",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "app_src_entry_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "react"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/App.tsx",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app",
-      "target": "react_router"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/entry-client.tsx",
-      "source_location": "L4",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_app_app",
-      "target": "app_src_entry_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_components_nav",
-      "target": "app_src_components_authcontrols"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L2",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_components_nav",
-      "target": "app_src_components_authcontrols_authcontrols"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L4",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_components_nav",
-      "target": "app_src_components_nav_nav"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/components/Nav.tsx",
-      "source_location": "L1",
-      "weight": 1,
-      "confidence_score": 1,
-      "source": "app_src_components_nav",
-      "target": "react_router"
     },
     {
       "relation": "contains",
@@ -55593,5 +55574,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cc1df390a280e34ea72ae3044a9a811e2f919c36"
+  "built_at_commit": "4d8264129ceb70395c49b1324ade3e771bb2d0cc"
 }
