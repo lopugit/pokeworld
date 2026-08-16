@@ -1688,8 +1688,6 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
         >
           +
         </button>
-        <div className="gb-cap gb-cap-l" aria-hidden="true" />
-        <div className="gb-cap gb-cap-r" aria-hidden="true" />
         <div className="gb-brand" aria-hidden="true">
           Nintendo
         </div>

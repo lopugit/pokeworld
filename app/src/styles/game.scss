@@ -9,8 +9,8 @@
    ================================================================ */
 
 /* Shell parents form the stacking context so parts with negative z-index
-   (shoulder humps, silver end caps) slide behind the body but still paint
-   above the page background. */
+   (the GBA's shoulder slivers) slide behind the body but still paint above
+   the page background. */
 .game-root {
   position: relative;
   z-index: 0;
@@ -78,11 +78,16 @@
 }
 
 /* The nickname step is a regular HTML form, not 240x160 art — give it the
-   whole display and scroll instead of clipping the buttons. */
+   whole display and scroll invisibly instead of clipping the buttons. */
 .board-screen > .oak-intro[data-phase="nickname"] {
   height: 100%;
   aspect-ratio: auto;
-  overflow: auto;
+  overflow: hidden auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Loading / location notes rendered on the display. */
@@ -167,11 +172,14 @@
 
 /* ---------------- controls (geometry shared) ---------------- */
 
+/* One flat colour across the whole cross — the arms and hub share the exact
+   same face so the joins are invisible; only the outer edges carry a subtle
+   bevel, matching the moulded plastic of the real pad. */
 .dpad {
   position: relative;
   aspect-ratio: 1;
   z-index: 5;
-  filter: drop-shadow(0 .14em .16em rgba(8, 6, 30, .5));
+  filter: drop-shadow(0 .1em .12em rgba(8, 6, 30, .45));
 
   > button,
   > .middle {
@@ -180,50 +188,50 @@
     height: 34%;
     border: 0;
     padding: 0;
-    background: linear-gradient(180deg, var(--pad-hi) 0%, var(--pad-face) 55%, var(--pad-lo) 100%);
+    background: var(--pad-face);
     cursor: pointer;
+  }
+
+  > button:active {
+    background: var(--pad-lo);
   }
 
   .up {
     top: 0;
     left: 33%;
-    border-radius: 16% 16% 0 0;
-    box-shadow: inset 0 .08em .06em rgba(255, 255, 255, .35);
-    &:active { background: var(--pad-lo); }
+    border-radius: 14% 14% 0 0;
+    box-shadow: inset 0 .1em .1em -.06em rgba(255, 255, 255, .4);
   }
   .right {
     top: 33%;
     right: 0;
-    border-radius: 0 16% 16% 0;
-    background: linear-gradient(90deg, var(--pad-face) 0%, var(--pad-lo) 100%);
-    &:active { background: var(--pad-lo); }
+    border-radius: 0 14% 14% 0;
+    box-shadow: inset -.1em 0 .1em -.06em rgba(0, 0, 0, .28);
   }
   .down {
     bottom: 0;
     left: 33%;
-    border-radius: 0 0 16% 16%;
-    background: linear-gradient(0deg, var(--pad-lo) 0%, var(--pad-face) 100%);
-    box-shadow: inset 0 -.08em .06em rgba(0, 0, 0, .28);
-    &:active { background: var(--pad-lo); }
+    border-radius: 0 0 14% 14%;
+    box-shadow: inset 0 -.1em .1em -.06em rgba(0, 0, 0, .35);
   }
   .left {
     top: 33%;
     left: 0;
-    border-radius: 16% 0 0 16%;
-    background: linear-gradient(270deg, var(--pad-face) 0%, var(--pad-lo) 100%);
-    &:active { background: var(--pad-lo); }
+    border-radius: 14% 0 0 14%;
+    box-shadow: inset .1em 0 .1em -.06em rgba(255, 255, 255, .3);
   }
   .middle {
     top: 33%;
     left: 33%;
     cursor: default;
 
+    /* shallow circular dish in the hub */
     &::after {
       content: "";
       position: absolute;
-      inset: 14%;
+      inset: 16%;
       border-radius: 50%;
-      background: radial-gradient(circle at 50% 28%, var(--pad-lo) 0%, var(--pad-face) 72%);
+      background: radial-gradient(circle at 50% 34%, rgba(0, 0, 0, .2), rgba(0, 0, 0, .04) 58%, rgba(255, 255, 255, .07) 78%);
     }
   }
 }
@@ -324,9 +332,8 @@
 
 @media (min-width: 768px) {
   .gameboy {
-    --pad-hi: #d8d8e2;
-    --pad-face: #bfbfce;
-    --pad-lo: #8a8aa2;
+    --pad-face: #c7c7d3;
+    --pad-lo: #9d9db2;
     --ab-hi: #e4e4ee;
     --ab-face: #c6c6d4;
     --ab-lo: #8f8fa8;
@@ -440,127 +447,104 @@
   }
 
   .gb-power-led {
-    width: .36em;
-    height: .36em;
+    width: .32em;
+    height: .32em;
   }
 
   .dpad {
     position: absolute;
-    left: 6%;
-    top: 30%;
-    width: 14.5%;
+    left: 6.5%;
+    top: 34%;
+    width: 15.5%;
 
     /* circular recess the D-pad sits in on the real unit */
     &::before {
       content: "";
       position: absolute;
-      inset: -13%;
+      inset: -11%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(18, 10, 58, .3) 58%, rgba(18, 10, 58, 0) 72%);
+      background: radial-gradient(circle, rgba(18, 10, 58, .26) 58%, rgba(18, 10, 58, 0) 72%);
     }
   }
 
+  /* A up-right, B down-left — the real diagonal comes from the box shape,
+     no cluster rotation, so the letters stay level. */
   .a-b {
     position: absolute;
-    right: 4.4%;
-    top: 26%;
-    width: 18.5%;
-    aspect-ratio: 1.78;
-    transform: rotate(-8deg);
+    right: 9%;
+    top: 33%;
+    width: 15.5%;
+    aspect-ratio: 1.05;
 
     button {
-      width: 47%;
-      font-size: 1em;
+      width: 50%;
+      font-size: .85em;
     }
   }
 
   .gb-startselect {
     position: absolute;
-    left: 8%;
-    top: 63%;
+    left: 8.5%;
+    top: 64%;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .8em;
 
     button {
-      width: 3.4em;
-      height: .9em;
+      width: 2.7em;
+      height: .72em;
       transform: rotate(-26deg);
 
       &::after {
-        right: 112%;
+        right: 115%;
         top: 50%;
         transform: translateY(-50%);
+        font-size: .4em;
       }
     }
   }
 
-  /* L/R humps peeking over the top curve; they carry the zoom pair. */
+  /* L/R shoulders: light grey slivers hugging the top corner curve. Each is
+     a large plate whose top-outer radius matches the body's, tucked behind
+     it (negative z) and nudged up so only a thin crescent shows — like the
+     real unit seen top-down. They carry the zoom pair (tooltips on hover). */
   .gb-shoulder {
     position: absolute;
-    top: 1.2%;
-    width: 12%;
-    height: 6.5%;
+    top: -1.6%;
+    width: 30%;
+    height: 48%;
     z-index: -1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: .02em;
-    border-radius: .9em .9em 0 0;
-    background: linear-gradient(180deg, #7a70cc 0%, #514aa4 100%);
-    box-shadow: inset 0 .05em .07em rgba(255, 255, 255, .3);
-    color: rgba(240, 240, 255, .9);
-    font-size: .62em;
-    font-weight: 800;
-    line-height: 1.1;
+    background: linear-gradient(180deg, #e2e2e9 0%, #c2c2ce 4%, #a8a8b8 9%, #9494a6 14%);
+    color: transparent;
+    font-size: 1px;
 
     &:active {
-      transform: translateY(.1em);
+      filter: brightness(.94);
     }
   }
 
   .gb-shoulder-l {
-    left: 8.5%;
-    transform: rotate(-11deg);
+    left: 0;
+    border-radius: 80% 6% 0 0 / 97% 8% 0 0;
   }
 
   .gb-shoulder-r {
-    right: 8.5%;
-    transform: rotate(11deg);
-  }
-
-  .gb-cap {
-    position: absolute;
-    top: 7%;
-    bottom: 7%;
-    width: 9%;
-    z-index: -1;
-    border-radius: 2.4em;
-  }
-
-  .gb-cap-l {
-    left: -1.1%;
-    background: linear-gradient(90deg, #e9e9ef 0%, #b6b6c3 100%);
-  }
-
-  .gb-cap-r {
-    right: -1.1%;
-    background: linear-gradient(270deg, #e9e9ef 0%, #b6b6c3 100%);
+    right: 0;
+    border-radius: 6% 80% 0 0 / 8% 97% 0 0;
   }
 
   .gb-speaker {
     position: absolute;
-    right: 6.5%;
-    bottom: 8.5%;
-    width: 10.5%;
-    aspect-ratio: 1.1;
-    transform: rotate(26deg);
-    border-radius: .4em;
+    right: 8%;
+    bottom: 10%;
+    width: 9.5%;
+    aspect-ratio: 1.15;
+    transform: rotate(28deg);
+    border-radius: .3em;
     background: repeating-linear-gradient(
       90deg,
-      rgba(20, 12, 60, .5) 0 .26em,
-      rgba(130, 120, 215, .3) .26em .34em,
-      rgba(20, 12, 60, 0) .34em .74em
+      rgba(18, 11, 55, .55) 0 .3em,
+      rgba(18, 11, 55, 0) .3em .82em
     );
   }
 
@@ -611,7 +595,6 @@
   }
 
   .gb-brand,
-  .gb-cap,
   .board-resize-handle {
     display: none;
   }
@@ -649,23 +632,27 @@
     font-size: min(4.6vw, 2.6dvh);
   }
 
+  /* Red LED in the bezel's left margin, upper-left of the screen like the
+     real unit — narrow column, centred, never reaching the screen. */
   .gb-power {
     position: absolute;
-    left: 2.2vw;
-    top: 36%;
+    left: 1.2vw;
+    top: 12%;
+    width: 6.8vw;
     flex-direction: column;
-    gap: 1vw;
+    align-items: center;
+    gap: .8vw;
 
     em {
-      font-size: 1.7vw;
-      letter-spacing: .1em;
-      color: rgba(255, 255, 255, .4);
+      font-size: 1.2vw;
+      letter-spacing: .06em;
+      color: rgba(255, 255, 255, .38);
     }
   }
 
   .gb-power-led {
-    width: 2vw;
-    height: 2vw;
+    width: 1.8vw;
+    height: 1.8vw;
     background: radial-gradient(circle at 35% 30%, #ffc4c4, #f04040 45%, #a01010 90%);
     box-shadow: 0 0 6px 1px rgba(255, 80, 80, .75);
   }
@@ -683,22 +670,23 @@
 
   .dpad {
     position: absolute;
-    left: 4.5%;
-    top: 14%;
-    width: min(38%, 19dvh);
+    left: 8%;
+    top: 15%;
+    width: min(32%, 17dvh);
   }
 
+  /* A up-right, B down-left; the diagonal comes from the box, letters stay
+     level like the printed real thing. */
   .a-b {
     position: absolute;
-    right: 3%;
-    top: 11%;
-    width: min(42%, 21dvh);
-    aspect-ratio: 2;
-    transform: rotate(-16deg);
+    right: 6%;
+    top: 12%;
+    width: min(30%, 16dvh);
+    aspect-ratio: 1.05;
 
     button {
-      width: 46%;
-      font-size: min(5.4vw, 3dvh);
+      width: 50%;
+      font-size: min(4.2vw, 2.4dvh);
     }
   }
 
@@ -709,19 +697,19 @@
     transform: translateX(-50%);
     display: flex;
     flex-direction: row;
-    gap: 12vw;
+    gap: 10vw;
 
     button {
-      width: 11vw;
-      height: 3.2vw;
-      min-height: 13px;
+      width: 8.5vw;
+      height: 2.5vw;
+      min-height: 11px;
       transform: rotate(-26deg);
 
       &::after {
         left: 50%;
-        top: 140%;
+        top: 150%;
         transform: translateX(-50%);
-        font-size: 2.6vw;
+        font-size: 2.2vw;
       }
     }
   }
@@ -729,44 +717,44 @@
   /* No shoulders on a GBC — the zoom pair sits by START/SELECT. */
   .gb-shoulder {
     position: absolute;
-    bottom: 7.5%;
-    width: min(10vw, 44px);
-    height: min(10vw, 44px);
+    bottom: 6%;
+    width: min(8.5vw, 38px);
+    height: min(8.5vw, 38px);
     border-radius: 50%;
     background: linear-gradient(180deg, #3a3a44 0%, #17171d 100%);
     box-shadow: inset 0 .4vw .5vw rgba(255, 255, 255, .16), 0 .5vw 1vw rgba(0, 25, 25, .4);
     color: rgba(255, 255, 255, .8);
-    font-size: min(4.6vw, 20px);
+    font-size: min(4vw, 17px);
     font-weight: 800;
     z-index: 5;
   }
 
-  .gb-shoulder-l { left: 7%; }
-  .gb-shoulder-r { right: 7%; }
+  .gb-shoulder-l { left: 6%; }
+  .gb-shoulder-r { right: 6%; }
 
   .gb-speaker {
     position: absolute;
-    right: 6%;
-    bottom: 24%;
-    width: 4.4em;
-    height: 3.2em;
+    right: 5%;
+    bottom: 17%;
+    width: 3.6em;
+    height: 2.6em;
 
     &::before {
       content: "";
       position: absolute;
       left: 0;
-      bottom: .4em;
-      width: .8em;
-      height: .8em;
+      bottom: .3em;
+      width: .62em;
+      height: .62em;
       border-radius: 50%;
       background: #033d40;
       box-shadow:
         inset 0 1px 2px rgba(0, 0, 0, .8),
-        1.35em -.8em 0 0 #033d40,
-        2.7em -1.6em 0 0 #033d40,
-        .65em .85em 0 0 #033d40,
-        2em .05em 0 0 #033d40,
-        3.35em -.75em 0 0 #033d40;
+        1.05em -.62em 0 0 #033d40,
+        2.1em -1.24em 0 0 #033d40,
+        .5em .66em 0 0 #033d40,
+        1.55em .04em 0 0 #033d40,
+        2.6em -.58em 0 0 #033d40;
     }
   }
 }
