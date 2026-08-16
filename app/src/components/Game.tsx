@@ -1660,7 +1660,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
    *  the buttons — off only for loading/error screens. */
   private renderShell(
     screen: React.ReactNode,
-    opts: { chrome?: boolean; controls?: boolean; wideScreen?: boolean } = {},
+    opts: { chrome?: boolean; controls?: boolean } = {},
   ) {
     const chrome = opts.chrome !== false;
     const controls = opts.controls !== false;
@@ -1707,7 +1707,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
             <em>POWER</em>
           </div>
           <div className="gb-glass">
-            <div className={`board-screen${opts.wideScreen ? " board-screen--wide" : ""}`}>{screen}</div>
+            <div className="board-screen">
+              <div className="screen-stage">{screen}</div>
+            </div>
           </div>
           <div className="gb-wordmark gb-wordmark-gba" aria-hidden="true">
             <b>GAME BOY</b> <span>ADVANCE</span>
@@ -1854,10 +1856,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     if (this.state.onboarding) {
       return (
         <div className="game-root w-full flex flex-col items-center justify-center pb-12">
-          {this.renderShell(<OakIntro onComplete={this.completeOnboarding} />, {
-            chrome: false,
-            wideScreen: true,
-          })}
+          {this.renderShell(<OakIntro onComplete={this.completeOnboarding} />, { chrome: false })}
         </div>
       );
     }

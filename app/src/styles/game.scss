@@ -32,10 +32,19 @@
   }
 
   button {
-    font: inherit;
     /* Immediate taps: no double-tap-zoom delay, no grey tap flash. */
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Only the console's own chrome buttons ride the shell's em scale; the
+     screen content (battle UI, intro forms, panels) owns its typography —
+     a blanket `font: inherit` here once blew their text up to chrome size. */
+  .dpad > button,
+  .a-b button,
+  .gb-startselect button,
+  .gb-shoulder {
+    font: inherit;
   }
 
   /* Typing fields (nickname, trainer name) stay selectable. */
@@ -62,14 +71,36 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  aspect-ratio: 1;
   background: #000;
+}
+
+/* Fixed-DPI display: the screen is a fixed logical stage — 480x320 on the
+   GBA (true 3:2), 320x320 on the GBC — scaled uniformly to fit whatever
+   physical window holds it. Every resolution renders the exact same
+   picture, just zoomed. The scale's container units resolve against
+   .board-screen; the cqmin units of everything inside resolve against the
+   stage's constant logical size. */
+.screen-stage {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  container-type: size;
+  width: 480px;
+  height: 320px;
+  /* custom property so sass ships the length-division calc untouched */
+  --stage-scale: min(calc(100cqw / 480px), calc(100cqh / 320px));
+  scale: var(--stage-scale);
 }
 
 .screen-canvas {
   display: block;
+  flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 
@@ -79,10 +110,10 @@
   }
 }
 
-/* PROF. OAK's first-run intro drops into the shell display. It keeps its
-   native 240x160 (3:2) aspect and letterboxes on square screens; the glass
-   is black anyway, so the bars vanish. */
-.board-screen > .oak-intro {
+/* PROF. OAK's first-run intro keeps its native 240x160 (3:2): exact fit on
+   the GBA stage, letterboxed on the square GBC stage (the stage is black,
+   so the bars vanish). */
+.screen-stage > .oak-intro {
   width: 100%;
   max-width: none;
   border-radius: 0;
@@ -90,8 +121,8 @@
 }
 
 /* The nickname step is a regular HTML form, not 240x160 art — give it the
-   whole display and scroll invisibly instead of clipping the buttons. */
-.board-screen > .oak-intro[data-phase="nickname"] {
+   whole stage and scroll invisibly instead of clipping the buttons. */
+.screen-stage > .oak-intro[data-phase="nickname"] {
   height: 100%;
   aspect-ratio: auto;
   overflow: hidden auto;
@@ -435,18 +466,8 @@
   }
 
   .gb-bezel .board-screen {
+    width: 100%;
     height: 100%;
-  }
-
-  /* A 3:2 display window for the intro — the GBA's native shape. */
-  .gb-bezel .board-screen--wide {
-    aspect-ratio: 3 / 2;
-    max-width: 100%;
-  }
-
-  /* …except the nickname form, which needs the square's extra height. */
-  .gb-bezel .board-screen--wide:has(> .oak-intro[data-phase="nickname"]) {
-    aspect-ratio: 1;
   }
 
   .gb-wordmark-gba {
@@ -642,36 +663,6 @@
       width: min(9.5%, 18dvh);
     }
 
-    /* The display fills the whole glass in landscape. The game view is a
-       square canvas, so it scales to the full width and the overflow crops
-       evenly top and bottom — the player stays centred, and the UI layer
-       (dialogs, menus, battles) tracks the wide window, not the crop. */
-    .gb-bezel .board-screen,
-    .gb-bezel .board-screen--wide {
-      width: 100%;
-      height: 100%;
-      aspect-ratio: auto;
-      max-width: none;
-    }
-
-    .board-screen > .screen-canvas {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1;
-      flex: 0 0 auto;
-    }
-
-    /* Cutscenes keep their native 3:2, letterboxed in the wide window. */
-    .board-screen > .oak-intro {
-      width: auto;
-      height: 100%;
-      aspect-ratio: 3 / 2;
-    }
-
-    .board-screen > .oak-intro[data-phase="nickname"] {
-      width: 100%;
-      aspect-ratio: auto;
-    }
   }
 }
 
@@ -733,6 +724,14 @@
 
   .gb-bezel .board-screen {
     width: min(100%, 47dvh);
+    aspect-ratio: 1;
+  }
+
+  /* The GBC's display is the square 320x320 logical stage. */
+  .screen-stage {
+    width: 320px;
+    height: 320px;
+    --stage-scale: min(calc(100cqw / 320px), calc(100cqh / 320px));
   }
 
   .gb-wordmark-gba {

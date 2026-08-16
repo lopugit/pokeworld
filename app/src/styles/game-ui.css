@@ -881,7 +881,8 @@
   max-width: 480px;
   aspect-ratio: 3 / 2;
   container-type: inline-size;
-  --px: calc(100cqmin / 240);
+  /* Width-based by design: one GBA pixel = intro width / 240. */
+  --px: calc(100cqw / 240);
   overflow: hidden;
   border-radius: 0.5rem;
   background: #000000;
