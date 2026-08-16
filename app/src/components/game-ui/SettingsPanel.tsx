@@ -8,6 +8,9 @@ import { PanelFrame } from "./PanelFrame";
 
 interface SettingsPanelProps {
   trainer: TrainerState;
+  /** Dev chrome (MAP overlay, zoom controls) is hidden until this is on. */
+  devMode: boolean;
+  onToggleDevMode: () => void;
   onChange: (trainer: TrainerState) => void;
   onClose: () => void;
 }
@@ -17,7 +20,7 @@ const GENDERS: Array<{ id: TrainerGender; label: string; sprite: string }> = [
   { id: "girl", label: "GIRL", sprite: "/sprites/player/girl/down-0.png" },
 ];
 
-export function SettingsPanel({ trainer, onChange, onClose }: SettingsPanelProps) {
+export function SettingsPanel({ trainer, devMode, onToggleDevMode, onChange, onClose }: SettingsPanelProps) {
   const [name, setName] = useState(trainer.name);
   const [message, setMessage] = useState("Adjust your trainer profile.");
   const [saved, setSaved] = useState(false);
@@ -94,6 +97,21 @@ export function SettingsPanel({ trainer, onChange, onClose }: SettingsPanelProps
         <p className="pkmn-opt-note">
           Your overworld sprite and how NPCs address you use this name and look.
         </p>
+        <div className="pkmn-opt-row">
+          <span className="pkmn-opt-label">DEV MODE</span>
+          <button
+            type="button"
+            className={`pkmn-opt-gender${devMode ? " selected" : ""}`}
+            aria-label="Toggle dev mode"
+            aria-pressed={devMode}
+            onClick={() => {
+              onToggleDevMode();
+              flashSaved(devMode ? "Dev mode off." : "Dev mode on: MAP + zoom unlocked!");
+            }}
+          >
+            <span>{devMode ? "ON" : "OFF"}</span>
+          </button>
+        </div>
         <div className="pkmn-opt-save-row">
           <button type="button" className="pkmn-opt-save" onClick={save}>
             SAVE

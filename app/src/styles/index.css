@@ -26,9 +26,11 @@ input {
 }
 
 /* On mobile the game section becomes the entire first viewport: a pure black
-   stage holding a Game Boy Color that spans full width and full height, so
-   the phone itself reads as the console. Nav and banners scroll underneath. */
-@media (max-width: 767.98px) {
+   stage holding the console full-bleed, so the phone itself reads as the
+   handheld — the Game Boy Color in portrait, the Game Boy Advance when the
+   phone rotates to landscape (short-and-wide viewports). Nav and banners
+   scroll underneath. */
+@media (max-width: 767.98px), (min-width: 768px) and (max-height: 540px) {
   body:has(.game-stage) {
     background: #000;
   }

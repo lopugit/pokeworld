@@ -86,6 +86,8 @@ interface GameSettings {
   canvasWidth: number;
   canvasHeight: number;
   debug: boolean;
+  /** Shows dev chrome (MAP overlay chips, zoom controls); toggled in OPTION. */
+  devMode: boolean;
   initialized: boolean;
   showLayer1: boolean;
   showLayerGmap: boolean;
@@ -254,6 +256,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       canvasWidth: 512,
       canvasHeight: 512,
       debug: false,
+      devMode: false,
       initialized: false,
       showLayer1: false,
       showLayerGmap: false,
@@ -1662,19 +1665,24 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const chrome = opts.chrome !== false;
     const controls = opts.controls !== false;
     const { game, ui } = this.state;
+    // Zoom and the MAP overlay are development chrome; the OPTION menu's
+    // Dev mode toggle brings them back.
+    const dev = game.devMode;
     return (
       <div
         ref={this.gameboyRef}
-        className="gameboy"
+        className={`gameboy${dev ? " gameboy--dev" : ""}`}
         style={{ "--board-width": `${this.state.boardWidth}px` } as React.CSSProperties}
       >
         <button
           type="button"
           className="gb-shoulder gb-shoulder-l"
           aria-label="Zoom out"
-          title="Zoom out (L)"
-          disabled={!controls}
-          onClick={controls ? () => this.zoom("out") : undefined}
+          title={dev ? "Zoom out (L)" : undefined}
+          aria-hidden={!dev}
+          tabIndex={dev ? 0 : -1}
+          disabled={!controls || !dev}
+          onClick={controls && dev ? () => this.zoom("out") : undefined}
         >
           −
         </button>
@@ -1682,9 +1690,11 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
           type="button"
           className="gb-shoulder gb-shoulder-r"
           aria-label="Zoom in"
-          title="Zoom in (R)"
-          disabled={!controls}
-          onClick={controls ? () => this.zoom("in") : undefined}
+          title={dev ? "Zoom in (R)" : undefined}
+          aria-hidden={!dev}
+          tabIndex={dev ? 0 : -1}
+          disabled={!controls || !dev}
+          onClick={controls && dev ? () => this.zoom("in") : undefined}
         >
           +
         </button>
@@ -1713,7 +1723,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
             </span>
           </div>
         </div>
-        {chrome ? (
+        {chrome && dev ? (
           <div className="overlay-controls">
             <button
               type="button"
@@ -1976,6 +1986,15 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   {ui.panel === "settings" ? (
                     <SettingsPanel
                       trainer={trainer}
+                      devMode={game.devMode}
+                      onToggleDevMode={() => {
+                        // Leaving dev mode also puts the map overlay away so
+                        // no orphaned dev state lingers on screen.
+                        const next = !game.devMode;
+                        this.setGame(
+                          next ? { devMode: next } : { devMode: next, overlay: false, overlaySplit: false },
+                        );
+                      }}
                       onChange={this.setTrainer}
                       onClose={() => this.setUi({ panel: null, menuOpen: true })}
                     />
