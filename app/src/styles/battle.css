@@ -1,6 +1,6 @@
 /* Emerald-style wild battle screen (BattleScreen.tsx). Every class is
    prefixed pkbt- so nothing collides with game-ui.css. Sized with container
-   query units (cqw, container = .board-screen) so the battle scales with the
+   query units (cqmin, container = .board-screen) so the battle scales with the
    resizable board exactly like the rest of the in-game UI. */
 
 .pkbt-screen {
@@ -35,17 +35,17 @@
 }
 
 .pkbt-pad-enemy {
-  top: 23cqw;
-  right: 2cqw;
-  width: 38cqw;
-  height: 11cqw;
+  top: 23cqmin;
+  right: 2cqmin;
+  width: 38cqmin;
+  height: 11cqmin;
 }
 
 .pkbt-pad-player {
-  bottom: -3.5cqw;
-  left: 0.5cqw;
-  width: 46cqw;
-  height: 13cqw;
+  bottom: -3.5cqmin;
+  left: 0.5cqmin;
+  width: 46cqmin;
+  height: 13cqmin;
 }
 
 .pkbt-sprite {
@@ -56,17 +56,17 @@
 }
 
 .pkbt-sprite-enemy {
-  top: 4cqw;
-  right: 8cqw;
-  width: 26cqw;
-  height: 26cqw;
+  top: 4cqmin;
+  right: 8cqmin;
+  width: 26cqmin;
+  height: 26cqmin;
 }
 
 .pkbt-sprite-player {
   bottom: 0;
-  left: 7cqw;
-  width: 32cqw;
-  height: 32cqw;
+  left: 7cqmin;
+  width: 32cqmin;
+  height: 32cqmin;
 }
 
 /* ---------- Info boxes ---------- */
@@ -75,34 +75,34 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 0.9cqw;
-  width: 44cqw;
+  gap: 0.9cqmin;
+  width: 44cqmin;
   max-width: 58%;
   background: #f8f8f0;
-  border: 0.7cqw solid #385088;
-  border-radius: 1.2cqw;
-  box-shadow: inset 0 0 0 0.4cqw #a8b8e8, 0 0.5cqw 0 rgba(0, 0, 0, 0.25);
-  padding: 1.4cqw 1.8cqw;
+  border: 0.7cqmin solid #385088;
+  border-radius: 1.2cqmin;
+  box-shadow: inset 0 0 0 0.4cqmin #a8b8e8, 0 0.5cqmin 0 rgba(0, 0, 0, 0.25);
+  padding: 1.4cqmin 1.8cqmin;
 }
 
 .pkbt-info-enemy {
-  top: 2cqw;
-  left: 2cqw;
+  top: 2cqmin;
+  left: 2cqmin;
 }
 
 .pkbt-info-player {
-  bottom: 2cqw;
-  right: 2cqw;
-  width: 46cqw;
+  bottom: 2cqmin;
+  right: 2cqmin;
+  width: 46cqmin;
 }
 
 .pkbt-info-top {
   display: flex;
   align-items: baseline;
-  gap: 0.9cqw;
+  gap: 0.9cqmin;
   min-width: 0;
   /* Sized so a 10-char Emerald name + gender + LV.100 fits without ellipsis. */
-  font-size: 2.55cqw;
+  font-size: 2.55cqmin;
   line-height: 1.2;
 }
 
@@ -116,7 +116,7 @@
 
 .pkbt-gender {
   flex: none;
-  font-size: 2.7cqw;
+  font-size: 2.7cqmin;
 }
 
 .pkbt-gender.male {
@@ -129,36 +129,36 @@
 
 .pkbt-shiny {
   flex: none;
-  font-size: 2.3cqw;
+  font-size: 2.3cqmin;
 }
 
 .pkbt-level {
   flex: none;
   margin-left: auto;
-  font-size: 2.3cqw;
+  font-size: 2.3cqmin;
   color: #385088;
 }
 
 .pkbt-hp-row {
   display: flex;
   align-items: center;
-  gap: 1cqw;
+  gap: 1cqmin;
 }
 
 .pkbt-hp-tag {
   flex: none;
-  font-size: 1.8cqw;
+  font-size: 1.8cqmin;
   color: #f8f8f0;
   background: #e8a038;
-  border-radius: 0.5cqw;
-  padding: 0.2cqw 0.7cqw;
+  border-radius: 0.5cqmin;
+  padding: 0.2cqmin 0.7cqmin;
 }
 
 .pkbt-hp-bar {
   flex: 1;
-  height: 2.2cqw;
-  border: 0.45cqw solid #303030;
-  border-radius: 1.2cqw;
+  height: 2.2cqmin;
+  border: 0.45cqmin solid #303030;
+  border-radius: 1.2cqmin;
   background: #605848;
   overflow: hidden;
 }
@@ -166,7 +166,7 @@
 .pkbt-hp-fill {
   display: block;
   height: 100%;
-  border-radius: 0.8cqw;
+  border-radius: 0.8cqmin;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
 
@@ -185,20 +185,20 @@
 .pkbt-info-bottom {
   display: flex;
   align-items: center;
-  gap: 1cqw;
+  gap: 1cqmin;
   min-width: 0;
 }
 
 .pkbt-hp-digits {
   margin-left: auto;
-  font-size: 2.5cqw;
+  font-size: 2.5cqmin;
 }
 
 .pkbt-status {
   flex: none;
-  font-size: 1.8cqw;
-  border-radius: 0.6cqw;
-  padding: 0.25cqw 0.8cqw;
+  font-size: 1.8cqmin;
+  border-radius: 0.6cqmin;
+  padding: 0.25cqmin 0.8cqmin;
   color: #f8f8f0;
 }
 
@@ -225,20 +225,20 @@
 .pkbt-exp-row {
   display: flex;
   align-items: center;
-  gap: 1cqw;
+  gap: 1cqmin;
 }
 
 .pkbt-exp-tag {
   flex: none;
-  font-size: 1.7cqw;
+  font-size: 1.7cqmin;
   color: #385088;
 }
 
 .pkbt-exp-bar {
   flex: 1;
-  height: 1.3cqw;
-  border: 0.35cqw solid #303030;
-  border-radius: 0.8cqw;
+  height: 1.3cqmin;
+  border: 0.35cqmin solid #303030;
+  border-radius: 0.8cqmin;
   background: #605848;
   overflow: hidden;
 }
@@ -255,25 +255,25 @@
 .pkbt-bottom {
   position: relative;
   flex: 0 0 auto;
-  min-height: 24cqw;
+  min-height: 24cqmin;
   display: flex;
-  gap: 1.2cqw;
-  padding: 1.2cqw;
+  gap: 1.2cqmin;
+  padding: 1.2cqmin;
   background: #283860;
-  border-top: 0.7cqw solid #182848;
+  border-top: 0.7cqmin solid #182848;
 }
 
 .pkbt-message {
   position: relative;
   flex: 1;
   min-width: 0;
-  border: 0.9cqw solid #a8b8e8;
-  border-radius: 1.2cqw;
+  border: 0.9cqmin solid #a8b8e8;
+  border-radius: 1.2cqmin;
   background: #f8f8f0;
-  box-shadow: inset 0 0 0 0.45cqw #d0d8f0;
-  padding: 2cqw 4.5cqw 2cqw 2.4cqw;
+  box-shadow: inset 0 0 0 0.45cqmin #d0d8f0;
+  padding: 2cqmin 4.5cqmin 2cqmin 2.4cqmin;
   font-family: inherit;
-  font-size: 3.2cqw;
+  font-size: 3.2cqmin;
   line-height: 1.6;
   text-align: left;
   color: #303030;
@@ -284,16 +284,16 @@
 
 .pkbt-arrow {
   position: absolute;
-  right: 1.6cqw;
-  bottom: 0.8cqw;
+  right: 1.6cqmin;
+  bottom: 0.8cqmin;
   color: #c04040;
-  font-size: 2.8cqw;
+  font-size: 2.8cqmin;
   animation: pkbt-arrow-bounce 0.6s steps(2, end) infinite;
 }
 
 @keyframes pkbt-arrow-bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(0.7cqw); }
+  50% { transform: translateY(0.7cqmin); }
 }
 
 /* ---------- Command menu (FIGHT / BAG / POKéMON / RUN) ---------- */
@@ -301,19 +301,19 @@
 .pkbt-command {
   flex: 1;
   display: flex;
-  gap: 1.2cqw;
+  gap: 1.2cqmin;
   min-width: 0;
 }
 
 .pkbt-prompt {
   flex: 0.9;
   min-width: 0;
-  border: 0.9cqw solid #a8b8e8;
-  border-radius: 1.2cqw;
+  border: 0.9cqmin solid #a8b8e8;
+  border-radius: 1.2cqmin;
   background: #f8f8f0;
-  box-shadow: inset 0 0 0 0.45cqw #d0d8f0;
-  padding: 2cqw 2.2cqw;
-  font-size: 3cqw;
+  box-shadow: inset 0 0 0 0.45cqmin #d0d8f0;
+  padding: 2cqmin 2.2cqmin;
+  font-size: 3cqmin;
   line-height: 1.6;
   white-space: pre-line;
   overflow: hidden;
@@ -325,33 +325,33 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
-  gap: 0.5cqw 0.8cqw;
-  border: 0.9cqw solid #385088;
-  border-radius: 1.2cqw;
+  gap: 0.5cqmin 0.8cqmin;
+  border: 0.9cqmin solid #385088;
+  border-radius: 1.2cqmin;
   background: #fff;
-  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
-  padding: 1.4cqw 1.6cqw;
+  box-shadow: inset 0 0 0 0.45cqmin #a8b8e8;
+  padding: 1.4cqmin 1.6cqmin;
 }
 
 .pkbt-action {
   display: flex;
   align-items: center;
-  gap: 0.3cqw;
+  gap: 0.3cqmin;
   min-width: 0;
   font-family: inherit;
   /* "POKéMON" must fit a half-width cell without ellipsis. */
-  font-size: 2.5cqw;
+  font-size: 2.5cqmin;
   color: #303030;
   text-align: left;
-  padding: 0.4cqw 0.2cqw;
+  padding: 0.4cqmin 0.2cqmin;
   cursor: pointer;
 }
 
 .pkbt-cursor {
-  flex: 0 0 2.2cqw;
-  width: 2.2cqw;
+  flex: 0 0 2.2cqmin;
+  width: 2.2cqmin;
   color: #c04040;
-  font-size: 2.2cqw;
+  font-size: 2.2cqmin;
 }
 
 .pkbt-row-label {
@@ -367,7 +367,7 @@
 .pkbt-fight {
   flex: 1;
   display: flex;
-  gap: 1.2cqw;
+  gap: 1.2cqmin;
   min-width: 0;
 }
 
@@ -377,25 +377,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
-  gap: 0.5cqw 0.8cqw;
-  border: 0.9cqw solid #385088;
-  border-radius: 1.2cqw;
+  gap: 0.5cqmin 0.8cqmin;
+  border: 0.9cqmin solid #385088;
+  border-radius: 1.2cqmin;
   background: #fff;
-  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
-  padding: 1.4cqw 1.6cqw;
+  box-shadow: inset 0 0 0 0.45cqmin #a8b8e8;
+  padding: 1.4cqmin 1.6cqmin;
 }
 
 .pkbt-move {
   display: flex;
   align-items: center;
-  gap: 0.3cqw;
+  gap: 0.3cqmin;
   min-width: 0;
   font-family: inherit;
   /* Longest Gen III move here is 12 chars (THUNDERSHOCK) per half-width cell. */
-  font-size: 2.2cqw;
+  font-size: 2.2cqmin;
   color: #303030;
   text-align: left;
-  padding: 0.4cqw 0.2cqw;
+  padding: 0.4cqmin 0.2cqmin;
   cursor: pointer;
 }
 
@@ -410,19 +410,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.8cqw;
-  border: 0.9cqw solid #385088;
-  border-radius: 1.2cqw;
+  gap: 0.8cqmin;
+  border: 0.9cqmin solid #385088;
+  border-radius: 1.2cqmin;
   background: #f8f8f0;
-  box-shadow: inset 0 0 0 0.45cqw #a8b8e8;
-  padding: 1.2cqw 1.6cqw;
-  font-size: 2.6cqw;
+  box-shadow: inset 0 0 0 0.45cqmin #a8b8e8;
+  padding: 1.2cqmin 1.6cqmin;
+  font-size: 2.6cqmin;
 }
 
 .pkbt-move-meta-line {
   display: flex;
   justify-content: space-between;
-  gap: 1cqw;
+  gap: 1cqmin;
   min-width: 0;
 }
 
@@ -440,30 +440,30 @@
 
 .pkbt-sheet {
   position: absolute;
-  left: 2cqw;
-  right: 2cqw;
-  bottom: 2cqw;
+  left: 2cqmin;
+  right: 2cqmin;
+  bottom: 2cqmin;
   z-index: 3;
   max-height: 72%;
   display: flex;
   flex-direction: column;
-  gap: 1.2cqw;
-  border: 0.9cqw solid #385088;
-  border-radius: 1.4cqw;
+  gap: 1.2cqmin;
+  border: 0.9cqmin solid #385088;
+  border-radius: 1.4cqmin;
   background: #f0f8f0;
-  box-shadow: inset 0 0 0 0.5cqw #a8b8e8, 0 0.6cqw 0 rgba(0, 0, 0, 0.35);
-  padding: 1.8cqw;
+  box-shadow: inset 0 0 0 0.5cqmin #a8b8e8, 0 0.6cqmin 0 rgba(0, 0, 0, 0.35);
+  padding: 1.8cqmin;
 }
 
 .pkbt-sheet-head {
   display: flex;
   align-items: center;
-  gap: 1cqw;
+  gap: 1cqmin;
   min-width: 0;
 }
 
 .pkbt-sheet-title {
-  font-size: 2.7cqw;
+  font-size: 2.7cqmin;
   color: #385088;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -472,13 +472,13 @@
 
 .pkbt-tab {
   flex: none;
-  border: 0.45cqw solid #a8b8e8;
-  border-radius: 0.9cqw;
+  border: 0.45cqmin solid #a8b8e8;
+  border-radius: 0.9cqmin;
   background: #f8f8f0;
   color: #506890;
   font-family: inherit;
-  font-size: 2.4cqw;
-  padding: 0.7cqw 1.4cqw;
+  font-size: 2.4cqmin;
+  padding: 0.7cqmin 1.4cqmin;
   cursor: pointer;
 }
 
@@ -491,13 +491,13 @@
 .pkbt-back {
   flex: none;
   margin-left: auto;
-  border: 0.45cqw solid #a8b8e8;
-  border-radius: 0.8cqw;
+  border: 0.45cqmin solid #a8b8e8;
+  border-radius: 0.8cqmin;
   background: #f8f8f0;
   color: #385088;
   font-family: inherit;
-  font-size: 2.2cqw;
-  padding: 0.6cqw 1.2cqw;
+  font-size: 2.2cqmin;
+  padding: 0.6cqmin 1.2cqmin;
   cursor: pointer;
 }
 
@@ -510,21 +510,21 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.6cqw;
+  gap: 0.6cqmin;
 }
 
 .pkbt-row {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 1cqw;
+  gap: 1cqmin;
   min-width: 0;
-  border: 0.4cqw solid transparent;
-  border-radius: 0.9cqw;
+  border: 0.4cqmin solid transparent;
+  border-radius: 0.9cqmin;
   background: #f8f8f0;
-  padding: 1cqw 1.4cqw;
+  padding: 1cqmin 1.4cqmin;
   font-family: inherit;
-  font-size: 2.8cqw;
+  font-size: 2.8cqmin;
   color: #303030;
   text-align: left;
   cursor: pointer;
@@ -543,44 +543,44 @@
 .pkbt-row-qty {
   flex: none;
   color: #506890;
-  font-size: 2.5cqw;
+  font-size: 2.5cqmin;
 }
 
 .pkbt-empty {
-  padding: 2.4cqw;
+  padding: 2.4cqmin;
   text-align: center;
   color: #707880;
-  font-size: 2.6cqw;
+  font-size: 2.6cqmin;
 }
 
 .pkbt-party-sprite {
-  flex: 0 0 6cqw;
-  width: 6cqw;
-  height: 6cqw;
+  flex: 0 0 6cqmin;
+  width: 6cqmin;
+  height: 6cqmin;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .pkbt-party-lv {
   flex: none;
-  font-size: 2.3cqw;
+  font-size: 2.3cqmin;
   color: #506890;
 }
 
 .pkbt-party-bar {
-  flex: 0 0 14cqw;
-  height: 1.8cqw;
-  border: 0.35cqw solid #303030;
-  border-radius: 0.9cqw;
+  flex: 0 0 14cqmin;
+  height: 1.8cqmin;
+  border: 0.35cqmin solid #303030;
+  border-radius: 0.9cqmin;
   background: #605848;
   overflow: hidden;
 }
 
 .pkbt-party-hp {
   flex: 0 0 auto;
-  min-width: 8cqw;
+  min-width: 8cqmin;
   text-align: right;
-  font-size: 2.2cqw;
+  font-size: 2.2cqmin;
 }
 
 .pkbt-party-hp.fnt {
@@ -599,14 +599,14 @@
 
 @keyframes pkbt-lunge-player {
   0%, 100% { transform: translate(0, 0); }
-  35% { transform: translate(9cqw, -5cqw); }
-  60% { transform: translate(-1cqw, 0.5cqw); }
+  35% { transform: translate(9cqmin, -5cqmin); }
+  60% { transform: translate(-1cqmin, 0.5cqmin); }
 }
 
 @keyframes pkbt-lunge-enemy {
   0%, 100% { transform: translate(0, 0); }
-  35% { transform: translate(-9cqw, 5cqw); }
-  60% { transform: translate(1cqw, -0.5cqw); }
+  35% { transform: translate(-9cqmin, 5cqmin); }
+  60% { transform: translate(1cqmin, -0.5cqmin); }
 }
 
 /* Defender flinch: blink + jolt, delayed until the attacker connects. */
@@ -616,9 +616,9 @@
 
 @keyframes pkbt-hit {
   0% { opacity: 1; transform: translate(0, 0); }
-  20% { opacity: 0.25; transform: translate(1.2cqw, 0); }
-  40% { opacity: 1; transform: translate(-1.2cqw, 0); }
-  60% { opacity: 0.25; transform: translate(0.8cqw, 0); }
+  20% { opacity: 0.25; transform: translate(1.2cqmin, 0); }
+  40% { opacity: 1; transform: translate(-1.2cqmin, 0); }
+  60% { opacity: 0.25; transform: translate(0.8cqmin, 0); }
   80% { opacity: 1; transform: translate(0, 0); }
 }
 
@@ -628,10 +628,10 @@
 
 @keyframes pkbt-field-shake {
   0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-1cqw, 0.6cqw); }
-  40% { transform: translate(1cqw, -0.6cqw); }
-  60% { transform: translate(-0.8cqw, -0.4cqw); }
-  80% { transform: translate(0.8cqw, 0.4cqw); }
+  20% { transform: translate(-1cqmin, 0.6cqmin); }
+  40% { transform: translate(1cqmin, -0.6cqmin); }
+  60% { transform: translate(-0.8cqmin, -0.4cqmin); }
+  80% { transform: translate(0.8cqmin, 0.4cqmin); }
 }
 
 .pkbt-faint {
@@ -648,9 +648,9 @@
 }
 
 @keyframes pkbt-levelup {
-  0%, 100% { box-shadow: inset 0 0 0 0.4cqw #a8b8e8, 0 0.5cqw 0 rgba(0, 0, 0, 0.25); }
-  35% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 3cqw 1cqw rgba(255, 214, 90, 0.95); }
-  70% { box-shadow: inset 0 0 0 0.4cqw #ffe27a, 0 0 1.6cqw 0.5cqw rgba(255, 214, 90, 0.7); }
+  0%, 100% { box-shadow: inset 0 0 0 0.4cqmin #a8b8e8, 0 0.5cqmin 0 rgba(0, 0, 0, 0.25); }
+  35% { box-shadow: inset 0 0 0 0.4cqmin #ffe27a, 0 0 3cqmin 1cqmin rgba(255, 214, 90, 0.95); }
+  70% { box-shadow: inset 0 0 0 0.4cqmin #ffe27a, 0 0 1.6cqmin 0.5cqmin rgba(255, 214, 90, 0.7); }
 }
 
 /* ---------- Battle FX: the ball throw ---------- */
@@ -659,10 +659,10 @@
    the inner .pkbt-ball-body wobbles, so the two transforms never fight. */
 .pkbt-ball {
   position: absolute;
-  top: 24.5cqw;
-  right: 17.5cqw;
-  width: 6cqw;
-  height: 6cqw;
+  top: 24.5cqmin;
+  right: 17.5cqmin;
+  width: 6cqmin;
+  height: 6cqmin;
   z-index: 2;
   pointer-events: none;
 }
@@ -674,8 +674,8 @@
   background:
     radial-gradient(circle at 50% 50%, #f8f8f0 0 12%, #303030 13% 19%, transparent 20%),
     linear-gradient(180deg, #e83838 0 44%, #303030 44% 56%, #f8f8f0 56% 100%);
-  border: 0.45cqw solid #303030;
-  box-shadow: inset -0.7cqw -0.9cqw 0 rgba(0, 0, 0, 0.18), 0 0.5cqw 0.4cqw rgba(0, 0, 0, 0.25);
+  border: 0.45cqmin solid #303030;
+  box-shadow: inset -0.7cqmin -0.9cqmin 0 rgba(0, 0, 0, 0.18), 0 0.5cqmin 0.4cqmin rgba(0, 0, 0, 0.25);
   transform-origin: 50% 90%;
 }
 
@@ -685,8 +685,8 @@
 }
 
 @keyframes pkbt-ball-arc {
-  0% { transform: translate(-46cqw, 26cqw) rotate(-540deg) scale(0.8); }
-  55% { transform: translate(-18cqw, -9cqw) rotate(-180deg) scale(1.05); }
+  0% { transform: translate(-46cqmin, 26cqmin) rotate(-540deg) scale(0.8); }
+  55% { transform: translate(-18cqmin, -9cqmin) rotate(-180deg) scale(1.05); }
   100% { transform: translate(0, 0) rotate(0deg) scale(1); }
 }
 
@@ -698,9 +698,9 @@
 
 @keyframes pkbt-ball-wobble {
   0%, 100% { transform: rotate(0deg); }
-  20% { transform: rotate(-24deg) translateX(-0.5cqw); }
+  20% { transform: rotate(-24deg) translateX(-0.5cqmin); }
   50% { transform: rotate(0deg); }
-  70% { transform: rotate(24deg) translateX(0.5cqw); }
+  70% { transform: rotate(24deg) translateX(0.5cqmin); }
 }
 
 /* Break free: the ball pops open in a flash. */
@@ -743,21 +743,21 @@
   top: 40%;
   left: 40%;
   color: #ffd65a;
-  font-size: 3.4cqw;
-  text-shadow: 0 0 0.8cqw rgba(255, 214, 90, 0.9);
+  font-size: 3.4cqmin;
+  text-shadow: 0 0 0.8cqmin rgba(255, 214, 90, 0.9);
   opacity: 0;
   animation: pkbt-spark 0.9s ease-out forwards;
 }
 
-.pkbt-spark-1 { animation-delay: 0.15s; --sx: -4.5cqw; --sy: -4cqw; }
-.pkbt-spark-2 { animation-delay: 0.3s; --sx: 4.5cqw; --sy: -3.5cqw; }
-.pkbt-spark-3 { animation-delay: 0.45s; --sx: -3cqw; --sy: 2.5cqw; color: #fff3bd; }
-.pkbt-spark-4 { animation-delay: 0.6s; --sx: 3.5cqw; --sy: 3cqw; color: #fff3bd; }
+.pkbt-spark-1 { animation-delay: 0.15s; --sx: -4.5cqmin; --sy: -4cqmin; }
+.pkbt-spark-2 { animation-delay: 0.3s; --sx: 4.5cqmin; --sy: -3.5cqmin; }
+.pkbt-spark-3 { animation-delay: 0.45s; --sx: -3cqmin; --sy: 2.5cqmin; color: #fff3bd; }
+.pkbt-spark-4 { animation-delay: 0.6s; --sx: 3.5cqmin; --sy: 3cqmin; color: #fff3bd; }
 
 @keyframes pkbt-spark {
   0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
   25% { opacity: 1; }
-  100% { opacity: 0; transform: translate(var(--sx, 3cqw), var(--sy, -3cqw)) scale(1.15); }
+  100% { opacity: 0; transform: translate(var(--sx, 3cqmin), var(--sy, -3cqmin)) scale(1.15); }
 }
 
 /* Enemy absorbed into the ball: white-out shrink toward the ball's spot… */

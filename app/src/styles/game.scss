@@ -641,6 +641,37 @@
     .gb-speaker {
       width: min(9.5%, 18dvh);
     }
+
+    /* The display fills the whole glass in landscape. The game view is a
+       square canvas, so it scales to the full width and the overflow crops
+       evenly top and bottom — the player stays centred, and the UI layer
+       (dialogs, menus, battles) tracks the wide window, not the crop. */
+    .gb-bezel .board-screen,
+    .gb-bezel .board-screen--wide {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: auto;
+      max-width: none;
+    }
+
+    .board-screen > .screen-canvas {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      flex: 0 0 auto;
+    }
+
+    /* Cutscenes keep their native 3:2, letterboxed in the wide window. */
+    .board-screen > .oak-intro {
+      width: auto;
+      height: 100%;
+      aspect-ratio: 3 / 2;
+    }
+
+    .board-screen > .oak-intro[data-phase="nickname"] {
+      width: 100%;
+      aspect-ratio: auto;
+    }
   }
 }
 
