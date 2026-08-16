@@ -40,14 +40,21 @@ input {
     flex-direction: column;
   }
 
-  /* Console-only pages: the handheld is the entire page — no nav, no
-     scroll, no rubber-band. The shell tracks dvh, so it always fits the
-     browser chrome state without any scrolling dance. */
+  /* Console-only pages: the handheld is pinned to the viewport (it never
+     scrolls away and always fills whatever chrome is showing, tracking
+     dvh), while the document behind it is deliberately taller than the
+     screen. Swiping therefore performs a real page scroll the console
+     doesn't follow — which is exactly what makes mobile browsers collapse
+     their URL bar. lvh keeps the fake scroll range stable while the
+     chrome animates. */
   .game-only-page {
+    position: fixed;
+    inset: 0;
     height: 100dvh;
     min-height: 0;
     overflow: hidden;
     overscroll-behavior: none;
+    z-index: 0;
   }
 
   .game-only-page > nav {
@@ -55,7 +62,8 @@ input {
   }
 
   body:has(.game-only-page) {
-    overflow: hidden;
+    height: 130lvh;
+    overflow-y: auto;
     overscroll-behavior: none;
   }
 
