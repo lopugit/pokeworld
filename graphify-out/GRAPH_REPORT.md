@@ -1,16 +1,16 @@
 # Graph Report - vigilant-ritchie-16f64e  (2026-08-16)
 
 ## Corpus Check
-- 246 files · ~2,566,468 words
+- 246 files · ~2,566,653 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1952 nodes · 3269 edges · 245 communities (105 shown, 140 thin omitted)
+- 1952 nodes · 3266 edges · 242 communities (105 shown, 137 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d1f961db`
+- Built from commit: `3dc4af1b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -245,8 +245,6 @@
 - [[_COMMUNITY_Asset-pipeline completion loop — durable state|Asset-pipeline completion loop — durable state]]
 - [[_COMMUNITY_StartMenu.tsx|StartMenu.tsx]]
 - [[_COMMUNITY_vite|vite]]
-- [[_COMMUNITY_vitest|vitest]]
-- [[_COMMUNITY_jiti|jiti]]
 - [[_COMMUNITY_MapLoadingIndicator.tsx|MapLoadingIndicator.tsx]]
 - [[_COMMUNITY_users_lopu_things_code_lopugit_pokeworld_app_workflows_map_generation_index_map_generation_batch_size|users_lopu_things_code_lopugit_pokeworld_app_workflows_map_generation_index_map_generation_batch_size]]
 - [[_COMMUNITY_rng.ts|rng.ts]]
@@ -256,7 +254,6 @@
 - [[_COMMUNITY_AuthProvider.tsx|AuthProvider.tsx]]
 - [[_COMMUNITY_postcss|postcss]]
 - [[_COMMUNITY_Banner.tsx|Banner.tsx]]
-- [[_COMMUNITY_tailwindcss|tailwindcss]]
 - [[_COMMUNITY_generation-quota.test.ts|generation-quota.test.ts]]
 - [[_COMMUNITY_Loop state — design studio completion & visual QA|Loop state — /design studio completion & visual QA]]
 
@@ -266,9 +263,9 @@
 3. `hashUnit()` - 18 edges
 4. `terrainLife()` - 17 edges
 5. `terrainOf()` - 16 edges
-6. `TrainerState` - 16 edges
-7. `scripts` - 15 edges
-8. `tileKey()` - 15 edges
+6. `scripts` - 15 edges
+7. `tileKey()` - 15 edges
+8. `TrainerState` - 14 edges
 9. `scripts` - 14 edges
 10. `Emerald game systems — design & cross-agent contract` - 13 edges
 
@@ -287,11 +284,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (245 total, 140 thin omitted)
+## Communities (242 total, 137 thin omitted)
 
 ### Community 0 - "paint.ts"
-Cohesion: 0.09
-Nodes (44): addNpc(), addPokemon(), boulders(), domeSomewhere(), FLOWERS, freeEntitySpot(), addEntities(), hiddenSomewhere() (+36 more)
+Cohesion: 0.15
+Nodes (27): addNpc(), addPokemon(), boulders(), FLOWERS, freeEntitySpot(), addEntities(), hiddenSomewhere(), hiddenSomewhere() (+19 more)
 
 ### Community 2 - "http.ts"
 Cohesion: 0.11
@@ -303,7 +300,7 @@ Nodes (62): addForestClusters(), addLife(), addLine(), addSigns(), applyRockyApr
 
 ### Community 4 - "stored-blocks.ts"
 Cohesion: 0.23
-Nodes (13): getStoredBlocks(), isCurrentMapBlock(), getStoredBlocks(), blockCoordinateKey(), blockRevision(), completedBlockSet(), currentBlockSubset(), findCompletedStoredBlocks() (+5 more)
+Nodes (12): isCurrentMapBlock(), getStoredBlocks(), blockCoordinateKey(), blockRevision(), completedBlockSet(), currentBlockSubset(), findCompletedStoredBlocks(), findCurrentStoredBlocks() (+4 more)
 
 ### Community 5 - "Emerald game systems — design & cross-agent contract"
 Cohesion: 0.14
@@ -314,8 +311,8 @@ Cohesion: 0.05
 Nodes (44): centeredCropRect(), CLASSIFICATION_PRIORITY, classifyCounts(), classifyTerrainPng(), classifyTerrainTiles(), emptyCoverage(), GOOGLE_STATIC_MAP_STYLES, MINIMUM_COVERAGE (+36 more)
 
 ### Community 7 - "getSpecies"
-Cohesion: 0.23
-Nodes (14): applyBattleOutcome(), expForLevel(), getSpecies(), levelForExp(), speciesByName(), createPartyMember(), grantExperience(), isKnownSprite() (+6 more)
+Cohesion: 0.15
+Nodes (22): BattleScreen(), expProgress(), advanceMessage(), applyBattleOutcome(), battleMonFromMember(), createWildBattle(), movesFor(), wildMonFromEncounter() (+14 more)
 
 ### Community 8 - "game-rules.ts"
 Cohesion: 0.11
@@ -326,8 +323,8 @@ Cohesion: 0.08
 Nodes (18): buildGoogleStaticMapUrl(), generateMap(), generateOutputs(), getFallbackMap(), getMapAt(), getMapAtWithSource(), getTile(), getTileColour() (+10 more)
 
 ### Community 10 - "devDependencies"
-Cohesion: 0.12
-Nodes (16): devDependencies, sass, @types/node, @types/pngjs, @types/react, @types/react-dom, typescript, @vitejs/plugin-react (+8 more)
+Cohesion: 0.09
+Nodes (22): devDependencies, autoprefixer, jiti, sass, tailwindcss, @types/node, @types/pngjs, @types/react (+14 more)
 
 ### Community 11 - "persisted-state.ts"
 Cohesion: 0.18
@@ -358,24 +355,24 @@ Cohesion: 0.09
 Nodes (21): description, engines, node, name, packageManager, private, scripts, benchmark:map (+13 more)
 
 ### Community 18 - "audit-structure-duplicates.mjs"
-Cohesion: 0.08
-Nodes (28): analyzeStructureWorld(), cellKey(), cellLatLng(), chebyshev(), fetchJson(), fetchWorld(), FOOTPRINT_TILES, formatReport() (+20 more)
+Cohesion: 0.05
+Nodes (41): analyzeStructureWorld(), cellKey(), cellLatLng(), chebyshev(), fetchJson(), fetchWorld(), FOOTPRINT_TILES, formatReport() (+33 more)
 
 ### Community 19 - "families-generated.ts"
 Cohesion: 0.09
-Nodes (22): DesignFamily, applyFrame(), buildGeneratedFamily(), DOME_SLOTS, FIELD_POKEMON, Frame, HOUSE_SLOTS, mapAnchor() (+14 more)
+Nodes (23): DesignFamily, applyFrame(), buildGeneratedFamily(), DOME_SLOTS, FIELD_POKEMON, Frame, HOUSE_SLOTS, mapAnchor() (+15 more)
 
 ### Community 20 - "BattleScreen.tsx"
-Cohesion: 0.09
-Nodes (24): A_KEYS, ARROW_KEYS, B_KEYS, BagTab, BattleMenu, BattleScreen(), BattleScreenProps, BREAK_FREE_MESSAGES (+16 more)
+Cohesion: 0.11
+Nodes (18): A_KEYS, ARROW_KEYS, B_KEYS, BagTab, BattleMenu, BattleScreenProps, BREAK_FREE_MESSAGES, HpBar() (+10 more)
 
 ### Community 21 - "Procedural World Acceptance"
 Cohesion: 0.12
 Nodes (19): Procedural World Acceptance Ledger, Automated gates, Delivery gates, Deterministic Emerald-Style World, Repository Emerald Tileset, Gameplay and Persistence Systems, Global-Coordinate Continuity, Google Static Maps Source (+11 more)
 
 ### Community 22 - "thingtime-block-store.ts"
-Cohesion: 0.16
-Nodes (17): coordinateToken(), decodeThingtimeBlock(), encodeThingtimeBlock(), getThingtimeStoredBlock(), getThingtimeStoredBlocks(), putThingtimeStoredBlock(), putThingtimeStoredBlocks(), sha256() (+9 more)
+Cohesion: 0.19
+Nodes (16): coordinateToken(), decodeThingtimeBlock(), encodeThingtimeBlock(), getThingtimeStoredBlock(), putThingtimeStoredBlock(), putThingtimeStoredBlocks(), sha256(), ThingtimeBlockCrystal (+8 more)
 
 ### Community 23 - "assets.ts"
 Cohesion: 0.18
@@ -390,32 +387,32 @@ Cohesion: 0.23
 Nodes (13): Pond Center Tile Sprite Variant 1, Pond Center Tile Sprite Variant 2, Pond Center Tile Sprite Variant 3, Pond Center Tile Sprite Variant 4, Rock Terrain Tile Sprite, Native Chrome Visual QA, DevKit(), GamePage.tsx (+5 more)
 
 ### Community 26 - "trainer-state.ts"
-Cohesion: 0.09
-Nodes (37): addCaughtPokemon(), addItemToBag(), Badge, collectFieldItem(), depositPartyMember(), emeraldSprites, hasCollected(), HOENN_BADGES (+29 more)
+Cohesion: 0.08
+Nodes (38): addCaughtPokemon(), addItemToBag(), Badge, collectFieldItem(), depositPartyMember(), emeraldSprites, hasCollected(), HOENN_BADGES (+30 more)
 
 ### Community 27 - "battle.ts"
 Cohesion: 0.10
-Nodes (37): activeMon(), advanceMessage(), applyBattleItem(), applyEndOfTurn(), BALL_BONUS, battleMonFromMember(), BattleOutcome, BattlePhase (+29 more)
+Nodes (36): activeMon(), applyBattleItem(), applyEndOfTurn(), BALL_BONUS, BattleMon, BattleMove, BattleOutcome, BattlePhase (+28 more)
 
 ### Community 28 - "encounters.ts"
-Cohesion: 0.12
-Nodes (27): CAVE_SPECIES, defaultBiomesFor(), defaultRuleId(), defaultRulesFor(), defaultSpawnRules(), ENCOUNTER_STEP_CHANCE, encounterBiomeFor(), EncounterResult (+19 more)
+Cohesion: 0.14
+Nodes (21): CAVE_SPECIES, defaultBiomesFor(), defaultRuleId(), defaultRulesFor(), defaultSpawnRules(), ENCOUNTER_STEP_CHANCE, encounterBiomeFor(), fenceContains() (+13 more)
 
 ### Community 29 - "blocks.ts"
-Cohesion: 0.13
-Nodes (16): isMapBlockStorageConfigured(), mapBlockStorageProvider, MapBlockStoreOverride, putStoredBlocks(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), generateMapBlocks() (+8 more)
+Cohesion: 0.16
+Nodes (10): getStoredBlocks(), isMapBlockStorageConfigured(), mapBlockStorageProvider, MapBlockStoreOverride, latsDb, lngsDb, sortedMods, transactionOptions (+2 more)
 
 ### Community 30 - "generation-quota.ts"
-Cohesion: 0.15
-Nodes (21): releasePreparedMapGenerationJob(), assertPublicGenerationPermit(), assertPublicWorkflowReservation(), assertRegenerationAllowed(), GenerationControlError, isPublicDeployment(), acquireGenerationPermit(), configuredStore() (+13 more)
+Cohesion: 0.16
+Nodes (19): mongodb, acquireGenerationPermit(), configuredStore(), GenerationPermitResult, GenerationQuotaDocument, generationQuotaMongoUri(), GenerationQuotaStatus, getGenerationQuotaStatus() (+11 more)
 
 ### Community 31 - "coordinates.ts"
 Cohesion: 0.25
 Nodes (8): blockForCoordinates(), clamp(), getLatForBlock(), MIN_LATITUDE_PROJECTED, projectLatitude(), toRadians(), unprojectLatitude(), X_INCREMENT
 
 ### Community 32 - "react"
-Cohesion: 0.09
-Nodes (20): BIOMES, DesignBrowser(), useInfiniteReveal(), BADGE_TONES, BadgesPanelProps, BagPanelProps, POCKETS, DialogBoxProps (+12 more)
+Cohesion: 0.15
+Nodes (12): BADGE_TONES, BadgesPanelProps, BagPanelProps, POCKETS, PanelFrame(), PanelFrameProps, PartyPanelProps, PcPanelProps (+4 more)
 
 ### Community 33 - "generate-map.mjs"
 Cohesion: 0.22
@@ -442,8 +439,8 @@ Cohesion: 0.17
 Nodes (19): SaveBody, clampInt(), deleteSavedDesign(), DesignPage, DesignQuery, designsCollection(), DesignStoreError, escapeRegex() (+11 more)
 
 ### Community 39 - "mongo.ts"
-Cohesion: 0.47
-Nodes (5): mongodb, blocksCollection(), isMongoConfigured(), mongoUri(), mongodb
+Cohesion: 0.12
+Nodes (22): domeSomewhere(), absorbIsolatedSpecks(), areaClear(), areaOnGround(), bakeGround(), BIG_TREE_SLICES, BRIDGEABLE, DeckCell (+14 more)
 
 ### Community 40 - "Loop state — Pokémon game features build"
 Cohesion: 0.29
@@ -554,24 +551,24 @@ Cohesion: 0.27
 Nodes (5): emptyQuotaStatus(), rethrowThingtimeQuotaError(), thingtimeGenerationCode(), ThingtimeGenerationQuotaStore, ThingtimeQuotaStatus
 
 ### Community 132 - "legality.ts"
-Cohesion: 0.09
-Nodes (26): GROUNDS, RulesTab(), BANNED_GROUND, BANNED_OVERLAYS, BannedTile, expectedPond(), flagsFor(), Formation (+18 more)
+Cohesion: 0.07
+Nodes (31): GROUNDS, RulesTab(), Banned art (with reasons), BANNED_GROUND, BANNED_OVERLAYS, BannedTile, /design tile legality — rules, database, and enforcement, expectedPond() (+23 more)
 
 ### Community 133 - "index.ts"
-Cohesion: 0.08
-Nodes (43): generate(), BIOMES, DesignPagePayload, DesignCard(), AnyDesignSummary, DesignDetailModal(), DesignDetailModalProps, isSaved() (+35 more)
+Cohesion: 0.11
+Nodes (31): generate(), DesignCard(), CatalogFilters, catalogTags(), deriveTags(), designCache, designCatalog(), fillBlurb() (+23 more)
 
 ### Community 134 - "build-design-tiles.mjs"
 Cohesion: 0.15
 Nodes (7): appDir, grassTile, HARVEST, ROCKY_GROUND_CELL, rockyGround, sheet, STRUCTURES
 
 ### Community 136 - "AdminPage.tsx"
-Cohesion: 0.09
-Nodes (27): deleteSpawnOverride(), listSpawnOverrides(), memoryOverrides, putSpawnOverride(), spawnRulesCollection(), ENCOUNTER_BIOMES, EncounterBiome, GeoFence (+19 more)
+Cohesion: 0.12
+Nodes (23): ENCOUNTER_BIOMES, EncounterBiome, EncounterResult, GeoFence, SpawnRule, PokemonGender, fetchSpawnOverrides(), resetSpawnOverride() (+15 more)
 
 ### Community 137 - "map-api.ts"
-Cohesion: 0.29
-Nodes (6): abortableDelay(), getMapBlocks(), mapJobPollDelay(), mapJobPollPath(), responseJson(), input
+Cohesion: 0.17
+Nodes (15): PreparedMapGenerationJob, TerrainKind, MapBlock, MapGenerationResult, MapGenerationWorkflowInput, MapJobInput, MapSource, MapTile (+7 more)
 
 ### Community 197 - "verify-vercel-output.mjs"
 Cohesion: 0.12
@@ -587,31 +584,35 @@ Nodes (8): accepted, appDir, cellKey(), contentIdentity(), familySeeds, outFile,
 
 ### Community 200 - "pokedex.ts"
 Cohesion: 0.20
-Nodes (12): dexNo(), PokedexPanel(), PokedexPanelProps, BaseStats, byId, byName, entries, PokedexEntry (+4 more)
+Nodes (13): dexNo(), PokedexPanel(), grantBattleExp(), byId, byName, entries, expGainForDefeat(), levelForExp() (+5 more)
 
 ### Community 201 - "entry-client.tsx"
-Cohesion: 0.33
-Nodes (5): App(), root, client, preamble, users_lopu_things_code_lopugit_pokeworld_app_src_styles_index_css
+Cohesion: 0.27
+Nodes (7): deleteSpawnOverride(), listSpawnOverrides(), memoryOverrides, putSpawnOverride(), spawnRulesCollection(), normalizeSpawnOverride(), SpeciesSpawnOverride
 
 ### Community 202 - "Game.tsx"
-Cohesion: 0.13
-Nodes (13): BoundaryWait, defaultCoordinates, GameComponentState, GameSettings, MapLoadingState, MapView, MoveAction, MoveAnimation (+5 more)
+Cohesion: 0.11
+Nodes (16): BoundaryWait, defaultCoordinates, GameComponentState, GameSettings, MapLoadingState, MapView, MoveAction, MoveAnimation (+8 more)
 
 ### Community 203 - "App.tsx"
-Cohesion: 0.28
-Nodes (5): AuthProvider(), AdminPage(), DesignPage(), GamePage(), HomePage()
+Cohesion: 0.16
+Nodes (10): App(), AuthProvider(), root, AdminPage(), DesignPage(), GamePage(), HomePage(), client (+2 more)
 
 ### Community 205 - "index.ts"
-Cohesion: 0.22
+Cohesion: 0.20
 Nodes (6): api, execution, generateMapWorkflow(), mapGenerationBatches(), generateMapBlocksStep(), prepareMapBlockGenerationStep()
 
+### Community 206 - "autoprefixer"
+Cohesion: 0.36
+Nodes (8): putStoredBlocks(), blocksHandler, createLegacyBlocksHandler, generateMapBlock(), generateMapBlocks(), toExport(), generateMapBlockStep(), MapGenerationGateResult
+
 ### Community 207 - "/design tile legality — rules, database, and enforcement"
-Cohesion: 0.22
-Nodes (8): Banned art (with reasons), /design tile legality — rules, database, and enforcement, Formations (multi-tile sprites), Ground families, Known roadmap, Multi-block worlds, Overlay → ground rules, Re-grounded art
+Cohesion: 0.44
+Nodes (5): assertPublicGenerationPermit(), assertPublicWorkflowReservation(), assertRegenerationAllowed(), GenerationControlError, isPublicDeployment()
 
 ### Community 208 - "game-zoom.test.ts"
-Cohesion: 0.38
-Nodes (5): mapOffsetLimitForZoom(), nextZoomValue(), ZoomDirection, users_lopu_things_code_lopugit_pokeworld_app_src_lib_game_zoom_max_zoom, users_lopu_things_code_lopugit_pokeworld_app_src_lib_game_zoom_min_zoom
+Cohesion: 0.31
+Nodes (5): BIOMES, DesignBrowser(), useInfiniteReveal(), DialogBoxProps, react
 
 ### Community 209 - "AuthControls.tsx"
 Cohesion: 0.43
@@ -642,8 +643,8 @@ Cohesion: 0.12
 Nodes (15): appDir, B(), brickRegion, cellOf(), crop(), H(), houseRegion, M() (+7 more)
 
 ### Community 218 - "types.ts"
-Cohesion: 0.17
-Nodes (18): coordinateKey(), generationOffsetsMissingFromBlocks(), PreparedMapGenerationJob, prepareMapGenerationJob(), reserveGenerationQuota(), coordinatesForInput(), finiteInteger(), parseMapJobInput() (+10 more)
+Cohesion: 0.23
+Nodes (11): coordinateKey(), generationOffsetsMissingFromBlocks(), prepareMapGenerationJob(), releasePreparedMapGenerationJob(), releaseGenerationReservationSlot(), reserveGenerationQuota(), coordinatesForInput(), finiteInteger() (+3 more)
 
 ### Community 220 - "Game.getBlocks"
 Cohesion: 0.40
@@ -658,8 +659,8 @@ Cohesion: 0.14
 Nodes (11): pngjs, appRoot, FRAME_MAP, outRoot, SOURCES, root, target, transformedShell (+3 more)
 
 ### Community 224 - "sceneDraw.ts"
-Cohesion: 0.25
-Nodes (9): BlockCanvas(), BlockCanvasProps, drawScene(), imageCache, loadImage(), pokemonCut(), SceneDrawOptions, SpriteCut (+1 more)
+Cohesion: 0.12
+Nodes (18): BlockCanvas(), BlockCanvasProps, BIOMES, DesignPagePayload, AnyDesignSummary, DesignDetailModal(), DesignDetailModalProps, isSaved() (+10 more)
 
 ### Community 227 - "Design-fix loop — durable state"
 Cohesion: 0.40
@@ -676,10 +677,6 @@ Nodes (3): MENU_ITEMS, MenuItemId, StartMenuProps
 ### Community 230 - "vite"
 Cohesion: 0.50
 Nodes (3): vite, plugin_react, vite
-
-### Community 231 - "vitest"
-Cohesion: 0.23
-Nodes (8): blockForCoordinates(), minLatitudeProjected, projectLatitude(), toRadians(), errorResponse(), jsonResponse(), input, vitest
 
 ### Community 235 - "rng.ts"
 Cohesion: 0.67
@@ -710,9 +707,9 @@ Nodes (3): Checklist, Log, Loop state — /design studio completion & visual QA
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **675 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+670 more)
+- **677 isolated node(s):** `defaultCoordinates`, `GameSettings`, `MapView`, `MoveAction`, `PlayerState` (+672 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **140 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **137 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -721,13 +718,13 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
 - **Why does `Game` connect `Game` to `Game.tsx`, `App.tsx`?**
   _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `dependencies` to `package.json`, `node_fs`, `mongo.ts`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **Why does `getSpecies()` connect `getSpecies` to `AdminPage.tsx`, `pokedex.ts`, `BattleScreen.tsx`, `trainer-state.ts`, `battle.ts`, `encounters.ts`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `package.json`, `node_fs`, `generation-quota.ts`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `postcss`, `package.json`, `vite`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **What connects `defaultCoordinates`, `GameSettings`, `MapView` to the rest of the system?**
-  _679 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _681 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `paint.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09019607843137255 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1471264367816092 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
   _Cohesion score 0.056265984654731455 - nodes in this community are weakly interconnected._

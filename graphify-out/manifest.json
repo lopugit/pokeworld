@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1786884537.5705583,
-    "ast_hash": "e3ac2eb4c1bf0b810f71a39e5aca7337",
+    "mtime": 1786887155.3243995,
+    "ast_hash": "52d81e4da6cc200fefd0a3360986a3df",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
@@ -9215,8 +9215,8 @@
     "semantic_hash": ""
   },
   "app/src/components/game-ui/SettingsPanel.tsx": {
-    "mtime": 1786883892.349711,
-    "ast_hash": "d5a8dbedb9fd458caa564caa513978c3",
+    "mtime": 1786887523.648115,
+    "ast_hash": "370792404356188cc833bed5486936df",
     "semantic_hash": ""
   },
   "app/src/lib/spawn-rules-api.ts": {
