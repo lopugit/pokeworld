@@ -1887,25 +1887,28 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     }
 
     if (!game.anyLoaded) {
+      // The boot screen is just the loading art filling the display, like a
+      // cartridge splash. Text and the Reset escape hatch only appear if the
+      // load actually failed.
       return (
         <div className="game-root w-full flex flex-col items-center justify-center pb-12">
           {this.renderShell(
-            <div className="gb-screen-note">
-              <div className="loading-container">
-                <img src="/loading.gif" alt="" />
+            this.state.loadError ? (
+              <div className="gb-screen-note">
+                <div className="max-w-lg text-center text-red">{this.state.loadError}</div>
+                <button
+                  type="button"
+                  className="px-4 py-2 cursor-pointer shadow-md text-white bg-grass rounded-md"
+                  onClick={this.resetGame}
+                >
+                  Reset
+                </button>
               </div>
-              <div className="text-lg text-grass">Loading..</div>
-              {this.state.loadError ? (
-                <div className="max-w-lg text-center text-red pt-4">{this.state.loadError}</div>
-              ) : null}
-              <button
-                type="button"
-                className="px-4 py-2 cursor-pointer shadow-md text-white bg-grass rounded-md"
-                onClick={this.resetGame}
-              >
-                Reset
-              </button>
-            </div>,
+            ) : (
+              <div className="gb-screen-loading">
+                <img src="/loading.gif" alt="Loading" />
+              </div>
+            ),
             { chrome: false, controls: false },
           )}
         </div>
