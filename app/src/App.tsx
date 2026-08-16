@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { AuthProvider } from "./auth/AuthProvider";
+import { AboutPage } from "./pages/AboutPage";
 import { AdminPage } from "./pages/AdminPage";
 import { DesignPage } from "./pages/DesignPage";
 import { HomePage } from "./pages/HomePage";
@@ -27,6 +28,7 @@ export function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/design" element={<DesignPage />} />
           <Route path="/game" element={<GamePage />} />

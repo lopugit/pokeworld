@@ -4,7 +4,7 @@ import { Nav } from "../components/Nav";
 
 export function GamePage() {
   return (
-    <div className="page-flex w-full bg-green min-h-screen pb-16">
+    <div className="page-flex game-only-page w-full bg-green min-h-screen">
       <Nav />
       <section className="game-stage w-full flex items-center justify-center pt-12 pb-12">
         <Game />

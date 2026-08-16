@@ -40,17 +40,23 @@ input {
     flex-direction: column;
   }
 
-  /* Console first, nav right beneath it, everything else after. */
-  .page-flex > .game-stage {
-    order: 1;
+  /* Console-only pages: the handheld is the entire page — no nav, no
+     scroll, no rubber-band. The shell tracks dvh, so it always fits the
+     browser chrome state without any scrolling dance. */
+  .game-only-page {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
   }
 
-  .page-flex > nav {
-    order: 2;
+  .game-only-page > nav {
+    display: none;
   }
 
-  .page-flex > main {
-    order: 3;
+  body:has(.game-only-page) {
+    overflow: hidden;
+    overscroll-behavior: none;
   }
 
   .game-stage {
