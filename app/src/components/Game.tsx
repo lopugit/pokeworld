@@ -1807,14 +1807,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
             </button>
           </div>
           <div className="gb-startselect">
-            <button
-              type="button"
-              className="select"
-              data-label="SELECT"
-              aria-label="Toggle debug tools"
-              disabled={!controls}
-              onClick={controls ? () => this.setGame({ debug: !game.debug }) : undefined}
-            />
+            {/* START sits above SELECT, like the real unit. */}
             <button
               type="button"
               className="start"
@@ -1832,6 +1825,14 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                     }
                   : undefined
               }
+            />
+            <button
+              type="button"
+              className="select"
+              data-label="SELECT"
+              aria-label="Toggle debug tools"
+              disabled={!controls}
+              onClick={controls ? () => this.setGame({ debug: !game.debug }) : undefined}
             />
           </div>
           <div className="gb-speaker" aria-hidden="true" />
