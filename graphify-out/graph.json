@@ -837,7 +837,7 @@
       "label": ".render()",
       "file_type": "code",
       "source_file": "app/src/components/Game.tsx",
-      "source_location": "L1851",
+      "source_location": "L1852",
       "_origin": "ast",
       "id": "app_src_components_game_game_render",
       "community": 1,
@@ -21884,7 +21884,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/src/components/Game.tsx",
-      "source_location": "L1851",
+      "source_location": "L1852",
       "weight": 1.0,
       "source": "app_src_components_game_game",
       "target": "app_src_components_game_game_render",
@@ -22804,7 +22804,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/components/Game.tsx",
-      "source_location": "L1859",
+      "source_location": "L1860",
       "weight": 1.0,
       "source": "app_src_components_game_game_render",
       "target": "app_src_components_game_game_rendershell",
@@ -55574,5 +55574,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4d2d8fc3cfe9d3b9edb0c01e056fc6d078e805ae"
+  "built_at_commit": "0e431abe2ad7c7b2e592e9081cb0e6d75c02765f"
 }
