@@ -3,9 +3,11 @@
   "short_name": "PokéWorld",
   "description": "An AR Pokémon game based on the traditional Pokémon play style.",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#b2f594",
-  "theme_color": "#70c0a0",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",

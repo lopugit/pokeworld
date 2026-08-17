@@ -24,3 +24,64 @@ button,
 input {
   font: inherit;
 }
+
+/* On mobile the game section becomes the entire first viewport: a pure black
+   stage holding the console full-bleed, so the phone itself reads as the
+   handheld — the Game Boy Color in portrait, the Game Boy Advance when the
+   phone rotates to landscape (short-and-wide viewports). Nav and banners
+   scroll underneath. */
+@media (max-width: 767.98px), (min-width: 768px) and (max-height: 540px) {
+  body:has(.game-stage) {
+    background: #000;
+  }
+
+  .page-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Console-only pages: the handheld is pinned to the viewport (it never
+     scrolls away and always fills whatever chrome is showing, tracking
+     dvh), while the document behind it is deliberately taller than the
+     screen. Swiping therefore performs a real page scroll the console
+     doesn't follow — which is exactly what makes mobile browsers collapse
+     their URL bar. lvh keeps the fake scroll range stable while the
+     chrome animates. */
+  .game-only-page {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    z-index: 0;
+  }
+
+  .game-only-page > nav {
+    display: none;
+  }
+
+  body:has(.game-only-page) {
+    height: 130lvh;
+    overflow-y: auto;
+    overscroll-behavior: none;
+  }
+
+  .game-stage {
+    padding: 0;
+    background: #000;
+  }
+
+  .game-stage .game-root {
+    width: 100%;
+    padding: 0;
+  }
+
+  .game-stage .game-root > div {
+    width: 100%;
+  }
+
+  .game-shell-slot {
+    width: 100%;
+  }
+}

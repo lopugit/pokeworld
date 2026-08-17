@@ -1,6 +1,11 @@
-import { useEffect, useMemo, useState, type CSSProperties, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type FormEvent } from "react";
 import { getSpecies, type PokedexEntry } from "../../lib/pokedex";
 import { KANTO_STARTER_IDS, normalizeNickname } from "../../lib/trainer-state";
+import {
+  moveConsoleFormControl,
+  type ConsoleDirection,
+  type ConsoleFormControl,
+} from "./console-form-navigation";
 import { DialogBox } from "./DialogBox";
 
 export interface StarterChoice {
@@ -109,6 +114,10 @@ export function OakIntro({ onComplete }: OakIntroProps) {
   const [pickedId, setPickedId] = useState<number | null>(null);
   const [confirmChoice, setConfirmChoice] = useState<"yes" | "no">("yes");
   const [nickname, setNickname] = useState("");
+  const [nicknameControl, setNicknameControl] = useState<ConsoleFormControl>("confirm");
+  const nicknameInputRef = useRef<HTMLInputElement>(null);
+  const nicknameBackRef = useRef<HTMLButtonElement>(null);
+  const nicknameSubmitRef = useRef<HTMLButtonElement>(null);
 
   const starters = useMemo(
     () =>
@@ -130,6 +139,7 @@ export function OakIntro({ onComplete }: OakIntroProps) {
   const resolveConfirm = (choice: "yes" | "no") => {
     if (choice === "yes") {
       setNickname("");
+      setNicknameControl("confirm");
       setPhase("nickname");
     } else {
       setPickedId(null);
@@ -137,60 +147,87 @@ export function OakIntro({ onComplete }: OakIntroProps) {
     }
   };
 
-  // Keyboard support per phase; buttons and the nickname input keep their
-  // native key handling (the game's own listener is suspended during the intro).
-  useEffect(() => {
-    const onKeydown = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement | null;
+  // Keyboard support per phase. Shell controls dispatch the same key events on
+  // document, while real events originating inside fields/buttons keep their
+  // native typing, Tab and Enter behavior.
+  const keyHandlerRef = useRef<(event: KeyboardEvent) => void>(() => {});
+  keyHandlerRef.current = (event: KeyboardEvent) => {
+    const target = event.target as HTMLElement | null;
+    if (
+      target &&
+      (target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.tagName === "BUTTON" ||
+        target.isContentEditable)
+    ) {
+      return;
+    }
+    const key = event.key;
+    const isA = key === "z" || key === "Z" || key === " " || key === "Enter";
+    const isB = key === "x" || key === "X" || key === "Escape" || key === "Backspace";
+    if (phase === "greeting" || phase === "farewell") {
+      if (isA || key === "ArrowDown") {
+        event.preventDefault();
+        setAdvance((current) => current + 1);
+      }
+      return;
+    }
+    if (phase === "pick") {
+      if (key === "ArrowLeft" || key === "ArrowUp") {
+        event.preventDefault();
+        setBallIndex((current) => (current + 2) % 3);
+      } else if (key === "ArrowRight" || key === "ArrowDown") {
+        event.preventDefault();
+        setBallIndex((current) => (current + 1) % 3);
+      } else if (isA) {
+        event.preventDefault();
+        openConfirm(ballIndex);
+      }
+      return;
+    }
+    if (phase === "confirm") {
+      if (key === "ArrowUp" || key === "ArrowDown") {
+        event.preventDefault();
+        setConfirmChoice((current) => (current === "yes" ? "no" : "yes"));
+      } else if (isA) {
+        event.preventDefault();
+        resolveConfirm(confirmChoice);
+      } else if (isB) {
+        event.preventDefault();
+        resolveConfirm("no");
+      }
+      return;
+    }
+    if (phase === "nickname") {
       if (
-        target &&
-        (target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
-          target.tagName === "BUTTON" ||
-          target.isContentEditable)
+        key === "ArrowUp" ||
+        key === "ArrowRight" ||
+        key === "ArrowDown" ||
+        key === "ArrowLeft"
       ) {
-        return;
+        event.preventDefault();
+        setNicknameControl((current) => {
+          const next = moveConsoleFormControl(current, key as ConsoleDirection);
+          if (next !== "field") nicknameInputRef.current?.blur();
+          return next;
+        });
+      } else if (isA) {
+        event.preventDefault();
+        if (nicknameControl === "field") nicknameInputRef.current?.focus();
+        else if (nicknameControl === "back") nicknameBackRef.current?.click();
+        else nicknameSubmitRef.current?.click();
+      } else if (isB) {
+        event.preventDefault();
+        nicknameBackRef.current?.click();
       }
-      const key = event.key;
-      const isA = key === "z" || key === "Z" || key === " " || key === "Enter";
-      const isB = key === "x" || key === "X" || key === "Escape" || key === "Backspace";
-      if (phase === "greeting" || phase === "farewell") {
-        if (isA || key === "ArrowDown") {
-          event.preventDefault();
-          setAdvance((current) => current + 1);
-        }
-        return;
-      }
-      if (phase === "pick") {
-        if (key === "ArrowLeft" || key === "ArrowUp") {
-          event.preventDefault();
-          setBallIndex((current) => (current + 2) % 3);
-        } else if (key === "ArrowRight" || key === "ArrowDown") {
-          event.preventDefault();
-          setBallIndex((current) => (current + 1) % 3);
-        } else if (isA) {
-          event.preventDefault();
-          openConfirm(ballIndex);
-        }
-        return;
-      }
-      if (phase === "confirm") {
-        if (key === "ArrowUp" || key === "ArrowDown") {
-          event.preventDefault();
-          setConfirmChoice((current) => (current === "yes" ? "no" : "yes"));
-        } else if (isA) {
-          event.preventDefault();
-          resolveConfirm(confirmChoice);
-        } else if (isB) {
-          event.preventDefault();
-          resolveConfirm("no");
-        }
-      }
-    };
-    document.addEventListener("keydown", onKeydown);
-    return () => document.removeEventListener("keydown", onKeydown);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, ballIndex, confirmChoice, starters]);
+    }
+  };
+
+  useEffect(() => {
+    const listener = (event: KeyboardEvent) => keyHandlerRef.current(event);
+    document.addEventListener("keydown", listener);
+    return () => document.removeEventListener("keydown", listener);
+  }, []);
 
   const finish = () => {
     if (pickedId === null) return;
@@ -349,9 +386,13 @@ export function OakIntro({ onComplete }: OakIntroProps) {
           <h2 className="oak-nickname-label">Give {picked.displayName} a nickname?</h2>
           <p className="oak-starter-sub">Totally optional! Leave it blank to keep {picked.displayName}.</p>
           <input
+            ref={nicknameInputRef}
             className="oak-nickname-input"
+            data-console-selected={nicknameControl === "field"}
             value={nickname}
             onChange={(event) => setNickname(event.target.value)}
+            onFocus={() => setNicknameControl("field")}
+            onPointerEnter={() => setNicknameControl("field")}
             maxLength={10}
             placeholder="NICKNAME"
             aria-label={`Optional nickname for ${picked.displayName}`}
@@ -360,16 +401,28 @@ export function OakIntro({ onComplete }: OakIntroProps) {
           />
           <div className="oak-intro-actions">
             <button
+              ref={nicknameBackRef}
               type="button"
               className="oak-intro-button secondary"
+              data-console-selected={nicknameControl === "back"}
+              onFocus={() => setNicknameControl("back")}
+              onPointerEnter={() => setNicknameControl("back")}
               onClick={() => {
                 setPickedId(null);
+                setNicknameControl("confirm");
                 setPhase("pick");
               }}
             >
               BACK
             </button>
-            <button type="submit" className="oak-intro-button">
+            <button
+              ref={nicknameSubmitRef}
+              type="submit"
+              className="oak-intro-button"
+              data-console-selected={nicknameControl === "confirm"}
+              onFocus={() => setNicknameControl("confirm")}
+              onPointerEnter={() => setNicknameControl("confirm")}
+            >
               I CHOOSE YOU!
             </button>
           </div>

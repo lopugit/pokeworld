@@ -1,129 +1,103 @@
-.controls {
-  display: flex;
-  justify-content: space-between;
+/* ================================================================
+   Handheld shells.
+   Desktop (min-width 768px): indigo Game Boy Advance, landscape —
+   proportions and palette matched to the AGB-001 "Indigo" unit.
+   Mobile  (max-width 768px): Game Boy Color filling the whole
+   viewport over a pure black stage — the phone becomes the console.
+   Geometry is shared; each shell sets palette vars + layout in its
+   media block, so a window resize re-skins without re-rendering.
+   ================================================================ */
 
-  .dpad {
-    position: relative;
-    display: inline-block;
-    width: 90px;
-    height: 90px;
-    z-index: 5;
+/* Shell parents form the stacking context so parts with negative z-index
+   (the GBA's shoulder slivers) slide behind the body but still paint above
+   the page background. */
+.game-root {
+  position: relative;
+  z-index: 0;
+}
 
-    > * {
-      width: 33%;
-      height: 33%;
-      position: absolute;
-      background-color: #565e6a;
-      cursor: pointer;
-      padding: 0;
+.gameboy {
+  box-sizing: border-box;
+  position: relative;
+  /* A console is not a document: long-press must never pop text selection
+     or the iOS callout over the chrome or the screen. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 
-      i {
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        height: 100%;
-        font-size: 28px;
-        color: #333a4a;
-        text-shadow: 0 -0.5px 0 #aaa;
-      }
-    }
-
-    .up {
-      top: calc(0% + 4px);
-      left: 33%;
-      border: 4px solid black;
-      border-bottom: 0;
-      border-radius: 5px 5px 0 0;
-      &:active { background: linear-gradient(to top, #565e6a 0%, #333 100%); }
-    }
-    .right {
-      top: 33%;
-      left: calc(66% - 4px);
-      border: 4px solid black;
-      border-left: 0;
-      border-radius: 0 5px 5px 0;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to right, #565e6a 0%, #333 100%); }
-    }
-    .down {
-      top: calc(66% - 4px);
-      left: 33%;
-      border: 4px solid black;
-      border-top: 0;
-      border-radius: 0 0 5px 5px;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to bottom, #565e6a 0%, #333 100%); }
-    }
-    .left {
-      top: 33%;
-      left: calc(0% + 4px);
-      border: 4px solid black;
-      border-right: 0;
-      border-radius: 5px 0 0 5px;
-      box-shadow: 0 -2px 0 #888 inset;
-      &:active { background: linear-gradient(to left, #565e6a 0%, #333 100%); }
-    }
-    .middle {
-      top: 33%;
-      left: 33%;
-      z-index: -5;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 20%;
-        left: 20%;
-        display: inline-block;
-        border: 1px solid #6e737a;
-        background: linear-gradient(to bottom, #6d7075 0%, #6d7075 30%, #23272f 70%, #23272f 100%);
-        border-radius: 50%;
-        height: 60%;
-        width: 60%;
-      }
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  .a-b {
-    position: relative;
-    display: inline-block;
-    width: 120px;
-    height: 90px;
+  button {
+    /* Immediate taps: no double-tap-zoom delay, no grey tap flash. */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    .a,
-    .b {
-      position: absolute;
-      display: inline-block;
-      font-size: 22px;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 50%;
-      background-color: #2c313e;
-      border-bottom: 2px solid #888;
-      box-shadow: -1px 1px 5px black, 0 0 5px black inset;
-      text-shadow: 0 -1px 1px #888;
-      color: #2c313e;
-      text-align: center;
-      user-select: none;
-      cursor: pointer;
-      transition: box-shadow .1s ease-out, border .1s ease-out, line-height .2s ease-out;
-      &:active { box-shadow: -1px 1px 1px black, 0 0 5px black inset; border-width: 0; line-height: 45px; }
-    }
-    .a { top: 15px; right: 10px; }
-    .b { top: 35px; left: 0; }
+  /* Only the console's own chrome buttons ride the shell's em scale; the
+     screen content (battle UI, intro forms, panels) owns its typography —
+     a blanket `font: inherit` here once blew their text up to chrome size. */
+  .dpad > button,
+  .a-b button,
+  .gb-startselect button,
+  .gb-shoulder {
+    font: inherit;
+  }
+
+  /* Typing fields (nickname, trainer name) stay selectable. */
+  input,
+  textarea {
+    user-select: text;
+    -webkit-user-select: text;
   }
 }
 
-.gameboy { box-sizing: border-box; }
+/* ---------------- display stack ---------------- */
+
+.gb-glass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+
 .board-screen {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  aspect-ratio: 1;
+  background: #000;
 }
+
+/* Fixed-DPI display: the screen is a fixed logical stage — 480x320 on the
+   GBA (true 3:2), 320x320 on the GBC — scaled uniformly to fit whatever
+   physical window holds it. Every resolution renders the exact same
+   picture, just zoomed. The scale's container units resolve against
+   .board-screen; the cqmin units of everything inside resolve against the
+   stage's constant logical size. */
+.screen-stage {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  container-type: size;
+  width: 480px;
+  height: 320px;
+  /* custom property so sass ships the length-division calc untouched */
+  --stage-scale: min(calc(100cqw / 480px), calc(100cqh / 320px));
+  scale: var(--stage-scale);
+}
+
 .screen-canvas {
   display: block;
-  flex: 0 0 100%;
-  min-width: 0;
+  flex: 0 0 auto;
   width: 100%;
   height: auto;
   aspect-ratio: 1;
@@ -136,7 +110,860 @@
   }
 }
 
+/* PROF. OAK's first-run intro keeps its native 240x160 (3:2): exact fit on
+   the GBA stage, letterboxed on the square GBC stage (the stage is black,
+   so the bars vanish). */
+.screen-stage > .oak-intro {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* The nickname step is a regular HTML form, not 240x160 art — give it the
+   whole stage and scroll invisibly instead of clipping the buttons. */
+.screen-stage > .oak-intro[data-phase="nickname"] {
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Boot splash: the loading art covers the whole display, nothing else. */
+.gb-screen-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #b2f594;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+}
+
+/* Loading / location notes rendered on the display. */
+.gb-screen-note {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 8%;
+  overflow: auto;
+  text-align: center;
+  background: #101828;
+  color: #e8f1ff;
+}
+
+/* ---------------- chrome lettering ---------------- */
+
+.gb-wordmark {
+  pointer-events: none;
+  user-select: none;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-style: italic;
+  line-height: 1;
+  white-space: nowrap;
+  color: #f2f2f7;
+
+  b {
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+
+  span {
+    font-weight: 400;
+    letter-spacing: .28em;
+    margin-left: .4em;
+  }
+}
+
+.gbc-color {
+  letter-spacing: .1em;
+
+  i {
+    font-weight: 800;
+
+    &:nth-child(1) { color: #b04ee0; }
+    &:nth-child(2) { color: #ef4d8e; }
+    &:nth-child(3) { color: #f7b32b; }
+    &:nth-child(4) { color: #56b447; }
+    &:nth-child(5) { color: #2ba6e8; }
+  }
+}
+
+.gb-brand {
+  pointer-events: none;
+  user-select: none;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.gb-power {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+
+  em {
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .14em;
+  }
+}
+
+.gb-power-led {
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #b4ffc8, #35e065 45%, #0e9a38 90%);
+  box-shadow: 0 0 6px 1px rgba(70, 255, 130, .75);
+}
+
+/* ---------------- controls (geometry shared) ---------------- */
+
+/* One flat colour across the whole cross — the arms and hub share the exact
+   same face so the joins are invisible; only the outer edges carry a subtle
+   bevel, matching the moulded plastic of the real pad. */
+.dpad {
+  position: relative;
+  aspect-ratio: 1;
+  z-index: 5;
+  filter: drop-shadow(0 .1em .12em rgba(8, 6, 30, .45));
+
+  > button,
+  > .middle {
+    position: absolute;
+    width: 34%;
+    height: 34%;
+    border: 0;
+    padding: 0;
+    background: var(--pad-face);
+    cursor: pointer;
+  }
+
+  > button:active {
+    background: var(--pad-lo);
+  }
+
+  .up {
+    top: 0;
+    left: 33%;
+    border-radius: 14% 14% 0 0;
+    box-shadow: inset 0 .1em .1em -.06em rgba(255, 255, 255, .4);
+  }
+  .right {
+    top: 33%;
+    right: 0;
+    border-radius: 0 14% 14% 0;
+    box-shadow: inset -.1em 0 .1em -.06em rgba(0, 0, 0, .28);
+  }
+  .down {
+    bottom: 0;
+    left: 33%;
+    border-radius: 0 0 14% 14%;
+    box-shadow: inset 0 -.1em .1em -.06em rgba(0, 0, 0, .35);
+  }
+  .left {
+    top: 33%;
+    left: 0;
+    border-radius: 14% 0 0 14%;
+    box-shadow: inset .1em 0 .1em -.06em rgba(255, 255, 255, .3);
+  }
+  .middle {
+    top: 33%;
+    left: 33%;
+    cursor: default;
+
+    /* shallow circular dish in the hub */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 16%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 34%, rgba(0, 0, 0, .2), rgba(0, 0, 0, .04) 58%, rgba(255, 255, 255, .07) 78%);
+    }
+  }
+}
+
+.a-b {
+  position: relative;
+  z-index: 5;
+
+  button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    aspect-ratio: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-weight: 700;
+    color: var(--ab-text);
+    background: radial-gradient(circle at 34% 28%, var(--ab-hi) 0%, var(--ab-face) 58%, var(--ab-lo) 100%);
+    box-shadow: 0 .14em .18em rgba(8, 6, 30, .45), inset 0 .05em .08em rgba(255, 255, 255, .45);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+    user-select: none;
+    cursor: pointer;
+
+    &:active {
+      transform: translateY(.05em);
+      box-shadow: 0 .07em .09em rgba(8, 6, 30, .45), inset 0 .05em .08em rgba(255, 255, 255, .3);
+    }
+  }
+
+  .a { top: 0; right: 0; }
+  .b { bottom: 0; left: 0; }
+}
+
+.gb-startselect {
+  z-index: 5;
+
+  button {
+    position: relative;
+    display: block;
+    border: 0;
+    padding: 0;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--pill-lo) 0%, var(--pill-hi) 130%);
+    box-shadow:
+      inset 0 .08em .12em rgba(0, 0, 0, .6),
+      inset 0 -.04em .06em rgba(255, 255, 255, .25),
+      0 .05em 0 rgba(255, 255, 255, .18);
+    cursor: pointer;
+
+    &:active { box-shadow: inset 0 .1em .14em rgba(0, 0, 0, .75); }
+
+    &::after {
+      content: attr(data-label);
+      position: absolute;
+      color: var(--label-ink);
+      font-size: .5em;
+      font-weight: 700;
+      letter-spacing: .16em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+  }
+}
+
+.gb-shoulder {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gb-speaker {
+  pointer-events: none;
+}
+
+.board-resize-handle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  border-right: 3px solid rgba(240, 240, 255, .55);
+  border-bottom: 3px solid rgba(240, 240, 255, .55);
+  border-bottom-right-radius: 7px;
+  opacity: .65;
+  touch-action: none;
+  z-index: 6;
+  &:hover { opacity: 1; }
+}
+
+/* ================================================================
+   Desktop shell: Game Boy Advance (indigo)
+   ================================================================ */
+
+@media (min-width: 768px) {
+  .gameboy {
+    --pad-face: #c7c7d3;
+    --pad-lo: #9d9db2;
+    --ab-hi: #e4e4ee;
+    --ab-face: #c6c6d4;
+    --ab-lo: #8f8fa8;
+    --ab-text: #8585a0;
+    --pill-hi: #6a61bd;
+    --pill-lo: #332e6b;
+    --label-ink: rgba(43, 33, 104, .62);
+    /* Coordinate traces from the supplied AGB-001 photo's 503 x 286px body.
+       The front plate and pale rear hardware are deliberately separate: the
+       rear casing flares around the shoulder bumpers, then tucks behind the
+       purple plate instead of becoming a uniform outline around the bottom. */
+    --gba-back-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 0 C600 0 680 0 745 5 C780 8 805 18 820 28 C880 34 930 45 953 57 C970 66 980 76 982 90 C990 130 996 200 1000 360 C1002 410 990 450 965 472 C940 490 900 500 850 510 C805 520 770 535 745 542 C680 550 590 555 500 555 C410 555 320 550 255 542 C230 535 195 520 150 510 C100 500 60 490 35 472 C10 450 -2 410 0 360 C4 200 10 130 18 90 C20 76 30 66 47 57 C70 45 120 34 180 28 C195 18 220 8 255 5 C320 0 400 0 500 0 Z'/%3E%3C/svg%3E");
+    --gba-body-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 2 C590 2 675 2 735 8 C765 10 785 18 800 28 C825 38 850 48 868 57 C910 66 950 75 965 90 C980 112 988 160 993 240 C997 310 999 380 996 426 C994 455 980 472 955 483 C930 495 880 500 843 511 C805 526 780 535 761 540 C700 555 650 563 500 568 C350 563 300 555 239 540 C220 535 195 526 157 511 C120 500 70 495 45 483 C20 472 6 455 4 426 C1 380 3 310 7 240 C12 160 20 112 35 90 C50 75 90 66 132 57 C150 48 175 38 200 28 C215 18 235 10 265 8 C325 2 410 2 500 2 Z'/%3E%3C/svg%3E");
+    --gba-bezel-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M375 0 C455 -4 545 -4 643 0 C750 2 875 10 947 40 C970 55 975 95 974 150 C980 250 992 500 1000 750 C1000 840 990 870 970 900 C945 925 910 945 876 950 C810 960 740 980 662 995 C657 998 652 1000 650 1000 C545 1005 455 1005 350 1000 C348 1000 343 998 338 995 C260 980 190 960 124 950 C90 945 55 925 30 900 C10 870 0 840 0 750 C8 500 20 250 26 150 C25 105 30 70 53 40 C120 10 250 2 375 0 Z'/%3E%3C/svg%3E");
+
+    width: min(
+      calc(var(--board-width, 520px) * 2.5),
+      calc(100vw - 24px),
+      calc((100dvh - 110px) * 1.759)
+    );
+    aspect-ratio: 1.759;
+    font-size: calc(min(var(--board-width, 520px) * 2.5, 100vw - 24px, (100dvh - 110px) * 1.759) * .022);
+    /* The shadow lives in a filter so it hugs the clipped silhouette; the
+       filter also makes .gameboy a stacking context, keeping the negative-z
+       body plate and shoulders inside the unit. */
+    filter: drop-shadow(0 .55em 1.4em rgba(8, 5, 35, .45));
+
+    /* True AGB-001 top-down outline: narrow end caps, shallow shoulder
+       humps, and the characteristic bottom edge that bows DOWN at the
+       centre. The earlier shell accidentally inverted that lower curve. */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      -webkit-mask: var(--gba-body-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-body-mask) center / 100% 100% no-repeat;
+      background:
+        radial-gradient(120% 170% at 30% -8%, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0) 55%),
+        radial-gradient(150% 120% at 50% 118%, rgba(10, 5, 50, .32), rgba(10, 5, 50, 0) 55%),
+        linear-gradient(180deg, #756bcb 0%, #5d55b2 48%, #453e90 100%);
+    }
+
+    /* Pale rear shell visible only around the shoulder bumpers and side grips. */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      -webkit-mask: var(--gba-back-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-back-mask) center / 100% 100% no-repeat;
+      background: linear-gradient(180deg, #c9c9d6 0%, #b4b4c4 70%, #a5a5b8 100%);
+    }
+  }
+
+  /* Regions place themselves straight on the shell. */
+  .gb-controls {
+    display: contents;
+  }
+
+  .gb-bezel {
+    position: absolute;
+    left: 23.55%;
+    right: 23.55%;
+    top: 12.8%;
+    height: 77.3%;
+    display: block;
+    padding: 0;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      -webkit-mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      background: linear-gradient(150deg, #2e2e38 0%, #17171d 42%, #0d0d12 100%);
+      box-shadow:
+        inset 0 .08em .1em rgba(255, 255, 255, .12),
+        inset 0 -.1em .25em rgba(0, 0, 0, .65);
+      filter: drop-shadow(0 .18em .42em rgba(10, 6, 40, .45));
+    }
+
+    /* faint diagonal reflection across the glass, like the photo */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      -webkit-mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      background: linear-gradient(115deg, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, .015) 32%, rgba(255, 255, 255, 0) 46%);
+      pointer-events: none;
+      z-index: 12;
+    }
+  }
+
+  .gb-glass {
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 12%;
+    height: 63%;
+    z-index: 1;
+  }
+
+  .gb-bezel .board-screen {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gb-wordmark-gba {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7%;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.15em;
+    padding-top: 0;
+  }
+
+  .gb-wordmark-gbc {
+    display: none;
+  }
+
+  .gb-brand {
+    position: absolute;
+    top: 6.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .82em;
+    color: rgba(25, 16, 80, .4);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .22);
+  }
+
+  /* LED + label live on the body, just right of the bezel's top corner. */
+  .gb-power {
+    position: absolute;
+    left: 110.5%;
+    top: 7.4%;
+    z-index: 2;
+    gap: .35em;
+
+    em {
+      font-size: .42em;
+      color: rgba(235, 235, 255, .55);
+    }
+  }
+
+  .gb-power-led {
+    width: .32em;
+    height: .32em;
+  }
+
+  .dpad {
+    position: absolute;
+    left: 7.35%;
+    top: 32.1%;
+    width: 12.2%;
+
+    /* circular recess the D-pad sits in on the real unit */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -11%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(18, 10, 58, .26) 58%, rgba(18, 10, 58, 0) 72%);
+    }
+  }
+
+  /* A up-right, B down-left — the real diagonal comes from the box shape,
+     no cluster rotation, so the letters stay level. Sits fully clear of
+     the bezel at every shell size. */
+  .a-b {
+    position: absolute;
+    right: 5.55%;
+    top: 35%;
+    width: 15%;
+    aspect-ratio: 1.66;
+
+    button {
+      width: 40%;
+      font-size: .72em;
+    }
+  }
+
+  .gb-startselect {
+    position: absolute;
+    left: 18.55%;
+    top: 64%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    button {
+      width: 1.3em;
+      height: 1.3em;
+      z-index: 0;
+      isolation: isolate;
+      border-radius: 50%;
+      transform: none;
+      background: radial-gradient(circle at 34% 28%, #ececf2 0%, #c4c3d0 58%, #88879f 100%);
+      box-shadow:
+        0 .08em .12em rgba(18, 10, 58, .48),
+        inset 0 .05em .08em rgba(255, 255, 255, .62);
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: -.03em;
+        top: 50%;
+        width: 4.95em;
+        height: 1.25em;
+        z-index: -1;
+        border-radius: 999px;
+        transform-origin: calc(100% - .65em) 50%;
+        transform: translateY(-50%) rotate(12deg);
+        background: linear-gradient(180deg, rgba(49, 38, 105, .38), rgba(104, 92, 177, .2));
+        box-shadow:
+          inset 0 .12em .18em rgba(25, 15, 72, .45),
+          inset 0 -.04em .06em rgba(212, 207, 244, .12),
+          0 .04em 0 rgba(255, 255, 255, .18);
+        pointer-events: none;
+      }
+
+      &::after {
+        /* The groove pivots around the round button, so its centreline rises
+           as it travels left. Give both labels one fixed optical box (rather
+           than right-aligning different word widths), then place that shared
+           centre on the groove's 12deg centreline. */
+        right: 180%;
+        top: calc(50% - 1.385em);
+        width: 5em;
+        z-index: 1;
+        transform: translateY(-50%) rotate(12deg);
+        font-size: .42em;
+        text-align: center;
+        text-shadow:
+          0 .08em .08em rgba(255, 255, 255, .2),
+          0 -.04em .04em rgba(20, 12, 65, .25);
+      }
+    }
+  }
+
+  /* L/R shoulders: light grey slivers hugging the top corner curve. Each is
+     a full-size plate behind the body clipped by the body's own corner
+     outline shifted up 1.8%, so the visible crescent stays perfectly
+     parallel to the silhouette. Zoom lives here but only in dev mode. */
+  .gb-shoulder {
+    position: absolute;
+    top: 0;
+    width: 31%;
+    height: 11%;
+    z-index: 1;
+    background: transparent;
+    color: transparent;
+    font-size: 1px;
+
+    &:active {
+      filter: brightness(.94);
+    }
+  }
+
+  .gameboy:not(.gameboy--dev) .gb-shoulder {
+    cursor: default;
+  }
+
+  .gb-shoulder-l {
+    left: 3%;
+    clip-path: polygon(0 100%, 8% 44%, 20% 20%, 42% 7%, 100% 0, 100% 100%);
+  }
+
+  .gb-shoulder-r {
+    right: 3%;
+    clip-path: polygon(0 0, 58% 7%, 80% 20%, 92% 44%, 100% 100%, 0 100%);
+  }
+
+  .gb-speaker {
+    position: absolute;
+    right: 9.5%;
+    top: 56%;
+    width: 4.6em;
+    height: 5em;
+    transform: rotate(-13deg);
+    border-radius: .2em;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(18, 11, 55, .72) 0 .28em,
+      rgba(18, 11, 55, 0) .28em .86em
+    );
+  }
+
+  .overlay-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 4.5%;
+    transform: translateX(-50%);
+    z-index: 6;
+  }
+
+  .board-resize-handle {
+    right: 4%;
+    bottom: 13%;
+  }
+
+  /* Rotated phone / very short window: the GBA fills the whole viewport on
+     the black stage, like the portrait GBC — the body plate loses its clip
+     so it runs edge to edge. The stretched shell is wider than 1.762:1, so
+     square width-percent parts (D-pad, A/B, speaker) get a dvh cap to keep
+     their height in proportion, and START/SELECT drops below the D-pad. */
+  @media (max-height: 540px) {
+    .gameboy {
+      width: 100vw;
+      height: 100dvh;
+      aspect-ratio: auto;
+      font-size: min(2.2vw, 3.9dvh);
+      filter: none;
+
+      &::before {
+        clip-path: none;
+      }
+    }
+
+    .gb-shoulder {
+      display: none;
+    }
+
+    .dpad {
+      width: min(12.2%, 24dvh);
+      top: 32%;
+    }
+
+    .a-b {
+      width: min(15%, 29dvh);
+      top: 35%;
+    }
+
+    .gb-startselect {
+      left: 19.1%;
+      top: 64.6%;
+    }
+
+    .gb-speaker {
+      width: min(4.6em, 19dvh);
+    }
+
+  }
+}
+
+/* ================================================================
+   Mobile shell: full-viewport Game Boy Color (teal) on pure black
+   ================================================================ */
+
+@media (max-width: 767.98px) {
+  .gameboy {
+    --pad-hi: #3d3d47;
+    --pad-face: #2a2a32;
+    --pad-lo: #16161c;
+    --ab-hi: #b44a86;
+    --ab-face: #93336a;
+    --ab-lo: #5e1e44;
+    --ab-text: #4b1636;
+    --pill-hi: #3a3a44;
+    --pill-lo: #17171d;
+    --label-ink: rgba(4, 48, 48, .85);
+
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:
+      calc(env(safe-area-inset-top, 0px) + 1.6dvh)
+      4vw
+      calc(env(safe-area-inset-bottom, 0px) + 1.4dvh);
+    font-size: min(4vw, 2.2dvh);
+    background:
+      radial-gradient(130% 80% at 50% -6%, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0) 52%),
+      linear-gradient(168deg, #12bec0 0%, #04a2a4 46%, #027e82 100%);
+  }
+
+  .gb-brand,
+  .board-resize-handle {
+    display: none;
+  }
+
+  .gb-bezel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4.5vw 9vw 1.2vw;
+    border-radius: 3.5vw 3.5vw 4.5vw 4.5vw;
+    background: linear-gradient(155deg, #24242c 0%, #121216 45%, #0a0a0e 100%);
+    box-shadow:
+      inset 0 .5vw 1vw rgba(255, 255, 255, .09),
+      inset 0 -.7vw 1.5vw rgba(0, 0, 0, .6),
+      0 1vw 3vw rgba(0, 20, 20, .45);
+  }
+
+  .gb-glass {
+    width: 100%;
+  }
+
+  .gb-bezel .board-screen {
+    width: min(100%, 47dvh);
+    aspect-ratio: 1;
+  }
+
+  /* The GBC's display is the square 320x320 logical stage. */
+  .screen-stage {
+    width: 320px;
+    height: 320px;
+    --stage-scale: min(calc(100cqw / 320px), calc(100cqh / 320px));
+  }
+
+  .gb-wordmark-gba {
+    display: none;
+  }
+
+  .gb-wordmark-gbc {
+    display: block;
+    padding: 1.8vw 0 1vw;
+    font-size: min(4.6vw, 2.6dvh);
+  }
+
+  /* Red LED in the bezel's left margin, upper-left of the screen like the
+     real unit — narrow column, centred, never reaching the screen. */
+  .gb-power {
+    position: absolute;
+    left: 1.2vw;
+    top: 12%;
+    width: 6.8vw;
+    flex-direction: column;
+    align-items: center;
+    gap: .8vw;
+
+    em {
+      font-size: 1.2vw;
+      letter-spacing: .06em;
+      color: rgba(255, 255, 255, .38);
+    }
+  }
+
+  .gb-power-led {
+    width: 1.8vw;
+    height: 1.8vw;
+    background: radial-gradient(circle at 35% 30%, #ffc4c4, #f04040 45%, #a01010 90%);
+    box-shadow: 0 0 6px 1px rgba(255, 80, 80, .75);
+  }
+
+  .overlay-controls {
+    margin: 1.2dvh 0 .4dvh;
+  }
+
+  .gb-controls {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .dpad {
+    position: absolute;
+    left: 8%;
+    top: 15%;
+    width: min(32%, 17dvh);
+  }
+
+  /* A up-right, B down-left; the diagonal comes from the box, letters stay
+     level like the printed real thing. */
+  .a-b {
+    position: absolute;
+    right: 6%;
+    top: 12%;
+    width: min(30%, 16dvh);
+    aspect-ratio: 1.05;
+
+    button {
+      width: 50%;
+      font-size: min(4.2vw, 2.4dvh);
+    }
+  }
+
+  .gb-startselect {
+    position: absolute;
+    left: 50%;
+    bottom: 13%;
+    transform: translateX(-50%);
+    display: flex;
+    /* markup puts START first (GBA stacking); the GBC row reads SELECT then
+       START left-to-right, so reverse it */
+    flex-direction: row-reverse;
+    gap: 10vw;
+
+    button {
+      width: 8.5vw;
+      height: 2.5vw;
+      min-height: 11px;
+      transform: rotate(-26deg);
+
+      &::after {
+        left: 50%;
+        top: 150%;
+        transform: translateX(-50%);
+        font-size: 2.2vw;
+      }
+    }
+  }
+
+  /* No shoulders on a GBC — the dev-mode zoom pair sits by START/SELECT. */
+  .gameboy:not(.gameboy--dev) .gb-shoulder {
+    display: none;
+  }
+
+  .gb-shoulder {
+    position: absolute;
+    bottom: 6%;
+    width: min(8.5vw, 38px);
+    height: min(8.5vw, 38px);
+    border-radius: 50%;
+    background: linear-gradient(180deg, #3a3a44 0%, #17171d 100%);
+    box-shadow: inset 0 .4vw .5vw rgba(255, 255, 255, .16), 0 .5vw 1vw rgba(0, 25, 25, .4);
+    color: rgba(255, 255, 255, .8);
+    font-size: min(4vw, 17px);
+    font-weight: 800;
+    z-index: 5;
+  }
+
+  .gb-shoulder-l { left: 6%; }
+  .gb-shoulder-r { right: 6%; }
+
+  .gb-speaker {
+    position: absolute;
+    right: 5%;
+    bottom: 17%;
+    width: 3.6em;
+    height: 2.6em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: .3em;
+      width: .62em;
+      height: .62em;
+      border-radius: 50%;
+      background: #033d40;
+      box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, .8),
+        1.05em -.62em 0 0 #033d40,
+        2.1em -1.24em 0 0 #033d40,
+        .5em .66em 0 0 #033d40,
+        1.55em .04em 0 0 #033d40,
+        2.6em -.58em 0 0 #033d40;
+    }
+  }
+}
+
+/* ---------------- map overlay chips ---------------- */
+
 .overlay-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   .overlay-chip {
     padding: 4px 14px;
     border: 2px solid #0b0a1c;
@@ -461,58 +1288,4 @@
   background: #70c0a0;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-}
-
-.board-resize-handle {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  width: 20px;
-  height: 20px;
-  cursor: nwse-resize;
-  border-right: 3px solid #7f8792;
-  border-bottom: 3px solid #7f8792;
-  border-bottom-right-radius: 7px;
-  opacity: .65;
-  touch-action: none;
-  &:hover { opacity: 1; }
-}
-
-.start-select {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-
-  .select,
-  .start {
-    display: inline-block;
-    color: #6b67ed;
-    cursor: pointer;
-    text-shadow: 0 -1px 0 #3436bf;
-    letter-spacing: -1px;
-    width: 60px;
-    height: 40px;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 60px;
-    padding: 0;
-    background: transparent;
-    border: 0;
-
-    &::before {
-      content: "";
-      display: block;
-      margin: 0 auto 5px;
-      width: 30px;
-      height: 10px;
-      border-radius: 40%;
-      background: linear-gradient(to bottom, #0b0a1c 0%, #0b0a1c 30%, #62636c 70%, #62636c 100%);
-      background-repeat: no-repeat;
-      border: 2px solid #0b0a1c;
-      box-shadow: 0 -2px 1px #8482e9;
-      cursor: pointer;
-    }
-    &:active::before { background: linear-gradient(to bottom, #0b0a1c 0%, #0b0a1c 50%, #62636c 100%); }
-  }
 }

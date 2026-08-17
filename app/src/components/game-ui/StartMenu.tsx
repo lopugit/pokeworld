@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 export type MenuItemId =
   | "pokedex"
   | "party"
@@ -26,8 +28,17 @@ interface StartMenuProps {
 }
 
 export function StartMenu({ selectedIndex, onSelect, onHighlight }: StartMenuProps) {
+  const listRef = useRef<HTMLDivElement | null>(null);
+
+  // The list can be taller than short displays; keep the cursor visible.
+  useEffect(() => {
+    listRef.current
+      ?.querySelectorAll(".pkmn-menu-item")
+      [selectedIndex]?.scrollIntoView({ block: "nearest" });
+  }, [selectedIndex]);
+
   return (
-    <div className="pkmn-menu" role="menu" aria-label="Start menu">
+    <div className="pkmn-menu" role="menu" aria-label="Start menu" ref={listRef}>
       {MENU_ITEMS.map((item, index) => (
         <button
           key={item.id}

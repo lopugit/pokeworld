@@ -86,6 +86,8 @@ interface GameSettings {
   canvasWidth: number;
   canvasHeight: number;
   debug: boolean;
+  /** Shows dev chrome (MAP overlay chips, zoom controls); toggled in OPTION. */
+  devMode: boolean;
   initialized: boolean;
   showLayer1: boolean;
   showLayerGmap: boolean;
@@ -254,6 +256,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       canvasWidth: 512,
       canvasHeight: 512,
       debug: false,
+      devMode: false,
       initialized: false,
       showLayer1: false,
       showLayerGmap: false,
@@ -310,7 +313,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private resizeInterval?: number;
   private loadedTimer?: number;
   private mounted = false;
-  private boardResize = { active: false, startX: 0, originWidth: 520 };
+  private boardResize = { active: false, startX: 0, originWidth: 520, originBoard: 520 };
   // Wild-encounter tables: defaults immediately, admin overrides merged in
   // once /api/spawn-rules answers (offline play keeps the defaults).
   private spawnRules: SpawnRule[] = defaultSpawnRules();
@@ -364,6 +367,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     document.removeEventListener("keydown", this.onKeydown);
     window.removeEventListener("resize", this.resizeGame);
     this.removeBoardResizeListeners();
+    this.stopDpadHold();
     for (const controller of this.abortControllers) controller.abort();
   }
 
@@ -731,42 +735,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     this.setUi({ menuOpen: false });
   };
 
-  private pressA = () => {
-    const { ui, battle } = this.state;
-    if (battle) {
-      // Hardware A drives the battle's message flow; menus are on-screen.
-      if (battle.phase === "message") this.onBattleMessage();
-      else if (battle.phase === "over") this.onBattleFinish();
-      return;
-    }
-    if (ui.dialog) {
-      this.advanceDialog();
-      return;
-    }
-    if (ui.menuOpen) {
-      this.selectMenuItem(MENU_ITEMS[ui.menuIndex].id);
-      return;
-    }
-    if (!ui.panel) this.interact();
-  };
-
-  private pressB = () => {
-    const { ui, battle } = this.state;
-    if (battle) {
-      if (battle.phase === "message") this.onBattleMessage();
-      else if (battle.phase === "over") this.onBattleFinish();
-      return;
-    }
-    if (ui.dialog) {
-      this.advanceDialog();
-      return;
-    }
-    if (ui.panel) {
-      this.setUi({ panel: null, menuOpen: true });
-      return;
-    }
-    if (ui.menuOpen) this.setUi({ menuOpen: false });
-  };
+  // A/B presses arrive as synthesized "z"/"x" keydowns from the shell (see
+  // sendShellKey), so every keyboard surface handles them uniformly.
 
   // --- Wild battles ---------------------------------------------------------
 
@@ -1044,6 +1014,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       active: true,
       startX: point.clientX,
       originWidth: this.gameboyRef.current?.offsetWidth || this.state.boardWidth,
+      originBoard: this.state.boardWidth,
     };
     window.addEventListener("mousemove", this.onBoardResize);
     window.addEventListener("mouseup", this.endBoardResize);
@@ -1055,8 +1026,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   private onBoardResize = (event: MouseEvent | TouchEvent) => {
     if (!this.boardResize.active) return;
     const point = "touches" in event ? event.touches[0] : event;
-    const next = this.boardResize.originWidth + (point.clientX - this.boardResize.startX) * 2;
-    this.setState({ boardWidth: Math.max(280, Math.min(next, window.innerWidth - 24)) });
+    const nextShell = this.boardResize.originWidth + (point.clientX - this.boardResize.startX) * 2;
+    // boardWidth tracks the screen, while the drag measures the whole shell —
+    // the GBA chrome makes the shell wider than the screen it houses.
+    const scale =
+      this.boardResize.originWidth > 0 ? this.boardResize.originBoard / this.boardResize.originWidth : 1;
+    const next = nextShell * scale;
+    this.setState({ boardWidth: Math.max(280, Math.min(next, (window.innerWidth - 24) * scale)) });
     if (event.cancelable) event.preventDefault();
   };
 
@@ -1640,6 +1616,239 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     );
   }
 
+  /** The shell buttons behave like the physical keyboard: they synthesize
+   *  keydown events on `document`, so whichever surface currently owns the
+   *  keyboard (overworld, START menu, dialogs, PROF. OAK intro, battles)
+   *  responds to them exactly as it does to real keys. */
+  private sendShellKey = (key: string) => {
+    document.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true, cancelable: true }));
+  };
+
+  private dpadHoldTimer: number | null = null;
+  private lastDpadPointerAt = 0;
+
+  private stopDpadHold = () => {
+    if (this.dpadHoldTimer !== null) {
+      window.clearInterval(this.dpadHoldTimer);
+      this.dpadHoldTimer = null;
+    }
+  };
+
+  /** Press-and-hold on the D-pad keeps walking, like holding a real key. */
+  private dpadPointerDown = (key: string) => (event: React.PointerEvent<HTMLButtonElement>) => {
+    // Blocking the default also stops the button from taking focus and from
+    // firing a follow-up compatibility click.
+    event.preventDefault();
+    this.lastDpadPointerAt = Date.now();
+    this.stopDpadHold();
+    this.sendShellKey(key);
+    this.dpadHoldTimer = window.setInterval(() => this.sendShellKey(key), 170);
+  };
+
+  /** Assistive-tech activation arrives as a bare click with no pointer
+   *  sequence; taps were already handled on pointerdown. */
+  private dpadClick = (key: string) => () => {
+    if (Date.now() - this.lastDpadPointerAt < 500) return;
+    this.sendShellKey(key);
+  };
+
+  /** Handheld chrome shared by every render branch: a Game Boy Advance on
+   *  desktop viewports and a full-viewport Game Boy Color on mobile. The
+   *  breakpoint lives entirely in CSS so window resizes re-skin the shell
+   *  without re-rendering. `screen` fills the display. `chrome` gates the
+   *  in-game extras (MAP overlay chips, resize handle); `controls` enables
+   *  the buttons — off only for loading/error screens. */
+  private renderShell(
+    screen: React.ReactNode,
+    opts: { chrome?: boolean; controls?: boolean } = {},
+  ) {
+    const chrome = opts.chrome !== false;
+    const controls = opts.controls !== false;
+    const { game, ui } = this.state;
+    // Zoom and the MAP overlay are development chrome; the OPTION menu's
+    // Dev mode toggle brings them back.
+    const dev = game.devMode;
+    return (
+      <div
+        ref={this.gameboyRef}
+        className={`gameboy${dev ? " gameboy--dev" : ""}`}
+        style={{ "--board-width": `${this.state.boardWidth}px` } as React.CSSProperties}
+      >
+        <button
+          type="button"
+          className="gb-shoulder gb-shoulder-l"
+          aria-label="Zoom out"
+          title={dev ? "Zoom out (L)" : undefined}
+          aria-hidden={!dev}
+          tabIndex={dev ? 0 : -1}
+          disabled={!controls || !dev}
+          onClick={controls && dev ? () => this.zoom("out") : undefined}
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className="gb-shoulder gb-shoulder-r"
+          aria-label="Zoom in"
+          title={dev ? "Zoom in (R)" : undefined}
+          aria-hidden={!dev}
+          tabIndex={dev ? 0 : -1}
+          disabled={!controls || !dev}
+          onClick={controls && dev ? () => this.zoom("in") : undefined}
+        >
+          +
+        </button>
+        <div className="gb-brand" aria-hidden="true">
+          Nintendo
+        </div>
+        <div className="gb-bezel">
+          <div className="gb-power" aria-hidden="true">
+            <i className="gb-power-led" />
+            <em>POWER</em>
+          </div>
+          <div className="gb-glass">
+            <div className="board-screen">
+              <div className="screen-stage">{screen}</div>
+            </div>
+          </div>
+          <div className="gb-wordmark gb-wordmark-gba" aria-hidden="true">
+            <b>GAME BOY</b> <span>ADVANCE</span>
+          </div>
+          <div className="gb-wordmark gb-wordmark-gbc" aria-hidden="true">
+            <b>GAME BOY</b>{" "}
+            <span className="gbc-color">
+              <i>C</i>
+              <i>O</i>
+              <i>L</i>
+              <i>O</i>
+              <i>R</i>
+            </span>
+          </div>
+        </div>
+        {chrome && dev ? (
+          <div className="overlay-controls">
+            <button
+              type="button"
+              className={`overlay-chip ${game.overlay ? "overlay-chip-active" : ""}`}
+              aria-pressed={game.overlay}
+              onClick={() => this.setGame({ overlay: !game.overlay })}
+            >
+              MAP
+            </button>
+            {game.overlay ? (
+              <>
+                <input
+                  type="range"
+                  className="overlay-opacity"
+                  min={0}
+                  max={100}
+                  step={5}
+                  value={Math.round(clampOverlayOpacity(game.overlayOpacity) * 100)}
+                  aria-label="Map overlay opacity"
+                  onChange={(event) =>
+                    this.setGame({ overlayOpacity: Number(event.target.value) / 100 })
+                  }
+                />
+                <button
+                  type="button"
+                  className={`overlay-chip ${game.overlaySplit ? "overlay-chip-active" : ""}`}
+                  aria-pressed={game.overlaySplit}
+                  onClick={() => this.setGame({ overlaySplit: !game.overlaySplit })}
+                >
+                  SPLIT
+                </button>
+              </>
+            ) : null}
+          </div>
+        ) : null}
+        <div className="gb-controls">
+          <div className="dpad">
+            {(
+              [
+                ["up", "Move up", "ArrowUp"],
+                ["right", "Move right", "ArrowRight"],
+                ["down", "Move down", "ArrowDown"],
+                ["left", "Move left", "ArrowLeft"],
+              ] as const
+            ).map(([cls, label, key]) => (
+              <button
+                key={cls}
+                type="button"
+                aria-label={label}
+                className={cls}
+                disabled={!controls}
+                onPointerDown={controls ? this.dpadPointerDown(key) : undefined}
+                onPointerUp={this.stopDpadHold}
+                onPointerLeave={this.stopDpadHold}
+                onPointerCancel={this.stopDpadHold}
+                onClick={controls ? this.dpadClick(key) : undefined}
+              />
+            ))}
+            <div className="middle" />
+          </div>
+          <div className="a-b">
+            <button
+              type="button"
+              className="b"
+              aria-label="B — back or cancel"
+              disabled={!controls}
+              onClick={controls ? () => this.sendShellKey("x") : undefined}
+            >
+              B
+            </button>
+            <button
+              type="button"
+              className="a"
+              aria-label="A — interact or confirm"
+              disabled={!controls}
+              onClick={controls ? () => this.sendShellKey("z") : undefined}
+            >
+              A
+            </button>
+          </div>
+          <div className="gb-startselect">
+            {/* START sits above SELECT, like the real unit. */}
+            <button
+              type="button"
+              className="start"
+              data-label="START"
+              aria-label="Toggle Start menu"
+              aria-pressed={ui.menuOpen}
+              disabled={!controls}
+              onClick={
+                controls
+                  ? () => {
+                      // START advances the intro like A; in-game it toggles the
+                      // menu (hardware START does nothing during battles).
+                      if (this.state.onboarding) this.sendShellKey("Enter");
+                      else if (!this.state.battle) this.toggleMenu();
+                    }
+                  : undefined
+              }
+            />
+            <button
+              type="button"
+              className="select"
+              data-label="SELECT"
+              aria-label="Toggle debug tools"
+              disabled={!controls}
+              onClick={controls ? () => this.setGame({ debug: !game.debug }) : undefined}
+            />
+          </div>
+          <div className="gb-speaker" aria-hidden="true" />
+        </div>
+        {chrome ? (
+          <div
+            className="board-resize-handle"
+            title="Drag to resize the handheld"
+            onMouseDown={this.startBoardResize}
+            onTouchStart={this.startBoardResize}
+          />
+        ) : null}
+      </div>
+    );
+  }
+
   override render() {
     const { game, map, mapLoading, player } = this.state;
     // New players meet PROF. OAK before anything else — even before the
@@ -1647,24 +1856,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     // The intro plays on the same gameboy shell the game itself renders in.
     if (this.state.onboarding) {
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div
-            className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
-            style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
-          >
-            <div className="flex flex-row justify-center w-full relative">
-              <OakIntro onComplete={this.completeOnboarding} />
-            </div>
-          </div>
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(<OakIntro onComplete={this.completeOnboarding} />, { chrome: false })}
         </div>
       );
     }
     if (this.state.locationError) {
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div className="text-center text-red">
-            This game does not work without location access, please enable location services and reload the page.
-            <div className="flex w-full pt-4 justify-center">
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(
+            <div className="gb-screen-note">
+              <div className="text-center text-red">
+                This game does not work without location access, please enable location services and reload the page.
+              </div>
               <button
                 type="button"
                 className="flex rounded-md cursor-pointer shadow-md px-5 py-2 text-white bg-grass"
@@ -1675,27 +1879,38 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
               >
                 Continue without location
               </button>
-            </div>
-          </div>
+            </div>,
+            { chrome: false, controls: false },
+          )}
         </div>
       );
     }
 
     if (!game.anyLoaded) {
+      // The boot screen is just the loading art filling the display, like a
+      // cartridge splash. Text and the Reset escape hatch only appear if the
+      // load actually failed.
       return (
-        <div className="w-full flex flex-col items-center justify-center pb-12">
-          <div className="loading-container">
-            <img src="/loading.gif" alt="" />
-          </div>
-          <div className="text-lg text-grass">Loading..</div>
-          {this.state.loadError ? <div className="max-w-lg text-center text-red pt-4">{this.state.loadError}</div> : null}
-          <button
-            type="button"
-            className="px-4 py-2 cursor-pointer mt-7 shadow-md text-white bg-grass rounded-md"
-            onClick={this.resetGame}
-          >
-            Reset
-          </button>
+        <div className="game-root w-full flex flex-col items-center justify-center pb-12">
+          {this.renderShell(
+            this.state.loadError ? (
+              <div className="gb-screen-note">
+                <div className="max-w-lg text-center text-red">{this.state.loadError}</div>
+                <button
+                  type="button"
+                  className="px-4 py-2 cursor-pointer shadow-md text-white bg-grass rounded-md"
+                  onClick={this.resetGame}
+                >
+                  Reset
+                </button>
+              </div>
+            ) : (
+              <div className="gb-screen-loading">
+                <img src="/loading.gif" alt="Loading" />
+              </div>
+            ),
+            { chrome: false, controls: false },
+          )}
         </div>
       );
     }
@@ -1704,17 +1919,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const browserTile = this.tileBrowserTile;
     const { ui, trainer } = this.state;
     return (
-      <div className="w-full flex flex-col items-center justify-center pb-12">
+      <div className="game-root w-full flex flex-col items-center justify-center pb-12">
         <div
           className={`w-full flex justify-center ${game.debugPosition ? "flex-row" : "flex-col items-center"}`}
         >
-          <div>
-            <div
-              ref={this.gameboyRef}
-              className="gameboy bg-gameboy-grey max-w-full flex flex-col items-center justify-center rounded-2xl shadow-md px-2 py-2 md:px-4 md:py-4 relative"
-              style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
-            >
-              <div className="flex flex-row justify-center w-full board-screen relative">
+          <div className="game-shell-slot">
+            {this.renderShell(
+              <>
                 <canvas
                   ref={this.canvasRef}
                   className={`screen-canvas bg-black rounded-lg ${game.overlay && game.overlaySplit ? "overlay-split-active" : ""}`}
@@ -1778,6 +1989,15 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   {ui.panel === "settings" ? (
                     <SettingsPanel
                       trainer={trainer}
+                      devMode={game.devMode}
+                      onToggleDevMode={() => {
+                        // Leaving dev mode also puts the map overlay away so
+                        // no orphaned dev state lingers on screen.
+                        const next = !game.devMode;
+                        this.setGame(
+                          next ? { devMode: next } : { devMode: next, overlay: false, overlaySplit: false },
+                        );
+                      }}
                       onChange={this.setTrainer}
                       onClose={() => this.setUi({ panel: null, menuOpen: true })}
                     />
@@ -1800,78 +2020,8 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                     />
                   ) : null}
                 </div>
-              </div>
-              <div className="overlay-controls w-full flex flex-row items-center justify-center gap-2 pt-3">
-                <button
-                  type="button"
-                  className={`overlay-chip ${game.overlay ? "overlay-chip-active" : ""}`}
-                  aria-pressed={game.overlay}
-                  onClick={() => this.setGame({ overlay: !game.overlay })}
-                >
-                  MAP
-                </button>
-                {game.overlay ? (
-                  <>
-                    <input
-                      type="range"
-                      className="overlay-opacity"
-                      min={0}
-                      max={100}
-                      step={5}
-                      value={Math.round(clampOverlayOpacity(game.overlayOpacity) * 100)}
-                      aria-label="Map overlay opacity"
-                      onChange={(event) =>
-                        this.setGame({ overlayOpacity: Number(event.target.value) / 100 })
-                      }
-                    />
-                    <button
-                      type="button"
-                      className={`overlay-chip ${game.overlaySplit ? "overlay-chip-active" : ""}`}
-                      aria-pressed={game.overlaySplit}
-                      onClick={() => this.setGame({ overlaySplit: !game.overlaySplit })}
-                    >
-                      SPLIT
-                    </button>
-                  </>
-                ) : null}
-              </div>
-              <div className="w-full pt-6 md:pt-10 pb-12">
-                <div className="controls flex flex-row">
-                  <div className="dpad ml-4 md:ml-12">
-                    <button type="button" aria-label="Move up" className="up" onClick={() => this.action("moveUp")} />
-                    <button type="button" aria-label="Move right" className="right" onClick={() => this.action("moveRight")} />
-                    <button type="button" aria-label="Move down" className="down" onClick={() => this.action("moveDown")} />
-                    <button type="button" aria-label="Move left" className="left" onClick={() => this.action("moveLeft")} />
-                    <div className="middle" />
-                  </div>
-                  <div className="ml-auto a-b mr-4 md:mr-12">
-                    <button type="button" className="b" aria-label="Back or close" onClick={this.pressB}>B</button>
-                    <button type="button" className="a" aria-label="Interact or confirm" onClick={this.pressA}>A</button>
-                  </div>
-                </div>
-                <div className="pt-12 md:pt-20" />
-                <div className="start-select">
-                  <button type="button" className="select" onClick={() => this.zoom("out")}>-</button>
-                  <button type="button" className="select" onClick={() => this.zoom("in")}>+</button>
-                  <button type="button" className="select" onClick={() => this.setGame({ debug: !game.debug })}>SELECT</button>
-                  <button
-                    type="button"
-                    className="start"
-                    aria-label="Toggle Start menu"
-                    aria-pressed={ui.menuOpen}
-                    onClick={this.toggleMenu}
-                  >
-                    START
-                  </button>
-                </div>
-              </div>
-              <div
-                className="board-resize-handle"
-                title="Drag to resize the Game Boy"
-                onMouseDown={this.startBoardResize}
-                onTouchStart={this.startBoardResize}
-              />
-            </div>
+              </>,
+            )}
           </div>
           {game.debug ? (
             <div className="flex flex-col md:px-12">

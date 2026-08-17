@@ -10,6 +10,9 @@ export function Nav() {
           Pokémon World
         </Link>
         <div className="ml-auto flex items-center gap-3">
+          <Link to="/about" className="rounded-md px-2 py-2 text-base font-bold hover:bg-white/10 sm:text-lg">
+            About
+          </Link>
           <Link to="/design" className="rounded-md px-2 py-2 text-base font-bold hover:bg-white/10 sm:text-lg">
             Design
           </Link>
