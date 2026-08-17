@@ -9,7 +9,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ddcb6b04`
+- Built from commit: `0c22122b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -323,8 +323,8 @@ Cohesion: 0.19
 Nodes (21): bestNonRouteTerrain(), CARDINAL_OFFSETS, cloneSamples(), connectPortalToSkeleton(), emptyMask(), inBounds(), Mask, nearestRouteKind() (+13 more)
 
 ### Community 7 - "battle.test.ts"
-Cohesion: 0.31
-Nodes (8): advanceMessage(), battleMonFromMember(), createWildBattle(), movesFor(), wildMonFromEncounter(), calcStats(), defaultTrainer(), startBattle()
+Cohesion: 0.22
+Nodes (3): GenerationQuotaStore, ThingtimeQuotaResponse, MapGenerationQuotaReservation
 
 ### Community 8 - "game-rules.ts"
 Cohesion: 0.11
@@ -351,8 +351,8 @@ Cohesion: 0.08
 Nodes (24): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+16 more)
 
 ### Community 14 - ".normalize"
-Cohesion: 0.13
-Nodes (7): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), ThingtimeQuotaResponse, MapGenerationQuotaReservation
+Cohesion: 0.20
+Nodes (5): InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey()
 
 ### Community 15 - "png.ts"
 Cohesion: 0.11
@@ -375,8 +375,8 @@ Cohesion: 0.08
 Nodes (24): DesignFamily, addEntities(), applyFrame(), buildGeneratedFamily(), DOME_SLOTS, FIELD_POKEMON, Frame, HOUSE_SLOTS (+16 more)
 
 ### Community 20 - "BattleScreen.tsx"
-Cohesion: 0.11
-Nodes (18): A_KEYS, ARROW_KEYS, B_KEYS, BagTab, BattleMenu, BattleScreenProps, BREAK_FREE_MESSAGES, HpBar() (+10 more)
+Cohesion: 0.08
+Nodes (25): A_KEYS, ARROW_KEYS, B_KEYS, BagTab, BattleMenu, BattleScreenProps, BREAK_FREE_MESSAGES, HpBar() (+17 more)
 
 ### Community 21 - "Procedural World Acceptance"
 Cohesion: 0.12
@@ -404,7 +404,7 @@ Nodes (39): applyBattleOutcome(), speciesByName(), addCaughtPokemon(), addItemTo
 
 ### Community 27 - "battle.ts"
 Cohesion: 0.10
-Nodes (34): activeMon(), applyBattleItem(), applyEndOfTurn(), BALL_BONUS, BattleMon, BattleMove, BattleOutcome, BattlePhase (+26 more)
+Nodes (35): activeMon(), advanceMessage(), applyBattleItem(), applyEndOfTurn(), BALL_BONUS, battleMonFromMember(), BattleOutcome, BattlePhase (+27 more)
 
 ### Community 28 - "encounters.ts"
 Cohesion: 0.13
@@ -559,8 +559,8 @@ Cohesion: 0.83
 Nodes (4): canUseGoogleStaticMaps, getMapAtWithSource, Google Maps Preview Enablement, renderCanvas
 
 ### Community 131 - "ThingtimeGenerationQuotaStore"
-Cohesion: 0.22
-Nodes (6): emptyQuotaStatus(), rethrowThingtimeQuotaError(), thingtimeGenerationCode(), ThingtimeGenerationQuotaStore, ThingtimeQuotaStatus, utcGenerationDayKey()
+Cohesion: 0.27
+Nodes (5): emptyQuotaStatus(), rethrowThingtimeQuotaError(), thingtimeGenerationCode(), ThingtimeGenerationQuotaStore, ThingtimeQuotaStatus
 
 ### Community 132 - "legality.ts"
 Cohesion: 0.13
