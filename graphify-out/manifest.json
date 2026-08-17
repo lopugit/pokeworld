@@ -30230,8 +30230,8 @@
     "semantic_hash": ""
   },
   "app/src/components/game-ui/OakIntro.tsx": {
-    "mtime": 1786931857.4452596,
-    "ast_hash": "36291acbca248e0db625c2b34c12bf3b",
+    "mtime": 1786941115.9275765,
+    "ast_hash": "319a12dfdd76641240c7d09e4dd05aa6",
     "semantic_hash": ""
   },
   "app/map-assets/pret/graphics/birch_speech/birch.png": {
@@ -30317,6 +30317,16 @@
   "app/src/pages/AboutPage.tsx": {
     "mtime": 1786932013.0420177,
     "ast_hash": "6b0c9b55652f5f4fbd8ab8105602488e",
+    "semantic_hash": ""
+  },
+  "app/src/components/game-ui/console-form-navigation.ts": {
+    "mtime": 1786941419.1662545,
+    "ast_hash": "fbc991cacead7c6bba8a5a8fa7b611d5",
+    "semantic_hash": ""
+  },
+  "app/tests/console-form-navigation.test.ts": {
+    "mtime": 1786941078.0515926,
+    "ast_hash": "22938bf6ba4f992f0b7108e2ee11fc47",
     "semantic_hash": ""
   }
 }
