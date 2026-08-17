@@ -6158,9 +6158,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 209,
+      "community": 19,
       "norm_label": "paintblob()",
-      "community_name": "paint.ts",
+      "community_name": "families-generated.ts",
       "id": "app_src_lib_design_paint_paintblob"
     },
     {
@@ -6180,9 +6180,9 @@
       "source_file": "app/src/lib/design/paint.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 19,
+      "community": 209,
       "norm_label": "paintpath()",
-      "community_name": "families-generated.ts",
+      "community_name": "paint.ts",
       "id": "app_src_lib_design_paint_paintpath"
     },
     {
@@ -13720,9 +13720,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": "generationquotastore",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore"
     },
     {
@@ -13731,9 +13731,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".acquirepermit()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_acquirepermit"
     },
     {
@@ -13742,9 +13742,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".releasereservationslot()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_releasereservationslot"
     },
     {
@@ -13753,9 +13753,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".reserve()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_reserve"
     },
     {
@@ -13764,9 +13764,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".reset()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_reset"
     },
     {
@@ -13775,9 +13775,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".status()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_status"
     },
     {
@@ -13797,9 +13797,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L287",
       "_origin": "ast",
-      "community": 14,
+      "community": 131,
       "norm_label": ".normalize()",
-      "community_name": ".normalize",
+      "community_name": "ThingtimeGenerationQuotaStore",
       "id": "app_server_services_map_generation_quota_inmemorygenerationquotastore_normalize"
     },
     {
@@ -13808,9 +13808,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L302",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": ".reserve()",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_inmemorygenerationquotastore_reserve"
     },
     {
@@ -13874,9 +13874,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L425",
       "_origin": "ast",
-      "community": 14,
+      "community": 131,
       "norm_label": "utcgenerationdaykey()",
-      "community_name": ".normalize",
+      "community_name": "ThingtimeGenerationQuotaStore",
       "id": "app_server_services_map_generation_quota_utcgenerationdaykey"
     },
     {
@@ -15260,9 +15260,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 242,
+      "community": 14,
       "norm_label": "mapgenerationquotareservation",
-      "community_name": "GenerationQuotaStore",
+      "community_name": ".normalize",
       "id": "app_server_services_map_types_mapgenerationquotareservation"
     },
     {
@@ -20206,8 +20206,8 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 242,
-      "community_name": "GenerationQuotaStore",
+      "community": 14,
+      "community_name": ".normalize",
       "norm_label": "thingtimequotaresponse",
       "id": "app_server_services_map_generation_quota_thingtimequotaresponse"
     },
@@ -56198,5 +56198,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0934aeb476e650d6d544661e1f9c533f880e8105"
+  "built_at_commit": "ddcb6b0484de11f0f979f6bd6d2d12fa0734c7f0"
 }

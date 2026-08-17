@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 1954 nodes · 3262 edges · 260 communities (116 shown, 144 thin omitted)
+- 1954 nodes · 3262 edges · 259 communities (115 shown, 144 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0934aeb4`
+- Built from commit: `ddcb6b04`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -255,7 +255,6 @@
 - [[_COMMUNITY_AuthProvider.tsx|AuthProvider.tsx]]
 - [[_COMMUNITY_postcss|postcss]]
 - [[_COMMUNITY_Banner.tsx|Banner.tsx]]
-- [[_COMMUNITY_GenerationQuotaStore|GenerationQuotaStore]]
 - [[_COMMUNITY_generation-quota.test.ts|generation-quota.test.ts]]
 - [[_COMMUNITY_terrain-layout.test.ts|terrain-layout.test.ts]]
 - [[_COMMUNITY_version.ts|version.ts]]
@@ -297,7 +296,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (260 total, 144 thin omitted)
+## Communities (259 total, 144 thin omitted)
 
 ### Community 0 - "families.ts"
 Cohesion: 0.16
@@ -352,8 +351,8 @@ Cohesion: 0.08
 Nodes (24): compilerOptions, allowJs, jsx, jsxImportSource, noEmit, paths, plugins, strict (+16 more)
 
 ### Community 14 - ".normalize"
-Cohesion: 0.20
-Nodes (5): InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), utcGenerationDayKey()
+Cohesion: 0.13
+Nodes (7): GenerationQuotaStore, InMemoryGenerationQuotaStore, MongoGenerationQuotaStore, quotaStatusFromDocument(), reservationIdsExpression(), ThingtimeQuotaResponse, MapGenerationQuotaReservation
 
 ### Community 15 - "png.ts"
 Cohesion: 0.11
@@ -560,8 +559,8 @@ Cohesion: 0.83
 Nodes (4): canUseGoogleStaticMaps, getMapAtWithSource, Google Maps Preview Enablement, renderCanvas
 
 ### Community 131 - "ThingtimeGenerationQuotaStore"
-Cohesion: 0.27
-Nodes (5): emptyQuotaStatus(), rethrowThingtimeQuotaError(), thingtimeGenerationCode(), ThingtimeGenerationQuotaStore, ThingtimeQuotaStatus
+Cohesion: 0.22
+Nodes (6): emptyQuotaStatus(), rethrowThingtimeQuotaError(), thingtimeGenerationCode(), ThingtimeGenerationQuotaStore, ThingtimeQuotaStatus, utcGenerationDayKey()
 
 ### Community 132 - "legality.ts"
 Cohesion: 0.13
@@ -710,10 +709,6 @@ Nodes (4): BlockCoordinates, blockCoordinatesForWorldPosition(), blockKeyForWorl
 ### Community 239 - "AuthProvider.tsx"
 Cohesion: 0.14
 Nodes (13): ANONYMOUS_SESSION, AnonymousSession, AuthContext, AuthContextValue, AuthenticatedSession, AuthSession, AuthStatus, AuthUser (+5 more)
-
-### Community 242 - "GenerationQuotaStore"
-Cohesion: 0.22
-Nodes (3): GenerationQuotaStore, ThingtimeQuotaResponse, MapGenerationQuotaReservation
 
 ### Community 243 - "generation-quota.test.ts"
 Cohesion: 0.18
