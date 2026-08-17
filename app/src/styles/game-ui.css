@@ -1233,7 +1233,9 @@
 
 .oak-starter-card:focus-visible,
 .oak-nickname-input:focus-visible,
-.oak-intro-button:focus-visible {
+.oak-intro-button:focus-visible,
+.oak-nickname-input[data-console-selected="true"],
+.oak-intro-button[data-console-selected="true"] {
   outline: 3px solid #f4c95d;
   outline-offset: 2px;
 }
