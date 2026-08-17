@@ -621,11 +621,17 @@
       }
 
       &::after {
+        /* The groove pivots around the round button, so its centreline rises
+           as it travels left. Give both labels one fixed optical box (rather
+           than right-aligning different word widths), then place that shared
+           centre on the groove's 12deg centreline. */
         right: 180%;
-        top: calc(50% - .5em);
+        top: calc(50% - 1.385em);
+        width: 5em;
         z-index: 1;
         transform: translateY(-50%) rotate(12deg);
         font-size: .42em;
+        text-align: center;
         text-shadow:
           0 .08em .08em rgba(255, 255, 255, .2),
           0 -.04em .04em rgba(20, 12, 65, .25);
