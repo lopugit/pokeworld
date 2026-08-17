@@ -398,43 +398,71 @@
     --ab-text: #8585a0;
     --pill-hi: #6a61bd;
     --pill-lo: #332e6b;
-    --label-ink: rgba(235, 235, 255, .6);
+    --label-ink: rgba(38, 27, 92, .78);
+    /* Traced from the supplied AGB-001 reference (503 x 286px body crop).
+       The pale rear shell owns the true outside contour; the indigo front
+       plate sits just inside it, exposing the shoulder and lower seams. */
+    --gba-back-clip: polygon(
+      50% 0%, 60% .4%, 70% .4%, 75% 1.1%, 80% 3.2%, 85% 6.3%,
+      90% 6.3%, 92.5% 8.4%, 95% 9.1%, 96% 10.9%, 97% 13.3%,
+      98% 21.1%, 99% 35.4%, 100% 64.9%, 100% 72.3%, 99% 78.2%,
+      98% 81.1%, 97% 82.8%, 96% 84.6%, 95% 85.3%, 92.5% 86%,
+      90% 87.4%, 85% 89.8%, 80% 92.3%, 75% 95.8%, 70% 97.5%,
+      60% 99.3%, 50% 100%, 40% 99.6%, 30% 97.5%, 25% 96.1%,
+      20% 92.6%, 15% 90.2%, 10% 87.7%, 7.5% 86.3%, 5% 86%,
+      4% 84.6%, 3% 83.5%, 2% 81.4%, 1% 78.6%, 0% 72.3%,
+      0% 65.6%, 1% 35.4%, 2% 22.1%, 3% 15.4%, 4% 13.7%,
+      5% 9.8%, 7.5% 8.8%, 10% 7.7%, 15% 6.7%, 20% 6%,
+      25% .4%, 30% 0%, 40% 0%
+    );
+    --gba-body-clip: polygon(
+      50% .4%, 60% .5%, 70% .6%, 75% 1.3%, 80% 3.4%,
+      85% 6.8%, 90% 7.5%, 92.5% 9%, 95% 10.6%, 96% 12.3%,
+      97% 15.2%, 98% 22.8%, 99% 36.5%, 100% 64.5%, 100% 71.5%,
+      99% 77.5%, 98% 80.6%, 97% 82.3%, 96% 83.9%, 95% 84.8%,
+      92.5% 85.7%, 90% 87%, 85% 89.2%, 80% 91.7%, 75% 95%,
+      70% 96.6%, 60% 98.4%, 50% 99%, 40% 98.4%, 30% 96.6%,
+      25% 95%, 20% 91.8%, 15% 89.6%, 10% 87.2%, 7.5% 86.2%,
+      5% 85.5%, 4% 84%, 3% 82.2%, 2% 80.5%, 1% 77.6%,
+      0% 71.6%, 0% 64.5%, 1% 36%, 2% 23%, 3% 16.5%, 4% 13.8%,
+      5% 11%, 7.5% 9.5%, 10% 8.5%, 15% 7.5%, 20% 6.8%,
+      25% 1.8%, 30% .6%, 40% .4%
+    );
 
     width: min(
       calc(var(--board-width, 520px) * 2.5),
       calc(100vw - 24px),
-      calc((100dvh - 110px) * 1.762)
+      calc((100dvh - 110px) * 1.759)
     );
-    aspect-ratio: 1.762;
-    font-size: calc(min(var(--board-width, 520px) * 2.5, 100vw - 24px, (100dvh - 110px) * 1.762) * .022);
+    aspect-ratio: 1.759;
+    font-size: calc(min(var(--board-width, 520px) * 2.5, 100vw - 24px, (100dvh - 110px) * 1.759) * .022);
     /* The shadow lives in a filter so it hugs the clipped silhouette; the
        filter also makes .gameboy a stacking context, keeping the negative-z
        body plate and shoulders inside the unit. */
     filter: drop-shadow(0 .55em 1.4em rgba(8, 5, 35, .45));
 
-    /* True AGB-001 top-down outline: shallow top arc, big round ends,
-       lower grip lobes, raised bottom centre. border-radius can't draw
-       this, so the body is a clipped plate behind the controls. */
+    /* True AGB-001 top-down outline: narrow end caps, shallow shoulder
+       humps, and the characteristic bottom edge that bows DOWN at the
+       centre. The earlier shell accidentally inverted that lower curve. */
     &::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      clip-path: polygon(50% 0.3%, 56.6% 0.4%, 62.8% 0.6%, 68.6% 0.9%, 74% 1.4%, 78.7% 2.3%, 83.2% 3.7%, 87.4% 5.7%, 91.2% 8.3%, 94.6% 11.5%, 97.4% 15.4%, 99.5% 20%, 99.7% 26.2%, 99.9% 32.7%, 99.9% 39.3%, 99.8% 45.8%, 99.7% 52%, 99.6% 58%, 99.3% 63.9%, 98.8% 69.6%, 98% 75%, 97% 80%, 96% 84.2%, 94.6% 88.2%, 92.9% 91.8%, 90.7% 95%, 88% 97.5%, 85.3% 98.3%, 82.5% 98.9%, 79.7% 99.2%, 77% 99.2%, 71.7% 98.7%, 66.7% 98%, 62% 97.2%, 57.7% 96.3%, 53.7% 95.5%, 50% 95%, 46.3% 95.5%, 42.3% 96.3%, 38% 97.2%, 33.3% 98%, 28.3% 98.7%, 23% 99.2%, 20.3% 99.2%, 17.5% 98.9%, 14.7% 98.3%, 12% 97.5%, 9.3% 95%, 7.1% 91.8%, 5.4% 88.2%, 4% 84.2%, 3% 80%, 2% 75%, 1.2% 69.6%, 0.7% 63.9%, 0.4% 58%, 0.3% 52%, 0.2% 45.8%, 0.1% 39.3%, 0.1% 32.7%, 0.3% 26.2%, 0.5% 20%, 2.6% 15.4%, 5.4% 11.5%, 8.8% 8.3%, 12.6% 5.7%, 16.8% 3.7%, 21.3% 2.3%, 26% 1.4%, 31.4% 0.9%, 37.3% 0.6%, 43.4% 0.4%);
+      clip-path: var(--gba-body-clip);
       background:
         radial-gradient(120% 170% at 30% -8%, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0) 55%),
         radial-gradient(150% 120% at 50% 118%, rgba(10, 5, 50, .32), rgba(10, 5, 50, 0) 55%),
         linear-gradient(180deg, #756bcb 0%, #5d55b2 48%, #453e90 100%);
     }
 
-    /* Light back-shell edge peeking below the bottom arc, like the press
-       photo: the same outline dropped 1.6% on the deepest layer. */
+    /* Pale back shell visible at the shoulders and along the lower seam. */
     &::after {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -3;
-      clip-path: polygon(50% 1.9%, 56.6% 2%, 62.8% 2.2%, 68.6% 2.5%, 74% 3%, 78.7% 3.9%, 83.2% 5.3%, 87.4% 7.3%, 91.2% 9.9%, 94.6% 13.1%, 97.4% 17%, 99.5% 21.6%, 99.7% 27.8%, 99.9% 34.3%, 99.9% 40.9%, 99.8% 47.4%, 99.7% 53.6%, 99.6% 59.6%, 99.3% 65.5%, 98.8% 71.2%, 98% 76.6%, 97% 81.6%, 96% 85.8%, 94.6% 89.8%, 92.9% 93.4%, 90.7% 96.6%, 88% 99.1%, 85.3% 99.9%, 82.5% 100.5%, 79.7% 100.8%, 77% 100.8%, 71.7% 100.3%, 66.7% 99.6%, 62% 98.8%, 57.7% 97.9%, 53.7% 97.1%, 50% 96.6%, 46.3% 97.1%, 42.3% 97.9%, 38% 98.8%, 33.3% 99.6%, 28.3% 100.3%, 23% 100.8%, 20.3% 100.8%, 17.5% 100.5%, 14.7% 99.9%, 12% 99.1%, 9.3% 96.6%, 7.1% 93.4%, 5.4% 89.8%, 4% 85.8%, 3% 81.6%, 2% 76.6%, 1.2% 71.2%, 0.7% 65.5%, 0.4% 59.6%, 0.3% 53.6%, 0.2% 47.4%, 0.1% 40.9%, 0.1% 34.3%, 0.3% 27.8%, 0.5% 21.6%, 2.6% 17%, 5.4% 13.1%, 8.8% 9.9%, 12.6% 7.3%, 16.8% 5.3%, 21.3% 3.9%, 26% 3%, 31.4% 2.5%, 37.3% 2.2%, 43.4% 2%);
+      clip-path: var(--gba-back-clip);
       background: linear-gradient(180deg, #c9c9d6 0%, #b4b4c4 70%, #a5a5b8 100%);
     }
   }
@@ -446,14 +474,14 @@
 
   .gb-bezel {
     position: absolute;
-    left: 23.5%;
-    right: 23.5%;
-    top: 10%;
-    height: 64%;
+    left: 23.4%;
+    right: 23.4%;
+    top: 14.1%;
+    height: 74%;
     display: flex;
     flex-direction: column;
-    padding: 3% 4% 1.8%;
-    border-radius: .5em;
+    padding: 3.8% 4.2% 1.7%;
+    border-radius: 1em 1em 1.75em 1.75em / .9em .9em 1.25em 1.25em;
     background: linear-gradient(150deg, #2e2e38 0%, #17171d 42%, #0d0d12 100%);
     box-shadow:
       inset 0 .08em .1em rgba(255, 255, 255, .12),
@@ -484,8 +512,8 @@
   .gb-wordmark-gba {
     display: block;
     text-align: center;
-    font-size: .88em;
-    padding-top: .5em;
+    font-size: 1.15em;
+    padding-top: .38em;
   }
 
   .gb-wordmark-gbc {
@@ -494,10 +522,10 @@
 
   .gb-brand {
     position: absolute;
-    top: 4.4%;
+    top: 6.2%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: .75em;
+    font-size: .82em;
     color: rgba(25, 16, 80, .4);
     text-shadow: 0 1px 0 rgba(255, 255, 255, .22);
   }
@@ -505,8 +533,8 @@
   /* LED + label live on the body, just right of the bezel's top corner. */
   .gb-power {
     position: absolute;
-    left: 102.5%;
-    top: 5.5%;
+    left: 110.5%;
+    top: 5.8%;
     gap: .35em;
 
     em {
@@ -522,9 +550,9 @@
 
   .dpad {
     position: absolute;
-    left: 6%;
-    top: 33%;
-    width: 16%;
+    left: 7.35%;
+    top: 32.1%;
+    width: 12.2%;
 
     /* circular recess the D-pad sits in on the real unit */
     &::before {
@@ -541,42 +569,58 @@
      the bezel at every shell size. */
   .a-b {
     position: absolute;
-    right: 8.25%;
-    top: 34%;
-    width: 14.5%;
-    aspect-ratio: 1.05;
+    right: 5.55%;
+    top: 35%;
+    width: 15%;
+    aspect-ratio: 1.66;
 
     button {
-      width: 50%;
-      font-size: .8em;
+      width: 40%;
+      font-size: .72em;
     }
   }
 
   .gb-startselect {
     position: absolute;
-    left: 8%;
-    top: 62%;
+    left: 19.1%;
+    top: 64.6%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: .8em;
-
-    /* the lower pill (SELECT) sits shifted left along the angle, like the
-       real unit */
-    button + button {
-      translate: -.55em .05em;
-    }
+    align-items: center;
+    gap: 1.2em;
 
     button {
-      width: 2.7em;
-      height: .72em;
-      transform: rotate(-26deg);
+      width: 1.3em;
+      height: 1.3em;
+      border-radius: 50%;
+      transform: none;
+      background: radial-gradient(circle at 34% 28%, #ececf2 0%, #c4c3d0 58%, #88879f 100%);
+      box-shadow:
+        0 .08em .12em rgba(18, 10, 58, .48),
+        inset 0 .05em .08em rgba(255, 255, 255, .62);
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 108%;
+        top: 50%;
+        width: 3.15em;
+        height: 1em;
+        border-radius: 999px;
+        transform: translateY(-50%) rotate(15deg);
+        background: linear-gradient(180deg, rgba(49, 38, 105, .38), rgba(104, 92, 177, .2));
+        box-shadow:
+          inset 0 .12em .18em rgba(25, 15, 72, .45),
+          0 .04em 0 rgba(255, 255, 255, .18);
+        pointer-events: none;
+      }
 
       &::after {
-        right: 115%;
+        right: 175%;
         top: 50%;
-        transform: translateY(-50%);
-        font-size: .4em;
+        z-index: 1;
+        transform: translateY(-50%) rotate(15deg);
+        font-size: .36em;
       }
     }
   }
@@ -587,11 +631,11 @@
      parallel to the silhouette. Zoom lives here but only in dev mode. */
   .gb-shoulder {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    background: linear-gradient(180deg, #dfe0e9 0%, #ccccd9 7%, #b3b3c4 18%, #a5a5b8 26%, #a5a5b8 100%);
+    top: 0;
+    width: 31%;
+    height: 11%;
+    z-index: 1;
+    background: transparent;
     color: transparent;
     font-size: 1px;
 
@@ -605,25 +649,27 @@
   }
 
   .gb-shoulder-l {
-    clip-path: polygon(36% -1.9%, 30.9% -1.3%, 25.5% -0.8%, 20.8% 0.1%, 16.3% 1.5%, 12.1% 3.5%, 8.3% 6.1%, 4.9% 9.3%, 2.1% 13.2%, 0% 17.8%, -0.2% 24%, -0.4% 30.5%, -0.4% 37.1%, -0.3% 43.6%, -1% 47%, 36% 47%);
+    left: 3%;
+    clip-path: polygon(0 100%, 8% 44%, 20% 20%, 42% 7%, 100% 0, 100% 100%);
   }
 
   .gb-shoulder-r {
-    clip-path: polygon(64% -1.9%, 69.1% -1.3%, 74.5% -0.8%, 79.2% 0.1%, 83.7% 1.5%, 87.9% 3.5%, 91.7% 6.1%, 95.1% 9.3%, 97.9% 13.2%, 100% 17.8%, 100.2% 24%, 100.4% 30.5%, 100.4% 37.1%, 100.3% 43.6%, 101% 47%, 64% 47%);
+    right: 3%;
+    clip-path: polygon(0 0, 58% 7%, 80% 20%, 92% 44%, 100% 100%, 0 100%);
   }
 
   .gb-speaker {
     position: absolute;
-    right: 8%;
-    bottom: 10%;
-    width: 9.5%;
-    aspect-ratio: 1.15;
-    transform: rotate(28deg);
-    border-radius: .3em;
+    right: 9.5%;
+    top: 56%;
+    width: 4.6em;
+    height: 5em;
+    transform: rotate(-13deg);
+    border-radius: .2em;
     background: repeating-linear-gradient(
-      90deg,
-      rgba(18, 11, 55, .55) 0 .3em,
-      rgba(18, 11, 55, 0) .3em .82em
+      180deg,
+      rgba(18, 11, 55, .72) 0 .28em,
+      rgba(18, 11, 55, 0) .28em .86em
     );
   }
 
@@ -637,7 +683,7 @@
 
   .board-resize-handle {
     right: 4%;
-    bottom: 26%;
+    bottom: 13%;
   }
 
   /* Rotated phone / very short window: the GBA fills the whole viewport on
@@ -663,22 +709,22 @@
     }
 
     .dpad {
-      width: min(15.5%, 30dvh);
+      width: min(12.2%, 24dvh);
       top: 32%;
     }
 
     .a-b {
       width: min(15%, 29dvh);
-      top: 31%;
+      top: 35%;
     }
 
     .gb-startselect {
-      left: 7.5%;
-      top: 70%;
+      left: 19.1%;
+      top: 64.6%;
     }
 
     .gb-speaker {
-      width: min(9.5%, 18dvh);
+      width: min(4.6em, 19dvh);
     }
 
   }
