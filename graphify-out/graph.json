@@ -9788,9 +9788,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "battlemove",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_battle_battlemove"
     },
     {
@@ -9799,9 +9799,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "movespec",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_battle_movespec"
     },
     {
@@ -9865,9 +9865,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "movesfor()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_battle_movesfor"
     },
     {
@@ -9887,9 +9887,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L210",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "battlemon",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_battle_battlemon"
     },
     {
@@ -9909,9 +9909,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "battlemonfrommember()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_battle_battlemonfrommember"
     },
     {
@@ -9920,9 +9920,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L251",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "wildmonfromencounter()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_battle_wildmonfromencounter"
     },
     {
@@ -9975,9 +9975,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L299",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "createwildbattle()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_battle_createwildbattle"
     },
     {
@@ -9997,9 +9997,9 @@
       "source_file": "app/src/lib/battle.ts",
       "source_location": "L322",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "advancemessage()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_battle_advancemessage"
     },
     {
@@ -10866,9 +10866,9 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "basestats",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_pokedex_basestats"
     },
     {
@@ -10976,9 +10976,9 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "statblock",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_pokedex_statblock"
     },
     {
@@ -10987,9 +10987,9 @@
       "source_file": "app/src/lib/pokedex.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "calcstats()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_pokedex_calcstats"
     },
     {
@@ -11185,9 +11185,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "statuscondition",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_trainer_state_statuscondition"
     },
     {
@@ -11196,9 +11196,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 20,
+      "community": 27,
       "norm_label": "partymember",
-      "community_name": "BattleScreen.tsx",
+      "community_name": "battle.ts",
       "id": "app_src_lib_trainer_state_partymember"
     },
     {
@@ -11372,9 +11372,9 @@
       "source_file": "app/src/lib/trainer-state.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "defaulttrainer()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_src_lib_trainer_state_defaulttrainer"
     },
     {
@@ -11955,9 +11955,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "battle.test.ts",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_tests_battle_test"
     },
     {
@@ -11966,9 +11966,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "seq()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_tests_battle_test_seq"
     },
     {
@@ -11977,9 +11977,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "encounter()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_tests_battle_test_encounter"
     },
     {
@@ -11988,9 +11988,9 @@
       "source_file": "app/tests/battle.test.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 27,
+      "community": 7,
       "norm_label": "startbattle()",
-      "community_name": "battle.ts",
+      "community_name": "battle.test.ts",
       "id": "app_tests_battle_test_startbattle"
     },
     {
@@ -13720,9 +13720,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": "generationquotastore",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore"
     },
     {
@@ -13731,9 +13731,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".acquirepermit()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_acquirepermit"
     },
     {
@@ -13742,9 +13742,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".releasereservationslot()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_releasereservationslot"
     },
     {
@@ -13753,9 +13753,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".reserve()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_reserve"
     },
     {
@@ -13764,9 +13764,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".reset()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_reset"
     },
     {
@@ -13775,9 +13775,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".status()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_generationquotastore_status"
     },
     {
@@ -13797,9 +13797,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L287",
       "_origin": "ast",
-      "community": 14,
+      "community": 131,
       "norm_label": ".normalize()",
-      "community_name": ".normalize",
+      "community_name": "ThingtimeGenerationQuotaStore",
       "id": "app_server_services_map_generation_quota_inmemorygenerationquotastore_normalize"
     },
     {
@@ -13808,9 +13808,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L302",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": ".reserve()",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_generation_quota_inmemorygenerationquotastore_reserve"
     },
     {
@@ -13874,9 +13874,9 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L425",
       "_origin": "ast",
-      "community": 14,
+      "community": 131,
       "norm_label": "utcgenerationdaykey()",
-      "community_name": ".normalize",
+      "community_name": "ThingtimeGenerationQuotaStore",
       "id": "app_server_services_map_generation_quota_utcgenerationdaykey"
     },
     {
@@ -15260,9 +15260,9 @@
       "source_file": "app/server/services/map/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 7,
+      "community": 14,
       "norm_label": "mapgenerationquotareservation",
-      "community_name": "battle.test.ts",
+      "community_name": ".normalize",
       "id": "app_server_services_map_types_mapgenerationquotareservation"
     },
     {
@@ -20206,8 +20206,8 @@
       "source_file": "app/server/services/map/generation-quota.ts",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 7,
-      "community_name": "battle.test.ts",
+      "community": 14,
+      "community_name": ".normalize",
       "norm_label": "thingtimequotaresponse",
       "id": "app_server_services_map_generation_quota_thingtimequotaresponse"
     },
@@ -56198,5 +56198,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0c22122bee286d8b1653ddaa1b18b5480a976999"
+  "built_at_commit": "803780531ae3d4aec6c19f0c71332647d6f4d19a"
 }
