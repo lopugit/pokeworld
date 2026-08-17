@@ -398,13 +398,14 @@
     --ab-text: #8585a0;
     --pill-hi: #6a61bd;
     --pill-lo: #332e6b;
-    --label-ink: rgba(38, 27, 92, .78);
-    /* Smooth scalable traces of the supplied AGB-001 reference (503 x 286px
-       body crop). SVG masks keep the long hand-grip and bumper curves truly
-       continuous at every shell size; the old percentage polygon exposed a
-       visible facet at every control point on wide screens. */
-    --gba-back-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 0 C610 0 690 1 735 7 C775 10 813 27 850 45 C875 46 895 46 910 49 C947 58 971 82 982 119 C992 160 996 256 1000 369 C1002 420 989 457 965 478 C944 497 918 504 883 513 C833 526 787 544 726 554 C641 565 568 569 500 568 C432 568 359 565 274 554 C213 544 167 526 117 513 C82 504 56 497 35 478 C11 457 -2 420 0 369 C4 256 8 160 18 119 C29 82 53 58 90 49 C110 45 139 41 179 38 C216 34 235 13 265 3 C330 0 414 0 500 0 Z'/%3E%3C/svg%3E");
-    --gba-body-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 2 C610 2 690 3 735 8 C778 12 814 30 850 48 C878 52 903 55 921 62 C950 74 969 96 977 130 C987 178 993 270 995 365 C997 414 987 448 961 470 C940 489 914 498 879 506 C828 521 781 536 720 547 C638 559 566 563 500 562 C434 563 362 559 280 547 C219 536 172 521 121 506 C86 498 60 489 39 470 C13 448 3 414 5 365 C7 270 13 178 23 130 C31 96 50 74 79 62 C97 55 122 52 150 48 C186 45 221 34 265 10 C325 3 413 2 500 2 Z'/%3E%3C/svg%3E");
+    --label-ink: rgba(43, 33, 104, .62);
+    /* Coordinate traces from the supplied AGB-001 photo's 503 x 286px body.
+       The front plate and pale rear hardware are deliberately separate: the
+       rear casing flares around the shoulder bumpers, then tucks behind the
+       purple plate instead of becoming a uniform outline around the bottom. */
+    --gba-back-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 0 C600 0 680 0 745 5 C780 8 805 18 820 28 C880 34 930 45 953 57 C970 66 980 76 982 90 C990 130 996 200 1000 360 C1002 410 990 450 965 472 C940 490 900 500 850 510 C805 520 770 535 745 542 C680 550 590 555 500 555 C410 555 320 550 255 542 C230 535 195 520 150 510 C100 500 60 490 35 472 C10 450 -2 410 0 360 C4 200 10 130 18 90 C20 76 30 66 47 57 C70 45 120 34 180 28 C195 18 220 8 255 5 C320 0 400 0 500 0 Z'/%3E%3C/svg%3E");
+    --gba-body-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 568' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M500 2 C590 2 675 2 735 8 C765 10 785 18 800 28 C825 38 850 48 868 57 C910 66 950 75 965 90 C980 112 988 160 993 240 C997 310 999 380 996 426 C994 455 980 472 955 483 C930 495 880 500 843 511 C805 526 780 535 761 540 C700 555 650 563 500 568 C350 563 300 555 239 540 C220 535 195 526 157 511 C120 500 70 495 45 483 C20 472 6 455 4 426 C1 380 3 310 7 240 C12 160 20 112 35 90 C50 75 90 66 132 57 C150 48 175 38 200 28 C215 18 235 10 265 8 C325 2 410 2 500 2 Z'/%3E%3C/svg%3E");
+    --gba-bezel-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M375 0 C455 -4 545 -4 643 0 C750 2 875 10 947 40 C970 55 975 95 974 150 C980 250 992 500 1000 750 C1000 840 990 870 970 900 C945 925 910 945 876 950 C810 960 740 980 662 995 C657 998 652 1000 650 1000 C545 1005 455 1005 350 1000 C348 1000 343 998 338 995 C260 980 190 960 124 950 C90 945 55 925 30 900 C10 870 0 840 0 750 C8 500 20 250 26 150 C25 105 30 70 53 40 C120 10 250 2 375 0 Z'/%3E%3C/svg%3E");
 
     width: min(
       calc(var(--board-width, 520px) * 2.5),
@@ -434,7 +435,7 @@
         linear-gradient(180deg, #756bcb 0%, #5d55b2 48%, #453e90 100%);
     }
 
-    /* Pale back shell visible at the shoulders and along the lower seam. */
+    /* Pale rear shell visible only around the shoulder bumpers and side grips. */
     &::after {
       content: "";
       position: absolute;
@@ -453,26 +454,35 @@
 
   .gb-bezel {
     position: absolute;
-    left: 23.4%;
-    right: 23.4%;
-    top: 14.1%;
-    height: 74%;
-    display: flex;
-    flex-direction: column;
-    padding: 3.8% 4.2% 1.7%;
-    border-radius: 1em 1em 1.75em 1.75em / .9em .9em 1.25em 1.25em;
-    background: linear-gradient(150deg, #2e2e38 0%, #17171d 42%, #0d0d12 100%);
-    box-shadow:
-      inset 0 .08em .1em rgba(255, 255, 255, .12),
-      inset 0 -.1em .25em rgba(0, 0, 0, .65),
-      0 .18em .5em rgba(10, 6, 40, .45);
+    left: 23.55%;
+    right: 23.55%;
+    top: 12.8%;
+    height: 77.3%;
+    display: block;
+    padding: 0;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      -webkit-mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      background: linear-gradient(150deg, #2e2e38 0%, #17171d 42%, #0d0d12 100%);
+      box-shadow:
+        inset 0 .08em .1em rgba(255, 255, 255, .12),
+        inset 0 -.1em .25em rgba(0, 0, 0, .65);
+      filter: drop-shadow(0 .18em .42em rgba(10, 6, 40, .45));
+    }
 
     /* faint diagonal reflection across the glass, like the photo */
     &::after {
       content: "";
       position: absolute;
       inset: 0;
-      border-radius: inherit;
+      -webkit-mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
+      mask: var(--gba-bezel-mask) center / 100% 100% no-repeat;
       background: linear-gradient(115deg, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, .015) 32%, rgba(255, 255, 255, 0) 46%);
       pointer-events: none;
       z-index: 12;
@@ -480,7 +490,12 @@
   }
 
   .gb-glass {
-    flex: 1;
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 12%;
+    height: 63%;
+    z-index: 1;
   }
 
   .gb-bezel .board-screen {
@@ -490,9 +505,14 @@
 
   .gb-wordmark-gba {
     display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7%;
+    z-index: 1;
     text-align: center;
     font-size: 1.15em;
-    padding-top: .38em;
+    padding-top: 0;
   }
 
   .gb-wordmark-gbc {
@@ -513,7 +533,8 @@
   .gb-power {
     position: absolute;
     left: 110.5%;
-    top: 5.8%;
+    top: 7.4%;
+    z-index: 2;
     gap: .35em;
 
     em {
@@ -561,12 +582,12 @@
 
   .gb-startselect {
     position: absolute;
-    left: 19.1%;
-    top: 64.6%;
+    left: 18.55%;
+    top: 64%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2em;
+    gap: 1em;
 
     button {
       width: 1.3em;
@@ -585,12 +606,12 @@
         position: absolute;
         right: -.03em;
         top: 50%;
-        width: 4.25em;
-        height: 1.35em;
+        width: 4.95em;
+        height: 1.25em;
         z-index: -1;
         border-radius: 999px;
-        transform-origin: calc(100% - .675em) 50%;
-        transform: translateY(-50%) rotate(15deg);
+        transform-origin: calc(100% - .65em) 50%;
+        transform: translateY(-50%) rotate(12deg);
         background: linear-gradient(180deg, rgba(49, 38, 105, .38), rgba(104, 92, 177, .2));
         box-shadow:
           inset 0 .12em .18em rgba(25, 15, 72, .45),
@@ -600,11 +621,14 @@
       }
 
       &::after {
-        right: 178%;
-        top: 50%;
+        right: 180%;
+        top: calc(50% - .5em);
         z-index: 1;
-        transform: translateY(-50%) rotate(15deg);
-        font-size: .36em;
+        transform: translateY(-50%) rotate(12deg);
+        font-size: .42em;
+        text-shadow:
+          0 .08em .08em rgba(255, 255, 255, .2),
+          0 -.04em .04em rgba(20, 12, 65, .25);
       }
     }
   }
