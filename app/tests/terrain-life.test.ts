@@ -592,15 +592,57 @@ describe("terrain sprite stitching", () => {
     expectExactEmeraldCrop("cave-2", 112, 304);
     expectExactEmeraldCrop("cave-3", 96, 320);
     expectExactEmeraldCrop("cave-4", 112, 320);
-    expectExactEmeraldCrop("ledge-left-1", 768, 64);
-    expectExactEmeraldCrop("ledge-middle-1", 784, 64);
-    expectExactEmeraldCrop("ledge-right-1", 800, 64);
+    // ledge-left/middle/right-1 are no longer sheet crops: they carry the
+    // real hop-ledge lip harvested from pret's general tileset (route
+    // metatiles 0xd5/0x87/0xd6) with the grass backing keyed transparent —
+    // asserted separately below.
     // rocky-biome vocabulary harvested for the tile-legality port
     expectExactEmeraldCrop("rocky-1", 768, 48);
     expectExactEmeraldCrop("rocky-bumps-1", 848, 64);
     expectExactEmeraldCrop("cave-door-1", 768, 16);
     expectExactEmeraldCrop("boulder-mossy-1", 784, 48);
     expectExactEmeraldCrop("sign-rocky-1", 864, 32);
+  });
+
+  it("ships the real hop-ledge lip, not the old mountain-crest fakes", () => {
+    // The old files were byte-identical crops of mountain-1/2/3 (sheet
+    // 768/784/800,64) and rendered as floating white cliff crests on grass.
+    // The replacements come from pret's general tileset (route metatiles
+    // 0xd5/0x87/0xd6) with the grass backing keyed transparent, so the map's
+    // own ground shows through under the brown lip.
+    const mountainCrops: Array<[number, number]> = [
+      [768, 64],
+      [784, 64],
+      [800, 64],
+    ];
+    const sheet = readEmeraldSheet();
+    ["ledge-left-1", "ledge-middle-1", "ledge-right-1"].forEach((name, index) => {
+      const tile = readTile(name);
+      const [sourceX, sourceY] = mountainCrops[index];
+      let identical = true;
+      let transparent = 0;
+      let opaque = 0;
+      for (let y = 0; y < 16 && identical; y += 1) {
+        for (let x = 0; x < 16; x += 1) {
+          const tileOffset = (y * 16 + x) * 4;
+          const sourceOffset = ((sourceY + y) * sheet.width + sourceX + x) * 4;
+          if (
+            !tile.data
+              .subarray(tileOffset, tileOffset + 4)
+              .equals(sheet.data.subarray(sourceOffset, sourceOffset + 4))
+          ) {
+            identical = false;
+          }
+        }
+      }
+      for (let offset = 3; offset < tile.data.length; offset += 4) {
+        if (tile.data[offset] === 0) transparent += 1;
+        else opaque += 1;
+      }
+      expect(identical, `${name} must not be the mountain-crest fake`).toBe(false);
+      expect(transparent, `${name} keys its grass backing out`).toBeGreaterThan(0);
+      expect(opaque, `${name} still carries the ledge lip art`).toBeGreaterThan(40);
+    });
   });
 
   it("ships exact crops and faithful compositions for every building family", () => {

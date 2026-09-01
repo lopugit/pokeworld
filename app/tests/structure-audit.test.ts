@@ -208,6 +208,31 @@ describe("analyzeStructureWorld violation classes", () => {
     expect(report.violations.some((violation) => violation.type === "double-painted-site")).toBe(true);
   });
 
+  it("flags a cut-off building (fewer tiles than its family footprint)", () => {
+    const blocks = [];
+    for (let x = 9; x <= 11; x += 1) for (let y = 9; y <= 11; y += 1) blocks.push(fakeBlock(x, y));
+    for (let gridX = 10 * 16 + 2; gridX <= 10 * 16 + 6; gridX += 1) {
+      for (let gridY = 10 * 16 + 1; gridY <= 10 * 16 + 4; gridY += 1) {
+        tileAt(blocks, gridX, gridY).terrain = "building";
+      }
+    }
+    const site = `${10 * 16 + 3},${10 * 16 + 2}`;
+    paintFakeHouse(blocks, 10 * 16 + 2, 10 * 16 + 4, site);
+    // Overwrite two of the house's tiles, as a stale mixed-version world does.
+    for (const gridX of [10 * 16 + 2, 10 * 16 + 3]) {
+      const tile = tileAt(blocks, gridX, 10 * 16 + 4);
+      tile.feature = "short-grass-pocket";
+      delete tile.houseSite;
+      delete tile.houseKind;
+    }
+
+    const report = analyzeStructureWorld(blocks);
+    const partial = report.violations.filter((violation) => violation.type === "partial-structure");
+    expect(partial).toHaveLength(1);
+    expect(partial[0].tiles).toBe(10);
+    expect(partial[0].expectedTiles).toBe(12);
+  });
+
   it("never judges components that touch unfetched blocks", () => {
     const blocks = [fakeBlock(20, 20)];
     // Building hugging the west edge — it may continue into block (19,20).
@@ -222,6 +247,14 @@ describe("analyzeStructureWorld violation classes", () => {
     const report = analyzeStructureWorld(blocks);
     expect(report.boundaryComponents).toBe(1);
     expect(report.judgedComponents).toBe(0);
-    expect(report.violations).toEqual([]);
+    // Component-level judgments (seam duplicates, stale stitches) are
+    // suppressed for boundary components. Structure-level checks still run:
+    // the two overlapping fakes leave the first house short of tiles, which
+    // the partial-structure (cut-off building) check correctly reports.
+    const componentJudged = report.violations.filter(
+      (violation) => violation.type === "seam-duplicate" || violation.type === "stale-stitch",
+    );
+    expect(componentJudged).toEqual([]);
+    expect(report.violations.every((violation) => violation.type === "partial-structure")).toBe(true);
   });
 });

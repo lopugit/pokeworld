@@ -228,6 +228,11 @@ async function buildBlockStreets(block: StreetsBlock, env = process.env): Promis
   const sites = houseSites(tiles);
   const useGoogle = streetLookupsEnabled(env);
   let lookups = 0;
+  // "google" is recorded only when a lookup actually SUCCEEDED: a key whose
+  // project has the Geocoding API disabled fails every call, and stamping
+  // "google" then would stop the stored block from upgrading to real names
+  // once the API is switched on.
+  let anyGoogleSuccess = false;
 
   const roads: RoadStreet[] = [];
   for (const component of components) {
@@ -237,6 +242,7 @@ async function buildBlockStreets(block: StreetsBlock, env = process.env): Promis
       lookups += 1;
       try {
         name = extractRouteName(await reverseGeocode(gridCellLatLng(sample.gridX, sample.gridY), env));
+        if (name) anyGoogleSuccess = true;
       } catch {
         name = null;
       }
@@ -253,6 +259,7 @@ async function buildBlockStreets(block: StreetsBlock, env = process.env): Promis
       lookups += 1;
       try {
         address = extractHouseAddress(await reverseGeocode(gridCellLatLng(gridX, gridY), env));
+        if (address) anyGoogleSuccess = true;
       } catch {
         address = null;
       }
@@ -270,7 +277,7 @@ async function buildBlockStreets(block: StreetsBlock, env = process.env): Promis
 
   return {
     version: STREETS_VERSION,
-    source: useGoogle ? "google" : "procedural",
+    source: anyGoogleSuccess ? "google" : "procedural",
     fetchedAt: Date.now(),
     roads,
     houses,

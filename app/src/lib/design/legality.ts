@@ -82,6 +82,13 @@ export const OVERLAY_RULES: OverlayRule[] = [
     reason: "The route sign's post is planted in grass.",
   },
   {
+    pattern: /^ledge-(left|middle|right)-1$/,
+    label: "Hop ledges",
+    grounds: ["grass"],
+    reason:
+      "The real Emerald southward hop-ledge lip, harvested from the general tileset's route metatiles (0xd5/0x87/0xd6) with the grass backing keyed out. These files previously held byte-identical mountain-crest crops (the old 'fake ledges' ban); the genuine art replaced them.",
+  },
+  {
     pattern: /^boulder-mossy-1$/,
     label: "Mossy boulder",
     grounds: ["rocky"],
@@ -121,12 +128,6 @@ export const BANNED_OVERLAYS: BannedTile[] = [
     label: "Forest-overlap strip slices",
     reason:
       "The big-tree-1..10 crops are slices of the sheet's forest-overlap demo — hanging fronds, half-canopies and grass fillers. No arrangement of them composes a whole tree (this was the broken-grove bug); the real big tree is the tree-grand 2×2 formation harvested from the Littleroot render.",
-  },
-  {
-    pattern: /^ledge-(left|middle|right)-1$/,
-    label: "Fake ledges",
-    reason:
-      "These files are byte-identical crops of mountain-1/2/3 — the dome's top row. A standalone row renders a cliff crest with no body below it (the broken horizontal cliffs). Real ledge art was never harvested.",
   },
   {
     pattern: /^rock-1$/,

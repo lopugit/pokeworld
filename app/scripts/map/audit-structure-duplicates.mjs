@@ -246,6 +246,21 @@ export function analyzeStructureWorld(blocks, options = {}) {
         paintedBy: [...structure.paintedBy],
       });
     }
+    // A structure with FEWER tiles than its family footprint is a cut-off
+    // building: part of it was overwritten or never painted (stale mixed
+    // versions, interrupted saves). Only judged when every tile of the
+    // structure's own block was fetched, which is true for any painted site.
+    if (expected && structure.tileCount < expected) {
+      violations.push({
+        type: "partial-structure",
+        site: structure.site,
+        kind: structure.kind,
+        tiles: structure.tileCount,
+        expectedTiles: expected,
+        paintedBy: [...structure.paintedBy],
+        at: cellLatLng(structure.cells[0], blocksByCoordinate),
+      });
+    }
     // Attach to a component: the site cell itself is mask by construction;
     // legacy structures attach through any mask cell adjacent to the footprint.
     let componentId;
@@ -367,6 +382,12 @@ export function formatReport(report, { verbose = false } = {}) {
         lines.push(
           `  double-painted-site: ${violation.site} (${violation.kind}) ${violation.tiles} tiles` +
           `${violation.expectedTiles ? ` (expected ${violation.expectedTiles})` : ""} painted by ${violation.paintedBy.join(" | ")}`,
+        );
+      } else if (violation.type === "partial-structure") {
+        const at = violation.at ? ` ~(${violation.at.lat.toFixed(6)},${violation.at.lng.toFixed(6)})` : "";
+        lines.push(
+          `  partial-structure: ${violation.site} (${violation.kind}) only ${violation.tiles}/${violation.expectedTiles} tiles ` +
+          `— cut-off building painted by ${violation.paintedBy.join(" | ")}${at}`,
         );
       } else {
         lines.push(`  ${violation.type}: ${JSON.stringify(violation)}`);

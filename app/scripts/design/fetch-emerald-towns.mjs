@@ -397,6 +397,38 @@ console.log(`harvested ${BUILDINGS.length} whole crops into public/tiles/`);
     writeFileSync(resolve(tilesDir, `tree-grand-${index + 1}.png`), PNG.sync.write(tile));
   });
   console.log("harvested tree-grand 2x2 from general metatiles 468/469/484/485");
+
+  // Real southward hop-ledges, straight from the general tileset the routes
+  // use (Route 102's rows read 0xd5 [west cap], 0x87 [middle], 0xd6 [east
+  // cap]). These REPLACE the old fake ledge files, which were byte-identical
+  // crops of mountain-1/2/3 and rendered as floating white cliff crests on
+  // grass. The metatile bakes plain grass behind the lip; keying out every
+  // colour that also appears in the plain-grass metatile (0x1) leaves only
+  // the brown lip art, so the map's own ground shows through with no
+  // backing seam. The lip itself is all browns — no shared colours.
+  const grassReference = new PNG({ width: 16, height: 16 });
+  drawMetatile(grassReference, 0, 0, 0x1, general, general);
+  const grassColours = new Set();
+  for (let index = 0; index < grassReference.data.length; index += 4) {
+    grassColours.add(
+      `${grassReference.data[index]},${grassReference.data[index + 1]},${grassReference.data[index + 2]}`,
+    );
+  }
+  const LEDGE_METATILES = [
+    ["ledge-left-1", 0xd5],
+    ["ledge-middle-1", 0x87],
+    ["ledge-right-1", 0xd6],
+  ];
+  for (const [name, metatileId] of LEDGE_METATILES) {
+    const tile = new PNG({ width: 16, height: 16 });
+    drawMetatile(tile, 0, 0, metatileId, general, general);
+    for (let index = 0; index < tile.data.length; index += 4) {
+      const key = `${tile.data[index]},${tile.data[index + 1]},${tile.data[index + 2]}`;
+      if (tile.data[index + 3] === 0 || grassColours.has(key)) tile.data[index + 3] = 0;
+    }
+    writeFileSync(resolve(tilesDir, `${name}.png`), PNG.sync.write(tile));
+  }
+  console.log("harvested real hop-ledges from general metatiles 0xd5/0x87/0xd6");
 }
 
 // ---------------------------------------------------------------------------
