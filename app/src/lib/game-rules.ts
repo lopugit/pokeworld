@@ -57,7 +57,17 @@ export const isFieldItemTile = (tile: MapTile | undefined): boolean =>
     img2Of(tile).startsWith("field-item"));
 
 export const isSignTile = (tile: MapTile | undefined): boolean =>
-  !!tile && (tile.feature === "sign" || img2Of(tile).startsWith("route-sign"));
+  !!tile && (tile.feature === "sign" || (tile.feature !== "house-sign" && img2Of(tile).startsWith("route-sign")));
+
+/** A signboard planted outside a stitched house, carrying its address. */
+export const isHouseSignTile = (tile: MapTile | undefined): boolean =>
+  !!tile && tile.feature === "house-sign";
+
+/** The real street name a tile carries, if the street service tagged it. */
+export const streetNameOf = (tile: MapTile | undefined): string | null => {
+  const name = tile?.streetName;
+  return typeof name === "string" && name.trim().length ? name : null;
+};
 
 export const isCaveEntranceTile = (tile: MapTile | undefined): boolean =>
   !!tile && tile.feature === "cave-entrance";
@@ -191,10 +201,27 @@ export function isNearCaveEntrance(
   return false;
 }
 
-export function signPagesFor(mapX: number, mapY: number): string[] {
+export function signPagesFor(mapX: number, mapY: number, streetName?: string | null): string[] {
   const route = 101 + Math.floor(hashUnit(mapX, mapY, "route") * 33);
   const index = Math.floor(hashUnit(mapX, mapY, "sign-text") * SIGN_PAGES.length);
-  return SIGN_PAGES[Math.min(index, SIGN_PAGES.length - 1)](route);
+  const pages = SIGN_PAGES[Math.min(index, SIGN_PAGES.length - 1)](route);
+  // Signs on named streets headline the real street; the trainer-tip page
+  // keeps its seeded flavour.
+  if (streetName) pages[0] = streetName.toUpperCase();
+  return pages;
+}
+
+/** Address plate outside a stitched house: real number + street when known. */
+export function houseSignPagesFor(tile: MapTile): string[] {
+  const number = typeof tile.houseNumber === "string" && tile.houseNumber.trim().length ? tile.houseNumber : null;
+  const street = streetNameOf(tile);
+  if (!number && !street) {
+    return ["The nameplate is too weathered\nto read."];
+  }
+  const address = [number ? `No. ${number}` : null, street?.toUpperCase() ?? null]
+    .filter(Boolean)
+    .join("\n");
+  return [address, "The nameplate is freshly\npolished. Someone is proud\nof this house."];
 }
 
 const CAVE_PAGES: string[][] = [
@@ -231,7 +258,10 @@ export function interactionFor(tile: MapTile | undefined, collected: CollectedLo
     if (collected(tileCoordKey(tile.mapX, tile.mapY))) return { type: "none" };
     return { type: "item" };
   }
-  if (isSignTile(tile)) return { type: "sign", pages: signPagesFor(tile.mapX, tile.mapY) };
+  if (isHouseSignTile(tile)) return { type: "sign", pages: houseSignPagesFor(tile) };
+  if (isSignTile(tile)) {
+    return { type: "sign", pages: signPagesFor(tile.mapX, tile.mapY, streetNameOf(tile)) };
+  }
   if (isCaveEntranceTile(tile)) return { type: "cave", pages: cavePagesFor(tile.mapX, tile.mapY) };
   if (tile.feature === "house") return { type: "house", pages: housePagesFor(tile.mapX, tile.mapY) };
   return { type: "none" };

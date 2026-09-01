@@ -13,6 +13,15 @@ import {
   type BlockCoordinates,
 } from "../lib/map-load";
 import { isTallTileArt, sortTallEntities } from "../lib/tall-sprites";
+import {
+  centroidOf,
+  clampPanToPlayer,
+  computePinchUpdate,
+  distanceOf,
+  snapToTileGrid,
+  type GesturePoint,
+  type PinchStart,
+} from "../lib/pinch-zoom";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import {
   actionDirection,
@@ -24,6 +33,7 @@ import {
   isNearCaveEntrance,
   isSurfableTile,
   resolveMove,
+  streetNameOf,
   tileCoordKey,
   type Direction,
 } from "../lib/game-rules";
@@ -172,6 +182,8 @@ interface UiState {
   menuIndex: number;
   panel: PanelId | null;
   dialog: { pages: string[]; advance: number } | null;
+  /** Emerald-style location plate shown when entering a named street. */
+  streetBanner: { text: string; key: number } | null;
 }
 
 interface BoundaryWait {
@@ -286,7 +298,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       y: 0,
       facing: "down",
     },
-    ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null },
+    ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null, streetBanner: null },
     ...bootTrainerState(),
     battle: null,
   };
@@ -362,6 +374,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     if (this.movementInterval) window.clearInterval(this.movementInterval);
     if (this.resizeInterval) window.clearInterval(this.resizeInterval);
     if (this.loadedTimer) window.clearTimeout(this.loadedTimer);
+    if (this.streetBannerTimer) window.clearTimeout(this.streetBannerTimer);
     document.removeEventListener("keydown", this.onKeydown);
     window.removeEventListener("resize", this.resizeGame);
     this.removeBoardResizeListeners();
@@ -964,6 +977,20 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       }
     }
 
+    // A free-look pan (two-finger drag) can leave the camera anywhere within
+    // its clamp radius; the first step afterwards snaps the view back so the
+    // player sits inside the boundary box, where normal scrolling keeps them.
+    const spanX = game.canvasWidth * game.zoom;
+    const spanY = game.canvasHeight * game.zoom;
+    map.x = snapToTileGrid(
+      Math.min(Math.max(map.x, player.x + game.tileSize + game.playerXBoundaryOffset - spanX), player.x - game.playerXBoundaryOffset),
+      game.tileSize,
+    );
+    map.y = snapToTileGrid(
+      Math.min(Math.max(map.y, player.y + game.tileSize + game.playerYBoundaryOffset - spanY), player.y - game.playerYBoundaryOffset),
+      game.tileSize,
+    );
+
     const previousBlock = `${player.blockX},${player.blockY}`;
     const destinationTile = this.tileDb[`${player.x},${player.y}`];
     // Stepping from water back onto walkable land ends the surf ride.
@@ -999,9 +1026,34 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       saveThing("map", map);
       if (nextGame !== game) saveThing("game", nextGame);
       if (previousBlock !== `${updatedPlayer.blockX},${updatedPlayer.blockY}`) void this.getBlocks();
+      this.maybeShowStreetBanner(destinationTile);
       this.maybeStartEncounter(updatedPlayer, game.zoomMode);
     });
   };
+
+  // The last street name announced, so re-entering the same street stays
+  // quiet until the player has been somewhere else in between.
+  private lastStreetBanner: string | null = null;
+  private streetBannerTimer?: number;
+
+  /** Stepping onto a named road/path pops the Emerald-style location plate. */
+  private maybeShowStreetBanner(tile: MapTile | undefined) {
+    const onStreet = tile && (tile.terrain === "road" || tile.terrain === "path");
+    const name = onStreet ? streetNameOf(tile) : null;
+    if (!onStreet) {
+      // Leaving the street re-arms the banner for the next street entered.
+      this.lastStreetBanner = null;
+      return;
+    }
+    if (!name || name === this.lastStreetBanner) return;
+    this.lastStreetBanner = name;
+    if (this.streetBannerTimer) window.clearTimeout(this.streetBannerTimer);
+    this.setUi({ streetBanner: { text: name, key: Date.now() } });
+    this.streetBannerTimer = window.setTimeout(() => {
+      this.streetBannerTimer = undefined;
+      if (this.mounted) this.setUi({ streetBanner: null });
+    }, 2700);
+  }
 
   // Rolls a wild encounter for the tile the player just stepped onto:
   // long grass on foot, open water while surfing, and cave-mouth zones.
@@ -1601,6 +1653,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   }
 
   private overlayDragPointerId: number | null = null;
+  // Live pointers on the canvas (CSS px relative to the canvas box) — two of
+  // them make a pan/pinch gesture (see pinch-zoom.ts for the camera math).
+  private readonly gesturePointers = new Map<number, GesturePoint>();
+  private pinchStart: PinchStart | null = null;
+  // Free-look pan distance: the viewport centre may drift up to two blocks
+  // from the player, which stays inside the block-preload/render radius.
+  private static readonly MAX_PAN_WORLD = blockSize * 2;
 
   private overlayPointerFraction(event: ReactPointerEvent<HTMLCanvasElement>) {
     const canvas = event.currentTarget;
@@ -1608,7 +1667,89 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     return event.nativeEvent.offsetX / canvas.clientWidth;
   }
 
+  private canvasPoint(event: ReactPointerEvent<HTMLCanvasElement>): GesturePoint {
+    return { x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY };
+  }
+
+  private beginPinchIfPaired(canvas: HTMLCanvasElement) {
+    if (this.gesturePointers.size !== 2) return;
+    // A second finger always wins over an in-flight overlay-divider drag.
+    if (this.overlayDragPointerId !== null) {
+      if (canvas.hasPointerCapture(this.overlayDragPointerId)) {
+        canvas.releasePointerCapture(this.overlayDragPointerId);
+      }
+      this.overlayDragPointerId = null;
+    }
+    const [a, b] = [...this.gesturePointers.values()];
+    const { game, map } = this.state;
+    this.pinchStart = {
+      distance: distanceOf(a, b),
+      centroid: centroidOf(a, b),
+      zoom: game.zoom,
+      mapX: map.x,
+      mapY: map.y,
+    };
+  }
+
+  private updatePinch(canvas: HTMLCanvasElement) {
+    const start = this.pinchStart;
+    if (!start || this.gesturePointers.size !== 2) return;
+    const [a, b] = [...this.gesturePointers.values()];
+    const { game, player } = this.state;
+    const update = clampPanToPlayer(
+      computePinchUpdate(
+        start,
+        { distance: distanceOf(a, b), centroid: centroidOf(a, b) },
+        {
+          canvasWidth: game.canvasWidth,
+          canvasHeight: game.canvasHeight,
+          clientWidth: canvas.clientWidth || game.canvasWidth,
+          clientHeight: canvas.clientHeight || game.canvasHeight,
+        },
+        game.noMaxZoom,
+      ),
+      { x: player.x, y: player.y },
+      { canvasWidth: game.canvasWidth, canvasHeight: game.canvasHeight },
+      Game.MAX_PAN_WORLD,
+    );
+    this.setState(({ game: current, map }) => ({
+      game: {
+        ...current,
+        zoom: update.zoom,
+        zoomScale: current.canvasWidth / (current.canvasWidth * update.zoom),
+      },
+      map: { ...map, x: update.mapX, y: update.mapY },
+    }));
+  }
+
+  private endPinch() {
+    if (!this.pinchStart) return;
+    this.pinchStart = null;
+    // Movement logic steps the camera by whole tiles, so settle on the grid.
+    this.setState(
+      ({ map }) => ({
+        map: { ...map, x: snapToTileGrid(map.x, tileSize), y: snapToTileGrid(map.y, tileSize) },
+      }),
+      () => {
+        saveThing("game", this.state.game);
+        saveThing("map", this.state.map);
+        void this.getBlocks();
+      },
+    );
+  }
+
   private onCanvasPointerDown = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    const canvas = event.currentTarget;
+    if (event.pointerType === "touch" || event.button === 0) {
+      this.gesturePointers.set(event.pointerId, this.canvasPoint(event));
+      canvas.setPointerCapture(event.pointerId);
+      if (this.gesturePointers.size === 2) {
+        this.beginPinchIfPaired(canvas);
+        event.preventDefault();
+        return;
+      }
+    }
+
     const { game } = this.state;
     if (!game.overlay || !game.overlaySplit) return;
     // Only the primary pointer's main button may grab the divider; a
@@ -1617,11 +1758,19 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const fraction = this.overlayPointerFraction(event);
     if (!overlaySplitHit(fraction, game.overlaySplitX)) return;
     this.overlayDragPointerId = event.pointerId;
-    event.currentTarget.setPointerCapture(event.pointerId);
+    canvas.setPointerCapture(event.pointerId);
     event.preventDefault();
   };
 
   private onCanvasPointerMove = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (this.gesturePointers.has(event.pointerId)) {
+      this.gesturePointers.set(event.pointerId, this.canvasPoint(event));
+      if (this.pinchStart) {
+        this.updatePinch(event.currentTarget);
+        event.preventDefault();
+        return;
+      }
+    }
     if (event.pointerId !== this.overlayDragPointerId) return;
     const fraction = clampOverlaySplit(this.overlayPointerFraction(event));
     // Persisting on release keeps drag updates cheap.
@@ -1629,6 +1778,12 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   private onCanvasPointerUp = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (this.gesturePointers.delete(event.pointerId)) {
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+        event.currentTarget.releasePointerCapture(event.pointerId);
+      }
+      if (this.pinchStart && this.gesturePointers.size < 2) this.endPinch();
+    }
     if (event.pointerId !== this.overlayDragPointerId) return;
     this.overlayDragPointerId = null;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
@@ -1755,6 +1910,11 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
                   onPointerCancel={this.onCanvasPointerUp}
                 />
                 <div className="game-ui-layer">
+                  {ui.streetBanner ? (
+                    <div className="pkmn-street-banner" key={ui.streetBanner.key}>
+                      {ui.streetBanner.text}
+                    </div>
+                  ) : null}
                   <MapLoadingIndicator
                     active={mapLoading.activeRequests > 0 || Boolean(mapLoading.waitingForBlock)}
                     completed={mapLoading.completed}

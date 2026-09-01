@@ -17,6 +17,7 @@ import {
 	isMapBlockStorageConfigured,
 	putStoredBlocks as storePutStoredBlocks,
 } from '../block-store'
+import { applyStreetNames } from '../streets'
 
 const sortedMods = [...mods].sort((a, b) => a.priority - b.priority)
 const coordinateKey = value => `${value.x},${value.y}`
@@ -164,6 +165,13 @@ const toExport = version => {
 
 					// regenerate blocks to join to edges
 					await regenerateBlocks(state)
+
+					// Attach real-world street names / house numbers to the converged
+					// set before it persists. Stored blocks reuse their cached record
+					// (no repeat geocoding); offline falls back to procedural names.
+					await applyStreetNames(
+						[...state.blocks.generate, ...state.blocks.edges].filter(block => block.regenerate),
+					)
 
 					// save all blocks
 					await saveAllBlocks(state)

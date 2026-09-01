@@ -267,6 +267,10 @@ const smoothWater = (state, tiles) => {
 const STITCH_METADATA_FIELDS = [
 	'houseId', 'houseKind', 'houseTile', 'houseSite',
 	'caveId', 'caveTile', 'hiddenItem', 'jumpDirection',
+	// Street tags are re-applied from the block's cached record after mods
+	// (services/map/streets.ts) — a re-stitch that moves a structure must not
+	// leave a stale address on a tile that no longer fronts it.
+	'streetName', 'houseNumber',
 ]
 
 const resetBaseSprites = (tiles, version, updated) => {
@@ -527,6 +531,34 @@ const applyRockyApron = (byGrid, occupied, left, top, width, height) => {
 	}
 }
 
+// Each stitched house gets a signboard one tile south of its base row, a
+// step aside from the door column, carrying the house's site key so the
+// street service (services/map/streets.ts) can stamp the real street number
+// onto it after mods. Deterministic per anchor; skipped when no legal grass
+// cell exists inside the owning block.
+const placeHouseSign = (state, block, occupied, site, anchor, variant) => {
+	const signY = anchor.top - variant.rows
+	const doorColumn = anchor.left + Math.floor((variant.columns - 1) / 2)
+	const candidateColumns = [doorColumn - 1, doorColumn + 1, anchor.left, anchor.left + variant.columns - 1]
+	for (const signX of candidateColumns) {
+		if (Math.floor(signX / BLOCK_TILES) !== block.x || Math.floor(signY / BLOCK_TILES) !== block.y) continue
+		const tile = worldTileAt(state, signX, signY)
+		if (
+			!tile
+			|| !isGreen(terrainOf(tile))
+			|| isCentralLandingWorld(signX, signY)
+			|| occupied.has(tileKey(tile.x, sourceY(tile)))
+		) continue
+		occupied.add(tileKey(tile.x, sourceY(tile)))
+		tile.img = 'grass'
+		tile.img2 = 'route-sign-1'
+		tile.feature = 'house-sign'
+		tile.houseSite = `${site.gridX},${site.gridY}`
+		tile.solid = true
+		return
+	}
+}
+
 // A site's anchor may land in ANY block whose tiles are visible in the state
 // cache. Whichever block owns the anchor paints it: blocks generated in the
 // same pass compute the identical anchor from the identical terrain, and a
@@ -559,6 +591,7 @@ const stitchHouses = (state, tiles, block) => {
 					tile.houseSite = `${site.gridX},${site.gridY}`
 					tile.solid = true
 				})
+				placeHouseSign(state, block, occupied, site, anchor, variant)
 			}
 			break
 		}

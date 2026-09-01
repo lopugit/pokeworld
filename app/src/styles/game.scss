@@ -129,10 +129,12 @@
   aspect-ratio: 1;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  // Two-finger pan/pinch is handled by the game — the browser must never
+  // turn a second touch into page scroll or page zoom.
+  touch-action: none;
 
   &.overlay-split-active {
     cursor: ew-resize;
-    touch-action: none;
   }
 }
 

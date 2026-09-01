@@ -100,10 +100,29 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 | `cave-entrance`     | `cave-N` / `cave-door-1` | A-press shows cave dialog (interiors: future iteration). `cave-door-1` fills the mountain-8 slot of 3×3 mountains. |
 | `house`             | `{house-red,house-wide,house-grand,house-manor,struct-pokecenter,struct-pokemart}-N` | A-press on a door row shows flavor dialog. One structure per structure SITE: sites are hash-minimum cells of the world-space building mask (8-way, computed over `state.tiles.cache` so a google building spanning block seams still yields exactly one structure; window 13 tiles, influence ≤ 1 block ring = the edge re-stitch healing radius). The family (footprint 3×4 up to 6×5) scales with the site's locally connected building area. `houseKind` carries the family prefix, `houseSite` the world grid cell (`"gx,gy"`) that owns the structure. |
 | `long-grass`        | `grass-2`              | Reserved for wild encounters (future). |
+| `house-sign`        | `route-sign-1`         | Address plate outside a stitched house (one tile south of the base row, beside the door column, same block as the house). A-press shows the address from `houseNumber`/`streetName`; a weathered-plate fallback covers untagged tiles. `houseSite` links the sign to its house. |
+| `tree`              | `tree-tall-1`          | The complete Emerald slim tree. Any `img2` whose PNG is twice as tall as wide (16×32) renders bottom-anchored TWO tiles high in a shared north-to-south pass with the player, so southern canopies overlap northern trunks and the player occludes/is occluded correctly. Only the ground tile is solid; the canopy overlap is purely visual. Older clients draw the art squashed into one tile until they update — acceptable transitional degradation. |
 | any tile            |                        | `solid: true` blocks movement. A missing tile inside a loaded block stays walkable, but an absent destination block is a hard streaming boundary until it arrives. |
 
 The client also falls back to `img2` prefix detection (`ledge-`, `field-item-`,
 `route-sign-`) so features light up even if a mod forgets to stamp `feature`.
+
+### Street names & house numbers (server → client, 3.0)
+
+After mods run (and before blocks persist), `services/map/streets.ts` attaches
+a durable `block.streets` record — `{version, source: "google"|"procedural",
+roads: [{gridX, gridY, name}], houses: {"gx,gy": {number, street}}}` — and
+tags tiles from it: every `road`/`path` tile gets `streetName` (nearest
+sampled road component; local streets classify as `path`), and house +
+house-sign tiles get `houseNumber` + `streetName` keyed by `houseSite`. Names
+come from the Google reverse-geocoding API (same `GOOGLE_API_KEY` as the
+imagery, ≤6 lookups per block, tile→lat/lng includes the half-block imagery
+offset); offline/key-less deployments get deterministic procedural names.
+Re-stitches reuse the stored record — no repeat geocoding. The client shows an
+Emerald-style location banner when the player steps onto a road/path tile
+whose `streetName` differs from the last one announced, and reads addresses
+off `house-sign`/`sign` tiles. Untagged tiles keep the seeded `ROUTE N`
+dialog, so either side can ship independently.
 
 Determinism: the client mirrors the server's `hashUnit(x, y, salt)`
 (terrain-life.ts) so seeded content (sign text, item identity) is stable per

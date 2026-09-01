@@ -1226,3 +1226,34 @@
     animation: none;
   }
 }
+
+/* ---------- Street-name banner (Emerald location plate) ---------- */
+
+.pkmn-street-banner {
+  position: absolute;
+  top: 4%;
+  left: -4%;
+  max-width: 70%;
+  padding: clamp(6px, 1.2vw, 11px) clamp(12px, 2vw, 20px) clamp(6px, 1.2vw, 11px) clamp(16px, 2.6vw, 26px);
+  border: clamp(2px, .4vw, 4px) solid #385088;
+  border-left: none;
+  border-radius: 0 clamp(6px, 1vw, 11px) clamp(6px, 1vw, 11px) 0;
+  background: rgba(248, 248, 240, .96);
+  box-shadow: inset 0 0 0 2px #a8b8e8, 0 4px 0 rgba(0, 0, 0, .3);
+  color: #303030;
+  font-size: clamp(11px, 1.6vw, 17px);
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  animation: pkmn-street-banner-slide 2.6s ease both;
+}
+
+@keyframes pkmn-street-banner-slide {
+  0% { transform: translateX(-105%); opacity: 0; }
+  10% { transform: translateX(0); opacity: 1; }
+  85% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-105%); opacity: 0; }
+}
