@@ -1764,7 +1764,11 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     const canvas = event.currentTarget;
     if (event.pointerType === "touch" || event.button === 0) {
       this.gesturePointers.set(event.pointerId, this.canvasPoint(event));
-      canvas.setPointerCapture(event.pointerId);
+      try {
+        canvas.setPointerCapture(event.pointerId);
+      } catch {
+        // Synthetic events carry inactive pointer ids; tracking still works.
+      }
       if (this.gesturePointers.size === 2) {
         this.beginPinchIfPaired(canvas);
         event.preventDefault();

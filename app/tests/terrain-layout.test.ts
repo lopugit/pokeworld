@@ -76,6 +76,23 @@ describe("adventure terrain layout", () => {
     }
   });
 
+  it("absorbs a lone path tile inside a road run into the road", () => {
+    const input = grid();
+    // A horizontal road with one path-classified tile in the middle — the
+    // local-street-touches-avenue case that broke the road art with a single
+    // pale clearing square.
+    for (let x = 0; x < 16; x += 1) input[8][x] = sample("road");
+    input[8][7] = sample("path");
+
+    const output = normalizeTerrainLayout(input);
+    const routeRow = output.findIndex((row) => row.some((cell) => isRoute(cell.terrain)));
+    expect(routeRow).toBeGreaterThanOrEqual(0);
+    const kinds = new Set(
+      output.flatMap((row) => row.filter((cell) => isRoute(cell.terrain)).map((cell) => cell.terrain)),
+    );
+    expect(kinds).toEqual(new Set(["road"]));
+  });
+
   it("bridges diagonal skeleton steps with cardinally connected square tiles", () => {
     const input = grid();
     for (let y = 0; y < 16; y += 1) {

@@ -300,6 +300,22 @@ function normalizeRoutes(samples: TerrainSample[][]): TerrainSample[][] {
     }
   }
 
+  // A lone path tile inside a road run (a local street touching an avenue)
+  // breaks the road's art with a single pale clearing square. Absorb path
+  // tiles whose cardinal skeleton neighbours are exclusively roads.
+  for (let y = 0; y < rows; y += 1) {
+    for (let x = 0; x < columns; x += 1) {
+      if (routeKinds[y][x] !== "path") continue;
+      const neighbours = CARDINAL_OFFSETS.flatMap(([dx, dy]) => {
+        const kind = routeKinds[y + dy]?.[x + dx];
+        return kind ? [kind] : [];
+      });
+      if (neighbours.length >= 2 && neighbours.every((kind) => kind === "road")) {
+        routeKinds[y][x] = "road";
+      }
+    }
+  }
+
   // Keep the centerline one tile wide. A previous straight-segment widening
   // pass produced 4–6 tile masses where stair-stepped diagonal streets met a
   // block edge. Emerald routes read better as a crisp cardinal centerline, and
