@@ -150,8 +150,8 @@
     "semantic_hash": "2c38982df9602ac7c60a0a5d03de9613"
   },
   "app/server/services/map/legacy/blocks.ts": {
-    "mtime": 1788239185.3372295,
-    "ast_hash": "7bae6367d680b77218e82ac6b554fd1e",
+    "mtime": 1788240618.4847984,
+    "ast_hash": "8e79fe74f92dd0d8787896105ef0b4c8",
     "semantic_hash": ""
   },
   "app/server/services/map/legacy/coordinates.ts": {
@@ -205,8 +205,8 @@
     "semantic_hash": "2064944459f448880c7343dfd99ddea1"
   },
   "app/server/services/map/legacy/mods/terrain-life.ts": {
-    "mtime": 1788240059.256571,
-    "ast_hash": "1732e9b7c70c41cfc368c38bd096fbaf",
+    "mtime": 1788240666.489418,
+    "ast_hash": "d401cd4156230b9d2d2c8f404dc1f96d",
     "semantic_hash": ""
   },
   "app/server/services/map/legacy/png.ts": {
@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1788239993.1263175,
-    "ast_hash": "db2aa767701b93c3947ab27bb4ff8660",
+    "mtime": 1788240781.4326558,
+    "ast_hash": "945ff003b7cbc75d0372a6bb37b8d232",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
@@ -335,8 +335,8 @@
     "semantic_hash": "3e56f4a6029587b4a15a12f190ae759c"
   },
   "app/src/lib/game-rules.ts": {
-    "mtime": 1788239185.3501823,
-    "ast_hash": "bbef4c2e97e069e34d46fb8e8153b7ed",
+    "mtime": 1788240697.739472,
+    "ast_hash": "638ccf3a21a809d5d6513d3e4df6bc68",
     "semantic_hash": ""
   },
   "app/src/lib/game-zoom.ts": {
@@ -555,8 +555,8 @@
     "semantic_hash": "eff060b4273936b5b0b8482cc3552bcb"
   },
   "app/DESIGN-emerald-game-systems.md": {
-    "mtime": 1788239184.1951268,
-    "ast_hash": "dc86d9afa7f4550f888e18e1749789d1",
+    "mtime": 1788240946.5975466,
+    "ast_hash": "24dd99346b9e90cad4e380bfbbb96e8f",
     "semantic_hash": ""
   },
   "app/README.md": {
@@ -30332,6 +30332,26 @@
   "app/public/tiles/tree-tall-1.png": {
     "mtime": 1788239895.079339,
     "ast_hash": "f22deb4c5dbf4c94961879489ccd4a87",
+    "semantic_hash": ""
+  },
+  "app/server/services/map/streets.ts": {
+    "mtime": 1788240591.6935577,
+    "ast_hash": "cb403302dacd6a5acfed187dcc1d0253",
+    "semantic_hash": ""
+  },
+  "app/src/lib/pinch-zoom.ts": {
+    "mtime": 1788240375.586254,
+    "ast_hash": "263982e654ef0f5f6751fded16a1c378",
+    "semantic_hash": ""
+  },
+  "app/tests/pinch-zoom.test.ts": {
+    "mtime": 1788240477.3006878,
+    "ast_hash": "296f0b2568bd9df5eb98078ef5d2ee0b",
+    "semantic_hash": ""
+  },
+  "app/tests/streets.test.ts": {
+    "mtime": 1788240875.3361,
+    "ast_hash": "050e5737f1bbbc24a44328610a2846eb",
     "semantic_hash": ""
   }
 }
