@@ -302,6 +302,15 @@ const stitchSurfaces = (state, tiles) => {
 			tile.img = getWaterTileName(neighbours, tile.mapX, tile.mapY)
 		} else {
 			tile.img = `${terrain}-${getAutotileIndex(neighbours)}`
+			// Roads thin to one-tile centerlines, which the 3x3 autotile set
+			// cannot edge on both sides — the composed narrow variants carry
+			// grass-blend scallops on both flanks (road-10 horizontal,
+			// road-11 vertical, built from the N/S and W/E edge halves).
+			if (terrain === 'road') {
+				const { north, east, south, west } = neighbours
+				if (east && west && !north && !south) tile.img = 'road-10'
+				else if (north && south && !east && !west) tile.img = 'road-11'
+			}
 		}
 		tile.img2 = tile.img
 	}

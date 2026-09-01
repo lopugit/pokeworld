@@ -429,6 +429,39 @@ console.log(`harvested ${BUILDINGS.length} whole crops into public/tiles/`);
     writeFileSync(resolve(tilesDir, `${name}.png`), PNG.sync.write(tile));
   }
   console.log("harvested real hop-ledges from general metatiles 0xd5/0x87/0xd6");
+
+  // Real Emerald route-road art. The old road-1..9 held Rustboro's white
+  // pavement, which Emerald only ever lays on plaza ground — on grass it
+  // read as strips of snow. Routes through grass use the general tileset's
+  // textured tan road (0x118..0x12a: a full 3x3 with scalloped grass-blend
+  // edges, exactly Route 104's road rows). Autotile index order matches
+  // terrain-life getAutotileIndex: NW N NE / W C E / SW S SE.
+  const ROAD_METATILES = [0x118, 0x119, 0x11a, 0x120, 0x121, 0x122, 0x128, 0x129, 0x12a];
+  const roadTiles = ROAD_METATILES.map((metatileId) => {
+    const tile = new PNG({ width: 16, height: 16 });
+    drawMetatile(tile, 0, 0, metatileId, general, general);
+    return tile;
+  });
+  roadTiles.forEach((tile, index) => {
+    writeFileSync(resolve(tilesDir, `road-${index + 1}.png`), PNG.sync.write(tile));
+  });
+  // The generated world thins roads to one-tile centerlines, which the 3x3
+  // vocabulary cannot edge on both sides — compose the two narrow cases the
+  // way Emerald builds its channels: road-10 (narrow horizontal) stacks the
+  // N edge's top half over the S edge's bottom half; road-11 (narrow
+  // vertical) joins the W edge's left half to the E edge's right half.
+  const narrowHorizontal = new PNG({ width: 16, height: 16 });
+  const narrowVertical = new PNG({ width: 16, height: 16 });
+  const N = roadTiles[1], S = roadTiles[7], W = roadTiles[3], E = roadTiles[5];
+  for (let y = 0; y < 16; y += 1) {
+    const source = y < 8 ? N : S;
+    source.data.copy(narrowHorizontal.data, y * 16 * 4, y * 16 * 4, (y + 1) * 16 * 4);
+    W.data.copy(narrowVertical.data, y * 16 * 4, y * 16 * 4, y * 16 * 4 + 8 * 4);
+    E.data.copy(narrowVertical.data, y * 16 * 4 + 8 * 4, y * 16 * 4 + 8 * 4, (y + 1) * 16 * 4);
+  }
+  writeFileSync(resolve(tilesDir, "road-10.png"), PNG.sync.write(narrowHorizontal));
+  writeFileSync(resolve(tilesDir, "road-11.png"), PNG.sync.write(narrowVertical));
+  console.log("harvested route-road 3x3 + narrow variants from general 0x118..0x12a");
 }
 
 // ---------------------------------------------------------------------------

@@ -107,6 +107,13 @@ receives (`img`, `img2`, `feature`, `solid`). The client recognises:
 The client also falls back to `img2` prefix detection (`ledge-`, `field-item-`,
 `route-sign-`) so features light up even if a mod forgets to stamp `feature`.
 
+Road surfaces (3.0.0001): `road-1..9` carry the general tileset's textured tan
+route art (autotile order NW N NE / W C E / SW S SE); one-tile centerlines
+stitch the composed narrow variants `road-10` (horizontal, N+S scallops) and
+`road-11` (vertical, W+E scallops). `ledge-{left,middle,right}-1` hold the real
+hop-ledge lip (grass keyed transparent) — the same filenames the old white
+mountain-crest fakes used, so stored blocks heal without regeneration.
+
 ### Street names & house numbers (server → client, 3.0)
 
 After mods run (and before blocks persist), `services/map/streets.ts` attaches

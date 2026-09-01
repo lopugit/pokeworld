@@ -22,7 +22,10 @@ import { GOOGLE_MAP_SOURCE_TAG } from "./legacy/coordinates";
 // tiles high with north-to-south layering. Also plants a house-number sign
 // beside each stitched house's door (feature "house-sign"). Same imagery
 // tag: stored blocks re-stitch mods-only, without Google fetches.
-const TERRAIN_REVISION = "3.0.0000";
+// 3.0.0001: roads wear the general tileset's textured tan route art (the
+// old road-1..9 held Rustboro's white plaza pavement, which read as snow on
+// grass); one-tile centerlines pick the composed narrow variants road-10/11.
+const TERRAIN_REVISION = "3.0.0001";
 
 // The Google Static Maps source parameters participate in the version string:
 // changing the world's ground scale (zoom/scale/width) shifts every block
