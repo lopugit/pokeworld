@@ -1,16 +1,16 @@
 # Graph Report - building-assets-rendering-5aea95  (2026-09-01)
 
 ## Corpus Check
-- 259 files · ~2,574,477 words
+- 259 files · ~2,574,423 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2049 nodes · 3497 edges · 257 communities (121 shown, 136 thin omitted)
+- 2040 nodes · 3497 edges · 248 communities (121 shown, 127 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a0082857`
+- Built from commit: `3f72a840`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -178,15 +178,6 @@
 - [[_COMMUNITY_Pond Tile 7|Pond Tile 7]]
 - [[_COMMUNITY_Pond Tile 8|Pond Tile 8]]
 - [[_COMMUNITY_Pond Tile 9|Pond Tile 9]]
-- [[_COMMUNITY_Road Tile 1|Road Tile 1]]
-- [[_COMMUNITY_Road Tile 2|Road Tile 2]]
-- [[_COMMUNITY_Road Tile 3|Road Tile 3]]
-- [[_COMMUNITY_Road Tile 4|Road Tile 4]]
-- [[_COMMUNITY_Road Tile 5|Road Tile 5]]
-- [[_COMMUNITY_Road Tile 6|Road Tile 6]]
-- [[_COMMUNITY_Road Tile 7|Road Tile 7]]
-- [[_COMMUNITY_Road Tile 8|Road Tile 8]]
-- [[_COMMUNITY_Road Tile 9|Road Tile 9]]
 - [[_COMMUNITY_Room Interiors Tile Sheet|Room Interiors Tile Sheet]]
 - [[_COMMUNITY_Pokémon Emerald Route Sign Tile|Pokémon Emerald Route Sign Tile]]
 - [[_COMMUNITY_Sand Tile 1|Sand Tile 1]]
@@ -299,7 +290,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (257 total, 136 thin omitted)
+## Communities (248 total, 127 thin omitted)
 
 ### Community 0 - "families-generated.ts"
 Cohesion: 0.10
@@ -786,9 +777,9 @@ Nodes (4): BlockCoordinates, blockCoordinatesForWorldPosition(), blockKeyForWorl
   graphify-out/memory/query_20260719_095214_it_s_fine_to_show_the_google_maps_source_on_any_fr.md · relation: calls
 
 ## Knowledge Gaps
-- **689 isolated node(s):** `scriptDir`, `appDir`, `pretDir`, `townsDir`, `TOWNS` (+684 more)
+- **680 isolated node(s):** `Division of labour`, `World ground scale & versioning (shared contract)`, `Map block streaming protocol (server → client)`, `Street names & house numbers (server → client, 3.0)`, `Movement rules (client)` (+675 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **136 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **127 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -796,13 +787,13 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `canUseGoogleStaticMaps` and `getMapAtWithSource`?**
   _Edge tagged AMBIGUOUS (relation: calls) - confidence is low._
 - **Why does `Game` connect `Game` to `DevKit.tsx`, `Game.tsx`, `starterTrainer`, `invites.ts`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `package.json`, `vite`, `autoprefixer`, `jiti`, `postcss`, `tailwindcss`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `vitest` connect `devDependencies` to `index.ts`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **What connects `scriptDir`, `appDir`, `pretDir` to the rest of the system?**
-  _693 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **What connects `Division of labour`, `World ground scale & versioning (shared contract)`, `Map block streaming protocol (server → client)` to the rest of the system?**
+  _684 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `families-generated.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.09936575052854123 - nodes in this community are weakly interconnected._
 - **Should `Game` be split into smaller, more focused modules?**
