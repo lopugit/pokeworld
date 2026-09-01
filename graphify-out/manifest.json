@@ -230,9 +230,9 @@
     "semantic_hash": "4f041a70b628a5ca2348520f9bb78d8c"
   },
   "app/server/services/map/terrain-layout.ts": {
-    "mtime": 1788239185.3387997,
-    "ast_hash": "82cbaa85a734a0b384caed2852f29a16",
-    "semantic_hash": "82cbaa85a734a0b384caed2852f29a16"
+    "mtime": 1788259038.3347802,
+    "ast_hash": "f518c48d4f888db4113f35d79841afea",
+    "semantic_hash": ""
   },
   "app/server/services/map/types.ts": {
     "mtime": 1788239185.339026,
@@ -280,8 +280,8 @@
     "semantic_hash": "c5842360af139375a4cbe97c7f25e7b3"
   },
   "app/src/components/Game.tsx": {
-    "mtime": 1788241375.899625,
-    "ast_hash": "6ad3976cecb1a3be09a463d06c11d701",
+    "mtime": 1788258816.514143,
+    "ast_hash": "046a885df667a88c55c157e2553ec88f",
     "semantic_hash": ""
   },
   "app/src/components/Nav.tsx": {
@@ -480,9 +480,9 @@
     "semantic_hash": "352fe358ef808b355479708744395b51"
   },
   "app/tests/terrain-layout.test.ts": {
-    "mtime": 1788239185.3562105,
-    "ast_hash": "7bffb8df9d070eb63efb24d7ed5b09d4",
-    "semantic_hash": "7bffb8df9d070eb63efb24d7ed5b09d4"
+    "mtime": 1788259065.7045827,
+    "ast_hash": "cbd80898fdbf4e6c51c8af5c73ef0da1",
+    "semantic_hash": ""
   },
   "app/tests/terrain-life.test.ts": {
     "mtime": 1788257883.0320578,
