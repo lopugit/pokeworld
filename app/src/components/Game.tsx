@@ -22,6 +22,7 @@ import {
   type GesturePoint,
   type PinchStart,
 } from "../lib/pinch-zoom";
+import { fetchInvite, inviteIdFromLocation, type PublicInvite } from "../lib/invites";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import {
   actionDirection,
@@ -215,6 +216,8 @@ interface GameComponentState {
   battle: BattleState | null;
   /** True while a brand-new player is in the PROF. OAK starter onboarding. */
   onboarding: boolean;
+  /** Resolved `?invite=` link: personalizes OAK's greeting for the friend. */
+  invite: PublicInvite | null;
 }
 
 interface StoredImage {
@@ -301,6 +304,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     ui: { menuOpen: false, menuIndex: 0, panel: null, dialog: null, streetBanner: null },
     ...bootTrainerState(),
     battle: null,
+    invite: null,
   };
 
   private readonly canvasRef = createRef<HTMLCanvasElement>();
@@ -334,7 +338,24 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     this.mounted = true;
     void this.initialize();
     void this.loadSpawnRuleOverrides();
+    void this.resolveInviteLink();
     this.preloadPlayerFrames();
+  }
+
+  // A `?invite=` link personalizes PROF. OAK's greeting for the invited
+  // friend. Only meaningful during onboarding; returning players keep their
+  // save and the greeting never replays.
+  private async resolveInviteLink() {
+    const inviteId = inviteIdFromLocation(window.location.search);
+    if (!inviteId || !this.state.onboarding) return;
+    const controller = new AbortController();
+    this.abortControllers.add(controller);
+    try {
+      const invite = await fetchInvite(inviteId, controller.signal);
+      if (invite && this.mounted && this.state.onboarding) this.setState({ invite });
+    } finally {
+      this.abortControllers.delete(controller);
+    }
   }
 
   private async loadSpawnRuleOverrides() {
@@ -700,9 +721,10 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
   };
 
   // The chosen starter becomes the player's very first save — one Pokémon,
-  // nothing else in the party, PC, or Pokédex.
+  // nothing else in the party, PC, or Pokédex. Invited friends start with
+  // the name their invite carries, so dialog addresses them directly.
   private completeOnboarding = (choice: StarterChoice) => {
-    const trainer = starterTrainer(choice);
+    const trainer = starterTrainer(choice, this.state.invite?.inviteeName);
     this.setState({ trainer, onboarding: false }, () => saveTrainer(trainer));
   };
 
@@ -1837,7 +1859,7 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
             style={{ width: `min(${this.state.boardWidth}px, calc(100vw - 24px))` }}
           >
             <div className="flex flex-row justify-center w-full relative">
-              <OakIntro onComplete={this.completeOnboarding} />
+              <OakIntro onComplete={this.completeOnboarding} invite={this.state.invite} />
             </div>
           </div>
         </div>

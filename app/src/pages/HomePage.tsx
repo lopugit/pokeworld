@@ -1,6 +1,7 @@
 import { Banner } from "../components/Banner";
 import { DevKit } from "../components/DevKit";
 import { Game } from "../components/Game";
+import { InvitePanel } from "../components/InvitePanel";
 import { Nav } from "../components/Nav";
 
 export function HomePage() {
@@ -13,6 +14,7 @@ export function HomePage() {
           <div className="w-full flex items-center justify-center pt-12 pb-4">
             <Game />
           </div>
+          <InvitePanel />
           <Banner
             image="/bannerPic1.png"
             tagline="Introducing the"

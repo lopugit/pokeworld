@@ -232,8 +232,15 @@ export function emptyTrainer(): TrainerState {
   return freshTrainer("TRAINER", [], []);
 }
 
+/** Trainer-name shape shared with invites: trimmed, at most 12 characters. */
+export const normalizeTrainerName = (name: string | undefined): string | undefined =>
+  name?.replace(/\s+/g, " ").trim().slice(0, 12) || undefined;
+
 /** The first save a brand-new player gets: only the starter they chose, nothing else. */
-export function starterTrainer(choice: { speciesId: number; nickname?: string }): TrainerState {
+export function starterTrainer(
+  choice: { speciesId: number; nickname?: string },
+  trainerName?: string,
+): TrainerState {
   const species = getSpecies(choice.speciesId);
   const starter = createPartyMember({
     id: species?.name ?? `starter-${choice.speciesId}`,
@@ -241,7 +248,7 @@ export function starterTrainer(choice: { speciesId: number; nickname?: string })
     level: STARTER_LEVEL,
     nickname: normalizeNickname(choice.nickname),
   });
-  return freshTrainer("TRAINER", [starter], []);
+  return freshTrainer(normalizeTrainerName(trainerName) ?? "TRAINER", [starter], []);
 }
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>

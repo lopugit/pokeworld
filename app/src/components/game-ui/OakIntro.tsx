@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties, type FormEvent } from "react";
+import { inviteGreetingPages, type PublicInvite } from "../../lib/invites";
 import { getSpecies, type PokedexEntry } from "../../lib/pokedex";
 import { KANTO_STARTER_IDS, normalizeNickname } from "../../lib/trainer-state";
 import { DialogBox } from "./DialogBox";
@@ -10,6 +11,8 @@ export interface StarterChoice {
 
 interface OakIntroProps {
   onComplete: (choice: StarterChoice) => void;
+  /** A resolved invite personalizes OAK's greeting for the invited friend. */
+  invite?: PublicInvite | null;
 }
 
 type Phase = "greeting" | "pick" | "confirm" | "nickname" | "farewell";
@@ -102,7 +105,7 @@ const spriteBox = (centerX: number, centerY: number, size: number): CSSPropertie
  * an optional nickname before the adventure starts. Backgrounds and sprites
  * are the exact pokeemerald graphics; coordinates match the decomp.
  */
-export function OakIntro({ onComplete }: OakIntroProps) {
+export function OakIntro({ onComplete, invite }: OakIntroProps) {
   const [phase, setPhase] = useState<Phase>("greeting");
   const [advance, setAdvance] = useState(0);
   const [ballIndex, setBallIndex] = useState(1);
@@ -231,7 +234,9 @@ export function OakIntro({ onComplete }: OakIntroProps) {
             key={phase}
             pages={
               phase === "greeting"
-                ? GREETING_PAGES
+                ? invite
+                  ? inviteGreetingPages(invite)
+                  : GREETING_PAGES
                 : picked
                   ? farewellPages(picked, finalNickname)
                   : []
