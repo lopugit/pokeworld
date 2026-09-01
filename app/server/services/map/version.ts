@@ -16,7 +16,13 @@ import { GOOGLE_MAP_SOURCE_TAG } from "./legacy/coordinates";
 // sites against per-block truncated masks (which grew one structure per
 // block on every seam-spanning building). Same imagery tag: stored terrain
 // is reused and the migration re-stitches mods-only, without Google fetches.
-const TERRAIN_REVISION = "2.9.0000";
+// 3.0.0000: full tall trees — every standalone tree stamp switches from the
+// half-crop tree-1 to tree-tall-1, the complete 16x32 Emerald slim tree
+// (crown keyed transparent) that the client renders bottom-anchored two
+// tiles high with north-to-south layering. Also plants a house-number sign
+// beside each stitched house's door (feature "house-sign"). Same imagery
+// tag: stored blocks re-stitch mods-only, without Google fetches.
+const TERRAIN_REVISION = "3.0.0000";
 
 // The Google Static Maps source parameters participate in the version string:
 // changing the world's ground scale (zoom/scale/width) shifts every block

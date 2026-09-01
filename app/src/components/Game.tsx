@@ -12,6 +12,7 @@ import {
   prioritizeMapPreloadOffsets,
   type BlockCoordinates,
 } from "../lib/map-load";
+import { isTallTileArt, sortTallEntities } from "../lib/tall-sprites";
 import { loadThings, locationKey, saveThing } from "../lib/persisted-state";
 import {
   actionDirection,
@@ -1429,6 +1430,9 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
     }
     map.tileCount = 0;
     map.blocks = [];
+    // Tall (16x32) img2 art is deferred out of the flat tile pass into a
+    // north-to-south pass shared with the player (see tall-sprites.ts).
+    const tallTiles: MapTile[] = [];
     for (const tile of Object.values(this.tileDb)) {
       if (!this.tileShouldRender(tile)) continue;
       const blockKey = `${tile.blockX}_${tile.blockY}`;
@@ -1448,7 +1452,13 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       const overlayHidden =
         isFieldItemTile(tile) && hasCollected(this.state.trainer, tileCoordKey(tile.mapX, tile.mapY));
       const top = !overlayHidden && tile.img2 ? this.storedImages.get(tile.img2) : undefined;
-      if (top?.loaded) canvasContext.drawImage(top.element, drawX, drawY, width, height);
+      if (top?.loaded) {
+        if (isTallTileArt(top.element.naturalWidth, top.element.naturalHeight)) {
+          tallTiles.push(tile);
+        } else {
+          canvasContext.drawImage(top.element, drawX, drawY, width, height);
+        }
+      }
     }
 
     if (gmapContext) this.drawGoogleBlocks(gmapContext, view);
@@ -1485,11 +1495,30 @@ export class Game extends Component<Record<string, never>, GameComponentState> {
       this.loadImage("char-walk-1", "/sprites/char-walk-1.png");
       character = this.storedImages.get("char-walk-1");
     }
-    if (character?.loaded) {
+    const playerWorldY = animating && anim ? anim.fromY + (player.y - anim.fromY) * animProgress : player.y;
+
+    // Tall art and the player share one north-to-south paint pass so southern
+    // canopies overlap northern trunks and the player is occluded by (or
+    // occludes) tall trees exactly the way Emerald layers its forests.
+    const entities = sortTallEntities<{ mapY: number; isPlayer?: boolean; tile?: MapTile }>([
+      ...tallTiles.map((tile) => ({ mapY: tile.mapY, tile })),
+      { mapY: playerWorldY, isPlayer: true },
+    ]);
+    for (const entity of entities) {
+      if (entity.tile) {
+        const image = entity.tile.img2 ? this.storedImages.get(entity.tile.img2) : undefined;
+        if (!image?.loaded) continue;
+        const width = game.tileSize * game.zoomScale;
+        const height = game.tileSize * 2 * game.zoomScale;
+        const drawX = (entity.tile.mapX - view.x) * game.zoomScale;
+        const drawY = this.convertY(entity.tile.mapY - view.y, height);
+        canvasContext.drawImage(image.element, drawX, drawY, width, height);
+        continue;
+      }
+      if (!character?.loaded) continue;
       const worldX = animating && anim ? anim.fromX + (player.x - anim.fromX) * animProgress : player.x;
-      const worldY = animating && anim ? anim.fromY + (player.y - anim.fromY) * animProgress : player.y;
       const x = worldX - view.x;
-      const y = worldY - view.y;
+      const y = playerWorldY - view.y;
       const width = tileSize * game.zoomScale;
       const height = tileSize * 2 * game.zoomScale;
       const drawX = x * game.zoomScale;

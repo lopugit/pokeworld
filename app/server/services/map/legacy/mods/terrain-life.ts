@@ -753,7 +753,7 @@ const stitchSecretGrove = (tiles, occupied, reserved, block, pattern = 'elbow') 
 			tile.feature = trail.has(key) ? 'secret-trail' : 'secret-clearing'
 			tile.solid = false
 		} else {
-			tile.img2 = 'tree-1'
+			tile.img2 = 'tree-tall-1'
 			tile.feature = 'tree'
 			tile.solid = true
 		}
@@ -856,7 +856,7 @@ const stitchWorldStructure = (tiles, occupied, reserved, block, preset) => {
 		if (!tile) continue
 		switch (cell.role) {
 			case 'tree':
-				tile.img2 = 'tree-1'
+				tile.img2 = 'tree-tall-1'
 				tile.solid = true
 				break
 			case 'shrub':
@@ -915,7 +915,7 @@ const addForestClusters = (state, tiles, occupied, reserved, profile) => {
 		if (coarseNoise(globalX, globalY, 'forest-mass', 7) <= threshold) continue
 		occupied.add(key)
 		tile.img = 'grass'
-		tile.img2 = 'tree-1'
+		tile.img2 = 'tree-tall-1'
 		tile.feature = 'tree'
 		tile.solid = true
 	}
@@ -975,7 +975,7 @@ const addLife = (state, tiles, occupied, reserved, profile) => {
 		const bedChance = Math.max(0.2, Math.min(0.65, (palette.flowers + detailBias) * 2.2))
 		const flower = flowerBedAt(globalX, globalY, bedChance)
 		if (canBlock && terrain === 'natural' && detail < treeLimit) {
-			tile.img2 = 'tree-1'
+			tile.img2 = 'tree-tall-1'
 			tile.feature = 'tree'
 			tile.solid = true
 		} else if (canBlock && detail < rockLimit) {

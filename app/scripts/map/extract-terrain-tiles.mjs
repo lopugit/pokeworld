@@ -202,6 +202,31 @@ writeCellGrid("house-manor", [
   [H(10), H(11), wallMiddle, wallMiddle, wallMiddle, H(12)],
 ]);
 
+// The full Emerald tall tree: 1 tile wide, 2 tiles tall (canopy over trunk).
+// tree-1.png is this art's bottom half — shipped alone it reads as a cut-off
+// tree, which is why standalone tree-1 was banned. The complete 16x32 sprite
+// keys the sheet's grass backdrop out of the CANOPY half only, so overlapping
+// rows compose the way Emerald's forests do (southern canopies over northern
+// trunks) while the trunk half stays byte-identical to today's tree-1 ground
+// look. The client draws any 16x32 tile art bottom-anchored two tiles high.
+{
+  const BACKDROP = [112, 192, 160];
+  const tall = cropRegion(96, 16, 1, 2);
+  for (let y = 0; y < 16; y += 1) {
+    for (let x = 0; x < 16; x += 1) {
+      const index = (y * tall.width + x) * 4;
+      if (
+        tall.data[index] === BACKDROP[0] &&
+        tall.data[index + 1] === BACKDROP[1] &&
+        tall.data[index + 2] === BACKDROP[2]
+      ) {
+        tall.data[index + 3] = 0;
+      }
+    }
+  }
+  writeFileSync(resolve(outputDir, "tree-tall-1.png"), PNG.sync.write(tall));
+}
+
 // A natural rock formation aligned to a 3x3 tile footprint.
 writeGrid("mountain", 768, 64, 3, 3);
 

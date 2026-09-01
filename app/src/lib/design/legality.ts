@@ -50,6 +50,13 @@ export const OVERLAY_RULES: OverlayRule[] = [
     reason: "Shrub art is drawn on plain grass.",
   },
   {
+    pattern: /^tree-tall-1$/,
+    label: "Tall tree (1×2)",
+    grounds: ["grass"],
+    reason:
+      "The complete Emerald slim tree: 16×32 art whose trunk owns one grass cell while the keyed-transparent canopy half overlaps the cell to the north at render time. This is the real asset tree-1 was cut from — renderers draw it bottom-anchored two tiles high, so rows overlap into forests the way Emerald layers them.",
+  },
+  {
     pattern: /^bridge-[hv]-1$/,
     label: "Plank bridges",
     grounds: ["water"],
@@ -107,7 +114,7 @@ export const BANNED_OVERLAYS: BannedTile[] = [
     pattern: /^tree-1$/,
     label: "Half-tree crop",
     reason:
-      "tree-1's art is the bottom half of a taller tree — the canopy is sliced flat at the tile's top edge over a trunk. Standalone it renders a crown-less half tree (the reported broken-tree bug: lone trunk-halves in groves, fake 'palms' on beaches, and what looked like edge-clipped trees). shrub-1 is the complete single-cell greenery; anything tree-shaped must be the tree-grand 2×2 formation.",
+      "tree-1's art is the bottom half of a taller tree — the canopy is sliced flat at the tile's top edge over a trunk. Standalone it renders a crown-less half tree (the reported broken-tree bug: lone trunk-halves in groves, fake 'palms' on beaches, and what looked like edge-clipped trees). The complete asset is tree-tall-1 (the same tree with its crown, drawn bottom-anchored two tiles high); shrub-1 is the complete single-cell greenery, and the big canopy tree is the tree-grand 2×2 formation.",
   },
   {
     pattern: /^big-tree-\d+$/,
